@@ -1,5 +1,7 @@
 #!/bin/bash
-killall node
-cd /Users/hanhtran/Downloads/EShop/backend && node server.js &
-cd /Users/hanhtran/Downloads/EShop/frontend-web && npm run dev &
-cd /Users/hanhtran/Downloads/EShop/frontend-admin && npm run dev &
+DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
+killall node 2>/dev/null || true
+cd "$DIR/backend" && node server.js &
+cd "$DIR/frontend-web" && npm run dev &
+cd "$DIR/frontend-admin" && npm run dev &
+wait
