@@ -1,0 +1,3 @@
+interface:
+  display_name: "AI Audit"
+  short_description: "Log AI interactions and learner reviews for appendices"
