@@ -1,0 +1,3 @@
+interface:
+  display_name: "Boundary Value Analysis"
+  short_description: "Derive boundary cases with explicit coverage obligations"
