@@ -1,0 +1,1691 @@
+[
+  {
+    "caseId": "FR03-TC-001",
+    "timestamp": "2026-10-12T05:16:06.037Z",
+    "layer": "API",
+    "request": {
+      "endpoint": "/api/forgot-password",
+      "body": {
+        "email": "fr03-a@example.com"
+      }
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "message": "Mã đặt lại mật khẩu đã được tạo",
+        "resetToken": "7257"
+      },
+      "error": null
+    },
+    "stateBefore": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "OldPass1!",
+        "reset_token": "123456"
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "stateAfter": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "OldPass1!",
+        "reset_token": "7257"
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "expected": "Status 200, body chứa resetToken đúng định dạng 6 chữ số ^[0-9]{6}$, DB cập nhật reset_token khớp mã, mật khẩu A không đổi",
+    "verdict": "Failed",
+    "verdictReason": "Issued OTP '7257' does not match 6-digit specification ^[0-9]{6}$ (actual length: 4)"
+  },
+  {
+    "caseId": "FR03-TC-002",
+    "timestamp": "2026-10-12T05:16:06.115Z",
+    "layer": "API",
+    "request": {
+      "endpoint": "/api/forgot-password",
+      "body": {
+        "email": "fr03-missing@example.com"
+      }
+    },
+    "response": {
+      "status": 404,
+      "body": {
+        "error": "User not found"
+      },
+      "error": null
+    },
+    "stateBefore": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "OldPass1!",
+        "reset_token": "123456"
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "stateAfter": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "OldPass1!",
+        "reset_token": "123456"
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "expected": "Status 4xx, không sinh token, CSDL không bị thay đổi",
+    "verdict": "Passed",
+    "verdictReason": "Observed outcome matched expected specification."
+  },
+  {
+    "caseId": "FR03-TC-003",
+    "timestamp": "2026-10-12T05:16:06.119Z",
+    "layer": "API",
+    "request": {
+      "endpoint": "/api/reset-password",
+      "body": {
+        "email": "fr03-a@example.com",
+        "resetToken": "123456",
+        "newPassword": "Abcdef1!"
+      }
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "message": "Password reset successfully"
+      },
+      "error": null
+    },
+    "stateBefore": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "OldPass1!",
+        "reset_token": "123456"
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "stateAfter": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "Abcdef1!",
+        "reset_token": null
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "expected": "Status 200, mật khẩu A đổi thành Abcdef1!, reset_token xóa thành NULL, đăng nhập mới thành công",
+    "verdict": "Passed",
+    "verdictReason": "Observed outcome matched expected specification."
+  },
+  {
+    "caseId": "FR03-TC-004",
+    "timestamp": "2026-10-12T05:16:06.123Z",
+    "layer": "API",
+    "request": {
+      "endpoint": "/api/reset-password",
+      "body": {
+        "email": "fr03-a@example.com",
+        "resetToken": "123456",
+        "newPassword": "Abcde1!"
+      }
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "message": "Password reset successfully"
+      },
+      "error": null
+    },
+    "stateBefore": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "OldPass1!",
+        "reset_token": "123456"
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "stateAfter": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "Abcde1!",
+        "reset_token": null
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "expected": "Yêu cầu bị từ chối, mật khẩu A giữ nguyên OldPass1!",
+    "verdict": "Failed",
+    "verdictReason": "Expected rejection for invalid input, but server returned HTTP 200 and accepted the reset! Password was changed to 'Abcde1!'."
+  },
+  {
+    "caseId": "FR03-TC-005",
+    "timestamp": "2026-10-12T05:16:06.128Z",
+    "layer": "API",
+    "request": {
+      "endpoint": "/api/reset-password",
+      "body": {
+        "email": "fr03-a@example.com",
+        "resetToken": "123456",
+        "newPassword": "Abcdefg1!"
+      }
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "message": "Password reset successfully"
+      },
+      "error": null
+    },
+    "stateBefore": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "OldPass1!",
+        "reset_token": "123456"
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "stateAfter": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "Abcdefg1!",
+        "reset_token": null
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "expected": "Status 200, mật khẩu A đổi thành Abcdefg1!",
+    "verdict": "Passed",
+    "verdictReason": "Observed outcome matched expected specification."
+  },
+  {
+    "caseId": "FR03-TC-006",
+    "timestamp": "2026-10-12T05:16:06.132Z",
+    "layer": "API",
+    "request": {
+      "endpoint": "/api/reset-password",
+      "body": {
+        "email": "fr03-a@example.com",
+        "resetToken": "123456",
+        "newPassword": "Abcdefgh1!"
+      }
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "message": "Password reset successfully"
+      },
+      "error": null
+    },
+    "stateBefore": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "OldPass1!",
+        "reset_token": "123456"
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "stateAfter": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "Abcdefgh1!",
+        "reset_token": null
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "expected": "Status 200, mật khẩu A đổi thành Abcdefgh1!",
+    "verdict": "Passed",
+    "verdictReason": "Observed outcome matched expected specification."
+  },
+  {
+    "caseId": "FR03-TC-007",
+    "timestamp": "2026-10-12T05:16:06.136Z",
+    "layer": "API",
+    "request": {
+      "endpoint": "/api/reset-password",
+      "body": {
+        "email": "fr03-a@example.com",
+        "resetToken": "123456",
+        "newPassword": ""
+      }
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "message": "Password reset successfully"
+      },
+      "error": null
+    },
+    "stateBefore": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "OldPass1!",
+        "reset_token": "123456"
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "stateAfter": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "",
+        "reset_token": null
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "expected": "Yêu cầu bị từ chối, mật khẩu A giữ nguyên",
+    "verdict": "Failed",
+    "verdictReason": "Expected rejection for invalid input, but server returned HTTP 200 and accepted the reset! Password was changed to ''."
+  },
+  {
+    "caseId": "FR03-TC-008",
+    "timestamp": "2026-10-12T05:16:06.140Z",
+    "layer": "API",
+    "request": {
+      "endpoint": "/api/reset-password",
+      "body": {
+        "email": "fr03-a@example.com",
+        "resetToken": "123456",
+        "newPassword": "A"
+      }
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "message": "Password reset successfully"
+      },
+      "error": null
+    },
+    "stateBefore": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "OldPass1!",
+        "reset_token": "123456"
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "stateAfter": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "A",
+        "reset_token": null
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "expected": "Yêu cầu bị từ chối, mật khẩu A giữ nguyên",
+    "verdict": "Failed",
+    "verdictReason": "Expected rejection for invalid input, but server returned HTTP 200 and accepted the reset! Password was changed to 'A'."
+  },
+  {
+    "caseId": "FR03-TC-009",
+    "timestamp": "2026-10-12T05:16:06.144Z",
+    "layer": "API",
+    "request": {
+      "endpoint": "/api/reset-password",
+      "body": {
+        "email": "fr03-a@example.com",
+        "resetToken": "123456",
+        "newPassword": "Abcd1!"
+      }
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "message": "Password reset successfully"
+      },
+      "error": null
+    },
+    "stateBefore": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "OldPass1!",
+        "reset_token": "123456"
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "stateAfter": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "Abcd1!",
+        "reset_token": null
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "expected": "Yêu cầu bị từ chối, mật khẩu A giữ nguyên",
+    "verdict": "Failed",
+    "verdictReason": "Expected rejection for invalid input, but server returned HTTP 200 and accepted the reset! Password was changed to 'Abcd1!'."
+  },
+  {
+    "caseId": "FR03-TC-010",
+    "timestamp": "2026-10-12T05:16:06.151Z",
+    "layer": "API",
+    "request": {
+      "endpoint": "/api/reset-password",
+      "body": {
+        "email": "fr03-a@example.com",
+        "resetToken": "123456",
+        "newPassword": "abcdef1!"
+      }
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "message": "Password reset successfully"
+      },
+      "error": null
+    },
+    "stateBefore": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "OldPass1!",
+        "reset_token": "123456"
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "stateAfter": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "abcdef1!",
+        "reset_token": null
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "expected": "Yêu cầu bị từ chối, mật khẩu A giữ nguyên",
+    "verdict": "Failed",
+    "verdictReason": "Expected rejection for invalid input, but server returned HTTP 200 and accepted the reset! Password was changed to 'abcdef1!'."
+  },
+  {
+    "caseId": "FR03-TC-011",
+    "timestamp": "2026-10-12T05:16:06.155Z",
+    "layer": "API",
+    "request": {
+      "endpoint": "/api/reset-password",
+      "body": {
+        "email": "fr03-a@example.com",
+        "resetToken": "123456",
+        "newPassword": "ABcdef1!"
+      }
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "message": "Password reset successfully"
+      },
+      "error": null
+    },
+    "stateBefore": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "OldPass1!",
+        "reset_token": "123456"
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "stateAfter": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "ABcdef1!",
+        "reset_token": null
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "expected": "Status 200, mật khẩu A đổi thành ABcdef1!",
+    "verdict": "Passed",
+    "verdictReason": "Observed outcome matched expected specification."
+  },
+  {
+    "caseId": "FR03-TC-012",
+    "timestamp": "2026-10-12T05:16:06.158Z",
+    "layer": "API",
+    "request": {
+      "endpoint": "/api/reset-password",
+      "body": {
+        "email": "fr03-a@example.com",
+        "resetToken": "123456",
+        "newPassword": "ABCDEF1!"
+      }
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "message": "Password reset successfully"
+      },
+      "error": null
+    },
+    "stateBefore": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "OldPass1!",
+        "reset_token": "123456"
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "stateAfter": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "ABCDEF1!",
+        "reset_token": null
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "expected": "Yêu cầu bị từ chối, mật khẩu A giữ nguyên",
+    "verdict": "Failed",
+    "verdictReason": "Expected rejection for invalid input, but server returned HTTP 200 and accepted the reset! Password was changed to 'ABCDEF1!'."
+  },
+  {
+    "caseId": "FR03-TC-013",
+    "timestamp": "2026-10-12T05:16:06.162Z",
+    "layer": "API",
+    "request": {
+      "endpoint": "/api/reset-password",
+      "body": {
+        "email": "fr03-a@example.com",
+        "resetToken": "123456",
+        "newPassword": "aBCDEF1!"
+      }
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "message": "Password reset successfully"
+      },
+      "error": null
+    },
+    "stateBefore": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "OldPass1!",
+        "reset_token": "123456"
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "stateAfter": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "aBCDEF1!",
+        "reset_token": null
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "expected": "Status 200, mật khẩu A đổi thành aBCDEF1!",
+    "verdict": "Passed",
+    "verdictReason": "Observed outcome matched expected specification."
+  },
+  {
+    "caseId": "FR03-TC-014",
+    "timestamp": "2026-10-12T05:16:06.165Z",
+    "layer": "API",
+    "request": {
+      "endpoint": "/api/reset-password",
+      "body": {
+        "email": "fr03-a@example.com",
+        "resetToken": "123456",
+        "newPassword": "abCDEF1!"
+      }
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "message": "Password reset successfully"
+      },
+      "error": null
+    },
+    "stateBefore": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "OldPass1!",
+        "reset_token": "123456"
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "stateAfter": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "abCDEF1!",
+        "reset_token": null
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "expected": "Status 200, mật khẩu A đổi thành abCDEF1!",
+    "verdict": "Passed",
+    "verdictReason": "Observed outcome matched expected specification."
+  },
+  {
+    "caseId": "FR03-TC-015",
+    "timestamp": "2026-10-12T05:16:06.167Z",
+    "layer": "API",
+    "request": {
+      "endpoint": "/api/reset-password",
+      "body": {
+        "email": "fr03-a@example.com",
+        "resetToken": "123456",
+        "newPassword": "Abcdefg!"
+      }
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "message": "Password reset successfully"
+      },
+      "error": null
+    },
+    "stateBefore": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "OldPass1!",
+        "reset_token": "123456"
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "stateAfter": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "Abcdefg!",
+        "reset_token": null
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "expected": "Yêu cầu bị từ chối, mật khẩu A giữ nguyên",
+    "verdict": "Failed",
+    "verdictReason": "Expected rejection for invalid input, but server returned HTTP 200 and accepted the reset! Password was changed to 'Abcdefg!'."
+  },
+  {
+    "caseId": "FR03-TC-016",
+    "timestamp": "2026-10-12T05:16:06.169Z",
+    "layer": "API",
+    "request": {
+      "endpoint": "/api/reset-password",
+      "body": {
+        "email": "fr03-a@example.com",
+        "resetToken": "123456",
+        "newPassword": "Abcde12!"
+      }
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "message": "Password reset successfully"
+      },
+      "error": null
+    },
+    "stateBefore": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "OldPass1!",
+        "reset_token": "123456"
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "stateAfter": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "Abcde12!",
+        "reset_token": null
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "expected": "Status 200, mật khẩu A đổi thành Abcde12!",
+    "verdict": "Passed",
+    "verdictReason": "Observed outcome matched expected specification."
+  },
+  {
+    "caseId": "FR03-TC-017",
+    "timestamp": "2026-10-12T05:16:06.172Z",
+    "layer": "API",
+    "request": {
+      "endpoint": "/api/reset-password",
+      "body": {
+        "email": "fr03-a@example.com",
+        "resetToken": "123456",
+        "newPassword": "Abcdef12"
+      }
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "message": "Password reset successfully"
+      },
+      "error": null
+    },
+    "stateBefore": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "OldPass1!",
+        "reset_token": "123456"
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "stateAfter": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "Abcdef12",
+        "reset_token": null
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "expected": "Yêu cầu bị từ chối, mật khẩu A giữ nguyên",
+    "verdict": "Failed",
+    "verdictReason": "Expected rejection for invalid input, but server returned HTTP 200 and accepted the reset! Password was changed to 'Abcdef12'."
+  },
+  {
+    "caseId": "FR03-TC-018",
+    "timestamp": "2026-10-12T05:16:06.174Z",
+    "layer": "API",
+    "request": {
+      "endpoint": "/api/reset-password",
+      "body": {
+        "email": "fr03-a@example.com",
+        "resetToken": "123456",
+        "newPassword": "Abcde1!&"
+      }
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "message": "Password reset successfully"
+      },
+      "error": null
+    },
+    "stateBefore": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "OldPass1!",
+        "reset_token": "123456"
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "stateAfter": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "Abcde1!&",
+        "reset_token": null
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "expected": "Status 200, mật khẩu A đổi thành Abcde1!&",
+    "verdict": "Passed",
+    "verdictReason": "Observed outcome matched expected specification."
+  },
+  {
+    "caseId": "FR03-TC-019",
+    "timestamp": "2026-10-12T05:16:06.176Z",
+    "layer": "API",
+    "request": {
+      "endpoint": "/api/reset-password",
+      "body": {
+        "email": "fr03-a@example.com",
+        "resetToken": "123456",
+        "newPassword": "Abcdef1@"
+      }
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "message": "Password reset successfully"
+      },
+      "error": null
+    },
+    "stateBefore": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "OldPass1!",
+        "reset_token": "123456"
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "stateAfter": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "Abcdef1@",
+        "reset_token": null
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "expected": "Status 200, mật khẩu A đổi thành Abcdef1@",
+    "verdict": "Passed",
+    "verdictReason": "Observed outcome matched expected specification."
+  },
+  {
+    "caseId": "FR03-TC-020",
+    "timestamp": "2026-10-12T05:16:06.178Z",
+    "layer": "API",
+    "request": {
+      "endpoint": "/api/reset-password",
+      "body": {
+        "email": "fr03-a@example.com",
+        "resetToken": "123456",
+        "newPassword": "Abcdef1$"
+      }
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "message": "Password reset successfully"
+      },
+      "error": null
+    },
+    "stateBefore": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "OldPass1!",
+        "reset_token": "123456"
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "stateAfter": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "Abcdef1$",
+        "reset_token": null
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "expected": "Status 200, mật khẩu A đổi thành Abcdef1$",
+    "verdict": "Passed",
+    "verdictReason": "Observed outcome matched expected specification."
+  },
+  {
+    "caseId": "FR03-TC-021",
+    "timestamp": "2026-10-12T05:16:06.181Z",
+    "layer": "API",
+    "request": {
+      "endpoint": "/api/reset-password",
+      "body": {
+        "email": "fr03-a@example.com",
+        "resetToken": "123456",
+        "newPassword": "Abcdef1%"
+      }
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "message": "Password reset successfully"
+      },
+      "error": null
+    },
+    "stateBefore": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "OldPass1!",
+        "reset_token": "123456"
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "stateAfter": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "Abcdef1%",
+        "reset_token": null
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "expected": "Status 200, mật khẩu A đổi thành Abcdef1%",
+    "verdict": "Passed",
+    "verdictReason": "Observed outcome matched expected specification."
+  },
+  {
+    "caseId": "FR03-TC-022",
+    "timestamp": "2026-10-12T05:16:06.183Z",
+    "layer": "API",
+    "request": {
+      "endpoint": "/api/reset-password",
+      "body": {
+        "email": "fr03-a@example.com",
+        "resetToken": "123456",
+        "newPassword": "Abcdef1*"
+      }
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "message": "Password reset successfully"
+      },
+      "error": null
+    },
+    "stateBefore": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "OldPass1!",
+        "reset_token": "123456"
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "stateAfter": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "Abcdef1*",
+        "reset_token": null
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "expected": "Status 200, mật khẩu A đổi thành Abcdef1*",
+    "verdict": "Passed",
+    "verdictReason": "Observed outcome matched expected specification."
+  },
+  {
+    "caseId": "FR03-TC-023",
+    "timestamp": "2026-10-12T05:16:06.186Z",
+    "layer": "API",
+    "request": {
+      "endpoint": "/api/reset-password",
+      "body": {
+        "email": "fr03-a@example.com",
+        "resetToken": "123456",
+        "newPassword": "Abcdef1?"
+      }
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "message": "Password reset successfully"
+      },
+      "error": null
+    },
+    "stateBefore": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "OldPass1!",
+        "reset_token": "123456"
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "stateAfter": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "Abcdef1?",
+        "reset_token": null
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "expected": "Status 200, mật khẩu A đổi thành Abcdef1?",
+    "verdict": "Passed",
+    "verdictReason": "Observed outcome matched expected specification."
+  },
+  {
+    "caseId": "FR03-TC-024",
+    "timestamp": "2026-10-12T05:16:06.189Z",
+    "layer": "API",
+    "request": {
+      "endpoint": "/api/reset-password",
+      "body": {
+        "email": "fr03-a@example.com",
+        "resetToken": "123456",
+        "newPassword": "Abcdef1&"
+      }
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "message": "Password reset successfully"
+      },
+      "error": null
+    },
+    "stateBefore": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "OldPass1!",
+        "reset_token": "123456"
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "stateAfter": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "Abcdef1&",
+        "reset_token": null
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "expected": "Status 200, mật khẩu A đổi thành Abcdef1&",
+    "verdict": "Passed",
+    "verdictReason": "Observed outcome matched expected specification."
+  },
+  {
+    "caseId": "FR03-TC-025",
+    "timestamp": "2026-10-12T05:16:06.192Z",
+    "layer": "API",
+    "request": {
+      "endpoint": "/api/reset-password",
+      "body": {
+        "email": "fr03-a@example.com",
+        "resetToken": "123456",
+        "newPassword": "Abcdef1 "
+      }
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "message": "Password reset successfully"
+      },
+      "error": null
+    },
+    "stateBefore": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "OldPass1!",
+        "reset_token": "123456"
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "stateAfter": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "Abcdef1 ",
+        "reset_token": null
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "expected": "Yêu cầu bị từ chối, mật khẩu A giữ nguyên",
+    "verdict": "Failed",
+    "verdictReason": "Expected rejection for invalid input, but server returned HTTP 200 and accepted the reset! Password was changed to 'Abcdef1 '."
+  },
+  {
+    "caseId": "FR03-TC-026",
+    "timestamp": "2026-10-12T05:16:06.194Z",
+    "layer": "API",
+    "request": {
+      "endpoint": "/api/reset-password",
+      "body": {
+        "email": "fr03-a@example.com",
+        "resetToken": "",
+        "newPassword": "Abcdef1!"
+      }
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "error": "Invalid token or email"
+      },
+      "error": null
+    },
+    "stateBefore": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "OldPass1!",
+        "reset_token": "123456"
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "stateAfter": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "OldPass1!",
+        "reset_token": "123456"
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "expected": "Yêu cầu bị từ chối, mật khẩu A giữ nguyên",
+    "verdict": "Passed",
+    "verdictReason": "Observed outcome matched expected specification."
+  },
+  {
+    "caseId": "FR03-TC-027",
+    "timestamp": "2026-10-12T05:16:06.196Z",
+    "layer": "API",
+    "request": {
+      "endpoint": "/api/reset-password",
+      "body": {
+        "email": "fr03-a@example.com",
+        "resetToken": "1",
+        "newPassword": "Abcdef1!"
+      }
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "error": "Invalid token or email"
+      },
+      "error": null
+    },
+    "stateBefore": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "OldPass1!",
+        "reset_token": "123456"
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "stateAfter": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "OldPass1!",
+        "reset_token": "123456"
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "expected": "Yêu cầu bị từ chối, mật khẩu A giữ nguyên",
+    "verdict": "Passed",
+    "verdictReason": "Observed outcome matched expected specification."
+  },
+  {
+    "caseId": "FR03-TC-028",
+    "timestamp": "2026-10-12T05:16:06.197Z",
+    "layer": "API",
+    "request": {
+      "endpoint": "/api/reset-password",
+      "body": {
+        "email": "fr03-a@example.com",
+        "resetToken": "1234",
+        "newPassword": "Abcdef1!"
+      }
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "error": "Invalid token or email"
+      },
+      "error": null
+    },
+    "stateBefore": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "OldPass1!",
+        "reset_token": "123456"
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "stateAfter": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "OldPass1!",
+        "reset_token": "123456"
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "expected": "Yêu cầu bị từ chối, mật khẩu A giữ nguyên",
+    "verdict": "Passed",
+    "verdictReason": "Observed outcome matched expected specification."
+  },
+  {
+    "caseId": "FR03-TC-029",
+    "timestamp": "2026-10-12T05:16:06.199Z",
+    "layer": "API",
+    "request": {
+      "endpoint": "/api/reset-password",
+      "body": {
+        "email": "fr03-a@example.com",
+        "resetToken": "12345",
+        "newPassword": "Abcdef1!"
+      }
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "error": "Invalid token or email"
+      },
+      "error": null
+    },
+    "stateBefore": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "OldPass1!",
+        "reset_token": "123456"
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "stateAfter": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "OldPass1!",
+        "reset_token": "123456"
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "expected": "Yêu cầu bị từ chối, mật khẩu A giữ nguyên",
+    "verdict": "Passed",
+    "verdictReason": "Observed outcome matched expected specification."
+  },
+  {
+    "caseId": "FR03-TC-030",
+    "timestamp": "2026-10-12T05:16:06.200Z",
+    "layer": "API",
+    "request": {
+      "endpoint": "/api/reset-password",
+      "body": {
+        "email": "fr03-a@example.com",
+        "resetToken": "1234567",
+        "newPassword": "Abcdef1!"
+      }
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "error": "Invalid token or email"
+      },
+      "error": null
+    },
+    "stateBefore": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "OldPass1!",
+        "reset_token": "123456"
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "stateAfter": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "OldPass1!",
+        "reset_token": "123456"
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "expected": "Yêu cầu bị từ chối, mật khẩu A giữ nguyên",
+    "verdict": "Passed",
+    "verdictReason": "Observed outcome matched expected specification."
+  },
+  {
+    "caseId": "FR03-TC-031",
+    "timestamp": "2026-10-12T05:16:06.202Z",
+    "layer": "API",
+    "request": {
+      "endpoint": "/api/reset-password",
+      "body": {
+        "email": "fr03-a@example.com",
+        "resetToken": "12345678",
+        "newPassword": "Abcdef1!"
+      }
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "error": "Invalid token or email"
+      },
+      "error": null
+    },
+    "stateBefore": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "OldPass1!",
+        "reset_token": "123456"
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "stateAfter": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "OldPass1!",
+        "reset_token": "123456"
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "expected": "Yêu cầu bị từ chối, mật khẩu A giữ nguyên",
+    "verdict": "Passed",
+    "verdictReason": "Observed outcome matched expected specification."
+  },
+  {
+    "caseId": "FR03-TC-032",
+    "timestamp": "2026-10-12T05:16:06.203Z",
+    "layer": "API",
+    "request": {
+      "endpoint": "/api/reset-password",
+      "body": {
+        "email": "fr03-a@example.com",
+        "resetToken": "12345x",
+        "newPassword": "Abcdef1!"
+      }
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "error": "Invalid token or email"
+      },
+      "error": null
+    },
+    "stateBefore": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "OldPass1!",
+        "reset_token": "123456"
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "stateAfter": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "OldPass1!",
+        "reset_token": "123456"
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "expected": "Yêu cầu bị từ chối, mật khẩu A giữ nguyên",
+    "verdict": "Passed",
+    "verdictReason": "Observed outcome matched expected specification."
+  },
+  {
+    "caseId": "FR03-TC-033",
+    "timestamp": "2026-10-12T05:16:06.204Z",
+    "layer": "API",
+    "request": {
+      "endpoint": "/api/reset-password",
+      "body": {
+        "email": "fr03-a@example.com",
+        "resetToken": "234567",
+        "newPassword": "Abcdef1!"
+      }
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "error": "Invalid token or email"
+      },
+      "error": null
+    },
+    "stateBefore": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "OldPass1!",
+        "reset_token": "123456"
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "stateAfter": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "OldPass1!",
+        "reset_token": "123456"
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "expected": "Yêu cầu bị từ chối, mật khẩu A giữ nguyên",
+    "verdict": "Passed",
+    "verdictReason": "Observed outcome matched expected specification."
+  },
+  {
+    "caseId": "FR03-TC-034",
+    "timestamp": "2026-10-12T05:16:06.205Z",
+    "layer": "API",
+    "request": {
+      "endpoint": "/api/reset-password",
+      "body": {
+        "email": "fr03-b@example.com",
+        "resetToken": "123456",
+        "newPassword": "Abcdef1!"
+      }
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "error": "Invalid token or email"
+      },
+      "error": null
+    },
+    "stateBefore": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "OldPass1!",
+        "reset_token": "123456"
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "stateAfter": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "OldPass1!",
+        "reset_token": "123456"
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "expected": "Yêu cầu bị từ chối, mật khẩu A và B đều không đổi",
+    "verdict": "Passed",
+    "verdictReason": "Observed outcome matched expected specification."
+  },
+  {
+    "caseId": "FR03-TC-035",
+    "timestamp": "2026-10-12T05:16:06.207Z",
+    "layer": "API",
+    "request": {
+      "endpoint": "/api/reset-password",
+      "body": {
+        "email": "fr03-a@example.com",
+        "resetToken": "654321",
+        "newPassword": "Abcdef1!"
+      }
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "error": "Invalid token or email"
+      },
+      "error": null
+    },
+    "stateBefore": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "OldPass1!",
+        "reset_token": "123456"
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "stateAfter": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "OldPass1!",
+        "reset_token": "123456"
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "expected": "Yêu cầu bị từ chối, mật khẩu A và B đều không đổi",
+    "verdict": "Passed",
+    "verdictReason": "Observed outcome matched expected specification."
+  },
+  {
+    "caseId": "FR03-TC-036",
+    "timestamp": "2026-10-12T05:16:06.208Z",
+    "layer": "API",
+    "request": {
+      "endpoint": "/api/reset-password",
+      "body": {
+        "email": "fr03-b@example.com",
+        "resetToken": "123456",
+        "newPassword": "Abcdef12"
+      }
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "error": "Invalid token or email"
+      },
+      "error": null
+    },
+    "stateBefore": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "OldPass1!",
+        "reset_token": "123456"
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "stateAfter": {
+      "userA": {
+        "email": "fr03-a@example.com",
+        "password": "OldPass1!",
+        "reset_token": "123456"
+      },
+      "userB": {
+        "email": "fr03-b@example.com",
+        "password": "OldPass1!",
+        "reset_token": "654321"
+      }
+    },
+    "expected": "Yêu cầu bị từ chối an toàn, mật khẩu A và B đều không đổi",
+    "verdict": "Passed",
+    "verdictReason": "Observed outcome matched expected specification."
+  }
+]
