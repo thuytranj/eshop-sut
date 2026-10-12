@@ -1,0 +1,1466 @@
+[
+  {
+    "id": "FR03-TC-001",
+    "sourceCaseIds": [
+      "FR03-DT-ISS-01"
+    ],
+    "techniques": [
+      "Domain Testing"
+    ],
+    "layer": "API",
+    "rules": [
+      "R01",
+      "R02",
+      "R09"
+    ],
+    "obligations": [
+      "OBL-DT-01"
+    ],
+    "preconditions": "Tài khoản fr03-a@example.com tồn tại, mật khẩu hiện tại OldPass1!",
+    "fixture": {
+      "email": "fr03-a@example.com"
+    },
+    "steps": "POST /api/forgot-password với email A",
+    "expected": "Status 200, body chứa resetToken đúng định dạng 6 chữ số ^[0-9]{6}$, DB cập nhật reset_token khớp mã, mật khẩu A không đổi",
+    "actual": "Chưa ghi nhận",
+    "status": "Not Run",
+    "evidence": "None"
+  },
+  {
+    "id": "FR03-TC-002",
+    "sourceCaseIds": [
+      "FR03-DT-ISS-02"
+    ],
+    "techniques": [
+      "Domain Testing"
+    ],
+    "layer": "API",
+    "rules": [
+      "R01",
+      "R09"
+    ],
+    "obligations": [
+      "OBL-DT-02"
+    ],
+    "preconditions": "Email fr03-missing@example.com không tồn tại trong hệ thống",
+    "fixture": {
+      "email": "fr03-missing@example.com"
+    },
+    "steps": "POST /api/forgot-password với email C",
+    "expected": "Status 4xx, không sinh token, CSDL không bị thay đổi",
+    "actual": "Chưa ghi nhận",
+    "status": "Not Run",
+    "evidence": "None"
+  },
+  {
+    "id": "FR03-TC-003",
+    "sourceCaseIds": [
+      "FR03-DT-LEN-02",
+      "FR03-DT-SPECIAL-03",
+      "FR03-BVA-LEN-05",
+      "FR03-BVA-UPPER-02",
+      "FR03-BVA-DIGIT-02",
+      "FR03-BVA-SPECIAL-02",
+      "FR03-BVA-OTP-05"
+    ],
+    "techniques": [
+      "Domain Testing",
+      "BVA"
+    ],
+    "layer": "API",
+    "rules": [
+      "R05",
+      "R06",
+      "R07",
+      "R09"
+    ],
+    "obligations": [
+      "OBL-DT-04",
+      "OBL-DT-11",
+      "OBL-BVA-LEN-8",
+      "OBL-BVA-UPPER-1",
+      "OBL-BVA-DIGIT-1",
+      "OBL-BVA-SPEC-1",
+      "OBL-BVA-OTP-6"
+    ],
+    "preconditions": "Tài khoản A có token hợp lệ 123456",
+    "fixture": {
+      "email": "fr03-a@example.com",
+      "resetToken": "123456",
+      "newPassword": "Abcdef1!"
+    },
+    "steps": "POST /api/reset-password với mật khẩu danh định 8 ký tự Abcdef1!",
+    "expected": "Status 200, mật khẩu A đổi thành Abcdef1!, reset_token xóa thành NULL, đăng nhập mới thành công",
+    "actual": "Chưa ghi nhận",
+    "status": "Not Run",
+    "evidence": "None"
+  },
+  {
+    "id": "FR03-TC-004",
+    "sourceCaseIds": [
+      "FR03-DT-LEN-01",
+      "FR03-BVA-LEN-04"
+    ],
+    "techniques": [
+      "Domain Testing",
+      "BVA"
+    ],
+    "layer": "API",
+    "rules": [
+      "R06",
+      "R09"
+    ],
+    "obligations": [
+      "OBL-DT-03",
+      "OBL-BVA-LEN-7"
+    ],
+    "preconditions": "Tài khoản A có token hợp lệ 123456",
+    "fixture": {
+      "email": "fr03-a@example.com",
+      "resetToken": "123456",
+      "newPassword": "Abcde1!"
+    },
+    "steps": "POST /api/reset-password với mật khẩu độ dài 7 Abcde1!",
+    "expected": "Yêu cầu bị từ chối, mật khẩu A giữ nguyên OldPass1!",
+    "actual": "Chưa ghi nhận",
+    "status": "Not Run",
+    "evidence": "None"
+  },
+  {
+    "id": "FR03-TC-005",
+    "sourceCaseIds": [
+      "FR03-DT-LEN-03",
+      "FR03-BVA-LEN-06"
+    ],
+    "techniques": [
+      "Domain Testing",
+      "BVA"
+    ],
+    "layer": "API",
+    "rules": [
+      "R06",
+      "R09"
+    ],
+    "obligations": [
+      "OBL-DT-05",
+      "OBL-BVA-LEN-9"
+    ],
+    "preconditions": "Tài khoản A có token hợp lệ 123456",
+    "fixture": {
+      "email": "fr03-a@example.com",
+      "resetToken": "123456",
+      "newPassword": "Abcdefg1!"
+    },
+    "steps": "POST /api/reset-password với mật khẩu độ dài 9 Abcdefg1!",
+    "expected": "Status 200, mật khẩu A đổi thành Abcdefg1!",
+    "actual": "Chưa ghi nhận",
+    "status": "Not Run",
+    "evidence": "None"
+  },
+  {
+    "id": "FR03-TC-006",
+    "sourceCaseIds": [
+      "FR03-DT-LEN-04"
+    ],
+    "techniques": [
+      "Domain Testing"
+    ],
+    "layer": "API",
+    "rules": [
+      "R06",
+      "R09"
+    ],
+    "obligations": [
+      "OBL-DT-06"
+    ],
+    "preconditions": "Tài khoản A có token hợp lệ 123456",
+    "fixture": {
+      "email": "fr03-a@example.com",
+      "resetToken": "123456",
+      "newPassword": "Abcdefgh1!"
+    },
+    "steps": "POST /api/reset-password với mật khẩu đối chứng trong miền độ dài 10 Abcdefgh1!",
+    "expected": "Status 200, mật khẩu A đổi thành Abcdefgh1!",
+    "actual": "Chưa ghi nhận",
+    "status": "Not Run",
+    "evidence": "None"
+  },
+  {
+    "id": "FR03-TC-007",
+    "sourceCaseIds": [
+      "FR03-BVA-LEN-01"
+    ],
+    "techniques": [
+      "BVA"
+    ],
+    "layer": "API",
+    "rules": [
+      "R06",
+      "R09"
+    ],
+    "obligations": [
+      "OBL-BVA-LEN-0"
+    ],
+    "preconditions": "Tài khoản A có token hợp lệ 123456",
+    "fixture": {
+      "email": "fr03-a@example.com",
+      "resetToken": "123456",
+      "newPassword": ""
+    },
+    "steps": "POST /api/reset-password với mật khẩu rỗng độ dài 0",
+    "expected": "Yêu cầu bị từ chối, mật khẩu A giữ nguyên",
+    "actual": "Chưa ghi nhận",
+    "status": "Not Run",
+    "evidence": "None"
+  },
+  {
+    "id": "FR03-TC-008",
+    "sourceCaseIds": [
+      "FR03-BVA-LEN-02"
+    ],
+    "techniques": [
+      "BVA"
+    ],
+    "layer": "API",
+    "rules": [
+      "R06",
+      "R09"
+    ],
+    "obligations": [
+      "OBL-BVA-LEN-1"
+    ],
+    "preconditions": "Tài khoản A có token hợp lệ 123456",
+    "fixture": {
+      "email": "fr03-a@example.com",
+      "resetToken": "123456",
+      "newPassword": "A"
+    },
+    "steps": "POST /api/reset-password với mật khẩu độ dài 1 A",
+    "expected": "Yêu cầu bị từ chối, mật khẩu A giữ nguyên",
+    "actual": "Chưa ghi nhận",
+    "status": "Not Run",
+    "evidence": "None"
+  },
+  {
+    "id": "FR03-TC-009",
+    "sourceCaseIds": [
+      "FR03-BVA-LEN-03"
+    ],
+    "techniques": [
+      "BVA"
+    ],
+    "layer": "API",
+    "rules": [
+      "R06",
+      "R09"
+    ],
+    "obligations": [
+      "OBL-BVA-LEN-6"
+    ],
+    "preconditions": "Tài khoản A có token hợp lệ 123456",
+    "fixture": {
+      "email": "fr03-a@example.com",
+      "resetToken": "123456",
+      "newPassword": "Abcd1!"
+    },
+    "steps": "POST /api/reset-password với mật khẩu độ dài 6 Abcd1!",
+    "expected": "Yêu cầu bị từ chối, mật khẩu A giữ nguyên",
+    "actual": "Chưa ghi nhận",
+    "status": "Not Run",
+    "evidence": "None"
+  },
+  {
+    "id": "FR03-TC-010",
+    "sourceCaseIds": [
+      "FR03-DT-CLASS-01",
+      "FR03-BVA-UPPER-01"
+    ],
+    "techniques": [
+      "Domain Testing",
+      "BVA"
+    ],
+    "layer": "API",
+    "rules": [
+      "R07",
+      "R09"
+    ],
+    "obligations": [
+      "OBL-DT-07",
+      "OBL-BVA-UPPER-0"
+    ],
+    "preconditions": "Tài khoản A có token hợp lệ 123456",
+    "fixture": {
+      "email": "fr03-a@example.com",
+      "resetToken": "123456",
+      "newPassword": "abcdef1!"
+    },
+    "steps": "POST /api/reset-password với mật khẩu thiếu chữ hoa abcdef1!",
+    "expected": "Yêu cầu bị từ chối, mật khẩu A giữ nguyên",
+    "actual": "Chưa ghi nhận",
+    "status": "Not Run",
+    "evidence": "None"
+  },
+  {
+    "id": "FR03-TC-011",
+    "sourceCaseIds": [
+      "FR03-BVA-UPPER-03"
+    ],
+    "techniques": [
+      "BVA"
+    ],
+    "layer": "API",
+    "rules": [
+      "R07",
+      "R09"
+    ],
+    "obligations": [
+      "OBL-BVA-UPPER-2"
+    ],
+    "preconditions": "Tài khoản A có token hợp lệ 123456",
+    "fixture": {
+      "email": "fr03-a@example.com",
+      "resetToken": "123456",
+      "newPassword": "ABcdef1!"
+    },
+    "steps": "POST /api/reset-password với mật khẩu có 2 chữ hoa ABcdef1!",
+    "expected": "Status 200, mật khẩu A đổi thành ABcdef1!",
+    "actual": "Chưa ghi nhận",
+    "status": "Not Run",
+    "evidence": "None"
+  },
+  {
+    "id": "FR03-TC-012",
+    "sourceCaseIds": [
+      "FR03-DT-CLASS-02",
+      "FR03-BVA-LOWER-01"
+    ],
+    "techniques": [
+      "Domain Testing",
+      "BVA"
+    ],
+    "layer": "API",
+    "rules": [
+      "R07",
+      "R09"
+    ],
+    "obligations": [
+      "OBL-DT-08",
+      "OBL-BVA-LOWER-0"
+    ],
+    "preconditions": "Tài khoản A có token hợp lệ 123456",
+    "fixture": {
+      "email": "fr03-a@example.com",
+      "resetToken": "123456",
+      "newPassword": "ABCDEF1!"
+    },
+    "steps": "POST /api/reset-password với mật khẩu thiếu chữ thường ABCDEF1!",
+    "expected": "Yêu cầu bị từ chối, mật khẩu A giữ nguyên",
+    "actual": "Chưa ghi nhận",
+    "status": "Not Run",
+    "evidence": "None"
+  },
+  {
+    "id": "FR03-TC-013",
+    "sourceCaseIds": [
+      "FR03-BVA-LOWER-02"
+    ],
+    "techniques": [
+      "BVA"
+    ],
+    "layer": "API",
+    "rules": [
+      "R07",
+      "R09"
+    ],
+    "obligations": [
+      "OBL-BVA-LOWER-1"
+    ],
+    "preconditions": "Tài khoản A có token hợp lệ 123456",
+    "fixture": {
+      "email": "fr03-a@example.com",
+      "resetToken": "123456",
+      "newPassword": "aBCDEF1!"
+    },
+    "steps": "POST /api/reset-password với mật khẩu có 1 chữ thường aBCDEF1!",
+    "expected": "Status 200, mật khẩu A đổi thành aBCDEF1!",
+    "actual": "Chưa ghi nhận",
+    "status": "Not Run",
+    "evidence": "None"
+  },
+  {
+    "id": "FR03-TC-014",
+    "sourceCaseIds": [
+      "FR03-BVA-LOWER-03"
+    ],
+    "techniques": [
+      "BVA"
+    ],
+    "layer": "API",
+    "rules": [
+      "R07",
+      "R09"
+    ],
+    "obligations": [
+      "OBL-BVA-LOWER-2"
+    ],
+    "preconditions": "Tài khoản A có token hợp lệ 123456",
+    "fixture": {
+      "email": "fr03-a@example.com",
+      "resetToken": "123456",
+      "newPassword": "abCDEF1!"
+    },
+    "steps": "POST /api/reset-password với mật khẩu có 2 chữ thường abCDEF1!",
+    "expected": "Status 200, mật khẩu A đổi thành abCDEF1!",
+    "actual": "Chưa ghi nhận",
+    "status": "Not Run",
+    "evidence": "None"
+  },
+  {
+    "id": "FR03-TC-015",
+    "sourceCaseIds": [
+      "FR03-DT-CLASS-03",
+      "FR03-BVA-DIGIT-01"
+    ],
+    "techniques": [
+      "Domain Testing",
+      "BVA"
+    ],
+    "layer": "API",
+    "rules": [
+      "R07",
+      "R09"
+    ],
+    "obligations": [
+      "OBL-DT-09",
+      "OBL-BVA-DIGIT-0"
+    ],
+    "preconditions": "Tài khoản A có token hợp lệ 123456",
+    "fixture": {
+      "email": "fr03-a@example.com",
+      "resetToken": "123456",
+      "newPassword": "Abcdefg!"
+    },
+    "steps": "POST /api/reset-password với mật khẩu thiếu chữ số Abcdefg!",
+    "expected": "Yêu cầu bị từ chối, mật khẩu A giữ nguyên",
+    "actual": "Chưa ghi nhận",
+    "status": "Not Run",
+    "evidence": "None"
+  },
+  {
+    "id": "FR03-TC-016",
+    "sourceCaseIds": [
+      "FR03-BVA-DIGIT-03"
+    ],
+    "techniques": [
+      "BVA"
+    ],
+    "layer": "API",
+    "rules": [
+      "R07",
+      "R09"
+    ],
+    "obligations": [
+      "OBL-BVA-DIGIT-2"
+    ],
+    "preconditions": "Tài khoản A có token hợp lệ 123456",
+    "fixture": {
+      "email": "fr03-a@example.com",
+      "resetToken": "123456",
+      "newPassword": "Abcde12!"
+    },
+    "steps": "POST /api/reset-password với mật khẩu có 2 chữ số Abcde12!",
+    "expected": "Status 200, mật khẩu A đổi thành Abcde12!",
+    "actual": "Chưa ghi nhận",
+    "status": "Not Run",
+    "evidence": "None"
+  },
+  {
+    "id": "FR03-TC-017",
+    "sourceCaseIds": [
+      "FR03-DT-CLASS-04",
+      "FR03-BVA-SPECIAL-01"
+    ],
+    "techniques": [
+      "Domain Testing",
+      "BVA"
+    ],
+    "layer": "API",
+    "rules": [
+      "R07",
+      "R09"
+    ],
+    "obligations": [
+      "OBL-DT-10",
+      "OBL-BVA-SPEC-0"
+    ],
+    "preconditions": "Tài khoản A có token hợp lệ 123456",
+    "fixture": {
+      "email": "fr03-a@example.com",
+      "resetToken": "123456",
+      "newPassword": "Abcdef12"
+    },
+    "steps": "POST /api/reset-password với mật khẩu thiếu ký tự đặc biệt Abcdef12",
+    "expected": "Yêu cầu bị từ chối, mật khẩu A giữ nguyên",
+    "actual": "Chưa ghi nhận",
+    "status": "Not Run",
+    "evidence": "None"
+  },
+  {
+    "id": "FR03-TC-018",
+    "sourceCaseIds": [
+      "FR03-BVA-SPECIAL-03"
+    ],
+    "techniques": [
+      "BVA"
+    ],
+    "layer": "API",
+    "rules": [
+      "R07",
+      "R09"
+    ],
+    "obligations": [
+      "OBL-BVA-SPEC-2"
+    ],
+    "preconditions": "Tài khoản A có token hợp lệ 123456",
+    "fixture": {
+      "email": "fr03-a@example.com",
+      "resetToken": "123456",
+      "newPassword": "Abcde1!&"
+    },
+    "steps": "POST /api/reset-password với mật khẩu có 2 ký tự đặc biệt Abcde1!&",
+    "expected": "Status 200, mật khẩu A đổi thành Abcde1!&",
+    "actual": "Chưa ghi nhận",
+    "status": "Not Run",
+    "evidence": "None"
+  },
+  {
+    "id": "FR03-TC-019",
+    "sourceCaseIds": [
+      "FR03-DT-SPECIAL-01"
+    ],
+    "techniques": [
+      "Domain Testing"
+    ],
+    "layer": "API",
+    "rules": [
+      "R07",
+      "R09"
+    ],
+    "obligations": [
+      "OBL-DT-11"
+    ],
+    "preconditions": "Tài khoản A có token hợp lệ 123456",
+    "fixture": {
+      "email": "fr03-a@example.com",
+      "resetToken": "123456",
+      "newPassword": "Abcdef1@"
+    },
+    "steps": "POST /api/reset-password với ký tự đặc biệt @ Abcdef1@",
+    "expected": "Status 200, mật khẩu A đổi thành Abcdef1@",
+    "actual": "Chưa ghi nhận",
+    "status": "Not Run",
+    "evidence": "None"
+  },
+  {
+    "id": "FR03-TC-020",
+    "sourceCaseIds": [
+      "FR03-DT-SPECIAL-02"
+    ],
+    "techniques": [
+      "Domain Testing"
+    ],
+    "layer": "API",
+    "rules": [
+      "R07",
+      "R09"
+    ],
+    "obligations": [
+      "OBL-DT-11"
+    ],
+    "preconditions": "Tài khoản A có token hợp lệ 123456",
+    "fixture": {
+      "email": "fr03-a@example.com",
+      "resetToken": "123456",
+      "newPassword": "Abcdef1$"
+    },
+    "steps": "POST /api/reset-password với ký tự đặc biệt $ Abcdef1$",
+    "expected": "Status 200, mật khẩu A đổi thành Abcdef1$",
+    "actual": "Chưa ghi nhận",
+    "status": "Not Run",
+    "evidence": "None"
+  },
+  {
+    "id": "FR03-TC-021",
+    "sourceCaseIds": [
+      "FR03-DT-SPECIAL-04"
+    ],
+    "techniques": [
+      "Domain Testing"
+    ],
+    "layer": "API",
+    "rules": [
+      "R07",
+      "R09"
+    ],
+    "obligations": [
+      "OBL-DT-11"
+    ],
+    "preconditions": "Tài khoản A có token hợp lệ 123456",
+    "fixture": {
+      "email": "fr03-a@example.com",
+      "resetToken": "123456",
+      "newPassword": "Abcdef1%"
+    },
+    "steps": "POST /api/reset-password với ký tự đặc biệt % Abcdef1%",
+    "expected": "Status 200, mật khẩu A đổi thành Abcdef1%",
+    "actual": "Chưa ghi nhận",
+    "status": "Not Run",
+    "evidence": "None"
+  },
+  {
+    "id": "FR03-TC-022",
+    "sourceCaseIds": [
+      "FR03-DT-SPECIAL-05"
+    ],
+    "techniques": [
+      "Domain Testing"
+    ],
+    "layer": "API",
+    "rules": [
+      "R07",
+      "R09"
+    ],
+    "obligations": [
+      "OBL-DT-11"
+    ],
+    "preconditions": "Tài khoản A có token hợp lệ 123456",
+    "fixture": {
+      "email": "fr03-a@example.com",
+      "resetToken": "123456",
+      "newPassword": "Abcdef1*"
+    },
+    "steps": "POST /api/reset-password với ký tự đặc biệt * Abcdef1*",
+    "expected": "Status 200, mật khẩu A đổi thành Abcdef1*",
+    "actual": "Chưa ghi nhận",
+    "status": "Not Run",
+    "evidence": "None"
+  },
+  {
+    "id": "FR03-TC-023",
+    "sourceCaseIds": [
+      "FR03-DT-SPECIAL-06"
+    ],
+    "techniques": [
+      "Domain Testing"
+    ],
+    "layer": "API",
+    "rules": [
+      "R07",
+      "R09"
+    ],
+    "obligations": [
+      "OBL-DT-11"
+    ],
+    "preconditions": "Tài khoản A có token hợp lệ 123456",
+    "fixture": {
+      "email": "fr03-a@example.com",
+      "resetToken": "123456",
+      "newPassword": "Abcdef1?"
+    },
+    "steps": "POST /api/reset-password với ký tự đặc biệt ? Abcdef1?",
+    "expected": "Status 200, mật khẩu A đổi thành Abcdef1?",
+    "actual": "Chưa ghi nhận",
+    "status": "Not Run",
+    "evidence": "None"
+  },
+  {
+    "id": "FR03-TC-024",
+    "sourceCaseIds": [
+      "FR03-DT-SPECIAL-07"
+    ],
+    "techniques": [
+      "Domain Testing"
+    ],
+    "layer": "API",
+    "rules": [
+      "R07",
+      "R09"
+    ],
+    "obligations": [
+      "OBL-DT-11"
+    ],
+    "preconditions": "Tài khoản A có token hợp lệ 123456",
+    "fixture": {
+      "email": "fr03-a@example.com",
+      "resetToken": "123456",
+      "newPassword": "Abcdef1&"
+    },
+    "steps": "POST /api/reset-password với ký tự đặc biệt & Abcdef1&",
+    "expected": "Status 200, mật khẩu A đổi thành Abcdef1&",
+    "actual": "Chưa ghi nhận",
+    "status": "Not Run",
+    "evidence": "None"
+  },
+  {
+    "id": "FR03-TC-025",
+    "sourceCaseIds": [
+      "FR03-DT-SPECIAL-08"
+    ],
+    "techniques": [
+      "Domain Testing"
+    ],
+    "layer": "API",
+    "rules": [
+      "R07",
+      "R09"
+    ],
+    "obligations": [
+      "OBL-DT-12"
+    ],
+    "preconditions": "Tài khoản A có token hợp lệ 123456",
+    "fixture": {
+      "email": "fr03-a@example.com",
+      "resetToken": "123456",
+      "newPassword": "Abcdef1 "
+    },
+    "steps": "POST /api/reset-password với ký tự khoảng trắng thay cho ký tự đặc biệt Abcdef1 ",
+    "expected": "Yêu cầu bị từ chối, mật khẩu A giữ nguyên",
+    "actual": "Chưa ghi nhận",
+    "status": "Not Run",
+    "evidence": "None"
+  },
+  {
+    "id": "FR03-TC-026",
+    "sourceCaseIds": [
+      "FR03-BVA-OTP-01"
+    ],
+    "techniques": [
+      "BVA"
+    ],
+    "layer": "API",
+    "rules": [
+      "R02",
+      "R05",
+      "R09"
+    ],
+    "obligations": [
+      "OBL-BVA-OTP-0"
+    ],
+    "preconditions": "Tài khoản A có token hợp lệ 123456",
+    "fixture": {
+      "email": "fr03-a@example.com",
+      "resetToken": "",
+      "newPassword": "Abcdef1!"
+    },
+    "steps": "POST /api/reset-password với OTP rỗng độ dài 0",
+    "expected": "Yêu cầu bị từ chối, mật khẩu A giữ nguyên",
+    "actual": "Chưa ghi nhận",
+    "status": "Not Run",
+    "evidence": "None"
+  },
+  {
+    "id": "FR03-TC-027",
+    "sourceCaseIds": [
+      "FR03-BVA-OTP-02"
+    ],
+    "techniques": [
+      "BVA"
+    ],
+    "layer": "API",
+    "rules": [
+      "R02",
+      "R05",
+      "R09"
+    ],
+    "obligations": [
+      "OBL-BVA-OTP-1"
+    ],
+    "preconditions": "Tài khoản A có token hợp lệ 123456",
+    "fixture": {
+      "email": "fr03-a@example.com",
+      "resetToken": "1",
+      "newPassword": "Abcdef1!"
+    },
+    "steps": "POST /api/reset-password với OTP độ dài 1 1",
+    "expected": "Yêu cầu bị từ chối, mật khẩu A giữ nguyên",
+    "actual": "Chưa ghi nhận",
+    "status": "Not Run",
+    "evidence": "None"
+  },
+  {
+    "id": "FR03-TC-028",
+    "sourceCaseIds": [
+      "FR03-BVA-OTP-03"
+    ],
+    "techniques": [
+      "BVA"
+    ],
+    "layer": "API",
+    "rules": [
+      "R02",
+      "R05",
+      "R09"
+    ],
+    "obligations": [
+      "OBL-BVA-OTP-4"
+    ],
+    "preconditions": "Tài khoản A có token hợp lệ 123456",
+    "fixture": {
+      "email": "fr03-a@example.com",
+      "resetToken": "1234",
+      "newPassword": "Abcdef1!"
+    },
+    "steps": "POST /api/reset-password với OTP độ dài 4 1234",
+    "expected": "Yêu cầu bị từ chối, mật khẩu A giữ nguyên",
+    "actual": "Chưa ghi nhận",
+    "status": "Not Run",
+    "evidence": "None"
+  },
+  {
+    "id": "FR03-TC-029",
+    "sourceCaseIds": [
+      "FR03-DT-TOKEN-01",
+      "FR03-BVA-OTP-04"
+    ],
+    "techniques": [
+      "Domain Testing",
+      "BVA"
+    ],
+    "layer": "API",
+    "rules": [
+      "R02",
+      "R05",
+      "R09"
+    ],
+    "obligations": [
+      "OBL-DT-13",
+      "OBL-BVA-OTP-5"
+    ],
+    "preconditions": "Tài khoản A có token hợp lệ 123456",
+    "fixture": {
+      "email": "fr03-a@example.com",
+      "resetToken": "12345",
+      "newPassword": "Abcdef1!"
+    },
+    "steps": "POST /api/reset-password với OTP độ dài 5 12345",
+    "expected": "Yêu cầu bị từ chối, mật khẩu A giữ nguyên",
+    "actual": "Chưa ghi nhận",
+    "status": "Not Run",
+    "evidence": "None"
+  },
+  {
+    "id": "FR03-TC-030",
+    "sourceCaseIds": [
+      "FR03-DT-TOKEN-02",
+      "FR03-BVA-OTP-06"
+    ],
+    "techniques": [
+      "Domain Testing",
+      "BVA"
+    ],
+    "layer": "API",
+    "rules": [
+      "R02",
+      "R05",
+      "R09"
+    ],
+    "obligations": [
+      "OBL-DT-14",
+      "OBL-BVA-OTP-7"
+    ],
+    "preconditions": "Tài khoản A có token hợp lệ 123456",
+    "fixture": {
+      "email": "fr03-a@example.com",
+      "resetToken": "1234567",
+      "newPassword": "Abcdef1!"
+    },
+    "steps": "POST /api/reset-password với OTP độ dài 7 1234567",
+    "expected": "Yêu cầu bị từ chối, mật khẩu A giữ nguyên",
+    "actual": "Chưa ghi nhận",
+    "status": "Not Run",
+    "evidence": "None"
+  },
+  {
+    "id": "FR03-TC-031",
+    "sourceCaseIds": [
+      "FR03-BVA-OTP-07"
+    ],
+    "techniques": [
+      "BVA"
+    ],
+    "layer": "API",
+    "rules": [
+      "R02",
+      "R05",
+      "R09"
+    ],
+    "obligations": [
+      "OBL-BVA-OTP-8"
+    ],
+    "preconditions": "Tài khoản A có token hợp lệ 123456",
+    "fixture": {
+      "email": "fr03-a@example.com",
+      "resetToken": "12345678",
+      "newPassword": "Abcdef1!"
+    },
+    "steps": "POST /api/reset-password với OTP độ dài 8 12345678",
+    "expected": "Yêu cầu bị từ chối, mật khẩu A giữ nguyên",
+    "actual": "Chưa ghi nhận",
+    "status": "Not Run",
+    "evidence": "None"
+  },
+  {
+    "id": "FR03-TC-032",
+    "sourceCaseIds": [
+      "FR03-DT-TOKEN-03"
+    ],
+    "techniques": [
+      "Domain Testing"
+    ],
+    "layer": "API",
+    "rules": [
+      "R02",
+      "R05",
+      "R09"
+    ],
+    "obligations": [
+      "OBL-DT-15"
+    ],
+    "preconditions": "Tài khoản A có token hợp lệ 123456",
+    "fixture": {
+      "email": "fr03-a@example.com",
+      "resetToken": "12345x",
+      "newPassword": "Abcdef1!"
+    },
+    "steps": "POST /api/reset-password với OTP chứa chữ 12345x",
+    "expected": "Yêu cầu bị từ chối, mật khẩu A giữ nguyên",
+    "actual": "Chưa ghi nhận",
+    "status": "Not Run",
+    "evidence": "None"
+  },
+  {
+    "id": "FR03-TC-033",
+    "sourceCaseIds": [
+      "FR03-DT-TOKEN-04"
+    ],
+    "techniques": [
+      "Domain Testing"
+    ],
+    "layer": "API",
+    "rules": [
+      "R05",
+      "R09"
+    ],
+    "obligations": [
+      "OBL-DT-16"
+    ],
+    "preconditions": "Tài khoản A có token hợp lệ 123456",
+    "fixture": {
+      "email": "fr03-a@example.com",
+      "resetToken": "234567",
+      "newPassword": "Abcdef1!"
+    },
+    "steps": "POST /api/reset-password với OTP 6 số không thuộc quyền 234567",
+    "expected": "Yêu cầu bị từ chối, mật khẩu A giữ nguyên",
+    "actual": "Chưa ghi nhận",
+    "status": "Not Run",
+    "evidence": "None"
+  },
+  {
+    "id": "FR03-TC-034",
+    "sourceCaseIds": [
+      "FR03-DT-BIND-01"
+    ],
+    "techniques": [
+      "Domain Testing"
+    ],
+    "layer": "API",
+    "rules": [
+      "R05",
+      "R09"
+    ],
+    "obligations": [
+      "OBL-DT-17"
+    ],
+    "preconditions": "Tài khoản A có token 123456, B có token 654321",
+    "fixture": {
+      "email": "fr03-b@example.com",
+      "resetToken": "123456",
+      "newPassword": "Abcdef1!"
+    },
+    "steps": "POST /api/reset-password cho email B nhưng dùng token của A",
+    "expected": "Yêu cầu bị từ chối, mật khẩu A và B đều không đổi",
+    "actual": "Chưa ghi nhận",
+    "status": "Not Run",
+    "evidence": "None"
+  },
+  {
+    "id": "FR03-TC-035",
+    "sourceCaseIds": [
+      "FR03-DT-BIND-02"
+    ],
+    "techniques": [
+      "Domain Testing"
+    ],
+    "layer": "API",
+    "rules": [
+      "R05",
+      "R09"
+    ],
+    "obligations": [
+      "OBL-DT-18"
+    ],
+    "preconditions": "Tài khoản A có token 123456, B có token 654321",
+    "fixture": {
+      "email": "fr03-a@example.com",
+      "resetToken": "654321",
+      "newPassword": "Abcdef1!"
+    },
+    "steps": "POST /api/reset-password cho email A nhưng dùng token của B",
+    "expected": "Yêu cầu bị từ chối, mật khẩu A và B đều không đổi",
+    "actual": "Chưa ghi nhận",
+    "status": "Not Run",
+    "evidence": "None"
+  },
+  {
+    "id": "FR03-TC-036",
+    "sourceCaseIds": [
+      "FR03-DT-INT-02"
+    ],
+    "techniques": [
+      "Domain Testing"
+    ],
+    "layer": "API",
+    "rules": [
+      "R05",
+      "R07",
+      "R09"
+    ],
+    "obligations": [
+      "OBL-DT-19"
+    ],
+    "preconditions": "Tài khoản A có token 123456, B có token 654321",
+    "fixture": {
+      "email": "fr03-b@example.com",
+      "resetToken": "123456",
+      "newPassword": "Abcdef12"
+    },
+    "steps": "POST /api/reset-password cho B với token A và mật khẩu thiếu ký tự đặc biệt",
+    "expected": "Yêu cầu bị từ chối an toàn, mật khẩu A và B đều không đổi",
+    "actual": "Chưa ghi nhận",
+    "status": "Not Run",
+    "evidence": "None"
+  },
+  {
+    "id": "FR03-TC-037",
+    "sourceCaseIds": [
+      "FR03-DT-WEB-FLOW-01"
+    ],
+    "techniques": [
+      "Domain Testing"
+    ],
+    "layer": "WEB",
+    "rules": [
+      "R02",
+      "R03"
+    ],
+    "obligations": [
+      "OBL-DT-20"
+    ],
+    "preconditions": "Tài khoản A tồn tại trong hệ thống",
+    "fixture": {
+      "email": "fr03-a@example.com"
+    },
+    "steps": "Truy cập /forgot-password, quan sát chỉ báo bước 1, nhập email A, click gửi, quan sát chỉ báo bước 2 và hiển thị OTP demo",
+    "expected": "Giao diện hiển thị rõ chỉ báo Bước 1 / 2 sau đó Bước 2 / 2; thông báo OTP demo hiển thị đúng định dạng 6 chữ số",
+    "actual": "Chưa ghi nhận",
+    "status": "Not Run",
+    "evidence": "None"
+  },
+  {
+    "id": "FR03-TC-038",
+    "sourceCaseIds": [
+      "FR03-DT-WEB-NAV-01"
+    ],
+    "techniques": [
+      "Domain Testing"
+    ],
+    "layer": "WEB",
+    "rules": [
+      "R04"
+    ],
+    "obligations": [
+      "OBL-DT-21"
+    ],
+    "preconditions": "Đang ở trang /forgot-password",
+    "fixture": {},
+    "steps": "Click nút/liên kết 'Quay lại đăng nhập' tại Bước 1",
+    "expected": "Trình duyệt điều hướng thành công về URL /login",
+    "actual": "Chưa ghi nhận",
+    "status": "Not Run",
+    "evidence": "None"
+  },
+  {
+    "id": "FR03-TC-039",
+    "sourceCaseIds": [
+      "FR03-DT-WEB-CONF-01"
+    ],
+    "techniques": [
+      "Domain Testing"
+    ],
+    "layer": "WEB",
+    "rules": [
+      "R08"
+    ],
+    "obligations": [
+      "OBL-DT-22"
+    ],
+    "preconditions": "Tài khoản A có token 123456",
+    "fixture": {
+      "email": "fr03-a@example.com",
+      "resetToken": "123456",
+      "newPassword": "Abcdef1!",
+      "confirmPassword": "Abcdef1!"
+    },
+    "steps": "Tại Bước 2, nhập OTP 123456, mật khẩu mới Abcdef1!, xác nhận Abcdef1!, click Đặt lại",
+    "expected": "Form chấp nhận, submit thành công và điều hướng về /login",
+    "actual": "Chưa ghi nhận",
+    "status": "Not Run",
+    "evidence": "None"
+  },
+  {
+    "id": "FR03-TC-040",
+    "sourceCaseIds": [
+      "FR03-DT-WEB-CONF-02"
+    ],
+    "techniques": [
+      "Domain Testing"
+    ],
+    "layer": "WEB",
+    "rules": [
+      "R08"
+    ],
+    "obligations": [
+      "OBL-DT-22"
+    ],
+    "preconditions": "Tài khoản A có token 123456",
+    "fixture": {
+      "email": "fr03-a@example.com",
+      "resetToken": "123456",
+      "newPassword": "Zyxwvu2&",
+      "confirmPassword": "Zyxwvu2&"
+    },
+    "steps": "Tại Bước 2, nhập OTP 123456, mật khẩu mới Zyxwvu2&, xác nhận Zyxwvu2&, click Đặt lại",
+    "expected": "Form chấp nhận, submit thành công",
+    "actual": "Chưa ghi nhận",
+    "status": "Not Run",
+    "evidence": "None"
+  },
+  {
+    "id": "FR03-TC-041",
+    "sourceCaseIds": [
+      "FR03-DT-WEB-CONF-03"
+    ],
+    "techniques": [
+      "Domain Testing"
+    ],
+    "layer": "WEB",
+    "rules": [
+      "R08"
+    ],
+    "obligations": [
+      "OBL-DT-23"
+    ],
+    "preconditions": "Tài khoản A có token 123456",
+    "fixture": {
+      "email": "fr03-a@example.com",
+      "resetToken": "123456",
+      "newPassword": "Abcdef1!",
+      "confirmPassword": "Abcdef2!"
+    },
+    "steps": "Tại Bước 2, nhập OTP 123456, mật khẩu mới Abcdef1!, xác nhận sai thay thế Abcdef2!, click Đặt lại",
+    "expected": "Form từ chối submit, hiển thị thông báo mật khẩu xác nhận không khớp",
+    "actual": "Chưa ghi nhận",
+    "status": "Not Run",
+    "evidence": "None"
+  },
+  {
+    "id": "FR03-TC-042",
+    "sourceCaseIds": [
+      "FR03-DT-WEB-CONF-04"
+    ],
+    "techniques": [
+      "Domain Testing"
+    ],
+    "layer": "WEB",
+    "rules": [
+      "R08"
+    ],
+    "obligations": [
+      "OBL-DT-23"
+    ],
+    "preconditions": "Tài khoản A có token 123456",
+    "fixture": {
+      "email": "fr03-a@example.com",
+      "resetToken": "123456",
+      "newPassword": "Abcdef1!",
+      "confirmPassword": "Abcdef1"
+    },
+    "steps": "Tại Bước 2, nhập OTP 123456, mật khẩu mới Abcdef1!, xác nhận sai xóa ký tự Abcdef1, click Đặt lại",
+    "expected": "Form từ chối submit, hiển thị lỗi không khớp",
+    "actual": "Chưa ghi nhận",
+    "status": "Not Run",
+    "evidence": "None"
+  },
+  {
+    "id": "FR03-TC-043",
+    "sourceCaseIds": [
+      "FR03-DT-WEB-CONF-05"
+    ],
+    "techniques": [
+      "Domain Testing"
+    ],
+    "layer": "WEB",
+    "rules": [
+      "R08"
+    ],
+    "obligations": [
+      "OBL-DT-23"
+    ],
+    "preconditions": "Tài khoản A có token 123456",
+    "fixture": {
+      "email": "fr03-a@example.com",
+      "resetToken": "123456",
+      "newPassword": "Abcdef1!",
+      "confirmPassword": "Abcdef1!!"
+    },
+    "steps": "Tại Bước 2, nhập OTP 123456, mật khẩu mới Abcdef1!, xác nhận sai chèn ký tự Abcdef1!!, click Đặt lại",
+    "expected": "Form từ chối submit, hiển thị lỗi không khớp",
+    "actual": "Chưa ghi nhận",
+    "status": "Not Run",
+    "evidence": "None"
+  },
+  {
+    "id": "FR03-TC-044",
+    "sourceCaseIds": [
+      "FR03-DT-WEB-CONF-06"
+    ],
+    "techniques": [
+      "Domain Testing"
+    ],
+    "layer": "WEB",
+    "rules": [
+      "R08"
+    ],
+    "obligations": [
+      "OBL-DT-24"
+    ],
+    "preconditions": "Tại Bước 2 giao diện ForgotPassword",
+    "fixture": {},
+    "steps": "Kiểm tra cấu trúc DOM: kiểm tra sự hiện diện của input 'Xác nhận mật khẩu mới' và thử submit để trống",
+    "expected": "Trường input xác nhận mật khẩu hiện diện trong DOM; không thể submit nếu để trống",
+    "actual": "Chưa ghi nhận",
+    "status": "Not Run",
+    "evidence": "None"
+  },
+  {
+    "id": "FR03-TC-045",
+    "sourceCaseIds": [
+      "FR03-DT-WEB-SPECIAL-01"
+    ],
+    "techniques": [
+      "Domain Testing"
+    ],
+    "layer": "WEB",
+    "rules": [
+      "R07"
+    ],
+    "obligations": [
+      "OBL-DT-25"
+    ],
+    "preconditions": "Tài khoản A có token 123456",
+    "fixture": {
+      "newPassword": "Abcdef1@"
+    },
+    "steps": "Tại Bước 2, nhập mật khẩu có ký tự @ Abcdef1@, click Đặt lại",
+    "expected": "Form chấp nhận mật khẩu hợp lệ",
+    "actual": "Chưa ghi nhận",
+    "status": "Not Run",
+    "evidence": "None"
+  },
+  {
+    "id": "FR03-TC-046",
+    "sourceCaseIds": [
+      "FR03-DT-WEB-SPECIAL-02"
+    ],
+    "techniques": [
+      "Domain Testing"
+    ],
+    "layer": "WEB",
+    "rules": [
+      "R07"
+    ],
+    "obligations": [
+      "OBL-DT-25"
+    ],
+    "preconditions": "Tài khoản A có token 123456",
+    "fixture": {
+      "newPassword": "Abcdef1$"
+    },
+    "steps": "Tại Bước 2, nhập mật khẩu có ký tự $ Abcdef1$, click Đặt lại",
+    "expected": "Form chấp nhận mật khẩu hợp lệ",
+    "actual": "Chưa ghi nhận",
+    "status": "Not Run",
+    "evidence": "None"
+  },
+  {
+    "id": "FR03-TC-047",
+    "sourceCaseIds": [
+      "FR03-DT-WEB-SPECIAL-03"
+    ],
+    "techniques": [
+      "Domain Testing"
+    ],
+    "layer": "WEB",
+    "rules": [
+      "R07"
+    ],
+    "obligations": [
+      "OBL-DT-25"
+    ],
+    "preconditions": "Tài khoản A có token 123456",
+    "fixture": {
+      "newPassword": "Abcdef1!"
+    },
+    "steps": "Tại Bước 2, nhập mật khẩu có ký tự ! Abcdef1!, click Đặt lại",
+    "expected": "Form chấp nhận mật khẩu hợp lệ",
+    "actual": "Chưa ghi nhận",
+    "status": "Not Run",
+    "evidence": "None"
+  },
+  {
+    "id": "FR03-TC-048",
+    "sourceCaseIds": [
+      "FR03-DT-SPECIAL-04"
+    ],
+    "techniques": [
+      "Domain Testing"
+    ],
+    "layer": "WEB",
+    "rules": [
+      "R07"
+    ],
+    "obligations": [
+      "OBL-DT-25"
+    ],
+    "preconditions": "Tài khoản A có token 123456",
+    "fixture": {
+      "newPassword": "Abcdef1%"
+    },
+    "steps": "Tại Bước 2, nhập mật khẩu có ký tự % Abcdef1%, click Đặt lại",
+    "expected": "Form chấp nhận mật khẩu hợp lệ",
+    "actual": "Chưa ghi nhận",
+    "status": "Not Run",
+    "evidence": "None"
+  },
+  {
+    "id": "FR03-TC-049",
+    "sourceCaseIds": [
+      "FR03-DT-SPECIAL-05"
+    ],
+    "techniques": [
+      "Domain Testing"
+    ],
+    "layer": "WEB",
+    "rules": [
+      "R07"
+    ],
+    "obligations": [
+      "OBL-DT-25"
+    ],
+    "preconditions": "Tài khoản A có token 123456",
+    "fixture": {
+      "newPassword": "Abcdef1*"
+    },
+    "steps": "Tại Bước 2, nhập mật khẩu có ký tự * Abcdef1*, click Đặt lại",
+    "expected": "Form chấp nhận mật khẩu hợp lệ",
+    "actual": "Chưa ghi nhận",
+    "status": "Not Run",
+    "evidence": "None"
+  },
+  {
+    "id": "FR03-TC-050",
+    "sourceCaseIds": [
+      "FR03-DT-SPECIAL-06"
+    ],
+    "techniques": [
+      "Domain Testing"
+    ],
+    "layer": "WEB",
+    "rules": [
+      "R07"
+    ],
+    "obligations": [
+      "OBL-DT-25"
+    ],
+    "preconditions": "Tài khoản A có token 123456",
+    "fixture": {
+      "newPassword": "Abcdef1?"
+    },
+    "steps": "Tại Bước 2, nhập mật khẩu có ký tự ? Abcdef1?, click Đặt lại",
+    "expected": "Form chấp nhận mật khẩu hợp lệ",
+    "actual": "Chưa ghi nhận",
+    "status": "Not Run",
+    "evidence": "None"
+  },
+  {
+    "id": "FR03-TC-051",
+    "sourceCaseIds": [
+      "FR03-DT-SPECIAL-07"
+    ],
+    "techniques": [
+      "Domain Testing"
+    ],
+    "layer": "WEB",
+    "rules": [
+      "R07"
+    ],
+    "obligations": [
+      "OBL-DT-25"
+    ],
+    "preconditions": "Tài khoản A có token 123456",
+    "fixture": {
+      "newPassword": "Abcdef1&"
+    },
+    "steps": "Tại Bước 2, nhập mật khẩu có ký tự & Abcdef1&, click Đặt lại",
+    "expected": "Form chấp nhận mật khẩu hợp lệ",
+    "actual": "Chưa ghi nhận",
+    "status": "Not Run",
+    "evidence": "None"
+  },
+  {
+    "id": "FR03-TC-052",
+    "sourceCaseIds": [
+      "FR03-DT-WEB-SPECIAL-08"
+    ],
+    "techniques": [
+      "Domain Testing"
+    ],
+    "layer": "WEB",
+    "rules": [
+      "R07"
+    ],
+    "obligations": [
+      "OBL-DT-25"
+    ],
+    "preconditions": "Tài khoản A có token 123456",
+    "fixture": {
+      "newPassword": "Abcdef1 "
+    },
+    "steps": "Tại Bước 2, nhập mật khẩu chỉ có khoảng trắng Abcdef1 , click Đặt lại",
+    "expected": "Form từ chối submit, hiển thị thông báo lỗi mật khẩu quá yếu",
+    "actual": "Chưa ghi nhận",
+    "status": "Not Run",
+    "evidence": "None"
+  }
+]
