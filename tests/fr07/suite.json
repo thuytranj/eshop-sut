@@ -1,0 +1,1010 @@
+[
+  {
+    "id": "FR07-TC-001",
+    "sourceCaseIds": [
+      "FR07-DT-EMPTY-001",
+      "FR07-BVA-CARTN-001"
+    ],
+    "techniques": [
+      "Domain Testing",
+      "BVA"
+    ],
+    "layer": "WEB",
+    "rules": [
+      "FR07-R07"
+    ],
+    "obligations": [
+      "FR07-OBL-DT-EMPTY-ON",
+      "FR07-OBL-BVA-CARTN-0"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Phiên duyệt mới, giỏ hàng React rỗng (n=0).",
+    "fixture": "Giỏ rỗng.",
+    "steps": [
+      "Mở trang chủ /",
+      "Điều hướng tới trang giỏ hàng /cart",
+      "Quan sát nội dung trang"
+    ],
+    "expected": "Hiển thị hình minh họa giỏ hàng trống và thông báo rõ ràng; không hiển thị bảng sản phẩm và tổng tiền.",
+    "dependencies": [],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR07-TC-002",
+    "sourceCaseIds": [
+      "FR07-DT-EMPTY-002",
+      "FR07-DT-QTY-001",
+      "FR07-BVA-ADDQ-003",
+      "FR07-BVA-CARTN-002",
+      "FR07-BVA-REPEAT-WEB-001"
+    ],
+    "techniques": [
+      "Domain Testing",
+      "BVA"
+    ],
+    "layer": "WEB",
+    "rules": [
+      "FR07-R01",
+      "FR07-R07",
+      "FR06-Q",
+      "FR07-R08"
+    ],
+    "obligations": [
+      "FR07-OBL-DT-EMPTY-OFF1",
+      "FR07-OBL-DT-QTY-ON",
+      "FR07-OBL-BVA-ADDQ-1",
+      "FR07-OBL-BVA-CARTN-1",
+      "FR07-OBL-BVA-REP-WEB-0"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Giỏ hàng ban đầu rỗng (n=0, r=0).",
+    "fixture": "Sản phẩm A (id=1, p=100000₫).",
+    "steps": [
+      "Vào /product/1",
+      "Nhập số lượng d=1",
+      "Bấm Thêm vào giỏ hàng",
+      "Mở /cart"
+    ],
+    "expected": "Chuyển sang bảng giỏ hàng có 1 dòng A, số lượng 1, Thành tiền 100000₫, Tổng cộng 100000₫, không còn thông báo giỏ trống.",
+    "dependencies": [
+      "FR06-Q"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR07-TC-003",
+    "sourceCaseIds": [
+      "FR07-DT-QTY-002",
+      "FR07-BVA-ADDQ-002"
+    ],
+    "techniques": [
+      "Domain Testing",
+      "BVA"
+    ],
+    "layer": "WEB",
+    "rules": [
+      "FR06-Q"
+    ],
+    "obligations": [
+      "FR07-OBL-DT-QTY-OFF-0",
+      "FR07-OBL-BVA-ADDQ-0"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Giỏ hàng rỗng.",
+    "fixture": "Sản phẩm A (id=1).",
+    "steps": [
+      "Vào /product/1",
+      "Nhập số lượng d=0",
+      "Bấm Thêm vào giỏ hàng",
+      "Mở /cart"
+    ],
+    "expected": "Hệ thống từ chối/chặn thao tác thêm; giỏ hàng giữ nguyên trạng thái rỗng.",
+    "dependencies": [
+      "FR06-Q"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR07-TC-004",
+    "sourceCaseIds": [
+      "FR07-DT-QTY-003",
+      "FR07-BVA-ADDQ-004"
+    ],
+    "techniques": [
+      "Domain Testing",
+      "BVA"
+    ],
+    "layer": "WEB",
+    "rules": [
+      "FR06-Q",
+      "FR07-R01",
+      "FR07-R08"
+    ],
+    "obligations": [
+      "FR07-OBL-DT-QTY-OFF-2",
+      "FR07-OBL-BVA-ADDQ-2"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Giỏ hàng rỗng.",
+    "fixture": "Sản phẩm A (id=1, p=100000₫).",
+    "steps": [
+      "Vào /product/1",
+      "Nhập số lượng d=2",
+      "Bấm Thêm vào giỏ hàng",
+      "Mở /cart"
+    ],
+    "expected": "Thêm thành công Sản phẩm A với số lượng 2, Thành tiền 200000₫, Tổng cộng 200000₫.",
+    "dependencies": [
+      "FR06-Q"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR07-TC-005",
+    "sourceCaseIds": [
+      "FR07-DT-QTY-005",
+      "FR07-BVA-ADDQ-001"
+    ],
+    "techniques": [
+      "Domain Testing",
+      "BVA"
+    ],
+    "layer": "WEB",
+    "rules": [
+      "FR06-Q"
+    ],
+    "obligations": [
+      "FR07-OBL-DT-QTY-NEG",
+      "FR07-OBL-BVA-ADDQ-NEG1"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Giỏ hàng rỗng.",
+    "fixture": "Sản phẩm A (id=1).",
+    "steps": [
+      "Vào /product/1",
+      "Nhập số lượng d=-1",
+      "Bấm Thêm vào giỏ hàng",
+      "Mở /cart"
+    ],
+    "expected": "Hệ thống chặn/từ chối số lượng âm; giỏ hàng giữ nguyên trạng thái rỗng.",
+    "dependencies": [
+      "FR06-Q"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR07-TC-006",
+    "sourceCaseIds": [
+      "FR07-DT-QTY-004"
+    ],
+    "techniques": [
+      "Domain Testing"
+    ],
+    "layer": "WEB",
+    "rules": [
+      "FR06-Q",
+      "FR07-R01",
+      "FR07-R08"
+    ],
+    "obligations": [
+      "FR07-OBL-DT-QTY-IN"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Giỏ hàng rỗng.",
+    "fixture": "Sản phẩm A (id=1, p=100000₫).",
+    "steps": [
+      "Vào /product/1",
+      "Nhập số lượng d=3",
+      "Bấm Thêm vào giỏ hàng",
+      "Mở /cart"
+    ],
+    "expected": "Thêm thành công Sản phẩm A với số lượng 3, Thành tiền 300000₫, Tổng cộng 300000₫.",
+    "dependencies": [
+      "FR06-Q"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR07-TC-007",
+    "sourceCaseIds": [
+      "FR07-DT-QTY-006"
+    ],
+    "techniques": [
+      "Domain Testing"
+    ],
+    "layer": "WEB",
+    "rules": [
+      "FR06-Q"
+    ],
+    "obligations": [
+      "FR07-OBL-DT-QTY-FRAC"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Giỏ hàng rỗng.",
+    "fixture": "Sản phẩm A (id=1).",
+    "steps": [
+      "Vào /product/1",
+      "Nhập số lượng d=1.5",
+      "Bấm Thêm vào giỏ hàng",
+      "Mở /cart"
+    ],
+    "expected": "Hệ thống không chấp nhận số lượng không nguyên; giỏ hàng không thêm sản phẩm với số lượng lẻ.",
+    "dependencies": [
+      "FR06-Q"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR07-TC-008",
+    "sourceCaseIds": [
+      "FR07-DT-QTY-007"
+    ],
+    "techniques": [
+      "Domain Testing"
+    ],
+    "layer": "WEB",
+    "rules": [
+      "FR06-Q"
+    ],
+    "obligations": [
+      "FR07-OBL-DT-QTY-EMPTY"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Giỏ hàng rỗng.",
+    "fixture": "Sản phẩm A (id=1).",
+    "steps": [
+      "Vào /product/1",
+      "Xóa ô số lượng thành chuỗi rỗng",
+      "Bấm Thêm vào giỏ hàng",
+      "Mở /cart"
+    ],
+    "expected": "Hệ thống chặn thao tác hoặc báo lỗi; giỏ hàng giữ nguyên trạng thái rỗng.",
+    "dependencies": [
+      "FR06-Q"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR07-TC-009",
+    "sourceCaseIds": [
+      "FR07-DT-MERGE-API-001",
+      "FR07-BVA-REPEAT-API-002"
+    ],
+    "techniques": [
+      "Domain Testing",
+      "BVA"
+    ],
+    "layer": "API",
+    "rules": [
+      "FR07-R02"
+    ],
+    "obligations": [
+      "FR07-OBL-DT-MERGE-API-1",
+      "FR07-OBL-BVA-REP-API-1"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "User đăng nhập hợp lệ, giỏ hàng trên server đang có A với q=1 (r=1).",
+    "fixture": "Sản phẩm A (id=1, price=100000).",
+    "steps": [
+      "POST /api/cart body {id:1, name:\"Sản phẩm A\", price:100000, quantity:1}",
+      "GET /api/cart"
+    ],
+    "expected": "Giỏ hàng trên server chỉ có đúng 1 dòng cho A, số lượng gộp thành 2.",
+    "dependencies": [
+      "API-AUTH"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR07-TC-010",
+    "sourceCaseIds": [
+      "FR07-DT-MERGE-API-002"
+    ],
+    "techniques": [
+      "Domain Testing"
+    ],
+    "layer": "API",
+    "rules": [
+      "FR07-R02"
+    ],
+    "obligations": [
+      "FR07-OBL-DT-MERGE-API-2"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "User đăng nhập hợp lệ, giỏ hàng trên server đang có A với q=2.",
+    "fixture": "Sản phẩm A (id=1, price=100000).",
+    "steps": [
+      "POST /api/cart body {id:1, name:\"Sản phẩm A\", price:100000, quantity:3}",
+      "GET /api/cart"
+    ],
+    "expected": "Giỏ hàng trên server duy trì đúng 1 dòng cho A, số lượng gộp thành 5 (2 + 3).",
+    "dependencies": [
+      "API-AUTH"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR07-TC-011",
+    "sourceCaseIds": [
+      "FR07-BVA-REPEAT-API-001"
+    ],
+    "techniques": [
+      "BVA"
+    ],
+    "layer": "API",
+    "rules": [
+      "FR07-R02"
+    ],
+    "obligations": [
+      "FR07-OBL-BVA-REP-API-0"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "User đăng nhập hợp lệ, giỏ hàng trên server rỗng (r=0).",
+    "fixture": "Sản phẩm A (id=1, price=100000).",
+    "steps": [
+      "POST /api/cart body {id:1, name:\"Sản phẩm A\", price:100000, quantity:1}",
+      "GET /api/cart"
+    ],
+    "expected": "Giỏ hàng có đúng 1 dòng cho A với số lượng q=1.",
+    "dependencies": [
+      "API-AUTH"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR07-TC-012",
+    "sourceCaseIds": [
+      "FR07-BVA-REPEAT-API-003"
+    ],
+    "techniques": [
+      "BVA"
+    ],
+    "layer": "API",
+    "rules": [
+      "FR07-R02"
+    ],
+    "obligations": [
+      "FR07-OBL-BVA-REP-API-2"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "User đăng nhập hợp lệ, giỏ hàng đã có A với q=2 (r=2).",
+    "fixture": "Sản phẩm A (id=1, price=100000).",
+    "steps": [
+      "POST /api/cart body {id:1, name:\"Sản phẩm A\", price:100000, quantity:1}",
+      "GET /api/cart"
+    ],
+    "expected": "Giỏ hàng chỉ có đúng 1 dòng cho A, số lượng gộp thành 3 (2 + 1).",
+    "dependencies": [
+      "API-AUTH"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR07-TC-013",
+    "sourceCaseIds": [
+      "FR07-DT-NEW-API-001"
+    ],
+    "techniques": [
+      "Domain Testing"
+    ],
+    "layer": "API",
+    "rules": [
+      "FR07-R01"
+    ],
+    "obligations": [
+      "FR07-OBL-DT-NEW-API"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "User đăng nhập hợp lệ, giỏ hàng trên server ban đầu rỗng.",
+    "fixture": "Sản phẩm A (id=1), Sản phẩm B (id=2).",
+    "steps": [
+      "POST /api/cart cho A (id=1, q=1)",
+      "POST /api/cart cho B (id=2, q=1)",
+      "GET /api/cart"
+    ],
+    "expected": "Giỏ hàng chứa đúng 2 phần tử với 2 ID khác biệt (1 và 2).",
+    "dependencies": [
+      "API-AUTH"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR07-TC-014",
+    "sourceCaseIds": [
+      "FR07-DT-MERGE-WEB-001",
+      "FR07-BVA-REPEAT-WEB-002"
+    ],
+    "techniques": [
+      "Domain Testing",
+      "BVA"
+    ],
+    "layer": "WEB",
+    "rules": [
+      "FR07-R02",
+      "FR07-R08"
+    ],
+    "obligations": [
+      "FR07-OBL-DT-MERGE-WEB-1",
+      "FR07-OBL-BVA-REP-WEB-1"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Giỏ hàng đang có Sản phẩm A với q=1 (r=1).",
+    "fixture": "Sản phẩm A (id=1, p=100000₫).",
+    "steps": [
+      "Vào /product/1",
+      "Nhập d=1 và bấm Thêm vào giỏ hàng",
+      "Mở /cart"
+    ],
+    "expected": "Bảng giỏ hàng chỉ có đúng 1 dòng cho A, số lượng tăng lên 2, Thành tiền 200000₫, Tổng cộng 200000₫.",
+    "dependencies": [
+      "FR06-Q"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR07-TC-015",
+    "sourceCaseIds": [
+      "FR07-DT-MERGE-WEB-002"
+    ],
+    "techniques": [
+      "Domain Testing"
+    ],
+    "layer": "WEB",
+    "rules": [
+      "FR07-R02",
+      "FR07-R08"
+    ],
+    "obligations": [
+      "FR07-OBL-DT-MERGE-WEB-2"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Giỏ hàng đang có Sản phẩm A với q=2.",
+    "fixture": "Sản phẩm A (id=1, p=100000₫).",
+    "steps": [
+      "Vào /product/1",
+      "Nhập d=3 và bấm Thêm vào giỏ hàng",
+      "Mở /cart"
+    ],
+    "expected": "Bảng giỏ hàng chỉ có đúng 1 dòng cho A, số lượng gộp thành 5, Thành tiền 500000₫, Tổng cộng 500000₫.",
+    "dependencies": [
+      "FR06-Q"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR07-TC-016",
+    "sourceCaseIds": [
+      "FR07-BVA-REPEAT-WEB-003"
+    ],
+    "techniques": [
+      "BVA"
+    ],
+    "layer": "WEB",
+    "rules": [
+      "FR07-R02",
+      "FR07-R08"
+    ],
+    "obligations": [
+      "FR07-OBL-BVA-REP-WEB-2"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Giỏ hàng đang có Sản phẩm A với q=2 (r=2).",
+    "fixture": "Sản phẩm A (id=1, p=100000₫).",
+    "steps": [
+      "Vào /product/1",
+      "Nhập d=1 và bấm Thêm vào giỏ hàng",
+      "Mở /cart"
+    ],
+    "expected": "Bảng giỏ hàng duy trì đúng 1 dòng cho A, số lượng gộp thành 3, Thành tiền 300000₫, Tổng cộng 300000₫.",
+    "dependencies": [
+      "FR06-Q"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR07-TC-017",
+    "sourceCaseIds": [
+      "FR07-DT-MERGE-WEB-003"
+    ],
+    "techniques": [
+      "Domain Testing"
+    ],
+    "layer": "WEB",
+    "rules": [
+      "FR07-R02",
+      "FR07-R08"
+    ],
+    "obligations": [
+      "FR07-OBL-DT-MERGE-WEB-IN"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Giỏ hàng có Sản phẩm A (q=3) và Sản phẩm B (q=1).",
+    "fixture": "A (100000₫), B (250000₫).",
+    "steps": [
+      "Vào /product/1",
+      "Nhập d=2 và bấm Thêm vào giỏ hàng",
+      "Mở /cart"
+    ],
+    "expected": "Bảng giỏ hàng giữ nguyên 2 dòng; dòng A có số lượng 5, Thành tiền 500000₫; dòng B giữ nguyên q=1, Thành tiền 250000₫; Tổng cộng 750000₫.",
+    "dependencies": [
+      "FR06-Q"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR07-TC-018",
+    "sourceCaseIds": [
+      "FR07-DT-NEW-WEB-001"
+    ],
+    "techniques": [
+      "Domain Testing"
+    ],
+    "layer": "WEB",
+    "rules": [
+      "FR07-R01",
+      "FR07-R08"
+    ],
+    "obligations": [
+      "FR07-OBL-DT-NEW-WEB"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Giỏ hàng đang có Sản phẩm A (q=2).",
+    "fixture": "Sản phẩm B (id=2, p=250000₫).",
+    "steps": [
+      "Vào /product/2",
+      "Nhập d=1 và bấm Thêm vào giỏ hàng",
+      "Mở /cart"
+    ],
+    "expected": "Bảng giỏ hàng hiển thị đúng 2 dòng riêng biệt: dòng A (q=2, 200000₫), dòng B (q=1, 250000₫); Tổng cộng 450000₫.",
+    "dependencies": [
+      "FR06-Q"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR07-TC-019",
+    "sourceCaseIds": [
+      "FR07-BVA-CARTN-003"
+    ],
+    "techniques": [
+      "BVA"
+    ],
+    "layer": "WEB",
+    "rules": [
+      "FR07-R01",
+      "FR07-R08"
+    ],
+    "obligations": [
+      "FR07-OBL-BVA-CARTN-2"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Giỏ hàng ban đầu rỗng.",
+    "fixture": "A (100000₫), B (250000₫).",
+    "steps": [
+      "Thêm A với q=1",
+      "Thêm B với q=1",
+      "Mở /cart"
+    ],
+    "expected": "Bảng giỏ hàng hiển thị đúng 2 dòng riêng biệt: A (q=1, 100000₫) và B (q=1, 250000₫); Tổng cộng 350000₫.",
+    "dependencies": [
+      "FR06-Q"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR07-TC-020",
+    "sourceCaseIds": [
+      "FR07-DT-CONTROL-001"
+    ],
+    "techniques": [
+      "Domain Testing"
+    ],
+    "layer": "WEB",
+    "rules": [
+      "FR07-R03"
+    ],
+    "obligations": [
+      "FR07-OBL-DT-CTRL-PRESENCE"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Giỏ hàng có Sản phẩm A (q=2).",
+    "fixture": "Sản phẩm A (id=1, q=2).",
+    "steps": [
+      "Mở /cart",
+      "Kiểm tra phần tử tại cột Số lượng dòng Sản phẩm A"
+    ],
+    "expected": "Tồn tại cả nút + (tăng) và nút - (giảm) cho phép người dùng bấm chỉnh số lượng.",
+    "dependencies": [],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR07-TC-021",
+    "sourceCaseIds": [
+      "FR07-DT-CONTROL-002"
+    ],
+    "techniques": [
+      "Domain Testing"
+    ],
+    "layer": "WEB",
+    "rules": [
+      "FR07-R03",
+      "FR07-R08"
+    ],
+    "obligations": [
+      "FR07-OBL-DT-CTRL-PLUS"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Giỏ hàng có Sản phẩm A (q=2), nút + hiện diện.",
+    "fixture": "Sản phẩm A (id=1, p=100000₫).",
+    "steps": [
+      "Mở /cart",
+      "Bấm nút + tại dòng Sản phẩm A"
+    ],
+    "expected": "Số lượng tăng từ 2 lên 3, Thành tiền cập nhật từ 200000₫ lên 300000₫, Tổng cộng cập nhật tương ứng.",
+    "dependencies": [
+      "FR07-TC-020"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR07-TC-022",
+    "sourceCaseIds": [
+      "FR07-DT-CONTROL-003"
+    ],
+    "techniques": [
+      "Domain Testing"
+    ],
+    "layer": "WEB",
+    "rules": [
+      "FR07-R03",
+      "FR07-R08"
+    ],
+    "obligations": [
+      "FR07-OBL-DT-CTRL-MINUS"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Giỏ hàng có Sản phẩm A (q=3), nút - hiện diện.",
+    "fixture": "Sản phẩm A (id=1, p=100000₫).",
+    "steps": [
+      "Mở /cart",
+      "Bấm nút - tại dòng Sản phẩm A"
+    ],
+    "expected": "Số lượng giảm từ 3 xuống 2, Thành tiền giảm từ 300000₫ xuống 200000₫, Tổng cộng cập nhật tương ứng.",
+    "dependencies": [
+      "FR07-TC-020"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR07-TC-023",
+    "sourceCaseIds": [
+      "FR07-DT-DELETE-001"
+    ],
+    "techniques": [
+      "Domain Testing"
+    ],
+    "layer": "WEB",
+    "rules": [
+      "FR07-R04"
+    ],
+    "obligations": [
+      "FR07-OBL-DT-DEL-DIALOG-PRESENCE"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Giỏ hàng có Sản phẩm A và Sản phẩm B.",
+    "fixture": "Nominal cart A(2), B(1).",
+    "steps": [
+      "Mở /cart",
+      "Bấm nút Xóa tại dòng Sản phẩm A"
+    ],
+    "expected": "Xuất hiện dialog/modal xác nhận xóa trước khi thực hiện, có các nút Confirm và Cancel.",
+    "dependencies": [],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR07-TC-024",
+    "sourceCaseIds": [
+      "FR07-DT-DELETE-002"
+    ],
+    "techniques": [
+      "Domain Testing"
+    ],
+    "layer": "WEB",
+    "rules": [
+      "FR07-R04"
+    ],
+    "obligations": [
+      "FR07-OBL-DT-DEL-CANCEL"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Dialog xác nhận xóa đang mở sau khi bấm Xóa dòng Sản phẩm A.",
+    "fixture": "Nominal cart A(2), B(1).",
+    "steps": [
+      "Bấm nút Cancel trong dialog xác nhận"
+    ],
+    "expected": "Dialog đóng lại; giỏ hàng giữ nguyên vẹn 2 dòng A và B; Tổng cộng không đổi (450000₫).",
+    "dependencies": [
+      "FR07-TC-023"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR07-TC-025",
+    "sourceCaseIds": [
+      "FR07-DT-DELETE-003"
+    ],
+    "techniques": [
+      "Domain Testing"
+    ],
+    "layer": "WEB",
+    "rules": [
+      "FR07-R04",
+      "FR07-R08"
+    ],
+    "obligations": [
+      "FR07-OBL-DT-DEL-CONFIRM"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Dialog xác nhận xóa đang mở sau khi bấm Xóa dòng Sản phẩm A.",
+    "fixture": "Nominal cart A(2), B(1).",
+    "steps": [
+      "Bấm nút Confirm trong dialog xác nhận"
+    ],
+    "expected": "Dòng Sản phẩm A bị xóa khỏi giỏ hàng; dòng Sản phẩm B vẫn giữ nguyên (q=1, 250000₫); Tổng cộng tính lại thành 250000₫.",
+    "dependencies": [
+      "FR07-TC-023"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR07-TC-026",
+    "sourceCaseIds": [
+      "FR07-DT-DELETE-004"
+    ],
+    "techniques": [
+      "Domain Testing"
+    ],
+    "layer": "WEB",
+    "rules": [
+      "FR07-R04",
+      "FR07-R07"
+    ],
+    "obligations": [
+      "FR07-OBL-DT-DEL-LAST"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Giỏ hàng chỉ còn duy nhất 1 sản phẩm (Sản phẩm B, q=1).",
+    "fixture": "Giỏ có B (q=1).",
+    "steps": [
+      "Bấm nút Xóa tại dòng Sản phẩm B",
+      "Bấm Confirm trong dialog xác nhận"
+    ],
+    "expected": "Giỏ hàng lập tức chuyển sang trạng thái trống, hiển thị hình minh họa và thông báo giỏ trống; bảng sản phẩm biến mất.",
+    "dependencies": [
+      "FR07-TC-023"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR07-TC-027",
+    "sourceCaseIds": [
+      "FR07-DT-DISPLAY-001"
+    ],
+    "techniques": [
+      "Domain Testing"
+    ],
+    "layer": "WEB",
+    "rules": [
+      "FR07-R01"
+    ],
+    "obligations": [
+      "FR07-OBL-DT-DISP-COLUMNS"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Giỏ hàng có sản phẩm.",
+    "fixture": "Nominal cart A(2), B(1).",
+    "steps": [
+      "Mở /cart",
+      "Kiểm tra tên các tiêu đề cột của bảng"
+    ],
+    "expected": "Bảng hiển thị đầy đủ 5 cột chính xác: Sản phẩm, Đơn giá, Số lượng, Thành tiền, Thao tác.",
+    "dependencies": [],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR07-TC-028",
+    "sourceCaseIds": [
+      "FR07-DT-DISPLAY-002"
+    ],
+    "techniques": [
+      "Domain Testing"
+    ],
+    "layer": "WEB",
+    "rules": [
+      "FR07-R06"
+    ],
+    "obligations": [
+      "FR07-OBL-DT-DISP-LABEL"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Giỏ hàng có sản phẩm.",
+    "fixture": "Nominal cart A(2), B(1).",
+    "steps": [
+      "Mở /cart",
+      "Kiểm tra nhãn hiển thị tổng số tiền"
+    ],
+    "expected": "Nhãn hiển thị chính xác là \"Tổng cộng\" (không phải \"Tổng tạm tính\").",
+    "dependencies": [],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR07-TC-029",
+    "sourceCaseIds": [
+      "FR07-DT-DISPLAY-003"
+    ],
+    "techniques": [
+      "Domain Testing"
+    ],
+    "layer": "WEB",
+    "rules": [
+      "FR07-R05"
+    ],
+    "obligations": [
+      "FR07-OBL-DT-DISP-CONTINUE"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Người dùng đang ở trang /cart.",
+    "fixture": "Bất kỳ trạng thái giỏ nào.",
+    "steps": [
+      "Bấm nút \"Tiếp tục mua sắm\""
+    ],
+    "expected": "Trình duyệt chuyển hướng thành công về trang chủ URL /.",
+    "dependencies": [],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR07-TC-030",
+    "sourceCaseIds": [
+      "FR07-DT-AUTH-001"
+    ],
+    "techniques": [
+      "Domain Testing"
+    ],
+    "layer": "API",
+    "rules": [
+      "API-AUTH"
+    ],
+    "obligations": [
+      "FR07-OBL-DT-AUTH-GET-VAL"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Đăng nhập lấy Bearer token hợp lệ.",
+    "fixture": "User test hợp lệ.",
+    "steps": [
+      "Gửi GET /api/cart kèm Authorization: Bearer <token>"
+    ],
+    "expected": "HTTP Status 200 OK; body trả về mảng danh sách giỏ hàng của user.",
+    "dependencies": [
+      "API-AUTH"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR07-TC-031",
+    "sourceCaseIds": [
+      "FR07-DT-AUTH-002"
+    ],
+    "techniques": [
+      "Domain Testing"
+    ],
+    "layer": "API",
+    "rules": [
+      "API-AUTH"
+    ],
+    "obligations": [
+      "FR07-OBL-DT-AUTH-GET-NO"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Không gửi token.",
+    "fixture": "None.",
+    "steps": [
+      "Gửi GET /api/cart không kèm Authorization header"
+    ],
+    "expected": "Bị từ chối truy cập (HTTP 401 hoặc 403); không rò rỉ dữ liệu giỏ hàng.",
+    "dependencies": [
+      "API-AUTH"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR07-TC-032",
+    "sourceCaseIds": [
+      "FR07-DT-AUTH-003"
+    ],
+    "techniques": [
+      "Domain Testing"
+    ],
+    "layer": "API",
+    "rules": [
+      "API-AUTH"
+    ],
+    "obligations": [
+      "FR07-OBL-DT-AUTH-POST-INV"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Token giả mạo hoặc hết hạn.",
+    "fixture": "Bearer invalid_secret_token_123.",
+    "steps": [
+      "Gửi POST /api/cart kèm token giả mạo"
+    ],
+    "expected": "Bị từ chối truy cập (HTTP 401 hoặc 403); không thay đổi dữ liệu giỏ hàng của bất kỳ user nào.",
+    "dependencies": [
+      "API-AUTH"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  }
+]
