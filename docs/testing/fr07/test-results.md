@@ -76,5 +76,5 @@
 - **Số nghĩa vụ BVA đã thiết kế (Designed):** 13 / 13 (100%)
 - **Số nghĩa vụ BVA đã thực thi (Executed):** 13 / 13 (100%)
 - **Tỷ lệ Pass/Fail theo nghĩa vụ BVA:**
-  - Đạt (Passed): 6 nghĩa vụ (`ADDQ-0`, `ADDQ-NEG1`, `CARTN-2`, `REP-API-0`, `REP-WEB-1` khi cô lập)
-  - Không đạt (Failed): 7 nghĩa vụ (do lỗi gộp dòng trên cả API và WEB, và lỗi clickCount thêm giỏ hàng)
+  - Đạt (Passed): 4 nghĩa vụ (`ADDQ-0`, `ADDQ-NEG1`, `CARTN-2`, `REP-API-0`)
+  - Không đạt (Failed): 9 nghĩa vụ (`ADDQ-1`, `ADDQ-2`, `CARTN-0`, `CARTN-1`, `REP-API-1`, `REP-API-2`, `REP-WEB-0`, `REP-WEB-1`, `REP-WEB-2` do lỗi gộp dòng trên cả API và WEB, thiếu hình minh họa giỏ trống, và lỗi clickCount khi thêm giỏ hàng)

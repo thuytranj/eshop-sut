@@ -41,6 +41,7 @@ Quá trình kiểm thử áp dụng nghiêm ngặt hai kỹ thuật kiểm thử
 | `FR07-BUG-005` | Nhãn tổng tiền bị sai thành 'Tổng tạm tính:' thay vì 'Tổng cộng' | WEB | `FR07-R06` | **Low** |
 | `FR07-BUG-006` | Trạng thái giỏ trống thiếu hình ảnh minh họa | WEB | `FR07-R07` | **Low** |
 | `FR07-BUG-007` | [Dependency] Bấm nút 'Thêm vào giỏ hàng' không chạy ở lần bấm đầu | WEB | `FR06-Q` | **Major** |
+| `FR07-BUG-008` | Nhãn nút quay lại trang chủ trên giỏ có hàng bị sai thành '← Mua tiếp' thay vì 'Tiếp tục mua sắm' | WEB | `FR07-R05` | **Low** |
 
 ---
 
@@ -52,7 +53,7 @@ Quá trình kiểm thử áp dụng nghiêm ngặt hai kỹ thuật kiểm thử
 - [bva-report.md](bva-report.md): Báo cáo phân tích giá trị biên ISTQB 3-value BVA, dẫn xuất 13 nghĩa vụ giá trị biên và 13 ca kiểm thử nguồn BVA.
 - [suite-review.md](suite-review.md): Biên bản rà soát, hợp nhất 42 ca nguồn thành 32 ca chuẩn, mã băm SHA-256.
 - [test-results.md](test-results.md): Bảng kết quả thực thi chi tiết, phân tích Pass/Fail/Blocked và ma trận độ bao phủ thực tế.
-- [bugs.md](bugs.md): Báo cáo 7 lỗi phần mềm chi tiết kèm mã nguồn gây lỗi và ảnh chụp bằng chứng.
+- [bugs.md](bugs.md): Báo cáo 8 lỗi phần mềm chi tiết kèm mã nguồn gây lỗi và ảnh chụp bằng chứng.
 - [ai-interactions.md](ai-interactions.md): Nhật ký tương tác AI có provenance, đầy đủ prompt/output/timestamps.
 - [ai-gap-analysis.md](ai-gap-analysis.md): Phân tích khoảng trống AI và đoạn nhận xét AI Critique 200-300 từ.
 - [evidence/fr07-run01/](evidence/fr07-run01/): Thư mục bằng chứng thực nghiệm gồm `manifest.json`, log API `observations.json`, log Web `observations.json`, và 34 ảnh chụp màn hình UI PNG.

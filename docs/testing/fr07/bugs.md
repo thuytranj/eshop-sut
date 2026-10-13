@@ -15,6 +15,7 @@ Tài liệu này tổng hợp toàn bộ các lỗi phần mềm (Defects/Bugs) 
 | **FR07-BUG-005** | Nhãn hiển thị tổng tiền bị sai thành 'Tổng tạm tính:' thay vì 'Tổng cộng' | `FR07-R06` | WEB | **Low** | Observed |
 | **FR07-BUG-006** | Giỏ hàng trống không có hình minh họa theo yêu cầu đặc tả | `FR07-R07` | WEB | **Low** | Observed |
 | **FR07-BUG-007** | [Dependency] Nút 'Thêm vào giỏ hàng' không hoạt động ở lần bấm đầu tiên | `FR06-Q` | WEB | **Major** | Observed |
+| **FR07-BUG-008** | Nhãn nút quay lại trang chủ trên giỏ hàng có sản phẩm bị sai thành '← Mua tiếp' thay vì 'Tiếp tục mua sắm' | `FR07-R05` | WEB | **Low** | Observed |
 
 ---
 
@@ -194,3 +195,26 @@ Tài liệu này tổng hợp toàn bộ các lỗi phần mềm (Defects/Bugs) 
     ...
   ```
   Hàm xử lý sự kiện cố tình chặn không thực hiện thêm sản phẩm ở lần click đầu tiên (`if (clickCount === 0) return;`).
+
+---
+
+### FR07-BUG-008: Nhãn nút quay lại trang chủ trên giỏ hàng có sản phẩm bị sai thành '← Mua tiếp' thay vì 'Tiếp tục mua sắm'
+- **Mã lỗi:** `FR07-BUG-008`
+- **Quy tắc bị ảnh hưởng:** `FR07-R05` (*"Nút 'Tiếp tục mua sắm' quay về danh sách sản phẩm / trang chủ"*)
+- **Các ca kiểm thử liên quan:** `FR07-TC-029` (phát hiện đối chứng trạng thái giỏ trống và giỏ có hàng), quan sát UI trên các ca kiểm thử giỏ có hàng (`FR07-TC-014` .. `FR07-TC-020`)
+- **Tầng bị ảnh hưởng:** WEB
+- **Mức độ nghiêm trọng (Severity):** **Low** (Không chặn chức năng điều hướng quay về trang chủ, nhưng vi phạm tính nhất quán nhãn UI quy định trong đặc tả nghiệp vụ).
+- **Các bước tái hiện (Steps to Reproduce):**
+  1. Thêm ít nhất một sản phẩm vào giỏ hàng.
+  2. Mở trang giỏ hàng `/cart`.
+  3. Quan sát nút bấm quay lại danh sách sản phẩm / trang chủ phía dưới bảng giỏ hàng.
+- **Kỳ vọng:** Nhãn nút hiển thị đúng văn bản "Tiếp tục mua sắm" theo `README.md:98` (*"Nút 'Tiếp tục mua sắm' quay về danh sách sản phẩm / trang chủ"*).
+- **Thực tế quan sát:** Nút hiển thị văn bản `← Mua tiếp` (chỉ khi giỏ trống mới hiển thị đúng nhãn "Tiếp tục mua sắm").
+- **Bằng chứng:** Ảnh chụp màn hình giỏ có hàng [FR07-TC-014_cart_state.png](evidence/fr07-run01/web/screenshots/FR07-TC-014_cart_state.png).
+- **Phân tích mã nguồn:** Tệp `frontend-web/src/pages/Cart.jsx`, dòng 66-68:
+  ```jsx
+  <Link to="/" className="text-blue-600 hover:underline">
+    ← Mua tiếp
+  </Link>
+  ```
+  Nhãn này không nhất quán với trạng thái giỏ trống tại dòng 165 (`Tiếp tục mua sắm`) và sai lệch so với yêu cầu đặc tả `README.md:98`.
