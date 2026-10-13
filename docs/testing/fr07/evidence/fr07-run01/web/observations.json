@@ -1,0 +1,643 @@
+[
+  {
+    "caseId": "FR07-TC-001",
+    "runId": "fr07-run01",
+    "attempted": true,
+    "startedAt": "2026-10-14T01:16:06.960731",
+    "endedAt": "2026-10-14T01:16:09.524899",
+    "inputSent": null,
+    "stateBefore": null,
+    "stateAfter": null,
+    "assertions": [
+      {
+        "name": "Empty message present",
+        "expected": "Text 'Giỏ hàng của bạn đang trống' visible",
+        "actual": "count=1",
+        "passed": true
+      },
+      {
+        "name": "Empty illustration present",
+        "expected": "Illustration <img> or <svg> visible",
+        "actual": "count=0",
+        "passed": false
+      },
+      {
+        "name": "No product table in empty cart",
+        "expected": "table count === 0",
+        "actual": "count=0",
+        "passed": true
+      }
+    ],
+    "actual": "Message: True, Illustration: False (Missing illustration!), No Table: True",
+    "status": "Failed",
+    "blocker": null,
+    "evidence": [
+      "/Users/thuytran/Workspace/eshop-sut/docs/testing/fr07/evidence/fr07-run01/web/screenshots/FR07-TC-001_view_empty.png"
+    ]
+  },
+  {
+    "caseId": "FR07-TC-002",
+    "runId": "fr07-run01",
+    "attempted": true,
+    "startedAt": "2026-10-14T01:16:09.550432",
+    "endedAt": "2026-10-14T01:16:12.123241",
+    "inputSent": {
+      "productId": 1,
+      "quantityInput": 1,
+      "clicks": 1
+    },
+    "stateBefore": null,
+    "stateAfter": null,
+    "assertions": [
+      {
+        "name": "Product added on single click",
+        "expected": "Table appears in cart",
+        "actual": "Cart is empty",
+        "passed": false
+      }
+    ],
+    "actual": "Clicking 'Thêm vào giỏ hàng' 1 time did not add product to cart (Cart remains empty). Root cause: ProductDetail.jsx clickCount dependency bug.",
+    "status": "Failed",
+    "blocker": null,
+    "evidence": [
+      "/Users/thuytran/Workspace/eshop-sut/docs/testing/fr07/evidence/fr07-run01/web/screenshots/FR07-TC-002_detail_before_add.png",
+      "/Users/thuytran/Workspace/eshop-sut/docs/testing/fr07/evidence/fr07-run01/web/screenshots/FR07-TC-002_cart_result.png"
+    ]
+  },
+  {
+    "caseId": "FR07-TC-003",
+    "runId": "fr07-run01",
+    "attempted": true,
+    "startedAt": "2026-10-14T01:16:12.128137",
+    "endedAt": "2026-10-14T01:16:14.253674",
+    "inputSent": {
+      "productId": 1,
+      "quantityInput": 0,
+      "clicks": 1
+    },
+    "stateBefore": null,
+    "stateAfter": null,
+    "assertions": [
+      {
+        "name": "Invalid quantity rejected",
+        "expected": "Cart remains empty",
+        "actual": "Cart remains empty",
+        "passed": true
+      }
+    ],
+    "actual": "Invalid quantity input '0' was not added; cart remains empty",
+    "status": "Passed",
+    "blocker": null,
+    "evidence": [
+      "/Users/thuytran/Workspace/eshop-sut/docs/testing/fr07/evidence/fr07-run01/web/screenshots/FR07-TC-003_detail_before_add.png",
+      "/Users/thuytran/Workspace/eshop-sut/docs/testing/fr07/evidence/fr07-run01/web/screenshots/FR07-TC-003_cart_result.png"
+    ]
+  },
+  {
+    "caseId": "FR07-TC-004",
+    "runId": "fr07-run01",
+    "attempted": true,
+    "startedAt": "2026-10-14T01:16:14.258203",
+    "endedAt": "2026-10-14T01:16:16.353471",
+    "inputSent": {
+      "productId": 1,
+      "quantityInput": 2,
+      "clicks": 1
+    },
+    "stateBefore": null,
+    "stateAfter": null,
+    "assertions": [
+      {
+        "name": "Product added on single click",
+        "expected": "Table appears in cart",
+        "actual": "Cart is empty",
+        "passed": false
+      }
+    ],
+    "actual": "Clicking 'Thêm vào giỏ hàng' 1 time did not add product to cart (Cart remains empty). Root cause: ProductDetail.jsx clickCount dependency bug.",
+    "status": "Failed",
+    "blocker": null,
+    "evidence": [
+      "/Users/thuytran/Workspace/eshop-sut/docs/testing/fr07/evidence/fr07-run01/web/screenshots/FR07-TC-004_detail_before_add.png",
+      "/Users/thuytran/Workspace/eshop-sut/docs/testing/fr07/evidence/fr07-run01/web/screenshots/FR07-TC-004_cart_result.png"
+    ]
+  },
+  {
+    "caseId": "FR07-TC-005",
+    "runId": "fr07-run01",
+    "attempted": true,
+    "startedAt": "2026-10-14T01:16:16.357251",
+    "endedAt": "2026-10-14T01:16:18.465871",
+    "inputSent": {
+      "productId": 1,
+      "quantityInput": -1,
+      "clicks": 1
+    },
+    "stateBefore": null,
+    "stateAfter": null,
+    "assertions": [
+      {
+        "name": "Invalid quantity rejected",
+        "expected": "Cart remains empty",
+        "actual": "Cart remains empty",
+        "passed": true
+      }
+    ],
+    "actual": "Invalid quantity input '-1' was not added; cart remains empty",
+    "status": "Passed",
+    "blocker": null,
+    "evidence": [
+      "/Users/thuytran/Workspace/eshop-sut/docs/testing/fr07/evidence/fr07-run01/web/screenshots/FR07-TC-005_detail_before_add.png",
+      "/Users/thuytran/Workspace/eshop-sut/docs/testing/fr07/evidence/fr07-run01/web/screenshots/FR07-TC-005_cart_result.png"
+    ]
+  },
+  {
+    "caseId": "FR07-TC-006",
+    "runId": "fr07-run01",
+    "attempted": true,
+    "startedAt": "2026-10-14T01:16:18.474722",
+    "endedAt": "2026-10-14T01:16:20.602975",
+    "inputSent": {
+      "productId": 1,
+      "quantityInput": 3,
+      "clicks": 1
+    },
+    "stateBefore": null,
+    "stateAfter": null,
+    "assertions": [
+      {
+        "name": "Product added on single click",
+        "expected": "Table appears in cart",
+        "actual": "Cart is empty",
+        "passed": false
+      }
+    ],
+    "actual": "Clicking 'Thêm vào giỏ hàng' 1 time did not add product to cart (Cart remains empty). Root cause: ProductDetail.jsx clickCount dependency bug.",
+    "status": "Failed",
+    "blocker": null,
+    "evidence": [
+      "/Users/thuytran/Workspace/eshop-sut/docs/testing/fr07/evidence/fr07-run01/web/screenshots/FR07-TC-006_detail_before_add.png",
+      "/Users/thuytran/Workspace/eshop-sut/docs/testing/fr07/evidence/fr07-run01/web/screenshots/FR07-TC-006_cart_result.png"
+    ]
+  },
+  {
+    "caseId": "FR07-TC-007",
+    "runId": "fr07-run01",
+    "attempted": true,
+    "startedAt": "2026-10-14T01:16:20.607114",
+    "endedAt": "2026-10-14T01:16:22.923619",
+    "inputSent": {
+      "productId": 1,
+      "quantityInput": 1.5,
+      "clicks": 1
+    },
+    "stateBefore": null,
+    "stateAfter": null,
+    "assertions": [
+      {
+        "name": "Invalid quantity rejected",
+        "expected": "Cart remains empty",
+        "actual": "Cart remains empty",
+        "passed": true
+      }
+    ],
+    "actual": "Invalid quantity input '1.5' was not added; cart remains empty",
+    "status": "Passed",
+    "blocker": null,
+    "evidence": [
+      "/Users/thuytran/Workspace/eshop-sut/docs/testing/fr07/evidence/fr07-run01/web/screenshots/FR07-TC-007_detail_before_add.png",
+      "/Users/thuytran/Workspace/eshop-sut/docs/testing/fr07/evidence/fr07-run01/web/screenshots/FR07-TC-007_cart_result.png"
+    ]
+  },
+  {
+    "caseId": "FR07-TC-008",
+    "runId": "fr07-run01",
+    "attempted": true,
+    "startedAt": "2026-10-14T01:16:22.927545",
+    "endedAt": "2026-10-14T01:16:25.053695",
+    "inputSent": {
+      "productId": 1,
+      "quantityInput": "",
+      "clicks": 1
+    },
+    "stateBefore": null,
+    "stateAfter": null,
+    "assertions": [
+      {
+        "name": "Invalid quantity rejected",
+        "expected": "Cart remains empty",
+        "actual": "Cart remains empty",
+        "passed": true
+      }
+    ],
+    "actual": "Invalid quantity input '' was not added; cart remains empty",
+    "status": "Passed",
+    "blocker": null,
+    "evidence": [
+      "/Users/thuytran/Workspace/eshop-sut/docs/testing/fr07/evidence/fr07-run01/web/screenshots/FR07-TC-008_detail_before_add.png",
+      "/Users/thuytran/Workspace/eshop-sut/docs/testing/fr07/evidence/fr07-run01/web/screenshots/FR07-TC-008_cart_result.png"
+    ]
+  },
+  {
+    "caseId": "FR07-TC-014",
+    "runId": "fr07-run01",
+    "attempted": true,
+    "startedAt": "2026-10-14T01:16:25.058536",
+    "endedAt": "2026-10-14T01:16:28.510979",
+    "inputSent": null,
+    "stateBefore": null,
+    "stateAfter": null,
+    "assertions": [
+      {
+        "name": "Cart row count matches expected (1)",
+        "expected": "rows === 1",
+        "actual": "rows === 2",
+        "passed": false
+      }
+    ],
+    "actual": "Failed merge: Cart created 2 rows instead of 1 row(s) (R02 violation)",
+    "status": "Failed",
+    "blocker": null,
+    "evidence": [
+      "/Users/thuytran/Workspace/eshop-sut/docs/testing/fr07/evidence/fr07-run01/web/screenshots/FR07-TC-014_cart_state.png"
+    ]
+  },
+  {
+    "caseId": "FR07-TC-015",
+    "runId": "fr07-run01",
+    "attempted": true,
+    "startedAt": "2026-10-14T01:16:28.515001",
+    "endedAt": "2026-10-14T01:16:31.915578",
+    "inputSent": null,
+    "stateBefore": null,
+    "stateAfter": null,
+    "assertions": [
+      {
+        "name": "Cart row count matches expected (1)",
+        "expected": "rows === 1",
+        "actual": "rows === 2",
+        "passed": false
+      }
+    ],
+    "actual": "Failed merge: Cart created 2 rows instead of 1 row(s) (R02 violation)",
+    "status": "Failed",
+    "blocker": null,
+    "evidence": [
+      "/Users/thuytran/Workspace/eshop-sut/docs/testing/fr07/evidence/fr07-run01/web/screenshots/FR07-TC-015_cart_state.png"
+    ]
+  },
+  {
+    "caseId": "FR07-TC-016",
+    "runId": "fr07-run01",
+    "attempted": true,
+    "startedAt": "2026-10-14T01:16:31.920464",
+    "endedAt": "2026-10-14T01:16:35.265030",
+    "inputSent": null,
+    "stateBefore": null,
+    "stateAfter": null,
+    "assertions": [
+      {
+        "name": "Cart row count matches expected (1)",
+        "expected": "rows === 1",
+        "actual": "rows === 2",
+        "passed": false
+      }
+    ],
+    "actual": "Failed merge: Cart created 2 rows instead of 1 row(s) (R02 violation)",
+    "status": "Failed",
+    "blocker": null,
+    "evidence": [
+      "/Users/thuytran/Workspace/eshop-sut/docs/testing/fr07/evidence/fr07-run01/web/screenshots/FR07-TC-016_cart_state.png"
+    ]
+  },
+  {
+    "caseId": "FR07-TC-017",
+    "runId": "fr07-run01",
+    "attempted": true,
+    "startedAt": "2026-10-14T01:16:35.274341",
+    "endedAt": "2026-10-14T01:16:39.930999",
+    "inputSent": null,
+    "stateBefore": null,
+    "stateAfter": null,
+    "assertions": [
+      {
+        "name": "Cart row count matches expected (2)",
+        "expected": "rows === 2",
+        "actual": "rows === 3",
+        "passed": false
+      }
+    ],
+    "actual": "Failed merge: Cart created 3 rows instead of 2 row(s) (R02 violation)",
+    "status": "Failed",
+    "blocker": null,
+    "evidence": [
+      "/Users/thuytran/Workspace/eshop-sut/docs/testing/fr07/evidence/fr07-run01/web/screenshots/FR07-TC-017_cart_state.png"
+    ]
+  },
+  {
+    "caseId": "FR07-TC-018",
+    "runId": "fr07-run01",
+    "attempted": true,
+    "startedAt": "2026-10-14T01:16:39.935724",
+    "endedAt": "2026-10-14T01:16:43.309721",
+    "inputSent": null,
+    "stateBefore": null,
+    "stateAfter": null,
+    "assertions": [
+      {
+        "name": "Cart row count matches expected (2)",
+        "expected": "rows === 2",
+        "actual": "rows === 2",
+        "passed": true
+      }
+    ],
+    "actual": "Cart correctly maintained 2 row(s)",
+    "status": "Passed",
+    "blocker": null,
+    "evidence": [
+      "/Users/thuytran/Workspace/eshop-sut/docs/testing/fr07/evidence/fr07-run01/web/screenshots/FR07-TC-018_cart_state.png"
+    ]
+  },
+  {
+    "caseId": "FR07-TC-019",
+    "runId": "fr07-run01",
+    "attempted": true,
+    "startedAt": "2026-10-14T01:16:43.313741",
+    "endedAt": "2026-10-14T01:16:46.681696",
+    "inputSent": null,
+    "stateBefore": null,
+    "stateAfter": null,
+    "assertions": [
+      {
+        "name": "Cart row count matches expected (2)",
+        "expected": "rows === 2",
+        "actual": "rows === 2",
+        "passed": true
+      }
+    ],
+    "actual": "Cart correctly maintained 2 row(s)",
+    "status": "Passed",
+    "blocker": null,
+    "evidence": [
+      "/Users/thuytran/Workspace/eshop-sut/docs/testing/fr07/evidence/fr07-run01/web/screenshots/FR07-TC-019_cart_state.png"
+    ]
+  },
+  {
+    "caseId": "FR07-TC-020",
+    "runId": "fr07-run01",
+    "attempted": true,
+    "startedAt": "2026-10-14T01:16:46.686664",
+    "endedAt": "2026-10-14T01:16:48.817676",
+    "inputSent": null,
+    "stateBefore": null,
+    "stateAfter": null,
+    "assertions": [
+      {
+        "name": "Plus (+) button exists in cart table",
+        "expected": "plus button count > 0",
+        "actual": "count=0",
+        "passed": false
+      },
+      {
+        "name": "Minus (-) button exists in cart table",
+        "expected": "minus button count > 0",
+        "actual": "count=0",
+        "passed": false
+      }
+    ],
+    "actual": "Missing controls: '+' count=0, '-' count=0 (R03 violation: No +/- buttons implemented)",
+    "status": "Failed",
+    "blocker": null,
+    "evidence": [
+      "/Users/thuytran/Workspace/eshop-sut/docs/testing/fr07/evidence/fr07-run01/web/screenshots/FR07-TC-020_check_controls.png"
+    ]
+  },
+  {
+    "caseId": "FR07-TC-021",
+    "runId": "fr07-run01",
+    "attempted": true,
+    "startedAt": "2026-10-14T01:16:48.822000",
+    "endedAt": "2026-10-14T01:16:50.945097",
+    "inputSent": null,
+    "stateBefore": null,
+    "stateAfter": null,
+    "assertions": [],
+    "actual": "Blocked: Cannot click '+' button because it is not implemented",
+    "status": "Blocked",
+    "blocker": "FR07-TC-020 Failed: '+' button does not exist in cart table DOM",
+    "evidence": [
+      "/Users/thuytran/Workspace/eshop-sut/docs/testing/fr07/evidence/fr07-run01/web/screenshots/FR07-TC-021_blocked_check.png"
+    ]
+  },
+  {
+    "caseId": "FR07-TC-022",
+    "runId": "fr07-run01",
+    "attempted": true,
+    "startedAt": "2026-10-14T01:16:50.949360",
+    "endedAt": "2026-10-14T01:16:53.088873",
+    "inputSent": null,
+    "stateBefore": null,
+    "stateAfter": null,
+    "assertions": [],
+    "actual": "Blocked: Cannot click '-' button because it is not implemented",
+    "status": "Blocked",
+    "blocker": "FR07-TC-020 Failed: '-' button does not exist in cart table DOM",
+    "evidence": [
+      "/Users/thuytran/Workspace/eshop-sut/docs/testing/fr07/evidence/fr07-run01/web/screenshots/FR07-TC-022_blocked_check.png"
+    ]
+  },
+  {
+    "caseId": "FR07-TC-023",
+    "runId": "fr07-run01",
+    "attempted": true,
+    "startedAt": "2026-10-14T01:16:53.092786",
+    "endedAt": "2026-10-14T01:16:55.769378",
+    "inputSent": null,
+    "stateBefore": null,
+    "stateAfter": null,
+    "assertions": [
+      {
+        "name": "Confirmation dialog appeared before deletion",
+        "expected": "Modal or dialog present before executing delete",
+        "actual": "modal count=0, browser dialogs=0",
+        "passed": false
+      }
+    ],
+    "actual": "No confirmation dialog appeared! Item was deleted directly without confirmation (R04 violation)",
+    "status": "Failed",
+    "blocker": null,
+    "evidence": [
+      "/Users/thuytran/Workspace/eshop-sut/docs/testing/fr07/evidence/fr07-run01/web/screenshots/FR07-TC-023_before_delete.png",
+      "/Users/thuytran/Workspace/eshop-sut/docs/testing/fr07/evidence/fr07-run01/web/screenshots/FR07-TC-023_after_delete_click.png"
+    ]
+  },
+  {
+    "caseId": "FR07-TC-024",
+    "runId": "fr07-run01",
+    "attempted": true,
+    "startedAt": "2026-10-14T01:16:55.773691",
+    "endedAt": "2026-10-14T01:16:57.898487",
+    "inputSent": null,
+    "stateBefore": null,
+    "stateAfter": null,
+    "assertions": [
+      {
+        "name": "Dialog branch available",
+        "expected": "Dialog present",
+        "actual": "No dialog rendered",
+        "passed": false
+      }
+    ],
+    "actual": "Blocked: SUT does not display confirmation dialog",
+    "status": "Blocked",
+    "blocker": "FR07-TC-023 Failed: Delete executed directly without confirmation dialog; Cancel/Confirm dialog branches cannot be tested",
+    "evidence": [
+      "/Users/thuytran/Workspace/eshop-sut/docs/testing/fr07/evidence/fr07-run01/web/screenshots/FR07-TC-024_check.png"
+    ]
+  },
+  {
+    "caseId": "FR07-TC-025",
+    "runId": "fr07-run01",
+    "attempted": true,
+    "startedAt": "2026-10-14T01:16:57.902507",
+    "endedAt": "2026-10-14T01:17:00.058520",
+    "inputSent": null,
+    "stateBefore": null,
+    "stateAfter": null,
+    "assertions": [
+      {
+        "name": "Dialog branch available",
+        "expected": "Dialog present",
+        "actual": "No dialog rendered",
+        "passed": false
+      }
+    ],
+    "actual": "Blocked: SUT does not display confirmation dialog",
+    "status": "Blocked",
+    "blocker": "FR07-TC-023 Failed: Delete executed directly without confirmation dialog; Cancel/Confirm dialog branches cannot be tested",
+    "evidence": [
+      "/Users/thuytran/Workspace/eshop-sut/docs/testing/fr07/evidence/fr07-run01/web/screenshots/FR07-TC-025_check.png"
+    ]
+  },
+  {
+    "caseId": "FR07-TC-026",
+    "runId": "fr07-run01",
+    "attempted": true,
+    "startedAt": "2026-10-14T01:17:00.064041",
+    "endedAt": "2026-10-14T01:17:02.774768",
+    "inputSent": null,
+    "stateBefore": null,
+    "stateAfter": null,
+    "assertions": [
+      {
+        "name": "Cart transitions to empty state after deleting last item",
+        "expected": "Empty message visible and table removed",
+        "actual": "has_empty=True, no_table=True",
+        "passed": true
+      }
+    ],
+    "actual": "Cart transitioned to empty state after last item removed",
+    "status": "Passed",
+    "blocker": null,
+    "evidence": [
+      "/Users/thuytran/Workspace/eshop-sut/docs/testing/fr07/evidence/fr07-run01/web/screenshots/FR07-TC-026_after_last_delete.png"
+    ]
+  },
+  {
+    "caseId": "FR07-TC-027",
+    "runId": "fr07-run01",
+    "attempted": true,
+    "startedAt": "2026-10-14T01:17:02.779408",
+    "endedAt": "2026-10-14T01:17:04.927691",
+    "inputSent": null,
+    "stateBefore": null,
+    "stateAfter": null,
+    "assertions": [
+      {
+        "name": "Header 'Sản phẩm' present",
+        "expected": "Sản phẩm",
+        "actual": "found in ['Sản phẩm', 'Giá', 'Số lượng', 'Thành tiền', 'Thao tác']",
+        "passed": true
+      },
+      {
+        "name": "Header 'Đơn giá' present",
+        "expected": "Đơn giá",
+        "actual": "found in ['Sản phẩm', 'Giá', 'Số lượng', 'Thành tiền', 'Thao tác']",
+        "passed": false
+      },
+      {
+        "name": "Header 'Số lượng' present",
+        "expected": "Số lượng",
+        "actual": "found in ['Sản phẩm', 'Giá', 'Số lượng', 'Thành tiền', 'Thao tác']",
+        "passed": true
+      },
+      {
+        "name": "Header 'Thành tiền' present",
+        "expected": "Thành tiền",
+        "actual": "found in ['Sản phẩm', 'Giá', 'Số lượng', 'Thành tiền', 'Thao tác']",
+        "passed": true
+      },
+      {
+        "name": "Header 'Thao tác' present",
+        "expected": "Thao tác",
+        "actual": "found in ['Sản phẩm', 'Giá', 'Số lượng', 'Thành tiền', 'Thao tác']",
+        "passed": true
+      }
+    ],
+    "actual": "Observed headers: ['Sản phẩm', 'Giá', 'Số lượng', 'Thành tiền', 'Thao tác']. Discrepancy: 'Giá' was used instead of 'Đơn giá' (R01 violation)",
+    "status": "Failed",
+    "blocker": null,
+    "evidence": [
+      "/Users/thuytran/Workspace/eshop-sut/docs/testing/fr07/evidence/fr07-run01/web/screenshots/FR07-TC-027_columns.png"
+    ]
+  },
+  {
+    "caseId": "FR07-TC-028",
+    "runId": "fr07-run01",
+    "attempted": true,
+    "startedAt": "2026-10-14T01:17:04.931640",
+    "endedAt": "2026-10-14T01:17:07.090354",
+    "inputSent": null,
+    "stateBefore": null,
+    "stateAfter": null,
+    "assertions": [
+      {
+        "name": "Label 'Tổng cộng' is used",
+        "expected": "Exact label 'Tổng cộng' present",
+        "actual": "has_tong_cong=False, has_tong_tam_tinh=True",
+        "passed": false
+      }
+    ],
+    "actual": "Observed 'Tổng tạm tính' instead of 'Tổng cộng' (R06 violation)",
+    "status": "Failed",
+    "blocker": null,
+    "evidence": [
+      "/Users/thuytran/Workspace/eshop-sut/docs/testing/fr07/evidence/fr07-run01/web/screenshots/FR07-TC-028_total_label.png"
+    ]
+  },
+  {
+    "caseId": "FR07-TC-029",
+    "runId": "fr07-run01",
+    "attempted": true,
+    "startedAt": "2026-10-14T01:17:07.093550",
+    "endedAt": "2026-10-14T01:17:08.883561",
+    "inputSent": null,
+    "stateBefore": null,
+    "stateAfter": null,
+    "assertions": [
+      {
+        "name": "Navigated to home page /",
+        "expected": "URL ends with /",
+        "actual": "http://127.0.0.1:5173/",
+        "passed": true
+      }
+    ],
+    "actual": "Button 'Tiếp tục mua sắm' navigated to http://127.0.0.1:5173/",
+    "status": "Passed",
+    "blocker": null,
+    "evidence": [
+      "/Users/thuytran/Workspace/eshop-sut/docs/testing/fr07/evidence/fr07-run01/web/screenshots/FR07-TC-029_before_click.png",
+      "/Users/thuytran/Workspace/eshop-sut/docs/testing/fr07/evidence/fr07-run01/web/screenshots/FR07-TC-029_after_nav.png"
+    ]
+  }
+]

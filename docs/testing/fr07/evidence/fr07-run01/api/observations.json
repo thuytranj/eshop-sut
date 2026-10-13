@@ -1,0 +1,392 @@
+[
+  {
+    "caseId": "FR07-TC-009",
+    "runId": "fr07-run01",
+    "attempted": true,
+    "startedAt": "2026-10-13T18:13:14.625Z",
+    "endedAt": "2026-10-13T18:13:14.667Z",
+    "inputSent": {
+      "method": "POST",
+      "path": "/api/cart",
+      "body": {
+        "id": 1,
+        "name": "Sản phẩm A",
+        "price": 100000,
+        "quantity": 1
+      },
+      "headers": {
+        "Authorization": "Bearer [REDACTED]",
+        "Content-Type": "application/json"
+      }
+    },
+    "stateBefore": [
+      {
+        "id": 1,
+        "name": "Sản phẩm A",
+        "price": 100000,
+        "quantity": 1
+      }
+    ],
+    "stateAfter": [
+      {
+        "id": 1,
+        "name": "Sản phẩm A",
+        "price": 100000,
+        "quantity": 1
+      },
+      {
+        "id": 1,
+        "name": "Sản phẩm A",
+        "price": 100000,
+        "quantity": 1
+      }
+    ],
+    "assertions": [
+      {
+        "name": "Cart maintains single row for same ID",
+        "expected": "rows === 1",
+        "actual": "rows === 2",
+        "passed": false
+      },
+      {
+        "name": "Quantity merged to 2 (1 + 1)",
+        "expected": "quantity === 2",
+        "actual": "quantity === N/A",
+        "passed": false
+      }
+    ],
+    "actual": "Cart contains 2 rows; items: [{\"id\":1,\"name\":\"Sản phẩm A\",\"price\":100000,\"quantity\":1},{\"id\":1,\"name\":\"Sản phẩm A\",\"price\":100000,\"quantity\":1}]",
+    "status": "Failed",
+    "blocker": null,
+    "evidence": []
+  },
+  {
+    "caseId": "FR07-TC-010",
+    "runId": "fr07-run01",
+    "attempted": true,
+    "startedAt": "2026-10-13T18:13:14.668Z",
+    "endedAt": "2026-10-13T18:13:14.676Z",
+    "inputSent": {
+      "method": "POST",
+      "path": "/api/cart",
+      "body": {
+        "id": 1,
+        "name": "Sản phẩm A",
+        "price": 100000,
+        "quantity": 3
+      },
+      "headers": {
+        "Authorization": "Bearer [REDACTED]",
+        "Content-Type": "application/json"
+      }
+    },
+    "stateBefore": [
+      {
+        "id": 1,
+        "name": "Sản phẩm A",
+        "price": 100000,
+        "quantity": 2
+      }
+    ],
+    "stateAfter": [
+      {
+        "id": 1,
+        "name": "Sản phẩm A",
+        "price": 100000,
+        "quantity": 2
+      },
+      {
+        "id": 1,
+        "name": "Sản phẩm A",
+        "price": 100000,
+        "quantity": 3
+      }
+    ],
+    "assertions": [
+      {
+        "name": "Cart maintains single row for same ID",
+        "expected": "rows === 1",
+        "actual": "rows === 2",
+        "passed": false
+      },
+      {
+        "name": "Quantity merged to 5 (2 + 3)",
+        "expected": "quantity === 5",
+        "actual": "quantity === N/A",
+        "passed": false
+      }
+    ],
+    "actual": "Cart contains 2 rows; items: [{\"id\":1,\"name\":\"Sản phẩm A\",\"price\":100000,\"quantity\":2},{\"id\":1,\"name\":\"Sản phẩm A\",\"price\":100000,\"quantity\":3}]",
+    "status": "Failed",
+    "blocker": null,
+    "evidence": []
+  },
+  {
+    "caseId": "FR07-TC-011",
+    "runId": "fr07-run01",
+    "attempted": true,
+    "startedAt": "2026-10-13T18:13:14.676Z",
+    "endedAt": "2026-10-13T18:13:14.681Z",
+    "inputSent": {
+      "method": "POST",
+      "path": "/api/cart",
+      "body": {
+        "id": 1,
+        "name": "Sản phẩm A",
+        "price": 100000,
+        "quantity": 1
+      },
+      "headers": {
+        "Authorization": "Bearer [REDACTED]"
+      }
+    },
+    "stateBefore": [],
+    "stateAfter": [
+      {
+        "id": 1,
+        "name": "Sản phẩm A",
+        "price": 100000,
+        "quantity": 1
+      }
+    ],
+    "assertions": [
+      {
+        "name": "Cart contains 1 row with quantity=1",
+        "expected": "rows === 1 and quantity === 1",
+        "actual": "rows: 1, quantity: 1",
+        "passed": true
+      }
+    ],
+    "actual": "Cart contains 1 row with quantity=1",
+    "status": "Passed",
+    "blocker": null,
+    "evidence": []
+  },
+  {
+    "caseId": "FR07-TC-012",
+    "runId": "fr07-run01",
+    "attempted": true,
+    "startedAt": "2026-10-13T18:13:14.681Z",
+    "endedAt": "2026-10-13T18:13:14.688Z",
+    "inputSent": {
+      "method": "POST",
+      "path": "/api/cart",
+      "body": {
+        "id": 1,
+        "name": "Sản phẩm A",
+        "price": 100000,
+        "quantity": 1
+      },
+      "headers": {
+        "Authorization": "Bearer [REDACTED]",
+        "Content-Type": "application/json"
+      }
+    },
+    "stateBefore": [
+      {
+        "id": 1,
+        "name": "Sản phẩm A",
+        "price": 100000,
+        "quantity": 1
+      },
+      {
+        "id": 1,
+        "name": "Sản phẩm A",
+        "price": 100000,
+        "quantity": 1
+      }
+    ],
+    "stateAfter": [
+      {
+        "id": 1,
+        "name": "Sản phẩm A",
+        "price": 100000,
+        "quantity": 1
+      },
+      {
+        "id": 1,
+        "name": "Sản phẩm A",
+        "price": 100000,
+        "quantity": 1
+      },
+      {
+        "id": 1,
+        "name": "Sản phẩm A",
+        "price": 100000,
+        "quantity": 1
+      }
+    ],
+    "assertions": [
+      {
+        "name": "Cart maintains single row for same ID after 3rd add",
+        "expected": "rows === 1",
+        "actual": "rows === 3",
+        "passed": false
+      },
+      {
+        "name": "Quantity merged to 3",
+        "expected": "quantity === 3",
+        "actual": "quantity === N/A",
+        "passed": false
+      }
+    ],
+    "actual": "Cart contains 3 rows; items: [{\"id\":1,\"name\":\"Sản phẩm A\",\"price\":100000,\"quantity\":1},{\"id\":1,\"name\":\"Sản phẩm A\",\"price\":100000,\"quantity\":1},{\"id\":1,\"name\":\"Sản phẩm A\",\"price\":100000,\"quantity\":1}]",
+    "status": "Failed",
+    "blocker": null,
+    "evidence": []
+  },
+  {
+    "caseId": "FR07-TC-013",
+    "runId": "fr07-run01",
+    "attempted": true,
+    "startedAt": "2026-10-13T18:13:14.688Z",
+    "endedAt": "2026-10-13T18:13:14.694Z",
+    "inputSent": [
+      {
+        "method": "POST",
+        "path": "/api/cart",
+        "body": {
+          "id": 1,
+          "name": "Sản phẩm A",
+          "price": 100000,
+          "quantity": 1
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/api/cart",
+        "body": {
+          "id": 2,
+          "name": "Sản phẩm B",
+          "price": 250000,
+          "quantity": 1
+        }
+      }
+    ],
+    "stateBefore": [],
+    "stateAfter": [
+      {
+        "id": 1,
+        "name": "Sản phẩm A",
+        "price": 100000,
+        "quantity": 1
+      },
+      {
+        "id": 2,
+        "name": "Sản phẩm B",
+        "price": 250000,
+        "quantity": 1
+      }
+    ],
+    "assertions": [
+      {
+        "name": "Cart contains 2 rows with distinct IDs (1 and 2)",
+        "expected": "rows === 2 and contains IDs [1, 2]",
+        "actual": "rows: 2, IDs: [1, 2]",
+        "passed": true
+      }
+    ],
+    "actual": "Cart contains 2 distinct items (IDs 1 and 2)",
+    "status": "Passed",
+    "blocker": null,
+    "evidence": []
+  },
+  {
+    "caseId": "FR07-TC-030",
+    "runId": "fr07-run01",
+    "attempted": true,
+    "startedAt": "2026-10-13T18:13:14.694Z",
+    "endedAt": "2026-10-13T18:13:14.698Z",
+    "inputSent": {
+      "method": "GET",
+      "path": "/api/cart",
+      "headers": {
+        "Authorization": "Bearer [REDACTED]"
+      }
+    },
+    "stateBefore": null,
+    "stateAfter": [],
+    "assertions": [
+      {
+        "name": "Status is 200 OK",
+        "expected": "statusCode === 200",
+        "actual": "statusCode === 200",
+        "passed": true
+      },
+      {
+        "name": "Body is an array",
+        "expected": "Array.isArray(body) === true",
+        "actual": "isArray === true",
+        "passed": true
+      }
+    ],
+    "actual": "200 OK, returned array with length 0",
+    "status": "Passed",
+    "blocker": null,
+    "evidence": []
+  },
+  {
+    "caseId": "FR07-TC-031",
+    "runId": "fr07-run01",
+    "attempted": true,
+    "startedAt": "2026-10-13T18:13:14.698Z",
+    "endedAt": "2026-10-13T18:13:14.698Z",
+    "inputSent": {
+      "method": "GET",
+      "path": "/api/cart",
+      "headers": {}
+    },
+    "stateBefore": null,
+    "stateAfter": {
+      "error": "Unauthorized"
+    },
+    "assertions": [
+      {
+        "name": "Request rejected without authorization header",
+        "expected": "statusCode in [401, 403]",
+        "actual": "statusCode === 401",
+        "passed": true
+      }
+    ],
+    "actual": "Rejected with HTTP 401",
+    "status": "Passed",
+    "blocker": null,
+    "evidence": []
+  },
+  {
+    "caseId": "FR07-TC-032",
+    "runId": "fr07-run01",
+    "attempted": true,
+    "startedAt": "2026-10-13T18:13:14.698Z",
+    "endedAt": "2026-10-13T18:13:14.699Z",
+    "inputSent": {
+      "method": "POST",
+      "path": "/api/cart",
+      "body": {
+        "id": 1,
+        "name": "Sản phẩm A",
+        "price": 100000,
+        "quantity": 1
+      },
+      "headers": {
+        "Authorization": "Bearer [REDACTED]"
+      }
+    },
+    "stateBefore": null,
+    "stateAfter": {
+      "error": "Forbidden"
+    },
+    "assertions": [
+      {
+        "name": "Request rejected with invalid bearer token",
+        "expected": "statusCode in [401, 403]",
+        "actual": "statusCode === 403",
+        "passed": true
+      }
+    ],
+    "actual": "Rejected with HTTP 403",
+    "status": "Passed",
+    "blocker": null,
+    "evidence": []
+  }
+]

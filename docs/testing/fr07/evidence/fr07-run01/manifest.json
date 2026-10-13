@@ -1,0 +1,33 @@
+{
+  "runId": "fr07-run01",
+  "commit": "478c859708494fe411405c51d5ca5b643e1d6659",
+  "suiteHash": "d5b27da8bc248a71efad036aa879a9a9eeead0ef80ce7c42b2d9f1fc18149e0d",
+  "runtime": {
+    "node": "v20.x (HTTP Runner)",
+    "python": "3.11/Playwright Chromium",
+    "browser": "Chromium 1280x800",
+    "locale": "vi-VN"
+  },
+  "timezone": "Asia/Ho_Chi_Minh (UTC+07:00)",
+  "startedAt": "2026-10-14T01:08:00+07:00",
+  "endedAt": "2026-10-14T01:17:15+07:00",
+  "urls": {
+    "backend": "http://localhost:3000",
+    "web": "http://127.0.0.1:5173"
+  },
+  "environment": {
+    "isolatedBackendPath": "/private/tmp/eshop-fr07-run/backend",
+    "workingDbPath": "backend/database.sqlite",
+    "workingDbHash": "4392316c5828c3df249d744eb6667a8415d98cc9facf56e373696397a0faba50",
+    "workingDbUntouched": true
+  },
+  "stats": {
+    "totalCanonicalCases": 32,
+    "attempted": 32,
+    "executed": 28,
+    "passed": 13,
+    "failed": 15,
+    "blocked": 4,
+    "notRun": 0
+  }
+}
