@@ -294,3 +294,31 @@ Thực thi Task 1: Phân tích requirements.md, thiết lập quy tắc FR07-R01
 ```
 
 Pending learner review.
+
+## Interaction fr07-exec-task02-001
+
+```text
+{
+  "tool": "Google Antigravity Agentic IDE",
+  "model": "Gemini 3.8 Flash (High)",
+  "task": "FR-07-task2-domain-testing",
+  "occurred_at": "2026-10-14T00:45:10+07:00",
+  "recorded_at": "2026-10-14T00:47:00+07:00",
+  "source": "Task 2 execution: Domain Testing derivation",
+  "capture": "full"
+}
+```
+
+### Original prompt
+
+```text
+Execute Task 2: Sinh test case Domain Testing
+```
+
+### Original AI output
+
+```text
+Hoàn thành Task 2: Mô hình hóa vị từ toán học, phân tích On/Off/In cho số lượng d, trạng thái giỏ n, mặt phẳng gộp dòng q'=q+d, bảng điểm khả thi, và 29 ca kiểm thử nguồn Domain Testing thuộc 8 families (FR07-DT-*).
+```
+
+Pending learner review.
