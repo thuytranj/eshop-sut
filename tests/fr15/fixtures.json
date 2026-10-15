@@ -1,0 +1,79 @@
+{
+  "baseline": {
+    "categories": [
+      {
+        "id": 10,
+        "name": "Category Ten"
+      },
+      {
+        "id": 20,
+        "name": "Category Twenty"
+      }
+    ],
+    "products": [
+      {
+        "id": 101,
+        "name": "Product A",
+        "price": 100000,
+        "description": "Description A",
+        "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aGZcAAAAASUVORK5CYII=",
+        "category_id": 10
+      },
+      {
+        "id": 202,
+        "name": "Product B",
+        "price": 200000,
+        "description": "Description B",
+        "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aGZcAAAAASUVORK5CYII=",
+        "category_id": 20
+      },
+      {
+        "id": 303,
+        "name": "Product C",
+        "price": 300000,
+        "description": "Description C",
+        "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aGZcAAAAASUVORK5CYII=",
+        "category_id": 10
+      }
+    ]
+  },
+  "empty-products": {
+    "categories": [
+      {
+        "id": 10,
+        "name": "Category Ten"
+      },
+      {
+        "id": 20,
+        "name": "Category Twenty"
+      }
+    ],
+    "products": []
+  },
+  "single-product": {
+    "categories": [
+      {
+        "id": 10,
+        "name": "Category Ten"
+      },
+      {
+        "id": 20,
+        "name": "Category Twenty"
+      }
+    ],
+    "products": [
+      {
+        "id": 101,
+        "name": "Product A",
+        "price": 100000,
+        "description": "Description A",
+        "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aGZcAAAAASUVORK5CYII=",
+        "category_id": 10
+      }
+    ]
+  },
+  "empty-categories": {
+    "categories": [],
+    "products": []
+  }
+}
