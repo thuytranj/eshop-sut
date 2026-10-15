@@ -1,0 +1,2700 @@
+[
+  {
+    "id": "FR15-OBL-DT-001",
+    "sourceCaseId": "FR15-DT-001",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R01"
+    ],
+    "layer": "API",
+    "action": "Create",
+    "rationale": "Interior / valid nominal CRUD",
+    "point": {
+      "L": 128,
+      "p": 100000,
+      "c": 10
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-002",
+    "sourceCaseId": "FR15-DT-002",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05"
+    ],
+    "layer": "API",
+    "action": "Create",
+    "rationale": "Name single-boundary L=0; hold price/category/auth valid",
+    "point": {
+      "L": 0,
+      "p": 100000,
+      "c": 10,
+      "N": false,
+      "P": true,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-003",
+    "sourceCaseId": "FR15-DT-003",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05"
+    ],
+    "layer": "API",
+    "action": "Create",
+    "rationale": "Name single-boundary L=1; hold price/category/auth valid",
+    "point": {
+      "L": 1,
+      "p": 100000,
+      "c": 10,
+      "N": true,
+      "P": true,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-004",
+    "sourceCaseId": "FR15-DT-004",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05"
+    ],
+    "layer": "API",
+    "action": "Create",
+    "rationale": "Name single-boundary L=2; hold price/category/auth valid",
+    "point": {
+      "L": 2,
+      "p": 100000,
+      "c": 10,
+      "N": true,
+      "P": true,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-005",
+    "sourceCaseId": "FR15-DT-005",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05"
+    ],
+    "layer": "API",
+    "action": "Create",
+    "rationale": "Name single-boundary L=254; hold price/category/auth valid",
+    "point": {
+      "L": 254,
+      "p": 100000,
+      "c": 10,
+      "N": true,
+      "P": true,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-006",
+    "sourceCaseId": "FR15-DT-006",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05"
+    ],
+    "layer": "API",
+    "action": "Create",
+    "rationale": "Name single-boundary L=255; hold price/category/auth valid",
+    "point": {
+      "L": 255,
+      "p": 100000,
+      "c": 10,
+      "N": true,
+      "P": true,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-007",
+    "sourceCaseId": "FR15-DT-007",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05"
+    ],
+    "layer": "API",
+    "action": "Create",
+    "rationale": "Name single-boundary L=256; hold price/category/auth valid",
+    "point": {
+      "L": 256,
+      "p": 100000,
+      "c": 10,
+      "N": false,
+      "P": true,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-008",
+    "sourceCaseId": "FR15-DT-008",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R06"
+    ],
+    "layer": "API",
+    "action": "Create",
+    "rationale": "Price boundary p=-1; strict zero excludes equality",
+    "point": {
+      "L": 128,
+      "p": -1,
+      "c": 10,
+      "N": true,
+      "P": false,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-009",
+    "sourceCaseId": "FR15-DT-009",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R06"
+    ],
+    "layer": "API",
+    "action": "Create",
+    "rationale": "Price boundary p=0; strict zero excludes equality",
+    "point": {
+      "L": 128,
+      "p": 0,
+      "c": 10,
+      "N": true,
+      "P": false,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-010",
+    "sourceCaseId": "FR15-DT-010",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R06"
+    ],
+    "layer": "API",
+    "action": "Create",
+    "rationale": "Price boundary p=1; strict zero excludes equality",
+    "point": {
+      "L": 128,
+      "p": 1,
+      "c": 10,
+      "N": true,
+      "P": true,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-011",
+    "sourceCaseId": "FR15-DT-011",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05",
+      "FR15-R06"
+    ],
+    "layer": "API",
+    "action": "Create",
+    "rationale": "Separated surface/corner L=254,p=1; evaluate both predicates",
+    "point": {
+      "L": 254,
+      "p": 1,
+      "c": 10,
+      "N": true,
+      "P": true,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-012",
+    "sourceCaseId": "FR15-DT-012",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05",
+      "FR15-R06"
+    ],
+    "layer": "API",
+    "action": "Create",
+    "rationale": "Separated surface/corner L=255,p=1; evaluate both predicates",
+    "point": {
+      "L": 255,
+      "p": 1,
+      "c": 10,
+      "N": true,
+      "P": true,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-013",
+    "sourceCaseId": "FR15-DT-013",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05",
+      "FR15-R06"
+    ],
+    "layer": "API",
+    "action": "Create",
+    "rationale": "Separated surface/corner L=256,p=1; evaluate both predicates",
+    "point": {
+      "L": 256,
+      "p": 1,
+      "c": 10,
+      "N": false,
+      "P": true,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-014",
+    "sourceCaseId": "FR15-DT-014",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05",
+      "FR15-R06"
+    ],
+    "layer": "API",
+    "action": "Create",
+    "rationale": "Separated surface/corner L=1,p=-1; evaluate both predicates",
+    "point": {
+      "L": 1,
+      "p": -1,
+      "c": 10,
+      "N": true,
+      "P": false,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-015",
+    "sourceCaseId": "FR15-DT-015",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05",
+      "FR15-R06"
+    ],
+    "layer": "API",
+    "action": "Create",
+    "rationale": "Separated surface/corner L=1,p=0; evaluate both predicates",
+    "point": {
+      "L": 1,
+      "p": 0,
+      "c": 10,
+      "N": true,
+      "P": false,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-016",
+    "sourceCaseId": "FR15-DT-016",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05",
+      "FR15-R06"
+    ],
+    "layer": "API",
+    "action": "Create",
+    "rationale": "Separated surface/corner L=1,p=1; evaluate both predicates",
+    "point": {
+      "L": 1,
+      "p": 1,
+      "c": 10,
+      "N": true,
+      "P": true,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-017",
+    "sourceCaseId": "FR15-DT-017",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05",
+      "FR15-R06"
+    ],
+    "layer": "API",
+    "action": "Create",
+    "rationale": "Separated surface/corner L=255,p=-1; evaluate both predicates",
+    "point": {
+      "L": 255,
+      "p": -1,
+      "c": 10,
+      "N": true,
+      "P": false,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-018",
+    "sourceCaseId": "FR15-DT-018",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05",
+      "FR15-R06"
+    ],
+    "layer": "API",
+    "action": "Create",
+    "rationale": "Separated surface/corner L=255,p=0; evaluate both predicates",
+    "point": {
+      "L": 255,
+      "p": 0,
+      "c": 10,
+      "N": true,
+      "P": false,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-019",
+    "sourceCaseId": "FR15-DT-019",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05",
+      "FR15-R06"
+    ],
+    "layer": "API",
+    "action": "Create",
+    "rationale": "Separated surface/corner L=0,p=1; evaluate both predicates",
+    "point": {
+      "L": 0,
+      "p": 1,
+      "c": 10,
+      "N": false,
+      "P": true,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-020",
+    "sourceCaseId": "FR15-DT-020",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05",
+      "FR15-R06"
+    ],
+    "layer": "API",
+    "action": "Create",
+    "rationale": "Separated surface/corner L=256,p=0; multi-fault, not single-rule coverage",
+    "point": {
+      "L": 256,
+      "p": 0,
+      "c": 10,
+      "N": false,
+      "P": false,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-021",
+    "sourceCaseId": "FR15-DT-021",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R07"
+    ],
+    "layer": "API",
+    "action": "Create",
+    "rationale": "Category second existing member 20",
+    "point": {
+      "c": 20,
+      "C": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-022",
+    "sourceCaseId": "FR15-DT-022",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R06"
+    ],
+    "layer": "API",
+    "action": "Create",
+    "rationale": "Required price empty",
+    "point": null,
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-023",
+    "sourceCaseId": "FR15-DT-023",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R07"
+    ],
+    "layer": "API",
+    "action": "Create",
+    "rationale": "Category absent member 15, not an ordered ID boundary",
+    "point": {
+      "c": 15,
+      "C": false
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-024",
+    "sourceCaseId": "FR15-DT-024",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R06"
+    ],
+    "layer": "API",
+    "action": "Create",
+    "rationale": "Price non-numeric string",
+    "point": null,
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-025",
+    "sourceCaseId": "FR15-DT-025",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05"
+    ],
+    "layer": "API",
+    "action": "Create",
+    "rationale": "Required name omitted",
+    "point": null,
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-026",
+    "sourceCaseId": "FR15-DT-026",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05"
+    ],
+    "layer": "API",
+    "action": "Create",
+    "rationale": "Required name null",
+    "point": null,
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-027",
+    "sourceCaseId": "FR15-DT-027",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05"
+    ],
+    "layer": "API",
+    "action": "Create",
+    "rationale": "Required name empty",
+    "point": null,
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-028",
+    "sourceCaseId": "FR15-DT-028",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R06"
+    ],
+    "layer": "API",
+    "action": "Create",
+    "rationale": "Required price omitted",
+    "point": null,
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-029",
+    "sourceCaseId": "FR15-DT-029",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R06"
+    ],
+    "layer": "API",
+    "action": "Create",
+    "rationale": "Required price null",
+    "point": null,
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-030",
+    "sourceCaseId": "FR15-DT-030",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R06"
+    ],
+    "layer": "API",
+    "action": "Create",
+    "rationale": "Required price empty",
+    "point": null,
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-031",
+    "sourceCaseId": "FR15-DT-031",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R07"
+    ],
+    "layer": "API",
+    "action": "Create",
+    "rationale": "Required category_id omitted",
+    "point": null,
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-032",
+    "sourceCaseId": "FR15-DT-032",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R07"
+    ],
+    "layer": "API",
+    "action": "Create",
+    "rationale": "Required category_id null",
+    "point": null,
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-033",
+    "sourceCaseId": "FR15-DT-033",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R07"
+    ],
+    "layer": "API",
+    "action": "Create",
+    "rationale": "Required category_id empty",
+    "point": null,
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-SUP-001",
+    "sourceCaseId": "FR15-SUP-001",
+    "technique": "Supplementary",
+    "rules": [
+      "FR15-R06"
+    ],
+    "layer": "API",
+    "action": "Create",
+    "rationale": "Fractional positive price characterization; precision unresolved",
+    "point": null,
+    "oracleStatus": "unresolved"
+  },
+  {
+    "id": "FR15-OBL-SUP-002",
+    "sourceCaseId": "FR15-SUP-002",
+    "technique": "Supplementary",
+    "rules": [
+      "FR15-R05"
+    ],
+    "layer": "API",
+    "action": "Create",
+    "rationale": "Whitespace name characterization; trim undefined",
+    "point": null,
+    "oracleStatus": "unresolved"
+  },
+  {
+    "id": "FR15-OBL-SUP-003",
+    "sourceCaseId": "FR15-SUP-003",
+    "technique": "Supplementary",
+    "rules": [
+      "FR15-R05"
+    ],
+    "layer": "API",
+    "action": "Create",
+    "rationale": "Unicode emoji name characterization; length unit undefined",
+    "point": null,
+    "oracleStatus": "unresolved"
+  },
+  {
+    "id": "FR15-OBL-DT-034",
+    "sourceCaseId": "FR15-DT-034",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R03",
+      "FR15-R08"
+    ],
+    "layer": "API",
+    "action": "Update",
+    "rationale": "Interior / valid nominal CRUD",
+    "point": {
+      "L": 128,
+      "p": 100000,
+      "c": 10
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-035",
+    "sourceCaseId": "FR15-DT-035",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05"
+    ],
+    "layer": "API",
+    "action": "Update",
+    "rationale": "Name single-boundary L=0; hold price/category/auth valid",
+    "point": {
+      "L": 0,
+      "p": 100000,
+      "c": 10,
+      "N": false,
+      "P": true,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-036",
+    "sourceCaseId": "FR15-DT-036",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05"
+    ],
+    "layer": "API",
+    "action": "Update",
+    "rationale": "Name single-boundary L=1; hold price/category/auth valid",
+    "point": {
+      "L": 1,
+      "p": 100000,
+      "c": 10,
+      "N": true,
+      "P": true,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-037",
+    "sourceCaseId": "FR15-DT-037",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05"
+    ],
+    "layer": "API",
+    "action": "Update",
+    "rationale": "Name single-boundary L=2; hold price/category/auth valid",
+    "point": {
+      "L": 2,
+      "p": 100000,
+      "c": 10,
+      "N": true,
+      "P": true,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-038",
+    "sourceCaseId": "FR15-DT-038",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05"
+    ],
+    "layer": "API",
+    "action": "Update",
+    "rationale": "Name single-boundary L=254; hold price/category/auth valid",
+    "point": {
+      "L": 254,
+      "p": 100000,
+      "c": 10,
+      "N": true,
+      "P": true,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-039",
+    "sourceCaseId": "FR15-DT-039",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05"
+    ],
+    "layer": "API",
+    "action": "Update",
+    "rationale": "Name single-boundary L=255; hold price/category/auth valid",
+    "point": {
+      "L": 255,
+      "p": 100000,
+      "c": 10,
+      "N": true,
+      "P": true,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-040",
+    "sourceCaseId": "FR15-DT-040",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05"
+    ],
+    "layer": "API",
+    "action": "Update",
+    "rationale": "Name single-boundary L=256; hold price/category/auth valid",
+    "point": {
+      "L": 256,
+      "p": 100000,
+      "c": 10,
+      "N": false,
+      "P": true,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-041",
+    "sourceCaseId": "FR15-DT-041",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R06"
+    ],
+    "layer": "API",
+    "action": "Update",
+    "rationale": "Price boundary p=-1; strict zero excludes equality",
+    "point": {
+      "L": 128,
+      "p": -1,
+      "c": 10,
+      "N": true,
+      "P": false,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-042",
+    "sourceCaseId": "FR15-DT-042",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R06"
+    ],
+    "layer": "API",
+    "action": "Update",
+    "rationale": "Price boundary p=0; strict zero excludes equality",
+    "point": {
+      "L": 128,
+      "p": 0,
+      "c": 10,
+      "N": true,
+      "P": false,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-043",
+    "sourceCaseId": "FR15-DT-043",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R06"
+    ],
+    "layer": "API",
+    "action": "Update",
+    "rationale": "Price boundary p=1; strict zero excludes equality",
+    "point": {
+      "L": 128,
+      "p": 1,
+      "c": 10,
+      "N": true,
+      "P": true,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-044",
+    "sourceCaseId": "FR15-DT-044",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05",
+      "FR15-R06"
+    ],
+    "layer": "API",
+    "action": "Update",
+    "rationale": "Separated surface/corner L=254,p=1; evaluate both predicates",
+    "point": {
+      "L": 254,
+      "p": 1,
+      "c": 10,
+      "N": true,
+      "P": true,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-045",
+    "sourceCaseId": "FR15-DT-045",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05",
+      "FR15-R06"
+    ],
+    "layer": "API",
+    "action": "Update",
+    "rationale": "Separated surface/corner L=255,p=1; evaluate both predicates",
+    "point": {
+      "L": 255,
+      "p": 1,
+      "c": 10,
+      "N": true,
+      "P": true,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-046",
+    "sourceCaseId": "FR15-DT-046",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05",
+      "FR15-R06"
+    ],
+    "layer": "API",
+    "action": "Update",
+    "rationale": "Separated surface/corner L=256,p=1; evaluate both predicates",
+    "point": {
+      "L": 256,
+      "p": 1,
+      "c": 10,
+      "N": false,
+      "P": true,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-047",
+    "sourceCaseId": "FR15-DT-047",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05",
+      "FR15-R06"
+    ],
+    "layer": "API",
+    "action": "Update",
+    "rationale": "Separated surface/corner L=1,p=-1; evaluate both predicates",
+    "point": {
+      "L": 1,
+      "p": -1,
+      "c": 10,
+      "N": true,
+      "P": false,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-048",
+    "sourceCaseId": "FR15-DT-048",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05",
+      "FR15-R06"
+    ],
+    "layer": "API",
+    "action": "Update",
+    "rationale": "Separated surface/corner L=1,p=0; evaluate both predicates",
+    "point": {
+      "L": 1,
+      "p": 0,
+      "c": 10,
+      "N": true,
+      "P": false,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-049",
+    "sourceCaseId": "FR15-DT-049",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05",
+      "FR15-R06"
+    ],
+    "layer": "API",
+    "action": "Update",
+    "rationale": "Separated surface/corner L=1,p=1; evaluate both predicates",
+    "point": {
+      "L": 1,
+      "p": 1,
+      "c": 10,
+      "N": true,
+      "P": true,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-050",
+    "sourceCaseId": "FR15-DT-050",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05",
+      "FR15-R06"
+    ],
+    "layer": "API",
+    "action": "Update",
+    "rationale": "Separated surface/corner L=255,p=-1; evaluate both predicates",
+    "point": {
+      "L": 255,
+      "p": -1,
+      "c": 10,
+      "N": true,
+      "P": false,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-051",
+    "sourceCaseId": "FR15-DT-051",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05",
+      "FR15-R06"
+    ],
+    "layer": "API",
+    "action": "Update",
+    "rationale": "Separated surface/corner L=255,p=0; evaluate both predicates",
+    "point": {
+      "L": 255,
+      "p": 0,
+      "c": 10,
+      "N": true,
+      "P": false,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-052",
+    "sourceCaseId": "FR15-DT-052",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05",
+      "FR15-R06"
+    ],
+    "layer": "API",
+    "action": "Update",
+    "rationale": "Separated surface/corner L=0,p=1; evaluate both predicates",
+    "point": {
+      "L": 0,
+      "p": 1,
+      "c": 10,
+      "N": false,
+      "P": true,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-053",
+    "sourceCaseId": "FR15-DT-053",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05",
+      "FR15-R06"
+    ],
+    "layer": "API",
+    "action": "Update",
+    "rationale": "Separated surface/corner L=256,p=0; multi-fault, not single-rule coverage",
+    "point": {
+      "L": 256,
+      "p": 0,
+      "c": 10,
+      "N": false,
+      "P": false,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-054",
+    "sourceCaseId": "FR15-DT-054",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R07"
+    ],
+    "layer": "API",
+    "action": "Update",
+    "rationale": "Category second existing member 20",
+    "point": {
+      "c": 20,
+      "C": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-055",
+    "sourceCaseId": "FR15-DT-055",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R06"
+    ],
+    "layer": "API",
+    "action": "Update",
+    "rationale": "Required price empty",
+    "point": null,
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-056",
+    "sourceCaseId": "FR15-DT-056",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R07"
+    ],
+    "layer": "API",
+    "action": "Update",
+    "rationale": "Category absent member 15, not an ordered ID boundary",
+    "point": {
+      "c": 15,
+      "C": false
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-057",
+    "sourceCaseId": "FR15-DT-057",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R06"
+    ],
+    "layer": "API",
+    "action": "Update",
+    "rationale": "Price non-numeric string",
+    "point": null,
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-058",
+    "sourceCaseId": "FR15-DT-058",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05"
+    ],
+    "layer": "API",
+    "action": "Update",
+    "rationale": "Required name omitted",
+    "point": null,
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-059",
+    "sourceCaseId": "FR15-DT-059",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05"
+    ],
+    "layer": "API",
+    "action": "Update",
+    "rationale": "Required name null",
+    "point": null,
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-060",
+    "sourceCaseId": "FR15-DT-060",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05"
+    ],
+    "layer": "API",
+    "action": "Update",
+    "rationale": "Required name empty",
+    "point": null,
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-061",
+    "sourceCaseId": "FR15-DT-061",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R06"
+    ],
+    "layer": "API",
+    "action": "Update",
+    "rationale": "Required price omitted",
+    "point": null,
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-062",
+    "sourceCaseId": "FR15-DT-062",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R06"
+    ],
+    "layer": "API",
+    "action": "Update",
+    "rationale": "Required price null",
+    "point": null,
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-063",
+    "sourceCaseId": "FR15-DT-063",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R06"
+    ],
+    "layer": "API",
+    "action": "Update",
+    "rationale": "Required price empty",
+    "point": null,
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-064",
+    "sourceCaseId": "FR15-DT-064",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R07"
+    ],
+    "layer": "API",
+    "action": "Update",
+    "rationale": "Required category_id omitted",
+    "point": null,
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-065",
+    "sourceCaseId": "FR15-DT-065",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R07"
+    ],
+    "layer": "API",
+    "action": "Update",
+    "rationale": "Required category_id null",
+    "point": null,
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-066",
+    "sourceCaseId": "FR15-DT-066",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R07"
+    ],
+    "layer": "API",
+    "action": "Update",
+    "rationale": "Required category_id empty",
+    "point": null,
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-SUP-004",
+    "sourceCaseId": "FR15-SUP-004",
+    "technique": "Supplementary",
+    "rules": [
+      "FR15-R06"
+    ],
+    "layer": "API",
+    "action": "Update",
+    "rationale": "Fractional positive price characterization; precision unresolved",
+    "point": null,
+    "oracleStatus": "unresolved"
+  },
+  {
+    "id": "FR15-OBL-SUP-005",
+    "sourceCaseId": "FR15-SUP-005",
+    "technique": "Supplementary",
+    "rules": [
+      "FR15-R05"
+    ],
+    "layer": "API",
+    "action": "Update",
+    "rationale": "Whitespace name characterization; trim undefined",
+    "point": null,
+    "oracleStatus": "unresolved"
+  },
+  {
+    "id": "FR15-OBL-SUP-006",
+    "sourceCaseId": "FR15-SUP-006",
+    "technique": "Supplementary",
+    "rules": [
+      "FR15-R05"
+    ],
+    "layer": "API",
+    "action": "Update",
+    "rationale": "Unicode emoji name characterization; length unit undefined",
+    "point": null,
+    "oracleStatus": "unresolved"
+  },
+  {
+    "id": "FR15-OBL-DT-067",
+    "sourceCaseId": "FR15-DT-067",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R01"
+    ],
+    "layer": "WEB",
+    "action": "Create",
+    "rationale": "Interior / valid nominal CRUD",
+    "point": {
+      "L": 128,
+      "p": 100000,
+      "c": 10
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-068",
+    "sourceCaseId": "FR15-DT-068",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05"
+    ],
+    "layer": "WEB",
+    "action": "Create",
+    "rationale": "Name single-boundary L=0; hold price/category/auth valid",
+    "point": {
+      "L": 0,
+      "p": 100000,
+      "c": 10,
+      "N": false,
+      "P": true,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-069",
+    "sourceCaseId": "FR15-DT-069",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05"
+    ],
+    "layer": "WEB",
+    "action": "Create",
+    "rationale": "Name single-boundary L=1; hold price/category/auth valid",
+    "point": {
+      "L": 1,
+      "p": 100000,
+      "c": 10,
+      "N": true,
+      "P": true,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-070",
+    "sourceCaseId": "FR15-DT-070",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05"
+    ],
+    "layer": "WEB",
+    "action": "Create",
+    "rationale": "Name single-boundary L=2; hold price/category/auth valid",
+    "point": {
+      "L": 2,
+      "p": 100000,
+      "c": 10,
+      "N": true,
+      "P": true,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-071",
+    "sourceCaseId": "FR15-DT-071",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05"
+    ],
+    "layer": "WEB",
+    "action": "Create",
+    "rationale": "Name single-boundary L=254; hold price/category/auth valid",
+    "point": {
+      "L": 254,
+      "p": 100000,
+      "c": 10,
+      "N": true,
+      "P": true,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-072",
+    "sourceCaseId": "FR15-DT-072",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05"
+    ],
+    "layer": "WEB",
+    "action": "Create",
+    "rationale": "Name single-boundary L=255; hold price/category/auth valid",
+    "point": {
+      "L": 255,
+      "p": 100000,
+      "c": 10,
+      "N": true,
+      "P": true,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-073",
+    "sourceCaseId": "FR15-DT-073",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05"
+    ],
+    "layer": "WEB",
+    "action": "Create",
+    "rationale": "Name single-boundary L=256; hold price/category/auth valid",
+    "point": {
+      "L": 256,
+      "p": 100000,
+      "c": 10,
+      "N": false,
+      "P": true,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-074",
+    "sourceCaseId": "FR15-DT-074",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R06"
+    ],
+    "layer": "WEB",
+    "action": "Create",
+    "rationale": "Price boundary p=-1; strict zero excludes equality",
+    "point": {
+      "L": 128,
+      "p": -1,
+      "c": 10,
+      "N": true,
+      "P": false,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-075",
+    "sourceCaseId": "FR15-DT-075",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R06"
+    ],
+    "layer": "WEB",
+    "action": "Create",
+    "rationale": "Price boundary p=0; strict zero excludes equality",
+    "point": {
+      "L": 128,
+      "p": 0,
+      "c": 10,
+      "N": true,
+      "P": false,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-076",
+    "sourceCaseId": "FR15-DT-076",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R06"
+    ],
+    "layer": "WEB",
+    "action": "Create",
+    "rationale": "Price boundary p=1; strict zero excludes equality",
+    "point": {
+      "L": 128,
+      "p": 1,
+      "c": 10,
+      "N": true,
+      "P": true,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-077",
+    "sourceCaseId": "FR15-DT-077",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05",
+      "FR15-R06"
+    ],
+    "layer": "WEB",
+    "action": "Create",
+    "rationale": "Separated surface/corner L=254,p=1; evaluate both predicates",
+    "point": {
+      "L": 254,
+      "p": 1,
+      "c": 10,
+      "N": true,
+      "P": true,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-078",
+    "sourceCaseId": "FR15-DT-078",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05",
+      "FR15-R06"
+    ],
+    "layer": "WEB",
+    "action": "Create",
+    "rationale": "Separated surface/corner L=255,p=1; evaluate both predicates",
+    "point": {
+      "L": 255,
+      "p": 1,
+      "c": 10,
+      "N": true,
+      "P": true,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-079",
+    "sourceCaseId": "FR15-DT-079",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05",
+      "FR15-R06"
+    ],
+    "layer": "WEB",
+    "action": "Create",
+    "rationale": "Separated surface/corner L=256,p=1; evaluate both predicates",
+    "point": {
+      "L": 256,
+      "p": 1,
+      "c": 10,
+      "N": false,
+      "P": true,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-080",
+    "sourceCaseId": "FR15-DT-080",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05",
+      "FR15-R06"
+    ],
+    "layer": "WEB",
+    "action": "Create",
+    "rationale": "Separated surface/corner L=1,p=-1; evaluate both predicates",
+    "point": {
+      "L": 1,
+      "p": -1,
+      "c": 10,
+      "N": true,
+      "P": false,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-081",
+    "sourceCaseId": "FR15-DT-081",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05",
+      "FR15-R06"
+    ],
+    "layer": "WEB",
+    "action": "Create",
+    "rationale": "Separated surface/corner L=1,p=0; evaluate both predicates",
+    "point": {
+      "L": 1,
+      "p": 0,
+      "c": 10,
+      "N": true,
+      "P": false,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-082",
+    "sourceCaseId": "FR15-DT-082",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05",
+      "FR15-R06"
+    ],
+    "layer": "WEB",
+    "action": "Create",
+    "rationale": "Separated surface/corner L=1,p=1; evaluate both predicates",
+    "point": {
+      "L": 1,
+      "p": 1,
+      "c": 10,
+      "N": true,
+      "P": true,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-083",
+    "sourceCaseId": "FR15-DT-083",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05",
+      "FR15-R06"
+    ],
+    "layer": "WEB",
+    "action": "Create",
+    "rationale": "Separated surface/corner L=255,p=-1; evaluate both predicates",
+    "point": {
+      "L": 255,
+      "p": -1,
+      "c": 10,
+      "N": true,
+      "P": false,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-084",
+    "sourceCaseId": "FR15-DT-084",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05",
+      "FR15-R06"
+    ],
+    "layer": "WEB",
+    "action": "Create",
+    "rationale": "Separated surface/corner L=255,p=0; evaluate both predicates",
+    "point": {
+      "L": 255,
+      "p": 0,
+      "c": 10,
+      "N": true,
+      "P": false,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-085",
+    "sourceCaseId": "FR15-DT-085",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05",
+      "FR15-R06"
+    ],
+    "layer": "WEB",
+    "action": "Create",
+    "rationale": "Separated surface/corner L=0,p=1; evaluate both predicates",
+    "point": {
+      "L": 0,
+      "p": 1,
+      "c": 10,
+      "N": false,
+      "P": true,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-086",
+    "sourceCaseId": "FR15-DT-086",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05",
+      "FR15-R06"
+    ],
+    "layer": "WEB",
+    "action": "Create",
+    "rationale": "Separated surface/corner L=256,p=0; multi-fault, not single-rule coverage",
+    "point": {
+      "L": 256,
+      "p": 0,
+      "c": 10,
+      "N": false,
+      "P": false,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-087",
+    "sourceCaseId": "FR15-DT-087",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R07"
+    ],
+    "layer": "WEB",
+    "action": "Create",
+    "rationale": "Category second existing member 20",
+    "point": {
+      "c": 20,
+      "C": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-088",
+    "sourceCaseId": "FR15-DT-088",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R06"
+    ],
+    "layer": "WEB",
+    "action": "Create",
+    "rationale": "Required price empty",
+    "point": null,
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-SUP-007",
+    "sourceCaseId": "FR15-SUP-007",
+    "technique": "Supplementary",
+    "rules": [
+      "FR15-R06"
+    ],
+    "layer": "WEB",
+    "action": "Create",
+    "rationale": "Fractional positive price characterization; precision unresolved",
+    "point": null,
+    "oracleStatus": "unresolved"
+  },
+  {
+    "id": "FR15-OBL-DT-089",
+    "sourceCaseId": "FR15-DT-089",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R03",
+      "FR15-R08"
+    ],
+    "layer": "WEB",
+    "action": "Update",
+    "rationale": "Interior / valid nominal CRUD",
+    "point": {
+      "L": 128,
+      "p": 100000,
+      "c": 10
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-090",
+    "sourceCaseId": "FR15-DT-090",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05"
+    ],
+    "layer": "WEB",
+    "action": "Update",
+    "rationale": "Name single-boundary L=0; hold price/category/auth valid",
+    "point": {
+      "L": 0,
+      "p": 100000,
+      "c": 10,
+      "N": false,
+      "P": true,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-091",
+    "sourceCaseId": "FR15-DT-091",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05"
+    ],
+    "layer": "WEB",
+    "action": "Update",
+    "rationale": "Name single-boundary L=1; hold price/category/auth valid",
+    "point": {
+      "L": 1,
+      "p": 100000,
+      "c": 10,
+      "N": true,
+      "P": true,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-092",
+    "sourceCaseId": "FR15-DT-092",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05"
+    ],
+    "layer": "WEB",
+    "action": "Update",
+    "rationale": "Name single-boundary L=2; hold price/category/auth valid",
+    "point": {
+      "L": 2,
+      "p": 100000,
+      "c": 10,
+      "N": true,
+      "P": true,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-093",
+    "sourceCaseId": "FR15-DT-093",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05"
+    ],
+    "layer": "WEB",
+    "action": "Update",
+    "rationale": "Name single-boundary L=254; hold price/category/auth valid",
+    "point": {
+      "L": 254,
+      "p": 100000,
+      "c": 10,
+      "N": true,
+      "P": true,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-094",
+    "sourceCaseId": "FR15-DT-094",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05"
+    ],
+    "layer": "WEB",
+    "action": "Update",
+    "rationale": "Name single-boundary L=255; hold price/category/auth valid",
+    "point": {
+      "L": 255,
+      "p": 100000,
+      "c": 10,
+      "N": true,
+      "P": true,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-095",
+    "sourceCaseId": "FR15-DT-095",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05"
+    ],
+    "layer": "WEB",
+    "action": "Update",
+    "rationale": "Name single-boundary L=256; hold price/category/auth valid",
+    "point": {
+      "L": 256,
+      "p": 100000,
+      "c": 10,
+      "N": false,
+      "P": true,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-096",
+    "sourceCaseId": "FR15-DT-096",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R06"
+    ],
+    "layer": "WEB",
+    "action": "Update",
+    "rationale": "Price boundary p=-1; strict zero excludes equality",
+    "point": {
+      "L": 128,
+      "p": -1,
+      "c": 10,
+      "N": true,
+      "P": false,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-097",
+    "sourceCaseId": "FR15-DT-097",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R06"
+    ],
+    "layer": "WEB",
+    "action": "Update",
+    "rationale": "Price boundary p=0; strict zero excludes equality",
+    "point": {
+      "L": 128,
+      "p": 0,
+      "c": 10,
+      "N": true,
+      "P": false,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-098",
+    "sourceCaseId": "FR15-DT-098",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R06"
+    ],
+    "layer": "WEB",
+    "action": "Update",
+    "rationale": "Price boundary p=1; strict zero excludes equality",
+    "point": {
+      "L": 128,
+      "p": 1,
+      "c": 10,
+      "N": true,
+      "P": true,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-099",
+    "sourceCaseId": "FR15-DT-099",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05",
+      "FR15-R06"
+    ],
+    "layer": "WEB",
+    "action": "Update",
+    "rationale": "Separated surface/corner L=254,p=1; evaluate both predicates",
+    "point": {
+      "L": 254,
+      "p": 1,
+      "c": 10,
+      "N": true,
+      "P": true,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-100",
+    "sourceCaseId": "FR15-DT-100",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05",
+      "FR15-R06"
+    ],
+    "layer": "WEB",
+    "action": "Update",
+    "rationale": "Separated surface/corner L=255,p=1; evaluate both predicates",
+    "point": {
+      "L": 255,
+      "p": 1,
+      "c": 10,
+      "N": true,
+      "P": true,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-101",
+    "sourceCaseId": "FR15-DT-101",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05",
+      "FR15-R06"
+    ],
+    "layer": "WEB",
+    "action": "Update",
+    "rationale": "Separated surface/corner L=256,p=1; evaluate both predicates",
+    "point": {
+      "L": 256,
+      "p": 1,
+      "c": 10,
+      "N": false,
+      "P": true,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-102",
+    "sourceCaseId": "FR15-DT-102",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05",
+      "FR15-R06"
+    ],
+    "layer": "WEB",
+    "action": "Update",
+    "rationale": "Separated surface/corner L=1,p=-1; evaluate both predicates",
+    "point": {
+      "L": 1,
+      "p": -1,
+      "c": 10,
+      "N": true,
+      "P": false,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-103",
+    "sourceCaseId": "FR15-DT-103",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05",
+      "FR15-R06"
+    ],
+    "layer": "WEB",
+    "action": "Update",
+    "rationale": "Separated surface/corner L=1,p=0; evaluate both predicates",
+    "point": {
+      "L": 1,
+      "p": 0,
+      "c": 10,
+      "N": true,
+      "P": false,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-104",
+    "sourceCaseId": "FR15-DT-104",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05",
+      "FR15-R06"
+    ],
+    "layer": "WEB",
+    "action": "Update",
+    "rationale": "Separated surface/corner L=1,p=1; evaluate both predicates",
+    "point": {
+      "L": 1,
+      "p": 1,
+      "c": 10,
+      "N": true,
+      "P": true,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-105",
+    "sourceCaseId": "FR15-DT-105",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05",
+      "FR15-R06"
+    ],
+    "layer": "WEB",
+    "action": "Update",
+    "rationale": "Separated surface/corner L=255,p=-1; evaluate both predicates",
+    "point": {
+      "L": 255,
+      "p": -1,
+      "c": 10,
+      "N": true,
+      "P": false,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-106",
+    "sourceCaseId": "FR15-DT-106",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05",
+      "FR15-R06"
+    ],
+    "layer": "WEB",
+    "action": "Update",
+    "rationale": "Separated surface/corner L=255,p=0; evaluate both predicates",
+    "point": {
+      "L": 255,
+      "p": 0,
+      "c": 10,
+      "N": true,
+      "P": false,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-107",
+    "sourceCaseId": "FR15-DT-107",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05",
+      "FR15-R06"
+    ],
+    "layer": "WEB",
+    "action": "Update",
+    "rationale": "Separated surface/corner L=0,p=1; evaluate both predicates",
+    "point": {
+      "L": 0,
+      "p": 1,
+      "c": 10,
+      "N": false,
+      "P": true,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-108",
+    "sourceCaseId": "FR15-DT-108",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R05",
+      "FR15-R06"
+    ],
+    "layer": "WEB",
+    "action": "Update",
+    "rationale": "Separated surface/corner L=256,p=0; multi-fault, not single-rule coverage",
+    "point": {
+      "L": 256,
+      "p": 0,
+      "c": 10,
+      "N": false,
+      "P": false,
+      "C": true,
+      "A": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-109",
+    "sourceCaseId": "FR15-DT-109",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R07"
+    ],
+    "layer": "WEB",
+    "action": "Update",
+    "rationale": "Category second existing member 20",
+    "point": {
+      "c": 20,
+      "C": true
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-110",
+    "sourceCaseId": "FR15-DT-110",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R06"
+    ],
+    "layer": "WEB",
+    "action": "Update",
+    "rationale": "Required price empty",
+    "point": null,
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-SUP-008",
+    "sourceCaseId": "FR15-SUP-008",
+    "technique": "Supplementary",
+    "rules": [
+      "FR15-R06"
+    ],
+    "layer": "WEB",
+    "action": "Update",
+    "rationale": "Fractional positive price characterization; precision unresolved",
+    "point": null,
+    "oracleStatus": "unresolved"
+  },
+  {
+    "id": "FR15-OBL-DT-111",
+    "sourceCaseId": "FR15-DT-111",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R02"
+    ],
+    "layer": "API",
+    "action": "Read",
+    "rationale": "Read list in empty-products",
+    "point": null,
+    "oracleStatus": "derived"
+  },
+  {
+    "id": "FR15-OBL-DT-112",
+    "sourceCaseId": "FR15-DT-112",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R02"
+    ],
+    "layer": "API",
+    "action": "Read",
+    "rationale": "Read list in baseline",
+    "point": null,
+    "oracleStatus": "derived"
+  },
+  {
+    "id": "FR15-OBL-DT-113",
+    "sourceCaseId": "FR15-DT-113",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R02"
+    ],
+    "layer": "API",
+    "action": "Read",
+    "rationale": "Read detail target 101",
+    "point": null,
+    "oracleStatus": "derived"
+  },
+  {
+    "id": "FR15-OBL-DT-114",
+    "sourceCaseId": "FR15-DT-114",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R02"
+    ],
+    "layer": "API",
+    "action": "Read",
+    "rationale": "Read detail target 202",
+    "point": null,
+    "oracleStatus": "derived"
+  },
+  {
+    "id": "FR15-OBL-DT-115",
+    "sourceCaseId": "FR15-DT-115",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R04"
+    ],
+    "layer": "API",
+    "action": "Delete",
+    "rationale": "Delete target 101 in baseline; retain all other IDs",
+    "point": null,
+    "oracleStatus": "derived"
+  },
+  {
+    "id": "FR15-OBL-DT-116",
+    "sourceCaseId": "FR15-DT-116",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R04"
+    ],
+    "layer": "API",
+    "action": "Delete",
+    "rationale": "Delete target 101 in single-product; retain all other IDs",
+    "point": null,
+    "oracleStatus": "derived"
+  },
+  {
+    "id": "FR15-OBL-DT-117",
+    "sourceCaseId": "FR15-DT-117",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R03",
+      "FR15-R08"
+    ],
+    "layer": "API",
+    "action": "Update",
+    "rationale": "Update only field name; preserve others and all non-targets",
+    "point": null,
+    "oracleStatus": "derived"
+  },
+  {
+    "id": "FR15-OBL-DT-118",
+    "sourceCaseId": "FR15-DT-118",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R03",
+      "FR15-R08"
+    ],
+    "layer": "API",
+    "action": "Update",
+    "rationale": "Update only field price; preserve others and all non-targets",
+    "point": null,
+    "oracleStatus": "derived"
+  },
+  {
+    "id": "FR15-OBL-DT-119",
+    "sourceCaseId": "FR15-DT-119",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R03",
+      "FR15-R08"
+    ],
+    "layer": "API",
+    "action": "Update",
+    "rationale": "Update only field description; preserve others and all non-targets",
+    "point": null,
+    "oracleStatus": "derived"
+  },
+  {
+    "id": "FR15-OBL-DT-120",
+    "sourceCaseId": "FR15-DT-120",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R03",
+      "FR15-R08"
+    ],
+    "layer": "API",
+    "action": "Update",
+    "rationale": "Update only field imageUrl; preserve others and all non-targets",
+    "point": null,
+    "oracleStatus": "derived"
+  },
+  {
+    "id": "FR15-OBL-DT-121",
+    "sourceCaseId": "FR15-DT-121",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R03",
+      "FR15-R08"
+    ],
+    "layer": "API",
+    "action": "Update",
+    "rationale": "Update only field category_id; preserve others and all non-targets",
+    "point": null,
+    "oracleStatus": "derived"
+  },
+  {
+    "id": "FR15-OBL-DT-122",
+    "sourceCaseId": "FR15-DT-122",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R03",
+      "FR15-R08"
+    ],
+    "layer": "API",
+    "action": "Update",
+    "rationale": "Update target B (202), contrast A/C",
+    "point": null,
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-123",
+    "sourceCaseId": "FR15-DT-123",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R02"
+    ],
+    "layer": "WEB",
+    "action": "Read",
+    "rationale": "Read list in empty-products",
+    "point": null,
+    "oracleStatus": "derived"
+  },
+  {
+    "id": "FR15-OBL-DT-124",
+    "sourceCaseId": "FR15-DT-124",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R02"
+    ],
+    "layer": "WEB",
+    "action": "Read",
+    "rationale": "Read list in baseline",
+    "point": null,
+    "oracleStatus": "derived"
+  },
+  {
+    "id": "FR15-OBL-DT-125",
+    "sourceCaseId": "FR15-DT-125",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R04"
+    ],
+    "layer": "WEB",
+    "action": "Delete",
+    "rationale": "Delete target 101 in baseline; retain all other IDs",
+    "point": null,
+    "oracleStatus": "derived"
+  },
+  {
+    "id": "FR15-OBL-DT-126",
+    "sourceCaseId": "FR15-DT-126",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R04"
+    ],
+    "layer": "WEB",
+    "action": "Delete",
+    "rationale": "Delete target 101 in single-product; retain all other IDs",
+    "point": null,
+    "oracleStatus": "derived"
+  },
+  {
+    "id": "FR15-OBL-DT-127",
+    "sourceCaseId": "FR15-DT-127",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R03",
+      "FR15-R08"
+    ],
+    "layer": "WEB",
+    "action": "Update",
+    "rationale": "Update only field name; preserve others and all non-targets",
+    "point": null,
+    "oracleStatus": "derived"
+  },
+  {
+    "id": "FR15-OBL-DT-128",
+    "sourceCaseId": "FR15-DT-128",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R03",
+      "FR15-R08"
+    ],
+    "layer": "WEB",
+    "action": "Update",
+    "rationale": "Update only field price; preserve others and all non-targets",
+    "point": null,
+    "oracleStatus": "derived"
+  },
+  {
+    "id": "FR15-OBL-DT-129",
+    "sourceCaseId": "FR15-DT-129",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R03",
+      "FR15-R08"
+    ],
+    "layer": "WEB",
+    "action": "Update",
+    "rationale": "Update only field description; preserve others and all non-targets",
+    "point": null,
+    "oracleStatus": "derived"
+  },
+  {
+    "id": "FR15-OBL-DT-130",
+    "sourceCaseId": "FR15-DT-130",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R03",
+      "FR15-R08"
+    ],
+    "layer": "WEB",
+    "action": "Update",
+    "rationale": "Update only field imageUrl; preserve others and all non-targets",
+    "point": null,
+    "oracleStatus": "derived"
+  },
+  {
+    "id": "FR15-OBL-DT-131",
+    "sourceCaseId": "FR15-DT-131",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R03",
+      "FR15-R08"
+    ],
+    "layer": "WEB",
+    "action": "Update",
+    "rationale": "Update only field category_id; preserve others and all non-targets",
+    "point": null,
+    "oracleStatus": "derived"
+  },
+  {
+    "id": "FR15-OBL-DT-132",
+    "sourceCaseId": "FR15-DT-132",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R03",
+      "FR15-R08"
+    ],
+    "layer": "WEB",
+    "action": "Update",
+    "rationale": "Update target B (202), contrast A/C",
+    "point": null,
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-133",
+    "sourceCaseId": "FR15-DT-133",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR12-DEP-WRITE"
+    ],
+    "layer": "API",
+    "action": "Create",
+    "rationale": "Unauthorized none must not mutate products",
+    "point": null,
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-134",
+    "sourceCaseId": "FR15-DT-134",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR12-DEP-WRITE"
+    ],
+    "layer": "API",
+    "action": "Create",
+    "rationale": "Unauthorized invalid must not mutate products",
+    "point": null,
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-135",
+    "sourceCaseId": "FR15-DT-135",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR12-DEP-WRITE"
+    ],
+    "layer": "API",
+    "action": "Create",
+    "rationale": "Unauthorized user must not mutate products",
+    "point": null,
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-136",
+    "sourceCaseId": "FR15-DT-136",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR12-DEP-WRITE"
+    ],
+    "layer": "API",
+    "action": "Update",
+    "rationale": "Unauthorized none must not mutate products",
+    "point": null,
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-137",
+    "sourceCaseId": "FR15-DT-137",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR12-DEP-WRITE"
+    ],
+    "layer": "API",
+    "action": "Update",
+    "rationale": "Unauthorized invalid must not mutate products",
+    "point": null,
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-138",
+    "sourceCaseId": "FR15-DT-138",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR12-DEP-WRITE"
+    ],
+    "layer": "API",
+    "action": "Update",
+    "rationale": "Unauthorized user must not mutate products",
+    "point": null,
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-139",
+    "sourceCaseId": "FR15-DT-139",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR12-DEP-WRITE"
+    ],
+    "layer": "API",
+    "action": "Delete",
+    "rationale": "Unauthorized none must not mutate products",
+    "point": null,
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-140",
+    "sourceCaseId": "FR15-DT-140",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR12-DEP-WRITE"
+    ],
+    "layer": "API",
+    "action": "Delete",
+    "rationale": "Unauthorized invalid must not mutate products",
+    "point": null,
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-141",
+    "sourceCaseId": "FR15-DT-141",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR12-DEP-WRITE"
+    ],
+    "layer": "API",
+    "action": "Delete",
+    "rationale": "Unauthorized user must not mutate products",
+    "point": null,
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-142",
+    "sourceCaseId": "FR15-DT-142",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R07"
+    ],
+    "layer": "WEB",
+    "action": "Create",
+    "rationale": "No categories: reject creation despite valid name/price",
+    "point": null,
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-DT-143",
+    "sourceCaseId": "FR15-DT-143",
+    "technique": "Domain Testing",
+    "rules": [
+      "FR15-R07"
+    ],
+    "layer": "API",
+    "action": "Create",
+    "rationale": "No categories: category 10 is not an existing member",
+    "point": null,
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-SUP-009",
+    "sourceCaseId": "FR15-SUP-009",
+    "technique": "Supplementary",
+    "rules": [
+      "FR15-R02"
+    ],
+    "layer": "API",
+    "action": "Read",
+    "rationale": "Missing target characterization; exact response not specified",
+    "point": null,
+    "oracleStatus": "unresolved"
+  },
+  {
+    "id": "FR15-OBL-SUP-010",
+    "sourceCaseId": "FR15-SUP-010",
+    "technique": "Supplementary",
+    "rules": [
+      "FR15-R03"
+    ],
+    "layer": "API",
+    "action": "Update",
+    "rationale": "Missing target characterization; exact response not specified",
+    "point": null,
+    "oracleStatus": "unresolved"
+  },
+  {
+    "id": "FR15-OBL-SUP-011",
+    "sourceCaseId": "FR15-SUP-011",
+    "technique": "Supplementary",
+    "rules": [
+      "FR15-R04"
+    ],
+    "layer": "API",
+    "action": "Delete",
+    "rationale": "Missing target characterization; exact response not specified",
+    "point": null,
+    "oracleStatus": "unresolved"
+  }
+]
