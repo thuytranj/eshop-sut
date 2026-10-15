@@ -176,3 +176,14 @@ Harness TDD: initial valid-suite assertion failed with validator not implemented
 | FR15-TC-156 | WEB/Create | FR15-BVA-033 | BVA | FR15-OBL-BVA-033 |
 | FR15-TC-157 | WEB/Update | FR15-BVA-040 | BVA | FR15-OBL-BVA-040 |
 | FR15-TC-158 | WEB/Update | FR15-BVA-044 | BVA | FR15-OBL-BVA-044 |
+
+## Freeze v2 — PNG fixture correction before execution
+
+V1 hashes above are historical. IDAT CRC of AI-authored 1×1 PNG was invalid; reproduced by chunk CRC test (RED). Corrected CRC only, no SUT change; all IDs/rules/obligations and dedup identities preserved. New fixture test GREEN; validator rerun. This is an evidenced AI fixture omission, not a product bug. Active hashes:
+
+| File | SHA256 |
+|---|---|
+| tests/fr15/suite.json | bd21cd16700d8c20d15c361ed0ac56a741978844ea4524ee8ede4020441da21e |
+| tests/fr15/source-cases.json | 9c9693ff0a247e7231752a67955a2dd86647370d6bf8132983ca854b0c4e6346 |
+| tests/fr15/obligations.json | f58dcd35b4458788872811f6d6120724c4e7ea16df820a7a4b89a25111632305 |
+| tests/fr15/fixtures.json | 9968ebef532a7f4baf37d5c91f6334dee2b07bbf81b935d089356716f43b712d |
