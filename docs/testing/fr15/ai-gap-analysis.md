@@ -1,35 +1,41 @@
-# FR15 — AI gap analysis
+# FR-15 — AI gap analysis và AI Critique
 
-## Bằng chứng và phạm vi
+## 1. Phạm vi bằng chứng
 
-Audit ghi các snapshot output theo task trong phiên hiện tại; capture partial, không phải complete session transcript. Model cụ thể và thời gian lịch sử prompt không biết, recorded_at có UTC+07:00. Người dùng chọn Native là authorization execution, không phải learner technical review. Learner review: Pending.
+AI Audit lưu các snapshot output theo từng bước trong phiên làm việc. Capture extent là partial: không có transcript đầy đủ của phiên. Model cụ thể của agent chính và thời gian lịch sử của prompt chưa biết; `recorded_at` ghi thời điểm lưu với timezone UTC+07:00. Review độc lập sử dụng model được nêu riêng trong final-review.md.
 
-| Gap | Output ban đầu / bằng chứng | Correction và verification | Phân loại |
+Việc người dùng chọn Native là cho phép thực hiện plan, không chứng nhận kết quả kiểm thử. Review kỹ thuật của người học vẫn đang chờ. Các hiệu chỉnh dưới đây do AI self-review hoặc review độc lập phát hiện; không gán chúng cho sinh viên khi chưa có bằng chứng.
+
+## 2. Khoảng trống phát hiện trước review cuối
+
+| Gap | Output ban đầu và bằng chứng | Cách hiệu chỉnh, kiểm chứng | Kết luận |
 |---|---|---|---|
-| GAP-01 | Fixtures ở commit e625109 và source/frozen v1 có IDAT CRC sai; evidence/harness/png-red.log xác nhận failure | Commit 65d30b1 sửa CRC, freeze v2 giữ old hashes trong suite-review.md; png-fixture.test.cjs GREEN | AI fixture omission được quan sát; không phải bug SUT |
-| GAP-02 | run01 WEB TC069 uiBeforeReload=3 rows, screenshot chụp sau đã có 4; runner suy lỗi UI khi chưa đồng bộ | Thêm API-request quiet 500ms + hai animation frames; ui-sync.test.py từ missing behavior RED sang GREEN; run02 chạy lại toàn 158 ca | AI harness timing gap; bỏ verdict run01 khỏi bug count |
-| GAP-03 | readback-red.log: assessor chưa phát hiện tình huống DB đúng nhưng API readback thiếu | Thêm api-readback-consistent trong assessor; harness 15 tests GREEN; run02 ghi DB + API readback và so sánh | Oracle assertion omission trong harness; chưa phải missed SUT bug |
+| GAP-01 | Fixture ở commit e625109 và suite v1 có IDAT CRC sai; evidence/harness/png-red.log tái hiện được lỗi | Sửa CRC trong commit 65d30b1; freeze v2 giữ hash cũ để đối chiếu; png-fixture.test.cjs chuyển RED→GREEN | Sai sót chuẩn bị fixture của AI, không phải bug SUT |
+| GAP-02 | Ở run01, WEB TC069 có uiBeforeReload chỉ 3 dòng nhưng screenshot sau đó đã có 4 dòng | Theo dõi API-request quiet 500ms và hai animation frames; kiểm tra hồi quy ui-sync.test.py chuyển RED→GREEN; chạy lại 158 ca trong run02 | Race của harness có thể tạo false failure; không dùng verdict run01 để đếm bug cuối |
+| GAP-03 | readback-red.log cho thấy assessor chưa phát hiện trường hợp DB đúng nhưng API readback thiếu dữ liệu | Thêm assertion api-readback-consistent; 15 kiểm tra harness tại giai đoạn đó đạt; run02 ghi và so sánh cả DB lẫn API readback | Thiếu assertion trong oracle của harness; chưa chứng minh bỏ sót bug SUT |
 
-Nguyên nhân có thể liên quan việc AI tập trung vào nội dung nghiệp vụ mà chưa kiểm dữ liệu nhị phân và timing của React; đây là giả thuyết từ dấu hiệu, không phải khẳng định cơ chế bên trong AI. Không có learner correction nào được cung cấp, nên không gán ba correction này cho sinh viên.
+AI có thể đã tập trung vào logic nghiệp vụ mà chưa kiểm đủ dữ liệu nhị phân và timing của React. Đây là giả thuyết dựa trên hiện tượng quan sát, không phải kết luận về cơ chế bên trong mô hình.
 
-## Final review gaps và correction v3
+## 3. Khoảng trống phát hiện tại review cuối và freeze v3
 
-- GAP-04 (review độc lập): UI snapshot/assessor ban đầu thiếu image src, nên không đủ bằng chứng cho image preservation. Thêm src vào cả immediate/reload, kiểm tra wrong-image từng Passed trước sửa rồi Failed đúng sau sửa. Đây là omission của assertion coverage, không tự suy đã có corruption ảnh của non-target trong SUT.
-- GAP-05 (review độc lập): absence of response bị coi là rejection do !success; test no-response RED→GREEN, giờ cần HTML prevention thật hoặc rejection response. Bốn ca reject Passed của run02 có HTML prevention nên không bị chứng minh false Pass bởi gap này.
-- GAP-06 (executor re-grade một mục reviewer đặt ngoài oracle): bốn ca số dương 0.5 từng bị Blocked vì lẫn precision BVA với acceptance. README chỉ yêu cầu số >0; 0.5 biểu diễn chính xác và thỏa predicate. Oracle đổi accept, technique Supplementary giữ nguyên; consumer test RED→GREEN và whole suite run03. API C/U và WEB Create chấp nhận 0.5; WEB Update lưu đúng nhưng UI tức thời sai (BUG-004 đã biết). Đây là adjudication gap, không chứng minh một bug giá mới hay correction của sinh viên.
+**GAP-04 — Thiếu nguồn ảnh trong UI snapshot.** Reviewer độc lập phát hiện snapshot và assessor chỉ so tên, giá, alt mà chưa so `src`. Một quan sát tổng hợp có nguồn ảnh sai vẫn có thể được assessor cho Passed. Bổ sung việc ghi/so `src` cho cả UI trước và sau reload, cùng regression test RED→GREEN. Gap này làm yếu assertion coverage; không tự chứng minh SUT đã làm hỏng ảnh của sản phẩm khác.
 
-Freeze v3 giữ ID và DT/BVA denominator, đổi bốn oracle và assertion coverage; run03 là final. Các bản freeze, reports và run cũ được bảo toàn qua Git/evidence. Bản review gốc và disposition xem final-review.md.
+**GAP-05 — Nhầm không có response với từ chối thao tác.** Điều kiện `!success` trước đây có thể đúng cả khi không nhận được response. Regression test cho tình huống này chuyển RED→GREEN sau khi yêu cầu HTML prevention thực sự hoặc response từ chối. Nếu không có evidence phù hợp, kết quả phải là Blocked. Bốn ca từ chối được Passed trong run02 đều có HTML prevention nên chưa có bằng chứng chúng là false Pass.
 
-## Những rủi ro đã phòng ngừa, không bịa thành lỗi AI đã xảy ra
+**GAP-06 — Áp oracle quá thận trọng với giá 0.5.** Bốn ca từng bị Blocked vì nhầm thiếu precision của BVA với việc chưa biết giá này có hợp lệ hay không. Theo R06, 0.5 biểu diễn được và thỏa p>0 nên có oracle chấp nhận. Bốn ca giữ nhãn Supplementary, được kiểm bằng regression test RED→GREEN rồi chạy lại toàn suite ở run03. API Create/Update và WEB Create chấp nhận giá này; WEB Update lưu đúng nhưng UI tức thời sai, thuộc BUG-004 đã biết. Kết quả này giải quyết một khoảng trống trong việc phán quyết, không chứng minh một bug giá mới hoặc correction của sinh viên.
 
-Update validation, BVA length257, category membership thay vì ID interval, price precision chưa biết, khác biệt API/WEB và immediate/reload đã được đưa vào thiết kế. Không có evidence chứng minh AI ban đầu bỏ các case đó. Năm nhóm bug SUT được cập nhật từ failed observations run03 và mapping trong bugs.md; AI self-review phát hiện rule p>0 đã bị áp quá thận trọng với 0.5; các ca số dương này trước đó chưa được phán quyết; kết quả mới không chứng minh một bug SUT ngoài các nhóm đã báo cáo. Không có evidence rằng người học là người bổ sung correction này. Không tuyên bố AI không còn bỏ sót bug.
+Freeze v3 giữ ID, mapping và mẫu số DT/BVA; chỉ hiệu chỉnh bốn oracle cùng assertion coverage. Run03 là kết quả cuối. Các phiên bản cũ được giữ qua Git và raw evidence. Xem [review độc lập và cách xử lý](final-review.md).
 
-## Giới hạn / follow-up
+## 4. Rủi ro đã phòng ngừa và giới hạn kết luận
 
-7 supplementary probes có actual observation nhưng oracle đầy đủ chưa xác định: Unicode/trim, missing-target contract; full-price adjacency vẫn chưa rõ. DT143 và BVA44 là nghĩa vụ lấy mẫu trong phạm vi hữu hạn, không phải full-input coverage. Cần slide và clarification để version suite/rerun; không suy diễn Pass/Fail. PDF/YouTube/GitHub Issues là công việc submission chưa được thực hiện trong plan FR15 này.
+Thiết kế đã xét Update validation, giá trị tên 257 của BVA, category membership thay vì khoảng ID, precision giá chưa rõ, API/WEB và UI trước/sau reload. Không có bằng chứng để biến các rủi ro đã phòng ngừa này thành lời khẳng định rằng AI từng bỏ sót chúng.
 
-## AI Critique — draft cần người học review
+Năm nhóm bug trong [bugs.md](bugs.md) dựa trên observations Failed của run03. Chưa có bằng chứng một bug SUT ngoài các nhóm đã báo cáo được sinh viên phát hiện rồi bổ sung. Cũng không thể kết luận AI đã tìm hết bug.
+
+Bảy Supplementary probe đã có quan sát nhưng vẫn thiếu oracle: quy tắc trim/đếm Unicode và response contract của ID vắng. 143 obligation DT và 44 obligation BVA là tập mẫu hữu hạn, không phải coverage toàn input. Cần slide và đặc tả bổ sung để version suite và chạy lại. PDF, YouTube, GitHub Issues và hồ sơ nộp bài đầy đủ chưa được thực hiện trong execution plan FR-15 này.
+
+## 5. AI Critique — bản thảo chờ người học review
 
 AI hỗ trợ chuyển requirement FR-15 thành predicates, điểm On/Off/In và nghĩa vụ BVA có truy vết. Tuy nhiên, nhiều sai sót thực tế cho thấy đầu ra hợp lý về hình thức chưa đủ đáng tin. Fixture PNG ban đầu có CRC sai; kiểm tra từng chunk phát hiện vấn đề trước execution và dẫn đến freeze mới. Runner đầu tiên lại đọc DOM trước khi cập nhật bất đồng bộ hoàn tất: TC069 của run01 có snapshot ba dòng nhưng screenshot sau đó có bốn dòng. Vì vậy, không thể coi mọi assertion thất bại là bug của SUT. Sau khi sửa đồng bộ, toàn suite được chạy lại. Review độc lập tiếp tục chỉ ra rằng snapshot thiếu nguồn ảnh và việc không nhận response bị nhầm thành bằng chứng từ chối. Các kiểm tra hồi quy đã chứng minh và sửa hai khoảng trống này. Một lỗi phân tích khác là giữ giá 0.5 ở trạng thái chưa có oracle vì precision chưa rõ. Thực tế, 0.5 biểu diễn chính xác và thỏa điều kiện lớn hơn không; precision còn thiếu chỉ giới hạn phân tích lân cận BVA. Oracle được sửa và suite chạy lại trong run03, phân biệt giá lưu đúng với lỗi UI cập nhật. Những sự kiện này cho thấy cần kiểm chứng cả dữ liệu mẫu, công cụ đo và cách diễn giải requirement. Không có bằng chứng để gán các correction cho sinh viên hoặc khẳng định nguyên nhân bên trong mô hình. Người học vẫn cần review, bổ sung slide, giữ bằng chứng gốc và phân biệt coverage với pass rate.
 
-Word count: 272, whitespace split trên riêng đoạn critique. AI-assisted draft; learner review Pending.
+Số từ: **272**, tính bằng whitespace split trên riêng đoạn critique. Đây là bản thảo có AI hỗ trợ; chưa có xác nhận hoặc bản sửa từ người học.

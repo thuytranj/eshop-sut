@@ -1,58 +1,86 @@
-# FR-15 — Domain Testing theo từng bước
+# FR-15 — Áp dụng Domain Testing từng bước
 
-## Bước 1: từ requirement thành predicate
+## Bước 1. Chuyển requirement thành predicate
 
-Test basis và ambiguities: requirements.md. Trên payload có đủ trường và đúng dạng: N=(1≤L≤255), P=(p>0), C=(c∈Categories), A=(JWT valid ∧ role=admin), E=(target tồn tại). D_Create=A∧N∧P∧C; D_Update=A∧N∧P∧C∧E. Complement: ¬A∨¬N∨¬P∨¬C (thêm ¬E cho Update). Không dùng Update target vắng để đánh giá name/price validation. Missing/null/type mismatch nằm ngoài lát cắt chính, được xét requiredness riêng.
+Test basis và các điểm chưa rõ được trình bày trong [requirements.md](requirements.md). Với payload có đủ field và đúng dạng, xác định:
 
-Read domain là list empty/nonempty hoặc target tồn tại/vắng; Delete domain là target trong tập một/nhiều product. Quyền ghi là domain categorical admin/user/none/invalid. Không dùng N/P của body để xét Read/Delete.
+- N := 1≤L≤255: tên không rỗng và không vượt 255 ký tự.
+- P := p>0: giá dương.
+- C := c∈Categories: danh mục tồn tại.
+- A := JWT hợp lệ ∧ role=admin: có quyền ghi.
+- E := sản phẩm được chọn tồn tại.
 
-## Bước 2: phân miền và biên
+Miền chấp nhận Create là D_Create=A∧N∧P∧C. Update có thêm E: D_Update=A∧N∧P∧C∧E. Miền bù của Create là ¬A∨¬N∨¬P∨¬C; Update có thêm ¬E. Các trường hợp thiếu field, null hoặc sai kiểu nằm ngoài lát cắt chính và được xét riêng.
 
-Name: {0} invalid, [1,255] valid, [256,∞) invalid. Giá: p≤0 invalid, p>0 valid, equality surface p=0 bị loại. Categories membership: 10/20 valid, 15 absent invalid, omitted/null invalid; không có khoảng ID hay BVA category. Auth categorical: chỉ admin JWT hợp lệ được mutate. Miền chấp nhận có các mặt độc lập, không tự giả một biên nghiêng L+p=k.
+Read phân biệt danh sách rỗng/có dữ liệu và ID tồn tại/không tồn tại. Delete phân biệt xóa trong tập nhiều sản phẩm và xóa sản phẩm cuối. Không áp các predicate N/P của body Create/Update cho Read/Delete.
 
-## Bước 3: interior và fixture
+## Bước 2. Phân hoạch miền và xác định biên
 
-Interior (128,100000,10,admin) là valid. Update dùng target A=101 và B/C làm controls; case B=202 có A/C controls. Sản phẩm phân biệt tên/giá/category/description. Every case resets baseline; description/imageUrl nominal trừ field-specific Update. Steps cụ thể nằm cùng ID trong source JSON: reset → snapshot → thao tác API hoặc UI → capture → compare. Tọa độ L chỉ dùng ASCII; code point/UTF16/grapheme của Unicode chưa được đồng nhất.
+| Chiều | Các partition | Biên hoặc cách chọn đại diện |
+|---|---|---|
+| Độ dài tên | {0}: không hợp lệ; [1,255]: hợp lệ; [256,∞): không hợp lệ | L=1 và L=255 là biên thuộc miền hợp lệ |
+| Giá | p≤0: không hợp lệ; p>0: hợp lệ | Mặt p=0 bị loại do bất đẳng thức nghiêm |
+| Danh mục | Tồn tại; không tồn tại; thiếu/null | Đại diện 10/20 hợp lệ, 15 không tồn tại; không có biên số theo ID |
+| Quyền truy cập | admin; user; không token; token lỗi | Categorical partition, không dùng On/Off số học |
 
-## Bước 4: On/Off/In, đánh giá chân lý
+Các mặt biên tên và giá độc lập theo đặc tả. Không tự tạo điều kiện liên biến như L+p=k hoặc xem mọi ID từ 10 đến 20 đều hợp lệ.
 
-L=1 là On mặt lower included; Off 0 reject/2 accept. L=255 On included; Off 254 accept/256 reject. p=0 On excluded, ±1 là probe biểu diễn được trên integer slice, không phải nearest trên toàn miền giá chưa rõ resolution. Interior p=100000. Category/auth không có nhãn On/Off số học.
+## Bước 3. Chọn điểm In và dữ liệu đối chứng
+
+Điểm In là (L=128,p=100000,c=10,admin), với target tồn tại khi Update. A=101 là sản phẩm được sửa; B/C làm đối chứng. Ca sửa B=202 dùng A/C làm đối chứng. Fixture được reset trước mỗi case để kết quả không phụ thuộc thứ tự chạy.
+
+Tên, giá và mô tả của A/B/C khác nhau. `description` và `imageUrl` giữ nominal, trừ các ca sửa riêng từng field. Input và các bước đầy đủ được lưu theo ID trong source-cases.json. Độ dài tên chính chỉ dùng ASCII; cách đếm code point, UTF-16 hay grapheme của Unicode vẫn chưa được đặc tả.
+
+## Bước 4. Chọn On/Off/In và đánh giá predicate
+
+Tại L=1, điểm On được chấp nhận; hai điểm Off là 0 và 2. Tại L=255, On được chấp nhận; Off là 254 và 256. Tại p=0, On bị từ chối; -1 và +1 là hai mẫu biểu diễn được ở hai phía trên lát cắt số nguyên. Không gọi chúng là neighbor gần nhất của toàn miền giá khi precision chưa rõ.
+
+Bảng dưới giữ C=A=true và E=true cho Update. Mỗi verdict được suy ra từ N∧P, không suy từ tên gọi On/Off.
 
 | L | p | N | P | C | A | Create | Update E=true | Vai trò |
 |---|---|---|---|---|---|---|---|---|
-| 128 | 100000 | True | True | true | true | accept | accept | In |
-| 0 | 100000 | False | True | true | true | reject | reject | lower off outside |
-| 1 | 100000 | True | True | true | true | accept | accept | lower on |
-| 2 | 100000 | True | True | true | true | accept | accept | lower off inside |
-| 254 | 100000 | True | True | true | true | accept | accept | upper off inside |
-| 255 | 100000 | True | True | true | true | accept | accept | upper on |
-| 256 | 100000 | False | True | true | true | reject | reject | upper off outside |
-| 128 | -1 | True | False | true | true | reject | reject | price off outside |
-| 128 | 0 | True | False | true | true | reject | reject | price on excluded |
-| 128 | 1 | True | True | true | true | accept | accept | price off inside |
-| 254 | 1 | True | True | true | true | accept | accept | separated/corner |
-| 255 | 1 | True | True | true | true | accept | accept | separated/corner |
-| 256 | 1 | False | True | true | true | reject | reject | separated/corner |
-| 1 | -1 | True | False | true | true | reject | reject | separated/corner |
-| 1 | 0 | True | False | true | true | reject | reject | separated/corner |
-| 1 | 1 | True | True | true | true | accept | accept | separated/corner |
-| 255 | -1 | True | False | true | true | reject | reject | separated/corner |
-| 255 | 0 | True | False | true | true | reject | reject | separated/corner |
-| 0 | 1 | False | True | true | true | reject | reject | separated/corner |
-| 256 | 0 | False | False | true | true | reject | reject | separated/corner |
+| 128 | 100000 | true | true | true | true | Chấp nhận | Chấp nhận | In |
+| 0 | 100000 | false | true | true | true | Từ chối | Từ chối | Off ngoài biên dưới |
+| 1 | 100000 | true | true | true | true | Chấp nhận | Chấp nhận | On biên dưới |
+| 2 | 100000 | true | true | true | true | Chấp nhận | Chấp nhận | Off trong biên dưới |
+| 254 | 100000 | true | true | true | true | Chấp nhận | Chấp nhận | Off trong biên trên |
+| 255 | 100000 | true | true | true | true | Chấp nhận | Chấp nhận | On biên trên |
+| 256 | 100000 | false | true | true | true | Từ chối | Từ chối | Off ngoài biên trên |
+| 128 | -1 | true | false | true | true | Từ chối | Từ chối | Off phía giá không hợp lệ |
+| 128 | 0 | true | false | true | true | Từ chối | Từ chối | On biên giá bị loại |
+| 128 | 1 | true | true | true | true | Chấp nhận | Chấp nhận | Off phía giá hợp lệ |
+| 254 | 1 | true | true | true | true | Chấp nhận | Chấp nhận | Mẫu tách biệt / giao điểm |
+| 255 | 1 | true | true | true | true | Chấp nhận | Chấp nhận | Mẫu tách biệt / giao điểm |
+| 256 | 1 | false | true | true | true | Từ chối | Từ chối | Mẫu tách biệt / giao điểm |
+| 1 | -1 | true | false | true | true | Từ chối | Từ chối | Mẫu tách biệt / giao điểm |
+| 1 | 0 | true | false | true | true | Từ chối | Từ chối | Mẫu tách biệt / giao điểm |
+| 1 | 1 | true | true | true | true | Chấp nhận | Chấp nhận | Mẫu tách biệt / giao điểm |
+| 255 | -1 | true | false | true | true | Từ chối | Từ chối | Mẫu tách biệt / giao điểm |
+| 255 | 0 | true | false | true | true | Từ chối | Từ chối | Mẫu tách biệt / giao điểm |
+| 0 | 1 | false | true | true | true | Từ chối | Từ chối | Mẫu tách biệt / giao điểm |
+| 256 | 0 | false | false | true | true | Từ chối | Từ chối | Mẫu tách biệt / giao điểm |
 
-## Bước 5: separated samples, corners và fault isolation
 
-Mặt L=255 lấy p=1 và 100000, mỗi điểm đi qua L=254/255/256. Mặt p=0 lấy L=1/128/255, perturb p=-1/0/1. Điều kiện C/A/E giữ true; case ghi toàn bộ predicate trong obligation point. Góc (1,0),(255,0) reject do P; (1,1),(255,1) accept; (0,1),(256,1) reject do N. (256,0) multi-fault, không thay thế single-fault coverage. Đây là sampling có chủ đích, không chứng minh exhaustive hay phát hiện mọi tilted/omitted boundary.
 
-## Bước 6: CRUD postcondition và interactions trạng thái
+## Bước 5. Lấy mẫu trên biên, giao điểm và cô lập lỗi
 
-Create tăng count đúng 1, read-back đúng input; Update thay đúng target, DB full-field và UI rendered-field non-target nguyên ngay sau save rồi sau reload. Field-specific updates kiểm cả retained target fields. Delete đúng target ở tập nhiều product và product cuối; Read so list/detail với snapshot. Main validation lặp Create/Update và API/WEB; invalid category/nonnumeric/omitted/null không tạo được qua UI bình thường nằm API. Empty category list được thử trên WEB/API. Category chọn 20 chống test chỉ default. Auth thử 3 nhóm invalid × C/U/D trên API.
+Mặt L=255 được lấy mẫu ở p=1 và p=100000; tại mỗi mức giá xét L=254/255/256. Mặt p=0 được lấy mẫu ở L=1/128/255 rồi đổi p sang -1/0/1. Việc giữ C/A/E hợp lệ giúp tránh trường hợp một rule khác che khuất rule đang kiểm.
 
-## Bước 7: traceability và coverage
+Các điểm (1,0) và (255,0) bị từ chối do P; (1,1) và (255,1) được chấp nhận; (0,1) và (256,1) bị từ chối do N. Điểm (256,0) vi phạm cả hai rule, chỉ bổ sung interaction coverage. Các mẫu hữu hạn này không chứng minh đã kiểm hết miền liên tục hoặc mọi dạng biên sai lệch.
 
-Mỗi row obligations.json có ID, sourceCaseId, layer/action, rule, point/rationale/oracle. Domain-cases.md và source JSON là thiết kế ban đầu Not Run. Số nghĩa vụ là số ID distinct của từng technique; denominator gồm cả validation partition, point/surface/corner, operation/state đã liệt kê, tách supplementary. Designed coverage = mapped obligations / identified obligations; executed coverage chưa có, không suy pass/fail từ predicate kỳ vọng. Category/auth là domain partitions, không được cộng BVA. Unresolved probes (trim/Unicode/missing target error contract) có ghi observation nhưng không có oracle đủ để verdict toàn case.
+## Bước 6. Bổ sung miền thao tác và trạng thái CRUD
 
-Phương pháp là fallback từ skills khi chưa có slide lớp. Learner review Pending; không claim đã được sinh viên xác nhận.
+- Create: thêm đúng một bản ghi và đọc lại được dữ liệu.
+- Read: đối chiếu danh sách/chi tiết với snapshot.
+- Update: kiểm dữ liệu của target, mọi field của sản phẩm khác qua API/DB và các field đang hiển thị trên UI ngay sau lưu, rồi sau reload. Ca sửa riêng từng field còn kiểm các field còn lại của target.
+- Delete: xóa đúng target trong danh sách nhiều sản phẩm và khi chỉ còn sản phẩm cuối.
 
-Freeze v3 correction: exact positive 0.5 has a confirmed acceptance oracle under R06; unknown full-price precision limits BVA adjacency only. These four cases retain Supplementary technique labels and do not change DT/BVA denominators.
+Validation được thiết kế riêng cho Create/Update và API/WEB. Những input không thể tạo qua UI bình thường, như omitted/null, được gửi ở tầng API. Danh sách danh mục rỗng được kiểm trên cả API và WEB. Các ca chọn danh mục 20 tránh chỉ kiểm giá trị nominal 10. Quyền ghi được kiểm bằng ba partition không có quyền cho từng thao tác C/U/D của API.
+
+## Bước 7. Liên kết nghĩa vụ kiểm thử và coverage
+
+Mỗi obligation trong obligations.json có ID, sourceCaseId, technique, tầng, thao tác, rule và lý do chọn điểm. [domain-cases.md](domain-cases.md) trình bày ca nguồn; [suite-review.md](suite-review.md) liên kết sang canonical case sau deduplicate.
+
+Tại thời điểm thiết kế, các ca đều Not Run. Coverage thiết kế là số obligation đã có case chia cho số obligation xác định; coverage thực thi phải lấy từ observations, không suy từ predicate kỳ vọng. Các probe thiếu oracle về trim/Unicode và ID vắng được ghi riêng. Bốn ca giá 0.5 đã có oracle chấp nhận theo R06 sau hiệu chỉnh v3; chúng giữ nhãn Supplementary và không làm thay đổi mẫu số DT/BVA.
+
+Phương pháp On/Off/In là fallback khi chưa có slide của lớp. Review kỹ thuật của người học đang chờ. Kết quả và coverage cuối cùng xem [test-results.md](test-results.md).

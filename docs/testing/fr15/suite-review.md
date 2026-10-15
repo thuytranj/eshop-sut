@@ -1,22 +1,18 @@
-# FR15 — Suite review / freeze
+# FR-15 — Review, deduplicate và lịch sử freeze
 
-Review: AI self-review. Learner technical review: Pending. Original source IDs and obligation mappings preserved.
+## 1. Nguyên tắc review và deduplicate
 
-Dedup key: layer/action/preconditions/fixture/input/steps/expected outcome+stateContract. Description wording is explanatory, not an assertion; merged cases retain all source rationales in source JSON. Different layers/actions never merge.
+Review dưới đây do AI tự rà soát; review kỹ thuật của người học đang chờ. Mọi source ID và mapping obligation được giữ nguyên.
 
-Corrections / preventive review: added empty-category membership in design; name boundary includes 257; price only Z slice; non-target UI before reload distinct from DB; no delete dialog invented. These are design decisions, not claims of learner corrections or discovered SUT bugs.
+Khóa deduplicate gồm tầng, thao tác, preconditions, fixture, input, steps và assertion tương ứng với `expected.outcome`/`stateContract`. Câu mô tả chỉ giải thích mục đích; không được dùng cách diễn đạt khác nhau làm lý do tách hai ca có cùng hành vi kiểm tra. Khi gộp, vẫn giữ toàn bộ source ID, technique và obligation trong source JSON. Không gộp API với WEB hoặc Create với Update.
 
-Sources=198; canonical=158; obligations=198. Layer counts: {'API': 97, 'WEB': 61}.
+Các điểm đã rà soát gồm danh sách danh mục rỗng; giá trị tên 257 trong BVA; giới hạn BVA giá trên lát cắt Z; sự khác nhau giữa UI ngay sau lưu và dữ liệu DB; yêu cầu validation cho Create/Update. Không tự thêm dialog xác nhận xóa từ FR khác. Đây là quyết định thiết kế và hiệu chỉnh của AI, không phải bằng chứng sinh viên đã sửa hoặc đã phát hiện bug SUT.
 
-Harness TDD: initial valid-suite assertion failed with validator not implemented; implementation then verified with six acceptance/rejection checks. Frozen actual=null, status=Not Run, evidence=[].
+## 2. Mapping sau deduplicate
 
-| File | SHA256 |
-|---|---|
-| tests/fr15/suite.json | bb96a06dcfc27932a310f60a24b40108446a9fe95fb262de6906bab3232b0901 |
-| tests/fr15/source-cases.json | 1b5a5938fdfec378419deb3ff4afa2a3227bfbb69504028ab1204c009dbbeb27 |
-| tests/fr15/obligations.json | f58dcd35b4458788872811f6d6120724c4e7ea16df820a7a4b89a25111632305 |
+198 ca nguồn được hợp nhất thành 158 canonical case, gồm 97 API và 61 WEB. Giữ đủ 198 obligation: 143 Domain Testing, 44 BVA và 11 Supplementary. Một canonical case có thể mang nhiều technique nên không cộng số case của từng technique để suy ra số case duy nhất.
 
-| Canonical | Layer/action | Sources | Techniques | Obligations |
+| Canonical ID | Tầng / thao tác | Source ID | Technique | Obligation |
 |---|---|---|---|---|
 | FR15-TC-001 | API/Create | FR15-DT-001 | Domain Testing | FR15-OBL-DT-001 |
 | FR15-TC-002 | API/Create | FR15-DT-002,FR15-DT-027,FR15-BVA-001 | Domain Testing,BVA | FR15-OBL-DT-002,FR15-OBL-DT-027,FR15-OBL-BVA-001 |
@@ -177,23 +173,45 @@ Harness TDD: initial valid-suite assertion failed with validator not implemented
 | FR15-TC-157 | WEB/Update | FR15-BVA-040 | BVA | FR15-OBL-BVA-040 |
 | FR15-TC-158 | WEB/Update | FR15-BVA-044 | BVA | FR15-OBL-BVA-044 |
 
-## Freeze v2 — PNG fixture correction before execution
 
-V1 hashes above are historical. IDAT CRC of AI-authored 1×1 PNG was invalid; reproduced by chunk CRC test (RED). Corrected CRC only, no SUT change; all IDs/rules/obligations and dedup identities preserved. New fixture test GREEN; validator rerun. This is an evidenced AI fixture omission, not a product bug. Active hashes:
+## 3. Freeze v1 — bản thiết kế ban đầu
 
-| File | SHA256 |
+Ở giai đoạn này, assertion kiểm tra suite hợp lệ đã thất bại khi validator chưa được triển khai. Sau đó, sáu kiểm tra acceptance/rejection của validator đều đạt. Baseline giữ `actual=null`, `status=Not Run`, `evidence=[]`; actual result được ghi vào observations riêng.
+
+Các hash dưới đây là **lịch sử v1**, không phải hash của suite đang dùng:
+
+| Tệp | SHA256 |
+|---|---|
+| tests/fr15/suite.json | bb96a06dcfc27932a310f60a24b40108446a9fe95fb262de6906bab3232b0901 |
+| tests/fr15/source-cases.json | 1b5a5938fdfec378419deb3ff4afa2a3227bfbb69504028ab1204c009dbbeb27 |
+| tests/fr15/obligations.json | f58dcd35b4458788872811f6d6120724c4e7ea16df820a7a4b89a25111632305 |
+
+
+## 4. Freeze v2 — sửa PNG fixture trước execution
+
+PNG 1×1 do AI chuẩn bị có IDAT CRC sai. Kiểm tra từng chunk tái hiện được lỗi ở trạng thái RED; sau khi sửa CRC, kiểm tra đạt GREEN và validator được chạy lại. Chỉ dữ liệu ảnh mẫu thay đổi; ID, rule, technique và mapping deduplicate giữ nguyên. Đây là lỗi chuẩn bị fixture, không phải bug của SUT.
+
+Hash ghi nhận tại v2:
+
+| Tệp | SHA256 |
 |---|---|
 | tests/fr15/suite.json | bd21cd16700d8c20d15c361ed0ac56a741978844ea4524ee8ede4020441da21e |
 | tests/fr15/source-cases.json | 9c9693ff0a247e7231752a67955a2dd86647370d6bf8132983ca854b0c4e6346 |
 | tests/fr15/obligations.json | f58dcd35b4458788872811f6d6120724c4e7ea16df820a7a4b89a25111632305 |
 | tests/fr15/fixtures.json | 9968ebef532a7f4baf37d5c91f6334dee2b07bbf81b935d089356716f43b712d |
 
-## Freeze v3 — final review corrections
 
-Capture and compare image src in immediate/reload UI; require positive rejection evidence. Four supplementary price=0.5 cases now have confirmed acceptance oracle because numeric 0.5>0; missing precision limits neighbor-based BVA, not acceptance of this exact number. IDs/techniques/dedup mappings unchanged. Run03 reruns all cases; run02 remains historical with incomplete image assertions and over-conservative fraction verdicts. Active hashes:
+## 5. Freeze v3 — hiệu chỉnh sau review cuối
 
-| File | SHA256 |
+Bản v3 bổ sung việc ghi và so sánh `src` ảnh trên UI trước/sau reload, đồng thời yêu cầu evidence rõ ràng khi kết luận hệ thống đã từ chối thao tác. Bốn ca giá 0.5 chuyển sang oracle chấp nhận vì 0.5 là số biểu diễn được và thỏa p>0. Thiếu precision chỉ giới hạn neighbor-based BVA, không làm mất oracle của giá trị cụ thể này.
+
+ID, technique và mapping không đổi. Toàn suite được chạy lại trong run03. Run02 được giữ làm lịch sử vì còn thiếu assertion ảnh và từng coi bốn ca 0.5 là unresolved. **Hash v3 đang có hiệu lực**:
+
+| Tệp | SHA256 |
 |---|---|
 | tests/fr15/suite.json | 7ffcde1671a5d36aefcc3d7b63d03c7e891d46cd623db32f321b20b04c994f86 |
 | tests/fr15/source-cases.json | f5db87989ad99188c4cea066e4b85564273dfdd31877498b6d5fe999e04ebf16 |
 | tests/fr15/obligations.json | 8b06890280e54a33b0b4b1b49a8910a044a1d9b1f9e61046b715c2b646ee23a4 |
+
+
+Kết quả cuối cùng và coverage thực thi xem [test-results.md](test-results.md). Các bản v1/v2 được lưu để giải thích lịch sử hiệu chỉnh, không dùng để thay thế verdict của run03.

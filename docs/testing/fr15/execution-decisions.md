@@ -1,47 +1,38 @@
-# FR15 — Rulings and verification ledger
+# FR-15 — Quyết định thực hiện và nhật ký kiểm chứng
 
-All rulings in chronological order, with costs if wrong. No minors deferred by independent review.
+Tài liệu ghi đầy đủ 10 Ruling theo thứ tự phát sinh, cùng lý do và ảnh hưởng nếu quyết định không phù hợp. Các quyết định ở Task 5 phản ánh thời điểm run02; run03 là kết quả cuối sau review. Reviewer độc lập không để lại Minor cần hoãn.
 
-- Ruling: Worktree write denied by sandbox; use existing non-main branch hw02-domain-testing, adding only FR15 paths; native unused worktree archived — skill fallback and preservation of unrelated FR03 edits — cost if wrong: FR15 commits share branch history.
+## 1. Các quyết định và đánh đổi
 
-- Ruling: No business fixes. TDD red/green applies to harness behavior; human prose/schema datasets are reviewed, SUT failures remain evidence — AGENTS testing oracle overrides generic make-suite-green guidance — cost if wrong: reported failures remain in SUT intentionally.
+| STT / giai đoạn | Quyết định và lý do | Ảnh hưởng nếu không phù hợp |
+|---|---|---|
+| 1. Setup | Sandbox không cho ghi vào worktree mới. Dùng nhánh không phải main hiện có hw02-domain-testing, chỉ thêm đường dẫn FR-15; worktree chưa dùng đã được archive. Cách này giữ nguyên thay đổi FR-03 có sẵn | Commit FR-15 chia sẻ lịch sử nhánh hiện tại |
+| 2. Setup | Không sửa nghiệp vụ SUT. TDD RED→GREEN áp dụng cho harness; tài liệu/dataset được review, còn Failed của SUT giữ làm evidence. AGENTS.md được ưu tiên hơn yêu cầu chung làm mọi test xanh | Các lỗi ứng dụng được báo cáo vẫn tồn tại |
+| 3. Setup | Repository không có root/backend test suite hoạt động; npm test của backend là placeholder. Kiểm harness và suite FR-15 riêng | Chưa có bảo đảm cho các lỗi ngoài FR-15 |
+| 4. Task 5 | Sửa IDAT CRC của PNG fixture và freeze v2 trước execution; giữ v1 và hash lịch sử. Mục đích là loại nhiễu do ảnh mẫu | Dữ liệu ảnh mẫu thay đổi, dù ý nghĩa các case không đổi |
+| 5. Task 5 | Bổ sung assessor dùng chung trong assert-products.cjs để API và Python dùng cùng oracle | Một lỗi chung trong assessor có thể ảnh hưởng cả API/WEB; giảm rủi ro bằng kiểm tra độc lập và review |
+| 6. Task 5 | run01 lấy DOM trước khi UI cập nhật xong: TC069 có 3 dòng nhưng screenshot sau đã có 4. Giữ run01 làm lịch sử, thêm API quiet wait/regression rồi dùng run02 tại giai đoạn đó | Khoảng yên lặng 500ms có thể chưa bắt được timer dài chỉ chạy ở client; request API thực được theo dõi đến khi hoàn tất |
+| 7. Task 5 | Thêm assertion API readback nhất quán với snapshot DB để kiểm read-after-write; regression RED→GREEN | So sánh representation có thể quá chặt; GET detail đã xử lý khác biệt numeric string bằng đối chiếu giá trị số |
+| 8. Task 5 | git diff --cached --check cảnh báo khoảng trắng trong raw runner logs. Giữ log nguyên văn, tách kiểm whitespace cho .md/.json/.cjs/.py do agent viết | Cảnh báo whitespace của raw-log patch vẫn còn. Không ghi nhận nhầm kiểm tra chung là đã đạt |
+| 9. Final | Giữ các mục reviewer đặt ngoài phạm vi: sửa SUT, publish/PDF/demo, FR-03 có sẵn và native/trình duyệt khác. Quyết định dựa trên AGENTS.md và plan | Chưa có hồ sơ nộp bên ngoài hoặc bảo đảm cho nền tảng khác |
+| 10. Final | Giữ Unicode/trim/ID vắng unresolved, nhưng đánh giá lại giá 0.5 thành oracle chấp nhận: p>0 đã đủ cho số biểu diễn được này; precision chưa rõ chỉ hạn chế BVA adjacency | Nếu có contract hoặc hướng dẫn môn học chặt hơn, phải sửa lại bốn oracle này |
 
-- Ruling: Repository has no functioning root/backend suite; backend npm test is documented failing placeholder. Verify new harness and SUT suite separately — testing-only task — cost if wrong: unrelated application defects remain outside FR15.
+## 2. Nhật ký hoàn thành theo task
 
-- Task 5: Ruling: Correct invalid IDAT CRC in PNG fixture and refreeze v2 before execution; retain v1 in Git and documented old hashes — prevents unrelated image fallback — cost if wrong: fixture image change affects image-only observation, case semantics unchanged.
+| Task | Dải commit | Kiểm chứng tại thời điểm hoàn thành |
+|---|---|---|
+| 1. Phân tích requirement | 6e29712..e625109 | Cấu trúc artifact, JSON và whitespace hợp lệ |
+| 2. Domain Testing | e625109..e54872f | Artifact thiết kế và JSON hợp lệ; chưa suy ra execution |
+| 3. BVA | e54872f..5fe4088 | Artifact BVA và JSON hợp lệ |
+| 4. Review/freeze | 5fe4088..ef38fe2 | Validator đối chiếu suite/source/obligation, không có lỗi |
+| 5. Execution | ef38fe2..c85b6c2 | Đối soát đầy đủ run02; đây là bản trước hiệu chỉnh cuối |
+| 6. Actual results/bug | c85b6c2..dc0619a | Nội dung báo cáo, cấu trúc và whitespace hợp lệ |
+| 7. AI gap analysis | dc0619a..c0623d2 | Artifact và audit hợp lệ tại giai đoạn tổng hợp |
 
-- Task 5: Ruling: Shared assert-products.cjs evaluator added beyond file map to keep API/Python verdict semantics consistent — same business oracle — cost if wrong: common-mode assertion bug; hand-derived assessor tests and final review mitigate.
+Các lệnh kiểm chứng lịch sử được ghi trong Git/audit; script kiểm tài liệu tạm đã được dọn theo workflow. Bảng này không thay thế [commit-log.txt](commit-log.txt).
 
-- Task 5: Ruling: run01 Web snapshots raced React async updates (TC069 DOM had 3 rows while subsequent screenshot had 4). Preserve run01 as preliminary; add API-quiet settling and browser regression, use full run02 as final — avoids false SUT bugs — cost if wrong: 500ms quiet policy may still miss longer client-only timers; actual API requests tracked until complete.
+## 3. Kiểm chứng một lượt sửa cuối
 
-- Task 5: Ruling: Add explicit API readback consistency assertion beyond DB snapshot to fulfill read-after-write requirement — hand-derived test RED→GREEN — cost if wrong: stricter API representation comparison; known numeric-string issue is checked only on detail with numeric normalization.
+Ba vấn đề được xử lý trong cùng lượt sửa: coverage nguồn ảnh; thiếu response bị hiểu là từ chối; và oracle của giá 0.5. Mỗi vấn đề có regression test RED→GREEN. Harness đạt 18/18; toàn suite run03 được đối soát với 56 Passed, 95 Failed, 7 Blocked do oracle và 0 Not Run.
 
-- Task 5: Ruling: git diff --cached --check warned on trailing spaces in raw runner logs; preserve logs verbatim and scope whitespace checks to authored .md/.json/.cjs/.py — evidence integrity — cost if wrong: raw-log patch whitespace warnings remain. Generic check was not green; authored-file check is green.
-
-- Final: Ruling: Reviewer set aside SUT fixes, publishing/PDF/demo, unrelated FR03, and non-Chromium/native behavior; keep these outside selected FR15 testing scope — AGENTS and approved plan — cost if wrong: no external submission or other-platform assurance.
-
-- Final: Ruling: Reviewer set aside fractional/Unicode/missing-target outcomes. Keep Unicode/trim and missing-target unresolved, but re-grade exact representable 0.5 acceptance as Important: price>0 admits it while unknown precision only limits BVA adjacency — cost if wrong: a later stricter course/price contract would require revising these four oracles.
-
-## Task completion and final fix verification
-
-- Task 1: complete (commits 6e29712..e625109, tests: python3 .superpowers/sdd/2026-10-15-fr15-domain-testing-bva/check-docs.py → FR15 artifact syntax and whitespace OK)
-
-- Task 2: complete (commits e625109..e54872f, tests: python3 .superpowers/sdd/2026-10-15-fr15-domain-testing-bva/check-docs.py → FR15 artifact syntax and whitespace OK)
-
-- Task 3: complete (commits e54872f..5fe4088, tests: python3 .superpowers/sdd/2026-10-15-fr15-domain-testing-bva/check-docs.py → FR15 artifact syntax and whitespace OK)
-
-- Task 4: complete (commits 5fe4088..ef38fe2, tests: node tests/fr15/validate-suite.cjs --suite tests/fr15/suite.json --sources tests/fr15/source-cases.json --obligations tests/fr15/obligations.json → })
-
-- Task 5: complete (commits ef38fe2..c85b6c2, tests: node tests/fr15/validate-suite.cjs --results docs/testing/fr15/evidence/fr15-run02 → })
-
-- Task 6: complete (commits c85b6c2..dc0619a, tests: python3 .superpowers/sdd/2026-10-15-fr15-domain-testing-bva/check-docs.py → FR15 artifact syntax and whitespace OK)
-
-- Task 7: complete (commits dc0619a..c0623d2, tests: python3 .superpowers/sdd/2026-10-15-fr15-domain-testing-bva/check-docs.py → FR15 artifact syntax and whitespace OK)
-
-- Final: fixed image-source coverage — wrong-image assessor test RED→GREEN, harness 18/18; full run03 reconciled: 56 Passed, 95 Failed, 7 oracle Blocked, 0 Not Run.
-
-- Final: fixed missing-response rejection — no-response regression RED→GREEN, harness 18/18; full run03 reconciled: 56 Passed, 95 Failed, 7 oracle Blocked, 0 Not Run.
-
-- Final: fixed 0.5 oracle — canonical half-price consumer regression RED→GREEN, harness 18/18; full run03 reconciled: 56 Passed, 95 Failed, 7 oracle Blocked, 0 Not Run.
-
-Authored document whitespace is checked separately from raw logs; a transient export/link check was rerun after generating the final export. No application source was modified.
+Whitespace của tài liệu được kiểm riêng với raw logs. Kiểm tra link được chạy lại sau khi tạo đủ audit export. Hash xác nhận database gốc và các file có thay đổi sẵn được giữ nguyên; application source không được sửa.
