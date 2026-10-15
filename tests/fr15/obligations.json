@@ -609,9 +609,9 @@
     ],
     "layer": "API",
     "action": "Create",
-    "rationale": "Fractional positive price characterization; precision unresolved",
+    "rationale": "Representable positive price 0.5 satisfies numeric >0; adjacency precision remains unresolved",
     "point": null,
-    "oracleStatus": "unresolved"
+    "oracleStatus": "confirmed"
   },
   {
     "id": "FR15-OBL-SUP-002",
@@ -1250,9 +1250,9 @@
     ],
     "layer": "API",
     "action": "Update",
-    "rationale": "Fractional positive price characterization; precision unresolved",
+    "rationale": "Representable positive price 0.5 satisfies numeric >0; adjacency precision remains unresolved",
     "point": null,
-    "oracleStatus": "unresolved"
+    "oracleStatus": "confirmed"
   },
   {
     "id": "FR15-OBL-SUP-005",
@@ -1744,9 +1744,9 @@
     ],
     "layer": "WEB",
     "action": "Create",
-    "rationale": "Fractional positive price characterization; precision unresolved",
+    "rationale": "Representable positive price 0.5 satisfies numeric >0; adjacency precision remains unresolved",
     "point": null,
-    "oracleStatus": "unresolved"
+    "oracleStatus": "confirmed"
   },
   {
     "id": "FR15-OBL-DT-089",
@@ -2213,9 +2213,9 @@
     ],
     "layer": "WEB",
     "action": "Update",
-    "rationale": "Fractional positive price characterization; precision unresolved",
+    "rationale": "Representable positive price 0.5 satisfies numeric >0; adjacency precision remains unresolved",
     "point": null,
-    "oracleStatus": "unresolved"
+    "oracleStatus": "confirmed"
   },
   {
     "id": "FR15-OBL-DT-111",

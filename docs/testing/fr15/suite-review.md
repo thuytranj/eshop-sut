@@ -187,3 +187,13 @@ V1 hashes above are historical. IDAT CRC of AI-authored 1×1 PNG was invalid; re
 | tests/fr15/source-cases.json | 9c9693ff0a247e7231752a67955a2dd86647370d6bf8132983ca854b0c4e6346 |
 | tests/fr15/obligations.json | f58dcd35b4458788872811f6d6120724c4e7ea16df820a7a4b89a25111632305 |
 | tests/fr15/fixtures.json | 9968ebef532a7f4baf37d5c91f6334dee2b07bbf81b935d089356716f43b712d |
+
+## Freeze v3 — final review corrections
+
+Capture and compare image src in immediate/reload UI; require positive rejection evidence. Four supplementary price=0.5 cases now have confirmed acceptance oracle because numeric 0.5>0; missing precision limits neighbor-based BVA, not acceptance of this exact number. IDs/techniques/dedup mappings unchanged. Run03 reruns all cases; run02 remains historical with incomplete image assertions and over-conservative fraction verdicts. Active hashes:
+
+| File | SHA256 |
+|---|---|
+| tests/fr15/suite.json | 7ffcde1671a5d36aefcc3d7b63d03c7e891d46cd623db32f321b20b04c994f86 |
+| tests/fr15/source-cases.json | f5db87989ad99188c4cea066e4b85564273dfdd31877498b6d5fe999e04ebf16 |
+| tests/fr15/obligations.json | 8b06890280e54a33b0b4b1b49a8910a044a1d9b1f9e61046b715c2b646ee23a4 |

@@ -46,11 +46,29 @@ test('continues after a failed case and records environment errors as blocked',a
 });
 test('detects immediate UI drift even when persisted update is correct',()=>{
  const c={layer:'WEB',action:'Update',input:{target:101,body:{name:'New',price:10,category_id:10,description:'a',imageUrl:'img'}},expected:{outcome:'accept'},oracleStatus:'confirmed'};
- const o={stateBefore:[a,b],stateAfter:[{...a,name:'New'},b],response:{statusCode:200},uiBeforeReload:[{name:'New',price:10,alt:'New'},{name:'New',price:20,alt:'New'}],uiAfterReload:[{name:'New',price:10,alt:'New'},{name:'B',price:20,alt:'B'}]};
+ const o={stateBefore:[a,b],stateAfter:[{...a,name:'New'},b],response:{statusCode:200},uiBeforeReload:[{name:'New',price:10,alt:'New',src:'img'},{name:'New',price:20,alt:'New',src:'img'}],uiAfterReload:[{name:'New',price:10,alt:'New',src:'img'},{name:'B',price:20,alt:'B',src:'img'}]};
  assert.deepEqual(assessor()(c,o).failures,['ui-immediate-correct']);
 });
 test('requires API readback to reflect the persisted state',()=>{
  const c={layer:'API',action:'Read',input:{target:101,mode:'list'},expected:{outcome:'accept'},oracleStatus:'confirmed'};
  const o={stateBefore:[a,b],stateAfter:[a,b],response:{statusCode:200,body:[a,b]},apiReadback:{statusCode:200,body:[]}};
  assert.ok(assessor()(c,o).failures.includes('api-readback-consistent'));
+});
+test('rejects incorrect rendered image sources even when names/prices/alt match',()=>{
+ const c={layer:'WEB',action:'Read',input:{mode:'list'},expected:{outcome:'accept'},oracleStatus:'confirmed'};
+ const o={stateBefore:[a],stateAfter:[a],uiBeforeReload:[{name:'A',price:10,alt:'A',src:'wrong-image'}],uiAfterReload:[{name:'A',price:10,alt:'A',src:'wrong-image'}]};
+ assert.deepEqual(assessor()(c,o).failures,['ui-immediate-correct','ui-reload-correct']);
+});
+test('does not treat a missing response as positive evidence of rejection',()=>{
+ const c={layer:'WEB',action:'Create',input:{body:{name:''}},expected:{outcome:'reject'},oracleStatus:'confirmed'};
+ const row={name:'A',price:10,alt:'A',src:'img'};
+ const o={stateBefore:[a],stateAfter:[a],htmlBlocked:false,response:null,uiBeforeReload:[row],uiAfterReload:[row]};
+ assert.equal(assessor()(c,o).status,'Blocked');
+ assert.equal(assessor()(c,{...o,htmlBlocked:true}).status,'Passed');
+});
+test('a representable positive half-price has an acceptance oracle',()=>{
+ const c=JSON.parse(fs.readFileSync(path.join(__dirname,'suite.json'))).find(c=>c.layer==='API'&&c.action==='Create'&&c.input.body.price===0.5);
+ const created={id:304,...c.input.body};
+ const o={stateBefore:[a,b],stateAfter:[a,b,created],response:{statusCode:200,body:{id:304}}};
+ assert.equal(assessor()(c,o).status,'Passed');
 });

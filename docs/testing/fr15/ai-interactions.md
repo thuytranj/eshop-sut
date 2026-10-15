@@ -4,7 +4,7 @@ Draft declaration for learner confirmation: I use AI tools for the tasks recorde
 
 Scope: recorded interactions only; session history may be partial. Unknown timestamps/models and partial or summary captures remain explicit. Review decisions do not certify execution results.
 
-Interactions: 9; learner review events: 0.
+Interactions: 10; learner review events: 0.
 
 ## Interaction fr15-native-task1
 
@@ -1689,6 +1689,367 @@ Các đường dẫn dưới đây tính từ root repository; file mới chỉ 
 Đọc plan và các nguồn Spec trước execution. Đề xuất **Native** trong chat hiện tại vì bảy task phụ thuộc cùng rule register, fixture, source mapping và frozen suite; thay đổi mô hình phải được truyền xuyên suốt. Native triển khai tuần tự, có một reviewer độc lập ở cuối theo skill execution được chọn. **Subagent-driven** là lựa chọn nếu người dùng muốn từng task có implementer/reviewer riêng; phải dùng skill tương ứng và giữ task phụ thuộc theo thứ tự.
 
 Theo mục **Execution Handoff** của skill `superpowers:writing-plans`, chờ người dùng review plan và chọn cách execution trước khi bắt đầu Task 1. Bước chờ này thuộc workflow lập kế hoạch được người dùng gọi; chưa phải phê duyệt bug, publish hay thay đổi SUT.
+```
+
+Pending learner review.
+
+## Interaction fr15-native-final-review-fix
+
+```text
+{
+  "tool": "Codex",
+  "model": "Unknown",
+  "task": "FR15 final-review-fix",
+  "occurred_at": "Unknown",
+  "recorded_at": "2026-10-15T22:43:34+07:00",
+  "source": "Current chat Native authorization; per-task artifact output captured now, not a verbatim session transcript. Historical timestamp/model unknown; no learner technical review supplied.",
+  "capture": "partial"
+}
+```
+
+### Original prompt
+
+```text
+[$superpowers:executing-plans](/Users/thuytran/.codex/plugins/cache/openai-curated-remote/superpowers/6.4.2/skills/executing-plans/SKILL.md)  theo dạng Native
+```
+
+### Original AI output
+
+```text
+docs/testing/fr15/final-review.md
+# FR15 — Independent final review and disposition
+
+Reviewer: fresh-context `gpt-6-astra`, high reasoning, dispatched through collaboration under Native executing-plans. Read-only range 6e29712..c0623d2; later 5f9c73b changes only commit-log. No implementer/reviewer per task. Original reviewer assessment below applies to pre-fix run02, not a second review of fixes.
+
+## Reviewer findings (captured summary; full returned wording in chat)
+
+Strengths: layer/action traceability and category/precision limits clear; immediate/reload separated from DB; SUT unchanged; run02 reconciled and 15 harness checks passed.
+
+- Critical: none.
+- Important 1: run-products-web.py snapshots omit img src and assessor compares name/price/alt only, so rendered-image preservation is not established. Reviewer demonstrated an incorrect image source could pass.
+- Important 2: absent response makes !success true, allowing missing network/handler action to masquerade as rejection. Existing four Passed rejection cases had actual HTML prevention; no existing verdict shown false by this defect.
+- Minor: none.
+- Original assessment: Not ready without fixes.
+
+Declined to judge: fixing five SUT bug groups; exact fractional/Unicode/trim/missing-target outcome; PDF/GitHub/demo/full submission; existing FR03/.gitignore changes; browsers/native beyond Chromium Admin Web.
+
+## Executor re-grade and single fix pass
+
+Both Important findings accepted. Added wrong-image and missing-response regressions, watched both fail, then captured/compared src and required HTML prevention or an actual response; missing rejection evidence becomes Blocked. Existing image-independent regression now supplies correct src values to keep its original name-drift purpose.
+
+Additional ruling on a declined item: exact representable 0.5 is numeric >0. Unknown precision limits nearest-neighbor BVA, not acceptance of this fixed value. Four Supplementary C/U API/WEB cases now use confirmed accept oracle (freeze v3), with a consumer regression that failed under old unresolved oracle then passed. Unicode/trim and missing-target response contracts remain unresolved.
+
+All 18 harness checks passed after fixes; real-browser delayed-DOM synchronization regression previously passed and its settling behavior is unchanged. Full suite rerun in run03 with new suite/harness hashes, retaining run01/run02 raw evidence. Final current totals are in test-results.md and run03 manifest; do not reuse pre-fix totals from reviewer assessment.
+
+No second reviewer dispatched, per executing-plans one-pass rule. No minors deferred. No SUT source changed, no publishing or integration performed.
+
+
+docs/testing/fr15/execution-decisions.md
+# FR15 — Rulings and verification ledger
+
+All rulings in chronological order, with costs if wrong. No minors deferred by independent review.
+
+- Ruling: Worktree write denied by sandbox; use existing non-main branch hw02-domain-testing, adding only FR15 paths; native unused worktree archived — skill fallback and preservation of unrelated FR03 edits — cost if wrong: FR15 commits share branch history.
+
+- Ruling: No business fixes. TDD red/green applies to harness behavior; human prose/schema datasets are reviewed, SUT failures remain evidence — AGENTS testing oracle overrides generic make-suite-green guidance — cost if wrong: reported failures remain in SUT intentionally.
+
+- Ruling: Repository has no functioning root/backend suite; backend npm test is documented failing placeholder. Verify new harness and SUT suite separately — testing-only task — cost if wrong: unrelated application defects remain outside FR15.
+
+- Task 5: Ruling: Correct invalid IDAT CRC in PNG fixture and refreeze v2 before execution; retain v1 in Git and documented old hashes — prevents unrelated image fallback — cost if wrong: fixture image change affects image-only observation, case semantics unchanged.
+
+- Task 5: Ruling: Shared assert-products.cjs evaluator added beyond file map to keep API/Python verdict semantics consistent — same business oracle — cost if wrong: common-mode assertion bug; hand-derived assessor tests and final review mitigate.
+
+- Task 5: Ruling: run01 Web snapshots raced React async updates (TC069 DOM had 3 rows while subsequent screenshot had 4). Preserve run01 as preliminary; add API-quiet settling and browser regression, use full run02 as final — avoids false SUT bugs — cost if wrong: 500ms quiet policy may still miss longer client-only timers; actual API requests tracked until complete.
+
+- Task 5: Ruling: Add explicit API readback consistency assertion beyond DB snapshot to fulfill read-after-write requirement — hand-derived test RED→GREEN — cost if wrong: stricter API representation comparison; known numeric-string issue is checked only on detail with numeric normalization.
+
+- Task 5: Ruling: git diff --cached --check warned on trailing spaces in raw runner logs; preserve logs verbatim and scope whitespace checks to authored .md/.json/.cjs/.py — evidence integrity — cost if wrong: raw-log patch whitespace warnings remain. Generic check was not green; authored-file check is green.
+
+- Final: Ruling: Reviewer set aside SUT fixes, publishing/PDF/demo, unrelated FR03, and non-Chromium/native behavior; keep these outside selected FR15 testing scope — AGENTS and approved plan — cost if wrong: no external submission or other-platform assurance.
+
+- Final: Ruling: Reviewer set aside fractional/Unicode/missing-target outcomes. Keep Unicode/trim and missing-target unresolved, but re-grade exact representable 0.5 acceptance as Important: price>0 admits it while unknown precision only limits BVA adjacency — cost if wrong: a later stricter course/price contract would require revising these four oracles.
+
+## Task completion and final fix verification
+
+- Task 1: complete (commits 6e29712..e625109, tests: python3 .superpowers/sdd/2026-10-15-fr15-domain-testing-bva/check-docs.py → FR15 artifact syntax and whitespace OK)
+
+- Task 2: complete (commits e625109..e54872f, tests: python3 .superpowers/sdd/2026-10-15-fr15-domain-testing-bva/check-docs.py → FR15 artifact syntax and whitespace OK)
+
+- Task 3: complete (commits e54872f..5fe4088, tests: python3 .superpowers/sdd/2026-10-15-fr15-domain-testing-bva/check-docs.py → FR15 artifact syntax and whitespace OK)
+
+- Task 4: complete (commits 5fe4088..ef38fe2, tests: node tests/fr15/validate-suite.cjs --suite tests/fr15/suite.json --sources tests/fr15/source-cases.json --obligations tests/fr15/obligations.json → })
+
+- Task 5: complete (commits ef38fe2..c85b6c2, tests: node tests/fr15/validate-suite.cjs --results docs/testing/fr15/evidence/fr15-run02 → })
+
+- Task 6: complete (commits c85b6c2..dc0619a, tests: python3 .superpowers/sdd/2026-10-15-fr15-domain-testing-bva/check-docs.py → FR15 artifact syntax and whitespace OK)
+
+- Task 7: complete (commits dc0619a..c0623d2, tests: python3 .superpowers/sdd/2026-10-15-fr15-domain-testing-bva/check-docs.py → FR15 artifact syntax and whitespace OK)
+
+- Final: fixed image-source coverage — wrong-image assessor test RED→GREEN, harness 18/18; full run03 reconciled: 56 Passed, 95 Failed, 7 oracle Blocked, 0 Not Run.
+
+- Final: fixed missing-response rejection — no-response regression RED→GREEN, harness 18/18; full run03 reconciled: 56 Passed, 95 Failed, 7 oracle Blocked, 0 Not Run.
+
+- Final: fixed 0.5 oracle — canonical half-price consumer regression RED→GREEN, harness 18/18; full run03 reconciled: 56 Passed, 95 Failed, 7 oracle Blocked, 0 Not Run.
+
+Authored document whitespace is checked separately from raw logs; a transient export/link check was rerun after generating the final export. No application source was modified.
+
+
+docs/testing/fr15/ai-gap-analysis.md
+# FR15 — AI gap analysis
+
+## Bằng chứng và phạm vi
+
+Audit ghi các snapshot output theo task trong phiên hiện tại; capture partial, không phải complete session transcript. Model cụ thể và thời gian lịch sử prompt không biết, recorded_at có UTC+07:00. Người dùng chọn Native là authorization execution, không phải learner technical review. Learner review: Pending.
+
+| Gap | Output ban đầu / bằng chứng | Correction và verification | Phân loại |
+|---|---|---|---|
+| GAP-01 | Fixtures ở commit e625109 và source/frozen v1 có IDAT CRC sai; evidence/harness/png-red.log xác nhận failure | Commit 65d30b1 sửa CRC, freeze v2 giữ old hashes trong suite-review.md; png-fixture.test.cjs GREEN | AI fixture omission được quan sát; không phải bug SUT |
+| GAP-02 | run01 WEB TC069 uiBeforeReload=3 rows, screenshot chụp sau đã có 4; runner suy lỗi UI khi chưa đồng bộ | Thêm API-request quiet 500ms + hai animation frames; ui-sync.test.py từ missing behavior RED sang GREEN; run02 chạy lại toàn 158 ca | AI harness timing gap; bỏ verdict run01 khỏi bug count |
+| GAP-03 | readback-red.log: assessor chưa phát hiện tình huống DB đúng nhưng API readback thiếu | Thêm api-readback-consistent trong assessor; harness 15 tests GREEN; run02 ghi DB + API readback và so sánh | Oracle assertion omission trong harness; chưa phải missed SUT bug |
+
+Nguyên nhân có thể liên quan việc AI tập trung vào nội dung nghiệp vụ mà chưa kiểm dữ liệu nhị phân và timing của React; đây là giả thuyết từ dấu hiệu, không phải khẳng định cơ chế bên trong AI. Không có learner correction nào được cung cấp, nên không gán ba correction này cho sinh viên.
+
+## Final review gaps và correction v3
+
+- GAP-04 (review độc lập): UI snapshot/assessor ban đầu thiếu image src, nên không đủ bằng chứng cho image preservation. Thêm src vào cả immediate/reload, kiểm tra wrong-image từng Passed trước sửa rồi Failed đúng sau sửa. Đây là omission của assertion coverage, không tự suy đã có corruption ảnh của non-target trong SUT.
+- GAP-05 (review độc lập): absence of response bị coi là rejection do !success; test no-response RED→GREEN, giờ cần HTML prevention thật hoặc rejection response. Bốn ca reject Passed của run02 có HTML prevention nên không bị chứng minh false Pass bởi gap này.
+- GAP-06 (executor re-grade một mục reviewer đặt ngoài oracle): bốn ca số dương 0.5 từng bị Blocked vì lẫn precision BVA với acceptance. README chỉ yêu cầu số >0; 0.5 biểu diễn chính xác và thỏa predicate. Oracle đổi accept, technique Supplementary giữ nguyên; consumer test RED→GREEN và whole suite run03. API C/U và WEB Create chấp nhận 0.5; WEB Update lưu đúng nhưng UI tức thời sai (BUG-004 đã biết). Đây là adjudication gap, không chứng minh một bug giá mới hay correction của sinh viên.
+
+Freeze v3 giữ ID và DT/BVA denominator, đổi bốn oracle và assertion coverage; run03 là final. Các bản freeze, reports và run cũ được bảo toàn qua Git/evidence. Bản review gốc và disposition xem final-review.md.
+
+## Những rủi ro đã phòng ngừa, không bịa thành lỗi AI đã xảy ra
+
+Update validation, BVA length257, category membership thay vì ID interval, price precision chưa biết, khác biệt API/WEB và immediate/reload đã được đưa vào thiết kế. Không có evidence chứng minh AI ban đầu bỏ các case đó. Năm nhóm bug SUT được cập nhật từ failed observations run03 và mapping trong bugs.md; AI self-review phát hiện rule p>0 đã bị áp quá thận trọng với 0.5; các ca số dương này trước đó chưa được phán quyết; kết quả mới không chứng minh một bug SUT ngoài các nhóm đã báo cáo. Không có evidence rằng người học là người bổ sung correction này. Không tuyên bố AI không còn bỏ sót bug.
+
+## Giới hạn / follow-up
+
+7 supplementary probes có actual observation nhưng oracle đầy đủ chưa xác định: Unicode/trim, missing-target contract; full-price adjacency vẫn chưa rõ. DT143 và BVA44 là nghĩa vụ lấy mẫu trong phạm vi hữu hạn, không phải full-input coverage. Cần slide và clarification để version suite/rerun; không suy diễn Pass/Fail. PDF/YouTube/GitHub Issues là công việc submission chưa được thực hiện trong plan FR15 này.
+
+## AI Critique — draft cần người học review
+
+AI hỗ trợ chuyển requirement FR-15 thành predicates, điểm On/Off/In và nghĩa vụ BVA có truy vết. Tuy nhiên, nhiều sai sót thực tế cho thấy đầu ra hợp lý về hình thức chưa đủ đáng tin. Fixture PNG ban đầu có CRC sai; kiểm tra từng chunk phát hiện vấn đề trước execution và dẫn đến freeze mới. Runner đầu tiên lại đọc DOM trước khi cập nhật bất đồng bộ hoàn tất: TC069 của run01 có snapshot ba dòng nhưng screenshot sau đó có bốn dòng. Vì vậy, không thể coi mọi assertion thất bại là bug của SUT. Sau khi sửa đồng bộ, toàn suite được chạy lại. Review độc lập tiếp tục chỉ ra rằng snapshot thiếu nguồn ảnh và việc không nhận response bị nhầm thành bằng chứng từ chối. Các kiểm tra hồi quy đã chứng minh và sửa hai khoảng trống này. Một lỗi phân tích khác là giữ giá 0.5 ở trạng thái chưa có oracle vì precision chưa rõ. Thực tế, 0.5 biểu diễn chính xác và thỏa điều kiện lớn hơn không; precision còn thiếu chỉ giới hạn phân tích lân cận BVA. Oracle được sửa và suite chạy lại trong run03, phân biệt giá lưu đúng với lỗi UI cập nhật. Những sự kiện này cho thấy cần kiểm chứng cả dữ liệu mẫu, công cụ đo và cách diễn giải requirement. Không có bằng chứng để gán các correction cho sinh viên hoặc khẳng định nguyên nhân bên trong mô hình. Người học vẫn cần review, bổ sung slide, giữ bằng chứng gốc và phân biệt coverage với pass rate.
+
+Word count: 272, whitespace split trên riêng đoạn critique. AI-assisted draft; learner review Pending.
+
+
+docs/testing/fr15/test-results.md
+# FR-15 — Actual results / coverage
+
+Final run **fr15-run03**, 2026-10-15T22:38:05+07:00 → 2026-10-15T22:41:51+07:00, Asia/Ho_Chi_Minh. Source commit at start `5f9c73bf093c47e58188b46d20514b71149fb461` plus exact dirty harness hashes in [manifest](evidence/fr15-run03/manifest.json). Chromium version/locale/viewport: [browser metadata](evidence/fr15-run03/web/browser.json). Backend copy: `/private/tmp/eshop-fr15-run03/backend`; byte-identical backend source, independent SQLite reset per case. Working SQLite hash and frozen suite unchanged.
+
+**run01/run02 are historical and excluded from final verdicts**: run02 omitted rendered image src and over-classified four 0.5 probes as unresolved; run03 corrects both and requires positive rejection evidence. In run01, asynchronous DOM sampling could precede fetchData completion (e.g. TC069). Raw evidence retained; run03 uses API-request quiet tracking, two animation frames and readback checks. Never combine two runs into double the designed/executed counts.
+
+| Metric | Unique cases |
+|---|---|
+| designed | 158 |
+| attempted | 158 |
+| executed | 151 |
+| passed | 56 |
+| failed | 95 |
+| blocked | 7 |
+| notRun | 0 |
+
+Executed means Passed+Failed=151; Blocked=7 are attempted supplementary observations without sufficient oracle, not environment failures. NotYetExecuted in verdict accounting = Blocked+NotRun=7. Main cases with determined oracle: 151/151 have verdicts. Runner exit 2 is expected because unresolved probes remain; it is not a green SUT claim. Harness tests: 18 passed plus independent Chromium synchronization regression.
+
+| Layer | Designed | Passed | Failed | Blocked | Not Run |
+|---|---|---|---|---|---|
+| API | 97 | 36 | 54 | 7 | 0 |
+| WEB | 61 | 20 | 41 | 0 | 0 |
+
+## Coverage denominator và giới hạn
+
+DT obligations are named point/surface/corner/operation/state partitions; BVA obligations are unique value/action/layer/universe. Supplementary observations do not enter DT/BVA denominators. A failed assertion can exercise a test obligation; coverage is not a pass rate. Per-source `rules` denotes design focus; `stateContract` also carries CRUD postconditions and R08 for Update. Failure code ui-immediate-correct on valid Update traces to R08 even if the source focus was R05/R06.
+
+| Technique/layer | Identified | Designed mapped | Executed exercised |
+|---|---|---|---|
+| Domain Testing/API | 88 | 88/88 | 88/88 |
+| Domain Testing/WEB | 55 | 55/55 | 55/55 |
+| BVA/API | 22 | 22/22 | 22/22 |
+| BVA/WEB | 22 | 22/22 | 22/22 |
+| Supplementary/API | 9 | 9/9 | 2/9 |
+| Supplementary/WEB | 2 | 2/2 | 2/2 |
+
+Known finite DT scope: 143/143 designed and exercised; ASCII name + integer-price BVA: 44/44 designed and exercised (name 28, price Z-slice 16). These are sampled obligations only. Full price precision, Unicode counting, unspecified ID/error contract and referenced-product delete remain unresolved/outside this finite claim. No 100% FR15 correctness or exhaustive continuous-domain coverage claim.
+
+UI delivered values are recorded as inputEffective; HTML prevention does not imply server validation. Empty name is blocked by HTML required with no mutation request (UI prevention exercised); API empty name has its own observed failure. Four positive half-price supplementary obligations are now exercised with definite oracles (API C/U and WEB Create pass; WEB Update persists 0.5 correctly but fails immediate UI consistency under BUG-004); they are outside BVA. No numeric-string mismatch alone is counted as defect. No observed truncation is used to claim delivery of a forbidden name length. API mutation auth tests cover only product C/U/D, not all FR12.
+
+## Per-case results
+
+Full fixture/preconditions/input/steps are keyed by ID in [frozen suite](../../../tests/fr15/suite.json); actual request/response, stateBefore/stateAfter, API readback and UI before/after reload are in each raw record. Raw JSON is the actual-result record, the summary below lists failed assertions or accepted evidence.
+
+| ID | Interface/action | Rule focus | Technique(s) | Fixture | Expected | Actual / status | Bugs | Evidence |
+|---|---|---|---|---|---|---|---|
+| FR15-TC-001 | API/Create | FR15-R01 | Domain Testing | baseline | accept | all asserted postconditions satisfied / **Passed** | — | [actual](evidence/fr15-run03/api/FR15-TC-001.json) |
+| FR15-TC-002 | API/Create | FR15-R05 | Domain Testing,BVA | baseline | reject | rejected-state-unchanged,rejection-signaled / **Failed** | FR15-BUG-001 | [actual](evidence/fr15-run03/api/FR15-TC-002.json) |
+| FR15-TC-003 | API/Create | FR15-R05 | Domain Testing,BVA | baseline | accept | all asserted postconditions satisfied / **Passed** | — | [actual](evidence/fr15-run03/api/FR15-TC-003.json) |
+| FR15-TC-004 | API/Create | FR15-R05 | Domain Testing,BVA | baseline | accept | all asserted postconditions satisfied / **Passed** | — | [actual](evidence/fr15-run03/api/FR15-TC-004.json) |
+| FR15-TC-005 | API/Create | FR15-R05 | Domain Testing,BVA | baseline | accept | all asserted postconditions satisfied / **Passed** | — | [actual](evidence/fr15-run03/api/FR15-TC-005.json) |
+| FR15-TC-006 | API/Create | FR15-R05 | Domain Testing,BVA | baseline | accept | all asserted postconditions satisfied / **Passed** | — | [actual](evidence/fr15-run03/api/FR15-TC-006.json) |
+| FR15-TC-007 | API/Create | FR15-R05 | Domain Testing,BVA | baseline | reject | rejected-state-unchanged,rejection-signaled / **Failed** | FR15-BUG-001 | [actual](evidence/fr15-run03/api/FR15-TC-007.json) |
+| FR15-TC-008 | API/Create | FR15-R06 | Domain Testing,BVA | baseline | reject | rejected-state-unchanged,rejection-signaled / **Failed** | FR15-BUG-002 | [actual](evidence/fr15-run03/api/FR15-TC-008.json) |
+| FR15-TC-009 | API/Create | FR15-R06 | Domain Testing,BVA | baseline | reject | rejected-state-unchanged,rejection-signaled / **Failed** | FR15-BUG-002 | [actual](evidence/fr15-run03/api/FR15-TC-009.json) |
+| FR15-TC-010 | API/Create | FR15-R06 | Domain Testing,BVA | baseline | accept | all asserted postconditions satisfied / **Passed** | — | [actual](evidence/fr15-run03/api/FR15-TC-010.json) |
+| FR15-TC-011 | API/Create | FR15-R05,FR15-R06 | Domain Testing | baseline | accept | all asserted postconditions satisfied / **Passed** | — | [actual](evidence/fr15-run03/api/FR15-TC-011.json) |
+| FR15-TC-012 | API/Create | FR15-R05,FR15-R06 | Domain Testing | baseline | accept | all asserted postconditions satisfied / **Passed** | — | [actual](evidence/fr15-run03/api/FR15-TC-012.json) |
+| FR15-TC-013 | API/Create | FR15-R05,FR15-R06 | Domain Testing | baseline | reject | rejected-state-unchanged,rejection-signaled / **Failed** | FR15-BUG-001 | [actual](evidence/fr15-run03/api/FR15-TC-013.json) |
+| FR15-TC-014 | API/Create | FR15-R05,FR15-R06 | Domain Testing | baseline | reject | rejected-state-unchanged,rejection-signaled / **Failed** | FR15-BUG-002 | [actual](evidence/fr15-run03/api/FR15-TC-014.json) |
+| FR15-TC-015 | API/Create | FR15-R05,FR15-R06 | Domain Testing | baseline | reject | rejected-state-unchanged,rejection-signaled / **Failed** | FR15-BUG-002 | [actual](evidence/fr15-run03/api/FR15-TC-015.json) |
+| FR15-TC-016 | API/Create | FR15-R05,FR15-R06 | Domain Testing | baseline | accept | all asserted postconditions satisfied / **Passed** | — | [actual](evidence/fr15-run03/api/FR15-TC-016.json) |
+| FR15-TC-017 | API/Create | FR15-R05,FR15-R06 | Domain Testing | baseline | reject | rejected-state-unchanged,rejection-signaled / **Failed** | FR15-BUG-002 | [actual](evidence/fr15-run03/api/FR15-TC-017.json) |
+| FR15-TC-018 | API/Create | FR15-R05,FR15-R06 | Domain Testing | baseline | reject | rejected-state-unchanged,rejection-signaled / **Failed** | FR15-BUG-002 | [actual](evidence/fr15-run03/api/FR15-TC-018.json) |
+| FR15-TC-019 | API/Create | FR15-R05,FR15-R06 | Domain Testing | baseline | reject | rejected-state-unchanged,rejection-signaled / **Failed** | FR15-BUG-001 | [actual](evidence/fr15-run03/api/FR15-TC-019.json) |
+| FR15-TC-020 | API/Create | FR15-R05,FR15-R06 | Domain Testing | baseline | reject | rejected-state-unchanged,rejection-signaled / **Failed** | FR15-BUG-001,FR15-BUG-002 | [actual](evidence/fr15-run03/api/FR15-TC-020.json) |
+| FR15-TC-021 | API/Create | FR15-R07 | Domain Testing | baseline | accept | all asserted postconditions satisfied / **Passed** | — | [actual](evidence/fr15-run03/api/FR15-TC-021.json) |
+| FR15-TC-022 | API/Create | FR15-R06 | Domain Testing | baseline | reject | rejected-state-unchanged,rejection-signaled / **Failed** | FR15-BUG-002 | [actual](evidence/fr15-run03/api/FR15-TC-022.json) |
+| FR15-TC-023 | API/Create | FR15-R07 | Domain Testing | baseline | reject | rejected-state-unchanged,rejection-signaled / **Failed** | FR15-BUG-003 | [actual](evidence/fr15-run03/api/FR15-TC-023.json) |
+| FR15-TC-024 | API/Create | FR15-R06 | Domain Testing | baseline | reject | rejected-state-unchanged,rejection-signaled / **Failed** | FR15-BUG-002 | [actual](evidence/fr15-run03/api/FR15-TC-024.json) |
+| FR15-TC-025 | API/Create | FR15-R05 | Domain Testing | baseline | reject | rejected-state-unchanged,rejection-signaled / **Failed** | FR15-BUG-001 | [actual](evidence/fr15-run03/api/FR15-TC-025.json) |
+| FR15-TC-026 | API/Create | FR15-R05 | Domain Testing | baseline | reject | rejected-state-unchanged,rejection-signaled / **Failed** | FR15-BUG-001 | [actual](evidence/fr15-run03/api/FR15-TC-026.json) |
+| FR15-TC-027 | API/Create | FR15-R06 | Domain Testing | baseline | reject | rejected-state-unchanged,rejection-signaled / **Failed** | FR15-BUG-002 | [actual](evidence/fr15-run03/api/FR15-TC-027.json) |
+| FR15-TC-028 | API/Create | FR15-R06 | Domain Testing | baseline | reject | rejected-state-unchanged,rejection-signaled / **Failed** | FR15-BUG-002 | [actual](evidence/fr15-run03/api/FR15-TC-028.json) |
+| FR15-TC-029 | API/Create | FR15-R07 | Domain Testing | baseline | reject | rejected-state-unchanged,rejection-signaled / **Failed** | FR15-BUG-003 | [actual](evidence/fr15-run03/api/FR15-TC-029.json) |
+| FR15-TC-030 | API/Create | FR15-R07 | Domain Testing | baseline | reject | rejected-state-unchanged,rejection-signaled / **Failed** | FR15-BUG-003 | [actual](evidence/fr15-run03/api/FR15-TC-030.json) |
+| FR15-TC-031 | API/Create | FR15-R07 | Domain Testing | baseline | reject | rejected-state-unchanged,rejection-signaled / **Failed** | FR15-BUG-003 | [actual](evidence/fr15-run03/api/FR15-TC-031.json) |
+| FR15-TC-032 | API/Create | FR15-R06 | Supplementary | baseline | accept | all asserted postconditions satisfied / **Passed** | — | [actual](evidence/fr15-run03/api/FR15-TC-032.json) |
+| FR15-TC-033 | API/Create | FR15-R05 | Supplementary | baseline | observe | oracle-unresolved / **Blocked** | — | [actual](evidence/fr15-run03/api/FR15-TC-033.json) |
+| FR15-TC-034 | API/Create | FR15-R05 | Supplementary | baseline | observe | oracle-unresolved / **Blocked** | — | [actual](evidence/fr15-run03/api/FR15-TC-034.json) |
+| FR15-TC-035 | API/Update | FR15-R03,FR15-R08 | Domain Testing | baseline | accept | all asserted postconditions satisfied / **Passed** | — | [actual](evidence/fr15-run03/api/FR15-TC-035.json) |
+| FR15-TC-036 | API/Update | FR15-R05 | Domain Testing,BVA | baseline | reject | rejected-state-unchanged,rejection-signaled / **Failed** | FR15-BUG-001 | [actual](evidence/fr15-run03/api/FR15-TC-036.json) |
+| FR15-TC-037 | API/Update | FR15-R05 | Domain Testing,BVA | baseline | accept | all asserted postconditions satisfied / **Passed** | — | [actual](evidence/fr15-run03/api/FR15-TC-037.json) |
+| FR15-TC-038 | API/Update | FR15-R05 | Domain Testing,BVA | baseline | accept | all asserted postconditions satisfied / **Passed** | — | [actual](evidence/fr15-run03/api/FR15-TC-038.json) |
+| FR15-TC-039 | API/Update | FR15-R05 | Domain Testing,BVA | baseline | accept | all asserted postconditions satisfied / **Passed** | — | [actual](evidence/fr15-run03/api/FR15-TC-039.json) |
+| FR15-TC-040 | API/Update | FR15-R05 | Domain Testing,BVA | baseline | accept | all asserted postconditions satisfied / **Passed** | — | [actual](evidence/fr15-run03/api/FR15-TC-040.json) |
+| FR15-TC-041 | API/Update | FR15-R05 | Domain Testing,BVA | baseline | reject | rejected-state-unchanged,rejection-signaled / **Failed** | FR15-BUG-001 | [actual](evidence/fr15-run03/api/FR15-TC-041.json) |
+| FR15-TC-042 | API/Update | FR15-R06 | Domain Testing,BVA | baseline | reject | rejected-state-unchanged,rejection-signaled / **Failed** | FR15-BUG-002 | [actual](evidence/fr15-run03/api/FR15-TC-042.json) |
+| FR15-TC-043 | API/Update | FR15-R06 | Domain Testing,BVA | baseline | reject | rejected-state-unchanged,rejection-signaled / **Failed** | FR15-BUG-002 | [actual](evidence/fr15-run03/api/FR15-TC-043.json) |
+| FR15-TC-044 | API/Update | FR15-R06 | Domain Testing,BVA | baseline | accept | all asserted postconditions satisfied / **Passed** | — | [actual](evidence/fr15-run03/api/FR15-TC-044.json) |
+| FR15-TC-045 | API/Update | FR15-R05,FR15-R06 | Domain Testing | baseline | accept | all asserted postconditions satisfied / **Passed** | — | [actual](evidence/fr15-run03/api/FR15-TC-045.json) |
+| FR15-TC-046 | API/Update | FR15-R05,FR15-R06 | Domain Testing | baseline | accept | all asserted postconditions satisfied / **Passed** | — | [actual](evidence/fr15-run03/api/FR15-TC-046.json) |
+| FR15-TC-047 | API/Update | FR15-R05,FR15-R06 | Domain Testing | baseline | reject | rejected-state-unchanged,rejection-signaled / **Failed** | FR15-BUG-001 | [actual](evidence/fr15-run03/api/FR15-TC-047.json) |
+| FR15-TC-048 | API/Update | FR15-R05,FR15-R06 | Domain Testing | baseline | reject | rejected-state-unchanged,rejection-signaled / **Failed** | FR15-BUG-002 | [actual](evidence/fr15-run03/api/FR15-TC-048.json) |
+| FR15-TC-049 | API/Update | FR15-R05,FR15-R06 | Domain Testing | baseline | reject | rejected-state-unchanged,rejection-signaled / **Failed** | FR15-BUG-002 | [actual](evidence/fr15-run03/api/FR15-TC-049.json) |
+| FR15-TC-050 | API/Update | FR15-R05,FR15-R06 | Domain Testing | baseline | accept | all asserted postconditions satisfied / **Passed** | — | [actual](evidence/fr15-run03/api/FR15-TC-050.json) |
+| FR15-TC-051 | API/Update | FR15-R05,FR15-R06 | Domain Testing | baseline | reject | rejected-state-unchanged,rejection-signaled / **Failed** | FR15-BUG-002 | [actual](evidence/fr15-run03/api/FR15-TC-051.json) |
+| FR15-TC-052 | API/Update | FR15-R05,FR15-R06 | Domain Testing | baseline | reject | rejected-state-unchanged,rejection-signaled / **Failed** | FR15-BUG-002 | [actual](evidence/fr15-run03/api/FR15-TC-052.json) |
+| FR15-TC-053 | API/Update | FR15-R05,FR15-R06 | Domain Testing | baseline | reject | rejected-state-unchanged,rejection-signaled / **Failed** | FR15-BUG-001 | [actual](evidence/fr15-run03/api/FR15-TC-053.json) |
+| FR15-TC-054 | API/Update | FR15-R05,FR15-R06 | Domain Testing | baseline | reject | rejected-state-unchanged,rejection-signaled / **Failed** | FR15-BUG-001,FR15-BUG-002 | [actual](evidence/fr15-run03/api/FR15-TC-054.json) |
+| FR15-TC-055 | API/Update | FR15-R07 | Domain Testing | baseline | accept | all asserted postconditions satisfied / **Passed** | — | [actual](evidence/fr15-run03/api/FR15-TC-055.json) |
+| FR15-TC-056 | API/Update | FR15-R06 | Domain Testing | baseline | reject | rejected-state-unchanged,rejection-signaled / **Failed** | FR15-BUG-002 | [actual](evidence/fr15-run03/api/FR15-TC-056.json) |
+| FR15-TC-057 | API/Update | FR15-R07 | Domain Testing | baseline | reject | rejected-state-unchanged,rejection-signaled / **Failed** | FR15-BUG-003 | [actual](evidence/fr15-run03/api/FR15-TC-057.json) |
+| FR15-TC-058 | API/Update | FR15-R06 | Domain Testing | baseline | reject | rejected-state-unchanged,rejection-signaled / **Failed** | FR15-BUG-002 | [actual](evidence/fr15-run03/api/FR15-TC-058.json) |
+| FR15-TC-059 | API/Update | FR15-R05 | Domain Testing | baseline | reject | rejected-state-unchanged,rejection-signaled / **Failed** | FR15-BUG-001 | [actual](evidence/fr15-run03/api/FR15-TC-059.json) |
+| FR15-TC-060 | API/Update | FR15-R05 | Domain Testing | baseline | reject | rejected-state-unchanged,rejection-signaled / **Failed** | FR15-BUG-001 | [actual](evidence/fr15-run03/api/FR15-TC-060.json) |
+| FR15-TC-061 | API/Update | FR15-R06 | Domain Testing | baseline | reject | rejected-state-unchanged,rejection-signaled / **Failed** | FR15-BUG-002 | [actual](evidence/fr15-run03/api/FR15-TC-061.json) |
+| FR15-TC-062 | API/Update | FR15-R06 | Domain Testing | baseline | reject | rejected-state-unchanged,rejection-signaled / **Failed** | FR15-BUG-002 | [actual](evidence/fr15-run03/api/FR15-TC-062.json) |
+| FR15-TC-063 | API/Update | FR15-R07 | Domain Testing | baseline | reject | rejected-state-unchanged,rejection-signaled / **Failed** | FR15-BUG-003 | [actual](evidence/fr15-run03/api/FR15-TC-063.json) |
+| FR15-TC-064 | API/Update | FR15-R07 | Domain Testing | baseline | reject | rejected-state-unchanged,rejection-signaled / **Failed** | FR15-BUG-003 | [actual](evidence/fr15-run03/api/FR15-TC-064.json) |
+| FR15-TC-065 | API/Update | FR15-R07 | Domain Testing | baseline | reject | rejected-state-unchanged,rejection-signaled / **Failed** | FR15-BUG-003 | [actual](evidence/fr15-run03/api/FR15-TC-065.json) |
+| FR15-TC-066 | API/Update | FR15-R06 | Supplementary | baseline | accept | all asserted postconditions satisfied / **Passed** | — | [actual](evidence/fr15-run03/api/FR15-TC-066.json) |
+| FR15-TC-067 | API/Update | FR15-R05 | Supplementary | baseline | observe | oracle-unresolved / **Blocked** | — | [actual](evidence/fr15-run03/api/FR15-TC-067.json) |
+| FR15-TC-068 | API/Update | FR15-R05 | Supplementary | baseline | observe | oracle-unresolved / **Blocked** | — | [actual](evidence/fr15-run03/api/FR15-TC-068.json) |
+| FR15-TC-069 | WEB/Create | FR15-R01 | Domain Testing | baseline | accept | all asserted postconditions satisfied / **Passed** | — | [actual](evidence/fr15-run03/web/FR15-TC-069.json) |
+| FR15-TC-070 | WEB/Create | FR15-R05 | Domain Testing,BVA | baseline | reject | all asserted postconditions satisfied / **Passed** | — | [actual](evidence/fr15-run03/web/FR15-TC-070.json) |
+| FR15-TC-071 | WEB/Create | FR15-R05 | Domain Testing,BVA | baseline | accept | all asserted postconditions satisfied / **Passed** | — | [actual](evidence/fr15-run03/web/FR15-TC-071.json) |
+| FR15-TC-072 | WEB/Create | FR15-R05 | Domain Testing,BVA | baseline | accept | all asserted postconditions satisfied / **Passed** | — | [actual](evidence/fr15-run03/web/FR15-TC-072.json) |
+| FR15-TC-073 | WEB/Create | FR15-R05 | Domain Testing,BVA | baseline | accept | all asserted postconditions satisfied / **Passed** | — | [actual](evidence/fr15-run03/web/FR15-TC-073.json) |
+| FR15-TC-074 | WEB/Create | FR15-R05 | Domain Testing,BVA | baseline | accept | all asserted postconditions satisfied / **Passed** | — | [actual](evidence/fr15-run03/web/FR15-TC-074.json) |
+| FR15-TC-075 | WEB/Create | FR15-R05 | Domain Testing,BVA | baseline | reject | rejected-state-unchanged,rejection-signaled,ui-immediate-correct,ui-reload-correct / **Failed** | FR15-BUG-001 | [actual](evidence/fr15-run03/web/FR15-TC-075.json) |
+| FR15-TC-076 | WEB/Create | FR15-R06 | Domain Testing,BVA | baseline | reject | rejected-state-unchanged,rejection-signaled,ui-immediate-correct,ui-reload-correct / **Failed** | FR15-BUG-002 | [actual](evidence/fr15-run03/web/FR15-TC-076.json) |
+| FR15-TC-077 | WEB/Create | FR15-R06 | Domain Testing,BVA | baseline | reject | rejected-state-unchanged,rejection-signaled,ui-immediate-correct,ui-reload-correct / **Failed** | FR15-BUG-002 | [actual](evidence/fr15-run03/web/FR15-TC-077.json) |
+| FR15-TC-078 | WEB/Create | FR15-R06 | Domain Testing,BVA | baseline | accept | all asserted postconditions satisfied / **Passed** | — | [actual](evidence/fr15-run03/web/FR15-TC-078.json) |
+| FR15-TC-079 | WEB/Create | FR15-R05,FR15-R06 | Domain Testing | baseline | accept | all asserted postconditions satisfied / **Passed** | — | [actual](evidence/fr15-run03/web/FR15-TC-079.json) |
+| FR15-TC-080 | WEB/Create | FR15-R05,FR15-R06 | Domain Testing | baseline | accept | all asserted postconditions satisfied / **Passed** | — | [actual](evidence/fr15-run03/web/FR15-TC-080.json) |
+| FR15-TC-081 | WEB/Create | FR15-R05,FR15-R06 | Domain Testing | baseline | reject | rejected-state-unchanged,rejection-signaled,ui-immediate-correct,ui-reload-correct / **Failed** | FR15-BUG-001 | [actual](evidence/fr15-run03/web/FR15-TC-081.json) |
+| FR15-TC-082 | WEB/Create | FR15-R05,FR15-R06 | Domain Testing | baseline | reject | rejected-state-unchanged,rejection-signaled,ui-immediate-correct,ui-reload-correct / **Failed** | FR15-BUG-002 | [actual](evidence/fr15-run03/web/FR15-TC-082.json) |
+| FR15-TC-083 | WEB/Create | FR15-R05,FR15-R06 | Domain Testing | baseline | reject | rejected-state-unchanged,rejection-signaled,ui-immediate-correct,ui-reload-correct / **Failed** | FR15-BUG-002 | [actual](evidence/fr15-run03/web/FR15-TC-083.json) |
+| FR15-TC-084 | WEB/Create | FR15-R05,FR15-R06 | Domain Testing | baseline | accept | all asserted postconditions satisfied / **Passed** | — | [actual](evidence/fr15-run03/web/FR15-TC-084.json) |
+| FR15-TC-085 | WEB/Create | FR15-R05,FR15-R06 | Domain Testing | baseline | reject | rejected-state-unchanged,rejection-signaled,ui-immediate-correct,ui-reload-correct / **Failed** | FR15-BUG-002 | [actual](evidence/fr15-run03/web/FR15-TC-085.json) |
+| FR15-TC-086 | WEB/Create | FR15-R05,FR15-R06 | Domain Testing | baseline | reject | rejected-state-unchanged,rejection-signaled,ui-immediate-correct,ui-reload-correct / **Failed** | FR15-BUG-002 | [actual](evidence/fr15-run03/web/FR15-TC-086.json) |
+| FR15-TC-087 | WEB/Create | FR15-R05,FR15-R06 | Domain Testing | baseline | reject | all asserted postconditions satisfied / **Passed** | — | [actual](evidence/fr15-run03/web/FR15-TC-087.json) |
+| FR15-TC-088 | WEB/Create | FR15-R05,FR15-R06 | Domain Testing | baseline | reject | rejected-state-unchanged,rejection-signaled,ui-immediate-correct,ui-reload-correct / **Failed** | FR15-BUG-001,FR15-BUG-002 | [actual](evidence/fr15-run03/web/FR15-TC-088.json) |
+| FR15-TC-089 | WEB/Create | FR15-R07 | Domain Testing | baseline | accept | all asserted postconditions satisfied / **Passed** | — | [actual](evidence/fr15-run03/web/FR15-TC-089.json) |
+| FR15-TC-090 | WEB/Create | FR15-R06 | Domain Testing | baseline | reject | rejected-state-unchanged,rejection-signaled,ui-immediate-correct,ui-reload-correct / **Failed** | FR15-BUG-002 | [actual](evidence/fr15-run03/web/FR15-TC-090.json) |
+| FR15-TC-091 | WEB/Create | FR15-R06 | Supplementary | baseline | accept | all asserted postconditions satisfied / **Passed** | — | [actual](evidence/fr15-run03/web/FR15-TC-091.json) |
+| FR15-TC-092 | WEB/Update | FR15-R03,FR15-R08 | Domain Testing | baseline | accept | ui-immediate-correct / **Failed** | FR15-BUG-004 | [actual](evidence/fr15-run03/web/FR15-TC-092.json) |
+| FR15-TC-093 | WEB/Update | FR15-R05 | Domain Testing,BVA | baseline | reject | all asserted postconditions satisfied / **Passed** | — | [actual](evidence/fr15-run03/web/FR15-TC-093.json) |
+| FR15-TC-094 | WEB/Update | FR15-R05 | Domain Testing,BVA | baseline | accept | ui-immediate-correct / **Failed** | FR15-BUG-004 | [actual](evidence/fr15-run03/web/FR15-TC-094.json) |
+| FR15-TC-095 | WEB/Update | FR15-R05 | Domain Testing,BVA | baseline | accept | ui-immediate-correct / **Failed** | FR15-BUG-004 | [actual](evidence/fr15-run03/web/FR15-TC-095.json) |
+| FR15-TC-096 | WEB/Update | FR15-R05 | Domain Testing,BVA | baseline | accept | ui-immediate-correct / **Failed** | FR15-BUG-004 | [actual](evidence/fr15-run03/web/FR15-TC-096.json) |
+| FR15-TC-097 | WEB/Update | FR15-R05 | Domain Testing,BVA | baseline | accept | ui-immediate-correct / **Failed** | FR15-BUG-004 | [actual](evidence/fr15-run03/web/FR15-TC-097.json) |
+| FR15-TC-098 | WEB/Update | FR15-R05 | Domain Testing,BVA | baseline | reject | rejected-state-unchanged,rejection-signaled,ui-immediate-correct,ui-reload-correct / **Failed** | FR15-BUG-001 | [actual](evidence/fr15-run03/web/FR15-TC-098.json) |
+| FR15-TC-099 | WEB/Update | FR15-R06 | Domain Testing,BVA | baseline | reject | rejected-state-unchanged,rejection-signaled,ui-immediate-correct,ui-reload-correct / **Failed** | FR15-BUG-002 | [actual](evidence/fr15-run03/web/FR15-TC-099.json) |
+| FR15-TC-100 | WEB/Update | FR15-R06 | Domain Testing,BVA | baseline | reject | rejected-state-unchanged,rejection-signaled,ui-immediate-correct,ui-reload-correct / **Failed** | FR15-BUG-002 | [actual](evidence/fr15-run03/web/FR15-TC-100.json) |
+| FR15-TC-101 | WEB/Update | FR15-R06 | Domain Testing,BVA | baseline | accept | ui-immediate-correct / **Failed** | FR15-BUG-004 | [actual](evidence/fr15-run03/web/FR15-TC-101.json) |
+| FR15-TC-102 | WEB/Update | FR15-R05,FR15-R06 | Domain Testing | baseline | accept | ui-immediate-correct / **Failed** | FR15-BUG-004 | [actual](evidence/fr15-run03/web/FR15-TC-102.json) |
+| FR15-TC-103 | WEB/Update | FR15-R05,FR15-R06 | Domain Testing | baseline | accept | ui-immediate-correct / **Failed** | FR15-BUG-004 | [actual](evidence/fr15-run03/web/FR15-TC-103.json) |
+| FR15-TC-104 | WEB/Update | FR15-R05,FR15-R06 | Domain Testing | baseline | reject | rejected-state-unchanged,rejection-signaled,ui-immediate-correct,ui-reload-correct / **Failed** | FR15-BUG-001 | [actual](evidence/fr15-run03/web/FR15-TC-104.json) |
+| FR15-TC-105 | WEB/Update | FR15-R05,FR15-R06 | Domain Testing | baseline | reject | rejected-state-unchanged,rejection-signaled,ui-immediate-correct,ui-reload-correct / **Failed** | FR15-BUG-002 | [actual](evidence/fr15-run03/web/FR15-TC-105.json) |
+| FR15-TC-106 | WEB/Update | FR15-R05,FR15-R06 | Domain Testing | baseline | reject | rejected-state-unchanged,rejection-signaled,ui-immediate-correct,ui-reload-correct / **Failed** | FR15-BUG-002 | [actual](evidence/fr15-run03/web/FR15-TC-106.json) |
+| FR15-TC-107 | WEB/Update | FR15-R05,FR15-R06 | Domain Testing | baseline | accept | ui-immediate-correct / **Failed** | FR15-BUG-004 | [actual](evidence/fr15-run03/web/FR15-TC-107.json) |
+| FR15-TC-108 | WEB/Update | FR15-R05,FR15-R06 | Domain Testing | baseline | reject | rejected-state-unchanged,rejection-signaled,ui-immediate-correct,ui-reload-correct / **Failed** | FR15-BUG-002 | [actual](evidence/fr15-run03/web/FR15-TC-108.json) |
+| FR15-TC-109 | WEB/Update | FR15-R05,FR15-R06 | Domain Testing | baseline | reject | rejected-state-unchanged,rejection-signaled,ui-immediate-correct,ui-reload-correct / **Failed** | FR15-BUG-002 | [actual](evidence/fr15-run03/web/FR15-TC-109.json) |
+| FR15-TC-110 | WEB/Update | FR15-R05,FR15-R06 | Domain Testing | baseline | reject | all asserted postconditions satisfied / **Passed** | — | [actual](evidence/fr15-run03/web/FR15-TC-110.json) |
+| FR15-TC-111 | WEB/Update | FR15-R05,FR15-R06 | Domain Testing | baseline | reject | rejected-state-unchanged,rejection-signaled,ui-immediate-correct,ui-reload-correct / **Failed** | FR15-BUG-001,FR15-BUG-002 | [actual](evidence/fr15-run03/web/FR15-TC-111.json) |
+| FR15-TC-112 | WEB/Update | FR15-R07 | Domain Testing | baseline | accept | ui-immediate-correct / **Failed** | FR15-BUG-004 | [actual](evidence/fr15-run03/web/FR15-TC-112.json) |
+| FR15-TC-113 | WEB/Update | FR15-R06 | Domain Testing | baseline | reject | rejected-state-unchanged,rejection-signaled,ui-immediate-correct,ui-reload-correct / **Failed** | FR15-BUG-002 | [actual](evidence/fr15-run03/web/FR15-TC-113.json) |
+| FR15-TC-114 | WEB/Update | FR15-R06 | Supplementary | baseline | accept | ui-immediate-correct / **Failed** | FR15-BUG-004 | [actual](evidence/fr15-run03/web/FR15-TC-114.json) |
+| FR15-TC-115 | API/Read | FR15-R02 | Domain Testing | empty-products | accept | all asserted postconditions satisfied / **Passed** | — | [actual](evidence/fr15-run03/api/FR15-TC-115.json) |
+| FR15-TC-116 | API/Read | FR15-R02 | Domain Testing | baseline | accept | all asserted postconditions satisfied / **Passed** | — | [actual](evidence/fr15-run03/api/FR15-TC-116.json) |
+| FR15-TC-117 | API/Read | FR15-R02 | Domain Testing | baseline | accept | all asserted postconditions satisfied / **Passed** | — | [actual](evidence/fr15-run03/api/FR15-TC-117.json) |
+| FR15-TC-118 | API/Read | FR15-R02 | Domain Testing | baseline | accept | all asserted postconditions satisfied / **Passed** | — | [actual](evidence/fr15-run03/api/FR15-TC-118.json) |
+| FR15-TC-119 | API/Delete | FR15-R04 | Domain Testing | baseline | accept | all asserted postconditions satisfied / **Passed** | — | [actual](evidence/fr15-run03/api/FR15-TC-119.json) |
+| FR15-TC-120 | API/Delete | FR15-R04 | Domain Testing | single-product | accept | all asserted postconditions satisfied / **Passed** | — | [actual](evidence/fr15-run03/api/FR15-TC-120.json) |
+| FR15-TC-121 | API/Update | FR15-R03,FR15-R08 | Domain Testing | baseline | accept | all asserted postconditions satisfied / **Passed** | — | [actual](evidence/fr15-run03/api/FR15-TC-121.json) |
+| FR15-TC-122 | API/Update | FR15-R03,FR15-R08 | Domain Testing | baseline | accept | all asserted postconditions satisfied / **Passed** | — | [actual](evidence/fr15-run03/api/FR15-TC-122.json) |
+| FR15-TC-123 | API/Update | FR15-R03,FR15-R08 | Domain Testing | baseline | accept | all asserted postconditions satisfied / **Passed** | — | [actual](evidence/fr15-run03/api/FR15-TC-123.json) |
+| FR15-TC-124 | API/Update | FR15-R03,FR15-R08 | Domain Testing | baseline | accept | all asserted postconditions satisfied / **Passed** | — | [actual](evidence/fr15-run03/api/FR15-TC-124.json) |
+| FR15-TC-125 | API/Update | FR15-R03,FR15-R08 | Domain Testing | baseline | accept | all asserted postconditions satisfied / **Passed** | — | [actual](evidence/fr15-run03/api/FR15-TC-125.json) |
+| FR15-TC-126 | API/Update | FR15-R03,FR15-R08 | Domain Testing | baseline | accept | all asserted postconditions satisfied / **Passed** | — | [actual](evidence/fr15-run03/api/FR15-TC-126.json) |
+| FR15-TC-127 | WEB/Read | FR15-R02 | Domain Testing | empty-products | accept | all asserted postconditions satisfied / **Passed** | — | [actual](evidence/fr15-run03/web/FR15-TC-127.json) |
+| FR15-TC-128 | WEB/Read | FR15-R02 | Domain Testing | baseline | accept | all asserted postconditions satisfied / **Passed** | — | [actual](evidence/fr15-run03/web/FR15-TC-128.json) |
+| FR15-TC-129 | WEB/Delete | FR15-R04 | Domain Testing | baseline | accept | all asserted postconditions satisfied / **Passed** | — | [actual](evidence/fr15-run03/web/FR15-TC-129.json) |
+| FR15-TC-130 | WEB/Delete | FR15-R04 | Domain Testing | single-product | accept | all asserted postconditions satisfied / **Passed** | — | [actual](evidence/fr15-run03/web/FR15-TC-130.json) |
+| FR15-TC-131 | WEB/Update | FR15-R03,FR15-R08 | Domain Testing | baseline | accept | ui-immediate-correct / **Failed** | FR15-BUG-004 | [actual](evidence/fr15-run03/web/FR15-TC-131.json) |
+| FR15-TC-132 | WEB/Update | FR15-R03,FR15-R08 | Domain Testing | baseline | accept | ui-immediate-correct / **Failed** | FR15-BUG-004 | [actual](evidence/fr15-run03/web/FR15-TC-132.json) |
+| FR15-TC-133 | WEB/Update | FR15-R03,FR15-R08 | Domain Testing | baseline | accept | ui-immediate-correct / **Failed** | FR15-BUG-004 | [actual](evidence/fr15-run03/web/FR15-TC-133.json) |
+| FR15-TC-134 | WEB/Update | FR15-R03,FR15-R08 | Domain Testing | baseline | accept | ui-immediate-correct / **Failed** | FR15-BUG-004 | [actual](evidence/fr15-run03/web/FR15-TC-134.json) |
+| FR15-TC-135 | WEB/Update | FR15-R03,FR15-R08 | Domain Testing | baseline | accept | ui-immediate-correct / **Failed** | FR15-BUG-004 | [actual](evidence/fr15-run03/web/FR15-TC-135.json) |
+| FR15-TC-136 | WEB/Update | FR15-R03,FR15-R08 | Domain Testing | baseline | accept | ui-immediate-correct / **Failed** | FR15-BUG-004 | [actual](evidence/fr15-run03/web/FR15-TC-136.json) |
+| FR15-TC-137 | API/Create | FR12-DEP-WRITE | Domain Testing | baseline | reject | rejected-state-unchanged,rejection-signaled / **Failed** | FR15-BUG-005 | [actual](evidence/fr15-run03/api/FR15-TC-137.json) |
+| FR15-TC-138 | API/Create | FR12-DEP-WRITE | Domain Testing | baseline | reject | rejected-state-unchanged,rejection-signaled / **Failed** | FR15-BUG-005 | [actual](evidence/fr15-run03/api/FR15-TC-138.json) |
+| FR15-TC-139 | API/Create | FR12-DEP-WRITE | Domain Testing | baseline | reject | rejected-state-unchanged,rejection-signaled / **Failed** | FR15-BUG-005 | [actual](evidence/fr15-run03/api/FR15-TC-139.json) |
+| FR15-TC-140 | API/Update | FR12-DEP-WRITE | Domain Testing | baseline | reject | rejected-state-unchanged,rejection-signaled / **Failed** | FR15-BUG-005 | [actual](evidence/fr15-run03/api/FR15-TC-140.json) |
+| FR15-TC-141 | API/Update | FR12-DEP-WRITE | Domain Testing | baseline | reject | rejected-state-unchanged,rejection-signaled / **Failed** | FR15-BUG-005 | [actual](evidence/fr15-run03/api/FR15-TC-141.json) |
+| FR15-TC-142 | API/Update | FR12-DEP-WRITE | Domain Testing | baseline | reject | rejected-state-unchanged,rejection-signaled / **Failed** | FR15-BUG-005 | [actual](evidence/fr15-run03/api/FR15-TC-142.json) |
+| FR15-TC-143 | API/Delete | FR12-DEP-WRITE | Domain Testing | baseline | reject | rejected-state-unchanged,rejection-signaled / **Failed** | FR15-BUG-005 | [actual](evidence/fr15-run03/api/FR15-TC-143.json) |
+| FR15-TC-144 | API/Delete | FR12-DEP-WRITE | Domain Testing | baseline | reject | rejected-state-unchanged,rejection-signaled / **Failed** | FR15-BUG-005 | [actual](evidence/fr15-run03/api/FR15-TC-144.json) |
+| FR15-TC-145 | API/Delete | FR12-DEP-WRITE | Domain Testing | baseline | reject | rejected-state-unchanged,rejection-signaled / **Failed** | FR15-BUG-005 | [actual](evidence/fr15-run03/api/FR15-TC-145.json) |
+| FR15-TC-146 | WEB/Create | FR15-R07 | Domain Testing | empty-categories | reject | rejected-state-unchanged,rejection-signaled,ui-immediate-correct,ui-reload-correct / **Failed** | FR15-BUG-003 | [actual](evidence/fr15-run03/web/FR15-TC-146.json) |
+| FR15-TC-147 | API/Create | FR15-R07 | Domain Testing | empty-categories | reject | rejected-state-unchanged,rejection-signaled / **Failed** | FR15-BUG-003 | [actual](evidence/fr15-run03/api/FR15-TC-147.json) |
+| FR15-TC-148 | API/Read | FR15-R02 | Supplementary | baseline | observe | oracle-unresolved / **Blocked** | — | [actual](evidence/fr15-run03/api/FR15-TC-148.json) |
+| FR15-TC-149 | API/Update | FR15-R03 | Supplementary | baseline | observe | oracle-unresolved / **Blocked** | — | [actual](evidence/fr15-run03/api/FR15-TC-149.json) |
+| FR15-TC-150 | API/Delete | FR15-R04 | Supplementary | baseline | observe | oracle-unresolved / **Blocked** | — | [actual](evidence/fr15-run03/api/FR15-TC-150.json) |
+| FR15-TC-151 | API/Create | FR15-R05 | BVA | baseline | reject | rejected-state-unchanged,rejection-signaled / **Failed** | FR15-BUG-001 | [actual](evidence/fr15-run03/api/FR15-TC-151.json) |
+| FR15-TC-152 | API/Create | FR15-R06 | BVA | baseline | accept | all asserted postconditions satisfied / **Passed** | — | [actual](evidence/fr15-run03/api/FR15-TC-152.json) |
+| FR15-TC-153 | API/Update | FR15-R05 | BVA | baseline | reject | rejected-state-unchanged,rejection-signaled / **Failed** | FR15-BUG-001 | [actual](evidence/fr15-run03/api/FR15-TC-153.json) |
+| FR15-TC-154 | API/Update | FR15-R06 | BVA | baseline | accept | all asserted postconditions satisfied / **Passed** | — | [actual](evidence/fr15-run03/api/FR15-TC-154.json) |
+| FR15-TC-155 | WEB/Create | FR15-R05 | BVA | baseline | reject | rejected-state-unchanged,rejection-signaled,ui-immediate-correct,ui-reload-correct / **Failed** | FR15-BUG-001 | [actual](evidence/fr15-run03/web/FR15-TC-155.json) |
+| FR15-TC-156 | WEB/Create | FR15-R06 | BVA | baseline | accept | all asserted postconditions satisfied / **Passed** | — | [actual](evidence/fr15-run03/web/FR15-TC-156.json) |
+| FR15-TC-157 | WEB/Update | FR15-R05 | BVA | baseline | reject | rejected-state-unchanged,rejection-signaled,ui-immediate-correct,ui-reload-correct / **Failed** | FR15-BUG-001 | [actual](evidence/fr15-run03/web/FR15-TC-157.json) |
+| FR15-TC-158 | WEB/Update | FR15-R06 | BVA | baseline | accept | ui-immediate-correct / **Failed** | FR15-BUG-004 | [actual](evidence/fr15-run03/web/FR15-TC-158.json) |
+
+## Blockers and follow-up
+
+All 7 Blocked source cases are supplementary: whitespace/Unicode name conventions (API C/U) and exact missing-target Read/Update/Delete contract. Exact price=0.5 now has a confirmed acceptance oracle because it is a representable number >0; unknown precision still limits neighbor-based BVA. Their raw behavior is recorded; no Pass/Fail manufactured. To resolve: obtain precision/Unicode/trim/missing-target contract or course guidance, version the model/suite, then rerun affected cases; preserve current evidence. No environment blocker or Not Run remains.
+
+Learner technical review Pending. Only observed failures below are grouped into five issue reports (four FR15 validation/display groups and one FR12 dependency group). Grouping is by violated rule; it does not assert a single shared code root cause across UI/backend. No GitHub issue published.
+
+
+tests/fr15/suite.json
+Artifact SHA256=7ffcde1671a5d36aefcc3d7b63d03c7e891d46cd623db32f321b20b04c994f86
+
+docs/testing/fr15/evidence/fr15-run03/manifest.json
+Artifact SHA256=4e513196f21a82d0c47dac803fbd956e91aa5e604ffe0f121bc0b1188a02e90c
 ```
 
 Pending learner review.

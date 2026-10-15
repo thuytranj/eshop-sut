@@ -1,0 +1,189 @@
+TAP version 13
+# Subtest: accepts a complete frozen suite with preserved provenance
+ok 1 - accepts a complete frozen suite with preserved provenance
+  ---
+  duration_ms: 36.641083
+  type: 'test'
+  ...
+# Subtest: rejects a duplicated canonical ID
+ok 2 - rejects a duplicated canonical ID
+  ---
+  duration_ms: 0.564833
+  type: 'test'
+  ...
+# Subtest: rejects unmapped source and lost obligation
+ok 3 - rejects unmapped source and lost obligation
+  ---
+  duration_ms: 0.282834
+  type: 'test'
+  ...
+# Subtest: rejects false passed baseline and unknown fixture
+ok 4 - rejects false passed baseline and unknown fixture
+  ---
+  duration_ms: 0.120792
+  type: 'test'
+  ...
+# Subtest: rejects technique mismatch after deduplication
+ok 5 - rejects technique mismatch after deduplication
+  ---
+  duration_ms: 0.166542
+  type: 'test'
+  ...
+# Subtest: rejects missing steps and expected result
+ok 6 - rejects missing steps and expected result
+  ---
+  duration_ms: 0.089667
+  type: 'test'
+  ...
+# Subtest: creates byte-identical backend copy without copying working DB
+ok 7 - creates byte-identical backend copy without copying working DB
+  ---
+  duration_ms: 17.09625
+  type: 'test'
+  ...
+# Subtest: refuses working backend and symlink alias before touching data
+ok 8 - refuses working backend and symlink alias before touching data
+  ---
+  duration_ms: 0.915125
+  type: 'test'
+  ...
+# Subtest: accepts correctly isolated update but detects a non-target field change
+ok 9 - accepts correctly isolated update but detects a non-target field change
+  ---
+  duration_ms: 1.262
+  type: 'test'
+  ...
+# Subtest: does not infer rejection from an HTTP success or unchanged count
+ok 10 - does not infer rejection from an HTTP success or unchanged count
+  ---
+  duration_ms: 0.459375
+  type: 'test'
+  ...
+# Subtest: keeps unresolved probes without a pass/fail verdict
+ok 11 - keeps unresolved probes without a pass/fail verdict
+  ---
+  duration_ms: 0.132959
+  type: 'test'
+  ...
+# Subtest: continues after a failed case and records environment errors as blocked
+ok 12 - continues after a failed case and records environment errors as blocked
+  ---
+  duration_ms: 47.1325
+  type: 'test'
+  ...
+# Subtest: detects immediate UI drift even when persisted update is correct
+ok 13 - detects immediate UI drift even when persisted update is correct
+  ---
+  duration_ms: 0.253167
+  type: 'test'
+  ...
+# Subtest: requires API readback to reflect the persisted state
+ok 14 - requires API readback to reflect the persisted state
+  ---
+  duration_ms: 0.10275
+  type: 'test'
+  ...
+# Subtest: rejects incorrect rendered image sources even when names/prices/alt match
+not ok 15 - rejects incorrect rendered image sources even when names/prices/alt match
+  ---
+  duration_ms: 0.678875
+  type: 'test'
+  location: '/Users/thuytran/Workspace/eshop-sut/tests/fr15/harness.test.cjs:57:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly deep-equal:
+    + actual - expected
+    
+    + []
+    - [
+    -   'ui-immediate-correct',
+    -   'ui-reload-correct'
+    - ]
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    0: 'ui-immediate-correct'
+    1: 'ui-reload-correct'
+  actual:
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (/Users/thuytran/Workspace/eshop-sut/tests/fr15/harness.test.cjs:60:9)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: does not treat a missing response as positive evidence of rejection
+not ok 16 - does not treat a missing response as positive evidence of rejection
+  ---
+  duration_ms: 0.318125
+  type: 'test'
+  location: '/Users/thuytran/Workspace/eshop-sut/tests/fr15/harness.test.cjs:62:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + 'Passed'
+    - 'Blocked'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'Blocked'
+  actual: 'Passed'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/Users/thuytran/Workspace/eshop-sut/tests/fr15/harness.test.cjs:66:9)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: a representable positive half-price has an acceptance oracle
+not ok 17 - a representable positive half-price has an acceptance oracle
+  ---
+  duration_ms: 1.489916
+  type: 'test'
+  location: '/Users/thuytran/Workspace/eshop-sut/tests/fr15/harness.test.cjs:69:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + 'Blocked'
+    - 'Passed'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'Passed'
+  actual: 'Blocked'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/Users/thuytran/Workspace/eshop-sut/tests/fr15/harness.test.cjs:73:9)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: fixture PNG has valid chunk CRCs to avoid unrelated image fallback
+ok 18 - fixture PNG has valid chunk CRCs to avoid unrelated image fallback
+  ---
+  duration_ms: 87.041417
+  type: 'test'
+  ...
+1..18
+# tests 18
+# suites 0
+# pass 15
+# fail 3
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 167.660959

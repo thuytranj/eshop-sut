@@ -1,0 +1,197 @@
+{
+  "caseId": "FR15-TC-129",
+  "runId": "fr15-run03",
+  "attempted": true,
+  "startedAt": "2026-10-15T22:41:07+07:00",
+  "inputIntended": {
+    "body": {
+      "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "price": 100000,
+      "description": "Nominal description",
+      "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=",
+      "category_id": 10
+    },
+    "target": 101,
+    "auth": "admin",
+    "mode": "delete"
+  },
+  "inputEffective": null,
+  "request": {
+    "method": "DELETE",
+    "url": "http://localhost:3000/api/products/101",
+    "body": null,
+    "authorization": "[REDACTED]"
+  },
+  "response": {
+    "statusCode": 200,
+    "body": {
+      "message": "Product deleted"
+    }
+  },
+  "stateBefore": [
+    {
+      "id": 101,
+      "name": "Product A",
+      "price": 100000,
+      "description": "Description A",
+      "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=",
+      "category_id": 10
+    },
+    {
+      "id": 202,
+      "name": "Product B",
+      "price": 200000,
+      "description": "Description B",
+      "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=",
+      "category_id": 20
+    },
+    {
+      "id": 303,
+      "name": "Product C",
+      "price": 300000,
+      "description": "Description C",
+      "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=",
+      "category_id": 10
+    }
+  ],
+  "stateAfter": [
+    {
+      "id": 202,
+      "name": "Product B",
+      "price": 200000,
+      "description": "Description B",
+      "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=",
+      "category_id": 20
+    },
+    {
+      "id": 303,
+      "name": "Product C",
+      "price": 300000,
+      "description": "Description C",
+      "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=",
+      "category_id": 10
+    }
+  ],
+  "uiBeforeReload": [
+    {
+      "name": "Product B",
+      "price": 200000,
+      "alt": "Product B",
+      "src": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII="
+    },
+    {
+      "name": "Product C",
+      "price": 300000,
+      "alt": "Product C",
+      "src": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII="
+    }
+  ],
+  "uiAfterReload": [
+    {
+      "name": "Product B",
+      "price": 200000,
+      "alt": "Product B",
+      "src": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII="
+    },
+    {
+      "name": "Product C",
+      "price": 300000,
+      "alt": "Product C",
+      "src": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII="
+    }
+  ],
+  "actual": {
+    "failures": [],
+    "beforeCount": 3,
+    "afterCount": 2,
+    "mutationCount": 1,
+    "htmlBlocked": false,
+    "response": {
+      "statusCode": 200,
+      "body": {
+        "message": "Product deleted"
+      }
+    }
+  },
+  "status": "Passed",
+  "blockReason": null,
+  "evidence": [
+    "docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-129_immediate.png",
+    "docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-129_reload.png",
+    "docs/testing/fr15/evidence/fr15-run03/web/FR15-TC-129.json"
+  ],
+  "exercisedObligations": [
+    "FR15-OBL-DT-125"
+  ],
+  "console": [
+    {
+      "type": "debug",
+      "text": "[vite] connecting..."
+    },
+    {
+      "type": "debug",
+      "text": "[vite] connected."
+    },
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"
+    },
+    {
+      "type": "debug",
+      "text": "[vite] connecting..."
+    },
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"
+    },
+    {
+      "type": "debug",
+      "text": "[vite] connected."
+    }
+  ],
+  "dialogs": [],
+  "uiInitial": [
+    {
+      "name": "Product A",
+      "price": 100000,
+      "alt": "Product A",
+      "src": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII="
+    },
+    {
+      "name": "Product B",
+      "price": 200000,
+      "alt": "Product B",
+      "src": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII="
+    },
+    {
+      "name": "Product C",
+      "price": 300000,
+      "alt": "Product C",
+      "src": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII="
+    }
+  ],
+  "apiReadback": {
+    "statusCode": 200,
+    "body": [
+      {
+        "id": 202,
+        "name": "Product B",
+        "price": 200000,
+        "description": "Description B",
+        "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=",
+        "category_id": 20
+      },
+      {
+        "id": 303,
+        "name": "Product C",
+        "price": 300000,
+        "description": "Description C",
+        "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=",
+        "category_id": 10
+      }
+    ]
+  },
+  "mutationCount": 1,
+  "failures": [],
+  "endedAt": "2026-10-15T22:41:10+07:00"
+}

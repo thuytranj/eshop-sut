@@ -51,6 +51,8 @@ Create tăng count đúng 1, read-back đúng input; Update thay đúng target, 
 
 ## Bước 7: traceability và coverage
 
-Mỗi row obligations.json có ID, sourceCaseId, layer/action, rule, point/rationale/oracle. Domain-cases.md và source JSON là thiết kế ban đầu Not Run. Số nghĩa vụ là số ID distinct của từng technique; denominator gồm cả validation partition, point/surface/corner, operation/state đã liệt kê, tách supplementary. Designed coverage = mapped obligations / identified obligations; executed coverage chưa có, không suy pass/fail từ predicate kỳ vọng. Category/auth là domain partitions, không được cộng BVA. Unresolved probes (precision/trim/Unicode/missing target error contract) có ghi observation nhưng không có oracle đủ để verdict toàn case.
+Mỗi row obligations.json có ID, sourceCaseId, layer/action, rule, point/rationale/oracle. Domain-cases.md và source JSON là thiết kế ban đầu Not Run. Số nghĩa vụ là số ID distinct của từng technique; denominator gồm cả validation partition, point/surface/corner, operation/state đã liệt kê, tách supplementary. Designed coverage = mapped obligations / identified obligations; executed coverage chưa có, không suy pass/fail từ predicate kỳ vọng. Category/auth là domain partitions, không được cộng BVA. Unresolved probes (trim/Unicode/missing target error contract) có ghi observation nhưng không có oracle đủ để verdict toàn case.
 
 Phương pháp là fallback từ skills khi chưa có slide lớp. Learner review Pending; không claim đã được sinh viên xác nhận.
+
+Freeze v3 correction: exact positive 0.5 has a confirmed acceptance oracle under R06; unknown full-price precision limits BVA adjacency only. These four cases retain Supplementary technique labels and do not change DT/BVA denominators.

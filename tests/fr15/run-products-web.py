@@ -24,7 +24,7 @@ def fixture(args, key=None):
 def rows(page):
     return page.locator('table tbody tr').evaluate_all("""rs => rs.map(r => {
         const cells=r.querySelectorAll('td');
-        return {name:cells[1].textContent,price:Number(cells[2].textContent.replace(/[^0-9.\\-]/g,'')),alt:cells[0].querySelector('img').alt};
+        return {name:cells[1].textContent,price:Number(cells[2].textContent.replace(/[^0-9.\\-]/g,'')),alt:cells[0].querySelector('img').alt,src:cells[0].querySelector('img').getAttribute('src')};
     })""")
 
 def settle(page, pending):

@@ -28,7 +28,7 @@ Không thể tạo chuỗi dài -1; infinity không phải boundary value hữu 
 
 Name union {0,1,2,254,255,256,257}: 7 values/action/layer. 0/256/257 reject; 1/2/254/255 accept. Price Z union {-1,0,1,2}: 4 values/action/layer; -1/0 reject, 1/2 accept. Chỉ lấy ba điểm quanh p=0 sẽ thiếu 2 theo variant này; chỉ dùng valid endpoints name sẽ thiếu 257.
 
-Không có nearest real/decimal neighbor khi precision chưa được contract xác định. ±1 không chứng minh coverage toàn miền giá; 0.5 chỉ probe precision, không thêm 0.01 hoặc max giả. Unicode được giữ trong supplementary, chưa giải quyết codepoint/UTF16/grapheme.
+Không có nearest real/decimal neighbor khi precision chưa được contract xác định. ±1 không chứng minh coverage toàn miền giá; 0.5 là supplementary positive-acceptance check, không chứng minh adjacency precision, không thêm 0.01 hoặc max giả. Unicode được giữ trong supplementary, chưa giải quyết codepoint/UTF16/grapheme.
 
 ## Bước 5: materialize và giữ nominal
 

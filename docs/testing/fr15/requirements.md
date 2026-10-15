@@ -46,7 +46,7 @@ Valid Create: đúng một row mới, field tương ứng payload; row trước 
 | ID | Chưa quy định | Quyết định / tác động |
 |---|---|---|
 | FR15-AMB-01 | Unicode unit, trim whitespace | Main length dùng ASCII; whitespace/Unicode là probe, không claim complete Unicode coverage |
-| FR15-AMB-02 | Precision/upper bound price | p=0 strict reject; Z-slice có BVA hữu hạn, adjacency full price chưa xác định; không đặt 0.01/max |
+| FR15-AMB-02 | Precision/upper bound price | p=0 strict reject; số 0.5 biểu diễn chính xác thỏa >0 nên phải được chấp nhận; chưa biết precision chỉ hạn chế adjacency. Z-slice có BVA hữu hạn, adjacency full price chưa xác định; không đặt 0.01/max |
 | FR15-AMB-03 | JSON numeric string từ form, kiểu category ID | Lưu payload thực, so nghĩa nghiệp vụ; không fail chỉ vì '100000' thay 100000 |
 | FR15-AMB-04 | PUT có phải partial update | Main suite full body; probe missing field đánh giá requiredness chắc chắn, không đoán PATCH semantics |
 | FR15-AMB-05 | Error codes, message copy, schema GET detail | Test hậu điều kiện/rule; unknown code/schema không thành defect riêng |

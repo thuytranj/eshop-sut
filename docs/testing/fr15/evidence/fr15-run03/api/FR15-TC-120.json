@@ -1,0 +1,79 @@
+{
+  "caseId": "FR15-TC-120",
+  "runId": "fr15-run03",
+  "attempted": true,
+  "startedAt": "2026-10-15T22:38:08+07:00",
+  "inputIntended": {
+    "body": {
+      "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "price": 100000,
+      "description": "Nominal description",
+      "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=",
+      "category_id": 10
+    },
+    "target": 101,
+    "auth": "admin",
+    "mode": "delete"
+  },
+  "inputEffective": {
+    "body": {
+      "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "price": 100000,
+      "description": "Nominal description",
+      "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=",
+      "category_id": 10
+    },
+    "target": 101,
+    "auth": "admin",
+    "mode": "delete"
+  },
+  "request": {
+    "method": "DELETE",
+    "url": "/api/products/101",
+    "headers": {
+      "Authorization": "Bearer [REDACTED]"
+    }
+  },
+  "response": {
+    "statusCode": 200,
+    "body": {
+      "message": "Product deleted"
+    }
+  },
+  "stateBefore": [
+    {
+      "id": 101,
+      "name": "Product A",
+      "price": 100000,
+      "description": "Description A",
+      "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=",
+      "category_id": 10
+    }
+  ],
+  "stateAfter": [],
+  "uiBeforeReload": null,
+  "uiAfterReload": null,
+  "actual": {
+    "http": 200,
+    "body": {
+      "message": "Product deleted"
+    },
+    "failures": [],
+    "beforeCount": 1,
+    "afterCount": 0
+  },
+  "status": "Passed",
+  "blockReason": null,
+  "evidence": [
+    "docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-120.json"
+  ],
+  "exercisedObligations": [
+    "FR15-OBL-DT-116"
+  ],
+  "apiReadback": {
+    "statusCode": 200,
+    "body": []
+  },
+  "failures": [],
+  "endedAt": "2026-10-15T22:38:08+07:00"
+}

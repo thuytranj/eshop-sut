@@ -5,19 +5,19 @@
 | Thống kê unique | Số lượng |
 |---|---|
 | Features | 1 (FR15; FR12 product-write là dependency) |
-| Source cases | 198 (DT143 + BVA44 + supplementary11) |
+| Source cases | 198 (DT143 + BVA44 + supplementary11; 4 supplementary có oracle sau review) |
 | Designed canonical | 158 (API97, WEB61) |
 | Attempted | 158 |
-| Executed có verdict | 147 |
-| Passed | 53 |
-| Failed | 94 |
-| Blocked | 11 (oracle-unresolved, đã ghi quan sát) |
+| Executed có verdict | 151 |
+| Passed | 56 |
+| Failed | 95 |
+| Blocked | 7 (oracle-unresolved, đã ghi quan sát) |
 | Not Run | 0 |
-| Not yet adjudicated | 11 = Blocked + Not Run |
+| Not yet adjudicated | 7 = Blocked + Not Run |
 | Bug report groups | 5 (4 FR15 + 1 dependency FR12) |
 | Demo / GitHub links | Chưa có; không bịa URL |
 
-Final run: fr15-run02; run01 preliminary được giữ để audit và không cộng vào số case. DT143/143 và BVA44/44 nghĩa vụ hữu hạn đã exercise, không đồng nghĩa pass hoặc exhaustive correctness. Price chỉ Z-slice, Unicode/precision chưa rõ; xem test-results.md.
+Final run: fr15-run03; run01/run02 historical được giữ để audit và không cộng vào số case. DT143/143 và BVA44/44 nghĩa vụ hữu hạn đã exercise, không đồng nghĩa pass hoặc exhaustive correctness. Price chỉ Z-slice, Unicode/precision chưa rõ; xem test-results.md.
 
 ## Artifacts
 
@@ -31,12 +31,14 @@ Final run: fr15-run02; run01 preliminary được giữ để audit và không c
 - [AI gap analysis và critique](ai-gap-analysis.md)
 - [AI Audit export](ai-interactions.md), [append-only JSONL](ai-interactions.jsonl)
 - [Git commit log](commit-log.txt)
-- [Final run manifest](evidence/fr15-run02/manifest.json)
+- [Independent review và disposition](final-review.md)
+- [Execution rulings và ledger](execution-decisions.md)
+- [Final run manifest](evidence/fr15-run03/manifest.json)
 - [Frozen executable suite](../../../tests/fr15/suite.json)
 
 ## Reproduce
 
-Từ root repo, Node22.17.1 đã dùng trong run02, Python/Playwright và Chromium version theo browser.json. Cài dependency nếu cần bằng npm ci đúng backend/frontend-admin; không dùng root npm test. Ports3000/5174 phải trống; runner từ chối process lạ.
+Từ root repo, Node22.17.1 đã dùng trong run03, Python/Playwright và Chromium version theo browser.json. Cài dependency nếu cần bằng npm ci đúng backend/frontend-admin; không dùng root npm test. Ports3000/5174 phải trống; runner từ chối process lạ.
 
 ```bash
 node --test tests/fr15/harness.test.cjs tests/fr15/png-fixture.test.cjs

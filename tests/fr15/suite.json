@@ -1541,7 +1541,7 @@
     "obligations": [
       "FR15-OBL-SUP-001"
     ],
-    "oracleStatus": "unresolved",
+    "oracleStatus": "confirmed",
     "preconditions": "Fresh baseline fixture; token partition admin; target 101 if Update/Read-detail/Delete. Reset before case.",
     "fixtureKey": "baseline",
     "input": {
@@ -1562,9 +1562,9 @@
       "Compare target and all non-target fields; for WEB capture immediate and reload states"
     ],
     "expected": {
-      "outcome": "observe",
+      "outcome": "accept",
       "stateContract": "Create",
-      "description": "Fractional positive price characterization; precision unresolved"
+      "description": "Representable positive price 0.5 satisfies numeric >0; adjacency precision remains unresolved"
     },
     "dependencies": [
       "FR12-DEP-WRITE"
@@ -3212,7 +3212,7 @@
     "obligations": [
       "FR15-OBL-SUP-004"
     ],
-    "oracleStatus": "unresolved",
+    "oracleStatus": "confirmed",
     "preconditions": "Fresh baseline fixture; token partition admin; target 101 if Update/Read-detail/Delete. Reset before case.",
     "fixtureKey": "baseline",
     "input": {
@@ -3233,9 +3233,9 @@
       "Compare target and all non-target fields; for WEB capture immediate and reload states"
     ],
     "expected": {
-      "outcome": "observe",
+      "outcome": "accept",
       "stateContract": "Update",
-      "description": "Fractional positive price characterization; precision unresolved"
+      "description": "Representable positive price 0.5 satisfies numeric >0; adjacency precision remains unresolved"
     },
     "dependencies": [
       "FR12-DEP-WRITE"
@@ -4449,7 +4449,7 @@
     "obligations": [
       "FR15-OBL-SUP-007"
     ],
-    "oracleStatus": "unresolved",
+    "oracleStatus": "confirmed",
     "preconditions": "Fresh baseline fixture; token partition admin; target 101 if Update/Read-detail/Delete. Reset before case.",
     "fixtureKey": "baseline",
     "input": {
@@ -4470,9 +4470,9 @@
       "Compare target and all non-target fields; for WEB capture immediate and reload states"
     ],
     "expected": {
-      "outcome": "observe",
+      "outcome": "accept",
       "stateContract": "Create",
-      "description": "Fractional positive price characterization; precision unresolved"
+      "description": "Representable positive price 0.5 satisfies numeric >0; adjacency precision remains unresolved"
     },
     "dependencies": [
       "FR12-DEP-WRITE"
@@ -5591,7 +5591,7 @@
     "obligations": [
       "FR15-OBL-SUP-008"
     ],
-    "oracleStatus": "unresolved",
+    "oracleStatus": "confirmed",
     "preconditions": "Fresh baseline fixture; token partition admin; target 101 if Update/Read-detail/Delete. Reset before case.",
     "fixtureKey": "baseline",
     "input": {
@@ -5612,9 +5612,9 @@
       "Compare target and all non-target fields; for WEB capture immediate and reload states"
     ],
     "expected": {
-      "outcome": "observe",
+      "outcome": "accept",
       "stateContract": "Update",
-      "description": "Fractional positive price characterization; precision unresolved"
+      "description": "Representable positive price 0.5 satisfies numeric >0; adjacency precision remains unresolved"
     },
     "dependencies": [
       "FR12-DEP-WRITE"
