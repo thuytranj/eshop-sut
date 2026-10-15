@@ -123,4 +123,3 @@ Persisted DB and API readback match the requested target update; immediate table
 API request/response/state are the available evidence. No UI screenshot of an API-only authorization test is fabricated; capture a real API-client screen before an authorized GitHub publication if required.
 
 **Disposition:** observed; not fixed. Publishing to group GitHub Issues awaits explicit authorization.
-

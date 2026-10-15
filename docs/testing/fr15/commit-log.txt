@@ -1,0 +1,58 @@
+FR15 local testing history; cutoff dc0619ad09cf362f14b65f4bfd1c9764c4f88d4b
+Excludes later summary/log-export commit(s). No historical commits fabricated.
+
+commit dc0619ad09cf362f14b65f4bfd1c9764c4f88d4b
+Author:     23120367 <158675897+thuytranj@users.noreply.github.com>
+AuthorDate: 2026-10-15T22:30:25+07:00
+Commit:     23120367 <158675897+thuytranj@users.noreply.github.com>
+CommitDate: 2026-10-15T22:30:25+07:00
+
+    docs(fr15): report product CRUD results and observed defects
+
+commit c85b6c20b0a19c8e0912010b4ffdeb4cdef934e3
+Author:     23120367 <158675897+thuytranj@users.noreply.github.com>
+AuthorDate: 2026-10-15T22:27:59+07:00
+Commit:     23120367 <158675897+thuytranj@users.noreply.github.com>
+CommitDate: 2026-10-15T22:27:59+07:00
+
+    test(fr15): execute isolated product CRUD suite and capture evidence
+
+commit 65d30b154176da7cec7e133b9c9ee792d1831925
+Author:     23120367 <158675897+thuytranj@users.noreply.github.com>
+AuthorDate: 2026-10-15T22:13:16+07:00
+Commit:     23120367 <158675897+thuytranj@users.noreply.github.com>
+CommitDate: 2026-10-15T22:13:16+07:00
+
+    test(fr15): repair PNG fixture before CRUD execution
+
+commit ef38fe29d4bf5a6b1a4d861b3932bf7c3f141273
+Author:     23120367 <158675897+thuytranj@users.noreply.github.com>
+AuthorDate: 2026-10-15T22:08:10+07:00
+Commit:     23120367 <158675897+thuytranj@users.noreply.github.com>
+CommitDate: 2026-10-15T22:08:10+07:00
+
+    test(fr15): freeze reviewed product CRUD suite with traceability
+
+commit 5fe40887fc41e528bffa0f22ec70167ce68c2b98
+Author:     23120367 <158675897+thuytranj@users.noreply.github.com>
+AuthorDate: 2026-10-15T22:05:43+07:00
+Commit:     23120367 <158675897+thuytranj@users.noreply.github.com>
+CommitDate: 2026-10-15T22:05:43+07:00
+
+    test(fr15): derive product name and price boundary cases
+
+commit e54872ff2c41aea3a64455318c92481310cfdd5e
+Author:     23120367 <158675897+thuytranj@users.noreply.github.com>
+AuthorDate: 2026-10-15T22:04:55+07:00
+Commit:     23120367 <158675897+thuytranj@users.noreply.github.com>
+CommitDate: 2026-10-15T22:04:55+07:00
+
+    test(fr15): derive product CRUD domain cases and obligations
+
+commit e625109bd040d5741d377cacea010d8ed69e8fba
+Author:     23120367 <158675897+thuytranj@users.noreply.github.com>
+AuthorDate: 2026-10-15T21:59:25+07:00
+Commit:     23120367 <158675897+thuytranj@users.noreply.github.com>
+CommitDate: 2026-10-15T21:59:25+07:00
+
+    docs(fr15): define product CRUD requirements and test fixtures
