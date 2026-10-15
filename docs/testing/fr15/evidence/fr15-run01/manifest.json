@@ -1,0 +1,100 @@
+{
+  "runId": "fr15-run01",
+  "startedAt": "2026-10-15T22:17:44+07:00",
+  "timezone": "Asia/Ho_Chi_Minh",
+  "commit": "65d30b154176da7cec7e133b9c9ee792d1831925",
+  "dirtyPaths": [
+    "M .gitignore",
+    " M docs/testing/fr03/ai-interactions.md",
+    " M docs/testing/fr03/bugs.md",
+    " M docs/testing/fr03/bva-report.md",
+    " M docs/testing/fr03/domain-cases.md",
+    " M docs/testing/fr03/domain-model.md",
+    " M docs/testing/fr03/test-results.md",
+    " M tests/fr15/harness.test.cjs",
+    "?? tests/fr15/assert-products.cjs",
+    "?? tests/fr15/fixture-store.cjs",
+    "?? tests/fr15/prepare-environment.cjs",
+    "?? tests/fr15/run-all.cjs",
+    "?? tests/fr15/run-products-api.cjs",
+    "?? tests/fr15/run-products-web.py"
+  ],
+  "suiteHash": "bd21cd16700d8c20d15c361ed0ac56a741978844ea4524ee8ede4020441da21e",
+  "preparation": {
+    "root": "/private/tmp/eshop-fr15-run01",
+    "backendDir": "/private/tmp/eshop-fr15-run01/backend",
+    "workingBackend": "/Users/thuytran/Workspace/eshop-sut/backend",
+    "workingHashes": {
+      "/Users/thuytran/Workspace/eshop-sut/backend/database.sqlite": "4392316c5828c3df249d744eb6667a8415d98cc9facf56e373696397a0faba50",
+      "/Users/thuytran/Workspace/eshop-sut/backend/database.sqlite-wal": null,
+      "/Users/thuytran/Workspace/eshop-sut/backend/database.sqlite-shm": null,
+      "/Users/thuytran/Workspace/eshop-sut/backend/database.sqlite-journal": null
+    },
+    "sourceHashes": {
+      "server.js": "47573ce5a6bf9a894748d2bb56cc8d1659ad7acd033fdd6db6b3e4d9473eb487",
+      "database.js": "3366420632bb9c982905b22e3969f69515e39e7a37a4f84eba56ead7e94afed8",
+      "package.json": "c2ad90d0e4a2a37319fe4d66a70563392f0e06346fb69eb7abbe7c6ff79eb1f3",
+      "package-lock.json": "ec3f3b2dbf1622f1b1121b9d5916ab0eb74d06ed8c59b16082c52c452eebd814"
+    }
+  },
+  "urls": {
+    "api": "http://localhost:3000",
+    "web": "http://127.0.0.1:5174"
+  },
+  "runtime": {
+    "node": "v22.17.1",
+    "python": "Python 3.13.12"
+  },
+  "resetStrategy": "transaction after startup; per-case products/categories + auth counters",
+  "processes": [
+    {
+      "name": "backend",
+      "pid": 41228,
+      "cwd": "/private/tmp/eshop-fr15-run01/backend",
+      "command": "/Users/thuytran/.nvm/versions/node/v22.17.1/bin/node",
+      "argv": [
+        "server.js"
+      ]
+    },
+    {
+      "name": "admin",
+      "pid": 41239,
+      "cwd": "/Users/thuytran/Workspace/eshop-sut/frontend-admin",
+      "command": "npm",
+      "argv": [
+        "run",
+        "dev",
+        "--",
+        "--host",
+        "127.0.0.1"
+      ]
+    }
+  ],
+  "apiRunner": {
+    "code": 0,
+    "signal": null
+  },
+  "webRunner": {
+    "code": 0,
+    "signal": null
+  },
+  "workingHashesAfter": {
+    "/Users/thuytran/Workspace/eshop-sut/backend/database.sqlite": "4392316c5828c3df249d744eb6667a8415d98cc9facf56e373696397a0faba50",
+    "/Users/thuytran/Workspace/eshop-sut/backend/database.sqlite-wal": null,
+    "/Users/thuytran/Workspace/eshop-sut/backend/database.sqlite-shm": null,
+    "/Users/thuytran/Workspace/eshop-sut/backend/database.sqlite-journal": null
+  },
+  "workingDbUnchanged": true,
+  "suiteUnchanged": true,
+  "endedAt": "2026-10-15T22:19:49+07:00",
+  "stats": {
+    "designed": 158,
+    "attempted": 158,
+    "executed": 147,
+    "passed": 43,
+    "failed": 104,
+    "blocked": 11,
+    "notRun": 0
+  },
+  "reconciliationErrors": []
+}

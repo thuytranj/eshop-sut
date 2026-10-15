@@ -1,0 +1,10 @@
+{
+  "engine": "Chromium",
+  "version": "153.0.8010.12",
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "locale": "vi-VN",
+  "timezone": "Asia/Ho_Chi_Minh"
+}

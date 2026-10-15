@@ -17,3 +17,40 @@ test('rejects false passed baseline and unknown fixture',()=>{const f=fixture();
 test('rejects technique mismatch after deduplication',()=>{const f=fixture();f.suite[0].techniques=['BVA'];assert.ok(validate(f).length);});
 test('rejects missing steps and expected result',()=>{const f=fixture();delete f.suite[0].steps;delete f.suite[0].expected;assert.ok(validate(f).length);});
 module.exports={fixture};
+const os=require('node:os');
+function prep(){const p=path.join(__dirname,'prepare-environment.cjs');return fs.existsSync(p)?require(p):{prepareEnvironment:()=>{throw Error('environment preparation not implemented');}};}
+test('creates byte-identical backend copy without copying working DB',()=>{
+ const root=path.join(fs.mkdtempSync(path.join(os.tmpdir(),'fr15-guard-')),'new');
+ try{const result=prep().prepareEnvironment(root);assert.equal(fs.readFileSync(path.join(result.backendDir,'server.js'),'utf8'),fs.readFileSync(path.join(__dirname,'../../backend/server.js'),'utf8'));assert.equal(fs.existsSync(path.join(result.backendDir,'database.sqlite')),false);assert.throws(()=>prep().prepareEnvironment(root));}finally{fs.rmSync(path.dirname(root),{recursive:true,force:true});}
+});
+test('refuses working backend and symlink alias before touching data',()=>{
+ const working=path.resolve(__dirname,'../../backend');assert.throws(()=>prep().prepareEnvironment(working));
+ const root=fs.mkdtempSync(path.join(os.tmpdir(),'fr15-alias-'));try{fs.symlinkSync(working,path.join(root,'alias'));assert.throws(()=>prep().prepareEnvironment(path.join(root,'alias')));}finally{fs.rmSync(root,{recursive:true,force:true});}
+});
+function assessor(){const p=path.join(__dirname,'assert-products.cjs');return fs.existsSync(p)?require(p).assess:()=>({failures:['assessor not implemented']});}
+const a={id:101,name:'A',price:10,category_id:10,description:'a',imageUrl:'img'}, b={id:202,name:'B',price:20,category_id:20,description:'b',imageUrl:'img'};
+test('accepts correctly isolated update but detects a non-target field change',()=>{
+ const c={action:'Update',input:{target:101,body:{name:'New',price:11,category_id:10,description:'a',imageUrl:'img'}},expected:{outcome:'accept'},oracleStatus:'confirmed'};
+ const o={stateBefore:[a,b],stateAfter:[{...a,name:'New',price:11},b],response:{statusCode:200,body:{message:'updated'}}};
+ assert.deepEqual(assessor()(c,o).failures,[]);assert.ok(assessor()(c,{...o,stateAfter:[o.stateAfter[0],{...b,name:'New'}]}).failures.includes('non-target-preserved'));
+});
+test('does not infer rejection from an HTTP success or unchanged count',()=>{
+ const c={action:'Update',input:{target:101,body:{price:0}},expected:{outcome:'reject'},oracleStatus:'confirmed'};
+ assert.ok(assessor()(c,{stateBefore:[a,b],stateAfter:[{...a,price:0},b],response:{statusCode:200,body:{message:'updated'}}}).failures.length);
+});
+test('keeps unresolved probes without a pass/fail verdict',()=>assert.equal(assessor()({oracleStatus:'unresolved'},{stateBefore:[],stateAfter:[]}).status,'Blocked'));
+function orchestrator(){const p=path.join(__dirname,'run-all.cjs');return fs.existsSync(p)?require(p):{runCases:async()=>[]};}
+test('continues after a failed case and records environment errors as blocked',async()=>{
+ const result=await orchestrator().runCases([{id:'a'},{id:'b'},{id:'c'}],async c=>{if(c.id==='b')throw Error('fixture unavailable');return {caseId:c.id,status:c.id==='a'?'Failed':'Passed'};});
+ assert.deepEqual(result.map(r=>[r.caseId,r.status]),[['a','Failed'],['b','Blocked'],['c','Passed']]);assert.match(result[1].blockReason,/fixture unavailable/);
+});
+test('detects immediate UI drift even when persisted update is correct',()=>{
+ const c={layer:'WEB',action:'Update',input:{target:101,body:{name:'New',price:10,category_id:10,description:'a',imageUrl:'img'}},expected:{outcome:'accept'},oracleStatus:'confirmed'};
+ const o={stateBefore:[a,b],stateAfter:[{...a,name:'New'},b],response:{statusCode:200},uiBeforeReload:[{name:'New',price:10,alt:'New'},{name:'New',price:20,alt:'New'}],uiAfterReload:[{name:'New',price:10,alt:'New'},{name:'B',price:20,alt:'B'}]};
+ assert.deepEqual(assessor()(c,o).failures,['ui-immediate-correct']);
+});
+test('requires API readback to reflect the persisted state',()=>{
+ const c={layer:'API',action:'Read',input:{target:101,mode:'list'},expected:{outcome:'accept'},oracleStatus:'confirmed'};
+ const o={stateBefore:[a,b],stateAfter:[a,b],response:{statusCode:200,body:[a,b]},apiReadback:{statusCode:200,body:[]}};
+ assert.ok(assessor()(c,o).failures.includes('api-readback-consistent'));
+});

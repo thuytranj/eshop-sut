@@ -1,0 +1,108 @@
+{
+  "caseId": "FR15-TC-130",
+  "runId": "fr15-run02",
+  "attempted": true,
+  "startedAt": "2026-10-15T22:26:13+07:00",
+  "inputIntended": {
+    "body": {
+      "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "price": 100000,
+      "description": "Nominal description",
+      "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=",
+      "category_id": 10
+    },
+    "target": 101,
+    "auth": "admin",
+    "mode": "delete"
+  },
+  "inputEffective": null,
+  "request": {
+    "method": "DELETE",
+    "url": "http://localhost:3000/api/products/101",
+    "body": null,
+    "authorization": "[REDACTED]"
+  },
+  "response": {
+    "statusCode": 200,
+    "body": {
+      "message": "Product deleted"
+    }
+  },
+  "stateBefore": [
+    {
+      "id": 101,
+      "name": "Product A",
+      "price": 100000,
+      "description": "Description A",
+      "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=",
+      "category_id": 10
+    }
+  ],
+  "stateAfter": [],
+  "uiBeforeReload": [],
+  "uiAfterReload": [],
+  "actual": {
+    "failures": [],
+    "beforeCount": 1,
+    "afterCount": 0,
+    "mutationCount": 1,
+    "htmlBlocked": false,
+    "response": {
+      "statusCode": 200,
+      "body": {
+        "message": "Product deleted"
+      }
+    }
+  },
+  "status": "Passed",
+  "blockReason": null,
+  "evidence": [
+    "docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-130_immediate.png",
+    "docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-130_reload.png",
+    "docs/testing/fr15/evidence/fr15-run02/web/FR15-TC-130.json"
+  ],
+  "exercisedObligations": [
+    "FR15-OBL-DT-126"
+  ],
+  "console": [
+    {
+      "type": "debug",
+      "text": "[vite] connecting..."
+    },
+    {
+      "type": "debug",
+      "text": "[vite] connected."
+    },
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"
+    },
+    {
+      "type": "debug",
+      "text": "[vite] connecting..."
+    },
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"
+    },
+    {
+      "type": "debug",
+      "text": "[vite] connected."
+    }
+  ],
+  "dialogs": [],
+  "uiInitial": [
+    {
+      "name": "Product A",
+      "price": 100000,
+      "alt": "Product A"
+    }
+  ],
+  "apiReadback": {
+    "statusCode": 200,
+    "body": []
+  },
+  "mutationCount": 1,
+  "failures": [],
+  "endedAt": "2026-10-15T22:26:16+07:00"
+}

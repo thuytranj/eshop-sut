@@ -1,0 +1,161 @@
+{
+  "caseId": "FR15-TC-146",
+  "runId": "fr15-run01",
+  "attempted": true,
+  "startedAt": "2026-10-15T22:19:37+07:00",
+  "inputIntended": {
+    "body": {
+      "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "price": 100000,
+      "description": "Nominal description",
+      "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=",
+      "category_id": 10
+    },
+    "target": 101,
+    "auth": "admin",
+    "mode": "create"
+  },
+  "inputEffective": {
+    "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+    "price": "100000",
+    "category_id": ""
+  },
+  "request": {
+    "method": "POST",
+    "url": "http://localhost:3000/api/products",
+    "body": {
+      "id": null,
+      "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "price": "100000",
+      "description": "Nominal description",
+      "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=",
+      "category_id": 1
+    },
+    "authorization": "[REDACTED]"
+  },
+  "response": {
+    "statusCode": 200,
+    "body": {
+      "message": "Product created",
+      "id": 1
+    }
+  },
+  "stateBefore": [],
+  "stateAfter": [
+    {
+      "id": 1,
+      "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "price": 100000,
+      "description": "Nominal description",
+      "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=",
+      "category_id": 1
+    }
+  ],
+  "uiBeforeReload": [],
+  "uiAfterReload": [
+    {
+      "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "price": 100000,
+      "alt": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    }
+  ],
+  "actual": {
+    "failures": [
+      "rejected-state-unchanged",
+      "rejection-signaled",
+      "ui-reload-correct"
+    ],
+    "beforeCount": 0,
+    "afterCount": 1,
+    "mutationCount": 1,
+    "htmlBlocked": false,
+    "response": {
+      "statusCode": 200,
+      "body": {
+        "message": "Product created",
+        "id": 1
+      }
+    }
+  },
+  "status": "Failed",
+  "blockReason": null,
+  "evidence": [
+    "docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-146_immediate.png",
+    "docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-146_reload.png",
+    "docs/testing/fr15/evidence/fr15-run01/web/FR15-TC-146.json"
+  ],
+  "exercisedObligations": [
+    "FR15-OBL-DT-142"
+  ],
+  "console": [
+    {
+      "type": "debug",
+      "text": "[vite] connecting..."
+    },
+    {
+      "type": "debug",
+      "text": "[vite] connected."
+    },
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"
+    },
+    {
+      "type": "debug",
+      "text": "[vite] connecting..."
+    },
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"
+    },
+    {
+      "type": "debug",
+      "text": "[vite] connected."
+    }
+  ],
+  "dialogs": [],
+  "uiInitial": [],
+  "htmlValidity": {
+    "valid": true,
+    "fields": [
+      {
+        "placeholder": "Tên sản phẩm",
+        "valid": true,
+        "message": ""
+      },
+      {
+        "placeholder": "Giá tiền",
+        "valid": true,
+        "message": ""
+      },
+      {
+        "placeholder": "URL Ảnh",
+        "valid": true,
+        "message": ""
+      },
+      {
+        "placeholder": "Mô tả",
+        "valid": true,
+        "message": ""
+      },
+      {
+        "placeholder": "SELECT",
+        "valid": true,
+        "message": ""
+      },
+      {
+        "placeholder": "BUTTON",
+        "valid": true,
+        "message": ""
+      }
+    ]
+  },
+  "htmlBlocked": false,
+  "mutationCount": 1,
+  "failures": [
+    "rejected-state-unchanged",
+    "rejection-signaled",
+    "ui-reload-correct"
+  ],
+  "endedAt": "2026-10-15T22:19:38+07:00"
+}

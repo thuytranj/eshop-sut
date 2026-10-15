@@ -1,0 +1,66 @@
+{
+  "caseId": "FR15-TC-115",
+  "runId": "fr15-run01",
+  "attempted": true,
+  "startedAt": "2026-10-15T22:17:47+07:00",
+  "inputIntended": {
+    "body": {
+      "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "price": 100000,
+      "description": "Nominal description",
+      "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=",
+      "category_id": 10
+    },
+    "target": 101,
+    "auth": "admin",
+    "mode": "list"
+  },
+  "inputEffective": {
+    "body": {
+      "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "price": 100000,
+      "description": "Nominal description",
+      "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=",
+      "category_id": 10
+    },
+    "target": 101,
+    "auth": "admin",
+    "mode": "list"
+  },
+  "request": {
+    "method": "GET",
+    "url": "/api/products",
+    "headers": {
+      "Authorization": "Bearer [REDACTED]"
+    }
+  },
+  "response": {
+    "statusCode": 200,
+    "body": []
+  },
+  "stateBefore": [],
+  "stateAfter": [],
+  "uiBeforeReload": null,
+  "uiAfterReload": null,
+  "actual": {
+    "http": 200,
+    "body": [],
+    "failures": [],
+    "beforeCount": 0,
+    "afterCount": 0
+  },
+  "status": "Passed",
+  "blockReason": null,
+  "evidence": [
+    "docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-115.json"
+  ],
+  "exercisedObligations": [
+    "FR15-OBL-DT-111"
+  ],
+  "apiReadback": {
+    "statusCode": 200,
+    "body": []
+  },
+  "failures": [],
+  "endedAt": "2026-10-15T22:17:47+07:00"
+}

@@ -1,0 +1,302 @@
+{
+  "caseId": "FR15-TC-077",
+  "runId": "fr15-run02",
+  "attempted": true,
+  "startedAt": "2026-10-15T22:23:35+07:00",
+  "inputIntended": {
+    "body": {
+      "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "price": 0,
+      "description": "Nominal description",
+      "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=",
+      "category_id": 10
+    },
+    "target": 101,
+    "auth": "admin",
+    "mode": "create"
+  },
+  "inputEffective": {
+    "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+    "price": "0",
+    "category_id": "10"
+  },
+  "request": {
+    "method": "POST",
+    "url": "http://localhost:3000/api/products",
+    "body": {
+      "id": null,
+      "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "price": "0",
+      "description": "Nominal description",
+      "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=",
+      "category_id": "10"
+    },
+    "authorization": "[REDACTED]"
+  },
+  "response": {
+    "statusCode": 200,
+    "body": {
+      "message": "Product created",
+      "id": 304
+    }
+  },
+  "stateBefore": [
+    {
+      "id": 101,
+      "name": "Product A",
+      "price": 100000,
+      "description": "Description A",
+      "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=",
+      "category_id": 10
+    },
+    {
+      "id": 202,
+      "name": "Product B",
+      "price": 200000,
+      "description": "Description B",
+      "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=",
+      "category_id": 20
+    },
+    {
+      "id": 303,
+      "name": "Product C",
+      "price": 300000,
+      "description": "Description C",
+      "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=",
+      "category_id": 10
+    }
+  ],
+  "stateAfter": [
+    {
+      "id": 101,
+      "name": "Product A",
+      "price": 100000,
+      "description": "Description A",
+      "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=",
+      "category_id": 10
+    },
+    {
+      "id": 202,
+      "name": "Product B",
+      "price": 200000,
+      "description": "Description B",
+      "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=",
+      "category_id": 20
+    },
+    {
+      "id": 303,
+      "name": "Product C",
+      "price": 300000,
+      "description": "Description C",
+      "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=",
+      "category_id": 10
+    },
+    {
+      "id": 304,
+      "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "price": 0,
+      "description": "Nominal description",
+      "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=",
+      "category_id": 10
+    }
+  ],
+  "uiBeforeReload": [
+    {
+      "name": "Product A",
+      "price": 100000,
+      "alt": "Product A"
+    },
+    {
+      "name": "Product B",
+      "price": 200000,
+      "alt": "Product B"
+    },
+    {
+      "name": "Product C",
+      "price": 300000,
+      "alt": "Product C"
+    },
+    {
+      "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "price": 0,
+      "alt": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    }
+  ],
+  "uiAfterReload": [
+    {
+      "name": "Product A",
+      "price": 100000,
+      "alt": "Product A"
+    },
+    {
+      "name": "Product B",
+      "price": 200000,
+      "alt": "Product B"
+    },
+    {
+      "name": "Product C",
+      "price": 300000,
+      "alt": "Product C"
+    },
+    {
+      "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "price": 0,
+      "alt": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    }
+  ],
+  "actual": {
+    "failures": [
+      "rejected-state-unchanged",
+      "rejection-signaled",
+      "ui-immediate-correct",
+      "ui-reload-correct"
+    ],
+    "beforeCount": 3,
+    "afterCount": 4,
+    "mutationCount": 1,
+    "htmlBlocked": false,
+    "response": {
+      "statusCode": 200,
+      "body": {
+        "message": "Product created",
+        "id": 304
+      }
+    }
+  },
+  "status": "Failed",
+  "blockReason": null,
+  "evidence": [
+    "docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-077_immediate.png",
+    "docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-077_reload.png",
+    "docs/testing/fr15/evidence/fr15-run02/web/FR15-TC-077.json"
+  ],
+  "exercisedObligations": [
+    "FR15-OBL-DT-075",
+    "FR15-OBL-BVA-031"
+  ],
+  "console": [
+    {
+      "type": "debug",
+      "text": "[vite] connecting..."
+    },
+    {
+      "type": "debug",
+      "text": "[vite] connected."
+    },
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"
+    },
+    {
+      "type": "debug",
+      "text": "[vite] connecting..."
+    },
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"
+    },
+    {
+      "type": "debug",
+      "text": "[vite] connected."
+    }
+  ],
+  "dialogs": [],
+  "uiInitial": [
+    {
+      "name": "Product A",
+      "price": 100000,
+      "alt": "Product A"
+    },
+    {
+      "name": "Product B",
+      "price": 200000,
+      "alt": "Product B"
+    },
+    {
+      "name": "Product C",
+      "price": 300000,
+      "alt": "Product C"
+    }
+  ],
+  "htmlValidity": {
+    "valid": true,
+    "fields": [
+      {
+        "placeholder": "Tên sản phẩm",
+        "valid": true,
+        "message": ""
+      },
+      {
+        "placeholder": "Giá tiền",
+        "valid": true,
+        "message": ""
+      },
+      {
+        "placeholder": "URL Ảnh",
+        "valid": true,
+        "message": ""
+      },
+      {
+        "placeholder": "Mô tả",
+        "valid": true,
+        "message": ""
+      },
+      {
+        "placeholder": "SELECT",
+        "valid": true,
+        "message": ""
+      },
+      {
+        "placeholder": "BUTTON",
+        "valid": true,
+        "message": ""
+      }
+    ]
+  },
+  "htmlBlocked": false,
+  "apiReadback": {
+    "statusCode": 200,
+    "body": [
+      {
+        "id": 101,
+        "name": "Product A",
+        "price": 100000,
+        "description": "Description A",
+        "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=",
+        "category_id": 10
+      },
+      {
+        "id": 202,
+        "name": "Product B",
+        "price": 200000,
+        "description": "Description B",
+        "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=",
+        "category_id": 20
+      },
+      {
+        "id": 303,
+        "name": "Product C",
+        "price": 300000,
+        "description": "Description C",
+        "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=",
+        "category_id": 10
+      },
+      {
+        "id": 304,
+        "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "price": 0,
+        "description": "Nominal description",
+        "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=",
+        "category_id": 10
+      }
+    ]
+  },
+  "mutationCount": 1,
+  "failures": [
+    "rejected-state-unchanged",
+    "rejection-signaled",
+    "ui-immediate-correct",
+    "ui-reload-correct"
+  ],
+  "endedAt": "2026-10-15T22:23:38+07:00"
+}

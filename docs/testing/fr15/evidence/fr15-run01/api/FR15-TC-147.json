@@ -1,0 +1,103 @@
+{
+  "caseId": "FR15-TC-147",
+  "runId": "fr15-run01",
+  "attempted": true,
+  "startedAt": "2026-10-15T22:17:47+07:00",
+  "inputIntended": {
+    "body": {
+      "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "price": 100000,
+      "description": "Nominal description",
+      "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=",
+      "category_id": 10
+    },
+    "target": 101,
+    "auth": "admin",
+    "mode": "create"
+  },
+  "inputEffective": {
+    "body": {
+      "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "price": 100000,
+      "description": "Nominal description",
+      "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=",
+      "category_id": 10
+    },
+    "target": 101,
+    "auth": "admin",
+    "mode": "create"
+  },
+  "request": {
+    "method": "POST",
+    "url": "/api/products",
+    "headers": {
+      "Authorization": "Bearer [REDACTED]"
+    },
+    "body": {
+      "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "price": 100000,
+      "description": "Nominal description",
+      "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=",
+      "category_id": 10
+    }
+  },
+  "response": {
+    "statusCode": 200,
+    "body": {
+      "message": "Product created",
+      "id": 1
+    }
+  },
+  "stateBefore": [],
+  "stateAfter": [
+    {
+      "id": 1,
+      "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "price": 100000,
+      "description": "Nominal description",
+      "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=",
+      "category_id": 10
+    }
+  ],
+  "uiBeforeReload": null,
+  "uiAfterReload": null,
+  "actual": {
+    "http": 200,
+    "body": {
+      "message": "Product created",
+      "id": 1
+    },
+    "failures": [
+      "rejected-state-unchanged",
+      "rejection-signaled"
+    ],
+    "beforeCount": 0,
+    "afterCount": 1
+  },
+  "status": "Failed",
+  "blockReason": null,
+  "evidence": [
+    "docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-147.json"
+  ],
+  "exercisedObligations": [
+    "FR15-OBL-DT-143"
+  ],
+  "apiReadback": {
+    "statusCode": 200,
+    "body": [
+      {
+        "id": 1,
+        "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "price": 100000,
+        "description": "Nominal description",
+        "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=",
+        "category_id": 10
+      }
+    ]
+  },
+  "failures": [
+    "rejected-state-unchanged",
+    "rejection-signaled"
+  ],
+  "endedAt": "2026-10-15T22:17:47+07:00"
+}

@@ -1,0 +1,172 @@
+{
+  "caseId": "FR15-TC-128",
+  "runId": "fr15-run01",
+  "attempted": true,
+  "startedAt": "2026-10-15T22:19:20+07:00",
+  "inputIntended": {
+    "body": {
+      "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "price": 100000,
+      "description": "Nominal description",
+      "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=",
+      "category_id": 10
+    },
+    "target": 101,
+    "auth": "admin",
+    "mode": "list"
+  },
+  "inputEffective": null,
+  "request": null,
+  "response": null,
+  "stateBefore": [
+    {
+      "id": 101,
+      "name": "Product A",
+      "price": 100000,
+      "description": "Description A",
+      "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=",
+      "category_id": 10
+    },
+    {
+      "id": 202,
+      "name": "Product B",
+      "price": 200000,
+      "description": "Description B",
+      "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=",
+      "category_id": 20
+    },
+    {
+      "id": 303,
+      "name": "Product C",
+      "price": 300000,
+      "description": "Description C",
+      "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=",
+      "category_id": 10
+    }
+  ],
+  "stateAfter": [
+    {
+      "id": 101,
+      "name": "Product A",
+      "price": 100000,
+      "description": "Description A",
+      "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=",
+      "category_id": 10
+    },
+    {
+      "id": 202,
+      "name": "Product B",
+      "price": 200000,
+      "description": "Description B",
+      "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=",
+      "category_id": 20
+    },
+    {
+      "id": 303,
+      "name": "Product C",
+      "price": 300000,
+      "description": "Description C",
+      "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=",
+      "category_id": 10
+    }
+  ],
+  "uiBeforeReload": [
+    {
+      "name": "Product A",
+      "price": 100000,
+      "alt": "Product A"
+    },
+    {
+      "name": "Product B",
+      "price": 200000,
+      "alt": "Product B"
+    },
+    {
+      "name": "Product C",
+      "price": 300000,
+      "alt": "Product C"
+    }
+  ],
+  "uiAfterReload": [
+    {
+      "name": "Product A",
+      "price": 100000,
+      "alt": "Product A"
+    },
+    {
+      "name": "Product B",
+      "price": 200000,
+      "alt": "Product B"
+    },
+    {
+      "name": "Product C",
+      "price": 300000,
+      "alt": "Product C"
+    }
+  ],
+  "actual": {
+    "failures": [],
+    "beforeCount": 3,
+    "afterCount": 3,
+    "mutationCount": 0,
+    "htmlBlocked": false,
+    "response": null
+  },
+  "status": "Passed",
+  "blockReason": null,
+  "evidence": [
+    "docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-128_immediate.png",
+    "docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-128_reload.png",
+    "docs/testing/fr15/evidence/fr15-run01/web/FR15-TC-128.json"
+  ],
+  "exercisedObligations": [
+    "FR15-OBL-DT-124"
+  ],
+  "console": [
+    {
+      "type": "debug",
+      "text": "[vite] connecting..."
+    },
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"
+    },
+    {
+      "type": "debug",
+      "text": "[vite] connected."
+    },
+    {
+      "type": "debug",
+      "text": "[vite] connecting..."
+    },
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"
+    },
+    {
+      "type": "debug",
+      "text": "[vite] connected."
+    }
+  ],
+  "dialogs": [],
+  "uiInitial": [
+    {
+      "name": "Product A",
+      "price": 100000,
+      "alt": "Product A"
+    },
+    {
+      "name": "Product B",
+      "price": 200000,
+      "alt": "Product B"
+    },
+    {
+      "name": "Product C",
+      "price": 300000,
+      "alt": "Product C"
+    }
+  ],
+  "mutationCount": 0,
+  "failures": [],
+  "endedAt": "2026-10-15T22:19:23+07:00"
+}

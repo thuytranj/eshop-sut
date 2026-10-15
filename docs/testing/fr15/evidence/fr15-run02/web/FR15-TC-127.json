@@ -1,0 +1,78 @@
+{
+  "caseId": "FR15-TC-127",
+  "runId": "fr15-run02",
+  "attempted": true,
+  "startedAt": "2026-10-15T22:26:02+07:00",
+  "inputIntended": {
+    "body": {
+      "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "price": 100000,
+      "description": "Nominal description",
+      "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=",
+      "category_id": 10
+    },
+    "target": 101,
+    "auth": "admin",
+    "mode": "list"
+  },
+  "inputEffective": null,
+  "request": null,
+  "response": null,
+  "stateBefore": [],
+  "stateAfter": [],
+  "uiBeforeReload": [],
+  "uiAfterReload": [],
+  "actual": {
+    "failures": [],
+    "beforeCount": 0,
+    "afterCount": 0,
+    "mutationCount": 0,
+    "htmlBlocked": false,
+    "response": null
+  },
+  "status": "Passed",
+  "blockReason": null,
+  "evidence": [
+    "docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-127_immediate.png",
+    "docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-127_reload.png",
+    "docs/testing/fr15/evidence/fr15-run02/web/FR15-TC-127.json"
+  ],
+  "exercisedObligations": [
+    "FR15-OBL-DT-123"
+  ],
+  "console": [
+    {
+      "type": "debug",
+      "text": "[vite] connecting..."
+    },
+    {
+      "type": "debug",
+      "text": "[vite] connected."
+    },
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"
+    },
+    {
+      "type": "debug",
+      "text": "[vite] connecting..."
+    },
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"
+    },
+    {
+      "type": "debug",
+      "text": "[vite] connected."
+    }
+  ],
+  "dialogs": [],
+  "uiInitial": [],
+  "apiReadback": {
+    "statusCode": 200,
+    "body": []
+  },
+  "mutationCount": 0,
+  "failures": [],
+  "endedAt": "2026-10-15T22:26:05+07:00"
+}

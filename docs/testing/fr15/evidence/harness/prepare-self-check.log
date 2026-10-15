@@ -1,0 +1,94 @@
+TAP version 13
+# Subtest: accepts a complete frozen suite with preserved provenance
+ok 1 - accepts a complete frozen suite with preserved provenance
+  ---
+  duration_ms: 13.364417
+  type: 'test'
+  ...
+# Subtest: rejects a duplicated canonical ID
+ok 2 - rejects a duplicated canonical ID
+  ---
+  duration_ms: 1.250209
+  type: 'test'
+  ...
+# Subtest: rejects unmapped source and lost obligation
+ok 3 - rejects unmapped source and lost obligation
+  ---
+  duration_ms: 0.307334
+  type: 'test'
+  ...
+# Subtest: rejects false passed baseline and unknown fixture
+ok 4 - rejects false passed baseline and unknown fixture
+  ---
+  duration_ms: 0.124083
+  type: 'test'
+  ...
+# Subtest: rejects technique mismatch after deduplication
+ok 5 - rejects technique mismatch after deduplication
+  ---
+  duration_ms: 0.241792
+  type: 'test'
+  ...
+# Subtest: rejects missing steps and expected result
+ok 6 - rejects missing steps and expected result
+  ---
+  duration_ms: 0.117458
+  type: 'test'
+  ...
+# Subtest: creates byte-identical backend copy without copying working DB
+ok 7 - creates byte-identical backend copy without copying working DB
+  ---
+  duration_ms: 12.349917
+  type: 'test'
+  ...
+# Subtest: refuses working backend and symlink alias before touching data
+ok 8 - refuses working backend and symlink alias before touching data
+  ---
+  duration_ms: 0.85975
+  type: 'test'
+  ...
+# Subtest: accepts correctly isolated update but detects a non-target field change
+ok 9 - accepts correctly isolated update but detects a non-target field change
+  ---
+  duration_ms: 1.48625
+  type: 'test'
+  ...
+# Subtest: does not infer rejection from an HTTP success or unchanged count
+ok 10 - does not infer rejection from an HTTP success or unchanged count
+  ---
+  duration_ms: 1.350042
+  type: 'test'
+  ...
+# Subtest: keeps unresolved probes without a pass/fail verdict
+ok 11 - keeps unresolved probes without a pass/fail verdict
+  ---
+  duration_ms: 0.340166
+  type: 'test'
+  ...
+# Subtest: continues after a failed case and records environment errors as blocked
+ok 12 - continues after a failed case and records environment errors as blocked
+  ---
+  duration_ms: 47.662375
+  type: 'test'
+  ...
+# Subtest: detects immediate UI drift even when persisted update is correct
+ok 13 - detects immediate UI drift even when persisted update is correct
+  ---
+  duration_ms: 0.309458
+  type: 'test'
+  ...
+# Subtest: requires API readback to reflect the persisted state
+ok 14 - requires API readback to reflect the persisted state
+  ---
+  duration_ms: 0.106709
+  type: 'test'
+  ...
+1..14
+# tests 14
+# suites 0
+# pass 14
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 154.700417
