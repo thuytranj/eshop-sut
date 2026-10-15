@@ -1,5 +1,21 @@
-FR15 local testing history; cutoff c0623d2212f20ab8688e2d796b96626e5b1b5bf7
-Excludes this log-export commit and later review-only commits.
+FR15 local testing history; cutoff eb0f7a3f81eeb2b0b346b47078600263b7e15d96
+Includes final review fix and run03. Excludes the log-export commit carrying this file.
+
+commit eb0f7a3f81eeb2b0b346b47078600263b7e15d96
+Author:     23120367 <158675897+thuytranj@users.noreply.github.com>
+AuthorDate: 2026-10-15T22:45:06+07:00
+Commit:     23120367 <158675897+thuytranj@users.noreply.github.com>
+CommitDate: 2026-10-15T22:45:06+07:00
+
+    test(fr15): close final review gaps and rerun CRUD suite
+
+commit 5f9c73bf093c47e58188b46d20514b71149fb461
+Author:     23120367 <158675897+thuytranj@users.noreply.github.com>
+AuthorDate: 2026-10-15T22:34:13+07:00
+Commit:     23120367 <158675897+thuytranj@users.noreply.github.com>
+CommitDate: 2026-10-15T22:34:13+07:00
+
+    docs(fr15): export product CRUD testing commit history
 
 commit c0623d2212f20ab8688e2d796b96626e5b1b5bf7
 Author:     23120367 <158675897+thuytranj@users.noreply.github.com>

@@ -1,0 +1,26 @@
+{
+  "beforeAt": null,
+  "beforeSource": "Captured at Native setup; exact capture time not recorded",
+  "verifiedAt": "2026-10-15T22:45:36+07:00",
+  "before": {
+    ".gitignore": "a239fe7972a3a149bc2b19e3ae479f7e8cc108bed6049503a976767ba29b6009",
+    "docs/testing/fr03/ai-interactions.md": "87065e0681a0621490ce0e0b236ca246ee5fd4199437597521fa1b050685ac07",
+    "docs/testing/fr03/bugs.md": "8601b2ef4cd6e7850892918302b17749d732d72e51739dd7a699f01be820232e",
+    "docs/testing/fr03/bva-report.md": "1f5a354b6638187739bfa8d3d185dc29aefbef336d0ca202774ab93d706eabc5",
+    "docs/testing/fr03/domain-cases.md": "c6359432f2cc26fcac0139ef8485977169b4965d27036293035891e1087c0862",
+    "docs/testing/fr03/domain-model.md": "e507f3f010a18d4726280858ae6554a09ca840fa74e141414e6f20e26c71349a",
+    "docs/testing/fr03/test-results.md": "046ba0bf8da8d01c85f81dbda2da1bab739cece84cb8dd4101a7892a0617986b",
+    "backend/database.sqlite": "4392316c5828c3df249d744eb6667a8415d98cc9facf56e373696397a0faba50"
+  },
+  "after": {
+    ".gitignore": "a239fe7972a3a149bc2b19e3ae479f7e8cc108bed6049503a976767ba29b6009",
+    "docs/testing/fr03/ai-interactions.md": "87065e0681a0621490ce0e0b236ca246ee5fd4199437597521fa1b050685ac07",
+    "docs/testing/fr03/bugs.md": "8601b2ef4cd6e7850892918302b17749d732d72e51739dd7a699f01be820232e",
+    "docs/testing/fr03/bva-report.md": "1f5a354b6638187739bfa8d3d185dc29aefbef336d0ca202774ab93d706eabc5",
+    "docs/testing/fr03/domain-cases.md": "c6359432f2cc26fcac0139ef8485977169b4965d27036293035891e1087c0862",
+    "docs/testing/fr03/domain-model.md": "e507f3f010a18d4726280858ae6554a09ca840fa74e141414e6f20e26c71349a",
+    "docs/testing/fr03/test-results.md": "046ba0bf8da8d01c85f81dbda2da1bab739cece84cb8dd4101a7892a0617986b",
+    "backend/database.sqlite": "4392316c5828c3df249d744eb6667a8415d98cc9facf56e373696397a0faba50"
+  },
+  "unchanged": true
+}
