@@ -7424,5 +7424,2117 @@
     "actual": null,
     "status": "Not Run",
     "evidence": []
+  },
+  {
+    "id": "FR15-BVA-001",
+    "sourceCaseIds": [
+      "FR15-BVA-001"
+    ],
+    "techniques": [
+      "BVA"
+    ],
+    "layer": "API",
+    "action": "Create",
+    "rules": [
+      "FR15-R05"
+    ],
+    "obligations": [
+      "FR15-OBL-BVA-001"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Fresh baseline fixture; token partition admin; target 101 if Update/Read-detail/Delete. Reset before case.",
+    "fixtureKey": "baseline",
+    "input": {
+      "body": {
+        "name": "",
+        "price": 100000,
+        "description": "Nominal description",
+        "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aGZcAAAAASUVORK5CYII=",
+        "category_id": 10
+      },
+      "target": 101,
+      "auth": "admin",
+      "mode": "create"
+    },
+    "steps": [
+      "Reset fixture and snapshot all products",
+      "API: Create using materialized input; capture response and state",
+      "Compare target and all non-target fields; for WEB capture immediate and reload states"
+    ],
+    "expected": {
+      "outcome": "reject",
+      "stateContract": "Create",
+      "description": "ISTQB 3-value name=0; other inputs nominal"
+    },
+    "dependencies": [
+      "FR12-DEP-WRITE"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR15-BVA-002",
+    "sourceCaseIds": [
+      "FR15-BVA-002"
+    ],
+    "techniques": [
+      "BVA"
+    ],
+    "layer": "API",
+    "action": "Create",
+    "rules": [
+      "FR15-R05"
+    ],
+    "obligations": [
+      "FR15-OBL-BVA-002"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Fresh baseline fixture; token partition admin; target 101 if Update/Read-detail/Delete. Reset before case.",
+    "fixtureKey": "baseline",
+    "input": {
+      "body": {
+        "name": "A",
+        "price": 100000,
+        "description": "Nominal description",
+        "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aGZcAAAAASUVORK5CYII=",
+        "category_id": 10
+      },
+      "target": 101,
+      "auth": "admin",
+      "mode": "create"
+    },
+    "steps": [
+      "Reset fixture and snapshot all products",
+      "API: Create using materialized input; capture response and state",
+      "Compare target and all non-target fields; for WEB capture immediate and reload states"
+    ],
+    "expected": {
+      "outcome": "accept",
+      "stateContract": "Create",
+      "description": "ISTQB 3-value name=1; other inputs nominal"
+    },
+    "dependencies": [
+      "FR12-DEP-WRITE"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR15-BVA-003",
+    "sourceCaseIds": [
+      "FR15-BVA-003"
+    ],
+    "techniques": [
+      "BVA"
+    ],
+    "layer": "API",
+    "action": "Create",
+    "rules": [
+      "FR15-R05"
+    ],
+    "obligations": [
+      "FR15-OBL-BVA-003"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Fresh baseline fixture; token partition admin; target 101 if Update/Read-detail/Delete. Reset before case.",
+    "fixtureKey": "baseline",
+    "input": {
+      "body": {
+        "name": "AA",
+        "price": 100000,
+        "description": "Nominal description",
+        "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aGZcAAAAASUVORK5CYII=",
+        "category_id": 10
+      },
+      "target": 101,
+      "auth": "admin",
+      "mode": "create"
+    },
+    "steps": [
+      "Reset fixture and snapshot all products",
+      "API: Create using materialized input; capture response and state",
+      "Compare target and all non-target fields; for WEB capture immediate and reload states"
+    ],
+    "expected": {
+      "outcome": "accept",
+      "stateContract": "Create",
+      "description": "ISTQB 3-value name=2; other inputs nominal"
+    },
+    "dependencies": [
+      "FR12-DEP-WRITE"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR15-BVA-004",
+    "sourceCaseIds": [
+      "FR15-BVA-004"
+    ],
+    "techniques": [
+      "BVA"
+    ],
+    "layer": "API",
+    "action": "Create",
+    "rules": [
+      "FR15-R05"
+    ],
+    "obligations": [
+      "FR15-OBL-BVA-004"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Fresh baseline fixture; token partition admin; target 101 if Update/Read-detail/Delete. Reset before case.",
+    "fixtureKey": "baseline",
+    "input": {
+      "body": {
+        "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "price": 100000,
+        "description": "Nominal description",
+        "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aGZcAAAAASUVORK5CYII=",
+        "category_id": 10
+      },
+      "target": 101,
+      "auth": "admin",
+      "mode": "create"
+    },
+    "steps": [
+      "Reset fixture and snapshot all products",
+      "API: Create using materialized input; capture response and state",
+      "Compare target and all non-target fields; for WEB capture immediate and reload states"
+    ],
+    "expected": {
+      "outcome": "accept",
+      "stateContract": "Create",
+      "description": "ISTQB 3-value name=254; other inputs nominal"
+    },
+    "dependencies": [
+      "FR12-DEP-WRITE"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR15-BVA-005",
+    "sourceCaseIds": [
+      "FR15-BVA-005"
+    ],
+    "techniques": [
+      "BVA"
+    ],
+    "layer": "API",
+    "action": "Create",
+    "rules": [
+      "FR15-R05"
+    ],
+    "obligations": [
+      "FR15-OBL-BVA-005"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Fresh baseline fixture; token partition admin; target 101 if Update/Read-detail/Delete. Reset before case.",
+    "fixtureKey": "baseline",
+    "input": {
+      "body": {
+        "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "price": 100000,
+        "description": "Nominal description",
+        "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aGZcAAAAASUVORK5CYII=",
+        "category_id": 10
+      },
+      "target": 101,
+      "auth": "admin",
+      "mode": "create"
+    },
+    "steps": [
+      "Reset fixture and snapshot all products",
+      "API: Create using materialized input; capture response and state",
+      "Compare target and all non-target fields; for WEB capture immediate and reload states"
+    ],
+    "expected": {
+      "outcome": "accept",
+      "stateContract": "Create",
+      "description": "ISTQB 3-value name=255; other inputs nominal"
+    },
+    "dependencies": [
+      "FR12-DEP-WRITE"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR15-BVA-006",
+    "sourceCaseIds": [
+      "FR15-BVA-006"
+    ],
+    "techniques": [
+      "BVA"
+    ],
+    "layer": "API",
+    "action": "Create",
+    "rules": [
+      "FR15-R05"
+    ],
+    "obligations": [
+      "FR15-OBL-BVA-006"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Fresh baseline fixture; token partition admin; target 101 if Update/Read-detail/Delete. Reset before case.",
+    "fixtureKey": "baseline",
+    "input": {
+      "body": {
+        "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "price": 100000,
+        "description": "Nominal description",
+        "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aGZcAAAAASUVORK5CYII=",
+        "category_id": 10
+      },
+      "target": 101,
+      "auth": "admin",
+      "mode": "create"
+    },
+    "steps": [
+      "Reset fixture and snapshot all products",
+      "API: Create using materialized input; capture response and state",
+      "Compare target and all non-target fields; for WEB capture immediate and reload states"
+    ],
+    "expected": {
+      "outcome": "reject",
+      "stateContract": "Create",
+      "description": "ISTQB 3-value name=256; other inputs nominal"
+    },
+    "dependencies": [
+      "FR12-DEP-WRITE"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR15-BVA-007",
+    "sourceCaseIds": [
+      "FR15-BVA-007"
+    ],
+    "techniques": [
+      "BVA"
+    ],
+    "layer": "API",
+    "action": "Create",
+    "rules": [
+      "FR15-R05"
+    ],
+    "obligations": [
+      "FR15-OBL-BVA-007"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Fresh baseline fixture; token partition admin; target 101 if Update/Read-detail/Delete. Reset before case.",
+    "fixtureKey": "baseline",
+    "input": {
+      "body": {
+        "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "price": 100000,
+        "description": "Nominal description",
+        "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aGZcAAAAASUVORK5CYII=",
+        "category_id": 10
+      },
+      "target": 101,
+      "auth": "admin",
+      "mode": "create"
+    },
+    "steps": [
+      "Reset fixture and snapshot all products",
+      "API: Create using materialized input; capture response and state",
+      "Compare target and all non-target fields; for WEB capture immediate and reload states"
+    ],
+    "expected": {
+      "outcome": "reject",
+      "stateContract": "Create",
+      "description": "ISTQB 3-value name=257; other inputs nominal"
+    },
+    "dependencies": [
+      "FR12-DEP-WRITE"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR15-BVA-008",
+    "sourceCaseIds": [
+      "FR15-BVA-008"
+    ],
+    "techniques": [
+      "BVA"
+    ],
+    "layer": "API",
+    "action": "Create",
+    "rules": [
+      "FR15-R06"
+    ],
+    "obligations": [
+      "FR15-OBL-BVA-008"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Fresh baseline fixture; token partition admin; target 101 if Update/Read-detail/Delete. Reset before case.",
+    "fixtureKey": "baseline",
+    "input": {
+      "body": {
+        "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "price": -1,
+        "description": "Nominal description",
+        "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aGZcAAAAASUVORK5CYII=",
+        "category_id": 10
+      },
+      "target": 101,
+      "auth": "admin",
+      "mode": "create"
+    },
+    "steps": [
+      "Reset fixture and snapshot all products",
+      "API: Create using materialized input; capture response and state",
+      "Compare target and all non-target fields; for WEB capture immediate and reload states"
+    ],
+    "expected": {
+      "outcome": "reject",
+      "stateContract": "Create",
+      "description": "ISTQB 3-value price=-1; other inputs nominal"
+    },
+    "dependencies": [
+      "FR12-DEP-WRITE"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR15-BVA-009",
+    "sourceCaseIds": [
+      "FR15-BVA-009"
+    ],
+    "techniques": [
+      "BVA"
+    ],
+    "layer": "API",
+    "action": "Create",
+    "rules": [
+      "FR15-R06"
+    ],
+    "obligations": [
+      "FR15-OBL-BVA-009"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Fresh baseline fixture; token partition admin; target 101 if Update/Read-detail/Delete. Reset before case.",
+    "fixtureKey": "baseline",
+    "input": {
+      "body": {
+        "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "price": 0,
+        "description": "Nominal description",
+        "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aGZcAAAAASUVORK5CYII=",
+        "category_id": 10
+      },
+      "target": 101,
+      "auth": "admin",
+      "mode": "create"
+    },
+    "steps": [
+      "Reset fixture and snapshot all products",
+      "API: Create using materialized input; capture response and state",
+      "Compare target and all non-target fields; for WEB capture immediate and reload states"
+    ],
+    "expected": {
+      "outcome": "reject",
+      "stateContract": "Create",
+      "description": "ISTQB 3-value price=0; other inputs nominal"
+    },
+    "dependencies": [
+      "FR12-DEP-WRITE"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR15-BVA-010",
+    "sourceCaseIds": [
+      "FR15-BVA-010"
+    ],
+    "techniques": [
+      "BVA"
+    ],
+    "layer": "API",
+    "action": "Create",
+    "rules": [
+      "FR15-R06"
+    ],
+    "obligations": [
+      "FR15-OBL-BVA-010"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Fresh baseline fixture; token partition admin; target 101 if Update/Read-detail/Delete. Reset before case.",
+    "fixtureKey": "baseline",
+    "input": {
+      "body": {
+        "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "price": 1,
+        "description": "Nominal description",
+        "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aGZcAAAAASUVORK5CYII=",
+        "category_id": 10
+      },
+      "target": 101,
+      "auth": "admin",
+      "mode": "create"
+    },
+    "steps": [
+      "Reset fixture and snapshot all products",
+      "API: Create using materialized input; capture response and state",
+      "Compare target and all non-target fields; for WEB capture immediate and reload states"
+    ],
+    "expected": {
+      "outcome": "accept",
+      "stateContract": "Create",
+      "description": "ISTQB 3-value price=1; other inputs nominal"
+    },
+    "dependencies": [
+      "FR12-DEP-WRITE"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR15-BVA-011",
+    "sourceCaseIds": [
+      "FR15-BVA-011"
+    ],
+    "techniques": [
+      "BVA"
+    ],
+    "layer": "API",
+    "action": "Create",
+    "rules": [
+      "FR15-R06"
+    ],
+    "obligations": [
+      "FR15-OBL-BVA-011"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Fresh baseline fixture; token partition admin; target 101 if Update/Read-detail/Delete. Reset before case.",
+    "fixtureKey": "baseline",
+    "input": {
+      "body": {
+        "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "price": 2,
+        "description": "Nominal description",
+        "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aGZcAAAAASUVORK5CYII=",
+        "category_id": 10
+      },
+      "target": 101,
+      "auth": "admin",
+      "mode": "create"
+    },
+    "steps": [
+      "Reset fixture and snapshot all products",
+      "API: Create using materialized input; capture response and state",
+      "Compare target and all non-target fields; for WEB capture immediate and reload states"
+    ],
+    "expected": {
+      "outcome": "accept",
+      "stateContract": "Create",
+      "description": "ISTQB 3-value price=2; other inputs nominal"
+    },
+    "dependencies": [
+      "FR12-DEP-WRITE"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR15-BVA-012",
+    "sourceCaseIds": [
+      "FR15-BVA-012"
+    ],
+    "techniques": [
+      "BVA"
+    ],
+    "layer": "API",
+    "action": "Update",
+    "rules": [
+      "FR15-R05"
+    ],
+    "obligations": [
+      "FR15-OBL-BVA-012"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Fresh baseline fixture; token partition admin; target 101 if Update/Read-detail/Delete. Reset before case.",
+    "fixtureKey": "baseline",
+    "input": {
+      "body": {
+        "name": "",
+        "price": 100000,
+        "description": "Nominal description",
+        "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aGZcAAAAASUVORK5CYII=",
+        "category_id": 10
+      },
+      "target": 101,
+      "auth": "admin",
+      "mode": "update"
+    },
+    "steps": [
+      "Reset fixture and snapshot all products",
+      "API: Update using materialized input; capture response and state",
+      "Compare target and all non-target fields; for WEB capture immediate and reload states"
+    ],
+    "expected": {
+      "outcome": "reject",
+      "stateContract": "Update",
+      "description": "ISTQB 3-value name=0; other inputs nominal"
+    },
+    "dependencies": [
+      "FR12-DEP-WRITE"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR15-BVA-013",
+    "sourceCaseIds": [
+      "FR15-BVA-013"
+    ],
+    "techniques": [
+      "BVA"
+    ],
+    "layer": "API",
+    "action": "Update",
+    "rules": [
+      "FR15-R05"
+    ],
+    "obligations": [
+      "FR15-OBL-BVA-013"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Fresh baseline fixture; token partition admin; target 101 if Update/Read-detail/Delete. Reset before case.",
+    "fixtureKey": "baseline",
+    "input": {
+      "body": {
+        "name": "A",
+        "price": 100000,
+        "description": "Nominal description",
+        "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aGZcAAAAASUVORK5CYII=",
+        "category_id": 10
+      },
+      "target": 101,
+      "auth": "admin",
+      "mode": "update"
+    },
+    "steps": [
+      "Reset fixture and snapshot all products",
+      "API: Update using materialized input; capture response and state",
+      "Compare target and all non-target fields; for WEB capture immediate and reload states"
+    ],
+    "expected": {
+      "outcome": "accept",
+      "stateContract": "Update",
+      "description": "ISTQB 3-value name=1; other inputs nominal"
+    },
+    "dependencies": [
+      "FR12-DEP-WRITE"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR15-BVA-014",
+    "sourceCaseIds": [
+      "FR15-BVA-014"
+    ],
+    "techniques": [
+      "BVA"
+    ],
+    "layer": "API",
+    "action": "Update",
+    "rules": [
+      "FR15-R05"
+    ],
+    "obligations": [
+      "FR15-OBL-BVA-014"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Fresh baseline fixture; token partition admin; target 101 if Update/Read-detail/Delete. Reset before case.",
+    "fixtureKey": "baseline",
+    "input": {
+      "body": {
+        "name": "AA",
+        "price": 100000,
+        "description": "Nominal description",
+        "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aGZcAAAAASUVORK5CYII=",
+        "category_id": 10
+      },
+      "target": 101,
+      "auth": "admin",
+      "mode": "update"
+    },
+    "steps": [
+      "Reset fixture and snapshot all products",
+      "API: Update using materialized input; capture response and state",
+      "Compare target and all non-target fields; for WEB capture immediate and reload states"
+    ],
+    "expected": {
+      "outcome": "accept",
+      "stateContract": "Update",
+      "description": "ISTQB 3-value name=2; other inputs nominal"
+    },
+    "dependencies": [
+      "FR12-DEP-WRITE"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR15-BVA-015",
+    "sourceCaseIds": [
+      "FR15-BVA-015"
+    ],
+    "techniques": [
+      "BVA"
+    ],
+    "layer": "API",
+    "action": "Update",
+    "rules": [
+      "FR15-R05"
+    ],
+    "obligations": [
+      "FR15-OBL-BVA-015"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Fresh baseline fixture; token partition admin; target 101 if Update/Read-detail/Delete. Reset before case.",
+    "fixtureKey": "baseline",
+    "input": {
+      "body": {
+        "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "price": 100000,
+        "description": "Nominal description",
+        "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aGZcAAAAASUVORK5CYII=",
+        "category_id": 10
+      },
+      "target": 101,
+      "auth": "admin",
+      "mode": "update"
+    },
+    "steps": [
+      "Reset fixture and snapshot all products",
+      "API: Update using materialized input; capture response and state",
+      "Compare target and all non-target fields; for WEB capture immediate and reload states"
+    ],
+    "expected": {
+      "outcome": "accept",
+      "stateContract": "Update",
+      "description": "ISTQB 3-value name=254; other inputs nominal"
+    },
+    "dependencies": [
+      "FR12-DEP-WRITE"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR15-BVA-016",
+    "sourceCaseIds": [
+      "FR15-BVA-016"
+    ],
+    "techniques": [
+      "BVA"
+    ],
+    "layer": "API",
+    "action": "Update",
+    "rules": [
+      "FR15-R05"
+    ],
+    "obligations": [
+      "FR15-OBL-BVA-016"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Fresh baseline fixture; token partition admin; target 101 if Update/Read-detail/Delete. Reset before case.",
+    "fixtureKey": "baseline",
+    "input": {
+      "body": {
+        "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "price": 100000,
+        "description": "Nominal description",
+        "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aGZcAAAAASUVORK5CYII=",
+        "category_id": 10
+      },
+      "target": 101,
+      "auth": "admin",
+      "mode": "update"
+    },
+    "steps": [
+      "Reset fixture and snapshot all products",
+      "API: Update using materialized input; capture response and state",
+      "Compare target and all non-target fields; for WEB capture immediate and reload states"
+    ],
+    "expected": {
+      "outcome": "accept",
+      "stateContract": "Update",
+      "description": "ISTQB 3-value name=255; other inputs nominal"
+    },
+    "dependencies": [
+      "FR12-DEP-WRITE"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR15-BVA-017",
+    "sourceCaseIds": [
+      "FR15-BVA-017"
+    ],
+    "techniques": [
+      "BVA"
+    ],
+    "layer": "API",
+    "action": "Update",
+    "rules": [
+      "FR15-R05"
+    ],
+    "obligations": [
+      "FR15-OBL-BVA-017"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Fresh baseline fixture; token partition admin; target 101 if Update/Read-detail/Delete. Reset before case.",
+    "fixtureKey": "baseline",
+    "input": {
+      "body": {
+        "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "price": 100000,
+        "description": "Nominal description",
+        "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aGZcAAAAASUVORK5CYII=",
+        "category_id": 10
+      },
+      "target": 101,
+      "auth": "admin",
+      "mode": "update"
+    },
+    "steps": [
+      "Reset fixture and snapshot all products",
+      "API: Update using materialized input; capture response and state",
+      "Compare target and all non-target fields; for WEB capture immediate and reload states"
+    ],
+    "expected": {
+      "outcome": "reject",
+      "stateContract": "Update",
+      "description": "ISTQB 3-value name=256; other inputs nominal"
+    },
+    "dependencies": [
+      "FR12-DEP-WRITE"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR15-BVA-018",
+    "sourceCaseIds": [
+      "FR15-BVA-018"
+    ],
+    "techniques": [
+      "BVA"
+    ],
+    "layer": "API",
+    "action": "Update",
+    "rules": [
+      "FR15-R05"
+    ],
+    "obligations": [
+      "FR15-OBL-BVA-018"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Fresh baseline fixture; token partition admin; target 101 if Update/Read-detail/Delete. Reset before case.",
+    "fixtureKey": "baseline",
+    "input": {
+      "body": {
+        "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "price": 100000,
+        "description": "Nominal description",
+        "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aGZcAAAAASUVORK5CYII=",
+        "category_id": 10
+      },
+      "target": 101,
+      "auth": "admin",
+      "mode": "update"
+    },
+    "steps": [
+      "Reset fixture and snapshot all products",
+      "API: Update using materialized input; capture response and state",
+      "Compare target and all non-target fields; for WEB capture immediate and reload states"
+    ],
+    "expected": {
+      "outcome": "reject",
+      "stateContract": "Update",
+      "description": "ISTQB 3-value name=257; other inputs nominal"
+    },
+    "dependencies": [
+      "FR12-DEP-WRITE"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR15-BVA-019",
+    "sourceCaseIds": [
+      "FR15-BVA-019"
+    ],
+    "techniques": [
+      "BVA"
+    ],
+    "layer": "API",
+    "action": "Update",
+    "rules": [
+      "FR15-R06"
+    ],
+    "obligations": [
+      "FR15-OBL-BVA-019"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Fresh baseline fixture; token partition admin; target 101 if Update/Read-detail/Delete. Reset before case.",
+    "fixtureKey": "baseline",
+    "input": {
+      "body": {
+        "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "price": -1,
+        "description": "Nominal description",
+        "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aGZcAAAAASUVORK5CYII=",
+        "category_id": 10
+      },
+      "target": 101,
+      "auth": "admin",
+      "mode": "update"
+    },
+    "steps": [
+      "Reset fixture and snapshot all products",
+      "API: Update using materialized input; capture response and state",
+      "Compare target and all non-target fields; for WEB capture immediate and reload states"
+    ],
+    "expected": {
+      "outcome": "reject",
+      "stateContract": "Update",
+      "description": "ISTQB 3-value price=-1; other inputs nominal"
+    },
+    "dependencies": [
+      "FR12-DEP-WRITE"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR15-BVA-020",
+    "sourceCaseIds": [
+      "FR15-BVA-020"
+    ],
+    "techniques": [
+      "BVA"
+    ],
+    "layer": "API",
+    "action": "Update",
+    "rules": [
+      "FR15-R06"
+    ],
+    "obligations": [
+      "FR15-OBL-BVA-020"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Fresh baseline fixture; token partition admin; target 101 if Update/Read-detail/Delete. Reset before case.",
+    "fixtureKey": "baseline",
+    "input": {
+      "body": {
+        "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "price": 0,
+        "description": "Nominal description",
+        "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aGZcAAAAASUVORK5CYII=",
+        "category_id": 10
+      },
+      "target": 101,
+      "auth": "admin",
+      "mode": "update"
+    },
+    "steps": [
+      "Reset fixture and snapshot all products",
+      "API: Update using materialized input; capture response and state",
+      "Compare target and all non-target fields; for WEB capture immediate and reload states"
+    ],
+    "expected": {
+      "outcome": "reject",
+      "stateContract": "Update",
+      "description": "ISTQB 3-value price=0; other inputs nominal"
+    },
+    "dependencies": [
+      "FR12-DEP-WRITE"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR15-BVA-021",
+    "sourceCaseIds": [
+      "FR15-BVA-021"
+    ],
+    "techniques": [
+      "BVA"
+    ],
+    "layer": "API",
+    "action": "Update",
+    "rules": [
+      "FR15-R06"
+    ],
+    "obligations": [
+      "FR15-OBL-BVA-021"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Fresh baseline fixture; token partition admin; target 101 if Update/Read-detail/Delete. Reset before case.",
+    "fixtureKey": "baseline",
+    "input": {
+      "body": {
+        "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "price": 1,
+        "description": "Nominal description",
+        "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aGZcAAAAASUVORK5CYII=",
+        "category_id": 10
+      },
+      "target": 101,
+      "auth": "admin",
+      "mode": "update"
+    },
+    "steps": [
+      "Reset fixture and snapshot all products",
+      "API: Update using materialized input; capture response and state",
+      "Compare target and all non-target fields; for WEB capture immediate and reload states"
+    ],
+    "expected": {
+      "outcome": "accept",
+      "stateContract": "Update",
+      "description": "ISTQB 3-value price=1; other inputs nominal"
+    },
+    "dependencies": [
+      "FR12-DEP-WRITE"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR15-BVA-022",
+    "sourceCaseIds": [
+      "FR15-BVA-022"
+    ],
+    "techniques": [
+      "BVA"
+    ],
+    "layer": "API",
+    "action": "Update",
+    "rules": [
+      "FR15-R06"
+    ],
+    "obligations": [
+      "FR15-OBL-BVA-022"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Fresh baseline fixture; token partition admin; target 101 if Update/Read-detail/Delete. Reset before case.",
+    "fixtureKey": "baseline",
+    "input": {
+      "body": {
+        "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "price": 2,
+        "description": "Nominal description",
+        "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aGZcAAAAASUVORK5CYII=",
+        "category_id": 10
+      },
+      "target": 101,
+      "auth": "admin",
+      "mode": "update"
+    },
+    "steps": [
+      "Reset fixture and snapshot all products",
+      "API: Update using materialized input; capture response and state",
+      "Compare target and all non-target fields; for WEB capture immediate and reload states"
+    ],
+    "expected": {
+      "outcome": "accept",
+      "stateContract": "Update",
+      "description": "ISTQB 3-value price=2; other inputs nominal"
+    },
+    "dependencies": [
+      "FR12-DEP-WRITE"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR15-BVA-023",
+    "sourceCaseIds": [
+      "FR15-BVA-023"
+    ],
+    "techniques": [
+      "BVA"
+    ],
+    "layer": "WEB",
+    "action": "Create",
+    "rules": [
+      "FR15-R05"
+    ],
+    "obligations": [
+      "FR15-OBL-BVA-023"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Fresh baseline fixture; token partition admin; target 101 if Update/Read-detail/Delete. Reset before case.",
+    "fixtureKey": "baseline",
+    "input": {
+      "body": {
+        "name": "",
+        "price": 100000,
+        "description": "Nominal description",
+        "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aGZcAAAAASUVORK5CYII=",
+        "category_id": 10
+      },
+      "target": 101,
+      "auth": "admin",
+      "mode": "create"
+    },
+    "steps": [
+      "Reset fixture and snapshot all products",
+      "WEB: Create using materialized input; capture response and state",
+      "Compare target and all non-target fields; for WEB capture immediate and reload states"
+    ],
+    "expected": {
+      "outcome": "reject",
+      "stateContract": "Create",
+      "description": "ISTQB 3-value name=0; other inputs nominal"
+    },
+    "dependencies": [
+      "FR12-DEP-WRITE"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR15-BVA-024",
+    "sourceCaseIds": [
+      "FR15-BVA-024"
+    ],
+    "techniques": [
+      "BVA"
+    ],
+    "layer": "WEB",
+    "action": "Create",
+    "rules": [
+      "FR15-R05"
+    ],
+    "obligations": [
+      "FR15-OBL-BVA-024"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Fresh baseline fixture; token partition admin; target 101 if Update/Read-detail/Delete. Reset before case.",
+    "fixtureKey": "baseline",
+    "input": {
+      "body": {
+        "name": "A",
+        "price": 100000,
+        "description": "Nominal description",
+        "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aGZcAAAAASUVORK5CYII=",
+        "category_id": 10
+      },
+      "target": 101,
+      "auth": "admin",
+      "mode": "create"
+    },
+    "steps": [
+      "Reset fixture and snapshot all products",
+      "WEB: Create using materialized input; capture response and state",
+      "Compare target and all non-target fields; for WEB capture immediate and reload states"
+    ],
+    "expected": {
+      "outcome": "accept",
+      "stateContract": "Create",
+      "description": "ISTQB 3-value name=1; other inputs nominal"
+    },
+    "dependencies": [
+      "FR12-DEP-WRITE"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR15-BVA-025",
+    "sourceCaseIds": [
+      "FR15-BVA-025"
+    ],
+    "techniques": [
+      "BVA"
+    ],
+    "layer": "WEB",
+    "action": "Create",
+    "rules": [
+      "FR15-R05"
+    ],
+    "obligations": [
+      "FR15-OBL-BVA-025"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Fresh baseline fixture; token partition admin; target 101 if Update/Read-detail/Delete. Reset before case.",
+    "fixtureKey": "baseline",
+    "input": {
+      "body": {
+        "name": "AA",
+        "price": 100000,
+        "description": "Nominal description",
+        "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aGZcAAAAASUVORK5CYII=",
+        "category_id": 10
+      },
+      "target": 101,
+      "auth": "admin",
+      "mode": "create"
+    },
+    "steps": [
+      "Reset fixture and snapshot all products",
+      "WEB: Create using materialized input; capture response and state",
+      "Compare target and all non-target fields; for WEB capture immediate and reload states"
+    ],
+    "expected": {
+      "outcome": "accept",
+      "stateContract": "Create",
+      "description": "ISTQB 3-value name=2; other inputs nominal"
+    },
+    "dependencies": [
+      "FR12-DEP-WRITE"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR15-BVA-026",
+    "sourceCaseIds": [
+      "FR15-BVA-026"
+    ],
+    "techniques": [
+      "BVA"
+    ],
+    "layer": "WEB",
+    "action": "Create",
+    "rules": [
+      "FR15-R05"
+    ],
+    "obligations": [
+      "FR15-OBL-BVA-026"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Fresh baseline fixture; token partition admin; target 101 if Update/Read-detail/Delete. Reset before case.",
+    "fixtureKey": "baseline",
+    "input": {
+      "body": {
+        "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "price": 100000,
+        "description": "Nominal description",
+        "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aGZcAAAAASUVORK5CYII=",
+        "category_id": 10
+      },
+      "target": 101,
+      "auth": "admin",
+      "mode": "create"
+    },
+    "steps": [
+      "Reset fixture and snapshot all products",
+      "WEB: Create using materialized input; capture response and state",
+      "Compare target and all non-target fields; for WEB capture immediate and reload states"
+    ],
+    "expected": {
+      "outcome": "accept",
+      "stateContract": "Create",
+      "description": "ISTQB 3-value name=254; other inputs nominal"
+    },
+    "dependencies": [
+      "FR12-DEP-WRITE"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR15-BVA-027",
+    "sourceCaseIds": [
+      "FR15-BVA-027"
+    ],
+    "techniques": [
+      "BVA"
+    ],
+    "layer": "WEB",
+    "action": "Create",
+    "rules": [
+      "FR15-R05"
+    ],
+    "obligations": [
+      "FR15-OBL-BVA-027"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Fresh baseline fixture; token partition admin; target 101 if Update/Read-detail/Delete. Reset before case.",
+    "fixtureKey": "baseline",
+    "input": {
+      "body": {
+        "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "price": 100000,
+        "description": "Nominal description",
+        "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aGZcAAAAASUVORK5CYII=",
+        "category_id": 10
+      },
+      "target": 101,
+      "auth": "admin",
+      "mode": "create"
+    },
+    "steps": [
+      "Reset fixture and snapshot all products",
+      "WEB: Create using materialized input; capture response and state",
+      "Compare target and all non-target fields; for WEB capture immediate and reload states"
+    ],
+    "expected": {
+      "outcome": "accept",
+      "stateContract": "Create",
+      "description": "ISTQB 3-value name=255; other inputs nominal"
+    },
+    "dependencies": [
+      "FR12-DEP-WRITE"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR15-BVA-028",
+    "sourceCaseIds": [
+      "FR15-BVA-028"
+    ],
+    "techniques": [
+      "BVA"
+    ],
+    "layer": "WEB",
+    "action": "Create",
+    "rules": [
+      "FR15-R05"
+    ],
+    "obligations": [
+      "FR15-OBL-BVA-028"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Fresh baseline fixture; token partition admin; target 101 if Update/Read-detail/Delete. Reset before case.",
+    "fixtureKey": "baseline",
+    "input": {
+      "body": {
+        "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "price": 100000,
+        "description": "Nominal description",
+        "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aGZcAAAAASUVORK5CYII=",
+        "category_id": 10
+      },
+      "target": 101,
+      "auth": "admin",
+      "mode": "create"
+    },
+    "steps": [
+      "Reset fixture and snapshot all products",
+      "WEB: Create using materialized input; capture response and state",
+      "Compare target and all non-target fields; for WEB capture immediate and reload states"
+    ],
+    "expected": {
+      "outcome": "reject",
+      "stateContract": "Create",
+      "description": "ISTQB 3-value name=256; other inputs nominal"
+    },
+    "dependencies": [
+      "FR12-DEP-WRITE"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR15-BVA-029",
+    "sourceCaseIds": [
+      "FR15-BVA-029"
+    ],
+    "techniques": [
+      "BVA"
+    ],
+    "layer": "WEB",
+    "action": "Create",
+    "rules": [
+      "FR15-R05"
+    ],
+    "obligations": [
+      "FR15-OBL-BVA-029"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Fresh baseline fixture; token partition admin; target 101 if Update/Read-detail/Delete. Reset before case.",
+    "fixtureKey": "baseline",
+    "input": {
+      "body": {
+        "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "price": 100000,
+        "description": "Nominal description",
+        "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aGZcAAAAASUVORK5CYII=",
+        "category_id": 10
+      },
+      "target": 101,
+      "auth": "admin",
+      "mode": "create"
+    },
+    "steps": [
+      "Reset fixture and snapshot all products",
+      "WEB: Create using materialized input; capture response and state",
+      "Compare target and all non-target fields; for WEB capture immediate and reload states"
+    ],
+    "expected": {
+      "outcome": "reject",
+      "stateContract": "Create",
+      "description": "ISTQB 3-value name=257; other inputs nominal"
+    },
+    "dependencies": [
+      "FR12-DEP-WRITE"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR15-BVA-030",
+    "sourceCaseIds": [
+      "FR15-BVA-030"
+    ],
+    "techniques": [
+      "BVA"
+    ],
+    "layer": "WEB",
+    "action": "Create",
+    "rules": [
+      "FR15-R06"
+    ],
+    "obligations": [
+      "FR15-OBL-BVA-030"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Fresh baseline fixture; token partition admin; target 101 if Update/Read-detail/Delete. Reset before case.",
+    "fixtureKey": "baseline",
+    "input": {
+      "body": {
+        "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "price": -1,
+        "description": "Nominal description",
+        "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aGZcAAAAASUVORK5CYII=",
+        "category_id": 10
+      },
+      "target": 101,
+      "auth": "admin",
+      "mode": "create"
+    },
+    "steps": [
+      "Reset fixture and snapshot all products",
+      "WEB: Create using materialized input; capture response and state",
+      "Compare target and all non-target fields; for WEB capture immediate and reload states"
+    ],
+    "expected": {
+      "outcome": "reject",
+      "stateContract": "Create",
+      "description": "ISTQB 3-value price=-1; other inputs nominal"
+    },
+    "dependencies": [
+      "FR12-DEP-WRITE"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR15-BVA-031",
+    "sourceCaseIds": [
+      "FR15-BVA-031"
+    ],
+    "techniques": [
+      "BVA"
+    ],
+    "layer": "WEB",
+    "action": "Create",
+    "rules": [
+      "FR15-R06"
+    ],
+    "obligations": [
+      "FR15-OBL-BVA-031"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Fresh baseline fixture; token partition admin; target 101 if Update/Read-detail/Delete. Reset before case.",
+    "fixtureKey": "baseline",
+    "input": {
+      "body": {
+        "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "price": 0,
+        "description": "Nominal description",
+        "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aGZcAAAAASUVORK5CYII=",
+        "category_id": 10
+      },
+      "target": 101,
+      "auth": "admin",
+      "mode": "create"
+    },
+    "steps": [
+      "Reset fixture and snapshot all products",
+      "WEB: Create using materialized input; capture response and state",
+      "Compare target and all non-target fields; for WEB capture immediate and reload states"
+    ],
+    "expected": {
+      "outcome": "reject",
+      "stateContract": "Create",
+      "description": "ISTQB 3-value price=0; other inputs nominal"
+    },
+    "dependencies": [
+      "FR12-DEP-WRITE"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR15-BVA-032",
+    "sourceCaseIds": [
+      "FR15-BVA-032"
+    ],
+    "techniques": [
+      "BVA"
+    ],
+    "layer": "WEB",
+    "action": "Create",
+    "rules": [
+      "FR15-R06"
+    ],
+    "obligations": [
+      "FR15-OBL-BVA-032"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Fresh baseline fixture; token partition admin; target 101 if Update/Read-detail/Delete. Reset before case.",
+    "fixtureKey": "baseline",
+    "input": {
+      "body": {
+        "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "price": 1,
+        "description": "Nominal description",
+        "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aGZcAAAAASUVORK5CYII=",
+        "category_id": 10
+      },
+      "target": 101,
+      "auth": "admin",
+      "mode": "create"
+    },
+    "steps": [
+      "Reset fixture and snapshot all products",
+      "WEB: Create using materialized input; capture response and state",
+      "Compare target and all non-target fields; for WEB capture immediate and reload states"
+    ],
+    "expected": {
+      "outcome": "accept",
+      "stateContract": "Create",
+      "description": "ISTQB 3-value price=1; other inputs nominal"
+    },
+    "dependencies": [
+      "FR12-DEP-WRITE"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR15-BVA-033",
+    "sourceCaseIds": [
+      "FR15-BVA-033"
+    ],
+    "techniques": [
+      "BVA"
+    ],
+    "layer": "WEB",
+    "action": "Create",
+    "rules": [
+      "FR15-R06"
+    ],
+    "obligations": [
+      "FR15-OBL-BVA-033"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Fresh baseline fixture; token partition admin; target 101 if Update/Read-detail/Delete. Reset before case.",
+    "fixtureKey": "baseline",
+    "input": {
+      "body": {
+        "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "price": 2,
+        "description": "Nominal description",
+        "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aGZcAAAAASUVORK5CYII=",
+        "category_id": 10
+      },
+      "target": 101,
+      "auth": "admin",
+      "mode": "create"
+    },
+    "steps": [
+      "Reset fixture and snapshot all products",
+      "WEB: Create using materialized input; capture response and state",
+      "Compare target and all non-target fields; for WEB capture immediate and reload states"
+    ],
+    "expected": {
+      "outcome": "accept",
+      "stateContract": "Create",
+      "description": "ISTQB 3-value price=2; other inputs nominal"
+    },
+    "dependencies": [
+      "FR12-DEP-WRITE"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR15-BVA-034",
+    "sourceCaseIds": [
+      "FR15-BVA-034"
+    ],
+    "techniques": [
+      "BVA"
+    ],
+    "layer": "WEB",
+    "action": "Update",
+    "rules": [
+      "FR15-R05"
+    ],
+    "obligations": [
+      "FR15-OBL-BVA-034"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Fresh baseline fixture; token partition admin; target 101 if Update/Read-detail/Delete. Reset before case.",
+    "fixtureKey": "baseline",
+    "input": {
+      "body": {
+        "name": "",
+        "price": 100000,
+        "description": "Nominal description",
+        "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aGZcAAAAASUVORK5CYII=",
+        "category_id": 10
+      },
+      "target": 101,
+      "auth": "admin",
+      "mode": "update"
+    },
+    "steps": [
+      "Reset fixture and snapshot all products",
+      "WEB: Update using materialized input; capture response and state",
+      "Compare target and all non-target fields; for WEB capture immediate and reload states"
+    ],
+    "expected": {
+      "outcome": "reject",
+      "stateContract": "Update",
+      "description": "ISTQB 3-value name=0; other inputs nominal"
+    },
+    "dependencies": [
+      "FR12-DEP-WRITE"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR15-BVA-035",
+    "sourceCaseIds": [
+      "FR15-BVA-035"
+    ],
+    "techniques": [
+      "BVA"
+    ],
+    "layer": "WEB",
+    "action": "Update",
+    "rules": [
+      "FR15-R05"
+    ],
+    "obligations": [
+      "FR15-OBL-BVA-035"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Fresh baseline fixture; token partition admin; target 101 if Update/Read-detail/Delete. Reset before case.",
+    "fixtureKey": "baseline",
+    "input": {
+      "body": {
+        "name": "A",
+        "price": 100000,
+        "description": "Nominal description",
+        "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aGZcAAAAASUVORK5CYII=",
+        "category_id": 10
+      },
+      "target": 101,
+      "auth": "admin",
+      "mode": "update"
+    },
+    "steps": [
+      "Reset fixture and snapshot all products",
+      "WEB: Update using materialized input; capture response and state",
+      "Compare target and all non-target fields; for WEB capture immediate and reload states"
+    ],
+    "expected": {
+      "outcome": "accept",
+      "stateContract": "Update",
+      "description": "ISTQB 3-value name=1; other inputs nominal"
+    },
+    "dependencies": [
+      "FR12-DEP-WRITE"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR15-BVA-036",
+    "sourceCaseIds": [
+      "FR15-BVA-036"
+    ],
+    "techniques": [
+      "BVA"
+    ],
+    "layer": "WEB",
+    "action": "Update",
+    "rules": [
+      "FR15-R05"
+    ],
+    "obligations": [
+      "FR15-OBL-BVA-036"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Fresh baseline fixture; token partition admin; target 101 if Update/Read-detail/Delete. Reset before case.",
+    "fixtureKey": "baseline",
+    "input": {
+      "body": {
+        "name": "AA",
+        "price": 100000,
+        "description": "Nominal description",
+        "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aGZcAAAAASUVORK5CYII=",
+        "category_id": 10
+      },
+      "target": 101,
+      "auth": "admin",
+      "mode": "update"
+    },
+    "steps": [
+      "Reset fixture and snapshot all products",
+      "WEB: Update using materialized input; capture response and state",
+      "Compare target and all non-target fields; for WEB capture immediate and reload states"
+    ],
+    "expected": {
+      "outcome": "accept",
+      "stateContract": "Update",
+      "description": "ISTQB 3-value name=2; other inputs nominal"
+    },
+    "dependencies": [
+      "FR12-DEP-WRITE"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR15-BVA-037",
+    "sourceCaseIds": [
+      "FR15-BVA-037"
+    ],
+    "techniques": [
+      "BVA"
+    ],
+    "layer": "WEB",
+    "action": "Update",
+    "rules": [
+      "FR15-R05"
+    ],
+    "obligations": [
+      "FR15-OBL-BVA-037"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Fresh baseline fixture; token partition admin; target 101 if Update/Read-detail/Delete. Reset before case.",
+    "fixtureKey": "baseline",
+    "input": {
+      "body": {
+        "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "price": 100000,
+        "description": "Nominal description",
+        "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aGZcAAAAASUVORK5CYII=",
+        "category_id": 10
+      },
+      "target": 101,
+      "auth": "admin",
+      "mode": "update"
+    },
+    "steps": [
+      "Reset fixture and snapshot all products",
+      "WEB: Update using materialized input; capture response and state",
+      "Compare target and all non-target fields; for WEB capture immediate and reload states"
+    ],
+    "expected": {
+      "outcome": "accept",
+      "stateContract": "Update",
+      "description": "ISTQB 3-value name=254; other inputs nominal"
+    },
+    "dependencies": [
+      "FR12-DEP-WRITE"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR15-BVA-038",
+    "sourceCaseIds": [
+      "FR15-BVA-038"
+    ],
+    "techniques": [
+      "BVA"
+    ],
+    "layer": "WEB",
+    "action": "Update",
+    "rules": [
+      "FR15-R05"
+    ],
+    "obligations": [
+      "FR15-OBL-BVA-038"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Fresh baseline fixture; token partition admin; target 101 if Update/Read-detail/Delete. Reset before case.",
+    "fixtureKey": "baseline",
+    "input": {
+      "body": {
+        "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "price": 100000,
+        "description": "Nominal description",
+        "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aGZcAAAAASUVORK5CYII=",
+        "category_id": 10
+      },
+      "target": 101,
+      "auth": "admin",
+      "mode": "update"
+    },
+    "steps": [
+      "Reset fixture and snapshot all products",
+      "WEB: Update using materialized input; capture response and state",
+      "Compare target and all non-target fields; for WEB capture immediate and reload states"
+    ],
+    "expected": {
+      "outcome": "accept",
+      "stateContract": "Update",
+      "description": "ISTQB 3-value name=255; other inputs nominal"
+    },
+    "dependencies": [
+      "FR12-DEP-WRITE"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR15-BVA-039",
+    "sourceCaseIds": [
+      "FR15-BVA-039"
+    ],
+    "techniques": [
+      "BVA"
+    ],
+    "layer": "WEB",
+    "action": "Update",
+    "rules": [
+      "FR15-R05"
+    ],
+    "obligations": [
+      "FR15-OBL-BVA-039"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Fresh baseline fixture; token partition admin; target 101 if Update/Read-detail/Delete. Reset before case.",
+    "fixtureKey": "baseline",
+    "input": {
+      "body": {
+        "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "price": 100000,
+        "description": "Nominal description",
+        "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aGZcAAAAASUVORK5CYII=",
+        "category_id": 10
+      },
+      "target": 101,
+      "auth": "admin",
+      "mode": "update"
+    },
+    "steps": [
+      "Reset fixture and snapshot all products",
+      "WEB: Update using materialized input; capture response and state",
+      "Compare target and all non-target fields; for WEB capture immediate and reload states"
+    ],
+    "expected": {
+      "outcome": "reject",
+      "stateContract": "Update",
+      "description": "ISTQB 3-value name=256; other inputs nominal"
+    },
+    "dependencies": [
+      "FR12-DEP-WRITE"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR15-BVA-040",
+    "sourceCaseIds": [
+      "FR15-BVA-040"
+    ],
+    "techniques": [
+      "BVA"
+    ],
+    "layer": "WEB",
+    "action": "Update",
+    "rules": [
+      "FR15-R05"
+    ],
+    "obligations": [
+      "FR15-OBL-BVA-040"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Fresh baseline fixture; token partition admin; target 101 if Update/Read-detail/Delete. Reset before case.",
+    "fixtureKey": "baseline",
+    "input": {
+      "body": {
+        "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "price": 100000,
+        "description": "Nominal description",
+        "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aGZcAAAAASUVORK5CYII=",
+        "category_id": 10
+      },
+      "target": 101,
+      "auth": "admin",
+      "mode": "update"
+    },
+    "steps": [
+      "Reset fixture and snapshot all products",
+      "WEB: Update using materialized input; capture response and state",
+      "Compare target and all non-target fields; for WEB capture immediate and reload states"
+    ],
+    "expected": {
+      "outcome": "reject",
+      "stateContract": "Update",
+      "description": "ISTQB 3-value name=257; other inputs nominal"
+    },
+    "dependencies": [
+      "FR12-DEP-WRITE"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR15-BVA-041",
+    "sourceCaseIds": [
+      "FR15-BVA-041"
+    ],
+    "techniques": [
+      "BVA"
+    ],
+    "layer": "WEB",
+    "action": "Update",
+    "rules": [
+      "FR15-R06"
+    ],
+    "obligations": [
+      "FR15-OBL-BVA-041"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Fresh baseline fixture; token partition admin; target 101 if Update/Read-detail/Delete. Reset before case.",
+    "fixtureKey": "baseline",
+    "input": {
+      "body": {
+        "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "price": -1,
+        "description": "Nominal description",
+        "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aGZcAAAAASUVORK5CYII=",
+        "category_id": 10
+      },
+      "target": 101,
+      "auth": "admin",
+      "mode": "update"
+    },
+    "steps": [
+      "Reset fixture and snapshot all products",
+      "WEB: Update using materialized input; capture response and state",
+      "Compare target and all non-target fields; for WEB capture immediate and reload states"
+    ],
+    "expected": {
+      "outcome": "reject",
+      "stateContract": "Update",
+      "description": "ISTQB 3-value price=-1; other inputs nominal"
+    },
+    "dependencies": [
+      "FR12-DEP-WRITE"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR15-BVA-042",
+    "sourceCaseIds": [
+      "FR15-BVA-042"
+    ],
+    "techniques": [
+      "BVA"
+    ],
+    "layer": "WEB",
+    "action": "Update",
+    "rules": [
+      "FR15-R06"
+    ],
+    "obligations": [
+      "FR15-OBL-BVA-042"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Fresh baseline fixture; token partition admin; target 101 if Update/Read-detail/Delete. Reset before case.",
+    "fixtureKey": "baseline",
+    "input": {
+      "body": {
+        "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "price": 0,
+        "description": "Nominal description",
+        "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aGZcAAAAASUVORK5CYII=",
+        "category_id": 10
+      },
+      "target": 101,
+      "auth": "admin",
+      "mode": "update"
+    },
+    "steps": [
+      "Reset fixture and snapshot all products",
+      "WEB: Update using materialized input; capture response and state",
+      "Compare target and all non-target fields; for WEB capture immediate and reload states"
+    ],
+    "expected": {
+      "outcome": "reject",
+      "stateContract": "Update",
+      "description": "ISTQB 3-value price=0; other inputs nominal"
+    },
+    "dependencies": [
+      "FR12-DEP-WRITE"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR15-BVA-043",
+    "sourceCaseIds": [
+      "FR15-BVA-043"
+    ],
+    "techniques": [
+      "BVA"
+    ],
+    "layer": "WEB",
+    "action": "Update",
+    "rules": [
+      "FR15-R06"
+    ],
+    "obligations": [
+      "FR15-OBL-BVA-043"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Fresh baseline fixture; token partition admin; target 101 if Update/Read-detail/Delete. Reset before case.",
+    "fixtureKey": "baseline",
+    "input": {
+      "body": {
+        "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "price": 1,
+        "description": "Nominal description",
+        "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aGZcAAAAASUVORK5CYII=",
+        "category_id": 10
+      },
+      "target": 101,
+      "auth": "admin",
+      "mode": "update"
+    },
+    "steps": [
+      "Reset fixture and snapshot all products",
+      "WEB: Update using materialized input; capture response and state",
+      "Compare target and all non-target fields; for WEB capture immediate and reload states"
+    ],
+    "expected": {
+      "outcome": "accept",
+      "stateContract": "Update",
+      "description": "ISTQB 3-value price=1; other inputs nominal"
+    },
+    "dependencies": [
+      "FR12-DEP-WRITE"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
+  },
+  {
+    "id": "FR15-BVA-044",
+    "sourceCaseIds": [
+      "FR15-BVA-044"
+    ],
+    "techniques": [
+      "BVA"
+    ],
+    "layer": "WEB",
+    "action": "Update",
+    "rules": [
+      "FR15-R06"
+    ],
+    "obligations": [
+      "FR15-OBL-BVA-044"
+    ],
+    "oracleStatus": "confirmed",
+    "preconditions": "Fresh baseline fixture; token partition admin; target 101 if Update/Read-detail/Delete. Reset before case.",
+    "fixtureKey": "baseline",
+    "input": {
+      "body": {
+        "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "price": 2,
+        "description": "Nominal description",
+        "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aGZcAAAAASUVORK5CYII=",
+        "category_id": 10
+      },
+      "target": 101,
+      "auth": "admin",
+      "mode": "update"
+    },
+    "steps": [
+      "Reset fixture and snapshot all products",
+      "WEB: Update using materialized input; capture response and state",
+      "Compare target and all non-target fields; for WEB capture immediate and reload states"
+    ],
+    "expected": {
+      "outcome": "accept",
+      "stateContract": "Update",
+      "description": "ISTQB 3-value price=2; other inputs nominal"
+    },
+    "dependencies": [
+      "FR12-DEP-WRITE"
+    ],
+    "actual": null,
+    "status": "Not Run",
+    "evidence": []
   }
 ]

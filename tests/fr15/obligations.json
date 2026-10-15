@@ -2696,5 +2696,909 @@
     "rationale": "Missing target characterization; exact response not specified",
     "point": null,
     "oracleStatus": "unresolved"
+  },
+  {
+    "id": "FR15-OBL-BVA-001",
+    "sourceCaseId": "FR15-BVA-001",
+    "technique": "BVA",
+    "rules": [
+      "FR15-R05"
+    ],
+    "layer": "API",
+    "action": "Create",
+    "rationale": "ISTQB 3-value name=0; other inputs nominal",
+    "point": {
+      "dimension": "name",
+      "value": 0,
+      "universe": "ASCII-length-N0",
+      "endpoints": [
+        0,
+        1
+      ]
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-BVA-002",
+    "sourceCaseId": "FR15-BVA-002",
+    "technique": "BVA",
+    "rules": [
+      "FR15-R05"
+    ],
+    "layer": "API",
+    "action": "Create",
+    "rationale": "ISTQB 3-value name=1; other inputs nominal",
+    "point": {
+      "dimension": "name",
+      "value": 1,
+      "universe": "ASCII-length-N0",
+      "endpoints": [
+        0,
+        1
+      ]
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-BVA-003",
+    "sourceCaseId": "FR15-BVA-003",
+    "technique": "BVA",
+    "rules": [
+      "FR15-R05"
+    ],
+    "layer": "API",
+    "action": "Create",
+    "rationale": "ISTQB 3-value name=2; other inputs nominal",
+    "point": {
+      "dimension": "name",
+      "value": 2,
+      "universe": "ASCII-length-N0",
+      "endpoints": [
+        1
+      ]
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-BVA-004",
+    "sourceCaseId": "FR15-BVA-004",
+    "technique": "BVA",
+    "rules": [
+      "FR15-R05"
+    ],
+    "layer": "API",
+    "action": "Create",
+    "rationale": "ISTQB 3-value name=254; other inputs nominal",
+    "point": {
+      "dimension": "name",
+      "value": 254,
+      "universe": "ASCII-length-N0",
+      "endpoints": [
+        255
+      ]
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-BVA-005",
+    "sourceCaseId": "FR15-BVA-005",
+    "technique": "BVA",
+    "rules": [
+      "FR15-R05"
+    ],
+    "layer": "API",
+    "action": "Create",
+    "rationale": "ISTQB 3-value name=255; other inputs nominal",
+    "point": {
+      "dimension": "name",
+      "value": 255,
+      "universe": "ASCII-length-N0",
+      "endpoints": [
+        255,
+        256
+      ]
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-BVA-006",
+    "sourceCaseId": "FR15-BVA-006",
+    "technique": "BVA",
+    "rules": [
+      "FR15-R05"
+    ],
+    "layer": "API",
+    "action": "Create",
+    "rationale": "ISTQB 3-value name=256; other inputs nominal",
+    "point": {
+      "dimension": "name",
+      "value": 256,
+      "universe": "ASCII-length-N0",
+      "endpoints": [
+        255,
+        256
+      ]
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-BVA-007",
+    "sourceCaseId": "FR15-BVA-007",
+    "technique": "BVA",
+    "rules": [
+      "FR15-R05"
+    ],
+    "layer": "API",
+    "action": "Create",
+    "rationale": "ISTQB 3-value name=257; other inputs nominal",
+    "point": {
+      "dimension": "name",
+      "value": 257,
+      "universe": "ASCII-length-N0",
+      "endpoints": [
+        256
+      ]
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-BVA-008",
+    "sourceCaseId": "FR15-BVA-008",
+    "technique": "BVA",
+    "rules": [
+      "FR15-R06"
+    ],
+    "layer": "API",
+    "action": "Create",
+    "rationale": "ISTQB 3-value price=-1; other inputs nominal",
+    "point": {
+      "dimension": "price",
+      "value": -1,
+      "universe": "integer-price-Z-slice",
+      "endpoints": [
+        0
+      ]
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-BVA-009",
+    "sourceCaseId": "FR15-BVA-009",
+    "technique": "BVA",
+    "rules": [
+      "FR15-R06"
+    ],
+    "layer": "API",
+    "action": "Create",
+    "rationale": "ISTQB 3-value price=0; other inputs nominal",
+    "point": {
+      "dimension": "price",
+      "value": 0,
+      "universe": "integer-price-Z-slice",
+      "endpoints": [
+        0,
+        1
+      ]
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-BVA-010",
+    "sourceCaseId": "FR15-BVA-010",
+    "technique": "BVA",
+    "rules": [
+      "FR15-R06"
+    ],
+    "layer": "API",
+    "action": "Create",
+    "rationale": "ISTQB 3-value price=1; other inputs nominal",
+    "point": {
+      "dimension": "price",
+      "value": 1,
+      "universe": "integer-price-Z-slice",
+      "endpoints": [
+        0,
+        1
+      ]
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-BVA-011",
+    "sourceCaseId": "FR15-BVA-011",
+    "technique": "BVA",
+    "rules": [
+      "FR15-R06"
+    ],
+    "layer": "API",
+    "action": "Create",
+    "rationale": "ISTQB 3-value price=2; other inputs nominal",
+    "point": {
+      "dimension": "price",
+      "value": 2,
+      "universe": "integer-price-Z-slice",
+      "endpoints": [
+        1
+      ]
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-BVA-012",
+    "sourceCaseId": "FR15-BVA-012",
+    "technique": "BVA",
+    "rules": [
+      "FR15-R05"
+    ],
+    "layer": "API",
+    "action": "Update",
+    "rationale": "ISTQB 3-value name=0; other inputs nominal",
+    "point": {
+      "dimension": "name",
+      "value": 0,
+      "universe": "ASCII-length-N0",
+      "endpoints": [
+        0,
+        1
+      ]
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-BVA-013",
+    "sourceCaseId": "FR15-BVA-013",
+    "technique": "BVA",
+    "rules": [
+      "FR15-R05"
+    ],
+    "layer": "API",
+    "action": "Update",
+    "rationale": "ISTQB 3-value name=1; other inputs nominal",
+    "point": {
+      "dimension": "name",
+      "value": 1,
+      "universe": "ASCII-length-N0",
+      "endpoints": [
+        0,
+        1
+      ]
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-BVA-014",
+    "sourceCaseId": "FR15-BVA-014",
+    "technique": "BVA",
+    "rules": [
+      "FR15-R05"
+    ],
+    "layer": "API",
+    "action": "Update",
+    "rationale": "ISTQB 3-value name=2; other inputs nominal",
+    "point": {
+      "dimension": "name",
+      "value": 2,
+      "universe": "ASCII-length-N0",
+      "endpoints": [
+        1
+      ]
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-BVA-015",
+    "sourceCaseId": "FR15-BVA-015",
+    "technique": "BVA",
+    "rules": [
+      "FR15-R05"
+    ],
+    "layer": "API",
+    "action": "Update",
+    "rationale": "ISTQB 3-value name=254; other inputs nominal",
+    "point": {
+      "dimension": "name",
+      "value": 254,
+      "universe": "ASCII-length-N0",
+      "endpoints": [
+        255
+      ]
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-BVA-016",
+    "sourceCaseId": "FR15-BVA-016",
+    "technique": "BVA",
+    "rules": [
+      "FR15-R05"
+    ],
+    "layer": "API",
+    "action": "Update",
+    "rationale": "ISTQB 3-value name=255; other inputs nominal",
+    "point": {
+      "dimension": "name",
+      "value": 255,
+      "universe": "ASCII-length-N0",
+      "endpoints": [
+        255,
+        256
+      ]
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-BVA-017",
+    "sourceCaseId": "FR15-BVA-017",
+    "technique": "BVA",
+    "rules": [
+      "FR15-R05"
+    ],
+    "layer": "API",
+    "action": "Update",
+    "rationale": "ISTQB 3-value name=256; other inputs nominal",
+    "point": {
+      "dimension": "name",
+      "value": 256,
+      "universe": "ASCII-length-N0",
+      "endpoints": [
+        255,
+        256
+      ]
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-BVA-018",
+    "sourceCaseId": "FR15-BVA-018",
+    "technique": "BVA",
+    "rules": [
+      "FR15-R05"
+    ],
+    "layer": "API",
+    "action": "Update",
+    "rationale": "ISTQB 3-value name=257; other inputs nominal",
+    "point": {
+      "dimension": "name",
+      "value": 257,
+      "universe": "ASCII-length-N0",
+      "endpoints": [
+        256
+      ]
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-BVA-019",
+    "sourceCaseId": "FR15-BVA-019",
+    "technique": "BVA",
+    "rules": [
+      "FR15-R06"
+    ],
+    "layer": "API",
+    "action": "Update",
+    "rationale": "ISTQB 3-value price=-1; other inputs nominal",
+    "point": {
+      "dimension": "price",
+      "value": -1,
+      "universe": "integer-price-Z-slice",
+      "endpoints": [
+        0
+      ]
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-BVA-020",
+    "sourceCaseId": "FR15-BVA-020",
+    "technique": "BVA",
+    "rules": [
+      "FR15-R06"
+    ],
+    "layer": "API",
+    "action": "Update",
+    "rationale": "ISTQB 3-value price=0; other inputs nominal",
+    "point": {
+      "dimension": "price",
+      "value": 0,
+      "universe": "integer-price-Z-slice",
+      "endpoints": [
+        0,
+        1
+      ]
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-BVA-021",
+    "sourceCaseId": "FR15-BVA-021",
+    "technique": "BVA",
+    "rules": [
+      "FR15-R06"
+    ],
+    "layer": "API",
+    "action": "Update",
+    "rationale": "ISTQB 3-value price=1; other inputs nominal",
+    "point": {
+      "dimension": "price",
+      "value": 1,
+      "universe": "integer-price-Z-slice",
+      "endpoints": [
+        0,
+        1
+      ]
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-BVA-022",
+    "sourceCaseId": "FR15-BVA-022",
+    "technique": "BVA",
+    "rules": [
+      "FR15-R06"
+    ],
+    "layer": "API",
+    "action": "Update",
+    "rationale": "ISTQB 3-value price=2; other inputs nominal",
+    "point": {
+      "dimension": "price",
+      "value": 2,
+      "universe": "integer-price-Z-slice",
+      "endpoints": [
+        1
+      ]
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-BVA-023",
+    "sourceCaseId": "FR15-BVA-023",
+    "technique": "BVA",
+    "rules": [
+      "FR15-R05"
+    ],
+    "layer": "WEB",
+    "action": "Create",
+    "rationale": "ISTQB 3-value name=0; other inputs nominal",
+    "point": {
+      "dimension": "name",
+      "value": 0,
+      "universe": "ASCII-length-N0",
+      "endpoints": [
+        0,
+        1
+      ]
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-BVA-024",
+    "sourceCaseId": "FR15-BVA-024",
+    "technique": "BVA",
+    "rules": [
+      "FR15-R05"
+    ],
+    "layer": "WEB",
+    "action": "Create",
+    "rationale": "ISTQB 3-value name=1; other inputs nominal",
+    "point": {
+      "dimension": "name",
+      "value": 1,
+      "universe": "ASCII-length-N0",
+      "endpoints": [
+        0,
+        1
+      ]
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-BVA-025",
+    "sourceCaseId": "FR15-BVA-025",
+    "technique": "BVA",
+    "rules": [
+      "FR15-R05"
+    ],
+    "layer": "WEB",
+    "action": "Create",
+    "rationale": "ISTQB 3-value name=2; other inputs nominal",
+    "point": {
+      "dimension": "name",
+      "value": 2,
+      "universe": "ASCII-length-N0",
+      "endpoints": [
+        1
+      ]
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-BVA-026",
+    "sourceCaseId": "FR15-BVA-026",
+    "technique": "BVA",
+    "rules": [
+      "FR15-R05"
+    ],
+    "layer": "WEB",
+    "action": "Create",
+    "rationale": "ISTQB 3-value name=254; other inputs nominal",
+    "point": {
+      "dimension": "name",
+      "value": 254,
+      "universe": "ASCII-length-N0",
+      "endpoints": [
+        255
+      ]
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-BVA-027",
+    "sourceCaseId": "FR15-BVA-027",
+    "technique": "BVA",
+    "rules": [
+      "FR15-R05"
+    ],
+    "layer": "WEB",
+    "action": "Create",
+    "rationale": "ISTQB 3-value name=255; other inputs nominal",
+    "point": {
+      "dimension": "name",
+      "value": 255,
+      "universe": "ASCII-length-N0",
+      "endpoints": [
+        255,
+        256
+      ]
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-BVA-028",
+    "sourceCaseId": "FR15-BVA-028",
+    "technique": "BVA",
+    "rules": [
+      "FR15-R05"
+    ],
+    "layer": "WEB",
+    "action": "Create",
+    "rationale": "ISTQB 3-value name=256; other inputs nominal",
+    "point": {
+      "dimension": "name",
+      "value": 256,
+      "universe": "ASCII-length-N0",
+      "endpoints": [
+        255,
+        256
+      ]
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-BVA-029",
+    "sourceCaseId": "FR15-BVA-029",
+    "technique": "BVA",
+    "rules": [
+      "FR15-R05"
+    ],
+    "layer": "WEB",
+    "action": "Create",
+    "rationale": "ISTQB 3-value name=257; other inputs nominal",
+    "point": {
+      "dimension": "name",
+      "value": 257,
+      "universe": "ASCII-length-N0",
+      "endpoints": [
+        256
+      ]
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-BVA-030",
+    "sourceCaseId": "FR15-BVA-030",
+    "technique": "BVA",
+    "rules": [
+      "FR15-R06"
+    ],
+    "layer": "WEB",
+    "action": "Create",
+    "rationale": "ISTQB 3-value price=-1; other inputs nominal",
+    "point": {
+      "dimension": "price",
+      "value": -1,
+      "universe": "integer-price-Z-slice",
+      "endpoints": [
+        0
+      ]
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-BVA-031",
+    "sourceCaseId": "FR15-BVA-031",
+    "technique": "BVA",
+    "rules": [
+      "FR15-R06"
+    ],
+    "layer": "WEB",
+    "action": "Create",
+    "rationale": "ISTQB 3-value price=0; other inputs nominal",
+    "point": {
+      "dimension": "price",
+      "value": 0,
+      "universe": "integer-price-Z-slice",
+      "endpoints": [
+        0,
+        1
+      ]
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-BVA-032",
+    "sourceCaseId": "FR15-BVA-032",
+    "technique": "BVA",
+    "rules": [
+      "FR15-R06"
+    ],
+    "layer": "WEB",
+    "action": "Create",
+    "rationale": "ISTQB 3-value price=1; other inputs nominal",
+    "point": {
+      "dimension": "price",
+      "value": 1,
+      "universe": "integer-price-Z-slice",
+      "endpoints": [
+        0,
+        1
+      ]
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-BVA-033",
+    "sourceCaseId": "FR15-BVA-033",
+    "technique": "BVA",
+    "rules": [
+      "FR15-R06"
+    ],
+    "layer": "WEB",
+    "action": "Create",
+    "rationale": "ISTQB 3-value price=2; other inputs nominal",
+    "point": {
+      "dimension": "price",
+      "value": 2,
+      "universe": "integer-price-Z-slice",
+      "endpoints": [
+        1
+      ]
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-BVA-034",
+    "sourceCaseId": "FR15-BVA-034",
+    "technique": "BVA",
+    "rules": [
+      "FR15-R05"
+    ],
+    "layer": "WEB",
+    "action": "Update",
+    "rationale": "ISTQB 3-value name=0; other inputs nominal",
+    "point": {
+      "dimension": "name",
+      "value": 0,
+      "universe": "ASCII-length-N0",
+      "endpoints": [
+        0,
+        1
+      ]
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-BVA-035",
+    "sourceCaseId": "FR15-BVA-035",
+    "technique": "BVA",
+    "rules": [
+      "FR15-R05"
+    ],
+    "layer": "WEB",
+    "action": "Update",
+    "rationale": "ISTQB 3-value name=1; other inputs nominal",
+    "point": {
+      "dimension": "name",
+      "value": 1,
+      "universe": "ASCII-length-N0",
+      "endpoints": [
+        0,
+        1
+      ]
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-BVA-036",
+    "sourceCaseId": "FR15-BVA-036",
+    "technique": "BVA",
+    "rules": [
+      "FR15-R05"
+    ],
+    "layer": "WEB",
+    "action": "Update",
+    "rationale": "ISTQB 3-value name=2; other inputs nominal",
+    "point": {
+      "dimension": "name",
+      "value": 2,
+      "universe": "ASCII-length-N0",
+      "endpoints": [
+        1
+      ]
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-BVA-037",
+    "sourceCaseId": "FR15-BVA-037",
+    "technique": "BVA",
+    "rules": [
+      "FR15-R05"
+    ],
+    "layer": "WEB",
+    "action": "Update",
+    "rationale": "ISTQB 3-value name=254; other inputs nominal",
+    "point": {
+      "dimension": "name",
+      "value": 254,
+      "universe": "ASCII-length-N0",
+      "endpoints": [
+        255
+      ]
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-BVA-038",
+    "sourceCaseId": "FR15-BVA-038",
+    "technique": "BVA",
+    "rules": [
+      "FR15-R05"
+    ],
+    "layer": "WEB",
+    "action": "Update",
+    "rationale": "ISTQB 3-value name=255; other inputs nominal",
+    "point": {
+      "dimension": "name",
+      "value": 255,
+      "universe": "ASCII-length-N0",
+      "endpoints": [
+        255,
+        256
+      ]
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-BVA-039",
+    "sourceCaseId": "FR15-BVA-039",
+    "technique": "BVA",
+    "rules": [
+      "FR15-R05"
+    ],
+    "layer": "WEB",
+    "action": "Update",
+    "rationale": "ISTQB 3-value name=256; other inputs nominal",
+    "point": {
+      "dimension": "name",
+      "value": 256,
+      "universe": "ASCII-length-N0",
+      "endpoints": [
+        255,
+        256
+      ]
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-BVA-040",
+    "sourceCaseId": "FR15-BVA-040",
+    "technique": "BVA",
+    "rules": [
+      "FR15-R05"
+    ],
+    "layer": "WEB",
+    "action": "Update",
+    "rationale": "ISTQB 3-value name=257; other inputs nominal",
+    "point": {
+      "dimension": "name",
+      "value": 257,
+      "universe": "ASCII-length-N0",
+      "endpoints": [
+        256
+      ]
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-BVA-041",
+    "sourceCaseId": "FR15-BVA-041",
+    "technique": "BVA",
+    "rules": [
+      "FR15-R06"
+    ],
+    "layer": "WEB",
+    "action": "Update",
+    "rationale": "ISTQB 3-value price=-1; other inputs nominal",
+    "point": {
+      "dimension": "price",
+      "value": -1,
+      "universe": "integer-price-Z-slice",
+      "endpoints": [
+        0
+      ]
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-BVA-042",
+    "sourceCaseId": "FR15-BVA-042",
+    "technique": "BVA",
+    "rules": [
+      "FR15-R06"
+    ],
+    "layer": "WEB",
+    "action": "Update",
+    "rationale": "ISTQB 3-value price=0; other inputs nominal",
+    "point": {
+      "dimension": "price",
+      "value": 0,
+      "universe": "integer-price-Z-slice",
+      "endpoints": [
+        0,
+        1
+      ]
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-BVA-043",
+    "sourceCaseId": "FR15-BVA-043",
+    "technique": "BVA",
+    "rules": [
+      "FR15-R06"
+    ],
+    "layer": "WEB",
+    "action": "Update",
+    "rationale": "ISTQB 3-value price=1; other inputs nominal",
+    "point": {
+      "dimension": "price",
+      "value": 1,
+      "universe": "integer-price-Z-slice",
+      "endpoints": [
+        0,
+        1
+      ]
+    },
+    "oracleStatus": "confirmed"
+  },
+  {
+    "id": "FR15-OBL-BVA-044",
+    "sourceCaseId": "FR15-BVA-044",
+    "technique": "BVA",
+    "rules": [
+      "FR15-R06"
+    ],
+    "layer": "WEB",
+    "action": "Update",
+    "rationale": "ISTQB 3-value price=2; other inputs nominal",
+    "point": {
+      "dimension": "price",
+      "value": 2,
+      "universe": "integer-price-Z-slice",
+      "endpoints": [
+        1
+      ]
+    },
+    "oracleStatus": "confirmed"
   }
 ]
