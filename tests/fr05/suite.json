@@ -1,0 +1,4262 @@
+{
+  "version": "fr05-v1",
+  "rules": [
+    "FR05-R01",
+    "FR05-R02",
+    "FR05-R03",
+    "FR05-R04",
+    "FR05-R05",
+    "FR05-R06",
+    "FR05-R07",
+    "FR05-R08",
+    "FR05-R09"
+  ],
+  "sourceCases": [
+    {
+      "id": "FR05-DT-001",
+      "key": "LIST",
+      "ruleIds": [
+        "FR05-R01",
+        "FR05-R03"
+      ],
+      "obligationIds": [
+        "FR05-LIST"
+      ],
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "technique": "DT",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": null,
+        "mode": "home"
+      },
+      "steps": [
+        "Reset backend về snapshot full; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Không nhập search; quan sát danh sách, cuộn đến phần tử cuối để đối chiếu toàn bộ catalog."
+      ],
+      "expected": {
+        "description": "Home hiển thị tất cả 12 sản phẩm, không thiếu/trùng; layout là grid, không phải một cột danh sách.",
+        "oracleKind": "explicit",
+        "ids": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106,
+          107,
+          108,
+          109,
+          110,
+          111,
+          112
+        ],
+        "count": 12
+      },
+      "actual": null,
+      "status": "Not Run",
+      "evidence": []
+    },
+    {
+      "id": "FR05-DT-002",
+      "key": "EXACT",
+      "ruleIds": [
+        "FR05-R05"
+      ],
+      "obligationIds": [
+        "FR05-EXACT"
+      ],
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "technique": "DT",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": "Alpha",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset backend về snapshot full; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Nhập chính xác 'Alpha' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending."
+      ],
+      "expected": {
+        "description": "Có đúng card Alpha ID101; không có sản phẩm không match.",
+        "oracleKind": "explicit",
+        "ids": [
+          101
+        ],
+        "count": 1
+      },
+      "actual": null,
+      "status": "Not Run",
+      "evidence": []
+    },
+    {
+      "id": "FR05-DT-003",
+      "key": "NO-MATCH",
+      "ruleIds": [
+        "FR05-R08"
+      ],
+      "obligationIds": [
+        "FR05-NO-MATCH"
+      ],
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "technique": "DT",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": "ZZZ_NO_MATCH",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset backend về snapshot full; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Nhập chính xác 'ZZZ_NO_MATCH' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending."
+      ],
+      "expected": {
+        "description": "Không có card; có thông báo empty state khi response thành công rỗng.",
+        "oracleKind": "explicit",
+        "ids": [],
+        "count": 0
+      },
+      "actual": null,
+      "status": "Not Run",
+      "evidence": []
+    },
+    {
+      "id": "FR05-DT-004",
+      "key": "NAME-ONLY",
+      "ruleIds": [
+        "FR05-R05",
+        "FR05-R08"
+      ],
+      "obligationIds": [
+        "FR05-NAME-ONLY"
+      ],
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "technique": "DT",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": "DescriptionToken",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset backend về snapshot full; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Nhập chính xác 'DescriptionToken' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending."
+      ],
+      "expected": {
+        "description": "Token chỉ trong description không làm sản phẩm match; native có empty state.",
+        "oracleKind": "explicit",
+        "ids": [],
+        "count": 0
+      },
+      "actual": null,
+      "status": "Not Run",
+      "evidence": []
+    },
+    {
+      "id": "FR05-DT-005",
+      "key": "UNICODE",
+      "ruleIds": [
+        "FR05-R05"
+      ],
+      "obligationIds": [
+        "FR05-UNICODE"
+      ],
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "technique": "DT",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": "Cà phê",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset backend về snapshot full; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Nhập chính xác 'Cà phê' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending."
+      ],
+      "expected": {
+        "description": "Full-name search 'Cà phê' trả đúng sản phẩm ID104; không lỗi/truncate/đổi ký tự.",
+        "oracleKind": "explicit",
+        "ids": [
+          104
+        ],
+        "count": 1
+      },
+      "actual": null,
+      "status": "Not Run",
+      "evidence": []
+    },
+    {
+      "id": "FR05-DT-006",
+      "key": "QUOTE",
+      "ruleIds": [
+        "FR05-R05"
+      ],
+      "obligationIds": [
+        "FR05-QUOTE"
+      ],
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "technique": "DT",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": "O'Brien",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset backend về snapshot full; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Nhập chính xác \"O'Brien\" vào search; bấm Tìm; đợi request hoàn tất, trừ case pending."
+      ],
+      "expected": {
+        "description": "Full-name search \"O'Brien\" trả đúng sản phẩm ID105; không lỗi/truncate/đổi ký tự.",
+        "oracleKind": "explicit",
+        "ids": [
+          105
+        ],
+        "count": 1
+      },
+      "actual": null,
+      "status": "Not Run",
+      "evidence": []
+    },
+    {
+      "id": "FR05-DT-007",
+      "key": "AMP",
+      "ruleIds": [
+        "FR05-R05"
+      ],
+      "obligationIds": [
+        "FR05-AMP"
+      ],
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "technique": "DT",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": "A&B",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset backend về snapshot full; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Nhập chính xác 'A&B' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending."
+      ],
+      "expected": {
+        "description": "Full-name search 'A&B' trả đúng sản phẩm ID106; không lỗi/truncate/đổi ký tự.",
+        "oracleKind": "explicit",
+        "ids": [
+          106
+        ],
+        "count": 1
+      },
+      "actual": null,
+      "status": "Not Run",
+      "evidence": []
+    },
+    {
+      "id": "FR05-DT-008",
+      "key": "PLUS",
+      "ruleIds": [
+        "FR05-R05"
+      ],
+      "obligationIds": [
+        "FR05-PLUS"
+      ],
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "technique": "DT",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": "A+B",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset backend về snapshot full; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Nhập chính xác 'A+B' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending."
+      ],
+      "expected": {
+        "description": "Full-name search 'A+B' trả đúng sản phẩm ID107; không lỗi/truncate/đổi ký tự.",
+        "oracleKind": "explicit",
+        "ids": [
+          107
+        ],
+        "count": 1
+      },
+      "actual": null,
+      "status": "Not Run",
+      "evidence": []
+    },
+    {
+      "id": "FR05-DT-009",
+      "key": "HASH",
+      "ruleIds": [
+        "FR05-R05"
+      ],
+      "obligationIds": [
+        "FR05-HASH"
+      ],
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "technique": "DT",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": "A#B",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset backend về snapshot full; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Nhập chính xác 'A#B' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending."
+      ],
+      "expected": {
+        "description": "Full-name search 'A#B' trả đúng sản phẩm ID108; không lỗi/truncate/đổi ký tự.",
+        "oracleKind": "explicit",
+        "ids": [
+          108
+        ],
+        "count": 1
+      },
+      "actual": null,
+      "status": "Not Run",
+      "evidence": []
+    },
+    {
+      "id": "FR05-DT-010",
+      "key": "SAFE",
+      "ruleIds": [
+        "FR05-R06"
+      ],
+      "obligationIds": [
+        "FR05-SAFE"
+      ],
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "technique": "DT",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": "<b>Alpha</b>",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset backend về snapshot full; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Nhập chính xác '<b>Alpha</b>' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending."
+      ],
+      "expected": {
+        "description": "Nhãn keyword hiển thị nguyên văn <b>Alpha</b>, không biến thành bold Alpha hay HTML; không đánh giá wildcard/matching trong case này.",
+        "oracleKind": "explicit"
+      },
+      "actual": null,
+      "status": "Not Run",
+      "evidence": []
+    },
+    {
+      "id": "FR05-DT-011",
+      "key": "MONEY",
+      "ruleIds": [
+        "FR05-R04"
+      ],
+      "obligationIds": [
+        "FR05-MONEY"
+      ],
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "technique": "DT",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": null,
+        "mode": "home"
+      },
+      "steps": [
+        "Reset backend về snapshot full; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Không nhập search; quan sát danh sách, cuộn đến phần tử cuối để đối chiếu toàn bộ catalog."
+      ],
+      "expected": {
+        "description": "Giá 999/1000/1001/999999/1000000/1000001 đều có ₫; các giá ≥1000 có nhóm hàng nghìn đúng, dấu nhóm theo locale.",
+        "oracleKind": "explicit"
+      },
+      "actual": null,
+      "status": "Not Run",
+      "evidence": []
+    },
+    {
+      "id": "FR05-DT-012",
+      "key": "RATIO",
+      "ruleIds": [
+        "FR05-R02"
+      ],
+      "obligationIds": [
+        "FR05-RATIO"
+      ],
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "technique": "DT",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "images",
+      "input": {
+        "search": null,
+        "mode": "home"
+      },
+      "steps": [
+        "Reset backend về snapshot images; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Không nhập search; quan sát danh sách, cuộn đến phần tử cuối để đối chiếu toàn bộ catalog.",
+        "Cuộn từng card Square/Wide/Tall và chụp ảnh cùng asset dimensions."
+      ],
+      "expected": {
+        "description": "Ba ảnh có hình tròn giữ hình tròn và tỷ lệ nguồn 1:1/2:1/1:2; không bị kéo giãn thành ellipse.",
+        "oracleKind": "explicit"
+      },
+      "actual": null,
+      "status": "Not Run",
+      "evidence": []
+    },
+    {
+      "id": "FR05-DT-013",
+      "key": "ALT",
+      "ruleIds": [
+        "FR05-R02"
+      ],
+      "obligationIds": [
+        "FR05-ALT"
+      ],
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "technique": "DT",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": "Alpha",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset backend về snapshot full; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Nhập chính xác 'Alpha' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending.",
+        "Thu accessibility hierarchy hoặc đọc bằng VoiceOver; screenshot đơn lẻ không chứng minh alt."
+      ],
+      "expected": {
+        "description": "Accessibility reader/hierarchy có mô tả ảnh có nghĩa theo tên sản phẩm, không chỉ ảnh unlabeled.",
+        "oracleKind": "explicit"
+      },
+      "actual": null,
+      "status": "Not Run",
+      "evidence": []
+    },
+    {
+      "id": "FR05-DT-014",
+      "key": "LONG-NAME",
+      "ruleIds": [
+        "FR05-R03"
+      ],
+      "obligationIds": [
+        "FR05-LONG-NAME"
+      ],
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "technique": "DT",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": "Sản phẩm tên dài để kiểm tra hiển thị trên màn hình mobile",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset backend về snapshot full; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Nhập chính xác 'Sản phẩm tên dài để kiểm tra hiển thị trên màn hình mobile' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending."
+      ],
+      "expected": {
+        "description": "Có tên sản phẩm hiển thị trên card; không áp chính sách wrap/full text chưa được quy định.",
+        "oracleKind": "explicit",
+        "ids": [
+          112
+        ],
+        "count": 1
+      },
+      "actual": null,
+      "status": "Not Run",
+      "evidence": []
+    },
+    {
+      "id": "FR05-DT-015",
+      "key": "LOAD-INITIAL",
+      "ruleIds": [
+        "FR05-R07"
+      ],
+      "obligationIds": [
+        "FR05-LOAD-INITIAL"
+      ],
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "technique": "DT",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": null,
+        "mode": "home"
+      },
+      "steps": [
+        "Reset backend về snapshot full; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Không nhập search; quan sát danh sách, cuộn đến phần tử cuối để đối chiếu toàn bộ catalog.",
+        "Proxy giữ initial response; chụp pending; release rồi chụp success."
+      ],
+      "expected": {
+        "description": "Trong thời gian initial request còn pending có loading rõ; sau success có danh sách.",
+        "oracleKind": "explicit"
+      },
+      "actual": null,
+      "status": "Not Run",
+      "evidence": []
+    },
+    {
+      "id": "FR05-DT-016",
+      "key": "LOAD-SEARCH",
+      "ruleIds": [
+        "FR05-R07"
+      ],
+      "obligationIds": [
+        "FR05-LOAD-SEARCH"
+      ],
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "technique": "DT",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": "Alpha",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset backend về snapshot full; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Nhập chính xác 'Alpha' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending.",
+        "Proxy giữ search response; chụp pending; release rồi chụp success."
+      ],
+      "expected": {
+        "description": "Trong search pending có loading; sau success có đúng Alpha.",
+        "oracleKind": "explicit",
+        "ids": [
+          101
+        ],
+        "count": 1
+      },
+      "actual": null,
+      "status": "Not Run",
+      "evidence": []
+    },
+    {
+      "id": "FR05-DT-017",
+      "key": "LOAD-EMPTY",
+      "ruleIds": [
+        "FR05-R07",
+        "FR05-R08"
+      ],
+      "obligationIds": [
+        "FR05-LOAD-EMPTY"
+      ],
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "technique": "DT",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": "ZZZ_NO_MATCH",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset backend về snapshot full; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Nhập chính xác 'ZZZ_NO_MATCH' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending.",
+        "Giữ response; chụp pending; release response rỗng rồi chụp."
+      ],
+      "expected": {
+        "description": "Pending có loading; sau success rỗng loading kết thúc và có empty state.",
+        "oracleKind": "explicit",
+        "ids": [],
+        "count": 0
+      },
+      "actual": null,
+      "status": "Not Run",
+      "evidence": []
+    },
+    {
+      "id": "FR05-SUP-018",
+      "key": "ERROR",
+      "ruleIds": [
+        "FR05-R07"
+      ],
+      "obligationIds": [
+        "FR05-ERROR"
+      ],
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "technique": "Supplementary",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": "Alpha",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset backend về snapshot full; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Nhập chính xác 'Alpha' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending.",
+        "Proxy chủ động ngắt request trong fixture copy; khôi phục network sau case."
+      ],
+      "expected": {
+        "description": "Network error được phân biệt với search không có kết quả; không còn loading vô hạn.",
+        "oracleKind": "derived"
+      },
+      "actual": null,
+      "status": "Not Run",
+      "evidence": []
+    },
+    {
+      "id": "FR05-SUP-019",
+      "key": "RACE",
+      "ruleIds": [
+        "FR05-R05"
+      ],
+      "obligationIds": [
+        "FR05-RACE"
+      ],
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "technique": "Supplementary",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": "Alpha",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset backend về snapshot full; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Nhập chính xác 'Alpha' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending.",
+        "Proxy hold Alpha, gửi Beta, release Beta rồi Alpha; lưu thứ tự request/response."
+      ],
+      "expected": {
+        "description": "Search Alpha rồi Beta; response Beta về trước Alpha; danh sách cuối tương ứng Beta và nhãn Beta.",
+        "oracleKind": "derived"
+      },
+      "actual": null,
+      "status": "Not Run",
+      "evidence": []
+    },
+    {
+      "id": "FR05-SUP-020",
+      "key": "H1",
+      "ruleIds": [
+        "FR05-R09"
+      ],
+      "obligationIds": [
+        "FR05-H1"
+      ],
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "technique": "Supplementary",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": null,
+        "mode": "home"
+      },
+      "steps": [
+        "Reset backend về snapshot full; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Không nhập search; quan sát danh sách, cuộn đến phần tử cuối để đối chiếu toàn bộ catalog."
+      ],
+      "expected": {
+        "description": "Cần xác nhận cách ánh xạ exactly-one HTML h1 sang native heading trước verdict; vẫn ghi native heading probe.",
+        "oracleKind": "unresolved"
+      },
+      "actual": null,
+      "status": "Not Run",
+      "evidence": []
+    },
+    {
+      "id": "FR05-SUP-021",
+      "key": "TRIM",
+      "ruleIds": [
+        "FR05-R05"
+      ],
+      "obligationIds": [
+        "FR05-TRIM"
+      ],
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "technique": "Supplementary",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": " Alpha ",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset backend về snapshot full; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Nhập chính xác ' Alpha ' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending."
+      ],
+      "expected": {
+        "description": "Ghi observation; chưa verdict do policy trim chưa có trong requirement. Không tính vào BVA length coverage.",
+        "oracleKind": "unresolved"
+      },
+      "actual": null,
+      "status": "Not Run",
+      "evidence": []
+    },
+    {
+      "id": "FR05-SUP-022",
+      "key": "WILDCARD",
+      "ruleIds": [
+        "FR05-R05"
+      ],
+      "obligationIds": [
+        "FR05-WILDCARD"
+      ],
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "technique": "Supplementary",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": "%",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset backend về snapshot full; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Nhập chính xác '%' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending."
+      ],
+      "expected": {
+        "description": "Ghi observation; chưa verdict do policy literal wildcard chưa có trong requirement. Không tính vào BVA length coverage.",
+        "oracleKind": "unresolved"
+      },
+      "actual": null,
+      "status": "Not Run",
+      "evidence": []
+    },
+    {
+      "id": "FR05-SUP-023",
+      "key": "CASE",
+      "ruleIds": [
+        "FR05-R05"
+      ],
+      "obligationIds": [
+        "FR05-CASE"
+      ],
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "technique": "Supplementary",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": "ALPHA",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset backend về snapshot full; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Nhập chính xác 'ALPHA' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending."
+      ],
+      "expected": {
+        "description": "Ghi observation; chưa verdict do policy case sensitivity chưa có trong requirement. Không tính vào BVA length coverage.",
+        "oracleKind": "unresolved"
+      },
+      "actual": null,
+      "status": "Not Run",
+      "evidence": []
+    },
+    {
+      "id": "FR05-SUP-024",
+      "key": "ACCENT",
+      "ruleIds": [
+        "FR05-R05"
+      ],
+      "obligationIds": [
+        "FR05-ACCENT"
+      ],
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "technique": "Supplementary",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": "Ca phe",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset backend về snapshot full; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Nhập chính xác 'Ca phe' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending."
+      ],
+      "expected": {
+        "description": "Ghi observation; chưa verdict do policy diacritic sensitivity chưa có trong requirement. Không tính vào BVA length coverage.",
+        "oracleKind": "unresolved"
+      },
+      "actual": null,
+      "status": "Not Run",
+      "evidence": []
+    },
+    {
+      "id": "FR05-SUP-025",
+      "key": "EMPTY-QUERY",
+      "ruleIds": [
+        "FR05-R05"
+      ],
+      "obligationIds": [
+        "FR05-EMPTY-QUERY"
+      ],
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "technique": "Supplementary",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": "",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset backend về snapshot full; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Nhập chính xác '' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending."
+      ],
+      "expected": {
+        "description": "Ghi observation; chưa verdict do policy empty vs omitted chưa có trong requirement. Không tính vào BVA length coverage.",
+        "oracleKind": "unresolved"
+      },
+      "actual": null,
+      "status": "Not Run",
+      "evidence": []
+    },
+    {
+      "id": "FR05-SUP-026",
+      "key": "ONE-CHAR",
+      "ruleIds": [
+        "FR05-R05"
+      ],
+      "obligationIds": [
+        "FR05-ONE-CHAR"
+      ],
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "technique": "Supplementary",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": "A",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset backend về snapshot full; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Nhập chính xác 'A' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending."
+      ],
+      "expected": {
+        "description": "Ghi observation; chưa verdict do policy substring chưa có trong requirement. Không tính vào BVA length coverage.",
+        "oracleKind": "unresolved"
+      },
+      "actual": null,
+      "status": "Not Run",
+      "evidence": []
+    },
+    {
+      "id": "FR05-SUP-027",
+      "key": "SPACE",
+      "ruleIds": [
+        "FR05-R05"
+      ],
+      "obligationIds": [
+        "FR05-SPACE"
+      ],
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "technique": "Supplementary",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": "   ",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset backend về snapshot full; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Nhập chính xác '   ' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending."
+      ],
+      "expected": {
+        "description": "Ghi observation; chưa verdict do policy whitespace chưa có trong requirement. Không tính vào BVA length coverage.",
+        "oracleKind": "unresolved"
+      },
+      "actual": null,
+      "status": "Not Run",
+      "evidence": []
+    },
+    {
+      "id": "FR05-DT-028",
+      "key": "RESULT-ZERO",
+      "ruleIds": [
+        "FR05-R08"
+      ],
+      "obligationIds": [
+        "FR05-RESULT-ZERO"
+      ],
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "technique": "DT",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "empty",
+      "input": {
+        "search": "Alpha",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset backend về snapshot empty; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Nhập chính xác 'Alpha' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending."
+      ],
+      "expected": {
+        "description": "Search Alpha trên catalog rỗng: không có card và có empty state.",
+        "oracleKind": "explicit",
+        "ids": [],
+        "count": 0
+      },
+      "actual": null,
+      "status": "Not Run",
+      "evidence": []
+    },
+    {
+      "id": "FR05-DT-029",
+      "key": "RESULT-ONE",
+      "ruleIds": [
+        "FR05-R03",
+        "FR05-R05"
+      ],
+      "obligationIds": [
+        "FR05-RESULT-ONE"
+      ],
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "technique": "DT",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "one",
+      "input": {
+        "search": "Alpha",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset backend về snapshot one; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Nhập chính xác 'Alpha' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending."
+      ],
+      "expected": {
+        "description": "Một card Alpha giá 1000₫, không thiếu/trùng.",
+        "oracleKind": "explicit",
+        "ids": [
+          201
+        ],
+        "count": 1
+      },
+      "actual": null,
+      "status": "Not Run",
+      "evidence": []
+    },
+    {
+      "id": "FR05-DT-030",
+      "key": "RESULT-TWO",
+      "ruleIds": [
+        "FR05-R03",
+        "FR05-R05"
+      ],
+      "obligationIds": [
+        "FR05-RESULT-TWO"
+      ],
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "technique": "DT",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "two",
+      "input": {
+        "search": "Alpha",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset backend về snapshot two; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Nhập chính xác 'Alpha' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending."
+      ],
+      "expected": {
+        "description": "Hai card Alpha, ID201 giá 1000₫ và ID202 giá 1001₫, không gộp vì trùng tên.",
+        "oracleKind": "explicit",
+        "ids": [
+          201,
+          202
+        ],
+        "count": 2
+      },
+      "actual": null,
+      "status": "Not Run",
+      "evidence": []
+    },
+    {
+      "id": "FR05-DT-031",
+      "key": "COUPLED-M2",
+      "ruleIds": [
+        "FR05-R05"
+      ],
+      "obligationIds": [
+        "FR05-COUPLED-M2"
+      ],
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "technique": "DT",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "mixed",
+      "input": {
+        "search": "Alpha",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset backend về snapshot mixed; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Nhập chính xác 'Alpha' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending."
+      ],
+      "expected": {
+        "description": "M=2,n=1: chỉ Alpha, không đưa Beta vào kết quả.",
+        "oracleKind": "explicit",
+        "ids": [
+          201
+        ],
+        "count": 1
+      },
+      "actual": null,
+      "status": "Not Run",
+      "evidence": []
+    },
+    {
+      "id": "FR05-DT-032",
+      "key": "COUPLED-M3",
+      "ruleIds": [
+        "FR05-R05"
+      ],
+      "obligationIds": [
+        "FR05-COUPLED-M3"
+      ],
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "technique": "DT",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "three",
+      "input": {
+        "search": "Alpha",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset backend về snapshot three; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Nhập chính xác 'Alpha' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending."
+      ],
+      "expected": {
+        "description": "M=3,n=1: chỉ Alpha, không đưa Beta/Gamma vào kết quả.",
+        "oracleKind": "explicit",
+        "ids": [
+          201
+        ],
+        "count": 1
+      },
+      "actual": null,
+      "status": "Not Run",
+      "evidence": []
+    },
+    {
+      "id": "FR05-DT-033",
+      "key": "EMPTY-RECOVERY",
+      "ruleIds": [
+        "FR05-R05",
+        "FR05-R08"
+      ],
+      "obligationIds": [
+        "FR05-EMPTY-RECOVERY"
+      ],
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "technique": "DT",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": "ZZZ_NO_MATCH",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset backend về snapshot full; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Nhập chính xác 'ZZZ_NO_MATCH' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending.",
+        "Sau lần search đầu, thay q thành Alpha và bấm Tìm; đối chiếu ID101."
+      ],
+      "expected": {
+        "description": "Search vô nghiệm có empty state; sau đó search Alpha có đúng Alpha, không lưu kết quả cũ.",
+        "oracleKind": "explicit"
+      },
+      "actual": null,
+      "status": "Not Run",
+      "evidence": []
+    },
+    {
+      "id": "FR05-DT-034",
+      "key": "LIST",
+      "ruleIds": [
+        "FR05-R05"
+      ],
+      "obligationIds": [
+        "FR05-LIST-API"
+      ],
+      "interface": "API",
+      "platform": "Node/HTTP",
+      "technique": "DT",
+      "preconditions": [
+        "Backend copy đang chạy; không dùng DB working tree.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": null,
+        "mode": "search"
+      },
+      "steps": [
+        "Reset snapshot full trong DB copy.",
+        "GET /api/products không có search.",
+        "Lưu status/raw body; đối chiếu expected ID set độc lập."
+      ],
+      "expected": {
+        "description": "HTTP 200, JSON array, exact ID set [101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112].",
+        "oracleKind": "explicit",
+        "ids": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106,
+          107,
+          108,
+          109,
+          110,
+          111,
+          112
+        ],
+        "count": 12
+      },
+      "actual": null,
+      "status": "Not Run",
+      "evidence": []
+    },
+    {
+      "id": "FR05-DT-035",
+      "key": "EXACT",
+      "ruleIds": [
+        "FR05-R05"
+      ],
+      "obligationIds": [
+        "FR05-EXACT-API"
+      ],
+      "interface": "API",
+      "platform": "Node/HTTP",
+      "technique": "DT",
+      "preconditions": [
+        "Backend copy đang chạy; không dùng DB working tree.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": "Alpha",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset snapshot full trong DB copy.",
+        "GET /api/products với search được URL-encode từ 'Alpha'.",
+        "Lưu status/raw body; đối chiếu expected ID set độc lập."
+      ],
+      "expected": {
+        "description": "HTTP 200, JSON array, exact ID set [101].",
+        "oracleKind": "explicit",
+        "ids": [
+          101
+        ],
+        "count": 1
+      },
+      "actual": null,
+      "status": "Not Run",
+      "evidence": []
+    },
+    {
+      "id": "FR05-DT-036",
+      "key": "NO-MATCH",
+      "ruleIds": [
+        "FR05-R05"
+      ],
+      "obligationIds": [
+        "FR05-NO-MATCH-API"
+      ],
+      "interface": "API",
+      "platform": "Node/HTTP",
+      "technique": "DT",
+      "preconditions": [
+        "Backend copy đang chạy; không dùng DB working tree.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": "ZZZ_NO_MATCH",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset snapshot full trong DB copy.",
+        "GET /api/products với search được URL-encode từ 'ZZZ_NO_MATCH'.",
+        "Lưu status/raw body; đối chiếu expected ID set độc lập."
+      ],
+      "expected": {
+        "description": "HTTP 200, JSON array, exact ID set [].",
+        "oracleKind": "explicit",
+        "ids": [],
+        "count": 0
+      },
+      "actual": null,
+      "status": "Not Run",
+      "evidence": []
+    },
+    {
+      "id": "FR05-DT-037",
+      "key": "NAME-ONLY",
+      "ruleIds": [
+        "FR05-R05"
+      ],
+      "obligationIds": [
+        "FR05-NAME-ONLY-API"
+      ],
+      "interface": "API",
+      "platform": "Node/HTTP",
+      "technique": "DT",
+      "preconditions": [
+        "Backend copy đang chạy; không dùng DB working tree.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": "DescriptionToken",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset snapshot full trong DB copy.",
+        "GET /api/products với search được URL-encode từ 'DescriptionToken'.",
+        "Lưu status/raw body; đối chiếu expected ID set độc lập."
+      ],
+      "expected": {
+        "description": "HTTP 200, JSON array, exact ID set [].",
+        "oracleKind": "explicit",
+        "ids": [],
+        "count": 0
+      },
+      "actual": null,
+      "status": "Not Run",
+      "evidence": []
+    },
+    {
+      "id": "FR05-DT-038",
+      "key": "UNICODE",
+      "ruleIds": [
+        "FR05-R05"
+      ],
+      "obligationIds": [
+        "FR05-UNICODE-API"
+      ],
+      "interface": "API",
+      "platform": "Node/HTTP",
+      "technique": "DT",
+      "preconditions": [
+        "Backend copy đang chạy; không dùng DB working tree.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": "Cà phê",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset snapshot full trong DB copy.",
+        "GET /api/products với search được URL-encode từ 'Cà phê'.",
+        "Lưu status/raw body; đối chiếu expected ID set độc lập."
+      ],
+      "expected": {
+        "description": "HTTP 200, JSON array, exact ID set [104].",
+        "oracleKind": "explicit",
+        "ids": [
+          104
+        ],
+        "count": 1
+      },
+      "actual": null,
+      "status": "Not Run",
+      "evidence": []
+    },
+    {
+      "id": "FR05-DT-039",
+      "key": "QUOTE",
+      "ruleIds": [
+        "FR05-R05"
+      ],
+      "obligationIds": [
+        "FR05-QUOTE-API"
+      ],
+      "interface": "API",
+      "platform": "Node/HTTP",
+      "technique": "DT",
+      "preconditions": [
+        "Backend copy đang chạy; không dùng DB working tree.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": "O'Brien",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset snapshot full trong DB copy.",
+        "GET /api/products với search được URL-encode từ \"O'Brien\".",
+        "Lưu status/raw body; đối chiếu expected ID set độc lập."
+      ],
+      "expected": {
+        "description": "HTTP 200, JSON array, exact ID set [105].",
+        "oracleKind": "explicit",
+        "ids": [
+          105
+        ],
+        "count": 1
+      },
+      "actual": null,
+      "status": "Not Run",
+      "evidence": []
+    },
+    {
+      "id": "FR05-DT-040",
+      "key": "AMP",
+      "ruleIds": [
+        "FR05-R05"
+      ],
+      "obligationIds": [
+        "FR05-AMP-API"
+      ],
+      "interface": "API",
+      "platform": "Node/HTTP",
+      "technique": "DT",
+      "preconditions": [
+        "Backend copy đang chạy; không dùng DB working tree.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": "A&B",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset snapshot full trong DB copy.",
+        "GET /api/products với search được URL-encode từ 'A&B'.",
+        "Lưu status/raw body; đối chiếu expected ID set độc lập."
+      ],
+      "expected": {
+        "description": "HTTP 200, JSON array, exact ID set [106].",
+        "oracleKind": "explicit",
+        "ids": [
+          106
+        ],
+        "count": 1
+      },
+      "actual": null,
+      "status": "Not Run",
+      "evidence": []
+    },
+    {
+      "id": "FR05-DT-041",
+      "key": "PLUS",
+      "ruleIds": [
+        "FR05-R05"
+      ],
+      "obligationIds": [
+        "FR05-PLUS-API"
+      ],
+      "interface": "API",
+      "platform": "Node/HTTP",
+      "technique": "DT",
+      "preconditions": [
+        "Backend copy đang chạy; không dùng DB working tree.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": "A+B",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset snapshot full trong DB copy.",
+        "GET /api/products với search được URL-encode từ 'A+B'.",
+        "Lưu status/raw body; đối chiếu expected ID set độc lập."
+      ],
+      "expected": {
+        "description": "HTTP 200, JSON array, exact ID set [107].",
+        "oracleKind": "explicit",
+        "ids": [
+          107
+        ],
+        "count": 1
+      },
+      "actual": null,
+      "status": "Not Run",
+      "evidence": []
+    },
+    {
+      "id": "FR05-DT-042",
+      "key": "HASH",
+      "ruleIds": [
+        "FR05-R05"
+      ],
+      "obligationIds": [
+        "FR05-HASH-API"
+      ],
+      "interface": "API",
+      "platform": "Node/HTTP",
+      "technique": "DT",
+      "preconditions": [
+        "Backend copy đang chạy; không dùng DB working tree.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": "A#B",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset snapshot full trong DB copy.",
+        "GET /api/products với search được URL-encode từ 'A#B'.",
+        "Lưu status/raw body; đối chiếu expected ID set độc lập."
+      ],
+      "expected": {
+        "description": "HTTP 200, JSON array, exact ID set [108].",
+        "oracleKind": "explicit",
+        "ids": [
+          108
+        ],
+        "count": 1
+      },
+      "actual": null,
+      "status": "Not Run",
+      "evidence": []
+    },
+    {
+      "id": "FR05-DT-043",
+      "key": "COUNT-EMPTY",
+      "ruleIds": [
+        "FR05-R05"
+      ],
+      "obligationIds": [
+        "FR05-COUNT-EMPTY-API"
+      ],
+      "interface": "API",
+      "platform": "Node/HTTP",
+      "technique": "DT",
+      "preconditions": [
+        "Backend copy đang chạy; không dùng DB working tree.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "empty",
+      "input": {
+        "search": "Alpha",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset snapshot empty trong DB copy.",
+        "GET /api/products với search được URL-encode từ 'Alpha'.",
+        "Lưu status/raw body; đối chiếu expected ID set độc lập."
+      ],
+      "expected": {
+        "description": "HTTP 200, JSON array, exact ID set [].",
+        "oracleKind": "explicit",
+        "ids": [],
+        "count": 0
+      },
+      "actual": null,
+      "status": "Not Run",
+      "evidence": []
+    },
+    {
+      "id": "FR05-DT-044",
+      "key": "COUNT-ONE",
+      "ruleIds": [
+        "FR05-R05"
+      ],
+      "obligationIds": [
+        "FR05-COUNT-ONE-API"
+      ],
+      "interface": "API",
+      "platform": "Node/HTTP",
+      "technique": "DT",
+      "preconditions": [
+        "Backend copy đang chạy; không dùng DB working tree.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "one",
+      "input": {
+        "search": "Alpha",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset snapshot one trong DB copy.",
+        "GET /api/products với search được URL-encode từ 'Alpha'.",
+        "Lưu status/raw body; đối chiếu expected ID set độc lập."
+      ],
+      "expected": {
+        "description": "HTTP 200, JSON array, exact ID set [201].",
+        "oracleKind": "explicit",
+        "ids": [
+          201
+        ],
+        "count": 1
+      },
+      "actual": null,
+      "status": "Not Run",
+      "evidence": []
+    },
+    {
+      "id": "FR05-DT-045",
+      "key": "COUNT-TWO",
+      "ruleIds": [
+        "FR05-R05"
+      ],
+      "obligationIds": [
+        "FR05-COUNT-TWO-API"
+      ],
+      "interface": "API",
+      "platform": "Node/HTTP",
+      "technique": "DT",
+      "preconditions": [
+        "Backend copy đang chạy; không dùng DB working tree.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "two",
+      "input": {
+        "search": "Alpha",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset snapshot two trong DB copy.",
+        "GET /api/products với search được URL-encode từ 'Alpha'.",
+        "Lưu status/raw body; đối chiếu expected ID set độc lập."
+      ],
+      "expected": {
+        "description": "HTTP 200, JSON array, exact ID set [201, 202].",
+        "oracleKind": "explicit",
+        "ids": [
+          201,
+          202
+        ],
+        "count": 2
+      },
+      "actual": null,
+      "status": "Not Run",
+      "evidence": []
+    },
+    {
+      "id": "FR05-BVA-001",
+      "key": "RESULT-ZERO",
+      "ruleIds": [
+        "FR05-R08"
+      ],
+      "obligationIds": [
+        "FR05-BVA-N0"
+      ],
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "technique": "BVA",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "empty",
+      "input": {
+        "search": "Alpha",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset backend về snapshot empty; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Nhập chính xác 'Alpha' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending."
+      ],
+      "expected": {
+        "description": "Search Alpha trên catalog rỗng: không có card và có empty state.",
+        "oracleKind": "explicit",
+        "ids": [],
+        "count": 0
+      },
+      "actual": null,
+      "status": "Not Run",
+      "evidence": [],
+      "boundaryValue": 0
+    },
+    {
+      "id": "FR05-BVA-002",
+      "key": "RESULT-ONE",
+      "ruleIds": [
+        "FR05-R03",
+        "FR05-R05"
+      ],
+      "obligationIds": [
+        "FR05-BVA-N1"
+      ],
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "technique": "BVA",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "one",
+      "input": {
+        "search": "Alpha",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset backend về snapshot one; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Nhập chính xác 'Alpha' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending."
+      ],
+      "expected": {
+        "description": "Một card Alpha giá 1000₫, không thiếu/trùng.",
+        "oracleKind": "explicit",
+        "ids": [
+          201
+        ],
+        "count": 1
+      },
+      "actual": null,
+      "status": "Not Run",
+      "evidence": [],
+      "boundaryValue": 1
+    },
+    {
+      "id": "FR05-BVA-003",
+      "key": "RESULT-TWO",
+      "ruleIds": [
+        "FR05-R03",
+        "FR05-R05"
+      ],
+      "obligationIds": [
+        "FR05-BVA-N2"
+      ],
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "technique": "BVA",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "two",
+      "input": {
+        "search": "Alpha",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset backend về snapshot two; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Nhập chính xác 'Alpha' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending."
+      ],
+      "expected": {
+        "description": "Hai card Alpha, ID201 giá 1000₫ và ID202 giá 1001₫, không gộp vì trùng tên.",
+        "oracleKind": "explicit",
+        "ids": [
+          201,
+          202
+        ],
+        "count": 2
+      },
+      "actual": null,
+      "status": "Not Run",
+      "evidence": [],
+      "boundaryValue": 2
+    }
+  ],
+  "obligations": [
+    {
+      "id": "FR05-LIST",
+      "technique": "DT",
+      "ruleIds": [
+        "FR05-R01",
+        "FR05-R03"
+      ],
+      "interface": "NATIVE",
+      "description": "Home hiển thị tất cả 12 sản phẩm, không thiếu/trùng; layout là grid, không phải một cột danh sách.",
+      "derivation": "LIST",
+      "sourceCaseIds": [
+        "FR05-DT-001"
+      ],
+      "oracleKind": "explicit"
+    },
+    {
+      "id": "FR05-EXACT",
+      "technique": "DT",
+      "ruleIds": [
+        "FR05-R05"
+      ],
+      "interface": "NATIVE",
+      "description": "Có đúng card Alpha ID101; không có sản phẩm không match.",
+      "derivation": "EXACT",
+      "sourceCaseIds": [
+        "FR05-DT-002"
+      ],
+      "oracleKind": "explicit"
+    },
+    {
+      "id": "FR05-NO-MATCH",
+      "technique": "DT",
+      "ruleIds": [
+        "FR05-R08"
+      ],
+      "interface": "NATIVE",
+      "description": "Không có card; có thông báo empty state khi response thành công rỗng.",
+      "derivation": "NO-MATCH",
+      "sourceCaseIds": [
+        "FR05-DT-003"
+      ],
+      "oracleKind": "explicit"
+    },
+    {
+      "id": "FR05-NAME-ONLY",
+      "technique": "DT",
+      "ruleIds": [
+        "FR05-R05",
+        "FR05-R08"
+      ],
+      "interface": "NATIVE",
+      "description": "Token chỉ trong description không làm sản phẩm match; native có empty state.",
+      "derivation": "NAME-ONLY",
+      "sourceCaseIds": [
+        "FR05-DT-004"
+      ],
+      "oracleKind": "explicit"
+    },
+    {
+      "id": "FR05-UNICODE",
+      "technique": "DT",
+      "ruleIds": [
+        "FR05-R05"
+      ],
+      "interface": "NATIVE",
+      "description": "Full-name search 'Cà phê' trả đúng sản phẩm ID104; không lỗi/truncate/đổi ký tự.",
+      "derivation": "UNICODE",
+      "sourceCaseIds": [
+        "FR05-DT-005"
+      ],
+      "oracleKind": "explicit"
+    },
+    {
+      "id": "FR05-QUOTE",
+      "technique": "DT",
+      "ruleIds": [
+        "FR05-R05"
+      ],
+      "interface": "NATIVE",
+      "description": "Full-name search \"O'Brien\" trả đúng sản phẩm ID105; không lỗi/truncate/đổi ký tự.",
+      "derivation": "QUOTE",
+      "sourceCaseIds": [
+        "FR05-DT-006"
+      ],
+      "oracleKind": "explicit"
+    },
+    {
+      "id": "FR05-AMP",
+      "technique": "DT",
+      "ruleIds": [
+        "FR05-R05"
+      ],
+      "interface": "NATIVE",
+      "description": "Full-name search 'A&B' trả đúng sản phẩm ID106; không lỗi/truncate/đổi ký tự.",
+      "derivation": "AMP",
+      "sourceCaseIds": [
+        "FR05-DT-007"
+      ],
+      "oracleKind": "explicit"
+    },
+    {
+      "id": "FR05-PLUS",
+      "technique": "DT",
+      "ruleIds": [
+        "FR05-R05"
+      ],
+      "interface": "NATIVE",
+      "description": "Full-name search 'A+B' trả đúng sản phẩm ID107; không lỗi/truncate/đổi ký tự.",
+      "derivation": "PLUS",
+      "sourceCaseIds": [
+        "FR05-DT-008"
+      ],
+      "oracleKind": "explicit"
+    },
+    {
+      "id": "FR05-HASH",
+      "technique": "DT",
+      "ruleIds": [
+        "FR05-R05"
+      ],
+      "interface": "NATIVE",
+      "description": "Full-name search 'A#B' trả đúng sản phẩm ID108; không lỗi/truncate/đổi ký tự.",
+      "derivation": "HASH",
+      "sourceCaseIds": [
+        "FR05-DT-009"
+      ],
+      "oracleKind": "explicit"
+    },
+    {
+      "id": "FR05-SAFE",
+      "technique": "DT",
+      "ruleIds": [
+        "FR05-R06"
+      ],
+      "interface": "NATIVE",
+      "description": "Nhãn keyword hiển thị nguyên văn <b>Alpha</b>, không biến thành bold Alpha hay HTML; không đánh giá wildcard/matching trong case này.",
+      "derivation": "SAFE",
+      "sourceCaseIds": [
+        "FR05-DT-010"
+      ],
+      "oracleKind": "explicit"
+    },
+    {
+      "id": "FR05-MONEY",
+      "technique": "DT",
+      "ruleIds": [
+        "FR05-R04"
+      ],
+      "interface": "NATIVE",
+      "description": "Giá 999/1000/1001/999999/1000000/1000001 đều có ₫; các giá ≥1000 có nhóm hàng nghìn đúng, dấu nhóm theo locale.",
+      "derivation": "MONEY",
+      "sourceCaseIds": [
+        "FR05-DT-011"
+      ],
+      "oracleKind": "explicit"
+    },
+    {
+      "id": "FR05-RATIO",
+      "technique": "DT",
+      "ruleIds": [
+        "FR05-R02"
+      ],
+      "interface": "NATIVE",
+      "description": "Ba ảnh có hình tròn giữ hình tròn và tỷ lệ nguồn 1:1/2:1/1:2; không bị kéo giãn thành ellipse.",
+      "derivation": "RATIO",
+      "sourceCaseIds": [
+        "FR05-DT-012"
+      ],
+      "oracleKind": "explicit"
+    },
+    {
+      "id": "FR05-ALT",
+      "technique": "DT",
+      "ruleIds": [
+        "FR05-R02"
+      ],
+      "interface": "NATIVE",
+      "description": "Accessibility reader/hierarchy có mô tả ảnh có nghĩa theo tên sản phẩm, không chỉ ảnh unlabeled.",
+      "derivation": "ALT",
+      "sourceCaseIds": [
+        "FR05-DT-013"
+      ],
+      "oracleKind": "explicit"
+    },
+    {
+      "id": "FR05-LONG-NAME",
+      "technique": "DT",
+      "ruleIds": [
+        "FR05-R03"
+      ],
+      "interface": "NATIVE",
+      "description": "Có tên sản phẩm hiển thị trên card; không áp chính sách wrap/full text chưa được quy định.",
+      "derivation": "LONG-NAME",
+      "sourceCaseIds": [
+        "FR05-DT-014"
+      ],
+      "oracleKind": "explicit"
+    },
+    {
+      "id": "FR05-LOAD-INITIAL",
+      "technique": "DT",
+      "ruleIds": [
+        "FR05-R07"
+      ],
+      "interface": "NATIVE",
+      "description": "Trong thời gian initial request còn pending có loading rõ; sau success có danh sách.",
+      "derivation": "LOAD-INITIAL",
+      "sourceCaseIds": [
+        "FR05-DT-015"
+      ],
+      "oracleKind": "explicit"
+    },
+    {
+      "id": "FR05-LOAD-SEARCH",
+      "technique": "DT",
+      "ruleIds": [
+        "FR05-R07"
+      ],
+      "interface": "NATIVE",
+      "description": "Trong search pending có loading; sau success có đúng Alpha.",
+      "derivation": "LOAD-SEARCH",
+      "sourceCaseIds": [
+        "FR05-DT-016"
+      ],
+      "oracleKind": "explicit"
+    },
+    {
+      "id": "FR05-LOAD-EMPTY",
+      "technique": "DT",
+      "ruleIds": [
+        "FR05-R07",
+        "FR05-R08"
+      ],
+      "interface": "NATIVE",
+      "description": "Pending có loading; sau success rỗng loading kết thúc và có empty state.",
+      "derivation": "LOAD-EMPTY",
+      "sourceCaseIds": [
+        "FR05-DT-017"
+      ],
+      "oracleKind": "explicit"
+    },
+    {
+      "id": "FR05-ERROR",
+      "technique": "Supplementary",
+      "ruleIds": [
+        "FR05-R07"
+      ],
+      "interface": "NATIVE",
+      "description": "Network error được phân biệt với search không có kết quả; không còn loading vô hạn.",
+      "derivation": "ERROR",
+      "sourceCaseIds": [
+        "FR05-SUP-018"
+      ],
+      "oracleKind": "derived"
+    },
+    {
+      "id": "FR05-RACE",
+      "technique": "Supplementary",
+      "ruleIds": [
+        "FR05-R05"
+      ],
+      "interface": "NATIVE",
+      "description": "Search Alpha rồi Beta; response Beta về trước Alpha; danh sách cuối tương ứng Beta và nhãn Beta.",
+      "derivation": "RACE",
+      "sourceCaseIds": [
+        "FR05-SUP-019"
+      ],
+      "oracleKind": "derived"
+    },
+    {
+      "id": "FR05-H1",
+      "technique": "Supplementary",
+      "ruleIds": [
+        "FR05-R09"
+      ],
+      "interface": "NATIVE",
+      "description": "Cần xác nhận cách ánh xạ exactly-one HTML h1 sang native heading trước verdict; vẫn ghi native heading probe.",
+      "derivation": "H1",
+      "sourceCaseIds": [
+        "FR05-SUP-020"
+      ],
+      "oracleKind": "unresolved"
+    },
+    {
+      "id": "FR05-TRIM",
+      "technique": "Supplementary",
+      "ruleIds": [
+        "FR05-R05"
+      ],
+      "interface": "NATIVE",
+      "description": "Ghi observation; chưa verdict do policy trim chưa có trong requirement. Không tính vào BVA length coverage.",
+      "derivation": "TRIM",
+      "sourceCaseIds": [
+        "FR05-SUP-021"
+      ],
+      "oracleKind": "unresolved"
+    },
+    {
+      "id": "FR05-WILDCARD",
+      "technique": "Supplementary",
+      "ruleIds": [
+        "FR05-R05"
+      ],
+      "interface": "NATIVE",
+      "description": "Ghi observation; chưa verdict do policy literal wildcard chưa có trong requirement. Không tính vào BVA length coverage.",
+      "derivation": "WILDCARD",
+      "sourceCaseIds": [
+        "FR05-SUP-022"
+      ],
+      "oracleKind": "unresolved"
+    },
+    {
+      "id": "FR05-CASE",
+      "technique": "Supplementary",
+      "ruleIds": [
+        "FR05-R05"
+      ],
+      "interface": "NATIVE",
+      "description": "Ghi observation; chưa verdict do policy case sensitivity chưa có trong requirement. Không tính vào BVA length coverage.",
+      "derivation": "CASE",
+      "sourceCaseIds": [
+        "FR05-SUP-023"
+      ],
+      "oracleKind": "unresolved"
+    },
+    {
+      "id": "FR05-ACCENT",
+      "technique": "Supplementary",
+      "ruleIds": [
+        "FR05-R05"
+      ],
+      "interface": "NATIVE",
+      "description": "Ghi observation; chưa verdict do policy diacritic sensitivity chưa có trong requirement. Không tính vào BVA length coverage.",
+      "derivation": "ACCENT",
+      "sourceCaseIds": [
+        "FR05-SUP-024"
+      ],
+      "oracleKind": "unresolved"
+    },
+    {
+      "id": "FR05-EMPTY-QUERY",
+      "technique": "Supplementary",
+      "ruleIds": [
+        "FR05-R05"
+      ],
+      "interface": "NATIVE",
+      "description": "Ghi observation; chưa verdict do policy empty vs omitted chưa có trong requirement. Không tính vào BVA length coverage.",
+      "derivation": "EMPTY-QUERY",
+      "sourceCaseIds": [
+        "FR05-SUP-025"
+      ],
+      "oracleKind": "unresolved"
+    },
+    {
+      "id": "FR05-ONE-CHAR",
+      "technique": "Supplementary",
+      "ruleIds": [
+        "FR05-R05"
+      ],
+      "interface": "NATIVE",
+      "description": "Ghi observation; chưa verdict do policy substring chưa có trong requirement. Không tính vào BVA length coverage.",
+      "derivation": "ONE-CHAR",
+      "sourceCaseIds": [
+        "FR05-SUP-026"
+      ],
+      "oracleKind": "unresolved"
+    },
+    {
+      "id": "FR05-SPACE",
+      "technique": "Supplementary",
+      "ruleIds": [
+        "FR05-R05"
+      ],
+      "interface": "NATIVE",
+      "description": "Ghi observation; chưa verdict do policy whitespace chưa có trong requirement. Không tính vào BVA length coverage.",
+      "derivation": "SPACE",
+      "sourceCaseIds": [
+        "FR05-SUP-027"
+      ],
+      "oracleKind": "unresolved"
+    },
+    {
+      "id": "FR05-RESULT-ZERO",
+      "technique": "DT",
+      "ruleIds": [
+        "FR05-R08"
+      ],
+      "interface": "NATIVE",
+      "description": "Search Alpha trên catalog rỗng: không có card và có empty state.",
+      "derivation": "RESULT-ZERO",
+      "sourceCaseIds": [
+        "FR05-DT-028"
+      ],
+      "oracleKind": "explicit"
+    },
+    {
+      "id": "FR05-RESULT-ONE",
+      "technique": "DT",
+      "ruleIds": [
+        "FR05-R03",
+        "FR05-R05"
+      ],
+      "interface": "NATIVE",
+      "description": "Một card Alpha giá 1000₫, không thiếu/trùng.",
+      "derivation": "RESULT-ONE",
+      "sourceCaseIds": [
+        "FR05-DT-029"
+      ],
+      "oracleKind": "explicit"
+    },
+    {
+      "id": "FR05-RESULT-TWO",
+      "technique": "DT",
+      "ruleIds": [
+        "FR05-R03",
+        "FR05-R05"
+      ],
+      "interface": "NATIVE",
+      "description": "Hai card Alpha, ID201 giá 1000₫ và ID202 giá 1001₫, không gộp vì trùng tên.",
+      "derivation": "RESULT-TWO",
+      "sourceCaseIds": [
+        "FR05-DT-030"
+      ],
+      "oracleKind": "explicit"
+    },
+    {
+      "id": "FR05-COUPLED-M2",
+      "technique": "DT",
+      "ruleIds": [
+        "FR05-R05"
+      ],
+      "interface": "NATIVE",
+      "description": "M=2,n=1: chỉ Alpha, không đưa Beta vào kết quả.",
+      "derivation": "COUPLED-M2",
+      "sourceCaseIds": [
+        "FR05-DT-031"
+      ],
+      "oracleKind": "explicit"
+    },
+    {
+      "id": "FR05-COUPLED-M3",
+      "technique": "DT",
+      "ruleIds": [
+        "FR05-R05"
+      ],
+      "interface": "NATIVE",
+      "description": "M=3,n=1: chỉ Alpha, không đưa Beta/Gamma vào kết quả.",
+      "derivation": "COUPLED-M3",
+      "sourceCaseIds": [
+        "FR05-DT-032"
+      ],
+      "oracleKind": "explicit"
+    },
+    {
+      "id": "FR05-EMPTY-RECOVERY",
+      "technique": "DT",
+      "ruleIds": [
+        "FR05-R05",
+        "FR05-R08"
+      ],
+      "interface": "NATIVE",
+      "description": "Search vô nghiệm có empty state; sau đó search Alpha có đúng Alpha, không lưu kết quả cũ.",
+      "derivation": "EMPTY-RECOVERY",
+      "sourceCaseIds": [
+        "FR05-DT-033"
+      ],
+      "oracleKind": "explicit"
+    },
+    {
+      "id": "FR05-LIST-API",
+      "technique": "DT",
+      "ruleIds": [
+        "FR05-R05"
+      ],
+      "interface": "API",
+      "description": "HTTP 200, JSON array, exact ID set [101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112].",
+      "derivation": "LIST",
+      "sourceCaseIds": [
+        "FR05-DT-034"
+      ],
+      "oracleKind": "explicit"
+    },
+    {
+      "id": "FR05-EXACT-API",
+      "technique": "DT",
+      "ruleIds": [
+        "FR05-R05"
+      ],
+      "interface": "API",
+      "description": "HTTP 200, JSON array, exact ID set [101].",
+      "derivation": "EXACT",
+      "sourceCaseIds": [
+        "FR05-DT-035"
+      ],
+      "oracleKind": "explicit"
+    },
+    {
+      "id": "FR05-NO-MATCH-API",
+      "technique": "DT",
+      "ruleIds": [
+        "FR05-R05"
+      ],
+      "interface": "API",
+      "description": "HTTP 200, JSON array, exact ID set [].",
+      "derivation": "NO-MATCH",
+      "sourceCaseIds": [
+        "FR05-DT-036"
+      ],
+      "oracleKind": "explicit"
+    },
+    {
+      "id": "FR05-NAME-ONLY-API",
+      "technique": "DT",
+      "ruleIds": [
+        "FR05-R05"
+      ],
+      "interface": "API",
+      "description": "HTTP 200, JSON array, exact ID set [].",
+      "derivation": "NAME-ONLY",
+      "sourceCaseIds": [
+        "FR05-DT-037"
+      ],
+      "oracleKind": "explicit"
+    },
+    {
+      "id": "FR05-UNICODE-API",
+      "technique": "DT",
+      "ruleIds": [
+        "FR05-R05"
+      ],
+      "interface": "API",
+      "description": "HTTP 200, JSON array, exact ID set [104].",
+      "derivation": "UNICODE",
+      "sourceCaseIds": [
+        "FR05-DT-038"
+      ],
+      "oracleKind": "explicit"
+    },
+    {
+      "id": "FR05-QUOTE-API",
+      "technique": "DT",
+      "ruleIds": [
+        "FR05-R05"
+      ],
+      "interface": "API",
+      "description": "HTTP 200, JSON array, exact ID set [105].",
+      "derivation": "QUOTE",
+      "sourceCaseIds": [
+        "FR05-DT-039"
+      ],
+      "oracleKind": "explicit"
+    },
+    {
+      "id": "FR05-AMP-API",
+      "technique": "DT",
+      "ruleIds": [
+        "FR05-R05"
+      ],
+      "interface": "API",
+      "description": "HTTP 200, JSON array, exact ID set [106].",
+      "derivation": "AMP",
+      "sourceCaseIds": [
+        "FR05-DT-040"
+      ],
+      "oracleKind": "explicit"
+    },
+    {
+      "id": "FR05-PLUS-API",
+      "technique": "DT",
+      "ruleIds": [
+        "FR05-R05"
+      ],
+      "interface": "API",
+      "description": "HTTP 200, JSON array, exact ID set [107].",
+      "derivation": "PLUS",
+      "sourceCaseIds": [
+        "FR05-DT-041"
+      ],
+      "oracleKind": "explicit"
+    },
+    {
+      "id": "FR05-HASH-API",
+      "technique": "DT",
+      "ruleIds": [
+        "FR05-R05"
+      ],
+      "interface": "API",
+      "description": "HTTP 200, JSON array, exact ID set [108].",
+      "derivation": "HASH",
+      "sourceCaseIds": [
+        "FR05-DT-042"
+      ],
+      "oracleKind": "explicit"
+    },
+    {
+      "id": "FR05-COUNT-EMPTY-API",
+      "technique": "DT",
+      "ruleIds": [
+        "FR05-R05"
+      ],
+      "interface": "API",
+      "description": "HTTP 200, JSON array, exact ID set [].",
+      "derivation": "COUNT-EMPTY",
+      "sourceCaseIds": [
+        "FR05-DT-043"
+      ],
+      "oracleKind": "explicit"
+    },
+    {
+      "id": "FR05-COUNT-ONE-API",
+      "technique": "DT",
+      "ruleIds": [
+        "FR05-R05"
+      ],
+      "interface": "API",
+      "description": "HTTP 200, JSON array, exact ID set [201].",
+      "derivation": "COUNT-ONE",
+      "sourceCaseIds": [
+        "FR05-DT-044"
+      ],
+      "oracleKind": "explicit"
+    },
+    {
+      "id": "FR05-COUNT-TWO-API",
+      "technique": "DT",
+      "ruleIds": [
+        "FR05-R05"
+      ],
+      "interface": "API",
+      "description": "HTTP 200, JSON array, exact ID set [201, 202].",
+      "derivation": "COUNT-TWO",
+      "sourceCaseIds": [
+        "FR05-DT-045"
+      ],
+      "oracleKind": "explicit"
+    },
+    {
+      "id": "FR05-BVA-N0",
+      "technique": "BVA",
+      "ruleIds": [
+        "FR05-R08"
+      ],
+      "interface": "NATIVE",
+      "description": "Result count n=0",
+      "derivation": "endpoints 0,1 → union {0,1,2}",
+      "sourceCaseIds": [
+        "FR05-BVA-001"
+      ],
+      "oracleKind": "explicit",
+      "value": 0
+    },
+    {
+      "id": "FR05-BVA-N1",
+      "technique": "BVA",
+      "ruleIds": [
+        "FR05-R03",
+        "FR05-R05"
+      ],
+      "interface": "NATIVE",
+      "description": "Result count n=1",
+      "derivation": "endpoints 0,1 → union {0,1,2}",
+      "sourceCaseIds": [
+        "FR05-BVA-002"
+      ],
+      "oracleKind": "explicit",
+      "value": 1
+    },
+    {
+      "id": "FR05-BVA-N2",
+      "technique": "BVA",
+      "ruleIds": [
+        "FR05-R03",
+        "FR05-R05"
+      ],
+      "interface": "NATIVE",
+      "description": "Result count n=2",
+      "derivation": "endpoints 0,1 → union {0,1,2}",
+      "sourceCaseIds": [
+        "FR05-BVA-003"
+      ],
+      "oracleKind": "explicit",
+      "value": 2
+    }
+  ],
+  "cases": [
+    {
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": null,
+        "mode": "home"
+      },
+      "steps": [
+        "Reset backend về snapshot full; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Không nhập search; quan sát danh sách, cuộn đến phần tử cuối để đối chiếu toàn bộ catalog."
+      ],
+      "expected": {
+        "description": "Home hiển thị tất cả 12 sản phẩm, không thiếu/trùng; layout là grid, không phải một cột danh sách.",
+        "oracleKind": "explicit",
+        "ids": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106,
+          107,
+          108,
+          109,
+          110,
+          111,
+          112
+        ],
+        "count": 12
+      },
+      "id": "FR05-TC-001",
+      "key": "LIST",
+      "sourceCaseIds": [
+        "FR05-DT-001"
+      ],
+      "techniques": [
+        "DT"
+      ],
+      "obligationIds": [
+        "FR05-LIST"
+      ],
+      "ruleIds": [
+        "FR05-R01",
+        "FR05-R03"
+      ]
+    },
+    {
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": "Alpha",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset backend về snapshot full; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Nhập chính xác 'Alpha' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending."
+      ],
+      "expected": {
+        "description": "Có đúng card Alpha ID101; không có sản phẩm không match.",
+        "oracleKind": "explicit",
+        "ids": [
+          101
+        ],
+        "count": 1
+      },
+      "id": "FR05-TC-002",
+      "key": "EXACT",
+      "sourceCaseIds": [
+        "FR05-DT-002"
+      ],
+      "techniques": [
+        "DT"
+      ],
+      "obligationIds": [
+        "FR05-EXACT"
+      ],
+      "ruleIds": [
+        "FR05-R05"
+      ]
+    },
+    {
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": "ZZZ_NO_MATCH",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset backend về snapshot full; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Nhập chính xác 'ZZZ_NO_MATCH' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending."
+      ],
+      "expected": {
+        "description": "Không có card; có thông báo empty state khi response thành công rỗng.",
+        "oracleKind": "explicit",
+        "ids": [],
+        "count": 0
+      },
+      "id": "FR05-TC-003",
+      "key": "NO-MATCH",
+      "sourceCaseIds": [
+        "FR05-DT-003"
+      ],
+      "techniques": [
+        "DT"
+      ],
+      "obligationIds": [
+        "FR05-NO-MATCH"
+      ],
+      "ruleIds": [
+        "FR05-R08"
+      ]
+    },
+    {
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": "DescriptionToken",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset backend về snapshot full; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Nhập chính xác 'DescriptionToken' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending."
+      ],
+      "expected": {
+        "description": "Token chỉ trong description không làm sản phẩm match; native có empty state.",
+        "oracleKind": "explicit",
+        "ids": [],
+        "count": 0
+      },
+      "id": "FR05-TC-004",
+      "key": "NAME-ONLY",
+      "sourceCaseIds": [
+        "FR05-DT-004"
+      ],
+      "techniques": [
+        "DT"
+      ],
+      "obligationIds": [
+        "FR05-NAME-ONLY"
+      ],
+      "ruleIds": [
+        "FR05-R05",
+        "FR05-R08"
+      ]
+    },
+    {
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": "Cà phê",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset backend về snapshot full; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Nhập chính xác 'Cà phê' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending."
+      ],
+      "expected": {
+        "description": "Full-name search 'Cà phê' trả đúng sản phẩm ID104; không lỗi/truncate/đổi ký tự.",
+        "oracleKind": "explicit",
+        "ids": [
+          104
+        ],
+        "count": 1
+      },
+      "id": "FR05-TC-005",
+      "key": "UNICODE",
+      "sourceCaseIds": [
+        "FR05-DT-005"
+      ],
+      "techniques": [
+        "DT"
+      ],
+      "obligationIds": [
+        "FR05-UNICODE"
+      ],
+      "ruleIds": [
+        "FR05-R05"
+      ]
+    },
+    {
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": "O'Brien",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset backend về snapshot full; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Nhập chính xác \"O'Brien\" vào search; bấm Tìm; đợi request hoàn tất, trừ case pending."
+      ],
+      "expected": {
+        "description": "Full-name search \"O'Brien\" trả đúng sản phẩm ID105; không lỗi/truncate/đổi ký tự.",
+        "oracleKind": "explicit",
+        "ids": [
+          105
+        ],
+        "count": 1
+      },
+      "id": "FR05-TC-006",
+      "key": "QUOTE",
+      "sourceCaseIds": [
+        "FR05-DT-006"
+      ],
+      "techniques": [
+        "DT"
+      ],
+      "obligationIds": [
+        "FR05-QUOTE"
+      ],
+      "ruleIds": [
+        "FR05-R05"
+      ]
+    },
+    {
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": "A&B",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset backend về snapshot full; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Nhập chính xác 'A&B' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending."
+      ],
+      "expected": {
+        "description": "Full-name search 'A&B' trả đúng sản phẩm ID106; không lỗi/truncate/đổi ký tự.",
+        "oracleKind": "explicit",
+        "ids": [
+          106
+        ],
+        "count": 1
+      },
+      "id": "FR05-TC-007",
+      "key": "AMP",
+      "sourceCaseIds": [
+        "FR05-DT-007"
+      ],
+      "techniques": [
+        "DT"
+      ],
+      "obligationIds": [
+        "FR05-AMP"
+      ],
+      "ruleIds": [
+        "FR05-R05"
+      ]
+    },
+    {
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": "A+B",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset backend về snapshot full; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Nhập chính xác 'A+B' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending."
+      ],
+      "expected": {
+        "description": "Full-name search 'A+B' trả đúng sản phẩm ID107; không lỗi/truncate/đổi ký tự.",
+        "oracleKind": "explicit",
+        "ids": [
+          107
+        ],
+        "count": 1
+      },
+      "id": "FR05-TC-008",
+      "key": "PLUS",
+      "sourceCaseIds": [
+        "FR05-DT-008"
+      ],
+      "techniques": [
+        "DT"
+      ],
+      "obligationIds": [
+        "FR05-PLUS"
+      ],
+      "ruleIds": [
+        "FR05-R05"
+      ]
+    },
+    {
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": "A#B",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset backend về snapshot full; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Nhập chính xác 'A#B' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending."
+      ],
+      "expected": {
+        "description": "Full-name search 'A#B' trả đúng sản phẩm ID108; không lỗi/truncate/đổi ký tự.",
+        "oracleKind": "explicit",
+        "ids": [
+          108
+        ],
+        "count": 1
+      },
+      "id": "FR05-TC-009",
+      "key": "HASH",
+      "sourceCaseIds": [
+        "FR05-DT-009"
+      ],
+      "techniques": [
+        "DT"
+      ],
+      "obligationIds": [
+        "FR05-HASH"
+      ],
+      "ruleIds": [
+        "FR05-R05"
+      ]
+    },
+    {
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": "<b>Alpha</b>",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset backend về snapshot full; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Nhập chính xác '<b>Alpha</b>' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending."
+      ],
+      "expected": {
+        "description": "Nhãn keyword hiển thị nguyên văn <b>Alpha</b>, không biến thành bold Alpha hay HTML; không đánh giá wildcard/matching trong case này.",
+        "oracleKind": "explicit"
+      },
+      "id": "FR05-TC-010",
+      "key": "SAFE",
+      "sourceCaseIds": [
+        "FR05-DT-010"
+      ],
+      "techniques": [
+        "DT"
+      ],
+      "obligationIds": [
+        "FR05-SAFE"
+      ],
+      "ruleIds": [
+        "FR05-R06"
+      ]
+    },
+    {
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": null,
+        "mode": "home"
+      },
+      "steps": [
+        "Reset backend về snapshot full; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Không nhập search; quan sát danh sách, cuộn đến phần tử cuối để đối chiếu toàn bộ catalog."
+      ],
+      "expected": {
+        "description": "Giá 999/1000/1001/999999/1000000/1000001 đều có ₫; các giá ≥1000 có nhóm hàng nghìn đúng, dấu nhóm theo locale.",
+        "oracleKind": "explicit"
+      },
+      "id": "FR05-TC-011",
+      "key": "MONEY",
+      "sourceCaseIds": [
+        "FR05-DT-011"
+      ],
+      "techniques": [
+        "DT"
+      ],
+      "obligationIds": [
+        "FR05-MONEY"
+      ],
+      "ruleIds": [
+        "FR05-R04"
+      ]
+    },
+    {
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "images",
+      "input": {
+        "search": null,
+        "mode": "home"
+      },
+      "steps": [
+        "Reset backend về snapshot images; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Không nhập search; quan sát danh sách, cuộn đến phần tử cuối để đối chiếu toàn bộ catalog.",
+        "Cuộn từng card Square/Wide/Tall và chụp ảnh cùng asset dimensions."
+      ],
+      "expected": {
+        "description": "Ba ảnh có hình tròn giữ hình tròn và tỷ lệ nguồn 1:1/2:1/1:2; không bị kéo giãn thành ellipse.",
+        "oracleKind": "explicit"
+      },
+      "id": "FR05-TC-012",
+      "key": "RATIO",
+      "sourceCaseIds": [
+        "FR05-DT-012"
+      ],
+      "techniques": [
+        "DT"
+      ],
+      "obligationIds": [
+        "FR05-RATIO"
+      ],
+      "ruleIds": [
+        "FR05-R02"
+      ]
+    },
+    {
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": "Alpha",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset backend về snapshot full; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Nhập chính xác 'Alpha' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending.",
+        "Thu accessibility hierarchy hoặc đọc bằng VoiceOver; screenshot đơn lẻ không chứng minh alt."
+      ],
+      "expected": {
+        "description": "Accessibility reader/hierarchy có mô tả ảnh có nghĩa theo tên sản phẩm, không chỉ ảnh unlabeled.",
+        "oracleKind": "explicit"
+      },
+      "id": "FR05-TC-013",
+      "key": "ALT",
+      "sourceCaseIds": [
+        "FR05-DT-013"
+      ],
+      "techniques": [
+        "DT"
+      ],
+      "obligationIds": [
+        "FR05-ALT"
+      ],
+      "ruleIds": [
+        "FR05-R02"
+      ]
+    },
+    {
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": "Sản phẩm tên dài để kiểm tra hiển thị trên màn hình mobile",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset backend về snapshot full; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Nhập chính xác 'Sản phẩm tên dài để kiểm tra hiển thị trên màn hình mobile' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending."
+      ],
+      "expected": {
+        "description": "Có tên sản phẩm hiển thị trên card; không áp chính sách wrap/full text chưa được quy định.",
+        "oracleKind": "explicit",
+        "ids": [
+          112
+        ],
+        "count": 1
+      },
+      "id": "FR05-TC-014",
+      "key": "LONG-NAME",
+      "sourceCaseIds": [
+        "FR05-DT-014"
+      ],
+      "techniques": [
+        "DT"
+      ],
+      "obligationIds": [
+        "FR05-LONG-NAME"
+      ],
+      "ruleIds": [
+        "FR05-R03"
+      ]
+    },
+    {
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": null,
+        "mode": "home"
+      },
+      "steps": [
+        "Reset backend về snapshot full; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Không nhập search; quan sát danh sách, cuộn đến phần tử cuối để đối chiếu toàn bộ catalog.",
+        "Proxy giữ initial response; chụp pending; release rồi chụp success."
+      ],
+      "expected": {
+        "description": "Trong thời gian initial request còn pending có loading rõ; sau success có danh sách.",
+        "oracleKind": "explicit"
+      },
+      "id": "FR05-TC-015",
+      "key": "LOAD-INITIAL",
+      "sourceCaseIds": [
+        "FR05-DT-015"
+      ],
+      "techniques": [
+        "DT"
+      ],
+      "obligationIds": [
+        "FR05-LOAD-INITIAL"
+      ],
+      "ruleIds": [
+        "FR05-R07"
+      ]
+    },
+    {
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": "Alpha",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset backend về snapshot full; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Nhập chính xác 'Alpha' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending.",
+        "Proxy giữ search response; chụp pending; release rồi chụp success."
+      ],
+      "expected": {
+        "description": "Trong search pending có loading; sau success có đúng Alpha.",
+        "oracleKind": "explicit",
+        "ids": [
+          101
+        ],
+        "count": 1
+      },
+      "id": "FR05-TC-016",
+      "key": "LOAD-SEARCH",
+      "sourceCaseIds": [
+        "FR05-DT-016"
+      ],
+      "techniques": [
+        "DT"
+      ],
+      "obligationIds": [
+        "FR05-LOAD-SEARCH"
+      ],
+      "ruleIds": [
+        "FR05-R07"
+      ]
+    },
+    {
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": "ZZZ_NO_MATCH",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset backend về snapshot full; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Nhập chính xác 'ZZZ_NO_MATCH' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending.",
+        "Giữ response; chụp pending; release response rỗng rồi chụp."
+      ],
+      "expected": {
+        "description": "Pending có loading; sau success rỗng loading kết thúc và có empty state.",
+        "oracleKind": "explicit",
+        "ids": [],
+        "count": 0
+      },
+      "id": "FR05-TC-017",
+      "key": "LOAD-EMPTY",
+      "sourceCaseIds": [
+        "FR05-DT-017"
+      ],
+      "techniques": [
+        "DT"
+      ],
+      "obligationIds": [
+        "FR05-LOAD-EMPTY"
+      ],
+      "ruleIds": [
+        "FR05-R07",
+        "FR05-R08"
+      ]
+    },
+    {
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": "Alpha",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset backend về snapshot full; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Nhập chính xác 'Alpha' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending.",
+        "Proxy chủ động ngắt request trong fixture copy; khôi phục network sau case."
+      ],
+      "expected": {
+        "description": "Network error được phân biệt với search không có kết quả; không còn loading vô hạn.",
+        "oracleKind": "derived"
+      },
+      "id": "FR05-TC-018",
+      "key": "ERROR",
+      "sourceCaseIds": [
+        "FR05-SUP-018"
+      ],
+      "techniques": [
+        "Supplementary"
+      ],
+      "obligationIds": [
+        "FR05-ERROR"
+      ],
+      "ruleIds": [
+        "FR05-R07"
+      ]
+    },
+    {
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": "Alpha",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset backend về snapshot full; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Nhập chính xác 'Alpha' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending.",
+        "Proxy hold Alpha, gửi Beta, release Beta rồi Alpha; lưu thứ tự request/response."
+      ],
+      "expected": {
+        "description": "Search Alpha rồi Beta; response Beta về trước Alpha; danh sách cuối tương ứng Beta và nhãn Beta.",
+        "oracleKind": "derived"
+      },
+      "id": "FR05-TC-019",
+      "key": "RACE",
+      "sourceCaseIds": [
+        "FR05-SUP-019"
+      ],
+      "techniques": [
+        "Supplementary"
+      ],
+      "obligationIds": [
+        "FR05-RACE"
+      ],
+      "ruleIds": [
+        "FR05-R05"
+      ]
+    },
+    {
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": null,
+        "mode": "home"
+      },
+      "steps": [
+        "Reset backend về snapshot full; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Không nhập search; quan sát danh sách, cuộn đến phần tử cuối để đối chiếu toàn bộ catalog."
+      ],
+      "expected": {
+        "description": "Cần xác nhận cách ánh xạ exactly-one HTML h1 sang native heading trước verdict; vẫn ghi native heading probe.",
+        "oracleKind": "unresolved"
+      },
+      "id": "FR05-TC-020",
+      "key": "H1",
+      "sourceCaseIds": [
+        "FR05-SUP-020"
+      ],
+      "techniques": [
+        "Supplementary"
+      ],
+      "obligationIds": [
+        "FR05-H1"
+      ],
+      "ruleIds": [
+        "FR05-R09"
+      ]
+    },
+    {
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": " Alpha ",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset backend về snapshot full; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Nhập chính xác ' Alpha ' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending."
+      ],
+      "expected": {
+        "description": "Ghi observation; chưa verdict do policy trim chưa có trong requirement. Không tính vào BVA length coverage.",
+        "oracleKind": "unresolved"
+      },
+      "id": "FR05-TC-021",
+      "key": "TRIM",
+      "sourceCaseIds": [
+        "FR05-SUP-021"
+      ],
+      "techniques": [
+        "Supplementary"
+      ],
+      "obligationIds": [
+        "FR05-TRIM"
+      ],
+      "ruleIds": [
+        "FR05-R05"
+      ]
+    },
+    {
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": "%",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset backend về snapshot full; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Nhập chính xác '%' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending."
+      ],
+      "expected": {
+        "description": "Ghi observation; chưa verdict do policy literal wildcard chưa có trong requirement. Không tính vào BVA length coverage.",
+        "oracleKind": "unresolved"
+      },
+      "id": "FR05-TC-022",
+      "key": "WILDCARD",
+      "sourceCaseIds": [
+        "FR05-SUP-022"
+      ],
+      "techniques": [
+        "Supplementary"
+      ],
+      "obligationIds": [
+        "FR05-WILDCARD"
+      ],
+      "ruleIds": [
+        "FR05-R05"
+      ]
+    },
+    {
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": "ALPHA",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset backend về snapshot full; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Nhập chính xác 'ALPHA' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending."
+      ],
+      "expected": {
+        "description": "Ghi observation; chưa verdict do policy case sensitivity chưa có trong requirement. Không tính vào BVA length coverage.",
+        "oracleKind": "unresolved"
+      },
+      "id": "FR05-TC-023",
+      "key": "CASE",
+      "sourceCaseIds": [
+        "FR05-SUP-023"
+      ],
+      "techniques": [
+        "Supplementary"
+      ],
+      "obligationIds": [
+        "FR05-CASE"
+      ],
+      "ruleIds": [
+        "FR05-R05"
+      ]
+    },
+    {
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": "Ca phe",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset backend về snapshot full; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Nhập chính xác 'Ca phe' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending."
+      ],
+      "expected": {
+        "description": "Ghi observation; chưa verdict do policy diacritic sensitivity chưa có trong requirement. Không tính vào BVA length coverage.",
+        "oracleKind": "unresolved"
+      },
+      "id": "FR05-TC-024",
+      "key": "ACCENT",
+      "sourceCaseIds": [
+        "FR05-SUP-024"
+      ],
+      "techniques": [
+        "Supplementary"
+      ],
+      "obligationIds": [
+        "FR05-ACCENT"
+      ],
+      "ruleIds": [
+        "FR05-R05"
+      ]
+    },
+    {
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": "",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset backend về snapshot full; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Nhập chính xác '' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending."
+      ],
+      "expected": {
+        "description": "Ghi observation; chưa verdict do policy empty vs omitted chưa có trong requirement. Không tính vào BVA length coverage.",
+        "oracleKind": "unresolved"
+      },
+      "id": "FR05-TC-025",
+      "key": "EMPTY-QUERY",
+      "sourceCaseIds": [
+        "FR05-SUP-025"
+      ],
+      "techniques": [
+        "Supplementary"
+      ],
+      "obligationIds": [
+        "FR05-EMPTY-QUERY"
+      ],
+      "ruleIds": [
+        "FR05-R05"
+      ]
+    },
+    {
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": "A",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset backend về snapshot full; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Nhập chính xác 'A' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending."
+      ],
+      "expected": {
+        "description": "Ghi observation; chưa verdict do policy substring chưa có trong requirement. Không tính vào BVA length coverage.",
+        "oracleKind": "unresolved"
+      },
+      "id": "FR05-TC-026",
+      "key": "ONE-CHAR",
+      "sourceCaseIds": [
+        "FR05-SUP-026"
+      ],
+      "techniques": [
+        "Supplementary"
+      ],
+      "obligationIds": [
+        "FR05-ONE-CHAR"
+      ],
+      "ruleIds": [
+        "FR05-R05"
+      ]
+    },
+    {
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": "   ",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset backend về snapshot full; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Nhập chính xác '   ' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending."
+      ],
+      "expected": {
+        "description": "Ghi observation; chưa verdict do policy whitespace chưa có trong requirement. Không tính vào BVA length coverage.",
+        "oracleKind": "unresolved"
+      },
+      "id": "FR05-TC-027",
+      "key": "SPACE",
+      "sourceCaseIds": [
+        "FR05-SUP-027"
+      ],
+      "techniques": [
+        "Supplementary"
+      ],
+      "obligationIds": [
+        "FR05-SPACE"
+      ],
+      "ruleIds": [
+        "FR05-R05"
+      ]
+    },
+    {
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "empty",
+      "input": {
+        "search": "Alpha",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset backend về snapshot empty; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Nhập chính xác 'Alpha' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending."
+      ],
+      "expected": {
+        "description": "Search Alpha trên catalog rỗng: không có card và có empty state.",
+        "oracleKind": "explicit",
+        "ids": [],
+        "count": 0
+      },
+      "id": "FR05-TC-028",
+      "key": "RESULT-ZERO",
+      "sourceCaseIds": [
+        "FR05-BVA-001",
+        "FR05-DT-028"
+      ],
+      "techniques": [
+        "BVA",
+        "DT"
+      ],
+      "obligationIds": [
+        "FR05-BVA-N0",
+        "FR05-RESULT-ZERO"
+      ],
+      "ruleIds": [
+        "FR05-R08"
+      ]
+    },
+    {
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "one",
+      "input": {
+        "search": "Alpha",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset backend về snapshot one; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Nhập chính xác 'Alpha' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending."
+      ],
+      "expected": {
+        "description": "Một card Alpha giá 1000₫, không thiếu/trùng.",
+        "oracleKind": "explicit",
+        "ids": [
+          201
+        ],
+        "count": 1
+      },
+      "id": "FR05-TC-029",
+      "key": "RESULT-ONE",
+      "sourceCaseIds": [
+        "FR05-BVA-002",
+        "FR05-DT-029"
+      ],
+      "techniques": [
+        "BVA",
+        "DT"
+      ],
+      "obligationIds": [
+        "FR05-BVA-N1",
+        "FR05-RESULT-ONE"
+      ],
+      "ruleIds": [
+        "FR05-R03",
+        "FR05-R05"
+      ]
+    },
+    {
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "two",
+      "input": {
+        "search": "Alpha",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset backend về snapshot two; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Nhập chính xác 'Alpha' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending."
+      ],
+      "expected": {
+        "description": "Hai card Alpha, ID201 giá 1000₫ và ID202 giá 1001₫, không gộp vì trùng tên.",
+        "oracleKind": "explicit",
+        "ids": [
+          201,
+          202
+        ],
+        "count": 2
+      },
+      "id": "FR05-TC-030",
+      "key": "RESULT-TWO",
+      "sourceCaseIds": [
+        "FR05-BVA-003",
+        "FR05-DT-030"
+      ],
+      "techniques": [
+        "BVA",
+        "DT"
+      ],
+      "obligationIds": [
+        "FR05-BVA-N2",
+        "FR05-RESULT-TWO"
+      ],
+      "ruleIds": [
+        "FR05-R03",
+        "FR05-R05"
+      ]
+    },
+    {
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "mixed",
+      "input": {
+        "search": "Alpha",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset backend về snapshot mixed; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Nhập chính xác 'Alpha' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending."
+      ],
+      "expected": {
+        "description": "M=2,n=1: chỉ Alpha, không đưa Beta vào kết quả.",
+        "oracleKind": "explicit",
+        "ids": [
+          201
+        ],
+        "count": 1
+      },
+      "id": "FR05-TC-031",
+      "key": "COUPLED-M2",
+      "sourceCaseIds": [
+        "FR05-DT-031"
+      ],
+      "techniques": [
+        "DT"
+      ],
+      "obligationIds": [
+        "FR05-COUPLED-M2"
+      ],
+      "ruleIds": [
+        "FR05-R05"
+      ]
+    },
+    {
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "three",
+      "input": {
+        "search": "Alpha",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset backend về snapshot three; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Nhập chính xác 'Alpha' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending."
+      ],
+      "expected": {
+        "description": "M=3,n=1: chỉ Alpha, không đưa Beta/Gamma vào kết quả.",
+        "oracleKind": "explicit",
+        "ids": [
+          201
+        ],
+        "count": 1
+      },
+      "id": "FR05-TC-032",
+      "key": "COUPLED-M3",
+      "sourceCaseIds": [
+        "FR05-DT-032"
+      ],
+      "techniques": [
+        "DT"
+      ],
+      "obligationIds": [
+        "FR05-COUPLED-M3"
+      ],
+      "ruleIds": [
+        "FR05-R05"
+      ]
+    },
+    {
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": "ZZZ_NO_MATCH",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset backend về snapshot full; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Nhập chính xác 'ZZZ_NO_MATCH' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending.",
+        "Sau lần search đầu, thay q thành Alpha và bấm Tìm; đối chiếu ID101."
+      ],
+      "expected": {
+        "description": "Search vô nghiệm có empty state; sau đó search Alpha có đúng Alpha, không lưu kết quả cũ.",
+        "oracleKind": "explicit"
+      },
+      "id": "FR05-TC-033",
+      "key": "EMPTY-RECOVERY",
+      "sourceCaseIds": [
+        "FR05-DT-033"
+      ],
+      "techniques": [
+        "DT"
+      ],
+      "obligationIds": [
+        "FR05-EMPTY-RECOVERY"
+      ],
+      "ruleIds": [
+        "FR05-R05",
+        "FR05-R08"
+      ]
+    },
+    {
+      "interface": "API",
+      "platform": "Node/HTTP",
+      "preconditions": [
+        "Backend copy đang chạy; không dùng DB working tree.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": null,
+        "mode": "search"
+      },
+      "steps": [
+        "Reset snapshot full trong DB copy.",
+        "GET /api/products không có search.",
+        "Lưu status/raw body; đối chiếu expected ID set độc lập."
+      ],
+      "expected": {
+        "description": "HTTP 200, JSON array, exact ID set [101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112].",
+        "oracleKind": "explicit",
+        "ids": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106,
+          107,
+          108,
+          109,
+          110,
+          111,
+          112
+        ],
+        "count": 12
+      },
+      "id": "FR05-TC-034",
+      "key": "LIST",
+      "sourceCaseIds": [
+        "FR05-DT-034"
+      ],
+      "techniques": [
+        "DT"
+      ],
+      "obligationIds": [
+        "FR05-LIST-API"
+      ],
+      "ruleIds": [
+        "FR05-R05"
+      ]
+    },
+    {
+      "interface": "API",
+      "platform": "Node/HTTP",
+      "preconditions": [
+        "Backend copy đang chạy; không dùng DB working tree.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": "Alpha",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset snapshot full trong DB copy.",
+        "GET /api/products với search được URL-encode từ 'Alpha'.",
+        "Lưu status/raw body; đối chiếu expected ID set độc lập."
+      ],
+      "expected": {
+        "description": "HTTP 200, JSON array, exact ID set [101].",
+        "oracleKind": "explicit",
+        "ids": [
+          101
+        ],
+        "count": 1
+      },
+      "id": "FR05-TC-035",
+      "key": "EXACT",
+      "sourceCaseIds": [
+        "FR05-DT-035"
+      ],
+      "techniques": [
+        "DT"
+      ],
+      "obligationIds": [
+        "FR05-EXACT-API"
+      ],
+      "ruleIds": [
+        "FR05-R05"
+      ]
+    },
+    {
+      "interface": "API",
+      "platform": "Node/HTTP",
+      "preconditions": [
+        "Backend copy đang chạy; không dùng DB working tree.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": "ZZZ_NO_MATCH",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset snapshot full trong DB copy.",
+        "GET /api/products với search được URL-encode từ 'ZZZ_NO_MATCH'.",
+        "Lưu status/raw body; đối chiếu expected ID set độc lập."
+      ],
+      "expected": {
+        "description": "HTTP 200, JSON array, exact ID set [].",
+        "oracleKind": "explicit",
+        "ids": [],
+        "count": 0
+      },
+      "id": "FR05-TC-036",
+      "key": "NO-MATCH",
+      "sourceCaseIds": [
+        "FR05-DT-036"
+      ],
+      "techniques": [
+        "DT"
+      ],
+      "obligationIds": [
+        "FR05-NO-MATCH-API"
+      ],
+      "ruleIds": [
+        "FR05-R05"
+      ]
+    },
+    {
+      "interface": "API",
+      "platform": "Node/HTTP",
+      "preconditions": [
+        "Backend copy đang chạy; không dùng DB working tree.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": "DescriptionToken",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset snapshot full trong DB copy.",
+        "GET /api/products với search được URL-encode từ 'DescriptionToken'.",
+        "Lưu status/raw body; đối chiếu expected ID set độc lập."
+      ],
+      "expected": {
+        "description": "HTTP 200, JSON array, exact ID set [].",
+        "oracleKind": "explicit",
+        "ids": [],
+        "count": 0
+      },
+      "id": "FR05-TC-037",
+      "key": "NAME-ONLY",
+      "sourceCaseIds": [
+        "FR05-DT-037"
+      ],
+      "techniques": [
+        "DT"
+      ],
+      "obligationIds": [
+        "FR05-NAME-ONLY-API"
+      ],
+      "ruleIds": [
+        "FR05-R05"
+      ]
+    },
+    {
+      "interface": "API",
+      "platform": "Node/HTTP",
+      "preconditions": [
+        "Backend copy đang chạy; không dùng DB working tree.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": "Cà phê",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset snapshot full trong DB copy.",
+        "GET /api/products với search được URL-encode từ 'Cà phê'.",
+        "Lưu status/raw body; đối chiếu expected ID set độc lập."
+      ],
+      "expected": {
+        "description": "HTTP 200, JSON array, exact ID set [104].",
+        "oracleKind": "explicit",
+        "ids": [
+          104
+        ],
+        "count": 1
+      },
+      "id": "FR05-TC-038",
+      "key": "UNICODE",
+      "sourceCaseIds": [
+        "FR05-DT-038"
+      ],
+      "techniques": [
+        "DT"
+      ],
+      "obligationIds": [
+        "FR05-UNICODE-API"
+      ],
+      "ruleIds": [
+        "FR05-R05"
+      ]
+    },
+    {
+      "interface": "API",
+      "platform": "Node/HTTP",
+      "preconditions": [
+        "Backend copy đang chạy; không dùng DB working tree.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": "O'Brien",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset snapshot full trong DB copy.",
+        "GET /api/products với search được URL-encode từ \"O'Brien\".",
+        "Lưu status/raw body; đối chiếu expected ID set độc lập."
+      ],
+      "expected": {
+        "description": "HTTP 200, JSON array, exact ID set [105].",
+        "oracleKind": "explicit",
+        "ids": [
+          105
+        ],
+        "count": 1
+      },
+      "id": "FR05-TC-039",
+      "key": "QUOTE",
+      "sourceCaseIds": [
+        "FR05-DT-039"
+      ],
+      "techniques": [
+        "DT"
+      ],
+      "obligationIds": [
+        "FR05-QUOTE-API"
+      ],
+      "ruleIds": [
+        "FR05-R05"
+      ]
+    },
+    {
+      "interface": "API",
+      "platform": "Node/HTTP",
+      "preconditions": [
+        "Backend copy đang chạy; không dùng DB working tree.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": "A&B",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset snapshot full trong DB copy.",
+        "GET /api/products với search được URL-encode từ 'A&B'.",
+        "Lưu status/raw body; đối chiếu expected ID set độc lập."
+      ],
+      "expected": {
+        "description": "HTTP 200, JSON array, exact ID set [106].",
+        "oracleKind": "explicit",
+        "ids": [
+          106
+        ],
+        "count": 1
+      },
+      "id": "FR05-TC-040",
+      "key": "AMP",
+      "sourceCaseIds": [
+        "FR05-DT-040"
+      ],
+      "techniques": [
+        "DT"
+      ],
+      "obligationIds": [
+        "FR05-AMP-API"
+      ],
+      "ruleIds": [
+        "FR05-R05"
+      ]
+    },
+    {
+      "interface": "API",
+      "platform": "Node/HTTP",
+      "preconditions": [
+        "Backend copy đang chạy; không dùng DB working tree.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": "A+B",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset snapshot full trong DB copy.",
+        "GET /api/products với search được URL-encode từ 'A+B'.",
+        "Lưu status/raw body; đối chiếu expected ID set độc lập."
+      ],
+      "expected": {
+        "description": "HTTP 200, JSON array, exact ID set [107].",
+        "oracleKind": "explicit",
+        "ids": [
+          107
+        ],
+        "count": 1
+      },
+      "id": "FR05-TC-041",
+      "key": "PLUS",
+      "sourceCaseIds": [
+        "FR05-DT-041"
+      ],
+      "techniques": [
+        "DT"
+      ],
+      "obligationIds": [
+        "FR05-PLUS-API"
+      ],
+      "ruleIds": [
+        "FR05-R05"
+      ]
+    },
+    {
+      "interface": "API",
+      "platform": "Node/HTTP",
+      "preconditions": [
+        "Backend copy đang chạy; không dùng DB working tree.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "full",
+      "input": {
+        "search": "A#B",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset snapshot full trong DB copy.",
+        "GET /api/products với search được URL-encode từ 'A#B'.",
+        "Lưu status/raw body; đối chiếu expected ID set độc lập."
+      ],
+      "expected": {
+        "description": "HTTP 200, JSON array, exact ID set [108].",
+        "oracleKind": "explicit",
+        "ids": [
+          108
+        ],
+        "count": 1
+      },
+      "id": "FR05-TC-042",
+      "key": "HASH",
+      "sourceCaseIds": [
+        "FR05-DT-042"
+      ],
+      "techniques": [
+        "DT"
+      ],
+      "obligationIds": [
+        "FR05-HASH-API"
+      ],
+      "ruleIds": [
+        "FR05-R05"
+      ]
+    },
+    {
+      "interface": "API",
+      "platform": "Node/HTTP",
+      "preconditions": [
+        "Backend copy đang chạy; không dùng DB working tree.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "empty",
+      "input": {
+        "search": "Alpha",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset snapshot empty trong DB copy.",
+        "GET /api/products với search được URL-encode từ 'Alpha'.",
+        "Lưu status/raw body; đối chiếu expected ID set độc lập."
+      ],
+      "expected": {
+        "description": "HTTP 200, JSON array, exact ID set [].",
+        "oracleKind": "explicit",
+        "ids": [],
+        "count": 0
+      },
+      "id": "FR05-TC-043",
+      "key": "COUNT-EMPTY",
+      "sourceCaseIds": [
+        "FR05-DT-043"
+      ],
+      "techniques": [
+        "DT"
+      ],
+      "obligationIds": [
+        "FR05-COUNT-EMPTY-API"
+      ],
+      "ruleIds": [
+        "FR05-R05"
+      ]
+    },
+    {
+      "interface": "API",
+      "platform": "Node/HTTP",
+      "preconditions": [
+        "Backend copy đang chạy; không dùng DB working tree.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "one",
+      "input": {
+        "search": "Alpha",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset snapshot one trong DB copy.",
+        "GET /api/products với search được URL-encode từ 'Alpha'.",
+        "Lưu status/raw body; đối chiếu expected ID set độc lập."
+      ],
+      "expected": {
+        "description": "HTTP 200, JSON array, exact ID set [201].",
+        "oracleKind": "explicit",
+        "ids": [
+          201
+        ],
+        "count": 1
+      },
+      "id": "FR05-TC-044",
+      "key": "COUNT-ONE",
+      "sourceCaseIds": [
+        "FR05-DT-044"
+      ],
+      "techniques": [
+        "DT"
+      ],
+      "obligationIds": [
+        "FR05-COUNT-ONE-API"
+      ],
+      "ruleIds": [
+        "FR05-R05"
+      ]
+    },
+    {
+      "interface": "API",
+      "platform": "Node/HTTP",
+      "preconditions": [
+        "Backend copy đang chạy; không dùng DB working tree.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "two",
+      "input": {
+        "search": "Alpha",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset snapshot two trong DB copy.",
+        "GET /api/products với search được URL-encode từ 'Alpha'.",
+        "Lưu status/raw body; đối chiếu expected ID set độc lập."
+      ],
+      "expected": {
+        "description": "HTTP 200, JSON array, exact ID set [201, 202].",
+        "oracleKind": "explicit",
+        "ids": [
+          201,
+          202
+        ],
+        "count": 2
+      },
+      "id": "FR05-TC-045",
+      "key": "COUNT-TWO",
+      "sourceCaseIds": [
+        "FR05-DT-045"
+      ],
+      "techniques": [
+        "DT"
+      ],
+      "obligationIds": [
+        "FR05-COUNT-TWO-API"
+      ],
+      "ruleIds": [
+        "FR05-R05"
+      ]
+    }
+  ],
+  "exclusions": [],
+  "fixtureSha256": "a607f67d7eb25461999eeb2eb583b18c72b7961975fd084532e785d39c1fc19f"
+}
