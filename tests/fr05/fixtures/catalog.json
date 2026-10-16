@@ -1,0 +1,218 @@
+{
+  "assets": {
+    "square": {
+      "width": 120,
+      "height": 120,
+      "sha256": "0cf7067f0d28228f6e966d1ad9f8394243304898ad30da595dc54fbee3bacfa6"
+    },
+    "wide": {
+      "width": 240,
+      "height": 120,
+      "sha256": "ceae6918d835e0257a5f9fe99c221dbf2909626dc56b9744b3aba52dccfcfe6a"
+    },
+    "tall": {
+      "width": 120,
+      "height": 240,
+      "sha256": "6d59df6c610c045fb7522440b69e8ead00080fd97bfdac68c3f01c62c867be62"
+    }
+  },
+  "snapshots": {
+    "full": [
+      {
+        "id": 101,
+        "name": "Alpha",
+        "price": 999,
+        "description": "Fixture FR05",
+        "imageUrl": "http://127.0.0.1:3001/square.png",
+        "category_id": 1
+      },
+      {
+        "id": 102,
+        "name": "Alpine",
+        "price": 1000,
+        "description": "Fixture FR05",
+        "imageUrl": "http://127.0.0.1:3001/wide.png",
+        "category_id": 1
+      },
+      {
+        "id": 103,
+        "name": "Beta",
+        "price": 1001,
+        "description": "Fixture FR05",
+        "imageUrl": "http://127.0.0.1:3001/tall.png",
+        "category_id": 1
+      },
+      {
+        "id": 104,
+        "name": "Cà phê",
+        "price": 999999,
+        "description": "Fixture FR05",
+        "imageUrl": "http://127.0.0.1:3001/square.png",
+        "category_id": 1
+      },
+      {
+        "id": 105,
+        "name": "O'Brien",
+        "price": 1000000,
+        "description": "Fixture FR05",
+        "imageUrl": "http://127.0.0.1:3001/wide.png",
+        "category_id": 1
+      },
+      {
+        "id": 106,
+        "name": "A&B",
+        "price": 1000001,
+        "description": "Fixture FR05",
+        "imageUrl": "http://127.0.0.1:3001/tall.png",
+        "category_id": 1
+      },
+      {
+        "id": 107,
+        "name": "A+B",
+        "price": 999,
+        "description": "Fixture FR05",
+        "imageUrl": "http://127.0.0.1:3001/square.png",
+        "category_id": 1
+      },
+      {
+        "id": 108,
+        "name": "A#B",
+        "price": 1000,
+        "description": "Fixture FR05",
+        "imageUrl": "http://127.0.0.1:3001/wide.png",
+        "category_id": 1
+      },
+      {
+        "id": 109,
+        "name": "Promo%Off",
+        "price": 1001,
+        "description": "Fixture FR05",
+        "imageUrl": "http://127.0.0.1:3001/tall.png",
+        "category_id": 1
+      },
+      {
+        "id": 110,
+        "name": "Promo_Off",
+        "price": 999999,
+        "description": "Fixture FR05",
+        "imageUrl": "http://127.0.0.1:3001/square.png",
+        "category_id": 1
+      },
+      {
+        "id": 111,
+        "name": "DescriptionOnly",
+        "price": 1000000,
+        "description": "DescriptionToken",
+        "imageUrl": "http://127.0.0.1:3001/wide.png",
+        "category_id": 1
+      },
+      {
+        "id": 112,
+        "name": "Sản phẩm tên dài để kiểm tra hiển thị trên màn hình mobile",
+        "price": 1000001,
+        "description": "Fixture FR05",
+        "imageUrl": "http://127.0.0.1:3001/tall.png",
+        "category_id": 1
+      }
+    ],
+    "empty": [],
+    "one": [
+      {
+        "id": 201,
+        "name": "Alpha",
+        "price": 1000,
+        "description": "Fixture FR05",
+        "imageUrl": "http://127.0.0.1:3001/square.png",
+        "category_id": 1
+      }
+    ],
+    "two": [
+      {
+        "id": 201,
+        "name": "Alpha",
+        "price": 1000,
+        "description": "Fixture FR05",
+        "imageUrl": "http://127.0.0.1:3001/square.png",
+        "category_id": 1
+      },
+      {
+        "id": 202,
+        "name": "Alpha",
+        "price": 1001,
+        "description": "Fixture FR05",
+        "imageUrl": "http://127.0.0.1:3001/square.png",
+        "category_id": 1
+      }
+    ],
+    "mixed": [
+      {
+        "id": 201,
+        "name": "Alpha",
+        "price": 1000,
+        "description": "Fixture FR05",
+        "imageUrl": "http://127.0.0.1:3001/square.png",
+        "category_id": 1
+      },
+      {
+        "id": 203,
+        "name": "Beta",
+        "price": 1000,
+        "description": "Fixture FR05",
+        "imageUrl": "http://127.0.0.1:3001/square.png",
+        "category_id": 1
+      }
+    ],
+    "three": [
+      {
+        "id": 201,
+        "name": "Alpha",
+        "price": 1000,
+        "description": "Fixture FR05",
+        "imageUrl": "http://127.0.0.1:3001/square.png",
+        "category_id": 1
+      },
+      {
+        "id": 203,
+        "name": "Beta",
+        "price": 1000,
+        "description": "Fixture FR05",
+        "imageUrl": "http://127.0.0.1:3001/square.png",
+        "category_id": 1
+      },
+      {
+        "id": 204,
+        "name": "Gamma",
+        "price": 1000,
+        "description": "Fixture FR05",
+        "imageUrl": "http://127.0.0.1:3001/square.png",
+        "category_id": 1
+      }
+    ],
+    "images": [
+      {
+        "id": 301,
+        "name": "Square",
+        "price": 1000,
+        "description": "Fixture FR05",
+        "imageUrl": "http://127.0.0.1:3001/square.png",
+        "category_id": 1
+      },
+      {
+        "id": 302,
+        "name": "Wide",
+        "price": 1000,
+        "description": "Fixture FR05",
+        "imageUrl": "http://127.0.0.1:3001/wide.png",
+        "category_id": 1
+      },
+      {
+        "id": 303,
+        "name": "Tall",
+        "price": 1000,
+        "description": "Fixture FR05",
+        "imageUrl": "http://127.0.0.1:3001/tall.png",
+        "category_id": 1
+      }
+    ]
+  }
+}
