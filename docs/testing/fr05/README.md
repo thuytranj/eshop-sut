@@ -61,3 +61,5 @@ Lịch sử commit thực: [commit-log.txt](commit-log.txt). Các task completed
 Final review, toàn bộ rulings và Deferred minors: [final-review.md](final-review.md). Không có Critical/Important finding; Task5 vẫn partial.
 
 Follow-up native probes và trạng thái Task5 mới nhất: [run02](followup-run02.md). Thống kê P/F/Blocked giữ nguyên; bảy policy cases có actual probe nhưng chưa có verdict.
+
+Đối chiếu từng bước với các skill trong repository: [skill application](skill-application.md).
