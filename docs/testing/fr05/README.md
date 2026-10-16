@@ -57,3 +57,5 @@ Native execution tiếp tục theo runbook sau khi chốt oracle; tạo run ID m
 Main report và AI Audit/Critique cần thêm PDF khi đóng gói full assignment; phải render/verify trước nộp. Cần actual group allocation cho selection uniqueness, StudentID/self-assessed grade, deadline từ Moodle và quyền publish/submission. ZIP theo `<StudentID>_HW02_AI_DomainTesting_<SelfAssessedGrade>.zip`. Không fabricate grade/demo/deadline hoặc tự submit.
 
 Lịch sử commit thực: [commit-log.txt](commit-log.txt). Các task completed được commit riêng; execution còn blockers được ghi trung thực, không tạo lịch sử hoàn tất giả.
+
+Final review, toàn bộ rulings và Deferred minors: [final-review.md](final-review.md). Không có Critical/Important finding; Task5 vẫn partial.
