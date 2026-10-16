@@ -1,0 +1,11 @@
+{
+  "runId": "fr05-run02",
+  "scope": "follow-up probes; does not replace run01 verdicts",
+  "recordedAt": "2026-10-16T15:38:16.778129+07:00",
+  "gitHead": "23865c418ac6e645e107b1dee155d77174d563f4",
+  "suiteSha256": "e7f7d3135c6c89fe12982c6a110075f5db7fa2726fac4d0070d50f8405dc8ac6",
+  "environment": "reuse disposable backend/mobile from run01; run02 backend path symlinks disposable backend; proxy restarted with run02 evidence directory",
+  "reset": "reset at fixture change; shared immutable snapshot for readonly probes",
+  "native": "iPhone18 Pro/iOS27.0/ExpoGo54.0.7; confirm through CUA",
+  "preflight": "one full snapshot control initially reached old proxy; appended line transferred verbatim to resume-preflight.jsonl; run01 restored byte-for-byte from committed baseline before new native requests"
+}

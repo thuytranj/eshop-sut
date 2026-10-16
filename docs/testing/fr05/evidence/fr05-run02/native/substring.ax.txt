@@ -1,0 +1,70 @@
+Window: "iPhone 18 Pro", App: Device Hub.
+0 standard window iPhone 18 Pro – iOS 27.0, ID: com.apple.dt.DeviceKit.DeviceManagementWindow-AppWindow-1, Secondary Actions: Raise
+	1 split group
+		2 split group com.apple.dt.DeviceKit.DeviceManagementWindow-AppWindow-1, SidebarNavigationSplitView
+			3 splitter (disabled, settable, float) -1
+			4 container
+				5 container
+					6 element Description: EShop Mobile, Secondary Actions: Cancel
+					7 element Description: Đăng nhập, Secondary Actions: Cancel
+					8 element Description: Giỏ (0), Secondary Actions: Cancel
+					9 text Description: Danh sách sản phẩm, Secondary Actions: Cancel
+					10 text field (settable) Value: A, Placeholder: Tìm kiếm..., Secondary Actions: Cancel
+					11 element Description: Tìm, Secondary Actions: Cancel
+					12 text Description: Kết quả tìm kiếm cho: A, Secondary Actions: Cancel
+					13 text Description: Alpha, Secondary Actions: Cancel
+					14 text Description: 999 ₫, Secondary Actions: Cancel
+					15 element Description: Xem chi tiết, Secondary Actions: Cancel
+					16 element Description: Thêm vào giỏ, Secondary Actions: Cancel
+					17 text Description: Alpine, Secondary Actions: Cancel
+					18 text Description: 1.000 ₫, Secondary Actions: Cancel
+					19 element Description: Xem chi tiết, Secondary Actions: Cancel
+					20 element Description: Thêm vào giỏ, Secondary Actions: Cancel
+					21 text Description: Beta, Secondary Actions: Cancel
+					22 text Description: 1.001 ₫, Secondary Actions: Cancel
+					23 element Description: Xem chi tiết, Secondary Actions: Cancel
+					24 element Description: Thêm vào giỏ, Secondary Actions: Cancel
+					25 text Description: A&B, Secondary Actions: Cancel
+					26 text Description: 1.000.001 ₫, Secondary Actions: Cancel
+					27 element Description: Xem chi tiết, Secondary Actions: Cancel
+					28 element Description: Thêm vào giỏ, Secondary Actions: Cancel
+					29 text Description: A+B, Secondary Actions: Cancel
+					30 text Description: 999 ₫, Secondary Actions: Cancel
+					31 element Description: Xem chi tiết, Secondary Actions: Cancel
+					32 element Description: Thêm vào giỏ, Secondary Actions: Cancel
+					33 text Description: A#B, Secondary Actions: Cancel
+					34 text Description: 1.000 ₫, Secondary Actions: Cancel
+					35 element Description: Xem chi tiết, Secondary Actions: Cancel
+					36 element Description: Thêm vào giỏ, Secondary Actions: Cancel
+					37 text Description: Sản phẩm tên dài để kiểm tra hiển thị trên màn hình mobile, Secondary Actions: Cancel
+					38 text Description: 1.000.001 ₫, Secondary Actions: Cancel
+					39 element Description: Xem chi tiết, Secondary Actions: Cancel
+					40 element Description: Thêm vào giỏ, Secondary Actions: Cancel
+					41 text Description: Hiển thị 7 sản phẩm, Secondary Actions: Cancel
+					42 text Description: © 2026 EShop SUT. Dành cho mục đích kiểm thử., Secondary Actions: Cancel
+				43 button Description: Home, ID: app.grid.3x3
+				44 button Description: Screenshot, ID: camera.viewfinder
+				45 button Description: Record, ID: record.circle
+				46 button Rotate Left
+		47 splitter (disabled, settable, float) 391
+	48 toolbar
+		49 button Description: Show Sidebar, Secondary Actions: Increment, Decrement, Delete, Cancel
+		50 radio button Description: Edit, Help: Settings, Value: 0, ID: slider.horizontal.3
+		51 radio button Description: Text Document, Help: Reports, Value: 0, ID: text.document
+		52 radio button Description: Info, Value: 0, ID: info
+		53 pop up button more toolbar items
+	54 close button
+	55 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	56 minimize button
+	57 text iPhone 18 Pro iOS 27.0
+58 menu bar
+	59 Device Hub
+	60 File
+	61 Edit
+	62 View
+	63 Device
+	64 Controls
+	65 Window
+	66 Help
+
+The focused UI element is 0 standard window iPhone 18 Pro – iOS 27.0, ID: com.apple.dt.DeviceKit.DeviceManagementWindow-AppWindow-1, Secondary Actions: Raise

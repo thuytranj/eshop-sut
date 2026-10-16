@@ -85,3 +85,7 @@ Review Focus: EMPTY/STATE→TC003/015-017/028; TEXT/TRANSPORT/SAFE→TC005-010; 
 ## 6. Execution/adjudication handoff
 
 Run01 có raw observations và bản adjudicated riêng, không đổi frozen suite/hash. TC001 được hạ từ Failed sang Blocked vì không có native column-count oracle; [revision ledger](evidence/fr05-run01/verdict-revisions.json) giữ before/after. Native final12P/11F/10B; API11P/1F; tổng35 executed/45 designed. Native DT exercised21/23, BVA result-count3/3; denominator freeze không bị thu nhỏ để đẹp số. Chi tiết xem [test-results](test-results.md).
+
+## Follow-up TEXT/TRANSPORT/SAFE
+
+Review v1 chưa exercise keyword % hoặc literal underscore trong Promo_Off. Run02 có native request/display probes cho Promo%Off và Promo_Off: decoded input giữ nguyên, AX/PNG hiển thị literal; matching policy vẫn unresolved. Xem [follow-up](followup-run02.md). Không đổi suite v1, obligation denominator hoặc exercised coverage run01.

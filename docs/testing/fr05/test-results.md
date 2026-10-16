@@ -114,3 +114,5 @@ Giới hạn: 21/23 DT native không chứng minh correctness mọi string/catal
 TC001: cần xác nhận native grid/column policy và công cụ scroll hoạt động. TC013: cần VoiceOver hoặc certified complete native image hierarchy. TC020: native equivalent của exactly-one h1. TC021-027: cần search policy từ test oracle, không lấy SQL LIKE hoặc user preference đơn thuần thay specification. Sau khi có authority/lecture, version source/suite nếu expected đổi, chạy run mới và giữ raw run01. Android chưa được chạy.
 
 Task5 có đủ disposition nhưng chưa đủ full execution; Task6 báo cáo evidence thực, Task7 phân tích gaps. Việc kết thúc documentation không đóng các blocker này.
+
+Follow-up native probes và trạng thái Task5 mới nhất: [run02](followup-run02.md). Thống kê P/F/Blocked giữ nguyên; bảy policy cases có actual probe nhưng chưa có verdict.

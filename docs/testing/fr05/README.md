@@ -59,3 +59,5 @@ Main report và AI Audit/Critique cần thêm PDF khi đóng gói full assignmen
 Lịch sử commit thực: [commit-log.txt](commit-log.txt). Các task completed được commit riêng; execution còn blockers được ghi trung thực, không tạo lịch sử hoàn tất giả.
 
 Final review, toàn bộ rulings và Deferred minors: [final-review.md](final-review.md). Không có Critical/Important finding; Task5 vẫn partial.
+
+Follow-up native probes và trạng thái Task5 mới nhất: [run02](followup-run02.md). Thống kê P/F/Blocked giữ nguyên; bảy policy cases có actual probe nhưng chưa có verdict.

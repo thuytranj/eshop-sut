@@ -1,0 +1,9 @@
+Verification summary recorded 2026-10-16T15:46:31.857615+07:00
+Not a verbatim terminal transcript.
+Python unittest discovery:16 tests,14 passed/2 live skipped.
+Node API runner tests:2 passed.
+Existing suite validator + run01 adjudicated observations:0 errors,45 canonical/48 sources/48 obligations.
+Existing validator intentionally rejects mixed-run composite:one runId required per observation file.
+Separate consistency assertions passed:10 unique follow-up IDs equal old Blocked IDs;45 composite unique IDs;23P/12F/10B;35 P/F rows byte-equivalent as JSON objects to run01;all evidence links exist;10 indexed search probes.
+Preservation assertions passed:all tracked run01 files exact Git HEAD bytes;SUT/working DB/unrelated file SHA256 equal preservation baseline;12 audit outputs preserved in Markdown;local report links resolve.
+Live protocol tests not rerun because follow-up does not change proxy code and a reset would alter current fixture.

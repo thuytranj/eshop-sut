@@ -1,0 +1,159 @@
+[
+  {
+    "runId": "fr05-run02",
+    "caseId": "FR05-TC-001",
+    "interface": "NATIVE",
+    "platform": "iOS",
+    "actual": "Listing AX có12 tên; scroll AX container và coordinate sau Raise đều báo noWindowsAvailable. Chưa xác minh scroll completeness/native column policy.",
+    "assertions": [],
+    "status": "Blocked",
+    "reason": "ORACLE_UNRESOLVED_GRID_AND_SCROLL",
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run02/native/listing-ready.ax.txt",
+      "docs/testing/fr05/evidence/fr05-run02/native/scroll-error.txt",
+      "docs/testing/fr05/evidence/fr05-run02/native/scroll-coordinate-error.txt"
+    ],
+    "bugIds": []
+  },
+  {
+    "runId": "fr05-run02",
+    "caseId": "FR05-TC-013",
+    "interface": "NATIVE",
+    "platform": "iOS",
+    "actual": "Search Alpha thực trên native; exported AX có tên/giá nhưng không có image semantics đủ để chứng minh alt. Không có VoiceOver evidence.",
+    "assertions": [],
+    "status": "Blocked",
+    "reason": "EVIDENCE_CAPABILITY",
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run02/native/FR05-TC-013.ax.txt",
+      "docs/testing/fr05/evidence/fr05-run02/native/alt-alpha.png"
+    ],
+    "bugIds": []
+  },
+  {
+    "runId": "fr05-run02",
+    "caseId": "FR05-TC-020",
+    "interface": "NATIVE",
+    "platform": "iOS",
+    "actual": "Native listing AX có Danh sách sản phẩm; thiếu mapping exactly-one HTML h1 sang native heading. Không lấy text node làm bằng chứng h1.",
+    "assertions": [],
+    "status": "Blocked",
+    "reason": "ORACLE_UNRESOLVED",
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run02/native/listing-ready.ax.txt"
+    ],
+    "bugIds": []
+  },
+  {
+    "runId": "fr05-run02",
+    "caseId": "FR05-TC-021",
+    "interface": "NATIVE",
+    "platform": "iOS",
+    "actual": "Native nhập ' Alpha ', bấm Tìm; request /api/products?search=%20Alpha%20; HTTP200, response IDs=[]; screenshot/AX đã thu. Có probe thực, matching verdict vẫn Blocked vì chưa có policy.",
+    "assertions": [],
+    "status": "Blocked",
+    "reason": "ORACLE_UNRESOLVED",
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run02/native/trim.ax.txt",
+      "docs/testing/fr05/evidence/fr05-run02/native/trim.png",
+      "docs/testing/fr05/evidence/fr05-run02/requests.jsonl"
+    ],
+    "bugIds": []
+  },
+  {
+    "runId": "fr05-run02",
+    "caseId": "FR05-TC-022",
+    "interface": "NATIVE",
+    "platform": "iOS",
+    "actual": "Native nhập '%', bấm Tìm; request /api/products?search=%25; HTTP200, response IDs=[101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112]; screenshot/AX đã thu. Có probe thực, matching verdict vẫn Blocked vì chưa có policy.",
+    "assertions": [],
+    "status": "Blocked",
+    "reason": "ORACLE_UNRESOLVED",
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run02/native/percent-only.ax.txt",
+      "docs/testing/fr05/evidence/fr05-run02/native/percent-only.png",
+      "docs/testing/fr05/evidence/fr05-run02/requests.jsonl"
+    ],
+    "bugIds": []
+  },
+  {
+    "runId": "fr05-run02",
+    "caseId": "FR05-TC-023",
+    "interface": "NATIVE",
+    "platform": "iOS",
+    "actual": "Native nhập 'ALPHA', bấm Tìm; request /api/products?search=ALPHA; HTTP200, response IDs=[101]; screenshot/AX đã thu. Có probe thực, matching verdict vẫn Blocked vì chưa có policy.",
+    "assertions": [],
+    "status": "Blocked",
+    "reason": "ORACLE_UNRESOLVED",
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run02/native/case-upper.ax.txt",
+      "docs/testing/fr05/evidence/fr05-run02/native/case-upper.png",
+      "docs/testing/fr05/evidence/fr05-run02/requests.jsonl"
+    ],
+    "bugIds": []
+  },
+  {
+    "runId": "fr05-run02",
+    "caseId": "FR05-TC-024",
+    "interface": "NATIVE",
+    "platform": "iOS",
+    "actual": "Native nhập 'Ca phe', bấm Tìm; request /api/products?search=Ca%20phe; HTTP200, response IDs=[]; screenshot/AX đã thu. Có probe thực, matching verdict vẫn Blocked vì chưa có policy.",
+    "assertions": [],
+    "status": "Blocked",
+    "reason": "ORACLE_UNRESOLVED",
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run02/native/diacritics.ax.txt",
+      "docs/testing/fr05/evidence/fr05-run02/native/diacritics.png",
+      "docs/testing/fr05/evidence/fr05-run02/requests.jsonl"
+    ],
+    "bugIds": []
+  },
+  {
+    "runId": "fr05-run02",
+    "caseId": "FR05-TC-025",
+    "interface": "NATIVE",
+    "platform": "iOS",
+    "actual": "Native nhập '', bấm Tìm; request /api/products?search=; HTTP200, response IDs=[101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112]; screenshot/AX đã thu. Có probe thực, matching verdict vẫn Blocked vì chưa có policy.",
+    "assertions": [],
+    "status": "Blocked",
+    "reason": "ORACLE_UNRESOLVED",
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run02/native/empty-query.ax.txt",
+      "docs/testing/fr05/evidence/fr05-run02/native/empty-query.png",
+      "docs/testing/fr05/evidence/fr05-run02/requests.jsonl"
+    ],
+    "bugIds": []
+  },
+  {
+    "runId": "fr05-run02",
+    "caseId": "FR05-TC-026",
+    "interface": "NATIVE",
+    "platform": "iOS",
+    "actual": "Native nhập 'A', bấm Tìm; request /api/products?search=A; HTTP200, response IDs=[101, 102, 103, 106, 107, 108, 112]; screenshot/AX đã thu. Có probe thực, matching verdict vẫn Blocked vì chưa có policy.",
+    "assertions": [],
+    "status": "Blocked",
+    "reason": "ORACLE_UNRESOLVED",
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run02/native/substring.ax.txt",
+      "docs/testing/fr05/evidence/fr05-run02/native/substring.png",
+      "docs/testing/fr05/evidence/fr05-run02/requests.jsonl"
+    ],
+    "bugIds": []
+  },
+  {
+    "runId": "fr05-run02",
+    "caseId": "FR05-TC-027",
+    "interface": "NATIVE",
+    "platform": "iOS",
+    "actual": "Native nhập '   ', bấm Tìm; request /api/products?search=%20%20%20; HTTP200, response IDs=[]; screenshot/AX đã thu. Có probe thực, matching verdict vẫn Blocked vì chưa có policy.",
+    "assertions": [],
+    "status": "Blocked",
+    "reason": "ORACLE_UNRESOLVED",
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run02/native/whitespace.ax.txt",
+      "docs/testing/fr05/evidence/fr05-run02/native/whitespace.png",
+      "docs/testing/fr05/evidence/fr05-run02/requests.jsonl"
+    ],
+    "bugIds": []
+  }
+]

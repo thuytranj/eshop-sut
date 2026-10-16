@@ -1,0 +1,196 @@
+[
+  {
+    "label": "trim",
+    "input": " Alpha ",
+    "request": "/api/products?search=%20Alpha%20",
+    "httpStatus": 200,
+    "responseIds": [],
+    "responseAt": "2026-10-16T08:41:44.009Z",
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run02/native/trim.ax.txt",
+      "docs/testing/fr05/evidence/fr05-run02/native/trim.png",
+      "docs/testing/fr05/evidence/fr05-run02/requests.jsonl"
+    ],
+    "matchingVerdict": "Blocked",
+    "reason": "ORACLE_UNRESOLVED"
+  },
+  {
+    "label": "percent-only",
+    "input": "%",
+    "request": "/api/products?search=%25",
+    "httpStatus": 200,
+    "responseIds": [
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110,
+      111,
+      112
+    ],
+    "responseAt": "2026-10-16T08:41:33.608Z",
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run02/native/percent-only.ax.txt",
+      "docs/testing/fr05/evidence/fr05-run02/native/percent-only.png",
+      "docs/testing/fr05/evidence/fr05-run02/requests.jsonl"
+    ],
+    "matchingVerdict": "Blocked",
+    "reason": "ORACLE_UNRESOLVED"
+  },
+  {
+    "label": "case-upper",
+    "input": "ALPHA",
+    "request": "/api/products?search=ALPHA",
+    "httpStatus": 200,
+    "responseIds": [
+      101
+    ],
+    "responseAt": "2026-10-16T08:43:03.410Z",
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run02/native/case-upper.ax.txt",
+      "docs/testing/fr05/evidence/fr05-run02/native/case-upper.png",
+      "docs/testing/fr05/evidence/fr05-run02/requests.jsonl"
+    ],
+    "matchingVerdict": "Blocked",
+    "reason": "ORACLE_UNRESOLVED"
+  },
+  {
+    "label": "diacritics",
+    "input": "Ca phe",
+    "request": "/api/products?search=Ca%20phe",
+    "httpStatus": 200,
+    "responseIds": [],
+    "responseAt": "2026-10-16T08:41:59.794Z",
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run02/native/diacritics.ax.txt",
+      "docs/testing/fr05/evidence/fr05-run02/native/diacritics.png",
+      "docs/testing/fr05/evidence/fr05-run02/requests.jsonl"
+    ],
+    "matchingVerdict": "Blocked",
+    "reason": "ORACLE_UNRESOLVED"
+  },
+  {
+    "label": "empty-query",
+    "input": "",
+    "request": "/api/products?search=",
+    "httpStatus": 200,
+    "responseIds": [
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110,
+      111,
+      112
+    ],
+    "responseAt": "2026-10-16T08:42:19.122Z",
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run02/native/empty-query.ax.txt",
+      "docs/testing/fr05/evidence/fr05-run02/native/empty-query.png",
+      "docs/testing/fr05/evidence/fr05-run02/requests.jsonl"
+    ],
+    "matchingVerdict": "Blocked",
+    "reason": "ORACLE_UNRESOLVED"
+  },
+  {
+    "label": "substring",
+    "input": "A",
+    "request": "/api/products?search=A",
+    "httpStatus": 200,
+    "responseIds": [
+      101,
+      102,
+      103,
+      106,
+      107,
+      108,
+      112
+    ],
+    "responseAt": "2026-10-16T08:42:06.097Z",
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run02/native/substring.ax.txt",
+      "docs/testing/fr05/evidence/fr05-run02/native/substring.png",
+      "docs/testing/fr05/evidence/fr05-run02/requests.jsonl"
+    ],
+    "matchingVerdict": "Blocked",
+    "reason": "ORACLE_UNRESOLVED"
+  },
+  {
+    "label": "whitespace",
+    "input": "   ",
+    "request": "/api/products?search=%20%20%20",
+    "httpStatus": 200,
+    "responseIds": [],
+    "responseAt": "2026-10-16T08:42:29.412Z",
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run02/native/whitespace.ax.txt",
+      "docs/testing/fr05/evidence/fr05-run02/native/whitespace.png",
+      "docs/testing/fr05/evidence/fr05-run02/requests.jsonl"
+    ],
+    "matchingVerdict": "Blocked",
+    "reason": "ORACLE_UNRESOLVED"
+  },
+  {
+    "label": "percent-full",
+    "input": "Promo%Off",
+    "request": "/api/products?search=Promo%25Off",
+    "httpStatus": 200,
+    "responseIds": [
+      109,
+      110
+    ],
+    "responseAt": "2026-10-16T08:41:28.417Z",
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run02/native/percent-full.ax.txt",
+      "docs/testing/fr05/evidence/fr05-run02/native/percent-full.png",
+      "docs/testing/fr05/evidence/fr05-run02/requests.jsonl"
+    ],
+    "matchingVerdict": "Blocked",
+    "reason": "ORACLE_UNRESOLVED"
+  },
+  {
+    "label": "underscore",
+    "input": "Promo_Off",
+    "request": "/api/products?search=Promo_Off",
+    "httpStatus": 200,
+    "responseIds": [
+      109,
+      110
+    ],
+    "responseAt": "2026-10-16T08:43:14.342Z",
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run02/native/underscore.ax.txt",
+      "docs/testing/fr05/evidence/fr05-run02/native/underscore.png",
+      "docs/testing/fr05/evidence/fr05-run02/requests.jsonl"
+    ],
+    "matchingVerdict": "Blocked",
+    "reason": "ORACLE_UNRESOLVED"
+  },
+  {
+    "label": "case-fold",
+    "input": "alpha",
+    "request": "/api/products?search=alpha",
+    "httpStatus": 200,
+    "responseIds": [
+      101
+    ],
+    "responseAt": "2026-10-16T08:41:54.233Z",
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run02/native/case-fold.ax.txt",
+      "docs/testing/fr05/evidence/fr05-run02/native/case-fold.png",
+      "docs/testing/fr05/evidence/fr05-run02/requests.jsonl"
+    ],
+    "matchingVerdict": "Blocked",
+    "reason": "ORACLE_UNRESOLVED"
+  }
+]
