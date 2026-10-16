@@ -1,0 +1,189 @@
+{
+  "cases": [
+    {
+      "id": "FR05-BVA-001",
+      "key": "RESULT-ZERO",
+      "ruleIds": [
+        "FR05-R08"
+      ],
+      "obligationIds": [
+        "FR05-BVA-N0"
+      ],
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "technique": "BVA",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "empty",
+      "input": {
+        "search": "Alpha",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset backend về snapshot empty; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Nhập chính xác 'Alpha' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending."
+      ],
+      "expected": {
+        "description": "Search Alpha trên catalog rỗng: không có card và có empty state.",
+        "oracleKind": "explicit",
+        "ids": [],
+        "count": 0
+      },
+      "actual": null,
+      "status": "Not Run",
+      "evidence": [],
+      "boundaryValue": 0
+    },
+    {
+      "id": "FR05-BVA-002",
+      "key": "RESULT-ONE",
+      "ruleIds": [
+        "FR05-R03",
+        "FR05-R05"
+      ],
+      "obligationIds": [
+        "FR05-BVA-N1"
+      ],
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "technique": "BVA",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "one",
+      "input": {
+        "search": "Alpha",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset backend về snapshot one; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Nhập chính xác 'Alpha' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending."
+      ],
+      "expected": {
+        "description": "Một card Alpha giá 1000₫, không thiếu/trùng.",
+        "oracleKind": "explicit",
+        "ids": [
+          201
+        ],
+        "count": 1
+      },
+      "actual": null,
+      "status": "Not Run",
+      "evidence": [],
+      "boundaryValue": 1
+    },
+    {
+      "id": "FR05-BVA-003",
+      "key": "RESULT-TWO",
+      "ruleIds": [
+        "FR05-R03",
+        "FR05-R05"
+      ],
+      "obligationIds": [
+        "FR05-BVA-N2"
+      ],
+      "interface": "NATIVE",
+      "platform": "iOS",
+      "technique": "BVA",
+      "preconditions": [
+        "Target native/build/locale/network như manifest.",
+        "Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case."
+      ],
+      "fixtureId": "two",
+      "input": {
+        "search": "Alpha",
+        "mode": "search"
+      },
+      "steps": [
+        "Reset backend về snapshot two; kiểm tra row count và hash fixture.",
+        "Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.",
+        "Nhập chính xác 'Alpha' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending."
+      ],
+      "expected": {
+        "description": "Hai card Alpha, ID201 giá 1000₫ và ID202 giá 1001₫, không gộp vì trùng tên.",
+        "oracleKind": "explicit",
+        "ids": [
+          201,
+          202
+        ],
+        "count": 2
+      },
+      "actual": null,
+      "status": "Not Run",
+      "evidence": [],
+      "boundaryValue": 2
+    }
+  ],
+  "obligations": [
+    {
+      "id": "FR05-BVA-N0",
+      "technique": "BVA",
+      "ruleIds": [
+        "FR05-R08"
+      ],
+      "interface": "NATIVE",
+      "description": "Result count n=0",
+      "derivation": "endpoints 0,1 → union {0,1,2}",
+      "sourceCaseIds": [
+        "FR05-BVA-001"
+      ],
+      "oracleKind": "explicit",
+      "value": 0
+    },
+    {
+      "id": "FR05-BVA-N1",
+      "technique": "BVA",
+      "ruleIds": [
+        "FR05-R03",
+        "FR05-R05"
+      ],
+      "interface": "NATIVE",
+      "description": "Result count n=1",
+      "derivation": "endpoints 0,1 → union {0,1,2}",
+      "sourceCaseIds": [
+        "FR05-BVA-002"
+      ],
+      "oracleKind": "explicit",
+      "value": 1
+    },
+    {
+      "id": "FR05-BVA-N2",
+      "technique": "BVA",
+      "ruleIds": [
+        "FR05-R03",
+        "FR05-R05"
+      ],
+      "interface": "NATIVE",
+      "description": "Result count n=2",
+      "derivation": "endpoints 0,1 → union {0,1,2}",
+      "sourceCaseIds": [
+        "FR05-BVA-003"
+      ],
+      "oracleKind": "explicit",
+      "value": 2
+    }
+  ],
+  "method": "ISTQB 3-value BVA (working convention)",
+  "universe": "N0",
+  "endpoints": {
+    "0": [
+      0,
+      1
+    ],
+    "1": [
+      0,
+      1,
+      2
+    ]
+  },
+  "union": [
+    0,
+    1,
+    2
+  ]
+}
