@@ -81,3 +81,7 @@ Chỉ merge khi interface/platform, preconditions, fixture, raw input, ordered s
 Mỗi source/obligation đã có canonical mapping, nhưng unresolved policies không được đưa vào denominator có oracle. DT và BVA có denominator riêng, native và API cũng riêng. BVA native có 3 value obligations; designed 3/3, executed 0/3 tại freeze. Các Supplementary policy probes không được biến thành BVA.
 
 Review Focus: EMPTY/STATE→TC003/015-017/028; TEXT/TRANSPORT/SAFE→TC005-010; RACE→TC019; PRESENTATION→TC011-014; network/native preflight→Task5. R09→TC020 có source nhưng chưa có verdict oracle. Tất cả execution vẫn chưa chạy tại thời điểm report freeze này.
+
+## 6. Execution/adjudication handoff
+
+Run01 có raw observations và bản adjudicated riêng, không đổi frozen suite/hash. TC001 được hạ từ Failed sang Blocked vì không có native column-count oracle; [revision ledger](evidence/fr05-run01/verdict-revisions.json) giữ before/after. Native final12P/11F/10B; API11P/1F; tổng35 executed/45 designed. Native DT exercised21/23, BVA result-count3/3; denominator freeze không bị thu nhỏ để đẹp số. Chi tiết xem [test-results](test-results.md).
