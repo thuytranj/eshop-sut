@@ -1,0 +1,23 @@
+{
+  "runId": "fr05-run01",
+  "caseId": "FR05-TC-012",
+  "interface": "NATIVE",
+  "platform": "iOS",
+  "recordedAt": "2026-10-16T05:29:37.347Z",
+  "status": "Failed",
+  "actual": "Snapshot images có Square/Wide/Tall. Screenshot Square từ PNG120×120 có hình tròn nhưng native kéo thành ellipse ngang. Wide thấy một phần; Tall chưa kiểm hình do scroll tool bị chặn. Một ảnh đã vi phạm đủ để case Failed.",
+  "assertions": [
+    {
+      "name": "Preserve source ratio",
+      "expected": "Square circle vẫn tròn",
+      "actual": "Square circle thành ellipse",
+      "passed": false
+    }
+  ],
+  "evidence": [
+    "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-012.ax.txt",
+    "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-012.png"
+  ],
+  "bugIds": [],
+  "reason": ""
+}

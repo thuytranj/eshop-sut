@@ -1,0 +1,53 @@
+Window: "iPhone 18 Pro", App: Device Hub.
+0 standard window iPhone 18 Pro – iOS 27.0, ID: com.apple.dt.DeviceKit.DeviceManagementWindow-AppWindow-1, Secondary Actions: Raise
+	1 split group
+		2 split group com.apple.dt.DeviceKit.DeviceManagementWindow-AppWindow-1, SidebarNavigationSplitView
+			3 splitter (disabled, settable, float) -1
+			4 container
+				5 container
+					6 element Description: EShop Mobile, Secondary Actions: Cancel
+					7 element Description: Đăng nhập, Secondary Actions: Cancel
+					8 element Description: Giỏ (0), Secondary Actions: Cancel
+					9 text Description: Danh sách sản phẩm, Secondary Actions: Cancel
+					10 text field (settable) Value: Tìm kiếm..., Secondary Actions: Cancel
+					11 element Description: Tìm, Secondary Actions: Cancel
+					12 text Description: Square, Secondary Actions: Cancel
+					13 text Description: 1.000 ₫, Secondary Actions: Cancel
+					14 element Description: Xem chi tiết, Secondary Actions: Cancel
+					15 element Description: Thêm vào giỏ, Secondary Actions: Cancel
+					16 text Description: Wide, Secondary Actions: Cancel
+					17 text Description: 1.000 ₫, Secondary Actions: Cancel
+					18 element Description: Xem chi tiết, Secondary Actions: Cancel
+					19 element Description: Thêm vào giỏ, Secondary Actions: Cancel
+					20 text Description: Tall, Secondary Actions: Cancel
+					21 text Description: 1.000 ₫, Secondary Actions: Cancel
+					22 element Description: Xem chi tiết, Secondary Actions: Cancel
+					23 element Description: Thêm vào giỏ, Secondary Actions: Cancel
+					24 text Description: Hiển thị 3 sản phẩm, Secondary Actions: Cancel
+					25 text Description: © 2026 EShop SUT. Dành cho mục đích kiểm thử., Secondary Actions: Cancel
+				26 button Description: Home, ID: app.grid.3x3
+				27 button Description: Screenshot, ID: camera.viewfinder
+				28 button Description: Record, ID: record.circle
+				29 button Rotate Left
+		30 splitter (disabled, settable, float) 391
+	31 toolbar
+		32 button Description: Show Sidebar, Secondary Actions: Increment, Decrement, Delete, Cancel
+		33 radio button Description: Edit, Help: Settings, Value: 0, ID: slider.horizontal.3
+		34 radio button Description: Text Document, Help: Reports, Value: 0, ID: text.document
+		35 radio button Description: Info, Value: 0, ID: info
+		36 pop up button more toolbar items
+	37 close button
+	38 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	39 minimize button
+	40 text iPhone 18 Pro iOS 27.0
+41 menu bar
+	42 Device Hub
+	43 File
+	44 Edit
+	45 View
+	46 Device
+	47 Controls
+	48 Window
+	49 Help
+
+The focused UI element is 0 standard window iPhone 18 Pro – iOS 27.0, ID: com.apple.dt.DeviceKit.DeviceManagementWindow-AppWindow-1, Secondary Actions: Raise

@@ -1,0 +1,29 @@
+{
+  "runId": "fr05-run01",
+  "caseId": "FR05-TC-033",
+  "interface": "NATIVE",
+  "platform": "iOS",
+  "recordedAt": "2026-10-16T05:35:10.853Z",
+  "status": "Failed",
+  "actual": "Search vô nghiệm có 0 card nhưng thiếu empty state; sau đó search Alpha phục hồi đúng một Alpha giá 999 ₫.",
+  "assertions": [
+    {
+      "name": "Empty state before recovery",
+      "expected": "có thông báo",
+      "actual": "không có",
+      "passed": false
+    },
+    {
+      "name": "Recovery to matching query",
+      "expected": "Alpha only",
+      "actual": "Alpha only",
+      "passed": true
+    }
+  ],
+  "evidence": [
+    "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-033-empty.ax.txt",
+    "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-033-recovered.ax.txt"
+  ],
+  "bugIds": [],
+  "reason": ""
+}

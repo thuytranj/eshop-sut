@@ -1,0 +1,53 @@
+{
+  "runId": "fr05-run01",
+  "gitSha": "f74658aa9232d117ddd400e954db18b6ce81abeb",
+  "suiteSha256": "e7f7d3135c6c89fe12982c6a110075f5db7fa2726fac4d0070d50f8405dc8ac6",
+  "fixtureSha256": "a607f67d7eb25461999eeb2eb583b18c72b7961975fd084532e785d39c1fc19f",
+  "target": {
+    "interface": "NATIVE",
+    "platform": "iOS",
+    "device": "iPhone 18 Pro",
+    "os": "iOS 27.0",
+    "udid": "3B7AC350-890D-47EF-9557-6FF123C12BE7",
+    "locale": "Native giá dùng dấu . nhóm nghìn; device keyboard Tiếng Việt Telex; locale identifier chưa đo",
+    "fontScale": "not measured; not changed",
+    "viewport": "Device Hub screenshot scale thay đổi; không khẳng định physical viewport từ outer-window PNG"
+  },
+  "api": "http://127.0.0.1:3002/api",
+  "upstream": "http://127.0.0.1:3000/api",
+  "images": "http://127.0.0.1:3001",
+  "clock": "Asia/Ho_Chi_Minh (+07:00); no time-dependent rule",
+  "counters": "N/A",
+  "reset": "POST loopback /__control resets disposable catalog before each case",
+  "originalDatabaseSha256": "4392316c5828c3df249d744eb6667a8415d98cc9facf56e373696397a0faba50",
+  "adjustment": {
+    "file": "mobile/App.js",
+    "from": "http://192.168.10.13:3000/api",
+    "to": "http://127.0.0.1:3002/api",
+    "reason": "iOS simulator loopback to controlled proxy; no business behavior changed"
+  },
+  "packageVersions": {
+    "expo": "54.0.34 installed (package ~54.0.33)",
+    "react": "19.1.0",
+    "react-native": "0.81.5"
+  },
+  "limitations": [
+    "Android no attached device; iOS selected",
+    "Expo CLI cannot identify renamed Simulator app Device Hub; native launch still being resolved",
+    "AX image accessibility semantics not certified; TC013 Blocked",
+    "H1/search policies TC020-027 Blocked",
+    "Native coordinate click/scroll unavailable; user opened Expo Go and unlocked Mac; screenshot scale varied"
+  ],
+  "manifestRecordedAt": "2026-10-16T10:41:22.524692+07:00",
+  "apiStartedAt": "2026-10-16T03:41:22.156Z",
+  "limitation_manifest": "API supporting started before manifest assembly; start time from original raw HTTP evidence, recording time separate.",
+  "expoGo": "54.0.7 iOS Simulator artifact, official Expo downloader",
+  "nativeReachability": "Native GET /api/products?search= observed in requests.jsonl; not inferred from host curl",
+  "sourcePreservationVerified": true,
+  "applicationSourceSha256": {
+    "frontend-mobile/App.js": "0fc50e37746248bc4baebd3452f93f9572ce9ecd450f53df6f0c1ff567443ea6",
+    "backend/server.js": "47573ce5a6bf9a894748d2bb56cc8d1659ad7acd033fdd6db6b3e4d9473eb487",
+    "backend/database.js": "3366420632bb9c982905b22e3969f69515e39e7a37a4f84eba56ead7e94afed8"
+  },
+  "isolatedMobileSha256": "a3a30d8f7c959fbcd3fb25c4a83499297486e4a8f696f0022d8928d302a0771d"
+}

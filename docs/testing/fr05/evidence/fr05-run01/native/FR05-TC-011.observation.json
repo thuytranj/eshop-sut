@@ -1,0 +1,23 @@
+{
+  "runId": "fr05-run01",
+  "caseId": "FR05-TC-011",
+  "interface": "NATIVE",
+  "platform": "iOS",
+  "recordedAt": "2026-10-16T05:21:31.696Z",
+  "status": "Passed",
+  "actual": "Native AX của full catalog hiển thị 999 ₫, 1.000 ₫, 1.001 ₫, 999.999 ₫, 1.000.000 ₫ và 1.000.001 ₫ đúng nhóm nghìn.",
+  "assertions": [
+    {
+      "name": "Thousands grouping and currency",
+      "expected": "6 giá có grouping/₫ đúng",
+      "actual": "đúng cả 6 giá trong native AX",
+      "passed": true
+    }
+  ],
+  "evidence": [
+    "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-011.ax.txt",
+    "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-011.png"
+  ],
+  "bugIds": [],
+  "reason": ""
+}

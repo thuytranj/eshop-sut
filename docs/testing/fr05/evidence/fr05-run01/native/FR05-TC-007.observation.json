@@ -1,0 +1,23 @@
+{
+  "runId": "fr05-run01",
+  "caseId": "FR05-TC-007",
+  "interface": "NATIVE",
+  "platform": "iOS",
+  "recordedAt": "2026-10-16T03:58:45.679Z",
+  "status": "Failed",
+  "actual": "Keyword A&B nhưng có Alpha/Beta/A+B/A#B và tên khác; không chỉ A&B. API encode đúng case040 đã pass.",
+  "assertions": [
+    {
+      "name": "Reserved & preserved",
+      "expected": "A&B only",
+      "actual": "nhiều sản phẩm match A",
+      "passed": false
+    }
+  ],
+  "evidence": [
+    "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-007.ax.txt",
+    "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-007.png"
+  ],
+  "bugIds": [],
+  "reason": ""
+}

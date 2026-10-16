@@ -1,0 +1,22 @@
+{
+  "runId": "fr05-run01",
+  "caseId": "FR05-TC-030",
+  "interface": "NATIVE",
+  "platform": "iOS",
+  "recordedAt": "2026-10-16T05:32:52.386Z",
+  "status": "Passed",
+  "actual": "BVA n=2: hai card cùng tên Alpha, giá 1.000 ₫ và 1.001 ₫; Hiển thị 2 sản phẩm, không gộp hai signature.",
+  "assertions": [
+    {
+      "name": "BVA n2 distinct cards",
+      "expected": "2 Alpha cards with prices1000/1001",
+      "actual": "2 Alpha cards with prices1000/1001",
+      "passed": true
+    }
+  ],
+  "evidence": [
+    "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-030.ax.txt"
+  ],
+  "bugIds": [],
+  "reason": ""
+}

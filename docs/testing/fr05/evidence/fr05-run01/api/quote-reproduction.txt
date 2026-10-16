@@ -1,0 +1,11 @@
+HTTP/1.1 500 Internal Server Error
+x-powered-by: Express
+access-control-allow-origin: *
+content-type: text/html; charset=utf-8
+content-length: 70
+etag: W/"46-1UNaqv0CMXkesXXkqrKEhCxdTRU"
+date: Fri, 16 Oct 2026 03:51:58 GMT
+connection: keep-alive
+keep-alive: timeout=5
+
+<h1>Database Error</h1><p>SQLITE_ERROR: near "Brien": syntax error</p>

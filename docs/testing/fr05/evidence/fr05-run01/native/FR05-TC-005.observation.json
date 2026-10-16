@@ -1,0 +1,23 @@
+{
+  "runId": "fr05-run01",
+  "caseId": "FR05-TC-005",
+  "interface": "NATIVE",
+  "platform": "iOS",
+  "recordedAt": "2026-10-16T03:58:13.007Z",
+  "status": "Passed",
+  "actual": "Cà phê nguyên dấu trả một card Cà phê giá 999.999 ₫, không có tên sản phẩm khác trong AX.",
+  "assertions": [
+    {
+      "name": "Unicode full-name result",
+      "expected": "Cà phê only",
+      "actual": "Cà phê only",
+      "passed": true
+    }
+  ],
+  "evidence": [
+    "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-005.ax.txt",
+    "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-005.png"
+  ],
+  "bugIds": [],
+  "reason": ""
+}

@@ -1,0 +1,22 @@
+{
+  "runId": "fr05-run01",
+  "caseId": "FR05-TC-014",
+  "interface": "NATIVE",
+  "platform": "iOS",
+  "recordedAt": "2026-10-16T05:23:09.698Z",
+  "status": "Passed",
+  "actual": "Card có tên Sản phẩm tên dài để kiểm tra hiển thị trên màn hình mobile và giá 1.000.001 ₫ trong native AX; không áp quy định wrap chưa có nguồn.",
+  "assertions": [
+    {
+      "name": "Product name presence",
+      "expected": "có tên sản phẩm",
+      "actual": "có tên trong native card",
+      "passed": true
+    }
+  ],
+  "evidence": [
+    "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-014.ax.txt"
+  ],
+  "bugIds": [],
+  "reason": ""
+}

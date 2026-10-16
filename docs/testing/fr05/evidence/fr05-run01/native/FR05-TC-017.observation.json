@@ -1,0 +1,30 @@
+{
+  "runId": "fr05-run01",
+  "caseId": "FR05-TC-017",
+  "interface": "NATIVE",
+  "platform": "iOS",
+  "recordedAt": "2026-10-16T05:26:04.946Z",
+  "status": "Failed",
+  "actual": "Pending có Đang tải...; sau response [] loading biến mất nhưng vẫn chỉ vùng trống, không có empty state.",
+  "assertions": [
+    {
+      "name": "Pending loading",
+      "expected": "có",
+      "actual": "có",
+      "passed": true
+    },
+    {
+      "name": "Empty message after response",
+      "expected": "có",
+      "actual": "không có",
+      "passed": false
+    }
+  ],
+  "evidence": [
+    "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-017-pending.ax.txt",
+    "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-017-after-delay.ax.txt",
+    "docs/testing/fr05/evidence/fr05-run01/requests.jsonl"
+  ],
+  "bugIds": [],
+  "reason": ""
+}

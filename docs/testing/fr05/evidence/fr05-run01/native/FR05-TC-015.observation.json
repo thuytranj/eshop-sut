@@ -1,0 +1,25 @@
+{
+  "runId": "fr05-run01",
+  "caseId": "FR05-TC-015",
+  "interface": "NATIVE",
+  "platform": "iOS",
+  "recordedAt": "2026-10-16T05:21:31.705Z",
+  "status": "Passed",
+  "actual": "Initial reload có Đang tải... khi proxy giữ response 30 giây; sau response có 12 sản phẩm và loading biến mất.",
+  "assertions": [
+    {
+      "name": "Pending loading and final catalog",
+      "expected": "loading→12 products",
+      "actual": "loading→12 products",
+      "passed": true
+    }
+  ],
+  "evidence": [
+    "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-015-pending-v2.png",
+    "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-015-pending-clear.ax.txt",
+    "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-015-success.ax.txt",
+    "docs/testing/fr05/evidence/fr05-run01/requests.jsonl"
+  ],
+  "bugIds": [],
+  "reason": ""
+}

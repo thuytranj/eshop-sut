@@ -1,0 +1,29 @@
+{
+  "runId": "fr05-run01",
+  "caseId": "FR05-TC-004",
+  "interface": "NATIVE",
+  "platform": "iOS",
+  "recordedAt": "2026-10-16T03:57:40.328Z",
+  "status": "Failed",
+  "actual": "DescriptionToken không trả card (name-only đúng), nhưng không có thông báo empty state.",
+  "assertions": [
+    {
+      "name": "Search theo tên",
+      "expected": "0 card",
+      "actual": "0 card",
+      "passed": true
+    },
+    {
+      "name": "Empty state",
+      "expected": "có thông báo",
+      "actual": "không có",
+      "passed": false
+    }
+  ],
+  "evidence": [
+    "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-004.ax.txt",
+    "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-004.png"
+  ],
+  "bugIds": [],
+  "reason": ""
+}

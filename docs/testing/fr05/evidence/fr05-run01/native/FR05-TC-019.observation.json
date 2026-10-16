@@ -1,0 +1,25 @@
+{
+  "runId": "fr05-run01",
+  "caseId": "FR05-TC-019",
+  "interface": "NATIVE",
+  "platform": "iOS",
+  "recordedAt": "2026-10-16T05:28:13.798Z",
+  "status": "Failed",
+  "actual": "Beta trả trước và từng hiển thị Beta; sau khi Alpha cũ trả về, ô/nhãn vẫn Beta nhưng card đổi thành Alpha giá 999 ₫. Đây là derived latest-query-wins oracle.",
+  "assertions": [
+    {
+      "name": "Latest-query consistency (derived)",
+      "expected": "Beta label + Beta card",
+      "actual": "Beta label + Alpha card",
+      "passed": false
+    }
+  ],
+  "evidence": [
+    "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-019-beta-first.ax.txt",
+    "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-019-final.ax.txt",
+    "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-019-final.png",
+    "docs/testing/fr05/evidence/fr05-run01/requests.jsonl"
+  ],
+  "bugIds": [],
+  "reason": ""
+}

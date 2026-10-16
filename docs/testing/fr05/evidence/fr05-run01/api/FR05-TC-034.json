@@ -1,0 +1,25 @@
+{
+  "reset": {
+    "fixtureId": "full",
+    "mode": "normal",
+    "delayMs": 8000,
+    "ids": [
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110,
+      111,
+      112
+    ]
+  },
+  "url": "http://127.0.0.1:3002/api/products",
+  "status": 200,
+  "body": "[{\"id\":101,\"name\":\"Alpha\",\"price\":999,\"description\":\"Fixture FR05\",\"imageUrl\":\"http://127.0.0.1:3001/square.png\",\"category_id\":1},{\"id\":102,\"name\":\"Alpine\",\"price\":1000,\"description\":\"Fixture FR05\",\"imageUrl\":\"http://127.0.0.1:3001/wide.png\",\"category_id\":1},{\"id\":103,\"name\":\"Beta\",\"price\":1001,\"description\":\"Fixture FR05\",\"imageUrl\":\"http://127.0.0.1:3001/tall.png\",\"category_id\":1},{\"id\":104,\"name\":\"Cà phê\",\"price\":999999,\"description\":\"Fixture FR05\",\"imageUrl\":\"http://127.0.0.1:3001/square.png\",\"category_id\":1},{\"id\":105,\"name\":\"O'Brien\",\"price\":1000000,\"description\":\"Fixture FR05\",\"imageUrl\":\"http://127.0.0.1:3001/wide.png\",\"category_id\":1},{\"id\":106,\"name\":\"A&B\",\"price\":1000001,\"description\":\"Fixture FR05\",\"imageUrl\":\"http://127.0.0.1:3001/tall.png\",\"category_id\":1},{\"id\":107,\"name\":\"A+B\",\"price\":999,\"description\":\"Fixture FR05\",\"imageUrl\":\"http://127.0.0.1:3001/square.png\",\"category_id\":1},{\"id\":108,\"name\":\"A#B\",\"price\":1000,\"description\":\"Fixture FR05\",\"imageUrl\":\"http://127.0.0.1:3001/wide.png\",\"category_id\":1},{\"id\":109,\"name\":\"Promo%Off\",\"price\":1001,\"description\":\"Fixture FR05\",\"imageUrl\":\"http://127.0.0.1:3001/tall.png\",\"category_id\":1},{\"id\":110,\"name\":\"Promo_Off\",\"price\":999999,\"description\":\"Fixture FR05\",\"imageUrl\":\"http://127.0.0.1:3001/square.png\",\"category_id\":1},{\"id\":111,\"name\":\"DescriptionOnly\",\"price\":1000000,\"description\":\"DescriptionToken\",\"imageUrl\":\"http://127.0.0.1:3001/wide.png\",\"category_id\":1},{\"id\":112,\"name\":\"Sản phẩm tên dài để kiểm tra hiển thị trên màn hình mobile\",\"price\":1000001,\"description\":\"Fixture FR05\",\"imageUrl\":\"http://127.0.0.1:3001/tall.png\",\"category_id\":1}]",
+  "at": "2026-10-16T03:41:22.156Z"
+}

@@ -1,0 +1,15 @@
+{
+  "runId": "fr05-run01",
+  "caseId": "FR05-TC-013",
+  "interface": "NATIVE",
+  "platform": "iOS",
+  "recordedAt": "2026-10-16T05:22:53.919Z",
+  "status": "Blocked",
+  "actual": "Ảnh hiển thị ở card Alpha nhưng AX export không có node ảnh/description. Chưa có VoiceOver output hoặc xác minh export có đầy đủ image semantics; giữ suspected accessibility gap.",
+  "assertions": [],
+  "evidence": [
+    "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-013.ax.txt"
+  ],
+  "bugIds": [],
+  "reason": "EVIDENCE_CAPABILITY"
+}

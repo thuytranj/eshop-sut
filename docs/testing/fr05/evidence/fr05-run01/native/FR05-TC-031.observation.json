@@ -1,0 +1,22 @@
+{
+  "runId": "fr05-run01",
+  "caseId": "FR05-TC-031",
+  "interface": "NATIVE",
+  "platform": "iOS",
+  "recordedAt": "2026-10-16T05:33:39.288Z",
+  "status": "Passed",
+  "actual": "Snapshot mixed có Alpha/Beta nhưng query Alpha chỉ hiển thị Alpha giá 1.000 ₫; count1.",
+  "assertions": [
+    {
+      "name": "M2,n1 isolation",
+      "expected": "Alpha only",
+      "actual": "Alpha only",
+      "passed": true
+    }
+  ],
+  "evidence": [
+    "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-031.ax.txt"
+  ],
+  "bugIds": [],
+  "reason": ""
+}

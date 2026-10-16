@@ -1,0 +1,23 @@
+{
+  "runId": "fr05-run01",
+  "caseId": "FR05-TC-003",
+  "interface": "NATIVE",
+  "platform": "iOS",
+  "recordedAt": "2026-10-16T03:57:12.965Z",
+  "status": "Failed",
+  "actual": "Response success rỗng, vùng kết quả trống hoàn toàn; không có thông báo empty state trong screenshot/AX.",
+  "assertions": [
+    {
+      "name": "Empty message after zero matches",
+      "expected": "có empty state",
+      "actual": "không có",
+      "passed": false
+    }
+  ],
+  "evidence": [
+    "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-003.ax.txt",
+    "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-003.png"
+  ],
+  "bugIds": [],
+  "reason": ""
+}

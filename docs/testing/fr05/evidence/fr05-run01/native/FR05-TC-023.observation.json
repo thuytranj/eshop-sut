@@ -1,0 +1,14 @@
+{
+  "runId": "fr05-run01",
+  "caseId": "FR05-TC-023",
+  "interface": "NATIVE",
+  "platform": "iOS",
+  "actual": "Chưa thực thi để kết luận vì thiếu oracle cho native h1 hoặc search policy; không có pass/fail giả định.",
+  "assertions": [],
+  "status": "Blocked",
+  "evidence": [
+    "docs/testing/fr05/evidence/fr05-run01/oracle-blockers.txt"
+  ],
+  "bugIds": [],
+  "reason": "ORACLE_UNRESOLVED"
+}

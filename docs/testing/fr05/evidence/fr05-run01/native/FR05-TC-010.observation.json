@@ -1,0 +1,23 @@
+{
+  "runId": "fr05-run01",
+  "caseId": "FR05-TC-010",
+  "interface": "NATIVE",
+  "platform": "iOS",
+  "recordedAt": "2026-10-16T04:00:06.569Z",
+  "status": "Passed",
+  "actual": "Nhãn kết quả hiển thị nguyên văn <b>Alpha</b>; screenshot còn cả dấu <b>, không render bold/HTML.",
+  "assertions": [
+    {
+      "name": "Literal keyword display",
+      "expected": "<b>Alpha</b> nguyên văn",
+      "actual": "<b>Alpha</b> nguyên văn",
+      "passed": true
+    }
+  ],
+  "evidence": [
+    "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-010.ax.txt",
+    "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-010.png"
+  ],
+  "bugIds": [],
+  "reason": ""
+}

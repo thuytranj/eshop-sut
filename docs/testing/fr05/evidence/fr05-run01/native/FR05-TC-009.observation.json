@@ -1,0 +1,23 @@
+{
+  "runId": "fr05-run01",
+  "caseId": "FR05-TC-009",
+  "interface": "NATIVE",
+  "platform": "iOS",
+  "recordedAt": "2026-10-16T03:59:15.288Z",
+  "status": "Failed",
+  "actual": "Search A#B trả nhiều tên match A thay vì chỉ A#B; API encoded case042 trả đúng ID108.",
+  "assertions": [
+    {
+      "name": "Fragment # preserved",
+      "expected": "A#B only",
+      "actual": "nhiều tên match A",
+      "passed": false
+    }
+  ],
+  "evidence": [
+    "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-009.ax.txt",
+    "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-009.png"
+  ],
+  "bugIds": [],
+  "reason": ""
+}

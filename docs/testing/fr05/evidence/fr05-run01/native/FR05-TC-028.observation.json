@@ -1,0 +1,23 @@
+{
+  "runId": "fr05-run01",
+  "caseId": "FR05-TC-028",
+  "interface": "NATIVE",
+  "platform": "iOS",
+  "recordedAt": "2026-10-16T05:30:05.768Z",
+  "status": "Failed",
+  "actual": "BVA n=0: search Alpha trên catalog empty trả 0 card; không có thông báo empty state.",
+  "assertions": [
+    {
+      "name": "BVA n0 empty state",
+      "expected": "empty message",
+      "actual": "blank result area",
+      "passed": false
+    }
+  ],
+  "evidence": [
+    "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-028.ax.txt",
+    "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-028.png"
+  ],
+  "bugIds": [],
+  "reason": ""
+}

@@ -1,0 +1,12 @@
+{
+  "reset": {
+    "fixtureId": "empty",
+    "mode": "normal",
+    "delayMs": 8000,
+    "ids": []
+  },
+  "url": "http://127.0.0.1:3002/api/products?search=Alpha",
+  "status": 200,
+  "body": "[]",
+  "at": "2026-10-16T03:41:22.327Z"
+}

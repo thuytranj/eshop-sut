@@ -1,0 +1,80 @@
+Window: "iPhone 18 Pro", App: Device Hub.
+0 standard window iPhone 18 Pro – iOS 27.0, ID: com.apple.dt.DeviceKit.DeviceManagementWindow-AppWindow-1, Secondary Actions: Raise
+	1 split group
+		2 split group com.apple.dt.DeviceKit.DeviceManagementWindow-AppWindow-1, SidebarNavigationSplitView
+			3 splitter (settable, float) -1
+			4 container
+				5 container
+					6 element Description: EShop Mobile, Secondary Actions: Cancel
+					7 element Description: Đăng nhập, Secondary Actions: Cancel
+					8 element Description: Giỏ (0), Secondary Actions: Cancel
+					9 text Description: Danh sách sản phẩm, Secondary Actions: Cancel
+					10 text field (settable) Value: Cà phê, Placeholder: Tìm kiếm..., Secondary Actions: Cancel
+					11 element Description: Tìm, Secondary Actions: Cancel
+					12 text Description: Kết quả tìm kiếm cho: Cà phê, Secondary Actions: Cancel
+					13 text Description: Cà phê, Secondary Actions: Cancel
+					14 text Description: 999.999 ₫, Secondary Actions: Cancel
+					15 element Description: Xem chi tiết, Secondary Actions: Cancel
+					16 element Description: Thêm vào giỏ, Secondary Actions: Cancel
+					17 button Description: “phê”, Secondary Actions: Cancel
+					18 button Description: phenomenal, Secondary Actions: Cancel
+					19 button Description: phenomenon, Secondary Actions: Cancel
+					20 button q
+					21 button w
+					22 button e
+					23 button r
+					24 button t
+					25 button y
+					26 button u
+					27 button i
+					28 button o
+					29 button p
+					30 button a
+					31 button s
+					32 button d
+					33 button f
+					34 button g
+					35 button h
+					36 button j
+					37 button k
+					38 button l
+					39 button Description: shift, Help: Quadruple-tap to enter caps lock, Secondary Actions: Caps Lock
+					40 button z
+					41 button x
+					42 button c
+					43 button v
+					44 button b
+					45 button n
+					46 button m
+					47 button delete
+					48 button Description: numbers, ID: more
+					49 button Description: Emoji, ID: emoji
+					50 button space
+					51 button Description: return, ID: Return
+					52 element Secondary Actions: Cancel
+					53 button Description: Next keyboard, Help: Double-tap and hold, then drag up to select another keyboard, Value: Tiếng Việt Telex, Secondary Actions: Cancel
+					54 button Description: Dictate, Help: Double-tap to start dictation. Double-tap with two fingers when finished., ID: dictation, Secondary Actions: Cancel
+				55 button app.grid.3x3
+				56 button camera.viewfinder
+				57 button record.circle
+				58 button
+		59 splitter (settable, float) 391
+	60 toolbar
+		61 button Description: Show Sidebar, Secondary Actions: Increment, Decrement, Delete, Cancel
+		62 radio button Description: Edit, Help: Settings, Value: 0, ID: slider.horizontal.3
+		63 radio button Description: Text Document, Help: Reports, Value: 0, ID: text.document
+		64 radio button Description: Info, Value: 0, ID: info
+		65 pop up button more toolbar items
+	66 close button
+	67 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	68 minimize button
+	69 text iPhone 18 Pro iOS 27.0
+70 menu bar
+	71 Device Hub
+	72 File
+	73 Edit
+	74 View
+	75 Device
+	76 Controls
+	77 Window
+	78 Help

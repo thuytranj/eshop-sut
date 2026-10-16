@@ -1,0 +1,2 @@
+FR05-TC-020: native mapping HTML h1 chưa có trong specification.
+FR05-TC-021..027: trim/wildcard/case/diacritics/empty-query/one-char/whitespace policies chưa có trong requirement. Không tự dùng SQL LIKE làm oracle. Những case này Blocked trước verdict, không được tính executed.

@@ -1,0 +1,456 @@
+[
+  {
+    "runId": "fr05-run01",
+    "caseId": "FR05-TC-034",
+    "interface": "API",
+    "platform": "Node/HTTP",
+    "actual": "HTTP 200; body=[{\"id\":101,\"name\":\"Alpha\",\"price\":999,\"description\":\"Fixture FR05\",\"imageUrl\":\"http://127.0.0.1:3001/square.png\",\"category_id\":1},{\"id\":102,\"name\":\"Alpine\",\"price\":1000,\"description\":\"Fixture FR05\",\"imageUrl\":\"http://127.0.0.1:3001/wide.png\",\"category_id\":1},{\"id\":103,\"name\":\"Beta\",\"price\":1001,\"description\":\"Fixture FR05\",\"imageUrl\":\"http://127.0.0.1:3001/tall.png\",\"category_id\":1},{\"id\":104,\"name\":\"Cà phê\",\"price\":999999,\"description\":\"Fixture FR05\",\"imageUrl\":\"http://127.0.0.1:3001/square.png\",\"category_id\":1},{\"id\":105,\"name\":\"O'Brien\",\"price\":1000000,\"description\":\"Fixture FR05\",\"imageUrl\":\"http://127.0.0.1:3001/wide.png\",\"category_id\":1},{\"id\":106,\"name\":\"A&B\",\"price\":1000001,\"description\":\"Fixture FR05\",\"imageUrl\":\"http://127.0.0.1:3001/tall.png\",\"category_id\":1},{\"id\":107,\"name\":\"A+B\",\"price\":999,\"description\":\"Fixture FR05\",\"imageUrl\":\"http://127.0.0.1:3001/square.png\",\"category_id\":1},{\"id\":108,\"name\":\"A#B\",\"price\":1000,\"description\":\"Fixture FR05\",\"imageUrl\":\"http://127.0.0.1:3001/wide.png\",\"category_id\":1},{\"id\":109,\"name\":\"Promo%Off\",\"price\":1001,\"description\":\"Fixture FR05\",\"imageUrl\":\"http://127.0.0.1:3001/tall.png\",\"category_id\":1},{\"id\":110,\"name\":\"Promo_Off\",\"price\":999999,\"description\":\"Fixture FR05\",\"imageUrl\":\"http://127.0.0.1:3001/square.png\",\"category_id\":1},{\"id\":111,\"name\":\"DescriptionOnly\",\"price\":1000000,\"description\":\"DescriptionToken\",\"imageUrl\":\"http://127.0.0.1:3001/wide.png\",\"category_id\":1},{\"id\":112,\"name\":\"Sản phẩm tên dài để kiểm tra hiển thị trên màn hình mobile\",\"price\":1000001,\"description\":\"Fixture FR05\",\"imageUrl\":\"http://127.0.0.1:3001/tall.png\",\"category_id\":1}]",
+    "assertions": [
+      {
+        "name": "HTTP status",
+        "expected": 200,
+        "actual": 200,
+        "passed": true
+      },
+      {
+        "name": "JSON array",
+        "expected": true,
+        "actual": true,
+        "passed": true
+      },
+      {
+        "name": "exact IDs including multiplicity",
+        "expected": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106,
+          107,
+          108,
+          109,
+          110,
+          111,
+          112
+        ],
+        "actual": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106,
+          107,
+          108,
+          109,
+          110,
+          111,
+          112
+        ],
+        "passed": true
+      }
+    ],
+    "status": "Passed",
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run01/api/FR05-TC-034.json"
+    ],
+    "bugIds": [],
+    "reason": ""
+  },
+  {
+    "runId": "fr05-run01",
+    "caseId": "FR05-TC-035",
+    "interface": "API",
+    "platform": "Node/HTTP",
+    "actual": "HTTP 200; body=[{\"id\":101,\"name\":\"Alpha\",\"price\":999,\"description\":\"Fixture FR05\",\"imageUrl\":\"http://127.0.0.1:3001/square.png\",\"category_id\":1}]",
+    "assertions": [
+      {
+        "name": "HTTP status",
+        "expected": 200,
+        "actual": 200,
+        "passed": true
+      },
+      {
+        "name": "JSON array",
+        "expected": true,
+        "actual": true,
+        "passed": true
+      },
+      {
+        "name": "exact IDs including multiplicity",
+        "expected": [
+          101
+        ],
+        "actual": [
+          101
+        ],
+        "passed": true
+      }
+    ],
+    "status": "Passed",
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run01/api/FR05-TC-035.json"
+    ],
+    "bugIds": [],
+    "reason": ""
+  },
+  {
+    "runId": "fr05-run01",
+    "caseId": "FR05-TC-036",
+    "interface": "API",
+    "platform": "Node/HTTP",
+    "actual": "HTTP 200; body=[]",
+    "assertions": [
+      {
+        "name": "HTTP status",
+        "expected": 200,
+        "actual": 200,
+        "passed": true
+      },
+      {
+        "name": "JSON array",
+        "expected": true,
+        "actual": true,
+        "passed": true
+      },
+      {
+        "name": "exact IDs including multiplicity",
+        "expected": [],
+        "actual": [],
+        "passed": true
+      }
+    ],
+    "status": "Passed",
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run01/api/FR05-TC-036.json"
+    ],
+    "bugIds": [],
+    "reason": ""
+  },
+  {
+    "runId": "fr05-run01",
+    "caseId": "FR05-TC-037",
+    "interface": "API",
+    "platform": "Node/HTTP",
+    "actual": "HTTP 200; body=[]",
+    "assertions": [
+      {
+        "name": "HTTP status",
+        "expected": 200,
+        "actual": 200,
+        "passed": true
+      },
+      {
+        "name": "JSON array",
+        "expected": true,
+        "actual": true,
+        "passed": true
+      },
+      {
+        "name": "exact IDs including multiplicity",
+        "expected": [],
+        "actual": [],
+        "passed": true
+      }
+    ],
+    "status": "Passed",
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run01/api/FR05-TC-037.json"
+    ],
+    "bugIds": [],
+    "reason": ""
+  },
+  {
+    "runId": "fr05-run01",
+    "caseId": "FR05-TC-038",
+    "interface": "API",
+    "platform": "Node/HTTP",
+    "actual": "HTTP 200; body=[{\"id\":104,\"name\":\"Cà phê\",\"price\":999999,\"description\":\"Fixture FR05\",\"imageUrl\":\"http://127.0.0.1:3001/square.png\",\"category_id\":1}]",
+    "assertions": [
+      {
+        "name": "HTTP status",
+        "expected": 200,
+        "actual": 200,
+        "passed": true
+      },
+      {
+        "name": "JSON array",
+        "expected": true,
+        "actual": true,
+        "passed": true
+      },
+      {
+        "name": "exact IDs including multiplicity",
+        "expected": [
+          104
+        ],
+        "actual": [
+          104
+        ],
+        "passed": true
+      }
+    ],
+    "status": "Passed",
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run01/api/FR05-TC-038.json"
+    ],
+    "bugIds": [],
+    "reason": ""
+  },
+  {
+    "runId": "fr05-run01",
+    "caseId": "FR05-TC-039",
+    "interface": "API",
+    "platform": "Node/HTTP",
+    "actual": "HTTP 500; body=<h1>Database Error</h1><p>SQLITE_ERROR: near \"Brien\": syntax error</p>",
+    "assertions": [
+      {
+        "name": "HTTP status",
+        "expected": 200,
+        "actual": 500,
+        "passed": false
+      },
+      {
+        "name": "JSON array",
+        "expected": true,
+        "actual": false,
+        "passed": false
+      },
+      {
+        "name": "exact IDs including multiplicity",
+        "expected": [
+          105
+        ],
+        "actual": null,
+        "passed": false
+      }
+    ],
+    "status": "Failed",
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run01/api/FR05-TC-039.json"
+    ],
+    "bugIds": [],
+    "reason": ""
+  },
+  {
+    "runId": "fr05-run01",
+    "caseId": "FR05-TC-040",
+    "interface": "API",
+    "platform": "Node/HTTP",
+    "actual": "HTTP 200; body=[{\"id\":106,\"name\":\"A&B\",\"price\":1000001,\"description\":\"Fixture FR05\",\"imageUrl\":\"http://127.0.0.1:3001/tall.png\",\"category_id\":1}]",
+    "assertions": [
+      {
+        "name": "HTTP status",
+        "expected": 200,
+        "actual": 200,
+        "passed": true
+      },
+      {
+        "name": "JSON array",
+        "expected": true,
+        "actual": true,
+        "passed": true
+      },
+      {
+        "name": "exact IDs including multiplicity",
+        "expected": [
+          106
+        ],
+        "actual": [
+          106
+        ],
+        "passed": true
+      }
+    ],
+    "status": "Passed",
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run01/api/FR05-TC-040.json"
+    ],
+    "bugIds": [],
+    "reason": ""
+  },
+  {
+    "runId": "fr05-run01",
+    "caseId": "FR05-TC-041",
+    "interface": "API",
+    "platform": "Node/HTTP",
+    "actual": "HTTP 200; body=[{\"id\":107,\"name\":\"A+B\",\"price\":999,\"description\":\"Fixture FR05\",\"imageUrl\":\"http://127.0.0.1:3001/square.png\",\"category_id\":1}]",
+    "assertions": [
+      {
+        "name": "HTTP status",
+        "expected": 200,
+        "actual": 200,
+        "passed": true
+      },
+      {
+        "name": "JSON array",
+        "expected": true,
+        "actual": true,
+        "passed": true
+      },
+      {
+        "name": "exact IDs including multiplicity",
+        "expected": [
+          107
+        ],
+        "actual": [
+          107
+        ],
+        "passed": true
+      }
+    ],
+    "status": "Passed",
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run01/api/FR05-TC-041.json"
+    ],
+    "bugIds": [],
+    "reason": ""
+  },
+  {
+    "runId": "fr05-run01",
+    "caseId": "FR05-TC-042",
+    "interface": "API",
+    "platform": "Node/HTTP",
+    "actual": "HTTP 200; body=[{\"id\":108,\"name\":\"A#B\",\"price\":1000,\"description\":\"Fixture FR05\",\"imageUrl\":\"http://127.0.0.1:3001/wide.png\",\"category_id\":1}]",
+    "assertions": [
+      {
+        "name": "HTTP status",
+        "expected": 200,
+        "actual": 200,
+        "passed": true
+      },
+      {
+        "name": "JSON array",
+        "expected": true,
+        "actual": true,
+        "passed": true
+      },
+      {
+        "name": "exact IDs including multiplicity",
+        "expected": [
+          108
+        ],
+        "actual": [
+          108
+        ],
+        "passed": true
+      }
+    ],
+    "status": "Passed",
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run01/api/FR05-TC-042.json"
+    ],
+    "bugIds": [],
+    "reason": ""
+  },
+  {
+    "runId": "fr05-run01",
+    "caseId": "FR05-TC-043",
+    "interface": "API",
+    "platform": "Node/HTTP",
+    "actual": "HTTP 200; body=[]",
+    "assertions": [
+      {
+        "name": "HTTP status",
+        "expected": 200,
+        "actual": 200,
+        "passed": true
+      },
+      {
+        "name": "JSON array",
+        "expected": true,
+        "actual": true,
+        "passed": true
+      },
+      {
+        "name": "exact IDs including multiplicity",
+        "expected": [],
+        "actual": [],
+        "passed": true
+      }
+    ],
+    "status": "Passed",
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run01/api/FR05-TC-043.json"
+    ],
+    "bugIds": [],
+    "reason": ""
+  },
+  {
+    "runId": "fr05-run01",
+    "caseId": "FR05-TC-044",
+    "interface": "API",
+    "platform": "Node/HTTP",
+    "actual": "HTTP 200; body=[{\"id\":201,\"name\":\"Alpha\",\"price\":1000,\"description\":\"Fixture FR05\",\"imageUrl\":\"http://127.0.0.1:3001/square.png\",\"category_id\":1}]",
+    "assertions": [
+      {
+        "name": "HTTP status",
+        "expected": 200,
+        "actual": 200,
+        "passed": true
+      },
+      {
+        "name": "JSON array",
+        "expected": true,
+        "actual": true,
+        "passed": true
+      },
+      {
+        "name": "exact IDs including multiplicity",
+        "expected": [
+          201
+        ],
+        "actual": [
+          201
+        ],
+        "passed": true
+      }
+    ],
+    "status": "Passed",
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run01/api/FR05-TC-044.json"
+    ],
+    "bugIds": [],
+    "reason": ""
+  },
+  {
+    "runId": "fr05-run01",
+    "caseId": "FR05-TC-045",
+    "interface": "API",
+    "platform": "Node/HTTP",
+    "actual": "HTTP 200; body=[{\"id\":201,\"name\":\"Alpha\",\"price\":1000,\"description\":\"Fixture FR05\",\"imageUrl\":\"http://127.0.0.1:3001/square.png\",\"category_id\":1},{\"id\":202,\"name\":\"Alpha\",\"price\":1001,\"description\":\"Fixture FR05\",\"imageUrl\":\"http://127.0.0.1:3001/square.png\",\"category_id\":1}]",
+    "assertions": [
+      {
+        "name": "HTTP status",
+        "expected": 200,
+        "actual": 200,
+        "passed": true
+      },
+      {
+        "name": "JSON array",
+        "expected": true,
+        "actual": true,
+        "passed": true
+      },
+      {
+        "name": "exact IDs including multiplicity",
+        "expected": [
+          201,
+          202
+        ],
+        "actual": [
+          201,
+          202
+        ],
+        "passed": true
+      }
+    ],
+    "status": "Passed",
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run01/api/FR05-TC-045.json"
+    ],
+    "bugIds": [],
+    "reason": ""
+  }
+]

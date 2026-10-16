@@ -1,0 +1,23 @@
+{
+  "runId": "fr05-run01",
+  "caseId": "FR05-TC-008",
+  "interface": "NATIVE",
+  "platform": "iOS",
+  "recordedAt": "2026-10-16T03:58:58.747Z",
+  "status": "Failed",
+  "actual": "Search A+B hiển thị keyword nguyên dạng nhưng không có card A+B; API encoded case041 trả đúng ID107.",
+  "assertions": [
+    {
+      "name": "Reserved + preserved",
+      "expected": "A+B card",
+      "actual": "0 card",
+      "passed": false
+    }
+  ],
+  "evidence": [
+    "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-008.ax.txt",
+    "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-008.png"
+  ],
+  "bugIds": [],
+  "reason": ""
+}

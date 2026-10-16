@@ -1,0 +1,23 @@
+{
+  "runId": "fr05-run01",
+  "caseId": "FR05-TC-001",
+  "interface": "NATIVE",
+  "platform": "iOS",
+  "recordedAt": "2026-10-16T03:55:41.328Z",
+  "status": "Failed",
+  "actual": "Home có 12 tên/giá trong AX; screenshot cho thấy từng card chiếm một cột, không phải grid. Chưa xác minh scroll cuối bằng thao tác vì coordinate routing Device Hub lỗi.",
+  "assertions": [
+    {
+      "name": "Grid layout",
+      "expected": "grid",
+      "actual": "one-column cards",
+      "passed": false
+    }
+  ],
+  "evidence": [
+    "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-001.ax.txt",
+    "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-001.png"
+  ],
+  "bugIds": [],
+  "reason": ""
+}

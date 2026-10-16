@@ -1,0 +1,7 @@
+ADB escalated: List of devices attached (no device).
+iOS simctl escalated: iPhone 18 Pro iOS27.0 Booted.
+CUA com.apple.dt.Devices: window iPhone 18 Pro, live home screen observed.
+Expo npm run ios: Cannot determine id of Simulator app; Device Hub rename incompatibility.
+Metro npm start -- --localhost --port8081: packager-status:running.
+Expo Go host.exp.Exponent not installed initially; official downloader pending.
+Working backend is never started; server.js/database.js copied unchanged to /private/tmp/eshop-fr05-fr05-run01/backend.

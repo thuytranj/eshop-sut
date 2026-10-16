@@ -1,0 +1,1153 @@
+[
+  {
+    "runId": "fr05-run01",
+    "caseId": "FR05-TC-001",
+    "interface": "NATIVE",
+    "platform": "iOS",
+    "recordedAt": "2026-10-16T03:55:41.328Z",
+    "status": "Failed",
+    "actual": "Home có 12 tên/giá trong AX; screenshot cho thấy từng card chiếm một cột, không phải grid. Chưa xác minh scroll cuối bằng thao tác vì coordinate routing Device Hub lỗi.",
+    "assertions": [
+      {
+        "name": "Grid layout",
+        "expected": "grid",
+        "actual": "one-column cards",
+        "passed": false
+      }
+    ],
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-001.ax.txt",
+      "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-001.png"
+    ],
+    "bugIds": [],
+    "reason": ""
+  },
+  {
+    "runId": "fr05-run01",
+    "caseId": "FR05-TC-002",
+    "interface": "NATIVE",
+    "platform": "iOS",
+    "recordedAt": "2026-10-16T03:55:41.358Z",
+    "status": "Passed",
+    "actual": "Search Alpha trả một card Alpha giá 999 ₫; Hiển thị 1 sản phẩm.",
+    "assertions": [
+      {
+        "name": "Exact matching card",
+        "expected": "Alpha only, count1",
+        "actual": "Alpha only, count1",
+        "passed": true
+      }
+    ],
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-002.ax.txt",
+      "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-002.png"
+    ],
+    "bugIds": [],
+    "reason": ""
+  },
+  {
+    "runId": "fr05-run01",
+    "caseId": "FR05-TC-003",
+    "interface": "NATIVE",
+    "platform": "iOS",
+    "recordedAt": "2026-10-16T03:57:12.965Z",
+    "status": "Failed",
+    "actual": "Response success rỗng, vùng kết quả trống hoàn toàn; không có thông báo empty state trong screenshot/AX.",
+    "assertions": [
+      {
+        "name": "Empty message after zero matches",
+        "expected": "có empty state",
+        "actual": "không có",
+        "passed": false
+      }
+    ],
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-003.ax.txt",
+      "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-003.png"
+    ],
+    "bugIds": [],
+    "reason": ""
+  },
+  {
+    "runId": "fr05-run01",
+    "caseId": "FR05-TC-004",
+    "interface": "NATIVE",
+    "platform": "iOS",
+    "recordedAt": "2026-10-16T03:57:40.328Z",
+    "status": "Failed",
+    "actual": "DescriptionToken không trả card (name-only đúng), nhưng không có thông báo empty state.",
+    "assertions": [
+      {
+        "name": "Search theo tên",
+        "expected": "0 card",
+        "actual": "0 card",
+        "passed": true
+      },
+      {
+        "name": "Empty state",
+        "expected": "có thông báo",
+        "actual": "không có",
+        "passed": false
+      }
+    ],
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-004.ax.txt",
+      "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-004.png"
+    ],
+    "bugIds": [],
+    "reason": ""
+  },
+  {
+    "runId": "fr05-run01",
+    "caseId": "FR05-TC-005",
+    "interface": "NATIVE",
+    "platform": "iOS",
+    "recordedAt": "2026-10-16T03:58:13.007Z",
+    "status": "Passed",
+    "actual": "Cà phê nguyên dấu trả một card Cà phê giá 999.999 ₫, không có tên sản phẩm khác trong AX.",
+    "assertions": [
+      {
+        "name": "Unicode full-name result",
+        "expected": "Cà phê only",
+        "actual": "Cà phê only",
+        "passed": true
+      }
+    ],
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-005.ax.txt",
+      "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-005.png"
+    ],
+    "bugIds": [],
+    "reason": ""
+  },
+  {
+    "runId": "fr05-run01",
+    "caseId": "FR05-TC-006",
+    "interface": "NATIVE",
+    "platform": "iOS",
+    "recordedAt": "2026-10-16T03:58:26.640Z",
+    "status": "Failed",
+    "actual": "App hiển thị nguyên chuỗi <h1>Database Error</h1><p>SQLITE_ERROR: near \"Brien\": syntax error</p> thay vì card O'Brien.",
+    "assertions": [
+      {
+        "name": "Full-name quote search",
+        "expected": "O'Brien card",
+        "actual": "Database Error / SQLITE_ERROR",
+        "passed": false
+      }
+    ],
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-006.ax.txt",
+      "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-006.png"
+    ],
+    "bugIds": [],
+    "reason": ""
+  },
+  {
+    "runId": "fr05-run01",
+    "caseId": "FR05-TC-007",
+    "interface": "NATIVE",
+    "platform": "iOS",
+    "recordedAt": "2026-10-16T03:58:45.679Z",
+    "status": "Failed",
+    "actual": "Keyword A&B nhưng có Alpha/Beta/A+B/A#B và tên khác; không chỉ A&B. API encode đúng case040 đã pass.",
+    "assertions": [
+      {
+        "name": "Reserved & preserved",
+        "expected": "A&B only",
+        "actual": "nhiều sản phẩm match A",
+        "passed": false
+      }
+    ],
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-007.ax.txt",
+      "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-007.png"
+    ],
+    "bugIds": [],
+    "reason": ""
+  },
+  {
+    "runId": "fr05-run01",
+    "caseId": "FR05-TC-008",
+    "interface": "NATIVE",
+    "platform": "iOS",
+    "recordedAt": "2026-10-16T03:58:58.747Z",
+    "status": "Failed",
+    "actual": "Search A+B hiển thị keyword nguyên dạng nhưng không có card A+B; API encoded case041 trả đúng ID107.",
+    "assertions": [
+      {
+        "name": "Reserved + preserved",
+        "expected": "A+B card",
+        "actual": "0 card",
+        "passed": false
+      }
+    ],
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-008.ax.txt",
+      "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-008.png"
+    ],
+    "bugIds": [],
+    "reason": ""
+  },
+  {
+    "runId": "fr05-run01",
+    "caseId": "FR05-TC-009",
+    "interface": "NATIVE",
+    "platform": "iOS",
+    "recordedAt": "2026-10-16T03:59:15.288Z",
+    "status": "Failed",
+    "actual": "Search A#B trả nhiều tên match A thay vì chỉ A#B; API encoded case042 trả đúng ID108.",
+    "assertions": [
+      {
+        "name": "Fragment # preserved",
+        "expected": "A#B only",
+        "actual": "nhiều tên match A",
+        "passed": false
+      }
+    ],
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-009.ax.txt",
+      "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-009.png"
+    ],
+    "bugIds": [],
+    "reason": ""
+  },
+  {
+    "runId": "fr05-run01",
+    "caseId": "FR05-TC-010",
+    "interface": "NATIVE",
+    "platform": "iOS",
+    "recordedAt": "2026-10-16T04:00:06.569Z",
+    "status": "Passed",
+    "actual": "Nhãn kết quả hiển thị nguyên văn <b>Alpha</b>; screenshot còn cả dấu <b>, không render bold/HTML.",
+    "assertions": [
+      {
+        "name": "Literal keyword display",
+        "expected": "<b>Alpha</b> nguyên văn",
+        "actual": "<b>Alpha</b> nguyên văn",
+        "passed": true
+      }
+    ],
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-010.ax.txt",
+      "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-010.png"
+    ],
+    "bugIds": [],
+    "reason": ""
+  },
+  {
+    "runId": "fr05-run01",
+    "caseId": "FR05-TC-011",
+    "interface": "NATIVE",
+    "platform": "iOS",
+    "recordedAt": "2026-10-16T05:21:31.696Z",
+    "status": "Passed",
+    "actual": "Native AX của full catalog hiển thị 999 ₫, 1.000 ₫, 1.001 ₫, 999.999 ₫, 1.000.000 ₫ và 1.000.001 ₫ đúng nhóm nghìn.",
+    "assertions": [
+      {
+        "name": "Thousands grouping and currency",
+        "expected": "6 giá có grouping/₫ đúng",
+        "actual": "đúng cả 6 giá trong native AX",
+        "passed": true
+      }
+    ],
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-011.ax.txt",
+      "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-011.png"
+    ],
+    "bugIds": [],
+    "reason": ""
+  },
+  {
+    "runId": "fr05-run01",
+    "caseId": "FR05-TC-012",
+    "interface": "NATIVE",
+    "platform": "iOS",
+    "recordedAt": "2026-10-16T05:29:37.347Z",
+    "status": "Failed",
+    "actual": "Snapshot images có Square/Wide/Tall. Screenshot Square từ PNG120×120 có hình tròn nhưng native kéo thành ellipse ngang. Wide thấy một phần; Tall chưa kiểm hình do scroll tool bị chặn. Một ảnh đã vi phạm đủ để case Failed.",
+    "assertions": [
+      {
+        "name": "Preserve source ratio",
+        "expected": "Square circle vẫn tròn",
+        "actual": "Square circle thành ellipse",
+        "passed": false
+      }
+    ],
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-012.ax.txt",
+      "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-012.png"
+    ],
+    "bugIds": [],
+    "reason": ""
+  },
+  {
+    "runId": "fr05-run01",
+    "caseId": "FR05-TC-013",
+    "interface": "NATIVE",
+    "platform": "iOS",
+    "recordedAt": "2026-10-16T05:22:53.919Z",
+    "status": "Blocked",
+    "actual": "Ảnh hiển thị ở card Alpha nhưng AX export không có node ảnh/description. Chưa có VoiceOver output hoặc xác minh export có đầy đủ image semantics; giữ suspected accessibility gap.",
+    "assertions": [],
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-013.ax.txt"
+    ],
+    "bugIds": [],
+    "reason": "EVIDENCE_CAPABILITY"
+  },
+  {
+    "runId": "fr05-run01",
+    "caseId": "FR05-TC-014",
+    "interface": "NATIVE",
+    "platform": "iOS",
+    "recordedAt": "2026-10-16T05:23:09.698Z",
+    "status": "Passed",
+    "actual": "Card có tên Sản phẩm tên dài để kiểm tra hiển thị trên màn hình mobile và giá 1.000.001 ₫ trong native AX; không áp quy định wrap chưa có nguồn.",
+    "assertions": [
+      {
+        "name": "Product name presence",
+        "expected": "có tên sản phẩm",
+        "actual": "có tên trong native card",
+        "passed": true
+      }
+    ],
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-014.ax.txt"
+    ],
+    "bugIds": [],
+    "reason": ""
+  },
+  {
+    "runId": "fr05-run01",
+    "caseId": "FR05-TC-015",
+    "interface": "NATIVE",
+    "platform": "iOS",
+    "recordedAt": "2026-10-16T05:21:31.705Z",
+    "status": "Passed",
+    "actual": "Initial reload có Đang tải... khi proxy giữ response 30 giây; sau response có 12 sản phẩm và loading biến mất.",
+    "assertions": [
+      {
+        "name": "Pending loading and final catalog",
+        "expected": "loading→12 products",
+        "actual": "loading→12 products",
+        "passed": true
+      }
+    ],
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-015-pending-v2.png",
+      "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-015-pending-clear.ax.txt",
+      "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-015-success.ax.txt",
+      "docs/testing/fr05/evidence/fr05-run01/requests.jsonl"
+    ],
+    "bugIds": [],
+    "reason": ""
+  },
+  {
+    "runId": "fr05-run01",
+    "caseId": "FR05-TC-016",
+    "interface": "NATIVE",
+    "platform": "iOS",
+    "recordedAt": "2026-10-16T05:25:17.827Z",
+    "status": "Passed",
+    "actual": "Search Alpha có Đang tải... trong pending; sau delay có đúng một Alpha và loading biến mất.",
+    "assertions": [
+      {
+        "name": "Search pending→success",
+        "expected": "loading rồi Alpha",
+        "actual": "loading rồi Alpha",
+        "passed": true
+      }
+    ],
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-016-pending.ax.txt",
+      "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-016-success.ax.txt",
+      "docs/testing/fr05/evidence/fr05-run01/requests.jsonl"
+    ],
+    "bugIds": [],
+    "reason": ""
+  },
+  {
+    "runId": "fr05-run01",
+    "caseId": "FR05-TC-017",
+    "interface": "NATIVE",
+    "platform": "iOS",
+    "recordedAt": "2026-10-16T05:26:04.946Z",
+    "status": "Failed",
+    "actual": "Pending có Đang tải...; sau response [] loading biến mất nhưng vẫn chỉ vùng trống, không có empty state.",
+    "assertions": [
+      {
+        "name": "Pending loading",
+        "expected": "có",
+        "actual": "có",
+        "passed": true
+      },
+      {
+        "name": "Empty message after response",
+        "expected": "có",
+        "actual": "không có",
+        "passed": false
+      }
+    ],
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-017-pending.ax.txt",
+      "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-017-after-delay.ax.txt",
+      "docs/testing/fr05/evidence/fr05-run01/requests.jsonl"
+    ],
+    "bugIds": [],
+    "reason": ""
+  },
+  {
+    "runId": "fr05-run01",
+    "caseId": "FR05-TC-018",
+    "interface": "NATIVE",
+    "platform": "iOS",
+    "recordedAt": "2026-10-16T05:26:57.255Z",
+    "status": "Passed",
+    "actual": "Khi proxy đóng socket, native hiển thị Network request failed; không hiển thị như search empty và không còn loading.",
+    "assertions": [
+      {
+        "name": "Derived error state",
+        "expected": "error khác empty; loading kết thúc",
+        "actual": "Network request failed; không loading",
+        "passed": true
+      }
+    ],
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-018.ax.txt"
+    ],
+    "bugIds": [],
+    "reason": ""
+  },
+  {
+    "runId": "fr05-run01",
+    "caseId": "FR05-TC-019",
+    "interface": "NATIVE",
+    "platform": "iOS",
+    "recordedAt": "2026-10-16T05:28:13.798Z",
+    "status": "Failed",
+    "actual": "Beta trả trước và từng hiển thị Beta; sau khi Alpha cũ trả về, ô/nhãn vẫn Beta nhưng card đổi thành Alpha giá 999 ₫. Đây là derived latest-query-wins oracle.",
+    "assertions": [
+      {
+        "name": "Latest-query consistency (derived)",
+        "expected": "Beta label + Beta card",
+        "actual": "Beta label + Alpha card",
+        "passed": false
+      }
+    ],
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-019-beta-first.ax.txt",
+      "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-019-final.ax.txt",
+      "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-019-final.png",
+      "docs/testing/fr05/evidence/fr05-run01/requests.jsonl"
+    ],
+    "bugIds": [],
+    "reason": ""
+  },
+  {
+    "runId": "fr05-run01",
+    "caseId": "FR05-TC-020",
+    "interface": "NATIVE",
+    "platform": "iOS",
+    "actual": "Chưa thực thi để kết luận vì thiếu oracle cho native h1 hoặc search policy; không có pass/fail giả định.",
+    "assertions": [],
+    "status": "Blocked",
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run01/oracle-blockers.txt"
+    ],
+    "bugIds": [],
+    "reason": "ORACLE_UNRESOLVED"
+  },
+  {
+    "runId": "fr05-run01",
+    "caseId": "FR05-TC-021",
+    "interface": "NATIVE",
+    "platform": "iOS",
+    "actual": "Chưa thực thi để kết luận vì thiếu oracle cho native h1 hoặc search policy; không có pass/fail giả định.",
+    "assertions": [],
+    "status": "Blocked",
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run01/oracle-blockers.txt"
+    ],
+    "bugIds": [],
+    "reason": "ORACLE_UNRESOLVED"
+  },
+  {
+    "runId": "fr05-run01",
+    "caseId": "FR05-TC-022",
+    "interface": "NATIVE",
+    "platform": "iOS",
+    "actual": "Chưa thực thi để kết luận vì thiếu oracle cho native h1 hoặc search policy; không có pass/fail giả định.",
+    "assertions": [],
+    "status": "Blocked",
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run01/oracle-blockers.txt"
+    ],
+    "bugIds": [],
+    "reason": "ORACLE_UNRESOLVED"
+  },
+  {
+    "runId": "fr05-run01",
+    "caseId": "FR05-TC-023",
+    "interface": "NATIVE",
+    "platform": "iOS",
+    "actual": "Chưa thực thi để kết luận vì thiếu oracle cho native h1 hoặc search policy; không có pass/fail giả định.",
+    "assertions": [],
+    "status": "Blocked",
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run01/oracle-blockers.txt"
+    ],
+    "bugIds": [],
+    "reason": "ORACLE_UNRESOLVED"
+  },
+  {
+    "runId": "fr05-run01",
+    "caseId": "FR05-TC-024",
+    "interface": "NATIVE",
+    "platform": "iOS",
+    "actual": "Chưa thực thi để kết luận vì thiếu oracle cho native h1 hoặc search policy; không có pass/fail giả định.",
+    "assertions": [],
+    "status": "Blocked",
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run01/oracle-blockers.txt"
+    ],
+    "bugIds": [],
+    "reason": "ORACLE_UNRESOLVED"
+  },
+  {
+    "runId": "fr05-run01",
+    "caseId": "FR05-TC-025",
+    "interface": "NATIVE",
+    "platform": "iOS",
+    "actual": "Chưa thực thi để kết luận vì thiếu oracle cho native h1 hoặc search policy; không có pass/fail giả định.",
+    "assertions": [],
+    "status": "Blocked",
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run01/oracle-blockers.txt"
+    ],
+    "bugIds": [],
+    "reason": "ORACLE_UNRESOLVED"
+  },
+  {
+    "runId": "fr05-run01",
+    "caseId": "FR05-TC-026",
+    "interface": "NATIVE",
+    "platform": "iOS",
+    "actual": "Chưa thực thi để kết luận vì thiếu oracle cho native h1 hoặc search policy; không có pass/fail giả định.",
+    "assertions": [],
+    "status": "Blocked",
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run01/oracle-blockers.txt"
+    ],
+    "bugIds": [],
+    "reason": "ORACLE_UNRESOLVED"
+  },
+  {
+    "runId": "fr05-run01",
+    "caseId": "FR05-TC-027",
+    "interface": "NATIVE",
+    "platform": "iOS",
+    "actual": "Chưa thực thi để kết luận vì thiếu oracle cho native h1 hoặc search policy; không có pass/fail giả định.",
+    "assertions": [],
+    "status": "Blocked",
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run01/oracle-blockers.txt"
+    ],
+    "bugIds": [],
+    "reason": "ORACLE_UNRESOLVED"
+  },
+  {
+    "runId": "fr05-run01",
+    "caseId": "FR05-TC-028",
+    "interface": "NATIVE",
+    "platform": "iOS",
+    "recordedAt": "2026-10-16T05:30:05.768Z",
+    "status": "Failed",
+    "actual": "BVA n=0: search Alpha trên catalog empty trả 0 card; không có thông báo empty state.",
+    "assertions": [
+      {
+        "name": "BVA n0 empty state",
+        "expected": "empty message",
+        "actual": "blank result area",
+        "passed": false
+      }
+    ],
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-028.ax.txt",
+      "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-028.png"
+    ],
+    "bugIds": [],
+    "reason": ""
+  },
+  {
+    "runId": "fr05-run01",
+    "caseId": "FR05-TC-029",
+    "interface": "NATIVE",
+    "platform": "iOS",
+    "recordedAt": "2026-10-16T05:31:27.652Z",
+    "status": "Passed",
+    "actual": "BVA n=1: một card Alpha giá 1.000 ₫, nhãn Hiển thị 1 sản phẩm; signature khớp ID201 trong snapshot one.",
+    "assertions": [
+      {
+        "name": "BVA n1 count/signature",
+        "expected": "Alpha/1000, count1",
+        "actual": "Alpha/1000, count1",
+        "passed": true
+      }
+    ],
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-029.ax.txt"
+    ],
+    "bugIds": [],
+    "reason": ""
+  },
+  {
+    "runId": "fr05-run01",
+    "caseId": "FR05-TC-030",
+    "interface": "NATIVE",
+    "platform": "iOS",
+    "recordedAt": "2026-10-16T05:32:52.386Z",
+    "status": "Passed",
+    "actual": "BVA n=2: hai card cùng tên Alpha, giá 1.000 ₫ và 1.001 ₫; Hiển thị 2 sản phẩm, không gộp hai signature.",
+    "assertions": [
+      {
+        "name": "BVA n2 distinct cards",
+        "expected": "2 Alpha cards with prices1000/1001",
+        "actual": "2 Alpha cards with prices1000/1001",
+        "passed": true
+      }
+    ],
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-030.ax.txt"
+    ],
+    "bugIds": [],
+    "reason": ""
+  },
+  {
+    "runId": "fr05-run01",
+    "caseId": "FR05-TC-031",
+    "interface": "NATIVE",
+    "platform": "iOS",
+    "recordedAt": "2026-10-16T05:33:39.288Z",
+    "status": "Passed",
+    "actual": "Snapshot mixed có Alpha/Beta nhưng query Alpha chỉ hiển thị Alpha giá 1.000 ₫; count1.",
+    "assertions": [
+      {
+        "name": "M2,n1 isolation",
+        "expected": "Alpha only",
+        "actual": "Alpha only",
+        "passed": true
+      }
+    ],
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-031.ax.txt"
+    ],
+    "bugIds": [],
+    "reason": ""
+  },
+  {
+    "runId": "fr05-run01",
+    "caseId": "FR05-TC-032",
+    "interface": "NATIVE",
+    "platform": "iOS",
+    "recordedAt": "2026-10-16T05:34:07.518Z",
+    "status": "Passed",
+    "actual": "Snapshot three có Alpha/Beta/Gamma, query Alpha vẫn chỉ có Alpha giá 1.000 ₫ và count1; đối chiếu reset/request trong log.",
+    "assertions": [
+      {
+        "name": "M3,n1 isolation",
+        "expected": "Alpha only",
+        "actual": "Alpha only",
+        "passed": true
+      }
+    ],
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-032.ax.txt"
+    ],
+    "bugIds": [],
+    "reason": ""
+  },
+  {
+    "runId": "fr05-run01",
+    "caseId": "FR05-TC-033",
+    "interface": "NATIVE",
+    "platform": "iOS",
+    "recordedAt": "2026-10-16T05:35:10.853Z",
+    "status": "Failed",
+    "actual": "Search vô nghiệm có 0 card nhưng thiếu empty state; sau đó search Alpha phục hồi đúng một Alpha giá 999 ₫.",
+    "assertions": [
+      {
+        "name": "Empty state before recovery",
+        "expected": "có thông báo",
+        "actual": "không có",
+        "passed": false
+      },
+      {
+        "name": "Recovery to matching query",
+        "expected": "Alpha only",
+        "actual": "Alpha only",
+        "passed": true
+      }
+    ],
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-033-empty.ax.txt",
+      "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-033-recovered.ax.txt"
+    ],
+    "bugIds": [],
+    "reason": ""
+  },
+  {
+    "runId": "fr05-run01",
+    "caseId": "FR05-TC-034",
+    "interface": "API",
+    "platform": "Node/HTTP",
+    "actual": "HTTP 200; body=[{\"id\":101,\"name\":\"Alpha\",\"price\":999,\"description\":\"Fixture FR05\",\"imageUrl\":\"http://127.0.0.1:3001/square.png\",\"category_id\":1},{\"id\":102,\"name\":\"Alpine\",\"price\":1000,\"description\":\"Fixture FR05\",\"imageUrl\":\"http://127.0.0.1:3001/wide.png\",\"category_id\":1},{\"id\":103,\"name\":\"Beta\",\"price\":1001,\"description\":\"Fixture FR05\",\"imageUrl\":\"http://127.0.0.1:3001/tall.png\",\"category_id\":1},{\"id\":104,\"name\":\"Cà phê\",\"price\":999999,\"description\":\"Fixture FR05\",\"imageUrl\":\"http://127.0.0.1:3001/square.png\",\"category_id\":1},{\"id\":105,\"name\":\"O'Brien\",\"price\":1000000,\"description\":\"Fixture FR05\",\"imageUrl\":\"http://127.0.0.1:3001/wide.png\",\"category_id\":1},{\"id\":106,\"name\":\"A&B\",\"price\":1000001,\"description\":\"Fixture FR05\",\"imageUrl\":\"http://127.0.0.1:3001/tall.png\",\"category_id\":1},{\"id\":107,\"name\":\"A+B\",\"price\":999,\"description\":\"Fixture FR05\",\"imageUrl\":\"http://127.0.0.1:3001/square.png\",\"category_id\":1},{\"id\":108,\"name\":\"A#B\",\"price\":1000,\"description\":\"Fixture FR05\",\"imageUrl\":\"http://127.0.0.1:3001/wide.png\",\"category_id\":1},{\"id\":109,\"name\":\"Promo%Off\",\"price\":1001,\"description\":\"Fixture FR05\",\"imageUrl\":\"http://127.0.0.1:3001/tall.png\",\"category_id\":1},{\"id\":110,\"name\":\"Promo_Off\",\"price\":999999,\"description\":\"Fixture FR05\",\"imageUrl\":\"http://127.0.0.1:3001/square.png\",\"category_id\":1},{\"id\":111,\"name\":\"DescriptionOnly\",\"price\":1000000,\"description\":\"DescriptionToken\",\"imageUrl\":\"http://127.0.0.1:3001/wide.png\",\"category_id\":1},{\"id\":112,\"name\":\"Sản phẩm tên dài để kiểm tra hiển thị trên màn hình mobile\",\"price\":1000001,\"description\":\"Fixture FR05\",\"imageUrl\":\"http://127.0.0.1:3001/tall.png\",\"category_id\":1}]",
+    "assertions": [
+      {
+        "name": "HTTP status",
+        "expected": 200,
+        "actual": 200,
+        "passed": true
+      },
+      {
+        "name": "JSON array",
+        "expected": true,
+        "actual": true,
+        "passed": true
+      },
+      {
+        "name": "exact IDs including multiplicity",
+        "expected": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106,
+          107,
+          108,
+          109,
+          110,
+          111,
+          112
+        ],
+        "actual": [
+          101,
+          102,
+          103,
+          104,
+          105,
+          106,
+          107,
+          108,
+          109,
+          110,
+          111,
+          112
+        ],
+        "passed": true
+      }
+    ],
+    "status": "Passed",
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run01/api/FR05-TC-034.json"
+    ],
+    "bugIds": [],
+    "reason": ""
+  },
+  {
+    "runId": "fr05-run01",
+    "caseId": "FR05-TC-035",
+    "interface": "API",
+    "platform": "Node/HTTP",
+    "actual": "HTTP 200; body=[{\"id\":101,\"name\":\"Alpha\",\"price\":999,\"description\":\"Fixture FR05\",\"imageUrl\":\"http://127.0.0.1:3001/square.png\",\"category_id\":1}]",
+    "assertions": [
+      {
+        "name": "HTTP status",
+        "expected": 200,
+        "actual": 200,
+        "passed": true
+      },
+      {
+        "name": "JSON array",
+        "expected": true,
+        "actual": true,
+        "passed": true
+      },
+      {
+        "name": "exact IDs including multiplicity",
+        "expected": [
+          101
+        ],
+        "actual": [
+          101
+        ],
+        "passed": true
+      }
+    ],
+    "status": "Passed",
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run01/api/FR05-TC-035.json"
+    ],
+    "bugIds": [],
+    "reason": ""
+  },
+  {
+    "runId": "fr05-run01",
+    "caseId": "FR05-TC-036",
+    "interface": "API",
+    "platform": "Node/HTTP",
+    "actual": "HTTP 200; body=[]",
+    "assertions": [
+      {
+        "name": "HTTP status",
+        "expected": 200,
+        "actual": 200,
+        "passed": true
+      },
+      {
+        "name": "JSON array",
+        "expected": true,
+        "actual": true,
+        "passed": true
+      },
+      {
+        "name": "exact IDs including multiplicity",
+        "expected": [],
+        "actual": [],
+        "passed": true
+      }
+    ],
+    "status": "Passed",
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run01/api/FR05-TC-036.json"
+    ],
+    "bugIds": [],
+    "reason": ""
+  },
+  {
+    "runId": "fr05-run01",
+    "caseId": "FR05-TC-037",
+    "interface": "API",
+    "platform": "Node/HTTP",
+    "actual": "HTTP 200; body=[]",
+    "assertions": [
+      {
+        "name": "HTTP status",
+        "expected": 200,
+        "actual": 200,
+        "passed": true
+      },
+      {
+        "name": "JSON array",
+        "expected": true,
+        "actual": true,
+        "passed": true
+      },
+      {
+        "name": "exact IDs including multiplicity",
+        "expected": [],
+        "actual": [],
+        "passed": true
+      }
+    ],
+    "status": "Passed",
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run01/api/FR05-TC-037.json"
+    ],
+    "bugIds": [],
+    "reason": ""
+  },
+  {
+    "runId": "fr05-run01",
+    "caseId": "FR05-TC-038",
+    "interface": "API",
+    "platform": "Node/HTTP",
+    "actual": "HTTP 200; body=[{\"id\":104,\"name\":\"Cà phê\",\"price\":999999,\"description\":\"Fixture FR05\",\"imageUrl\":\"http://127.0.0.1:3001/square.png\",\"category_id\":1}]",
+    "assertions": [
+      {
+        "name": "HTTP status",
+        "expected": 200,
+        "actual": 200,
+        "passed": true
+      },
+      {
+        "name": "JSON array",
+        "expected": true,
+        "actual": true,
+        "passed": true
+      },
+      {
+        "name": "exact IDs including multiplicity",
+        "expected": [
+          104
+        ],
+        "actual": [
+          104
+        ],
+        "passed": true
+      }
+    ],
+    "status": "Passed",
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run01/api/FR05-TC-038.json"
+    ],
+    "bugIds": [],
+    "reason": ""
+  },
+  {
+    "runId": "fr05-run01",
+    "caseId": "FR05-TC-039",
+    "interface": "API",
+    "platform": "Node/HTTP",
+    "actual": "HTTP 500; body=<h1>Database Error</h1><p>SQLITE_ERROR: near \"Brien\": syntax error</p>",
+    "assertions": [
+      {
+        "name": "HTTP status",
+        "expected": 200,
+        "actual": 500,
+        "passed": false
+      },
+      {
+        "name": "JSON array",
+        "expected": true,
+        "actual": false,
+        "passed": false
+      },
+      {
+        "name": "exact IDs including multiplicity",
+        "expected": [
+          105
+        ],
+        "actual": null,
+        "passed": false
+      }
+    ],
+    "status": "Failed",
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run01/api/FR05-TC-039.json"
+    ],
+    "bugIds": [],
+    "reason": ""
+  },
+  {
+    "runId": "fr05-run01",
+    "caseId": "FR05-TC-040",
+    "interface": "API",
+    "platform": "Node/HTTP",
+    "actual": "HTTP 200; body=[{\"id\":106,\"name\":\"A&B\",\"price\":1000001,\"description\":\"Fixture FR05\",\"imageUrl\":\"http://127.0.0.1:3001/tall.png\",\"category_id\":1}]",
+    "assertions": [
+      {
+        "name": "HTTP status",
+        "expected": 200,
+        "actual": 200,
+        "passed": true
+      },
+      {
+        "name": "JSON array",
+        "expected": true,
+        "actual": true,
+        "passed": true
+      },
+      {
+        "name": "exact IDs including multiplicity",
+        "expected": [
+          106
+        ],
+        "actual": [
+          106
+        ],
+        "passed": true
+      }
+    ],
+    "status": "Passed",
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run01/api/FR05-TC-040.json"
+    ],
+    "bugIds": [],
+    "reason": ""
+  },
+  {
+    "runId": "fr05-run01",
+    "caseId": "FR05-TC-041",
+    "interface": "API",
+    "platform": "Node/HTTP",
+    "actual": "HTTP 200; body=[{\"id\":107,\"name\":\"A+B\",\"price\":999,\"description\":\"Fixture FR05\",\"imageUrl\":\"http://127.0.0.1:3001/square.png\",\"category_id\":1}]",
+    "assertions": [
+      {
+        "name": "HTTP status",
+        "expected": 200,
+        "actual": 200,
+        "passed": true
+      },
+      {
+        "name": "JSON array",
+        "expected": true,
+        "actual": true,
+        "passed": true
+      },
+      {
+        "name": "exact IDs including multiplicity",
+        "expected": [
+          107
+        ],
+        "actual": [
+          107
+        ],
+        "passed": true
+      }
+    ],
+    "status": "Passed",
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run01/api/FR05-TC-041.json"
+    ],
+    "bugIds": [],
+    "reason": ""
+  },
+  {
+    "runId": "fr05-run01",
+    "caseId": "FR05-TC-042",
+    "interface": "API",
+    "platform": "Node/HTTP",
+    "actual": "HTTP 200; body=[{\"id\":108,\"name\":\"A#B\",\"price\":1000,\"description\":\"Fixture FR05\",\"imageUrl\":\"http://127.0.0.1:3001/wide.png\",\"category_id\":1}]",
+    "assertions": [
+      {
+        "name": "HTTP status",
+        "expected": 200,
+        "actual": 200,
+        "passed": true
+      },
+      {
+        "name": "JSON array",
+        "expected": true,
+        "actual": true,
+        "passed": true
+      },
+      {
+        "name": "exact IDs including multiplicity",
+        "expected": [
+          108
+        ],
+        "actual": [
+          108
+        ],
+        "passed": true
+      }
+    ],
+    "status": "Passed",
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run01/api/FR05-TC-042.json"
+    ],
+    "bugIds": [],
+    "reason": ""
+  },
+  {
+    "runId": "fr05-run01",
+    "caseId": "FR05-TC-043",
+    "interface": "API",
+    "platform": "Node/HTTP",
+    "actual": "HTTP 200; body=[]",
+    "assertions": [
+      {
+        "name": "HTTP status",
+        "expected": 200,
+        "actual": 200,
+        "passed": true
+      },
+      {
+        "name": "JSON array",
+        "expected": true,
+        "actual": true,
+        "passed": true
+      },
+      {
+        "name": "exact IDs including multiplicity",
+        "expected": [],
+        "actual": [],
+        "passed": true
+      }
+    ],
+    "status": "Passed",
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run01/api/FR05-TC-043.json"
+    ],
+    "bugIds": [],
+    "reason": ""
+  },
+  {
+    "runId": "fr05-run01",
+    "caseId": "FR05-TC-044",
+    "interface": "API",
+    "platform": "Node/HTTP",
+    "actual": "HTTP 200; body=[{\"id\":201,\"name\":\"Alpha\",\"price\":1000,\"description\":\"Fixture FR05\",\"imageUrl\":\"http://127.0.0.1:3001/square.png\",\"category_id\":1}]",
+    "assertions": [
+      {
+        "name": "HTTP status",
+        "expected": 200,
+        "actual": 200,
+        "passed": true
+      },
+      {
+        "name": "JSON array",
+        "expected": true,
+        "actual": true,
+        "passed": true
+      },
+      {
+        "name": "exact IDs including multiplicity",
+        "expected": [
+          201
+        ],
+        "actual": [
+          201
+        ],
+        "passed": true
+      }
+    ],
+    "status": "Passed",
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run01/api/FR05-TC-044.json"
+    ],
+    "bugIds": [],
+    "reason": ""
+  },
+  {
+    "runId": "fr05-run01",
+    "caseId": "FR05-TC-045",
+    "interface": "API",
+    "platform": "Node/HTTP",
+    "actual": "HTTP 200; body=[{\"id\":201,\"name\":\"Alpha\",\"price\":1000,\"description\":\"Fixture FR05\",\"imageUrl\":\"http://127.0.0.1:3001/square.png\",\"category_id\":1},{\"id\":202,\"name\":\"Alpha\",\"price\":1001,\"description\":\"Fixture FR05\",\"imageUrl\":\"http://127.0.0.1:3001/square.png\",\"category_id\":1}]",
+    "assertions": [
+      {
+        "name": "HTTP status",
+        "expected": 200,
+        "actual": 200,
+        "passed": true
+      },
+      {
+        "name": "JSON array",
+        "expected": true,
+        "actual": true,
+        "passed": true
+      },
+      {
+        "name": "exact IDs including multiplicity",
+        "expected": [
+          201,
+          202
+        ],
+        "actual": [
+          201,
+          202
+        ],
+        "passed": true
+      }
+    ],
+    "status": "Passed",
+    "evidence": [
+      "docs/testing/fr05/evidence/fr05-run01/api/FR05-TC-045.json"
+    ],
+    "bugIds": [],
+    "reason": ""
+  }
+]

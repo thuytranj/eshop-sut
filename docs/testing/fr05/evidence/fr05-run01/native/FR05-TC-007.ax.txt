@@ -1,0 +1,100 @@
+Window: "iPhone 18 Pro", App: Device Hub.
+0 standard window iPhone 18 Pro – iOS 27.0, ID: com.apple.dt.DeviceKit.DeviceManagementWindow-AppWindow-1, Secondary Actions: Raise
+	1 split group
+		2 split group com.apple.dt.DeviceKit.DeviceManagementWindow-AppWindow-1, SidebarNavigationSplitView
+			3 splitter (disabled, settable, float) -1
+			4 container
+				5 container
+					6 element Description: EShop Mobile, Secondary Actions: Cancel
+					7 element Description: Đăng nhập, Secondary Actions: Cancel
+					8 element Description: Giỏ (0), Secondary Actions: Cancel
+					9 text Description: Danh sách sản phẩm, Secondary Actions: Cancel
+					10 text field (settable) Value: A&B, Placeholder: Tìm kiếm..., Secondary Actions: Cancel
+					11 element Description: Tìm, Secondary Actions: Cancel
+					12 text Description: Kết quả tìm kiếm cho: A&B, Secondary Actions: Cancel
+					13 text Description: Alpha, Secondary Actions: Cancel
+					14 text Description: 999 ₫, Secondary Actions: Cancel
+					15 element Description: Xem chi tiết, Secondary Actions: Cancel
+					16 element Description: Thêm vào giỏ, Secondary Actions: Cancel
+					17 text Description: Beta, Secondary Actions: Cancel
+					18 text Description: 1.001 ₫, Secondary Actions: Cancel
+					19 element Description: Xem chi tiết, Secondary Actions: Cancel
+					20 element Description: Thêm vào giỏ, Secondary Actions: Cancel
+					21 text Description: A&B, Secondary Actions: Cancel
+					22 text Description: 1.000.001 ₫, Secondary Actions: Cancel
+					23 element Description: Xem chi tiết, Secondary Actions: Cancel
+					24 element Description: Thêm vào giỏ, Secondary Actions: Cancel
+					25 text Description: A+B, Secondary Actions: Cancel
+					26 text Description: 999 ₫, Secondary Actions: Cancel
+					27 element Description: Xem chi tiết, Secondary Actions: Cancel
+					28 element Description: Thêm vào giỏ, Secondary Actions: Cancel
+					29 text Description: A#B, Secondary Actions: Cancel
+					30 text Description: 1.000 ₫, Secondary Actions: Cancel
+					31 element Description: Xem chi tiết, Secondary Actions: Cancel
+					32 element Description: Thêm vào giỏ, Secondary Actions: Cancel
+					33 text Description: Sản phẩm tên dài để kiểm tra hiển thị trên màn hình mobile, Secondary Actions: Cancel
+					34 text Description: 1.000.001 ₫, Secondary Actions: Cancel
+					35 element Description: Xem chi tiết, Secondary Actions: Cancel
+					36 element Description: Thêm vào giỏ, Secondary Actions: Cancel
+					37 button Description: “A&B”, Secondary Actions: Cancel
+					38 button Secondary Actions: Cancel
+					39 button Secondary Actions: Cancel
+					40 button q
+					41 button w
+					42 button e
+					43 button r
+					44 button t
+					45 button y
+					46 button u
+					47 button i
+					48 button o
+					49 button p
+					50 button a
+					51 button s
+					52 button d
+					53 button f
+					54 button g
+					55 button h
+					56 button j
+					57 button k
+					58 button l
+					59 button Description: shift, Help: Quadruple-tap to enter caps lock, Secondary Actions: Caps Lock
+					60 button z
+					61 button x
+					62 button c
+					63 button v
+					64 button b
+					65 button n
+					66 button m
+					67 button delete
+					68 button Description: numbers, ID: more
+					69 button Description: Emoji, ID: emoji
+					70 button space
+					71 button Description: return, ID: Return
+					72 element Secondary Actions: Cancel
+					73 button Description: Next keyboard, Help: Double-tap and hold, then drag up to select another keyboard, Value: Tiếng Việt Telex, Secondary Actions: Cancel
+					74 button Description: Dictate, Help: Double-tap to start dictation. Double-tap with two fingers when finished., ID: dictation, Secondary Actions: Cancel
+				75 button Description: Home, ID: app.grid.3x3
+				76 button Description: Screenshot, ID: camera.viewfinder
+				77 button Description: Record, ID: record.circle
+				78 button Rotate Left
+		79 splitter (disabled, settable, float) 391
+	80 toolbar
+		81 button Description: Show Sidebar, Secondary Actions: Increment, Decrement, Delete, Cancel
+		82 radio button Description: Edit, Help: Settings, Value: 0, ID: slider.horizontal.3
+		83 radio button Description: Text Document, Help: Reports, Value: 0, ID: text.document
+		84 radio button Description: Info, Value: 0, ID: info
+		85 pop up button more toolbar items
+	86 close button
+	87 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	88 minimize button
+	89 text iPhone 18 Pro iOS 27.0
+90 menu bar
+	91 Device Hub
+	92 File
+	93 Edit
+	94 View
+	95 Device
+	96 Controls
+	97 Window
+	98 Help

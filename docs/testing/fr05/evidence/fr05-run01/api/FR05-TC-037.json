@@ -1,0 +1,25 @@
+{
+  "reset": {
+    "fixtureId": "full",
+    "mode": "normal",
+    "delayMs": 8000,
+    "ids": [
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110,
+      111,
+      112
+    ]
+  },
+  "url": "http://127.0.0.1:3002/api/products?search=DescriptionToken",
+  "status": 200,
+  "body": "[]",
+  "at": "2026-10-16T03:41:22.269Z"
+}

@@ -1,0 +1,43 @@
+test_prepare_copies_sut_without_mutating_working_data (test_environment.EnvironmentTests.test_prepare_copies_sut_without_mutating_working_data) ... FAIL
+test_run_id_cannot_escape_tmp (test_environment.EnvironmentTests.test_run_id_cannot_escape_tmp) ... FAIL
+
+======================================================================
+FAIL: test_prepare_copies_sut_without_mutating_working_data (test_environment.EnvironmentTests.test_prepare_copies_sut_without_mutating_working_data)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/thuytran/Workspace/eshop-sut/tests/fr05/test_environment.py", line 9, in test_prepare_copies_sut_without_mutating_working_data
+    self.assertEqual(p.returncode,0,p.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : node:internal/modules/cjs/loader:1404
+  throw err;
+  ^
+
+Error: Cannot find module '/Users/thuytran/Workspace/eshop-sut/tests/fr05/prepare-environment.cjs'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)
+    at Function._load (node:internal/modules/cjs/loader:1211:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.17.1
+
+
+======================================================================
+FAIL: test_run_id_cannot_escape_tmp (test_environment.EnvironmentTests.test_run_id_cannot_escape_tmp)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/thuytran/Workspace/eshop-sut/tests/fr05/test_environment.py", line 19, in test_run_id_cannot_escape_tmp
+    self.assertEqual(p.returncode,1,p.stderr);self.assertIn('invalid run-id',p.stderr)
+                                              ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'invalid run-id' not found in "node:internal/modules/cjs/loader:1404\n  throw err;\n  ^\n\nError: Cannot find module '/Users/thuytran/Workspace/eshop-sut/tests/fr05/prepare-environment.cjs'\n    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)\n    at Function._load (node:internal/modules/cjs/loader:1211:37)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)\n    at node:internal/main/run_main_module:36:49 {\n  code: 'MODULE_NOT_FOUND',\n  requireStack: []\n}\n\nNode.js v22.17.1\n"
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.327s
+
+FAILED (failures=2)

@@ -1,0 +1,23 @@
+{
+  "runId": "fr05-run01",
+  "caseId": "FR05-TC-006",
+  "interface": "NATIVE",
+  "platform": "iOS",
+  "recordedAt": "2026-10-16T03:58:26.640Z",
+  "status": "Failed",
+  "actual": "App hiển thị nguyên chuỗi <h1>Database Error</h1><p>SQLITE_ERROR: near \"Brien\": syntax error</p> thay vì card O'Brien.",
+  "assertions": [
+    {
+      "name": "Full-name quote search",
+      "expected": "O'Brien card",
+      "actual": "Database Error / SQLITE_ERROR",
+      "passed": false
+    }
+  ],
+  "evidence": [
+    "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-006.ax.txt",
+    "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-006.png"
+  ],
+  "bugIds": [],
+  "reason": ""
+}

@@ -1,0 +1,46 @@
+Window: "iPhone 18 Pro", App: Device Hub.
+0 standard window iPhone 18 Pro – iOS 27.0, ID: com.apple.dt.DeviceKit.DeviceManagementWindow-AppWindow-1, Secondary Actions: Raise
+	1 split group
+		2 split group com.apple.dt.DeviceKit.DeviceManagementWindow-AppWindow-1, SidebarNavigationSplitView
+			3 splitter (disabled, settable, float) -1
+			4 container
+				5 container
+					6 element Description: EShop Mobile, Secondary Actions: Cancel
+					7 element Description: Đăng nhập, Secondary Actions: Cancel
+					8 element Description: Giỏ (0), Secondary Actions: Cancel
+					9 text Description: Danh sách sản phẩm, Secondary Actions: Cancel
+					10 text field (settable) Value: Alpha, Placeholder: Tìm kiếm..., Secondary Actions: Cancel
+					11 element Description: Tìm, Secondary Actions: Cancel
+					12 text Description: Kết quả tìm kiếm cho: Alpha, Secondary Actions: Cancel
+					13 text Description: Alpha, Secondary Actions: Cancel
+					14 text Description: 999 ₫, Secondary Actions: Cancel
+					15 element Description: Xem chi tiết, Secondary Actions: Cancel
+					16 element Description: Thêm vào giỏ, Secondary Actions: Cancel
+					17 text Description: Hiển thị 1 sản phẩm, Secondary Actions: Cancel
+					18 text Description: © 2026 EShop SUT. Dành cho mục đích kiểm thử., Secondary Actions: Cancel
+				19 button Description: Home, ID: app.grid.3x3
+				20 button Description: Screenshot, ID: camera.viewfinder
+				21 button Description: Record, ID: record.circle
+				22 button Rotate Left
+		23 splitter (disabled, settable, float) 391
+	24 toolbar
+		25 button Description: Show Sidebar, Secondary Actions: Increment, Decrement, Delete, Cancel
+		26 radio button Description: Edit, Help: Settings, Value: 0, ID: slider.horizontal.3
+		27 radio button Description: Text Document, Help: Reports, Value: 0, ID: text.document
+		28 radio button Description: Info, Value: 0, ID: info
+		29 pop up button more toolbar items
+	30 close button
+	31 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	32 minimize button
+	33 text iPhone 18 Pro iOS 27.0
+34 menu bar
+	35 Device Hub
+	36 File
+	37 Edit
+	38 View
+	39 Device
+	40 Controls
+	41 Window
+	42 Help
+
+The focused UI element is 0 standard window iPhone 18 Pro – iOS 27.0, ID: com.apple.dt.DeviceKit.DeviceManagementWindow-AppWindow-1, Secondary Actions: Raise

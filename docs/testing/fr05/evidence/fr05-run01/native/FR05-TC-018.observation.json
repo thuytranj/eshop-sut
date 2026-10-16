@@ -1,0 +1,22 @@
+{
+  "runId": "fr05-run01",
+  "caseId": "FR05-TC-018",
+  "interface": "NATIVE",
+  "platform": "iOS",
+  "recordedAt": "2026-10-16T05:26:57.255Z",
+  "status": "Passed",
+  "actual": "Khi proxy đóng socket, native hiển thị Network request failed; không hiển thị như search empty và không còn loading.",
+  "assertions": [
+    {
+      "name": "Derived error state",
+      "expected": "error khác empty; loading kết thúc",
+      "actual": "Network request failed; không loading",
+      "passed": true
+    }
+  ],
+  "evidence": [
+    "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-018.ax.txt"
+  ],
+  "bugIds": [],
+  "reason": ""
+}

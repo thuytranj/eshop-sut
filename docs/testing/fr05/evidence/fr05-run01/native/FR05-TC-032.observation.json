@@ -1,0 +1,22 @@
+{
+  "runId": "fr05-run01",
+  "caseId": "FR05-TC-032",
+  "interface": "NATIVE",
+  "platform": "iOS",
+  "recordedAt": "2026-10-16T05:34:07.518Z",
+  "status": "Passed",
+  "actual": "Snapshot three có Alpha/Beta/Gamma, query Alpha vẫn chỉ có Alpha giá 1.000 ₫ và count1; đối chiếu reset/request trong log.",
+  "assertions": [
+    {
+      "name": "M3,n1 isolation",
+      "expected": "Alpha only",
+      "actual": "Alpha only",
+      "passed": true
+    }
+  ],
+  "evidence": [
+    "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-032.ax.txt"
+  ],
+  "bugIds": [],
+  "reason": ""
+}

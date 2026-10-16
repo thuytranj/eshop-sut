@@ -1,0 +1,11 @@
+--- working/frontend-mobile/App.js
++++ isolated/mobile/App.js
+@@ -13,7 +13,7 @@
+ } from "react-native";
+ import { StatusBar } from "expo-status-bar";
+ 
+-const API_URL = "http://192.168.10.13:3000/api"; // IP LAN để chạy được trên iOS/Android và thiết bị thật
++const API_URL = "http://127.0.0.1:3002/api"; // IP LAN để chạy được trên iOS/Android và thiết bị thật
+ 
+ const formatMoney = (value) => `${Number(value).toLocaleString()} ₫`;
+ 

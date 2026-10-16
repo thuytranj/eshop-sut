@@ -1,0 +1,22 @@
+{
+  "runId": "fr05-run01",
+  "caseId": "FR05-TC-029",
+  "interface": "NATIVE",
+  "platform": "iOS",
+  "recordedAt": "2026-10-16T05:31:27.652Z",
+  "status": "Passed",
+  "actual": "BVA n=1: một card Alpha giá 1.000 ₫, nhãn Hiển thị 1 sản phẩm; signature khớp ID201 trong snapshot one.",
+  "assertions": [
+    {
+      "name": "BVA n1 count/signature",
+      "expected": "Alpha/1000, count1",
+      "actual": "Alpha/1000, count1",
+      "passed": true
+    }
+  ],
+  "evidence": [
+    "docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-029.ax.txt"
+  ],
+  "bugIds": [],
+  "reason": ""
+}
