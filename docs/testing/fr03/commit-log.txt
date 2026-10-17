@@ -7,3 +7,7 @@ a3eb6a5 2026-10-12T10:19:50+07:00 test(fr03): derive password reset BVA cases
 c08c5c9 2026-10-12T09:57:41+07:00 docs(fr03): analyze password reset requirements
 4e05bab 2026-10-12T09:07:28+07:00 docs(fr03): align test plan with seven-stage workflow
 fbb5aa9 2026-10-12T00:29:43+07:00 docs(fr03): plan password reset domain testing
+
+# Refactor theo lecture 2026-10-17 (hai commit thuc te; snapshot khong chua chinh commit export)
+8724731 2026-10-17T16:10:06+07:00 docs(fr03): refactor BVA reports against course lecture
+a2b4609 2026-10-17T16:00:41+07:00 docs(skills): align BVA guidance with course lecture
