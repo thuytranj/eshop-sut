@@ -8,11 +8,13 @@
 3. **api_specification.md (dòng 34–54):** Giao diện API (`POST /api/forgot-password` và `POST /api/reset-password`).
 4. **docs/2026.HW02.Domain Testing_En.pdf:** Hướng dẫn thực hành bài tập lớn môn Kiểm thử phần mềm (mục 6, 9, 12).
 5. **Quy chuẩn kỹ thuật (.agents/skills):**
-   - [.agents/skills/domain-testing/SKILL.md](file:///.agents/skills/domain-testing/SKILL.md): Quy ước phân tích miền (Domain Testing) on/off/in/out.
-   - [.agents/skills/boundary-value-analysis/SKILL.md](file:///.agents/skills/boundary-value-analysis/SKILL.md): Quy ước kiểm thử giá trị biên (ISTQB 3-value BVA).
+   - [.agents/skills/domain-testing/SKILL.md](../../../.agents/skills/domain-testing/SKILL.md): Quy ước phân tích miền (Domain Testing) on/off/in/out.
+   - [.agents/skills/boundary-value-analysis/SKILL.md](../../../.agents/skills/boundary-value-analysis/SKILL.md): Hướng dẫn chọn biến thể BVA theo slide; xem Standard và Robustness trong bva-report.md.
+
+6. **Slide được cung cấp ngày 2026-10-17:** [KCPM Bài 4](references/KCPM-Bai4-EP-BVA.pdf), trang 6–18 (EP), 19–26 (BVA). Nguồn này thay thế quy ước ISTQB tạm thời cho BVA môn học.
 
 ### 1.2 Giới hạn phương pháp luận (Methodology Limitations)
-- Hiện tại chưa có slide bài giảng chính thức được nạp vào kho tài liệu môn học. Do đó, kỹ thuật Domain Testing (on/off/in points) và kỹ thuật BVA (3-value BVA theo chuẩn ISTQB) trong báo cáo này được áp dụng như **quy ước làm việc kỹ thuật tiêu chuẩn (working convention)**, tuân thủ hướng dẫn tại `.agents/skills/`.
+- Domain Testing on/off/in vẫn là quy ước của skill; slide Bài 4 không xác lập riêng phương pháp domain-surface này. BVA hiện hành chọn Standard + Robustness thích nghi, giải thích đầy đủ ở [bva-report.md](bva-report.md).
 - Cả hai phương pháp đều được trình bày tường minh quá trình biến đổi từ yêu cầu sang mô hình vị từ, phân vùng, biên, điểm kiểm thử và tập ca kiểm thử độc lập trước khi tổng hợp.
 - Phạm vi kiểm thử: Chức năng FR-03 trên 2 giao diện: **API** (`backend`) và **Giao diện Web khách hàng** (`frontend-web`). Không kiểm thử ứng dụng mobile hay mở rộng sang các tính năng khác.
 
@@ -102,3 +104,8 @@ Theo nguyên tắc của SUT, các điểm chưa rõ trong đặc tả không đ
 6. **Mã HTTP status phản hồi khi từ chối:**
    - *Ghi nhận:* Đặc tả không quy định cụ thể mã lỗi (400, 401, 404, hay 422).
    - *Quyết định:* Đánh giá phán quyết (verdict) dựa trên: yêu cầu có bị từ chối hay không, và mật khẩu trong cơ sở dữ liệu có bị thay đổi trái phép hay không (R09).
+
+
+## 5. Trạng thái tài liệu và giới hạn evidence
+
+[README FR-03](README.md) phân biệt thiết kế theo slide với suite/kết quả lịch sử. Các R01–R09 giữ nguyên; sửa phương pháp không đổi business oracle. R09 được quan sát bằng password A/B trong API log; chưa chứng minh trạng thái mọi tài khoản hay toàn bộ đường UI. R02 có đầu ra OTP cần đúng 6 chữ số; không có giới hạn output số học khác trong đặc tả để áp BVA. Không coi lỗi status/copy chưa được đặc tả là bug chỉ vì không khớp giả định trong harness cũ.

@@ -1,5 +1,7 @@
 # Báo cáo Rà soát, Hợp nhất và Đối chiếu Kỹ thuật (Suite Review & Deduplication) - FR-03
 
+> Hồ sơ này mô tả suite lịch sử 52 ca. Thiết kế BVA hiện hành theo slide nằm ở mục 5 bên dưới và [bva-report.md](bva-report.md). Không đổi nhãn phương pháp của lượt chạy cũ.
+
 ## 1. Mục tiêu và Cơ sở Rà soát (Review Objectives)
 
 Báo cáo này thực hiện bước chuyển giao quan trọng giữa giai đoạn thiết kế lý thuyết và giai đoạn thực thi:
@@ -16,7 +18,7 @@ Báo cáo này thực hiện bước chuyển giao quan trọng giữa giai đo�
 
 | STT | Hạng mục rà soát | Trạng thái ban đầu | Hiệu chỉnh sau rà soát | Lý do kỹ thuật |
 |:---:|---|---|---|---|
-| 1 | **Phân tách nghĩa vụ BVA và Domain Testing** | Nguy cơ coi kiểm tra email và token binding là BVA | Phân định rõ: Email membership, token binding, confirmation equality là Domain Testing. BVA chỉ áp dụng trên 6 chiều số học có thứ tự ($\mathbb{N}_0$). | Tránh gán nhãn sai phương pháp BVA cho các biến danh mục/không có thứ tự. |
+| 1 | **Phân tách nghĩa vụ BVA và Domain Testing** | Nguy cơ coi kiểm tra email và token binding là BVA | Phân định rõ: Email membership, token binding, confirmation equality là Domain Testing. BVA chỉ áp dụng trên 2 đại lượng độ dài và 4 phép chiếu số đếm có thứ tự; các phép chiếu không độc lập. | Tránh gán nhãn sai phương pháp BVA cho các biến danh mục/không có thứ tự. |
 | 2 | **Hiện tượng che khuất lỗi (Masking) ở BVA độ dài 0 và 1** | Có thể bị hiểu lầm là cô lập được riêng lỗi độ dài | Ghi chú rõ: Mật khẩu rỗng hoặc độ dài 1 đồng thời vi phạm cả 4 lớp ký tự. Kết quả từ chối phản ánh vi phạm liên hợp, không thể khẳng định riêng bộ lọc độ dài hoạt động. | Bảo đảm tính trung thực của bằng chứng kiểm thử. |
 | 3 | **Trường xác nhận mật khẩu ở API** | Không có trường `confirmPassword` trong spec API | Xác nhận chỉ kiểm tra R08 trên tầng WEB; tầng API không có trường này. | Tuân thủ nghiêm ngặt `api_specification.md`. |
 | 4 | **Hiện diện trường trên UI (`FR03-DT-WEB-CONF-06`)** | Nếu thiếu trường thì không thể submit mismatch | Định danh ca kiểm tra sự hiện diện của control trước. Nếu control vắng mặt, ghi nhận lỗi yêu cầu (Requirement Defect) và đánh dấu các ca mismatch là Blocked. | Phản ánh chính xác hiện trạng ứng dụng mà không tạo dữ liệu giả. |
@@ -52,7 +54,7 @@ Khi hợp nhất:
 | **FR03-TC-029** | API | `resetToken = "12345"` (độ dài OTP 5) | `FR03-DT-TOKEN-01`<br>`FR03-BVA-OTP-04` | Domain Testing,<br>BVA | OBL-DT-13,<br>OBL-BVA-OTP-5 |
 | **FR03-TC-030** | API | `resetToken = "1234567"` (độ dài OTP 7) | `FR03-DT-TOKEN-02`<br>`FR03-BVA-OTP-06` | Domain Testing,<br>BVA | OBL-DT-14,<br>OBL-BVA-OTP-7 |
 
-Các ca kiểm thử còn lại (gồm các ca cấp phát OTP, các ký tự đặc biệt cụ thể, các điểm biên 0/1/4/8 của BVA, ràng buộc tài khoản chéo, và toàn bộ 16 ca WEB) là duy nhất và được gán mã từ `FR03-TC-001` đến `FR03-TC-052`.
+Các ca kiểm thử còn lại (gồm các ca cấp phát OTP, các ký tự đặc biệt cụ thể, các điểm regression bổ sung 0/1/4/8 của thiết kế ISTQB lịch sử, ràng buộc tài khoản chéo, và toàn bộ 16 ca WEB) là duy nhất và được gán mã từ `FR03-TC-001` đến `FR03-TC-052`.
 
 ---
 
@@ -65,7 +67,89 @@ Các ca kiểm thử còn lại (gồm các ca cấp phát OTP, các ký tự đ
   - Tầng WEB: **16 ca kiểm thử** (`FR03-TC-037` đến `FR03-TC-052`)
   - **Tổng số ca kiểm thử chuẩn hóa duy nhất:** **52 ca**
 - **Độ bao phủ Nghĩa vụ Thiết kế:**
-  - Nghĩa vụ Domain Testing: **25 / 25 (100%)**
-  - Nghĩa vụ BVA: **25 / 25 (100%)**
-  - Tổng số quy tắc nghiệp vụ bao phủ: **R01 đến R09 (100%)**
+  - Nghĩa vụ Domain Testing được gán mapping trong mô hình: **25 / 25**; đây là 25 nhóm, không phải mọi nghĩa vụ con đều được thực thi
+  - Nghĩa vụ BVA theo quy ước ISTQB lịch sử trên API: **25 / 25**; không phải mẫu số BVA theo slide và không đại diện WEB
+  - Quy tắc có case thiết kế: **R01 đến R09**; không đồng nghĩa đã kiểm tra mọi hành vi/nhánh hoặc chứng minh tính ngẫu nhiên R02
 - **Trạng thái trước thực thi:** 100% (52/52 ca) ở trạng thái `Not Run`.
+
+
+## 5. Refactor theo slide ngày 2026-10-17
+
+### 5.1 Quyết định review hiện hành
+
+| Vấn đề được kiểm tra | Quyết định và lý do |
+|---|---|
+| Phương pháp trước đây | ISTQB 3-value là fallback lịch sử; không được gọi là chuẩn môn học |
+| Phương pháp hiện hành | Standard + Robustness (slide 21–23); Worst-case 5^n và Robust Worst-case 7^n được giải thích nhưng không chọn cho suite này |
+| Thiếu maximum mật khẩu | Chỉ áp dụng biên dưới; nominal=10 không phải UB |
+| OTP đúng 6 ký tự | Standard singleton {6}; Robustness thêm {5,7}; không coi 5/7 là valid interior |
+| Số đếm lớp ký tự | Các phép chiếu phụ thuộc một password; không áp công thức với n=6 |
+| Các điểm rất ngắn cũ | Giữ làm supplementary regression, không loại evidence/bug do phương pháp đổi |
+| DT vs BVA | Cùng fixture có thể liên kết hai kỹ thuật; phép chiếu chuỗi không trở thành phép đo hình học |
+| Độ phủ DT lịch sử | 25 nhóm, 23 nhóm có kết luận và 2 nhóm bị chặn; 5 case bị chặn, không phải 4 nhóm |
+| Hồ sơ source-case | Có 41 ID nguồn DT, ứng với 40 canonical case có DT; số 34 trước đây không khớp suite |
+
+Đây là assistant review trên tài liệu và evidence có sẵn, không phải một lượt learner sign-off hay kiểm thử SUT mới.
+
+### 5.2 Case theo slide và tái sử dụng evidence
+
+[course-suite.json](course-suite.json) giữ ID mới FR03-CBVA-Axx/Wxx cùng 19 nghĩa vụ mỗi tầng. Có 30 case thiết kế (15 API, 15 WEB). 15 API là ánh xạ tham chiếu đến 15 case canonical cũ với cùng trạng thái/fixture/steps và các assertion password cần thiết; không tính thành 15 lần thực thi mới. 15 WEB có quy trình khác nên Not Run, dù giá trị password có thể giống ca cũ. Không cộng 52+30 thành số ca đã chạy.
+
+Một case API có thể đáp ứng nhiều nghĩa vụ, ví dụ `FR03-TC-003` đồng thời length=8, upper=1, digit=1, special=1, OTP=6. Nghĩa vụ mới length nominal=10 liên kết đến `FR03-TC-006`, dù case cũ chỉ có nhãn DT. Điều này là thêm mapping trong báo cáo mới, không sửa suite đã đóng băng.
+
+### 5.3 Bảng ánh xạ đầy đủ của suite lịch sử
+
+| Canonical ID | Tầng | Source IDs (giữ nguyên) | Kỹ thuật lịch sử | Evidence/verdict |
+|---|---|---|---|---|
+| `FR03-TC-001` | API | `FR03-DT-ISS-01` | Domain Testing | [Failed](evidence/api/observations.json) |
+| `FR03-TC-002` | API | `FR03-DT-ISS-02` | Domain Testing | [Passed](evidence/api/observations.json) |
+| `FR03-TC-003` | API | `FR03-DT-LEN-02`, `FR03-DT-SPECIAL-03`, `FR03-BVA-LEN-05`, `FR03-BVA-UPPER-02`, `FR03-BVA-DIGIT-02`, `FR03-BVA-SPECIAL-02`, `FR03-BVA-OTP-05` | Domain Testing, BVA | [Passed](evidence/api/observations.json) |
+| `FR03-TC-004` | API | `FR03-DT-LEN-01`, `FR03-BVA-LEN-04` | Domain Testing, BVA | [Failed](evidence/api/observations.json) |
+| `FR03-TC-005` | API | `FR03-DT-LEN-03`, `FR03-BVA-LEN-06` | Domain Testing, BVA | [Passed](evidence/api/observations.json) |
+| `FR03-TC-006` | API | `FR03-DT-LEN-04` | Domain Testing | [Passed](evidence/api/observations.json) |
+| `FR03-TC-007` | API | `FR03-BVA-LEN-01` | BVA | [Failed](evidence/api/observations.json) |
+| `FR03-TC-008` | API | `FR03-BVA-LEN-02` | BVA | [Failed](evidence/api/observations.json) |
+| `FR03-TC-009` | API | `FR03-BVA-LEN-03` | BVA | [Failed](evidence/api/observations.json) |
+| `FR03-TC-010` | API | `FR03-DT-CLASS-01`, `FR03-BVA-UPPER-01` | Domain Testing, BVA | [Failed](evidence/api/observations.json) |
+| `FR03-TC-011` | API | `FR03-BVA-UPPER-03` | BVA | [Passed](evidence/api/observations.json) |
+| `FR03-TC-012` | API | `FR03-DT-CLASS-02`, `FR03-BVA-LOWER-01` | Domain Testing, BVA | [Failed](evidence/api/observations.json) |
+| `FR03-TC-013` | API | `FR03-BVA-LOWER-02` | BVA | [Passed](evidence/api/observations.json) |
+| `FR03-TC-014` | API | `FR03-BVA-LOWER-03` | BVA | [Passed](evidence/api/observations.json) |
+| `FR03-TC-015` | API | `FR03-DT-CLASS-03`, `FR03-BVA-DIGIT-01` | Domain Testing, BVA | [Failed](evidence/api/observations.json) |
+| `FR03-TC-016` | API | `FR03-BVA-DIGIT-03` | BVA | [Passed](evidence/api/observations.json) |
+| `FR03-TC-017` | API | `FR03-DT-CLASS-04`, `FR03-BVA-SPECIAL-01` | Domain Testing, BVA | [Failed](evidence/api/observations.json) |
+| `FR03-TC-018` | API | `FR03-BVA-SPECIAL-03` | BVA | [Passed](evidence/api/observations.json) |
+| `FR03-TC-019` | API | `FR03-DT-SPECIAL-01` | Domain Testing | [Passed](evidence/api/observations.json) |
+| `FR03-TC-020` | API | `FR03-DT-SPECIAL-02` | Domain Testing | [Passed](evidence/api/observations.json) |
+| `FR03-TC-021` | API | `FR03-DT-SPECIAL-04` | Domain Testing | [Passed](evidence/api/observations.json) |
+| `FR03-TC-022` | API | `FR03-DT-SPECIAL-05` | Domain Testing | [Passed](evidence/api/observations.json) |
+| `FR03-TC-023` | API | `FR03-DT-SPECIAL-06` | Domain Testing | [Passed](evidence/api/observations.json) |
+| `FR03-TC-024` | API | `FR03-DT-SPECIAL-07` | Domain Testing | [Passed](evidence/api/observations.json) |
+| `FR03-TC-025` | API | `FR03-DT-SPECIAL-08` | Domain Testing | [Failed](evidence/api/observations.json) |
+| `FR03-TC-026` | API | `FR03-BVA-OTP-01` | BVA | [Passed](evidence/api/observations.json) |
+| `FR03-TC-027` | API | `FR03-BVA-OTP-02` | BVA | [Passed](evidence/api/observations.json) |
+| `FR03-TC-028` | API | `FR03-BVA-OTP-03` | BVA | [Passed](evidence/api/observations.json) |
+| `FR03-TC-029` | API | `FR03-DT-TOKEN-01`, `FR03-BVA-OTP-04` | Domain Testing, BVA | [Passed](evidence/api/observations.json) |
+| `FR03-TC-030` | API | `FR03-DT-TOKEN-02`, `FR03-BVA-OTP-06` | Domain Testing, BVA | [Passed](evidence/api/observations.json) |
+| `FR03-TC-031` | API | `FR03-BVA-OTP-07` | BVA | [Passed](evidence/api/observations.json) |
+| `FR03-TC-032` | API | `FR03-DT-TOKEN-03` | Domain Testing | [Passed](evidence/api/observations.json) |
+| `FR03-TC-033` | API | `FR03-DT-TOKEN-04` | Domain Testing | [Passed](evidence/api/observations.json) |
+| `FR03-TC-034` | API | `FR03-DT-BIND-01` | Domain Testing | [Passed](evidence/api/observations.json) |
+| `FR03-TC-035` | API | `FR03-DT-BIND-02` | Domain Testing | [Passed](evidence/api/observations.json) |
+| `FR03-TC-036` | API | `FR03-DT-INT-02` | Domain Testing | [Passed](evidence/api/observations.json) |
+| `FR03-TC-037` | WEB | `FR03-DT-WEB-FLOW-01` | Domain Testing | [Failed](evidence/web/observations.json) |
+| `FR03-TC-038` | WEB | `FR03-DT-WEB-NAV-01` | Domain Testing | [Passed](evidence/web/observations.json) |
+| `FR03-TC-039` | WEB | `FR03-DT-WEB-CONF-01` | Domain Testing | [Blocked](evidence/web/observations.json) |
+| `FR03-TC-040` | WEB | `FR03-DT-WEB-CONF-02` | Domain Testing | [Blocked](evidence/web/observations.json) |
+| `FR03-TC-041` | WEB | `FR03-DT-WEB-CONF-03` | Domain Testing | [Blocked](evidence/web/observations.json) |
+| `FR03-TC-042` | WEB | `FR03-DT-WEB-CONF-04` | Domain Testing | [Blocked](evidence/web/observations.json) |
+| `FR03-TC-043` | WEB | `FR03-DT-WEB-CONF-05` | Domain Testing | [Blocked](evidence/web/observations.json) |
+| `FR03-TC-044` | WEB | `FR03-DT-WEB-CONF-06` | Domain Testing | [Failed](evidence/web/observations.json) |
+| `FR03-TC-045` | WEB | `FR03-DT-WEB-SPECIAL-01` | Domain Testing | [Failed](evidence/web/observations.json) |
+| `FR03-TC-046` | WEB | `FR03-DT-WEB-SPECIAL-02` | Domain Testing | [Failed](evidence/web/observations.json) |
+| `FR03-TC-047` | WEB | `FR03-DT-WEB-SPECIAL-03` | Domain Testing | [Failed](evidence/web/observations.json) |
+| `FR03-TC-048` | WEB | `FR03-DT-SPECIAL-04` | Domain Testing | [Failed](evidence/web/observations.json) |
+| `FR03-TC-049` | WEB | `FR03-DT-SPECIAL-05` | Domain Testing | [Failed](evidence/web/observations.json) |
+| `FR03-TC-050` | WEB | `FR03-DT-SPECIAL-06` | Domain Testing | [Failed](evidence/web/observations.json) |
+| `FR03-TC-051` | WEB | `FR03-DT-SPECIAL-07` | Domain Testing | [Failed](evidence/web/observations.json) |
+| `FR03-TC-052` | WEB | `FR03-DT-WEB-SPECIAL-08` | Domain Testing | [Failed](evidence/web/observations.json) |

@@ -1,194 +1,104 @@
-# Báo cáo Phân tích Giá trị Biên (Boundary Value Analysis - BVA) - FR-03
+# FR-03 — Phân tích giá trị biên theo slide bài giảng
 
-## 1. Cơ sở Phương pháp luận và Quy ước BVA (BVA Methodology & Convention)
+## 1. Cơ sở và lựa chọn phương pháp
 
-### 1.1 Quy ước Phương pháp luận
-Báo cáo này áp dụng phương pháp **Phân tích Giá trị Biên 3 giá trị (ISTQB 3-value BVA)** theo quy ước chuẩn kỹ thuật tại [.agents/skills/boundary-value-analysis/SKILL.md](file:///.agents/skills/boundary-value-analysis/SKILL.md):
-- Không gian đầu vào xét trên các chiều thứ tự số học (Ordered Dimensions): tập các số nguyên không âm $\mathbb{N}_0 = \{0, 1, 2, \dots\}$.
-- Bước nhảy phân giải (Step size): $h = 1$ (1 ký tự hoặc 1 đơn vị đếm).
-- Kỹ thuật 3-value BVA xác định với mỗi điểm biên hữu hạn $b$: tập kiểm thử bao gồm điểm biên $b$, phần tử đứng trước $b - 1$ (nếu nằm trong không gian hợp lệ $\mathbb{N}_0$) và phần tử đứng sau $b + 1$.
-- Các biến không có thứ tự số học (email tồn tại/không tồn tại, token khớp/lệch sở hữu, chuỗi khớp xác nhận $p = c$) là các vị từ phân loại hoặc bề mặt tương đương đã được kiểm thử đầy đủ trong phương pháp Kiểm thử Miền (Domain Testing) và không thuộc phạm vi BVA số học.
+Nguồn phương pháp là [KCPM Bài 4](references/KCPM-Bai4-EP-BVA.pdf): slide 6–18 giải thích phân hoạch tương đương; slide 19–26 giải thích BVA. Đặc tả nghiệp vụ vẫn là [README](../../../README.md) FR-03 và điều kiện mật khẩu FR-01; giao diện theo [API specification](../../../api_specification.md). Slide cung cấp phương pháp, không thay thế yêu cầu của EShop.
 
----
+Báo cáo hiện hành chọn **Standard BVA, bổ sung Robustness thành nhóm riêng**. Đây là lựa chọn áp dụng của báo cáo vì cần kiểm tra cả giá trị bị từ chối. Slide không bắt buộc phải chạy cả bốn biến thể. Bản [ISTQB 3-value lịch sử](references/bva-istqb-historical.md) được giữ để truy vết, không gọi là “chuẩn môn học”.
 
-## 2. Các Chiều Thứ tự, Phân vùng và Điểm Biên Hữu hạn (Partitions & Endpoints)
+| Biến thể | Chọn điểm cho miền hợp lệ [LB,UB], bước h | Kết hợp n đầu vào độc lập, hữu hạn, điểm phân biệt |
+|---|---|---|
+| Standard (slide 22) | LB, LB+h, nominal, UB-h, UB | Thay đổi từng biến, các biến khác danh định; 4n+1 |
+| Robustness (slide 23) | Standard cộng LB-h, UB+h | Thay đổi từng biến; 6n+1, đã gồm Standard |
+| Worst-case (slide 24) | Tập Standard mỗi biến | Tích Descartes; 5^n |
+| Robust Worst-case (slide 25) | Tập Robustness mỗi biến | Tích Descartes; 7^n |
 
-Ta xác định 6 chiều thứ tự số học độc lập trong FR-03:
+LB (lower bound) là biên dưới hợp lệ; UB (upper bound) là biên trên hợp lệ; nominal là giá trị đại diện hợp lệ dùng làm đối chứng; h là bước phân giải. OFAT nghĩa là thay đổi một đầu vào mỗi lần, giữ các đầu vào khác ở giá trị danh định hoặc ít nhất còn hợp lệ.
 
-### 2.1 Chiều 1: Độ dài Mật khẩu mới ($\text{length}(p)$)
-- **Phân vùng không hợp lệ:** $[0, 7]$ (ngắn hơn 8 ký tự).
-- **Phân vùng hợp lệ:** $[8, \infty)$ (từ 8 ký tự trở lên; đặc tả không đặt giới hạn trên).
-- **Các điểm biên hữu hạn (Finite Endpoints):**
-  - Biên dưới cùng của phân vùng không hợp lệ: $0$.
-  - Biên trên cùng của phân vùng không hợp lệ: $7$.
-  - Biên dưới cùng của phân vùng hợp lệ: $8$.
+Các số mũ đã được kiểm tra trên hình slide. FR-03 không đáp ứng giả thiết của các công thức: mật khẩu thiếu UB; OTP là singleton; bốn số đếm ký tự cùng phụ thuộc một chuỗi. Vì vậy báo cáo liệt kê điểm khả thi và khử trùng thực tế, không tính n=6 rồi áp 4n+1 hay 6n+1. Worst-case không được chọn; không có tuyên bố coverage tích Descartes.
 
-### 2.2 Chiều 2–5: Số lượng Ký tự theo 4 Lớp Yêu cầu
-Gồm: Số chữ hoa ($\text{count}_{\text{upper}}$), số chữ thường ($\text{count}_{\text{lower}}$), số chữ số ($\text{count}_{\text{digit}}$), và số ký tự đặc biệt quy định ($\text{count}_{\text{special}}$):
-- **Phân vùng không hợp lệ:** $\{0\}$ (thiếu hoàn toàn lớp ký tự đó).
-- **Phân vùng hợp lệ:** $[1, \infty)$ (có ít nhất 1 ký tự thuộc lớp đó).
-- **Các điểm biên hữu hạn (Finite Endpoints):**
-  - Biên vùng không hợp lệ: $0$.
-  - Biên vùng hợp lệ: $1$.
+## 2. Bước 1 — Xác định input, output và đơn vị
 
-### 2.3 Chiều 6: Độ dài Chuỗi Mã OTP ($\text{length}(token)$)
-- **Phân vùng không hợp lệ phía dưới:** $[0, 5]$.
-- **Phân vùng hợp lệ về hình thức (Format valid):** $\{6\}$.
-- **Phân vùng không hợp lệ phía trên:** $[7, \infty)$.
-- **Các điểm biên hữu hạn (Finite Endpoints):**
-  - Điểm biên dưới cùng: $0$.
-  - Điểm biên trên của vùng dưới: $5$.
-  - Điểm giá trị hợp lệ: $6$.
-  - Điểm biên dưới của vùng trên: $7$.
-
----
-
-## 3. Dẫn xuất Lân cận Biên 3 Giá trị (Derivation of 3-Value Neighborhoods)
-
-### 3.1 Dẫn xuất cho Chiều Độ dài Mật khẩu
-- Tại endpoint $0$: lân cận gồm $\{0, 1\}$ (bỏ $-1$ vì độ dài chuỗi không âm).
-- Tại endpoint $7$: lân cận gồm $\{6, 7, 8\}$.
-- Tại endpoint $8$: lân cận gồm $\{7, 8, 9\}$.
-- **Hợp các giá trị cần kiểm thử (Union of values):**
-  $$\{0, 1\} \cup \{6, 7, 8\} \cup \{7, 8, 9\} = \{0, 1, 6, 7, 8, 9\}$$
-- *Giải thích:* Nếu chỉ kiểm tra $\{7, 8, 9\}$ thì mới chỉ là 2-value BVA quanh ngưỡng chấp nhận 8; việc bổ sung $0$ và $1$ hoàn thiện đầy đủ chuẩn 3-value BVA trên phân vùng đóng $[0, 7]$.
-
-### 3.2 Dẫn xuất cho Chiều Số lượng Ký tự 4 Lớp
-Với mỗi lớp trong 4 lớp ký tự (Hoa, Thường, Số, Đặc biệt):
-- Tại endpoint $0$: lân cận gồm $\{0, 1\}$.
-- Tại endpoint $1$: lân cận gồm $\{0, 1, 2\}$.
-- **Hợp các giá trị cần kiểm thử (Union of values):**
-  $$\{0, 1\} \cup \{0, 1, 2\} = \{0, 1, 2\}$$
-
-### 3.3 Dẫn xuất cho Chiều Độ dài Chuỗi Mã OTP
-- Tại endpoint $0$: lân cận gồm $\{0, 1\}$.
-- Tại endpoint $5$: lân cận gồm $\{4, 5, 6\}$.
-- Tại endpoint $6$: lân cận gồm $\{5, 6, 7\}$.
-- Tại endpoint $7$: lân cận gồm $\{6, 7, 8\}$.
-- **Hợp các giá trị cần kiểm thử (Union of values):**
-  $$\{0, 1\} \cup \{4, 5, 6\} \cup \{5, 6, 7\} \cup \{6, 7, 8\} = \{0, 1, 4, 5, 6, 7, 8\}$$
-
----
-
-## 4. Thiết kế Dữ liệu Kiểm thử (Test Fixtures) và Hiện tượng Masking
-
-### 4.1 Bộ dữ liệu Kiểm thử Độ dài Mật khẩu ($\{0, 1, 6, 7, 8, 9\}$)
-- $0$: Chuỗi rỗng `""` $\implies$ Kỳ vọng: Từ chối. (*Ghi chú Masking:* Độ dài 0 vi phạm đồng thời cả 4 lớp ký tự, không thể cô lập riêng lỗi độ dài).
-- $1$: Chuỗi `"A"` $\implies$ Kỳ vọng: Từ chối. (*Ghi chú Masking:* Độ dài 1 không thể chứa đủ 4 lớp ký tự).
-- $6$: `"Abcd1!"` (1 hoa, 3 thường, 1 số, 1 đặc biệt) $\implies$ Kỳ vọng: Từ chối vì độ dài 6, các lớp ký tự thỏa mãn.
-- $7$: `"Abcde1!"` (1 hoa, 4 thường, 1 số, 1 đặc biệt) $\implies$ Kỳ vọng: Từ chối vì độ dài 7.
-- $8$: `"Abcdef1!"` (1 hoa, 5 thường, 1 số, 1 đặc biệt) $\implies$ Kỳ vọng: Chấp nhận (điểm biên tối thiểu hợp lệ).
-- $9$: `"Abcdefg1!"` (1 hoa, 6 thường, 1 số, 1 đặc biệt) $\implies$ Kỳ vọng: Chấp nhận.
-
-### 4.2 Bộ dữ liệu Kiểm thử Số lượng Ký tự 4 Lớp ($\{0, 1, 2\}$)
-Tất cả các ca đều sử dụng độ dài danh định 8 ký tự, giữ các lớp khác hợp lệ:
-- **Chữ hoa (Uppercase):**
-  - count 0: `abcdef1!` (0 hoa, 6 thường, 1 số, 1 đặc biệt) $\implies$ Từ chối.
-  - count 1: `Abcdef1!` (1 hoa, 5 thường, 1 số, 1 đặc biệt) $\implies$ Chấp nhận.
-  - count 2: `ABcdef1!` (2 hoa, 4 thường, 1 số, 1 đặc biệt) $\implies$ Chấp nhận.
-- **Chữ thường (Lowercase):**
-  - count 0: `ABCDEF1!` (6 hoa, 0 thường, 1 số, 1 đặc biệt) $\implies$ Từ chối.
-  - count 1: `aBCDEF1!` (5 hoa, 1 thường, 1 số, 1 đặc biệt) $\implies$ Chấp nhận.
-  - count 2: `abCDEF1!` (4 hoa, 2 thường, 1 số, 1 đặc biệt) $\implies$ Chấp nhận.
-- **Chữ số (Digits):**
-  - count 0: `Abcdefg!` (1 hoa, 6 thường, 0 số, 1 đặc biệt) $\implies$ Từ chối.
-  - count 1: `Abcdef1!` (1 hoa, 5 thường, 1 số, 1 đặc biệt) $\implies$ Chấp nhận.
-  - count 2: `Abcde12!` (1 hoa, 4 thường, 2 số, 1 đặc biệt) $\implies$ Chấp nhận.
-- **Ký tự đặc biệt (Specials):**
-  - count 0: `Abcdef12` (1 hoa, 5 thường, 2 số, 0 đặc biệt) $\implies$ Từ chối.
-  - count 1: `Abcdef1!` (1 hoa, 5 thường, 1 số, 1 đặc biệt) $\implies$ Chấp nhận.
-  - count 2: `Abcde1!&` (1 hoa, 4 thường, 1 số, 2 đặc biệt) $\implies$ Chấp nhận.
-
-### 4.3 Bộ dữ liệu Kiểm thử Độ dài OTP ($\{0, 1, 4, 5, 6, 7, 8\}$)
-Tài khoản A có token hợp lệ được cấp trong CSDL là `123456`:
-- $0$: `""` $\implies$ Từ chối.
-- $1$: `"1"` $\implies$ Từ chối.
-- $4$: `"1234"` $\implies$ Từ chối.
-- $5$: `"12345"` $\implies$ Từ chối.
-- $6$: `"123456"` $\implies$ Chấp nhận (khớp mã A đã cấp và đúng hình thức 6 chữ số).
-- $7$: `"1234567"` $\implies$ Từ chối.
-- $8$: `"12345678"` $\implies$ Từ chối.
-
----
-
-## 5. Danh sách Ca Kiểm thử BVA Chi tiết (Detailed BVA Test Cases)
-
-### 5.1 Nhóm Ca Biên Độ dài Mật khẩu (API)
-- `FR03-BVA-LEN-01`: Độ dài 0 (`""`), Kỳ vọng: Từ chối | Status: Not Run
-- `FR03-BVA-LEN-02`: Độ dài 1 (`"A"`), Kỳ vọng: Từ chối | Status: Not Run
-- `FR03-BVA-LEN-03`: Độ dài 6 (`"Abcd1!"`), Kỳ vọng: Từ chối | Status: Not Run
-- `FR03-BVA-LEN-04`: Độ dài 7 (`"Abcde1!"`), Kỳ vọng: Từ chối | Status: Not Run
-- `FR03-BVA-LEN-05`: Độ dài 8 (`"Abcdef1!"`), Kỳ vọng: Chấp nhận | Status: Not Run
-- `FR03-BVA-LEN-06`: Độ dài 9 (`"Abcdefg1!"`), Kỳ vọng: Chấp nhận | Status: Not Run
-
-### 5.2 Nhóm Ca Biên Số lượng Ký tự 4 Lớp (API)
-- `FR03-BVA-UPPER-01`: 0 chữ hoa (`abcdef1!`), Kỳ vọng: Từ chối | Status: Not Run
-- `FR03-BVA-UPPER-02`: 1 chữ hoa (`Abcdef1!`), Kỳ vọng: Chấp nhận | Status: Not Run
-- `FR03-BVA-UPPER-03`: 2 chữ hoa (`ABcdef1!`), Kỳ vọng: Chấp nhận | Status: Not Run
-
-- `FR03-BVA-LOWER-01`: 0 chữ thường (`ABCDEF1!`), Kỳ vọng: Từ chối | Status: Not Run
-- `FR03-BVA-LOWER-02`: 1 chữ thường (`aBCDEF1!`), Kỳ vọng: Chấp nhận | Status: Not Run
-- `FR03-BVA-LOWER-03`: 2 chữ thường (`abCDEF1!`), Kỳ vọng: Chấp nhận | Status: Not Run
-
-- `FR03-BVA-DIGIT-01`: 0 chữ số (`Abcdefg!`), Kỳ vọng: Từ chối | Status: Not Run
-- `FR03-BVA-DIGIT-02`: 1 chữ số (`Abcdef1!`), Kỳ vọng: Chấp nhận | Status: Not Run
-- `FR03-BVA-DIGIT-03`: 2 chữ số (`Abcde12!`), Kỳ vọng: Chấp nhận | Status: Not Run
-
-- `FR03-BVA-SPECIAL-01`: 0 ký tự đặc biệt (`Abcdef12`), Kỳ vọng: Từ chối | Status: Not Run
-- `FR03-BVA-SPECIAL-02`: 1 ký tự đặc biệt (`Abcdef1!`), Kỳ vọng: Chấp nhận | Status: Not Run
-- `FR03-BVA-SPECIAL-03`: 2 ký tự đặc biệt (`Abcde1!&`), Kỳ vọng: Chấp nhận | Status: Not Run
-
-### 5.3 Nhóm Ca Biên Độ dài Mã OTP (API)
-- `FR03-BVA-OTP-01`: Độ dài 0 (`""`), Kỳ vọng: Từ chối | Status: Not Run
-- `FR03-BVA-OTP-02`: Độ dài 1 (`"1"`), Kỳ vọng: Từ chối | Status: Not Run
-- `FR03-BVA-OTP-03`: Độ dài 4 (`"1234"`), Kỳ vọng: Từ chối | Status: Not Run
-- `FR03-BVA-OTP-04`: Độ dài 5 (`"12345"`), Kỳ vọng: Từ chối | Status: Not Run
-- `FR03-BVA-OTP-05`: Độ dài 6 (`"123456"`), Kỳ vọng: Chấp nhận | Status: Not Run
-- `FR03-BVA-OTP-06`: Độ dài 7 (`"1234567"`), Kỳ vọng: Từ chối | Status: Not Run
-- `FR03-BVA-OTP-07`: Độ dài 8 (`"12345678"`), Kỳ vọng: Từ chối | Status: Not Run
-
-### 5.4 Nhóm Ca Kiểm thử Biên trên Giao diện Web (WEB)
-Giao diện Web cho phép kiểm thử các biên tương tự thông qua form người dùng:
-- `FR03-BVA-WEB-LEN-01..06`: Kiểm tra 6 giá trị độ dài mật khẩu trên UI.
-- `FR03-BVA-WEB-UPPER-01..03`: Kiểm tra số lượng chữ hoa 0, 1, 2 trên UI.
-- `FR03-BVA-WEB-LOWER-01..03`: Kiểm tra số lượng chữ thường 0, 1, 2 trên UI.
-- `FR03-BVA-WEB-DIGIT-01..03`: Kiểm tra số lượng chữ số 0, 1, 2 trên UI.
-- `FR03-BVA-WEB-SPECIAL-01..03`: Kiểm tra số lượng ký tự đặc biệt 0, 1, 2 trên UI.
-- `FR03-BVA-WEB-OTP-01..07`: Kiểm tra 7 giá trị độ dài OTP trên form Bước 2.
-
----
-
-## 6. Ma trận Nghĩa vụ Giá trị Biên (BVA Obligations & Traceability)
-
-| Chiều kiểm thử BVA | Điểm biên hữu hạn | Giá trị lân cận 3-value | Mã Nghĩa vụ BVA | Ca kiểm thử đáp ứng |
+| Biến/đại lượng | Quy tắc | Miền hợp lệ | Đơn vị/độ phân giải | Vai trò |
 |---|---|---|---|---|
-| Độ dài mật khẩu | 0, 7, 8 | 0 | **OBL-BVA-LEN-0** | `FR03-BVA-LEN-01` |
-| | | 1 | **OBL-BVA-LEN-1** | `FR03-BVA-LEN-02` |
-| | | 6 | **OBL-BVA-LEN-6** | `FR03-BVA-LEN-03` |
-| | | 7 | **OBL-BVA-LEN-7** | `FR03-BVA-LEN-04` |
-| | | 8 | **OBL-BVA-LEN-8** | `FR03-BVA-LEN-05` |
-| | | 9 | **OBL-BVA-LEN-9** | `FR03-BVA-LEN-06` |
-| Chữ hoa | 0, 1 | 0 | **OBL-BVA-UPPER-0** | `FR03-BVA-UPPER-01` |
-| | | 1 | **OBL-BVA-UPPER-1** | `FR03-BVA-UPPER-02` |
-| | | 2 | **OBL-BVA-UPPER-2** | `FR03-BVA-UPPER-03` |
-| Chữ thường | 0, 1 | 0 | **OBL-BVA-LOWER-0** | `FR03-BVA-LOWER-01` |
-| | | 1 | **OBL-BVA-LOWER-1** | `FR03-BVA-LOWER-02` |
-| | | 2 | **OBL-BVA-LOWER-2** | `FR03-BVA-LOWER-03` |
-| Chữ số | 0, 1 | 0 | **OBL-BVA-DIGIT-0** | `FR03-BVA-DIGIT-01` |
-| | | 1 | **OBL-BVA-DIGIT-1** | `FR03-BVA-DIGIT-02` |
-| | | 2 | **OBL-BVA-DIGIT-2** | `FR03-BVA-DIGIT-03` |
-| Ký tự đặc biệt | 0, 1 | 0 | **OBL-BVA-SPEC-0** | `FR03-BVA-SPECIAL-01` |
-| | | 1 | **OBL-BVA-SPEC-1** | `FR03-BVA-SPECIAL-02` |
-| | | 2 | **OBL-BVA-SPEC-2** | `FR03-BVA-SPECIAL-03` |
-| Độ dài OTP | 0, 5, 6, 7 | 0 | **OBL-BVA-OTP-0** | `FR03-BVA-OTP-01` |
-| | | 1 | **OBL-BVA-OTP-1** | `FR03-BVA-OTP-02` |
-| | | 4 | **OBL-BVA-OTP-4** | `FR03-BVA-OTP-03` |
-| | | 5 | **OBL-BVA-OTP-5** | `FR03-BVA-OTP-04` |
-| | | 6 | **OBL-BVA-OTP-6** | `FR03-BVA-OTP-05` |
-| | | 7 | **OBL-BVA-OTP-7** | `FR03-BVA-OTP-06` |
-| | | 8 | **OBL-BVA-OTP-8** | `FR03-BVA-OTP-07` |
+| p = newPassword | R06 | length(p) ≥ 8 | Ký tự ASCII, h=1 | Độ dài đầu vào |
+| token = resetToken | R02, R05 | 6 chữ số và khớp email | Ký tự ASCII, h=1 | Độ dài đầu vào; phải xét binding |
+| count_upper/lower/digit/special(p) | R07 | Mỗi số đếm ≥1 | Số ký tự, h=1 | Phép chiếu bổ sung, không độc lập |
+| OTP do hệ thống sinh | R02 | Chính xác 6 chữ số | Độ dài chuỗi đầu ra | Kiểm tra biên đầu ra |
+| email, token binding, p=c | R01, R05, R08 | Quan hệ/phân loại | Không có thứ tự số học | Domain Testing, không BVA số học |
 
-### Thống kê Nghĩa vụ BVA:
-- **Tổng số giá trị biên định danh độc lập:** 6 (độ dài MK) + 12 (4 lớp ký tự $\times$ 3 giá trị) + 7 (độ dài OTP) = **25 nghĩa vụ giá trị biên**.
-- **Độ bao phủ thiết kế BVA:** 25 / 25 (100% nghĩa vụ BVA được tạo ca kiểm thử).
-- **Trạng thái ban đầu:** 100% `Not Run`.
+Không tự đặt maximum mật khẩu, TTL/retry OTP hay quy ước Unicode. Response thành công/thất bại là kết quả phân loại; không có thêm biên số học đầu ra được đặc tả. Tính ngẫu nhiên không thể chứng minh bằng một vài OTP.
+
+## 3. Bước 2 — Lập phân hoạch và xác định biên hợp lệ
+
+- Mật khẩu: không hợp lệ về độ dài [0,7], hợp lệ [8,+∞). **LB=8; UB chưa được đặc tả**. 0 và 7 là phần tử của miền không hợp lệ, không biến thành LB hợp lệ. Chọn nominal length=10, không coi 10 là UB.
+- OTP: độ dài <6, =6, >6; **LB=UB=6**, nominal=6. Hình thức đúng chưa đủ để reset: phải khớp mã A đã được cấp.
+- Mỗi số đếm lớp ký tự: {0} không hợp lệ, [1,+∞) hợp lệ; LB=1, UB chưa biết. Dùng nominal count=2, trùng với LB+1 nên khử trùng. Các phép chiếu này bổ sung kiểm tra R07, không phải bốn đầu vào độc lập.
+
+## 4. Bước 3 — Chọn điểm theo biến thể và giải thích
+
+| Nhóm | Standard thích nghi | Robustness thêm | Vì sao không lấy đủ công thức hai phía? |
+|---|---|---|---|
+| Độ dài mật khẩu | 8 (LB), 9 (LB+1), 10 (nominal) | 7 (LB-1) | Không có UB; không bịa biên trên |
+| Độ dài OTP | 6 (LB=UB=nominal) | 5, 7 | LB+1 và UB-1 đều nằm ngoài singleton; không gọi là valid interior |
+| Mỗi số đếm ký tự | 1 (LB), 2 (LB+1 và nominal) | 0 | Một phía; các số đếm phụ thuộc cùng p |
+
+Nhóm chính có **7 nghĩa vụ điểm**: 4 độ dài mật khẩu + 3 độ dài OTP. Nhóm phép chiếu có **12 nghĩa vụ điểm**: 4 lớp × 3 số đếm. Tổng 19 nghĩa vụ mỗi tầng; nghĩa vụ khác ca thực thi vì một fixture có thể phục vụ nhiều nghĩa vụ. Các trường hợp length=0,1,6 và OTP length=0,1,4,8 của suite cũ vẫn là regression bổ sung hữu ích, không cộng vào mẫu số BVA theo slide.
+
+## 5. Bước 4 — Dựng fixture và kiểm tra cô lập
+
+Trạng thái dùng chung: A=`fr03-a@example.com`, B=`fr03-b@example.com`; password cả hai `OldPass1!`; token A=`123456`, B=`654321`; login_attempts=0, locked_until=NULL. Reset độc lập trước mỗi ca trong CSDL cách ly. Token gán fixture phải được ghi là synthetic, không phải kết quả sinh OTP.
+
+- Length=7/8/9/10: `Abcde1!`, `Abcdef1!`, `Abcdefg1!`, `Abcdefgh1!`. Mỗi chuỗi đều đủ hoa/thường/số/đặc biệt; thay đổi độ dài không làm sai điều kiện lớp ký tự. 7 từ chối; 8/9/10 chấp nhận.
+- Upper count=0/1/2: `abcdef1!`, `Abcdef1!`, `ABcdef1!`.
+- Lower count=0/1/2: `ABCDEF1!`, `aBCDEF1!`, `abCDEF1!`.
+- Digit count=0/1/2: `Abcdefg!`, `Abcdef1!`, `Abcde12!`.
+- Special count=0/1/2: `Abcdef12`, `Abcdef1!`, `Abcde1!&`.
+- Các fixture số đếm đều dài 8, giữ các lớp khác hợp lệ; số đếm 0 từ chối, 1/2 chấp nhận. Khi đổi số đếm một lớp, số đếm lớp khác có thể đổi nhưng vẫn hợp lệ: đây là kiểm tra phép chiếu, không khẳng định OFAT trên các số đếm độc lập.
+- OTP length=5/6/7: `12345`, `123456`, `1234567`, với p=`Abcdef1!`. Chỉ 6 khớp token A. Ca 5/7 cùng sai hình thức và binding; từ chối không chứng minh riêng validator hình thức.
+- Giá trị length=0/1 của mật khẩu cũ vi phạm nhiều lớp cùng lúc. Không dùng chúng để kết luận đã cô lập lỗi độ dài. Xác nhận mật khẩu và email membership vẫn theo Domain Testing.
+
+## 6. Bước 5 — Ánh xạ nghĩa vụ sang ca và bằng chứng
+
+Bảng dưới ánh xạ API; phiên bản WEB có cùng nghĩa vụ nhưng case ID `FR03-CBVA-Wxx`, fixture thêm confirmPassword bằng p và quy trình UI riêng. [course-suite.json](course-suite.json) là danh sách đầy đủ: preconditions, fixture, steps, expected, actual/status, evidence và lịch sử tái sử dụng. Các ID nguồn `FR03-BVA-*` cũ giữ nguyên trong suite lịch sử; ID mới dùng `CBVA-*` để tránh đổi nghĩa ID cũ.
+
+| Nghĩa vụ | Nhóm phương pháp | Input đang xét | Case theo slide (API) | Case lịch sử tái sử dụng |
+|---|---|---|---|---|
+| `CBVA-LEN-8` | Standard | `Abcdef1!` | `FR03-CBVA-A01` | `FR03-TC-003` |
+| `CBVA-LEN-9` | Standard | `Abcdefg1!` | `FR03-CBVA-A02` | `FR03-TC-005` |
+| `CBVA-LEN-10` | Standard nominal | `Abcdefgh1!` | `FR03-CBVA-A03` | `FR03-TC-006` |
+| `CBVA-LEN-7` | Robustness addition | `Abcde1!` | `FR03-CBVA-A04` | `FR03-TC-004` |
+| `CBVA-OTP-6` | Standard singleton | `123456` | `FR03-CBVA-A01` | `FR03-TC-003` |
+| `CBVA-OTP-5` | Robustness addition | `12345` | `FR03-CBVA-A05` | `FR03-TC-029` |
+| `CBVA-OTP-7` | Robustness addition | `1234567` | `FR03-CBVA-A06` | `FR03-TC-030` |
+| `CBVA-UPPER-0` | Derived Robustness | `abcdef1!` | `FR03-CBVA-A07` | `FR03-TC-010` |
+| `CBVA-UPPER-1` | Derived Standard | `Abcdef1!` | `FR03-CBVA-A01` | `FR03-TC-003` |
+| `CBVA-UPPER-2` | Derived Standard | `ABcdef1!` | `FR03-CBVA-A08` | `FR03-TC-011` |
+| `CBVA-LOWER-0` | Derived Robustness | `ABCDEF1!` | `FR03-CBVA-A09` | `FR03-TC-012` |
+| `CBVA-LOWER-1` | Derived Standard | `aBCDEF1!` | `FR03-CBVA-A10` | `FR03-TC-013` |
+| `CBVA-LOWER-2` | Derived Standard | `abCDEF1!` | `FR03-CBVA-A11` | `FR03-TC-014` |
+| `CBVA-DIGIT-0` | Derived Robustness | `Abcdefg!` | `FR03-CBVA-A12` | `FR03-TC-015` |
+| `CBVA-DIGIT-1` | Derived Standard | `Abcdef1!` | `FR03-CBVA-A01` | `FR03-TC-003` |
+| `CBVA-DIGIT-2` | Derived Standard | `Abcde12!` | `FR03-CBVA-A13` | `FR03-TC-016` |
+| `CBVA-SPEC-0` | Derived Robustness | `Abcdef12` | `FR03-CBVA-A14` | `FR03-TC-017` |
+| `CBVA-SPEC-1` | Derived Standard | `Abcdef1!` | `FR03-CBVA-A01` | `FR03-TC-003` |
+| `CBVA-SPEC-2` | Derived Standard | `Abcde1!&` | `FR03-CBVA-A15` | `FR03-TC-018` |
+
+### Kiểm tra đầu ra OTP
+
+`FR03-TC-001` có response resetToken=`7257`, length=4; `FR03-TC-037` có log OTP demo `6429`. Đây là bằng chứng lịch sử vi phạm R02, không phải input token gán sẵn `123456`. Nghĩa vụ đầu ra được truy vết riêng đến R02; không cộng thêm vào 19 nghĩa vụ điểm đầu vào. Không suy ra tính ngẫu nhiên hay email delivery thật từ các log này.
+
+## 7. Bước 6 — Coverage, kết quả và giới hạn
+
+| Thước đo | API | WEB |
+|---|---|---|
+| Thiết kế nhóm chính | 7/7 nghĩa vụ | 7/7 nghĩa vụ |
+| Thiết kế phép chiếu bổ sung | 12/12 nghĩa vụ | 12/12 nghĩa vụ |
+| Số ca duy nhất theo slide | 15 | 15 |
+| Quan sát lịch sử khớp fixture có thể tái sử dụng | 19/19 điểm, qua 15 ca API | 0/19 |
+| Thực thi mới sau refactor | 0 ca | 0 ca |
+| Trạng thái chạy phiên bản course-suite | Not Run | Not Run |
+
+15 ca API có bằng chứng cũ (10 Passed, 5 Failed); các trạng thái này được ghi ở historicalReuse, không chuyển thành một lượt chạy mới. WEB mới chưa chạy nên Not Run; không tự đổi thành Blocked chỉ từ tình trạng UI cách đây vài ngày. Log WEB cũ dùng OTP thực tế có thể 4 số và không lưu snapshot password/network đầy đủ; không dùng làm bằng chứng matching-fixture cho thiết kế seed token 6 số.
+
+19/19 là độ phủ **điểm đã quan sát lại được từ lịch sử trên API**, không phải 100% tính năng hay mọi nhánh validator. Thiếu UB, phụ thuộc giữa số đếm, masking OTP, Unicode và hạn chế evidence vẫn được giữ rõ. Xem [test-results.md](test-results.md) và [suite-review.md](suite-review.md).

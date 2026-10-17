@@ -1,5 +1,7 @@
 # Danh mục Ca Kiểm thử Miền (Domain Test Cases) - FR-03
 
+> Đây là hồ sơ thiết kế nguồn: các ô Not Run/Chưa ghi nhận dưới đây là trạng thái ở bước sinh case, không phải kết quả hiện hành. Kết quả lịch sử theo canonical ID nằm tại [test-results.md](test-results.md); bảng ánh xạ đầy đủ ở [suite-review.md](suite-review.md). ID nguồn được giữ để truy vết.
+
 ## 1. Danh sách Ca Kiểm thử Miền Đầy đủ (Full Domain Test Cases)
 
 Tất cả các ca kiểm thử được khởi tạo ở trạng thái ban đầu là `Not Run`, kết quả thực tế `Chưa ghi nhận` và bằng chứng `None` để bảo đảm tính trung thực trước khi thực thi.
@@ -292,5 +294,5 @@ Tất cả các ca kiểm thử được khởi tạo ở trạng thái ban đ�
 
 ### Thống kê Độ bao phủ Thiết kế (Designed Coverage):
 - **Tổng số nghĩa vụ kiểm thử miền xác định:** 25 / 25 (100% nghĩa vụ quy tắc R01-R09 được ánh xạ).
-- **Tổng số ca kiểm thử miền thiết kế:** 34 ca kiểm thử độc lập (20 ca API + 14 ca WEB).
+- **Tổng số ca kiểm thử miền thiết kế:** 41 ID nguồn (25 API + 16 WEB), ánh xạ vào 40 ca canonical có nhãn Domain Testing (24 API + 16 WEB). Không cộng số ID nguồn với số ca canonical; tổng suite lịch sử vẫn là 52.
 - **Trạng thái ban đầu:** 100% `Not Run`.

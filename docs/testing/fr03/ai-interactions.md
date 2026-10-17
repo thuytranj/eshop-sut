@@ -1,5 +1,7 @@
 # Nhật ký Tương tác AI (AI Evidence & Interaction Log) - FR-03
 
+> Phần nhật ký 1–2 được kế thừa từ artifact có sẵn; phiên Codex này không có transcript gốc để xác minh model, timestamp hay tính đầy đủ của phiên Antigravity. Giữ lại lời khai lịch sử và bổ sung provenance riêng ở mục 3.
+
 ## 1. Thông tin Phiên làm việc và Nguồn gốc (Session Metadata & Provenance)
 
 - **Môi trường & Công cụ:** Google Antigravity Agentic IDE (AI Coding Assistant)
@@ -38,3 +40,15 @@
   - Hoàn thành Task 7: Phân tích 5 khoảng cách năng lực của AI, soạn thảo bản AI Critique chuẩn 200–300 từ.
 - **Trạng thái đánh giá của người học (Learner Review Status):**
   - Đã hoàn tất toàn bộ chu trình kỹ thuật FR-03 theo kế hoạch; sẵn sàng cho người học nghiệm thu toàn diện (Pending Learner Final Review).
+
+
+## 3. Refactor theo lecture — ghi nhận 2026-10-17
+
+- Công cụ hiện tại: Codex; định danh model cụ thể không có trong evidence xuất ra.
+- Recording time: 2026-10-17T16:02:54+07:00, Asia/Ho_Chi_Minh. Đây là thời điểm ghi nhận công việc hiện tại, không phải timestamp hồi tố của prompt hay lượt chạy 2026-10-12.
+- Prompt hiện có (nguyên văn): “dựa trên slide bài giảng hãy điều chỉnh các skills liên quan đến BVA cho phù hợp, sau đó refactor các artifacts trong docs/testing/fr03 cho đúng, đảm bảo đầy đủ, rõ ràng, dễ hiểu”.
+- Nguồn đính kèm: `/Users/thuytran/Downloads/KCPM - Bai 4 - Phan hoach tuong duong va Gia tri bien.pdf`; bản copy và hash trong [course-suite.json](course-suite.json).
+- Capture extent: partial — ghi prompt hiện có và output artifacts; không phải toàn bộ transcript mọi phiên hoặc hidden reasoning.
+- Output: skill BVA/references và phân định Domain Testing được chỉnh theo lecture; báo cáo BVA từng bước, bảng mapping mới, [README](README.md), [course-suite.json](course-suite.json), kết quả/coverage được đối soát. Không thực thi lại SUT.
+- Skill validation: trước sửa, agent baseline đọc skill cũ và chỉ ra thiếu hướng dẫn bốn biến thể, singleton, nominal và migration. Baseline vẫn chọn đúng khi được cung cấp nội dung slide, nên không coi là đã quan sát một lỗi hành vi bắt buộc. Sau sửa, agent độc lập áp dụng đúng vào FR-03 và hai input [1,5], nominal3: 9/13/25/49 case; xác nhận không bịa UB, không gán execution mới. Đây là kiểm tra skill của assistant, không phải learner review hay chạy FR-03.
+- Quyền learner: yêu cầu sửa phương pháp là feedback thực tế; không suy ra người học đã nghiệm thu mọi case hoặc ký critique. Những tương tác cũ không xuất hiện trong hội thoại hiện tại giữ trạng thái chưa kiểm chứng.

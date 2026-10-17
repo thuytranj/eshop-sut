@@ -1,6 +1,6 @@
 # Báo cáo Khiếm khuyết và Lỗi Phần mềm (Bug Reports) - FR-03
 
-Báo cáo này tài liệu hóa chi tiết **6 lỗi phần mềm thực tế** được phát hiện và tái lập thành công qua quá trình thực thi bộ kiểm thử Domain Testing & BVA.
+Báo cáo giữ **6 hồ sơ lỗi lịch sử** dựa trên observation/screenshot đã có. Refactor ngày 2026-10-17 không chạy lại SUT và không xác nhận lại môi trường lịch sử. Các lỗi không mất giá trị khi BVA được phân loại lại theo slide; đối chiếu mức bằng chứng trong [test-results.md](test-results.md).
 
 ---
 
@@ -21,8 +21,8 @@ Báo cáo này tài liệu hóa chi tiết **6 lỗi phần mềm thực tế** 
 - **Kết quả thực tế (Actual Observed):**
   - Hệ thống trả về mã OTP chỉ gồm 4 chữ số (ví dụ: `"7257"`).
 - **Bằng chứng (Evidence):**
-  - Log API: [observations.json](file:///docs/testing/fr03/evidence/api/observations.json) (Case `FR03-TC-001`).
-  - Ảnh chụp màn hình UI: [FR03-TC-037.png](file:///docs/testing/fr03/evidence/web/screenshots/FR03-TC-037.png) hiển thị thông báo "Mã OTP của bạn là: 7257".
+  - Log API: [observations.json](evidence/api/observations.json) (Case `FR03-TC-001`).
+  - Ảnh chụp màn hình UI: [FR03-TC-037.png](evidence/web/screenshots/FR03-TC-037.png) hiển thị OTP `6429` theo observation WEB (khác OTP `7257` trong lượt API).
 - **Phân tích nguyên nhân trong mã nguồn (Root Cause):**
   - Tệp `backend/server.js`, dòng 72:
     ```javascript
@@ -50,11 +50,11 @@ Báo cáo này tài liệu hóa chi tiết **6 lỗi phần mềm thực tế** 
      ```
   3. Kiểm tra response và dữ liệu trong bảng `users`.
 - **Kết quả kỳ vọng (Expected):**
-  - Server phải từ chối (HTTP 400/422); giữ nguyên mật khẩu cũ trong CSDL.
+  - Server phải từ chối và giữ nguyên mật khẩu cũ trong CSDL; mã HTTP lỗi cụ thể chưa được đặc tả.
 - **Kết quả thực tế (Actual Observed):**
   - Server trả về HTTP 200 `{"message": "Password reset successfully"}`. Mật khẩu trong CSDL bị cập nhật thành chuỗi rỗng hoặc mật khẩu không đủ độ mạnh.
 - **Bằng chứng (Evidence):**
-  - Toàn bộ 10 ca kiểm thử âm bản trên API bị Failed do server chấp nhận trái phép. Xem [observations.json](file:///docs/testing/fr03/evidence/api/observations.json).
+  - 9 ca reset với password không hợp lệ bị Failed (TC004, TC007–TC010, TC012, TC015, TC017, TC025); lỗi API thứ 10 là cấp phát OTP tại TC001. Các ca password bị server chấp nhận trái phép, xem [observations.json](evidence/api/observations.json).
 - **Phân tích nguyên nhân trong mã nguồn (Root Cause):**
   - Tệp `backend/server.js`, dòng 87–98:
     ```javascript
@@ -82,13 +82,15 @@ Báo cáo này tài liệu hóa chi tiết **6 lỗi phần mềm thực tế** 
 - **Kết quả thực tế (Actual Observed):**
   - Hoàn toàn không có thành phần hiển thị chỉ báo bước nào trong DOM.
 - **Bằng chứng (Evidence):**
-  - Ảnh chụp màn hình: [FR03-TC-037.png](file:///docs/testing/fr03/evidence/web/screenshots/FR03-TC-037.png).
+  - Ảnh chụp màn hình: [FR03-TC-037.png](evidence/web/screenshots/FR03-TC-037.png).
 - **Phân tích nguyên nhân trong mã nguồn (Root Cause):**
   - Tệp `frontend-web/src/pages/ForgotPassword.jsx`: Quản lý trạng thái bằng biến `step`, nhưng không render bất kỳ thẻ JSX nào thể hiện "Bước 1 / 2" hay "Bước 2 / 2" cho người dùng thấy.
 
 ---
 
 ### BUG-FR03-04: Giao diện Web thiếu nút "Quay lại đăng nhập" tại Bước 1
+
+> Trạng thái hiện tại: hồ sơ nghi vấn cần probe riêng. TC038 ghi Passed khi click selector rộng có thể chọn link trên nav; chưa đủ để kết luận thất bại R04 nếu liên kết Đăng nhập chung cũng đáp ứng yêu cầu. Giữ ghi nhận form bên dưới, không đổi verdict hoặc tạo reproduction mới.
 - **Mã Quy tắc Vi phạm:** **R04** (`README.md:53`)
 - **Mức độ nghiêm trọng:** Trung bình (Medium - Thiếu sót điều hướng người dùng)
 - **Tầng phát hiện:** WEB
@@ -102,7 +104,7 @@ Báo cáo này tài liệu hóa chi tiết **6 lỗi phần mềm thực tế** 
 - **Kết quả thực tế (Actual Observed):**
   - Trong form Bước 1 chỉ có duy nhất nút submit "Lấy mã OTP". (Tại Bước 2 có nút "← Quay lại" nhưng chỉ gọi `setStep(1)` chứ không điều hướng về `/login`).
 - **Bằng chứng (Evidence):**
-  - Ảnh chụp màn hình: [FR03-TC-038.png](file:///docs/testing/fr03/evidence/web/screenshots/FR03-TC-038.png).
+  - Ảnh chụp màn hình: [FR03-TC-038.png](evidence/web/screenshots/FR03-TC-038.png).
 - **Phân tích nguyên nhân trong mã nguồn (Root Cause):**
   - Tệp `frontend-web/src/pages/ForgotPassword.jsx`, dòng 45–61: Trong JSX của `step === 1`, không khai báo thẻ `<button>` hoặc `<Link>` nào để quay về `/login`.
 
@@ -123,7 +125,7 @@ Báo cáo này tài liệu hóa chi tiết **6 lỗi phần mềm thực tế** 
 - **Kết quả thực tế (Actual Observed):**
   - Form Bước 2 chỉ có 2 trường input: "Mã OTP (4 số)" và "Mật khẩu mới". Hoàn toàn không có trường xác nhận mật khẩu.
 - **Bằng chứng (Evidence):**
-  - Ảnh chụp màn hình: [FR03-TC-044.png](file:///docs/testing/fr03/evidence/web/screenshots/FR03-TC-044.png).
+  - Ảnh chụp màn hình: [FR03-TC-044.png](evidence/web/screenshots/FR03-TC-044.png).
 - **Phân tích nguyên nhân trong mã nguồn (Root Cause):**
   - Tệp `frontend-web/src/pages/ForgotPassword.jsx`, dòng 63–97: Form Bước 2 bỏ trống dòng 88–89, không khai báo state và input cho `confirmPassword`.
 
@@ -147,10 +149,18 @@ Báo cáo này tài liệu hóa chi tiết **6 lỗi phần mềm thực tế** 
   - Mật khẩu hợp lệ `Abcdef1@` bị form chặn lại với alert: *"Mật khẩu quá yếu! Phải dài tối thiểu 8 ký tự, gồm chữ hoa, chữ thường, số và KÝ TỰ ĐẶC BIỆT."*
   - Ngược lại, mật khẩu chỉ chứa khoảng trắng `Abcdef1 ` lại được chấp nhận thành công với alert: *"Đổi mật khẩu thành công!"*.
 - **Bằng chứng (Evidence):**
-  - Ảnh chụp màn hình: [FR03-TC-045.png](file:///docs/testing/fr03/evidence/web/screenshots/FR03-TC-045.png) đến [FR03-TC-052.png](file:///docs/testing/fr03/evidence/web/screenshots/FR03-TC-052.png).
+  - Ảnh chụp màn hình: [FR03-TC-045.png](evidence/web/screenshots/FR03-TC-045.png) đến [FR03-TC-052.png](evidence/web/screenshots/FR03-TC-052.png).
 - **Phân tích nguyên nhân trong mã nguồn (Root Cause):**
   - Tệp `frontend-web/src/pages/ForgotPassword.jsx`, dòng 26:
     ```javascript
     const flawedStrongPasswordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*\s)[A-Za-z\d\s]{8,}$/;
     ```
     Biểu thức chính quy này sử dụng `(?=.*\s)` (bắt buộc ký tự khoảng trắng) và `[A-Za-z\d\s]` (chỉ cho phép chữ, số và khoảng trắng), hoàn toàn không chấp nhận bất kỳ ký tự đặc biệt nào trong tập `@$!%*?&`.
+
+
+## Ghi chú phân loại sau khi có slide
+
+- BUG-FR03-01 liên quan độ dài OTP đầu ra (R02), không được lấy token synthetic để chứng minh chức năng sinh mã.
+- Lỗi nhận password rỗng/1 ký tự vẫn có evidence lịch sử; các case đó là regression bổ sung trong thiết kế mới, không gọi là nghĩa vụ Standard BVA môn học.
+- Lỗi UI chỉ có dialog/screenshot thì giữ kết luận ở mức quan sát đó; chưa có snapshot password cho mọi đường UI. Không gán lại ngày tái lập mới hay mặc định toàn bộ phiên bản runtime đã được xác minh.
+- OTP format/binding và password nhiều vi phạm có masking; case từ chối không đủ chứng minh mọi validator độc lập. Phân tích nguyên nhân từ code là bằng chứng hỗ trợ, tách với hành vi đã quan sát.

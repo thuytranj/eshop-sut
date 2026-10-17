@@ -3,7 +3,10 @@
 ## 1. Cơ sở Lý thuyết và Quy ước Kiểm thử Miền (Domain Testing Convention)
 
 ### 1.1 Quy ước Phương pháp luận
-Báo cáo này áp dụng phương pháp **Kiểm thử Miền (Domain Testing)** theo quy ước chuẩn kỹ thuật tại [.agents/skills/domain-testing/SKILL.md](file:///.agents/skills/domain-testing/SKILL.md):
+
+Bổ sung nguồn ngày 2026-10-17: [slide Bài 4](references/KCPM-Bai4-EP-BVA.pdf), trang 6–18 hỗ trợ xác định input/output, lớp hợp lệ/không hợp lệ, đại diện và cô lập một lớp invalid. Phần on/off/in dưới đây là quy ước skill Domain Testing; không gán nhầm cho slide BVA trang 19–26. [bva-report.md](bva-report.md) chọn Standard + Robustness riêng.
+
+Báo cáo này áp dụng phương pháp **Kiểm thử Miền (Domain Testing)** theo quy ước chuẩn kỹ thuật tại [.agents/skills/domain-testing/SKILL.md](../../../.agents/skills/domain-testing/SKILL.md):
 - Chuyển hóa các quy tắc nghiệp vụ thành các vị từ toán học với toán tử chính xác (nghiêm ngặt $\ge, =, \in$).
 - Xác định miền chấp nhận hợp lệ (Valid Acceptance Region) và phần bù không hợp lệ (Invalid Region).
 - Định nghĩa các biên quyết định (Decision Boundaries / Equality Surfaces).
@@ -68,7 +71,7 @@ Mỗi lớp ký tự là một phân vùng phân loại nhị phân (có/không)
   - Dùng dấu cách `' '` thay cho ký tự đặc biệt: `Abcdef1 ` $\implies$ Bị từ chối (bảo vệ chống lại việc regex chấp nhận `\s` thay vì ký tự đặc biệt).
 
 ### 3.4 Bề mặt Biên Khớp Xác nhận Mật khẩu (UI): $C(p, c) \iff p = c$
-Mối quan hệ tương đương giữa 2 chuỗi là một bề mặt siêu phẳng đối xứng $p = c$.
+Miền hai chuỗi bằng nhau được ký hiệu $p = c$; không coi tập chuỗi này là một siêu phẳng Euclid.
 Trong không gian chuỗi, không có khoảng cách hình học dấu dương/âm, do đó phương pháp luận lấy mẫu dựa trên:
 1. **Hai điểm trên biên (On points - Khớp hoàn toàn):**
    - Cặp 1: $(p, c) = (\text{Abcdef1!}, \text{Abcdef1!}) \implies$ Chấp nhận.
@@ -111,3 +114,10 @@ Trong không gian chuỗi, không có khoảng cách hình học dấu dương/�
 | Đặt lại MK - OTP không khớp sở hữu | T | T | **F** | T | T | T | T | T | T | T | Từ chối, giữ nguyên MK |
 | Đặt lại MK - Không khớp xác nhận (UI)| T | T | T | T | T | T | T | T | **F** | T | Từ chối trên UI |
 | Đặt lại MK - Thiếu trường xác nhận (UI)| T | T | T | T | T | T | T | T | N/A | **F** | Lỗi yêu cầu (Missing control)|
+
+
+## 5. Phần giải thích bổ sung theo workflow
+
+Quá trình áp dụng Domain Testing: (1) lấy R01–R09 và input/output từ requirements; (2) chuyển thành vị từ, miền chấp nhận là giao của các điều kiện và miền từ chối là phần bù; (3) chọn fixture hợp lệ, xác định mặt length=8 và quan hệ p=c; (4) chọn on/off/in cùng lớp ký tự, ownership; (5) đánh giá truth vector cho từng điểm, giải thích masking và tổ hợp không thể cô lập; (6) liên kết case/obligation, khử trùng với BVA, rồi mới ghi actual từ evidence. Bảng cuối không thay thế chuỗi lập luận này.
+
+Bảng truth-vector ở mục 4 là mô hình thiết kế: cột C/Pc chỉ có ý nghĩa trên WEB; API phải ghi N/A. Các trường hợp nhiều lỗi là thăm dò bổ sung, không thay thế các ca cô lập. Bảng phân hoạch là mô hình để chọn đại diện, không bảo đảm mọi phần tử trong cùng lớp đều được kiểm thử hoặc đều cùng phát hiện lỗi. Miền OTP thiếu F cũng thường thiếu B; không tuyên bố cô lập F từ các trường hợp này.

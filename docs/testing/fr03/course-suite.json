@@ -1,0 +1,1737 @@
+{
+  "version": "fr03-course-bva-2026-10-17",
+  "source": "references/KCPM-Bai4-EP-BVA.pdf",
+  "sourceSha256": "6903c1a07865f8b76d83253d290b85601608cefb661f22c00ee9a520687bfa29",
+  "lecturePages": [
+    21,
+    22,
+    23,
+    24,
+    25,
+    26
+  ],
+  "historicalSuite": {
+    "path": "../../../tests/fr03/suite.json",
+    "sha256": "fab47bd71806b5d065c584b3ab12087278c70a437c9cc471588887aa4e5a1bf9"
+  },
+  "coreObligationsPerLayer": 7,
+  "derivedProjectionObligationsPerLayer": 12,
+  "obligationsPerLayer": 19,
+  "cases": [
+    {
+      "id": "FR03-CBVA-A01",
+      "layer": "API",
+      "techniques": [
+        "BVA"
+      ],
+      "method": "KCPM Standard + Robustness (adapted)",
+      "obligations": [
+        {
+          "id": "CBVA-LEN-8",
+          "variant": "Standard",
+          "rules": [
+            "R06"
+          ]
+        },
+        {
+          "id": "CBVA-OTP-6",
+          "variant": "Standard singleton",
+          "rules": [
+            "R02",
+            "R05"
+          ]
+        },
+        {
+          "id": "CBVA-UPPER-1",
+          "variant": "Derived Standard",
+          "rules": [
+            "R07"
+          ]
+        },
+        {
+          "id": "CBVA-DIGIT-1",
+          "variant": "Derived Standard",
+          "rules": [
+            "R07"
+          ]
+        },
+        {
+          "id": "CBVA-SPEC-1",
+          "variant": "Derived Standard",
+          "rules": [
+            "R07"
+          ]
+        }
+      ],
+      "rules": [
+        "R02",
+        "R05",
+        "R06",
+        "R07",
+        "R09"
+      ],
+      "preconditions": {
+        "accounts": {
+          "A": "fr03-a@example.com",
+          "B": "fr03-b@example.com"
+        },
+        "oldPassword": "OldPass1!",
+        "tokens": {
+          "A": "123456",
+          "B": "654321"
+        },
+        "login_attempts": 0,
+        "locked_until": null,
+        "resetBetweenCases": true
+      },
+      "fixture": {
+        "email": "fr03-a@example.com",
+        "resetToken": "123456",
+        "newPassword": "Abcdef1!"
+      },
+      "steps": [
+        "POST /api/reset-password với email, resetToken, newPassword.",
+        "Đọc response và snapshot password A/B trước/sau."
+      ],
+      "expected": "Chấp nhận; mật khẩu A đổi thành newPassword; mật khẩu B giữ nguyên OldPass1!.",
+      "actual": "Chưa thực thi phiên bản thiết kế theo slide.",
+      "status": "Not Run",
+      "evidence": null,
+      "historicalCaseId": "FR03-TC-003",
+      "historicalReuse": {
+        "caseId": "FR03-TC-003",
+        "timestamp": "2026-10-12T05:16:06.119Z",
+        "evidence": "evidence/api/observations.json",
+        "recordedVerdict": "Passed",
+        "scope": "Tái sử dụng quan sát response và password A/B cho cùng fixture; không phải lượt chạy mới. Không suy ra kiểm tra đăng nhập, randomness hay trạng thái máy chủ không được log."
+      }
+    },
+    {
+      "id": "FR03-CBVA-A02",
+      "layer": "API",
+      "techniques": [
+        "BVA"
+      ],
+      "method": "KCPM Standard + Robustness (adapted)",
+      "obligations": [
+        {
+          "id": "CBVA-LEN-9",
+          "variant": "Standard",
+          "rules": [
+            "R06"
+          ]
+        }
+      ],
+      "rules": [
+        "R06",
+        "R09"
+      ],
+      "preconditions": {
+        "accounts": {
+          "A": "fr03-a@example.com",
+          "B": "fr03-b@example.com"
+        },
+        "oldPassword": "OldPass1!",
+        "tokens": {
+          "A": "123456",
+          "B": "654321"
+        },
+        "login_attempts": 0,
+        "locked_until": null,
+        "resetBetweenCases": true
+      },
+      "fixture": {
+        "email": "fr03-a@example.com",
+        "resetToken": "123456",
+        "newPassword": "Abcdefg1!"
+      },
+      "steps": [
+        "POST /api/reset-password với email, resetToken, newPassword.",
+        "Đọc response và snapshot password A/B trước/sau."
+      ],
+      "expected": "Chấp nhận; mật khẩu A đổi thành newPassword; mật khẩu B giữ nguyên OldPass1!.",
+      "actual": "Chưa thực thi phiên bản thiết kế theo slide.",
+      "status": "Not Run",
+      "evidence": null,
+      "historicalCaseId": "FR03-TC-005",
+      "historicalReuse": {
+        "caseId": "FR03-TC-005",
+        "timestamp": "2026-10-12T05:16:06.128Z",
+        "evidence": "evidence/api/observations.json",
+        "recordedVerdict": "Passed",
+        "scope": "Tái sử dụng quan sát response và password A/B cho cùng fixture; không phải lượt chạy mới. Không suy ra kiểm tra đăng nhập, randomness hay trạng thái máy chủ không được log."
+      }
+    },
+    {
+      "id": "FR03-CBVA-A03",
+      "layer": "API",
+      "techniques": [
+        "BVA"
+      ],
+      "method": "KCPM Standard + Robustness (adapted)",
+      "obligations": [
+        {
+          "id": "CBVA-LEN-10",
+          "variant": "Standard nominal",
+          "rules": [
+            "R06"
+          ]
+        }
+      ],
+      "rules": [
+        "R06",
+        "R09"
+      ],
+      "preconditions": {
+        "accounts": {
+          "A": "fr03-a@example.com",
+          "B": "fr03-b@example.com"
+        },
+        "oldPassword": "OldPass1!",
+        "tokens": {
+          "A": "123456",
+          "B": "654321"
+        },
+        "login_attempts": 0,
+        "locked_until": null,
+        "resetBetweenCases": true
+      },
+      "fixture": {
+        "email": "fr03-a@example.com",
+        "resetToken": "123456",
+        "newPassword": "Abcdefgh1!"
+      },
+      "steps": [
+        "POST /api/reset-password với email, resetToken, newPassword.",
+        "Đọc response và snapshot password A/B trước/sau."
+      ],
+      "expected": "Chấp nhận; mật khẩu A đổi thành newPassword; mật khẩu B giữ nguyên OldPass1!.",
+      "actual": "Chưa thực thi phiên bản thiết kế theo slide.",
+      "status": "Not Run",
+      "evidence": null,
+      "historicalCaseId": "FR03-TC-006",
+      "historicalReuse": {
+        "caseId": "FR03-TC-006",
+        "timestamp": "2026-10-12T05:16:06.132Z",
+        "evidence": "evidence/api/observations.json",
+        "recordedVerdict": "Passed",
+        "scope": "Tái sử dụng quan sát response và password A/B cho cùng fixture; không phải lượt chạy mới. Không suy ra kiểm tra đăng nhập, randomness hay trạng thái máy chủ không được log."
+      }
+    },
+    {
+      "id": "FR03-CBVA-A04",
+      "layer": "API",
+      "techniques": [
+        "BVA"
+      ],
+      "method": "KCPM Standard + Robustness (adapted)",
+      "obligations": [
+        {
+          "id": "CBVA-LEN-7",
+          "variant": "Robustness addition",
+          "rules": [
+            "R06"
+          ]
+        }
+      ],
+      "rules": [
+        "R06",
+        "R09"
+      ],
+      "preconditions": {
+        "accounts": {
+          "A": "fr03-a@example.com",
+          "B": "fr03-b@example.com"
+        },
+        "oldPassword": "OldPass1!",
+        "tokens": {
+          "A": "123456",
+          "B": "654321"
+        },
+        "login_attempts": 0,
+        "locked_until": null,
+        "resetBetweenCases": true
+      },
+      "fixture": {
+        "email": "fr03-a@example.com",
+        "resetToken": "123456",
+        "newPassword": "Abcde1!"
+      },
+      "steps": [
+        "POST /api/reset-password với email, resetToken, newPassword.",
+        "Đọc response và snapshot password A/B trước/sau."
+      ],
+      "expected": "Từ chối; mật khẩu A và B giữ nguyên OldPass1!.",
+      "actual": "Chưa thực thi phiên bản thiết kế theo slide.",
+      "status": "Not Run",
+      "evidence": null,
+      "historicalCaseId": "FR03-TC-004",
+      "historicalReuse": {
+        "caseId": "FR03-TC-004",
+        "timestamp": "2026-10-12T05:16:06.123Z",
+        "evidence": "evidence/api/observations.json",
+        "recordedVerdict": "Failed",
+        "scope": "Tái sử dụng quan sát response và password A/B cho cùng fixture; không phải lượt chạy mới. Không suy ra kiểm tra đăng nhập, randomness hay trạng thái máy chủ không được log."
+      }
+    },
+    {
+      "id": "FR03-CBVA-A05",
+      "layer": "API",
+      "techniques": [
+        "BVA"
+      ],
+      "method": "KCPM Standard + Robustness (adapted)",
+      "obligations": [
+        {
+          "id": "CBVA-OTP-5",
+          "variant": "Robustness addition",
+          "rules": [
+            "R02",
+            "R05"
+          ]
+        }
+      ],
+      "rules": [
+        "R02",
+        "R05",
+        "R09"
+      ],
+      "preconditions": {
+        "accounts": {
+          "A": "fr03-a@example.com",
+          "B": "fr03-b@example.com"
+        },
+        "oldPassword": "OldPass1!",
+        "tokens": {
+          "A": "123456",
+          "B": "654321"
+        },
+        "login_attempts": 0,
+        "locked_until": null,
+        "resetBetweenCases": true
+      },
+      "fixture": {
+        "email": "fr03-a@example.com",
+        "resetToken": "12345",
+        "newPassword": "Abcdef1!"
+      },
+      "steps": [
+        "POST /api/reset-password với email, resetToken, newPassword.",
+        "Đọc response và snapshot password A/B trước/sau."
+      ],
+      "expected": "Từ chối; mật khẩu A và B giữ nguyên OldPass1!.",
+      "actual": "Chưa thực thi phiên bản thiết kế theo slide.",
+      "status": "Not Run",
+      "evidence": null,
+      "historicalCaseId": "FR03-TC-029",
+      "historicalReuse": {
+        "caseId": "FR03-TC-029",
+        "timestamp": "2026-10-12T05:16:06.199Z",
+        "evidence": "evidence/api/observations.json",
+        "recordedVerdict": "Passed",
+        "scope": "Tái sử dụng quan sát response và password A/B cho cùng fixture; không phải lượt chạy mới. Không suy ra kiểm tra đăng nhập, randomness hay trạng thái máy chủ không được log."
+      }
+    },
+    {
+      "id": "FR03-CBVA-A06",
+      "layer": "API",
+      "techniques": [
+        "BVA"
+      ],
+      "method": "KCPM Standard + Robustness (adapted)",
+      "obligations": [
+        {
+          "id": "CBVA-OTP-7",
+          "variant": "Robustness addition",
+          "rules": [
+            "R02",
+            "R05"
+          ]
+        }
+      ],
+      "rules": [
+        "R02",
+        "R05",
+        "R09"
+      ],
+      "preconditions": {
+        "accounts": {
+          "A": "fr03-a@example.com",
+          "B": "fr03-b@example.com"
+        },
+        "oldPassword": "OldPass1!",
+        "tokens": {
+          "A": "123456",
+          "B": "654321"
+        },
+        "login_attempts": 0,
+        "locked_until": null,
+        "resetBetweenCases": true
+      },
+      "fixture": {
+        "email": "fr03-a@example.com",
+        "resetToken": "1234567",
+        "newPassword": "Abcdef1!"
+      },
+      "steps": [
+        "POST /api/reset-password với email, resetToken, newPassword.",
+        "Đọc response và snapshot password A/B trước/sau."
+      ],
+      "expected": "Từ chối; mật khẩu A và B giữ nguyên OldPass1!.",
+      "actual": "Chưa thực thi phiên bản thiết kế theo slide.",
+      "status": "Not Run",
+      "evidence": null,
+      "historicalCaseId": "FR03-TC-030",
+      "historicalReuse": {
+        "caseId": "FR03-TC-030",
+        "timestamp": "2026-10-12T05:16:06.200Z",
+        "evidence": "evidence/api/observations.json",
+        "recordedVerdict": "Passed",
+        "scope": "Tái sử dụng quan sát response và password A/B cho cùng fixture; không phải lượt chạy mới. Không suy ra kiểm tra đăng nhập, randomness hay trạng thái máy chủ không được log."
+      }
+    },
+    {
+      "id": "FR03-CBVA-A07",
+      "layer": "API",
+      "techniques": [
+        "BVA"
+      ],
+      "method": "KCPM Standard + Robustness (adapted)",
+      "obligations": [
+        {
+          "id": "CBVA-UPPER-0",
+          "variant": "Derived Robustness",
+          "rules": [
+            "R07"
+          ]
+        }
+      ],
+      "rules": [
+        "R07",
+        "R09"
+      ],
+      "preconditions": {
+        "accounts": {
+          "A": "fr03-a@example.com",
+          "B": "fr03-b@example.com"
+        },
+        "oldPassword": "OldPass1!",
+        "tokens": {
+          "A": "123456",
+          "B": "654321"
+        },
+        "login_attempts": 0,
+        "locked_until": null,
+        "resetBetweenCases": true
+      },
+      "fixture": {
+        "email": "fr03-a@example.com",
+        "resetToken": "123456",
+        "newPassword": "abcdef1!"
+      },
+      "steps": [
+        "POST /api/reset-password với email, resetToken, newPassword.",
+        "Đọc response và snapshot password A/B trước/sau."
+      ],
+      "expected": "Từ chối; mật khẩu A và B giữ nguyên OldPass1!.",
+      "actual": "Chưa thực thi phiên bản thiết kế theo slide.",
+      "status": "Not Run",
+      "evidence": null,
+      "historicalCaseId": "FR03-TC-010",
+      "historicalReuse": {
+        "caseId": "FR03-TC-010",
+        "timestamp": "2026-10-12T05:16:06.151Z",
+        "evidence": "evidence/api/observations.json",
+        "recordedVerdict": "Failed",
+        "scope": "Tái sử dụng quan sát response và password A/B cho cùng fixture; không phải lượt chạy mới. Không suy ra kiểm tra đăng nhập, randomness hay trạng thái máy chủ không được log."
+      }
+    },
+    {
+      "id": "FR03-CBVA-A08",
+      "layer": "API",
+      "techniques": [
+        "BVA"
+      ],
+      "method": "KCPM Standard + Robustness (adapted)",
+      "obligations": [
+        {
+          "id": "CBVA-UPPER-2",
+          "variant": "Derived Standard",
+          "rules": [
+            "R07"
+          ]
+        }
+      ],
+      "rules": [
+        "R07",
+        "R09"
+      ],
+      "preconditions": {
+        "accounts": {
+          "A": "fr03-a@example.com",
+          "B": "fr03-b@example.com"
+        },
+        "oldPassword": "OldPass1!",
+        "tokens": {
+          "A": "123456",
+          "B": "654321"
+        },
+        "login_attempts": 0,
+        "locked_until": null,
+        "resetBetweenCases": true
+      },
+      "fixture": {
+        "email": "fr03-a@example.com",
+        "resetToken": "123456",
+        "newPassword": "ABcdef1!"
+      },
+      "steps": [
+        "POST /api/reset-password với email, resetToken, newPassword.",
+        "Đọc response và snapshot password A/B trước/sau."
+      ],
+      "expected": "Chấp nhận; mật khẩu A đổi thành newPassword; mật khẩu B giữ nguyên OldPass1!.",
+      "actual": "Chưa thực thi phiên bản thiết kế theo slide.",
+      "status": "Not Run",
+      "evidence": null,
+      "historicalCaseId": "FR03-TC-011",
+      "historicalReuse": {
+        "caseId": "FR03-TC-011",
+        "timestamp": "2026-10-12T05:16:06.155Z",
+        "evidence": "evidence/api/observations.json",
+        "recordedVerdict": "Passed",
+        "scope": "Tái sử dụng quan sát response và password A/B cho cùng fixture; không phải lượt chạy mới. Không suy ra kiểm tra đăng nhập, randomness hay trạng thái máy chủ không được log."
+      }
+    },
+    {
+      "id": "FR03-CBVA-A09",
+      "layer": "API",
+      "techniques": [
+        "BVA"
+      ],
+      "method": "KCPM Standard + Robustness (adapted)",
+      "obligations": [
+        {
+          "id": "CBVA-LOWER-0",
+          "variant": "Derived Robustness",
+          "rules": [
+            "R07"
+          ]
+        }
+      ],
+      "rules": [
+        "R07",
+        "R09"
+      ],
+      "preconditions": {
+        "accounts": {
+          "A": "fr03-a@example.com",
+          "B": "fr03-b@example.com"
+        },
+        "oldPassword": "OldPass1!",
+        "tokens": {
+          "A": "123456",
+          "B": "654321"
+        },
+        "login_attempts": 0,
+        "locked_until": null,
+        "resetBetweenCases": true
+      },
+      "fixture": {
+        "email": "fr03-a@example.com",
+        "resetToken": "123456",
+        "newPassword": "ABCDEF1!"
+      },
+      "steps": [
+        "POST /api/reset-password với email, resetToken, newPassword.",
+        "Đọc response và snapshot password A/B trước/sau."
+      ],
+      "expected": "Từ chối; mật khẩu A và B giữ nguyên OldPass1!.",
+      "actual": "Chưa thực thi phiên bản thiết kế theo slide.",
+      "status": "Not Run",
+      "evidence": null,
+      "historicalCaseId": "FR03-TC-012",
+      "historicalReuse": {
+        "caseId": "FR03-TC-012",
+        "timestamp": "2026-10-12T05:16:06.158Z",
+        "evidence": "evidence/api/observations.json",
+        "recordedVerdict": "Failed",
+        "scope": "Tái sử dụng quan sát response và password A/B cho cùng fixture; không phải lượt chạy mới. Không suy ra kiểm tra đăng nhập, randomness hay trạng thái máy chủ không được log."
+      }
+    },
+    {
+      "id": "FR03-CBVA-A10",
+      "layer": "API",
+      "techniques": [
+        "BVA"
+      ],
+      "method": "KCPM Standard + Robustness (adapted)",
+      "obligations": [
+        {
+          "id": "CBVA-LOWER-1",
+          "variant": "Derived Standard",
+          "rules": [
+            "R07"
+          ]
+        }
+      ],
+      "rules": [
+        "R07",
+        "R09"
+      ],
+      "preconditions": {
+        "accounts": {
+          "A": "fr03-a@example.com",
+          "B": "fr03-b@example.com"
+        },
+        "oldPassword": "OldPass1!",
+        "tokens": {
+          "A": "123456",
+          "B": "654321"
+        },
+        "login_attempts": 0,
+        "locked_until": null,
+        "resetBetweenCases": true
+      },
+      "fixture": {
+        "email": "fr03-a@example.com",
+        "resetToken": "123456",
+        "newPassword": "aBCDEF1!"
+      },
+      "steps": [
+        "POST /api/reset-password với email, resetToken, newPassword.",
+        "Đọc response và snapshot password A/B trước/sau."
+      ],
+      "expected": "Chấp nhận; mật khẩu A đổi thành newPassword; mật khẩu B giữ nguyên OldPass1!.",
+      "actual": "Chưa thực thi phiên bản thiết kế theo slide.",
+      "status": "Not Run",
+      "evidence": null,
+      "historicalCaseId": "FR03-TC-013",
+      "historicalReuse": {
+        "caseId": "FR03-TC-013",
+        "timestamp": "2026-10-12T05:16:06.162Z",
+        "evidence": "evidence/api/observations.json",
+        "recordedVerdict": "Passed",
+        "scope": "Tái sử dụng quan sát response và password A/B cho cùng fixture; không phải lượt chạy mới. Không suy ra kiểm tra đăng nhập, randomness hay trạng thái máy chủ không được log."
+      }
+    },
+    {
+      "id": "FR03-CBVA-A11",
+      "layer": "API",
+      "techniques": [
+        "BVA"
+      ],
+      "method": "KCPM Standard + Robustness (adapted)",
+      "obligations": [
+        {
+          "id": "CBVA-LOWER-2",
+          "variant": "Derived Standard",
+          "rules": [
+            "R07"
+          ]
+        }
+      ],
+      "rules": [
+        "R07",
+        "R09"
+      ],
+      "preconditions": {
+        "accounts": {
+          "A": "fr03-a@example.com",
+          "B": "fr03-b@example.com"
+        },
+        "oldPassword": "OldPass1!",
+        "tokens": {
+          "A": "123456",
+          "B": "654321"
+        },
+        "login_attempts": 0,
+        "locked_until": null,
+        "resetBetweenCases": true
+      },
+      "fixture": {
+        "email": "fr03-a@example.com",
+        "resetToken": "123456",
+        "newPassword": "abCDEF1!"
+      },
+      "steps": [
+        "POST /api/reset-password với email, resetToken, newPassword.",
+        "Đọc response và snapshot password A/B trước/sau."
+      ],
+      "expected": "Chấp nhận; mật khẩu A đổi thành newPassword; mật khẩu B giữ nguyên OldPass1!.",
+      "actual": "Chưa thực thi phiên bản thiết kế theo slide.",
+      "status": "Not Run",
+      "evidence": null,
+      "historicalCaseId": "FR03-TC-014",
+      "historicalReuse": {
+        "caseId": "FR03-TC-014",
+        "timestamp": "2026-10-12T05:16:06.165Z",
+        "evidence": "evidence/api/observations.json",
+        "recordedVerdict": "Passed",
+        "scope": "Tái sử dụng quan sát response và password A/B cho cùng fixture; không phải lượt chạy mới. Không suy ra kiểm tra đăng nhập, randomness hay trạng thái máy chủ không được log."
+      }
+    },
+    {
+      "id": "FR03-CBVA-A12",
+      "layer": "API",
+      "techniques": [
+        "BVA"
+      ],
+      "method": "KCPM Standard + Robustness (adapted)",
+      "obligations": [
+        {
+          "id": "CBVA-DIGIT-0",
+          "variant": "Derived Robustness",
+          "rules": [
+            "R07"
+          ]
+        }
+      ],
+      "rules": [
+        "R07",
+        "R09"
+      ],
+      "preconditions": {
+        "accounts": {
+          "A": "fr03-a@example.com",
+          "B": "fr03-b@example.com"
+        },
+        "oldPassword": "OldPass1!",
+        "tokens": {
+          "A": "123456",
+          "B": "654321"
+        },
+        "login_attempts": 0,
+        "locked_until": null,
+        "resetBetweenCases": true
+      },
+      "fixture": {
+        "email": "fr03-a@example.com",
+        "resetToken": "123456",
+        "newPassword": "Abcdefg!"
+      },
+      "steps": [
+        "POST /api/reset-password với email, resetToken, newPassword.",
+        "Đọc response và snapshot password A/B trước/sau."
+      ],
+      "expected": "Từ chối; mật khẩu A và B giữ nguyên OldPass1!.",
+      "actual": "Chưa thực thi phiên bản thiết kế theo slide.",
+      "status": "Not Run",
+      "evidence": null,
+      "historicalCaseId": "FR03-TC-015",
+      "historicalReuse": {
+        "caseId": "FR03-TC-015",
+        "timestamp": "2026-10-12T05:16:06.167Z",
+        "evidence": "evidence/api/observations.json",
+        "recordedVerdict": "Failed",
+        "scope": "Tái sử dụng quan sát response và password A/B cho cùng fixture; không phải lượt chạy mới. Không suy ra kiểm tra đăng nhập, randomness hay trạng thái máy chủ không được log."
+      }
+    },
+    {
+      "id": "FR03-CBVA-A13",
+      "layer": "API",
+      "techniques": [
+        "BVA"
+      ],
+      "method": "KCPM Standard + Robustness (adapted)",
+      "obligations": [
+        {
+          "id": "CBVA-DIGIT-2",
+          "variant": "Derived Standard",
+          "rules": [
+            "R07"
+          ]
+        }
+      ],
+      "rules": [
+        "R07",
+        "R09"
+      ],
+      "preconditions": {
+        "accounts": {
+          "A": "fr03-a@example.com",
+          "B": "fr03-b@example.com"
+        },
+        "oldPassword": "OldPass1!",
+        "tokens": {
+          "A": "123456",
+          "B": "654321"
+        },
+        "login_attempts": 0,
+        "locked_until": null,
+        "resetBetweenCases": true
+      },
+      "fixture": {
+        "email": "fr03-a@example.com",
+        "resetToken": "123456",
+        "newPassword": "Abcde12!"
+      },
+      "steps": [
+        "POST /api/reset-password với email, resetToken, newPassword.",
+        "Đọc response và snapshot password A/B trước/sau."
+      ],
+      "expected": "Chấp nhận; mật khẩu A đổi thành newPassword; mật khẩu B giữ nguyên OldPass1!.",
+      "actual": "Chưa thực thi phiên bản thiết kế theo slide.",
+      "status": "Not Run",
+      "evidence": null,
+      "historicalCaseId": "FR03-TC-016",
+      "historicalReuse": {
+        "caseId": "FR03-TC-016",
+        "timestamp": "2026-10-12T05:16:06.169Z",
+        "evidence": "evidence/api/observations.json",
+        "recordedVerdict": "Passed",
+        "scope": "Tái sử dụng quan sát response và password A/B cho cùng fixture; không phải lượt chạy mới. Không suy ra kiểm tra đăng nhập, randomness hay trạng thái máy chủ không được log."
+      }
+    },
+    {
+      "id": "FR03-CBVA-A14",
+      "layer": "API",
+      "techniques": [
+        "BVA"
+      ],
+      "method": "KCPM Standard + Robustness (adapted)",
+      "obligations": [
+        {
+          "id": "CBVA-SPEC-0",
+          "variant": "Derived Robustness",
+          "rules": [
+            "R07"
+          ]
+        }
+      ],
+      "rules": [
+        "R07",
+        "R09"
+      ],
+      "preconditions": {
+        "accounts": {
+          "A": "fr03-a@example.com",
+          "B": "fr03-b@example.com"
+        },
+        "oldPassword": "OldPass1!",
+        "tokens": {
+          "A": "123456",
+          "B": "654321"
+        },
+        "login_attempts": 0,
+        "locked_until": null,
+        "resetBetweenCases": true
+      },
+      "fixture": {
+        "email": "fr03-a@example.com",
+        "resetToken": "123456",
+        "newPassword": "Abcdef12"
+      },
+      "steps": [
+        "POST /api/reset-password với email, resetToken, newPassword.",
+        "Đọc response và snapshot password A/B trước/sau."
+      ],
+      "expected": "Từ chối; mật khẩu A và B giữ nguyên OldPass1!.",
+      "actual": "Chưa thực thi phiên bản thiết kế theo slide.",
+      "status": "Not Run",
+      "evidence": null,
+      "historicalCaseId": "FR03-TC-017",
+      "historicalReuse": {
+        "caseId": "FR03-TC-017",
+        "timestamp": "2026-10-12T05:16:06.172Z",
+        "evidence": "evidence/api/observations.json",
+        "recordedVerdict": "Failed",
+        "scope": "Tái sử dụng quan sát response và password A/B cho cùng fixture; không phải lượt chạy mới. Không suy ra kiểm tra đăng nhập, randomness hay trạng thái máy chủ không được log."
+      }
+    },
+    {
+      "id": "FR03-CBVA-A15",
+      "layer": "API",
+      "techniques": [
+        "BVA"
+      ],
+      "method": "KCPM Standard + Robustness (adapted)",
+      "obligations": [
+        {
+          "id": "CBVA-SPEC-2",
+          "variant": "Derived Standard",
+          "rules": [
+            "R07"
+          ]
+        }
+      ],
+      "rules": [
+        "R07",
+        "R09"
+      ],
+      "preconditions": {
+        "accounts": {
+          "A": "fr03-a@example.com",
+          "B": "fr03-b@example.com"
+        },
+        "oldPassword": "OldPass1!",
+        "tokens": {
+          "A": "123456",
+          "B": "654321"
+        },
+        "login_attempts": 0,
+        "locked_until": null,
+        "resetBetweenCases": true
+      },
+      "fixture": {
+        "email": "fr03-a@example.com",
+        "resetToken": "123456",
+        "newPassword": "Abcde1!&"
+      },
+      "steps": [
+        "POST /api/reset-password với email, resetToken, newPassword.",
+        "Đọc response và snapshot password A/B trước/sau."
+      ],
+      "expected": "Chấp nhận; mật khẩu A đổi thành newPassword; mật khẩu B giữ nguyên OldPass1!.",
+      "actual": "Chưa thực thi phiên bản thiết kế theo slide.",
+      "status": "Not Run",
+      "evidence": null,
+      "historicalCaseId": "FR03-TC-018",
+      "historicalReuse": {
+        "caseId": "FR03-TC-018",
+        "timestamp": "2026-10-12T05:16:06.174Z",
+        "evidence": "evidence/api/observations.json",
+        "recordedVerdict": "Passed",
+        "scope": "Tái sử dụng quan sát response và password A/B cho cùng fixture; không phải lượt chạy mới. Không suy ra kiểm tra đăng nhập, randomness hay trạng thái máy chủ không được log."
+      }
+    },
+    {
+      "id": "FR03-CBVA-W01",
+      "layer": "WEB",
+      "techniques": [
+        "BVA"
+      ],
+      "method": "KCPM Standard + Robustness (adapted)",
+      "obligations": [
+        {
+          "id": "CBVA-LEN-8",
+          "variant": "Standard",
+          "rules": [
+            "R06"
+          ]
+        },
+        {
+          "id": "CBVA-OTP-6",
+          "variant": "Standard singleton",
+          "rules": [
+            "R02",
+            "R05"
+          ]
+        },
+        {
+          "id": "CBVA-UPPER-1",
+          "variant": "Derived Standard",
+          "rules": [
+            "R07"
+          ]
+        },
+        {
+          "id": "CBVA-DIGIT-1",
+          "variant": "Derived Standard",
+          "rules": [
+            "R07"
+          ]
+        },
+        {
+          "id": "CBVA-SPEC-1",
+          "variant": "Derived Standard",
+          "rules": [
+            "R07"
+          ]
+        }
+      ],
+      "rules": [
+        "R02",
+        "R05",
+        "R06",
+        "R07",
+        "R09"
+      ],
+      "preconditions": {
+        "accounts": {
+          "A": "fr03-a@example.com",
+          "B": "fr03-b@example.com"
+        },
+        "oldPassword": "OldPass1!",
+        "tokens": {
+          "A": "123456",
+          "B": "654321"
+        },
+        "login_attempts": 0,
+        "locked_until": null,
+        "resetBetweenCases": true
+      },
+      "fixture": {
+        "email": "fr03-a@example.com",
+        "resetToken": "123456",
+        "newPassword": "Abcdef1!",
+        "confirmPassword": "Abcdef1!"
+      },
+      "steps": [
+        "Mở /forgot-password; nhập email A, chuyển thật sang bước 2.",
+        "Trong CSDL cách ly, đặt lại token A=123456; không sửa UI.",
+        "Kiểm tra control xác nhận; nếu thiếu, ghi lý do chặn khi thực thi.",
+        "Nhập fixture và xác nhận bằng newPassword; submit; ghi dialog/network và password A/B trước/sau."
+      ],
+      "expected": "Chấp nhận; mật khẩu A đổi thành newPassword; mật khẩu B giữ nguyên OldPass1!.",
+      "actual": "Chưa thực thi phiên bản thiết kế theo slide.",
+      "status": "Not Run",
+      "evidence": null,
+      "historicalCaseId": null
+    },
+    {
+      "id": "FR03-CBVA-W02",
+      "layer": "WEB",
+      "techniques": [
+        "BVA"
+      ],
+      "method": "KCPM Standard + Robustness (adapted)",
+      "obligations": [
+        {
+          "id": "CBVA-LEN-9",
+          "variant": "Standard",
+          "rules": [
+            "R06"
+          ]
+        }
+      ],
+      "rules": [
+        "R06",
+        "R09"
+      ],
+      "preconditions": {
+        "accounts": {
+          "A": "fr03-a@example.com",
+          "B": "fr03-b@example.com"
+        },
+        "oldPassword": "OldPass1!",
+        "tokens": {
+          "A": "123456",
+          "B": "654321"
+        },
+        "login_attempts": 0,
+        "locked_until": null,
+        "resetBetweenCases": true
+      },
+      "fixture": {
+        "email": "fr03-a@example.com",
+        "resetToken": "123456",
+        "newPassword": "Abcdefg1!",
+        "confirmPassword": "Abcdefg1!"
+      },
+      "steps": [
+        "Mở /forgot-password; nhập email A, chuyển thật sang bước 2.",
+        "Trong CSDL cách ly, đặt lại token A=123456; không sửa UI.",
+        "Kiểm tra control xác nhận; nếu thiếu, ghi lý do chặn khi thực thi.",
+        "Nhập fixture và xác nhận bằng newPassword; submit; ghi dialog/network và password A/B trước/sau."
+      ],
+      "expected": "Chấp nhận; mật khẩu A đổi thành newPassword; mật khẩu B giữ nguyên OldPass1!.",
+      "actual": "Chưa thực thi phiên bản thiết kế theo slide.",
+      "status": "Not Run",
+      "evidence": null,
+      "historicalCaseId": null
+    },
+    {
+      "id": "FR03-CBVA-W03",
+      "layer": "WEB",
+      "techniques": [
+        "BVA"
+      ],
+      "method": "KCPM Standard + Robustness (adapted)",
+      "obligations": [
+        {
+          "id": "CBVA-LEN-10",
+          "variant": "Standard nominal",
+          "rules": [
+            "R06"
+          ]
+        }
+      ],
+      "rules": [
+        "R06",
+        "R09"
+      ],
+      "preconditions": {
+        "accounts": {
+          "A": "fr03-a@example.com",
+          "B": "fr03-b@example.com"
+        },
+        "oldPassword": "OldPass1!",
+        "tokens": {
+          "A": "123456",
+          "B": "654321"
+        },
+        "login_attempts": 0,
+        "locked_until": null,
+        "resetBetweenCases": true
+      },
+      "fixture": {
+        "email": "fr03-a@example.com",
+        "resetToken": "123456",
+        "newPassword": "Abcdefgh1!",
+        "confirmPassword": "Abcdefgh1!"
+      },
+      "steps": [
+        "Mở /forgot-password; nhập email A, chuyển thật sang bước 2.",
+        "Trong CSDL cách ly, đặt lại token A=123456; không sửa UI.",
+        "Kiểm tra control xác nhận; nếu thiếu, ghi lý do chặn khi thực thi.",
+        "Nhập fixture và xác nhận bằng newPassword; submit; ghi dialog/network và password A/B trước/sau."
+      ],
+      "expected": "Chấp nhận; mật khẩu A đổi thành newPassword; mật khẩu B giữ nguyên OldPass1!.",
+      "actual": "Chưa thực thi phiên bản thiết kế theo slide.",
+      "status": "Not Run",
+      "evidence": null,
+      "historicalCaseId": null
+    },
+    {
+      "id": "FR03-CBVA-W04",
+      "layer": "WEB",
+      "techniques": [
+        "BVA"
+      ],
+      "method": "KCPM Standard + Robustness (adapted)",
+      "obligations": [
+        {
+          "id": "CBVA-LEN-7",
+          "variant": "Robustness addition",
+          "rules": [
+            "R06"
+          ]
+        }
+      ],
+      "rules": [
+        "R06",
+        "R09"
+      ],
+      "preconditions": {
+        "accounts": {
+          "A": "fr03-a@example.com",
+          "B": "fr03-b@example.com"
+        },
+        "oldPassword": "OldPass1!",
+        "tokens": {
+          "A": "123456",
+          "B": "654321"
+        },
+        "login_attempts": 0,
+        "locked_until": null,
+        "resetBetweenCases": true
+      },
+      "fixture": {
+        "email": "fr03-a@example.com",
+        "resetToken": "123456",
+        "newPassword": "Abcde1!",
+        "confirmPassword": "Abcde1!"
+      },
+      "steps": [
+        "Mở /forgot-password; nhập email A, chuyển thật sang bước 2.",
+        "Trong CSDL cách ly, đặt lại token A=123456; không sửa UI.",
+        "Kiểm tra control xác nhận; nếu thiếu, ghi lý do chặn khi thực thi.",
+        "Nhập fixture và xác nhận bằng newPassword; submit; ghi dialog/network và password A/B trước/sau."
+      ],
+      "expected": "Từ chối; mật khẩu A và B giữ nguyên OldPass1!.",
+      "actual": "Chưa thực thi phiên bản thiết kế theo slide.",
+      "status": "Not Run",
+      "evidence": null,
+      "historicalCaseId": null
+    },
+    {
+      "id": "FR03-CBVA-W05",
+      "layer": "WEB",
+      "techniques": [
+        "BVA"
+      ],
+      "method": "KCPM Standard + Robustness (adapted)",
+      "obligations": [
+        {
+          "id": "CBVA-OTP-5",
+          "variant": "Robustness addition",
+          "rules": [
+            "R02",
+            "R05"
+          ]
+        }
+      ],
+      "rules": [
+        "R02",
+        "R05",
+        "R09"
+      ],
+      "preconditions": {
+        "accounts": {
+          "A": "fr03-a@example.com",
+          "B": "fr03-b@example.com"
+        },
+        "oldPassword": "OldPass1!",
+        "tokens": {
+          "A": "123456",
+          "B": "654321"
+        },
+        "login_attempts": 0,
+        "locked_until": null,
+        "resetBetweenCases": true
+      },
+      "fixture": {
+        "email": "fr03-a@example.com",
+        "resetToken": "12345",
+        "newPassword": "Abcdef1!",
+        "confirmPassword": "Abcdef1!"
+      },
+      "steps": [
+        "Mở /forgot-password; nhập email A, chuyển thật sang bước 2.",
+        "Trong CSDL cách ly, đặt lại token A=123456; không sửa UI.",
+        "Kiểm tra control xác nhận; nếu thiếu, ghi lý do chặn khi thực thi.",
+        "Nhập fixture và xác nhận bằng newPassword; submit; ghi dialog/network và password A/B trước/sau."
+      ],
+      "expected": "Từ chối; mật khẩu A và B giữ nguyên OldPass1!.",
+      "actual": "Chưa thực thi phiên bản thiết kế theo slide.",
+      "status": "Not Run",
+      "evidence": null,
+      "historicalCaseId": null
+    },
+    {
+      "id": "FR03-CBVA-W06",
+      "layer": "WEB",
+      "techniques": [
+        "BVA"
+      ],
+      "method": "KCPM Standard + Robustness (adapted)",
+      "obligations": [
+        {
+          "id": "CBVA-OTP-7",
+          "variant": "Robustness addition",
+          "rules": [
+            "R02",
+            "R05"
+          ]
+        }
+      ],
+      "rules": [
+        "R02",
+        "R05",
+        "R09"
+      ],
+      "preconditions": {
+        "accounts": {
+          "A": "fr03-a@example.com",
+          "B": "fr03-b@example.com"
+        },
+        "oldPassword": "OldPass1!",
+        "tokens": {
+          "A": "123456",
+          "B": "654321"
+        },
+        "login_attempts": 0,
+        "locked_until": null,
+        "resetBetweenCases": true
+      },
+      "fixture": {
+        "email": "fr03-a@example.com",
+        "resetToken": "1234567",
+        "newPassword": "Abcdef1!",
+        "confirmPassword": "Abcdef1!"
+      },
+      "steps": [
+        "Mở /forgot-password; nhập email A, chuyển thật sang bước 2.",
+        "Trong CSDL cách ly, đặt lại token A=123456; không sửa UI.",
+        "Kiểm tra control xác nhận; nếu thiếu, ghi lý do chặn khi thực thi.",
+        "Nhập fixture và xác nhận bằng newPassword; submit; ghi dialog/network và password A/B trước/sau."
+      ],
+      "expected": "Từ chối; mật khẩu A và B giữ nguyên OldPass1!.",
+      "actual": "Chưa thực thi phiên bản thiết kế theo slide.",
+      "status": "Not Run",
+      "evidence": null,
+      "historicalCaseId": null
+    },
+    {
+      "id": "FR03-CBVA-W07",
+      "layer": "WEB",
+      "techniques": [
+        "BVA"
+      ],
+      "method": "KCPM Standard + Robustness (adapted)",
+      "obligations": [
+        {
+          "id": "CBVA-UPPER-0",
+          "variant": "Derived Robustness",
+          "rules": [
+            "R07"
+          ]
+        }
+      ],
+      "rules": [
+        "R07",
+        "R09"
+      ],
+      "preconditions": {
+        "accounts": {
+          "A": "fr03-a@example.com",
+          "B": "fr03-b@example.com"
+        },
+        "oldPassword": "OldPass1!",
+        "tokens": {
+          "A": "123456",
+          "B": "654321"
+        },
+        "login_attempts": 0,
+        "locked_until": null,
+        "resetBetweenCases": true
+      },
+      "fixture": {
+        "email": "fr03-a@example.com",
+        "resetToken": "123456",
+        "newPassword": "abcdef1!",
+        "confirmPassword": "abcdef1!"
+      },
+      "steps": [
+        "Mở /forgot-password; nhập email A, chuyển thật sang bước 2.",
+        "Trong CSDL cách ly, đặt lại token A=123456; không sửa UI.",
+        "Kiểm tra control xác nhận; nếu thiếu, ghi lý do chặn khi thực thi.",
+        "Nhập fixture và xác nhận bằng newPassword; submit; ghi dialog/network và password A/B trước/sau."
+      ],
+      "expected": "Từ chối; mật khẩu A và B giữ nguyên OldPass1!.",
+      "actual": "Chưa thực thi phiên bản thiết kế theo slide.",
+      "status": "Not Run",
+      "evidence": null,
+      "historicalCaseId": null
+    },
+    {
+      "id": "FR03-CBVA-W08",
+      "layer": "WEB",
+      "techniques": [
+        "BVA"
+      ],
+      "method": "KCPM Standard + Robustness (adapted)",
+      "obligations": [
+        {
+          "id": "CBVA-UPPER-2",
+          "variant": "Derived Standard",
+          "rules": [
+            "R07"
+          ]
+        }
+      ],
+      "rules": [
+        "R07",
+        "R09"
+      ],
+      "preconditions": {
+        "accounts": {
+          "A": "fr03-a@example.com",
+          "B": "fr03-b@example.com"
+        },
+        "oldPassword": "OldPass1!",
+        "tokens": {
+          "A": "123456",
+          "B": "654321"
+        },
+        "login_attempts": 0,
+        "locked_until": null,
+        "resetBetweenCases": true
+      },
+      "fixture": {
+        "email": "fr03-a@example.com",
+        "resetToken": "123456",
+        "newPassword": "ABcdef1!",
+        "confirmPassword": "ABcdef1!"
+      },
+      "steps": [
+        "Mở /forgot-password; nhập email A, chuyển thật sang bước 2.",
+        "Trong CSDL cách ly, đặt lại token A=123456; không sửa UI.",
+        "Kiểm tra control xác nhận; nếu thiếu, ghi lý do chặn khi thực thi.",
+        "Nhập fixture và xác nhận bằng newPassword; submit; ghi dialog/network và password A/B trước/sau."
+      ],
+      "expected": "Chấp nhận; mật khẩu A đổi thành newPassword; mật khẩu B giữ nguyên OldPass1!.",
+      "actual": "Chưa thực thi phiên bản thiết kế theo slide.",
+      "status": "Not Run",
+      "evidence": null,
+      "historicalCaseId": null
+    },
+    {
+      "id": "FR03-CBVA-W09",
+      "layer": "WEB",
+      "techniques": [
+        "BVA"
+      ],
+      "method": "KCPM Standard + Robustness (adapted)",
+      "obligations": [
+        {
+          "id": "CBVA-LOWER-0",
+          "variant": "Derived Robustness",
+          "rules": [
+            "R07"
+          ]
+        }
+      ],
+      "rules": [
+        "R07",
+        "R09"
+      ],
+      "preconditions": {
+        "accounts": {
+          "A": "fr03-a@example.com",
+          "B": "fr03-b@example.com"
+        },
+        "oldPassword": "OldPass1!",
+        "tokens": {
+          "A": "123456",
+          "B": "654321"
+        },
+        "login_attempts": 0,
+        "locked_until": null,
+        "resetBetweenCases": true
+      },
+      "fixture": {
+        "email": "fr03-a@example.com",
+        "resetToken": "123456",
+        "newPassword": "ABCDEF1!",
+        "confirmPassword": "ABCDEF1!"
+      },
+      "steps": [
+        "Mở /forgot-password; nhập email A, chuyển thật sang bước 2.",
+        "Trong CSDL cách ly, đặt lại token A=123456; không sửa UI.",
+        "Kiểm tra control xác nhận; nếu thiếu, ghi lý do chặn khi thực thi.",
+        "Nhập fixture và xác nhận bằng newPassword; submit; ghi dialog/network và password A/B trước/sau."
+      ],
+      "expected": "Từ chối; mật khẩu A và B giữ nguyên OldPass1!.",
+      "actual": "Chưa thực thi phiên bản thiết kế theo slide.",
+      "status": "Not Run",
+      "evidence": null,
+      "historicalCaseId": null
+    },
+    {
+      "id": "FR03-CBVA-W10",
+      "layer": "WEB",
+      "techniques": [
+        "BVA"
+      ],
+      "method": "KCPM Standard + Robustness (adapted)",
+      "obligations": [
+        {
+          "id": "CBVA-LOWER-1",
+          "variant": "Derived Standard",
+          "rules": [
+            "R07"
+          ]
+        }
+      ],
+      "rules": [
+        "R07",
+        "R09"
+      ],
+      "preconditions": {
+        "accounts": {
+          "A": "fr03-a@example.com",
+          "B": "fr03-b@example.com"
+        },
+        "oldPassword": "OldPass1!",
+        "tokens": {
+          "A": "123456",
+          "B": "654321"
+        },
+        "login_attempts": 0,
+        "locked_until": null,
+        "resetBetweenCases": true
+      },
+      "fixture": {
+        "email": "fr03-a@example.com",
+        "resetToken": "123456",
+        "newPassword": "aBCDEF1!",
+        "confirmPassword": "aBCDEF1!"
+      },
+      "steps": [
+        "Mở /forgot-password; nhập email A, chuyển thật sang bước 2.",
+        "Trong CSDL cách ly, đặt lại token A=123456; không sửa UI.",
+        "Kiểm tra control xác nhận; nếu thiếu, ghi lý do chặn khi thực thi.",
+        "Nhập fixture và xác nhận bằng newPassword; submit; ghi dialog/network và password A/B trước/sau."
+      ],
+      "expected": "Chấp nhận; mật khẩu A đổi thành newPassword; mật khẩu B giữ nguyên OldPass1!.",
+      "actual": "Chưa thực thi phiên bản thiết kế theo slide.",
+      "status": "Not Run",
+      "evidence": null,
+      "historicalCaseId": null
+    },
+    {
+      "id": "FR03-CBVA-W11",
+      "layer": "WEB",
+      "techniques": [
+        "BVA"
+      ],
+      "method": "KCPM Standard + Robustness (adapted)",
+      "obligations": [
+        {
+          "id": "CBVA-LOWER-2",
+          "variant": "Derived Standard",
+          "rules": [
+            "R07"
+          ]
+        }
+      ],
+      "rules": [
+        "R07",
+        "R09"
+      ],
+      "preconditions": {
+        "accounts": {
+          "A": "fr03-a@example.com",
+          "B": "fr03-b@example.com"
+        },
+        "oldPassword": "OldPass1!",
+        "tokens": {
+          "A": "123456",
+          "B": "654321"
+        },
+        "login_attempts": 0,
+        "locked_until": null,
+        "resetBetweenCases": true
+      },
+      "fixture": {
+        "email": "fr03-a@example.com",
+        "resetToken": "123456",
+        "newPassword": "abCDEF1!",
+        "confirmPassword": "abCDEF1!"
+      },
+      "steps": [
+        "Mở /forgot-password; nhập email A, chuyển thật sang bước 2.",
+        "Trong CSDL cách ly, đặt lại token A=123456; không sửa UI.",
+        "Kiểm tra control xác nhận; nếu thiếu, ghi lý do chặn khi thực thi.",
+        "Nhập fixture và xác nhận bằng newPassword; submit; ghi dialog/network và password A/B trước/sau."
+      ],
+      "expected": "Chấp nhận; mật khẩu A đổi thành newPassword; mật khẩu B giữ nguyên OldPass1!.",
+      "actual": "Chưa thực thi phiên bản thiết kế theo slide.",
+      "status": "Not Run",
+      "evidence": null,
+      "historicalCaseId": null
+    },
+    {
+      "id": "FR03-CBVA-W12",
+      "layer": "WEB",
+      "techniques": [
+        "BVA"
+      ],
+      "method": "KCPM Standard + Robustness (adapted)",
+      "obligations": [
+        {
+          "id": "CBVA-DIGIT-0",
+          "variant": "Derived Robustness",
+          "rules": [
+            "R07"
+          ]
+        }
+      ],
+      "rules": [
+        "R07",
+        "R09"
+      ],
+      "preconditions": {
+        "accounts": {
+          "A": "fr03-a@example.com",
+          "B": "fr03-b@example.com"
+        },
+        "oldPassword": "OldPass1!",
+        "tokens": {
+          "A": "123456",
+          "B": "654321"
+        },
+        "login_attempts": 0,
+        "locked_until": null,
+        "resetBetweenCases": true
+      },
+      "fixture": {
+        "email": "fr03-a@example.com",
+        "resetToken": "123456",
+        "newPassword": "Abcdefg!",
+        "confirmPassword": "Abcdefg!"
+      },
+      "steps": [
+        "Mở /forgot-password; nhập email A, chuyển thật sang bước 2.",
+        "Trong CSDL cách ly, đặt lại token A=123456; không sửa UI.",
+        "Kiểm tra control xác nhận; nếu thiếu, ghi lý do chặn khi thực thi.",
+        "Nhập fixture và xác nhận bằng newPassword; submit; ghi dialog/network và password A/B trước/sau."
+      ],
+      "expected": "Từ chối; mật khẩu A và B giữ nguyên OldPass1!.",
+      "actual": "Chưa thực thi phiên bản thiết kế theo slide.",
+      "status": "Not Run",
+      "evidence": null,
+      "historicalCaseId": null
+    },
+    {
+      "id": "FR03-CBVA-W13",
+      "layer": "WEB",
+      "techniques": [
+        "BVA"
+      ],
+      "method": "KCPM Standard + Robustness (adapted)",
+      "obligations": [
+        {
+          "id": "CBVA-DIGIT-2",
+          "variant": "Derived Standard",
+          "rules": [
+            "R07"
+          ]
+        }
+      ],
+      "rules": [
+        "R07",
+        "R09"
+      ],
+      "preconditions": {
+        "accounts": {
+          "A": "fr03-a@example.com",
+          "B": "fr03-b@example.com"
+        },
+        "oldPassword": "OldPass1!",
+        "tokens": {
+          "A": "123456",
+          "B": "654321"
+        },
+        "login_attempts": 0,
+        "locked_until": null,
+        "resetBetweenCases": true
+      },
+      "fixture": {
+        "email": "fr03-a@example.com",
+        "resetToken": "123456",
+        "newPassword": "Abcde12!",
+        "confirmPassword": "Abcde12!"
+      },
+      "steps": [
+        "Mở /forgot-password; nhập email A, chuyển thật sang bước 2.",
+        "Trong CSDL cách ly, đặt lại token A=123456; không sửa UI.",
+        "Kiểm tra control xác nhận; nếu thiếu, ghi lý do chặn khi thực thi.",
+        "Nhập fixture và xác nhận bằng newPassword; submit; ghi dialog/network và password A/B trước/sau."
+      ],
+      "expected": "Chấp nhận; mật khẩu A đổi thành newPassword; mật khẩu B giữ nguyên OldPass1!.",
+      "actual": "Chưa thực thi phiên bản thiết kế theo slide.",
+      "status": "Not Run",
+      "evidence": null,
+      "historicalCaseId": null
+    },
+    {
+      "id": "FR03-CBVA-W14",
+      "layer": "WEB",
+      "techniques": [
+        "BVA"
+      ],
+      "method": "KCPM Standard + Robustness (adapted)",
+      "obligations": [
+        {
+          "id": "CBVA-SPEC-0",
+          "variant": "Derived Robustness",
+          "rules": [
+            "R07"
+          ]
+        }
+      ],
+      "rules": [
+        "R07",
+        "R09"
+      ],
+      "preconditions": {
+        "accounts": {
+          "A": "fr03-a@example.com",
+          "B": "fr03-b@example.com"
+        },
+        "oldPassword": "OldPass1!",
+        "tokens": {
+          "A": "123456",
+          "B": "654321"
+        },
+        "login_attempts": 0,
+        "locked_until": null,
+        "resetBetweenCases": true
+      },
+      "fixture": {
+        "email": "fr03-a@example.com",
+        "resetToken": "123456",
+        "newPassword": "Abcdef12",
+        "confirmPassword": "Abcdef12"
+      },
+      "steps": [
+        "Mở /forgot-password; nhập email A, chuyển thật sang bước 2.",
+        "Trong CSDL cách ly, đặt lại token A=123456; không sửa UI.",
+        "Kiểm tra control xác nhận; nếu thiếu, ghi lý do chặn khi thực thi.",
+        "Nhập fixture và xác nhận bằng newPassword; submit; ghi dialog/network và password A/B trước/sau."
+      ],
+      "expected": "Từ chối; mật khẩu A và B giữ nguyên OldPass1!.",
+      "actual": "Chưa thực thi phiên bản thiết kế theo slide.",
+      "status": "Not Run",
+      "evidence": null,
+      "historicalCaseId": null
+    },
+    {
+      "id": "FR03-CBVA-W15",
+      "layer": "WEB",
+      "techniques": [
+        "BVA"
+      ],
+      "method": "KCPM Standard + Robustness (adapted)",
+      "obligations": [
+        {
+          "id": "CBVA-SPEC-2",
+          "variant": "Derived Standard",
+          "rules": [
+            "R07"
+          ]
+        }
+      ],
+      "rules": [
+        "R07",
+        "R09"
+      ],
+      "preconditions": {
+        "accounts": {
+          "A": "fr03-a@example.com",
+          "B": "fr03-b@example.com"
+        },
+        "oldPassword": "OldPass1!",
+        "tokens": {
+          "A": "123456",
+          "B": "654321"
+        },
+        "login_attempts": 0,
+        "locked_until": null,
+        "resetBetweenCases": true
+      },
+      "fixture": {
+        "email": "fr03-a@example.com",
+        "resetToken": "123456",
+        "newPassword": "Abcde1!&",
+        "confirmPassword": "Abcde1!&"
+      },
+      "steps": [
+        "Mở /forgot-password; nhập email A, chuyển thật sang bước 2.",
+        "Trong CSDL cách ly, đặt lại token A=123456; không sửa UI.",
+        "Kiểm tra control xác nhận; nếu thiếu, ghi lý do chặn khi thực thi.",
+        "Nhập fixture và xác nhận bằng newPassword; submit; ghi dialog/network và password A/B trước/sau."
+      ],
+      "expected": "Chấp nhận; mật khẩu A đổi thành newPassword; mật khẩu B giữ nguyên OldPass1!.",
+      "actual": "Chưa thực thi phiên bản thiết kế theo slide.",
+      "status": "Not Run",
+      "evidence": null,
+      "historicalCaseId": null
+    }
+  ],
+  "protectedEvidenceSha256": {
+    "docs/testing/fr03/evidence/web/observations.json": "ac3a5da363fe60c5138b20f9d78cfc05d09d2776eabbd0b3fbf127ccb707f614",
+    "docs/testing/fr03/evidence/api/observations.json": "1e9d9a153dea25acea66882ce5e87ccc9d320772a630b13964ce224eb09f29c9",
+    "docs/testing/fr03/evidence/web/screenshots/FR03-TC-037.png": "85e46de66ed29da191190c30c15e77256193802bccdb7cf0201b2314971b2537",
+    "docs/testing/fr03/evidence/web/screenshots/FR03-TC-042.png": "c0a499b6c26c779e3f65d82872a3176b266cb242554bd7f57a20ca1a0bd8244f",
+    "docs/testing/fr03/evidence/web/screenshots/FR03-TC-043.png": "275db5a6f65456d08fc4ab37d4fc454e72b4ed023baab171bcd8b36f09232449",
+    "docs/testing/fr03/evidence/web/screenshots/FR03-TC-041.png": "37beed95167a8f718ab045936ea12744fdba75097bcd6316af257d7a43d21e60",
+    "docs/testing/fr03/evidence/web/screenshots/FR03-TC-040.png": "566dc3e20e9eeac7df8a940c770b1ab8a2ddbf68f64a2c98f19ccad850b941da",
+    "docs/testing/fr03/evidence/web/screenshots/FR03-TC-050.png": "20bd2ef62457655abf51dbdaf84fb77ff334a3598811e66892578b02f058f0fb",
+    "docs/testing/fr03/evidence/web/screenshots/FR03-TC-044.png": "e777f83caccc91d439852155de67589f6f8ecd7e04a4ab9bffb03b51819aa0e5",
+    "docs/testing/fr03/evidence/web/screenshots/FR03-TC-045.png": "3d47cb59a84e8bc50aa3e228edb4e1bab3132746812c29fe660f65e60531f1eb",
+    "docs/testing/fr03/evidence/web/screenshots/FR03-TC-051.png": "9908afcaee948bd286ac3b547261f0903d5957040a1db56fed35af4e8119e404",
+    "docs/testing/fr03/evidence/web/screenshots/FR03-TC-047.png": "5ff933802657d506dcba06fa11a982f2573c6df89632705b48fafacc4deed462",
+    "docs/testing/fr03/evidence/web/screenshots/FR03-TC-052.png": "115c74e925570567499adeb7f5d55d77d24e8468e371798a572501445f5adc98",
+    "docs/testing/fr03/evidence/web/screenshots/FR03-TC-046.png": "95a1cb8d1e912bb8ff3b61fdfbb9dfff5a08d23c678920b7ef4e107f81ea93a3",
+    "docs/testing/fr03/evidence/web/screenshots/FR03-TC-048.png": "688194ef37d7fc37a6bf659c1e7642f1091dfe3f04a315712385eff2625fcf4d",
+    "docs/testing/fr03/evidence/web/screenshots/FR03-TC-049.png": "b91a3dc44bdbeac87ddf5715471eb91b406bf8d37792b84aca3c39417b15802b",
+    "docs/testing/fr03/evidence/web/screenshots/FR03-TC-039.png": "a0ad5c55949cb433fb4095b2732a6d76bbb2ebcb03ba8b04be27d730fa732f73",
+    "docs/testing/fr03/evidence/web/screenshots/FR03-TC-038.png": "b263b88615dcb4498ed548d55ae1bb90620c0d66425f8792484f2c82ba4626b8",
+    "tests/fr03/suite.json": "fab47bd71806b5d065c584b3ab12087278c70a437c9cc471588887aa4e5a1bf9",
+    "tests/fr03/run-domain-api.cjs": "bb20f9d3c97c477ca5443f59d9b08c376ed26b3368bb3a3c6622bec518e4b24f",
+    "tests/fr03/run-domain-web.py": "2725946906f7395120555039299ccba859627a8d0e381834ed4af2bd3719bceb"
+  }
+}
