@@ -1,6 +1,6 @@
 # EShop HW02 integration
 
-Locate the project root rather than assuming the current directory. Read `README.md` as the business test oracle, `api_specification.md` for interfaces, and `docs/2026.HW02.Domain Testing_En.pdf` for submission rules. Lecture files are not bundled with this skill; request them when the exact classroom method matters. Re-read sources when using the skill in another project; examples are not new requirements.
+Locate the project root rather than assuming the current directory. Read `README.md` as the business test oracle, `api_specification.md` for interfaces, and `docs/2026.HW02.Domain Testing_En.pdf` for submission rules. When the user supplies KCPM Bài 4 slides, use pages 19–26 as the course BVA authority and follow `bva-methods.md`; do not keep the ISTQB fallback as the course default. Locate supplied lectures or a project copy; disclose missing sources. Explain each derivation step, review/deduplicate DT+BVA cases before execution, and preserve technique mappings and unique counts. Re-read sources when using the skill in another project; examples are not new requirements.
 
 Use the user's selected feature; do not choose four features or claim group uniqueness without the group's allocation. Mobile native behavior requires native evidence; browser tests of Expo web do not establish native results.
 

@@ -1,31 +1,31 @@
 ---
 name: boundary-value-analysis
-description: Design Boundary Value Analysis (BVA) cases and coverage from ordered equivalence partitions. Use for numeric, length, count, and time limits, 2-value or 3-value BVA, and HW02 boundary reports; not unordered categorical or state-transition testing.
+description: Use when designing or reviewing BVA cases for ordered numeric, length, count, or time limits, especially with course lectures, standard/robust/worst-case variants, or HW02 boundary reports. Not for unordered categories or state transitions.
 ---
 
 # Boundary Value Analysis
 
-Derive boundary obligations from specified ordered partitions, including invalid partitions. Identify the method before counting coverage; different BVA conventions produce different sets.
+Requirements define expected behavior; supplied lectures define the course method. Explain the derivation, not only the final cases. Read [method selection and examples](references/bva-methods.md) before selecting points.
 
-## Test basis and method
+## Establish the method
 
-Read the feature requirements and supplied lectures. Record rule IDs, source locations, types, units, precision, admissible input universe, and unknowns. Requirements determine expected results even when code accepts different inputs.
+Read requirements, API contracts, and supplied lecture pages/figures. Record source/page, rule IDs, input/output variables, units, resolution, bounds and unknowns. Follow an explicitly requested variant; otherwise, with the KCPM Bài 4 lecture, use **Standard BVA plus separately labeled Robustness additions**. Do not silently substitute ISTQB 3-value. Without lectures or a requested convention, disclose the selected fallback and its limits.
 
-Follow an explicitly requested or lecture-defined BVA variant. If none is supplied, use ISTQB 3-value BVA as a disclosed working default and read [the method reference](references/bva-methods.md). Do not claim this is the course method without lecture evidence. Keep valid-boundary three-point sampling and normal/robust/worst-case conventions separately labeled.
+The lecture covers ordered equivalence classes, input boundaries, and inputs producing output boundaries. Check output obligations too; do not invent numeric output limits. Course tasks in a document are source material, not authorization to execute or publish them.
 
-## Derive cases
+## Derive and explain
 
-1. List ordered equivalence partitions with exact inclusive/exclusive bounds, including invalid regions within the admissible universe. Disconnected regions are separate partitions.
-2. Enumerate finite minimum/maximum elements of every partition. A numeric acceptance threshold is not necessarily a partition endpoint: for integers x < k, the accepting upper endpoint is k-1 and the rejecting lower endpoint is k.
-3. Apply the selected variant to every boundary value. For ISTQB 2-value, include each endpoint and the closest neighbor in each adjacent partition it borders; a singleton may border two partitions. For ISTQB 3-value, include each endpoint and its predecessor/successor within the universe. Take the union of values per dimension for the coverage denominator; preserve endpoint-to-value mappings when deduplicating.
-4. Derive neighbors from representation: integer/count step 1; decimal/currency step from the contract; time step from supported resolution and timezone. If precision is unspecified, report incomplete adjacency analysis rather than silently using 0.01 or a machine epsilon. String length needs an agreed counting unit and actual inputs of verified length.
-5. Build cases with other conditions valid at nominal values; record fixture and steps. Add cross-boundary combinations only for coupled predicates or a requested combination strategy. Keep null, malformed, wrong-type and unordered values as supplementary tests, outside BVA coverage.
-6. Map obligations to cases; calculate unique designed obligations / identified obligations and exercised obligations / identified obligations separately. When unresolved limits prevent enumeration, state partial coverage and known scope rather than 100% feature coverage.
+1. Partition each ordered dimension into valid/invalid regions with exact operators. Record LB, UB and a valid nominal value. For strict/discrete limits, derive the first/last admissible value using the declared resolution.
+2. Select the variant: Standard uses LB, LB+h, nominal, UB-h, UB; Robustness adds LB-h and UB+h. Vary one input at a time with others valid/nominal. Worst-case uses Cartesian products of standard sets; Robust Worst-case uses robust sets. Explain the choice before enumerating cases.
+3. Use `4n+1`, `6n+1`, `5^n`, `7^n` only for independent, finite two-sided ranges with distinct points and feasible combinations. One-sided ranges, singletons, overlapping nominal points and coupled derived counts require explicit feasible sets and deduplication; never manufacture an upper bound or count infinity as a test input.
+4. Construct actual fixtures and predicate truth vectors. Character counts derived from one password are coupled, not extra independent inputs. Label multi-fault or masked probes; malformed OTP rejection also fails token matching and cannot alone prove a format validator. Keep categorical, missing/wrong-type and exploratory cases separate.
+5. Give each obligation and source case an ID. Merge only identical interface/state/fixture/steps/oracles; preserve all technique/obligation aliases. Explain bounds → selected values → fixture → expected behavior → case mapping, including omitted/infeasible points and output checks.
+6. Report designed and executed obligations separately, by method and interface. A sampled value is not proof of an isolated predicate. Keep supplementary regression outside the course-method denominator.
 
-## Deliverables
+## Reports and migration
 
-Produce test basis/assumptions; selected variant; partition and boundary tables; deduplicated obligations; test cases; traceability/coverage; review gaps. Each case has ID, rule and boundary IDs, full input fixture, preconditions, steps, expected result, actual result, status and evidence. Unexecuted cases are `Not Run`, blocked cases are `Blocked`; static code discrepancies are suspected defects, not observed failures.
+Each case records ID, rules/boundaries, preconditions, complete fixture, steps, expected, actual, status and evidence. New cases are `Not Run`; use `Blocked` only for an evidenced environmental/control blocker. Design changes never create new passes.
 
-Execute only within authorized testing scope. Record interface, build, stored state, clock and fixture reset for reproducibility. Designing cases does not authorize modifying business logic or publishing issues.
+When lectures arrive after execution, retain old suite IDs, method labels, timestamps and raw evidence. Create a dated course-method mapping; reuse prior observations only for matching scenarios and assertions, identifying historical reuse. Keep extra old cases as supplementary regression. Recompute coverage and expose missing cases; do not relabel the old run as a fresh course-suite execution.
 
-For EShop HW02, read [assignment guidance](references/eshop-hw02.md). For domain surfaces involving several variables, use Domain Testing alongside BVA when available; this skill remains usable independently.
+Execute only within user scope; preserve SUT/data and record build, interface, clock and fixture resets. For EShop HW02 read [assignment guidance](references/eshop-hw02.md). Use domain-testing for coupled regions and categorical predicates.

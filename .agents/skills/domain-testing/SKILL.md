@@ -11,6 +11,8 @@ Model the specified acceptance regions before selecting test data. Keep Domain T
 
 Read the selected feature's requirements and supplied lecture materials. Preserve their terminology and method. Record source locations, rule IDs, unknowns, and assumptions. Use requirements as the expected-result oracle; implementation describes observed behavior, not what is correct. If lectures are unavailable, label the method below as a working convention, not a verified course method.
 
+The KCPM Bài 4 lecture teaches equivalence partitioning (pages 6–18) and BVA (19–26); do not attribute the on/off/in domain-surface convention to it. If combining techniques, use boundary-value-analysis for its lecture-specific variants and preserve separate obligation mappings after deduplication.
+
 Identify controllable inputs, configuration, time, stored counters, authentication, and preconditions. For each dimension record type, unit, resolution, admissible universe, and constraints. Distinguish input-validation rules from business-acceptance rules. Do not invent missing upper limits, precisions, or validity rules.
 
 ## Derive cases step by step
