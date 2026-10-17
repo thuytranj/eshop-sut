@@ -1,8 +1,8 @@
 # Phân tích Yêu cầu Kỹ thuật FR-03: Quên Mật khẩu & Đặt lại Mật khẩu
 
-## 1. Cơ sở Kiểm thử và Phạm vi (Test Basis & Scope)
+## 1. Test Basis & Scope
 
-### 1.1 Tài liệu nguồn (Test Basis)
+### 1.1 Test Basis
 1. **README.md (dòng 46–60):** Đặc tả chức năng FR-03 (Quên mật khẩu & Đặt lại mật khẩu 2 bước).
 2. **README.md (dòng 34–35):** Quy tắc độ mạnh mật khẩu kế thừa từ FR-01.
 3. **api_specification.md (dòng 34–54):** Giao diện API (`POST /api/forgot-password` và `POST /api/reset-password`).
@@ -13,14 +13,14 @@
 
 6. **Slide được cung cấp ngày 2026-10-17:** [KCPM Bài 4](references/KCPM-Bai4-EP-BVA.pdf), trang 6–18 (EP), 19–26 (BVA). Nguồn này thay thế quy ước ISTQB tạm thời cho BVA môn học.
 
-### 1.2 Giới hạn phương pháp luận (Methodology Limitations)
+### 1.2 Methodology Limitations
 - Domain Testing on/off/in vẫn là quy ước của skill; slide Bài 4 không xác lập riêng phương pháp domain-surface này. BVA hiện hành chọn Standard + Robustness thích nghi, giải thích đầy đủ ở [bva-report.md](bva-report.md).
 - Cả hai phương pháp đều được trình bày tường minh quá trình biến đổi từ yêu cầu sang mô hình vị từ, phân vùng, biên, điểm kiểm thử và tập ca kiểm thử độc lập trước khi tổng hợp.
 - Phạm vi kiểm thử: Chức năng FR-03 trên 2 giao diện: **API** (`backend`) và **Giao diện Web khách hàng** (`frontend-web`). Không kiểm thử ứng dụng mobile hay mở rộng sang các tính năng khác.
 
 ---
 
-## 2. Hệ thống Quy tắc Nghiệp vụ Ổn định (Traceable Business Rules)
+## 2. Traceable Business Rules
 
 Để đảm bảo khả năng truy vết (traceability) xuyên suốt các kỹ thuật kiểm thử, các quy tắc của FR-03 được định danh từ **R01** đến **R09**:
 
@@ -38,7 +38,7 @@
 
 ---
 
-## 3. Không gian Đầu vào và Mô hình Vị từ (Inputs & Predicates)
+## 3. Inputs & Predicates
 
 ### 3.1 Không gian đầu vào và trạng thái lưu trữ
 - **Các biến đầu vào (Inputs):**
@@ -82,7 +82,7 @@
 
 ---
 
-## 4. Sổ Đăng ký Điểm Mơ hồ và Giả định Kỹ thuật (Ambiguity Register)
+## 4. Ambiguity Register
 
 Theo nguyên tắc của SUT, các điểm chưa rõ trong đặc tả không được tự ý giải quyết bằng cách đọc code hiện tại, mà phải được ghi nhận rõ ràng:
 

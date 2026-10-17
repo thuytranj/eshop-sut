@@ -1,3 +1,8 @@
 # Superpowers workspaces and plans
 .superpowers/
 docs/superpowers/
+
+# ignore pycache
+__pycache__/
+
+.DS_Store

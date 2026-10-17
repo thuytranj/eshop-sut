@@ -1,6 +1,6 @@
-# Báo cáo Kết quả Thực thi và Phán quyết Kiểm thử (Test Results & Conformance Verdicts) - FR-03
+# Test Results & Conformance Verdicts - FR-03
 
-## 1. Tổng quan Kết quả Thực thi Toàn diện (Execution Overview)
+## 1. Execution Overview
 
 Hồ sơ lịch sử gồm **52 ca thiết kế duy nhất**: 47 ca có verdict Passed/Failed và 5 ca Blocked. Bảng dưới đối soát từ các observation JSON có sẵn; không phải kết quả chạy lại ngày refactor. API có snapshot password A/B; WEB chủ yếu lưu dialogs và screenshots, không đủ để khẳng định đã đối chiếu CSDL cho mọi ca UI.
 

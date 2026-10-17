@@ -1,12 +1,12 @@
-# Mô hình Kiểm thử Miền (Domain Testing Model) - FR-03
+# Domain Testing Model - FR-03
 
-## 1. Cơ sở Lý thuyết và Quy ước Kiểm thử Miền (Domain Testing Convention)
+## 1. Domain Testing Convention
 
 ### 1.1 Quy ước Phương pháp luận
 
 Bổ sung nguồn ngày 2026-10-17: [slide Bài 4](references/KCPM-Bai4-EP-BVA.pdf), trang 6–18 hỗ trợ xác định input/output, lớp hợp lệ/không hợp lệ, đại diện và cô lập một lớp invalid. Phần on/off/in dưới đây là quy ước skill Domain Testing; không gán nhầm cho slide BVA trang 19–26. [bva-report.md](bva-report.md) chọn Standard + Robustness riêng.
 
-Báo cáo này áp dụng phương pháp **Kiểm thử Miền (Domain Testing)** theo quy ước chuẩn kỹ thuật tại [.agents/skills/domain-testing/SKILL.md](../../../.agents/skills/domain-testing/SKILL.md):
+Báo cáo này áp dụng phương pháp **Domain Testing** theo quy ước chuẩn kỹ thuật tại [.agents/skills/domain-testing/SKILL.md](../../../.agents/skills/domain-testing/SKILL.md):
 - Chuyển hóa các quy tắc nghiệp vụ thành các vị từ toán học với toán tử chính xác (nghiêm ngặt $\ge, =, \in$).
 - Xác định miền chấp nhận hợp lệ (Valid Acceptance Region) và phần bù không hợp lệ (Invalid Region).
 - Định nghĩa các biên quyết định (Decision Boundaries / Equality Surfaces).
