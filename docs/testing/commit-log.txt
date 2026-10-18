@@ -1,0 +1,1952 @@
+ESHOP — COMPLETE LOCAL GIT COMMIT LOG
+Exported at: 2026-10-19T00:32:58+07:00 (Asia/Ho_Chi_Minh)
+Snapshot HEAD: 46f7bbd7d356bc25a94f32d74fcbc4d3383d2663
+Unique commits: 55
+Scope: all commits reachable from local refs (git log --all).
+Order: topological, newest first. Dates retain their recorded UTC offsets.
+Includes full commit hashes, authors, committers, dates, complete messages,
+and changed-file status (A=added, M=modified, D=deleted).
+This is a snapshot before the export commit; uncommitted changes,
+unreachable/reflog-only commits, and unfetched remote history are excluded.
+Shallow repository: false
+Command: git --no-pager log --all --topo-order --format=fuller --date=iso-strict --no-decorate --no-color --name-status --no-renames
+
+REFS AT EXPORT
+6e29712b94349f6bbad5024265df42ec14e3cd26 refs/codex/snapshots/6ea6d0ec5e5c5b1096fa2d1ea4c5af7dfe1119fc
+eb2aed2bef88ce5ec047f2e6e90db1945da63a25 refs/codex/turn-diffs/captures/1792344671786/befc348c-a15d-44d2-9579-36eb8c30ae69/base
+eb2aed2bef88ce5ec047f2e6e90db1945da63a25 refs/codex/turn-diffs/captures/1792344750756/f8784168-827c-4c5e-86ac-94efa7a3fdaa/base
+0f80eea2c7c49d39b766feb9f48512999dd4120f refs/codex/turn-diffs/checkpoints/2d57f0146ea83362ab9b0b84fdd7f596/bc6266a8e59e75c64d8aa19e221bc7cd/1791912759532/4f87d8a2-8264-4a1f-9ca2-af4388aee481
+700e522455ee7d74f1fbf7615d35df8536784960 refs/codex/turn-diffs/checkpoints/3a027cb5dd2648c7257fed320d5e969d/99a77526a4889a660fabb4e9c7745947/1792343769505/e2a8cdee-dfca-4ec8-b439-9708550c1c11
+54d39f7e88df48f5dd6c39145cd3551b34b41506 refs/codex/turn-diffs/checkpoints/5e896254203fb765b966bd5ba8ee7a74/c7389930eda27bfb3f313ba1c8905e40/1792141257726/49c7b3c3-fb8f-41af-b2b0-13e6c2a30662
+884296bf715240471eb6146c22e0c4ac706f5e98 refs/codex/turn-diffs/checkpoints/7b9ada808ebb98a357bfa8f65e52a305/53149d61f8d5e9afe33f0bf174726e38/1792083554040/bde6d6bc-b03d-4854-b4fb-79c175efebff
+46f7bbd7d356bc25a94f32d74fcbc4d3383d2663 refs/heads/hw02-domain-testing
+ae59492619426fcf83a5cce18598001e99ccea71 refs/heads/main
+ae59492619426fcf83a5cce18598001e99ccea71 refs/remotes/origin/HEAD
+ae59492619426fcf83a5cce18598001e99ccea71 refs/remotes/origin/main
+
+COMMIT HISTORY
+
+commit 46f7bbd7d356bc25a94f32d74fcbc4d3383d2663
+Author:     23120367 <158675897+thuytranj@users.noreply.github.com>
+AuthorDate: 2026-10-18T09:51:22+07:00
+Commit:     23120367 <158675897+thuytranj@users.noreply.github.com>
+CommitDate: 2026-10-18T09:51:22+07:00
+
+    Add test case ID mapping for various techniques in CSV format
+
+M	docs/testing/report.md
+A	docs/testing/test-case-id-map.csv
+
+commit 04b184f99dc0b23810ad89c25a074c4ef17ae925
+Author:     23120367 <158675897+thuytranj@users.noreply.github.com>
+AuthorDate: 2026-10-18T00:59:53+07:00
+Commit:     23120367 <158675897+thuytranj@users.noreply.github.com>
+CommitDate: 2026-10-18T00:59:53+07:00
+
+    Refactor code structure for improved readability and maintainability
+
+M	.gitignore
+M	backend/database.sqlite
+M	docs/testing/fr03/ai-interactions.md
+M	docs/testing/fr03/bugs.md
+M	docs/testing/fr03/domain-cases.md
+M	docs/testing/fr03/domain-model.md
+M	docs/testing/fr03/requirements.md
+M	docs/testing/fr03/test-results.md
+M	docs/testing/report.md
+
+commit 95a1b3e1f1e23e858a4f115d918e0d9206f124e1
+Author:     23120367 <158675897+thuytranj@users.noreply.github.com>
+AuthorDate: 2026-10-17T16:58:45+07:00
+Commit:     23120367 <158675897+thuytranj@users.noreply.github.com>
+CommitDate: 2026-10-17T16:58:45+07:00
+
+    docs(testing): consolidate four feature domain and BVA reports
+
+A	docs/testing/report.md
+
+commit c117952d49d7e19d16c8c1f0088cd9382d264051
+Author:     23120367 <158675897+thuytranj@users.noreply.github.com>
+AuthorDate: 2026-10-17T16:11:15+07:00
+Commit:     23120367 <158675897+thuytranj@users.noreply.github.com>
+CommitDate: 2026-10-17T16:11:15+07:00
+
+    docs(fr03): record lecture refactor commit history
+
+M	docs/testing/fr03/commit-log.txt
+
+commit 8724731f38d61bad0e1c993605d634d3f55ed52e
+Author:     23120367 <158675897+thuytranj@users.noreply.github.com>
+AuthorDate: 2026-10-17T16:10:06+07:00
+Commit:     23120367 <158675897+thuytranj@users.noreply.github.com>
+CommitDate: 2026-10-17T16:10:06+07:00
+
+    docs(fr03): refactor BVA reports against course lecture
+
+A	docs/testing/fr03/README.md
+M	docs/testing/fr03/ai-gap-analysis.md
+M	docs/testing/fr03/ai-interactions.md
+M	docs/testing/fr03/bugs.md
+M	docs/testing/fr03/bva-report.md
+A	docs/testing/fr03/course-cases.md
+A	docs/testing/fr03/course-suite.json
+M	docs/testing/fr03/domain-cases.md
+M	docs/testing/fr03/domain-model.md
+A	docs/testing/fr03/references/KCPM-Bai4-EP-BVA.pdf
+A	docs/testing/fr03/references/ai-gap-before-lecture.md
+A	docs/testing/fr03/references/bva-istqb-historical.md
+M	docs/testing/fr03/requirements.md
+M	docs/testing/fr03/suite-review.md
+M	docs/testing/fr03/test-results.md
+A	docs/testing/fr03/verify_artifacts.py
+
+commit a2b460975fdeb5f699d1dc48865e162f9260de8e
+Author:     23120367 <158675897+thuytranj@users.noreply.github.com>
+AuthorDate: 2026-10-17T16:00:41+07:00
+Commit:     23120367 <158675897+thuytranj@users.noreply.github.com>
+CommitDate: 2026-10-17T16:00:41+07:00
+
+    docs(skills): align BVA guidance with course lecture
+
+M	.agents/skills/boundary-value-analysis/SKILL.md
+M	.agents/skills/boundary-value-analysis/references/bva-methods.md
+M	.agents/skills/boundary-value-analysis/references/eshop-hw02.md
+M	.agents/skills/domain-testing/SKILL.md
+
+commit 4461a5ae9f35db6cc27a5103fd441280b95cbc3e
+Author:     23120367 <158675897+thuytranj@users.noreply.github.com>
+AuthorDate: 2026-10-16T15:57:50+07:00
+Commit:     23120367 <158675897+thuytranj@users.noreply.github.com>
+CommitDate: 2026-10-16T15:57:50+07:00
+
+    docs(fr05): map testing reports to repository skills
+
+M	docs/testing/fr05/README.md
+M	docs/testing/fr05/ai-interactions.jsonl
+M	docs/testing/fr05/ai-interactions.md
+A	docs/testing/fr05/skill-application.md
+
+commit 1dd0e1ff53c1e853d53f7555ebaa0307a6d88c50
+Author:     23120367 <158675897+thuytranj@users.noreply.github.com>
+AuthorDate: 2026-10-16T15:47:00+07:00
+Commit:     23120367 <158675897+thuytranj@users.noreply.github.com>
+CommitDate: 2026-10-16T15:47:00+07:00
+
+    test(fr05): record native follow-up probes and blocker evidence
+
+M	docs/testing/fr05/README.md
+M	docs/testing/fr05/ai-interactions.jsonl
+M	docs/testing/fr05/ai-interactions.md
+M	docs/testing/fr05/commit-log.txt
+A	docs/testing/fr05/evidence/fr05-run01/reset-policy-addendum.md
+A	docs/testing/fr05/evidence/fr05-run02/cumulative-observations.json
+A	docs/testing/fr05/evidence/fr05-run02/followup-observations.json
+A	docs/testing/fr05/evidence/fr05-run02/manifest.json
+A	docs/testing/fr05/evidence/fr05-run02/native/FR05-TC-013.ax.txt
+A	docs/testing/fr05/evidence/fr05-run02/native/accessibility-surface.ax.txt
+A	docs/testing/fr05/evidence/fr05-run02/native/after-scroll.ax.txt
+A	docs/testing/fr05/evidence/fr05-run02/native/alt-alpha.ax.txt
+A	docs/testing/fr05/evidence/fr05-run02/native/alt-alpha.png
+A	docs/testing/fr05/evidence/fr05-run02/native/case-fold.ax.txt
+A	docs/testing/fr05/evidence/fr05-run02/native/case-fold.png
+A	docs/testing/fr05/evidence/fr05-run02/native/case-upper.ax.txt
+A	docs/testing/fr05/evidence/fr05-run02/native/case-upper.png
+A	docs/testing/fr05/evidence/fr05-run02/native/diacritics.ax.txt
+A	docs/testing/fr05/evidence/fr05-run02/native/diacritics.png
+A	docs/testing/fr05/evidence/fr05-run02/native/empty-query.ax.txt
+A	docs/testing/fr05/evidence/fr05-run02/native/empty-query.png
+A	docs/testing/fr05/evidence/fr05-run02/native/listing-before-scroll.ax.txt
+A	docs/testing/fr05/evidence/fr05-run02/native/listing-ready.ax.txt
+A	docs/testing/fr05/evidence/fr05-run02/native/percent-full.ax.txt
+A	docs/testing/fr05/evidence/fr05-run02/native/percent-full.png
+A	docs/testing/fr05/evidence/fr05-run02/native/percent-only.ax.txt
+A	docs/testing/fr05/evidence/fr05-run02/native/percent-only.png
+A	docs/testing/fr05/evidence/fr05-run02/native/scroll-coordinate-error.txt
+A	docs/testing/fr05/evidence/fr05-run02/native/scroll-error.txt
+A	docs/testing/fr05/evidence/fr05-run02/native/substring.ax.txt
+A	docs/testing/fr05/evidence/fr05-run02/native/substring.png
+A	docs/testing/fr05/evidence/fr05-run02/native/trim.ax.txt
+A	docs/testing/fr05/evidence/fr05-run02/native/trim.png
+A	docs/testing/fr05/evidence/fr05-run02/native/underscore.ax.txt
+A	docs/testing/fr05/evidence/fr05-run02/native/underscore.png
+A	docs/testing/fr05/evidence/fr05-run02/native/whitespace.ax.txt
+A	docs/testing/fr05/evidence/fr05-run02/native/whitespace.png
+A	docs/testing/fr05/evidence/fr05-run02/probe-index.json
+A	docs/testing/fr05/evidence/fr05-run02/requests.jsonl
+A	docs/testing/fr05/evidence/fr05-run02/resume-preflight.jsonl
+A	docs/testing/fr05/evidence/fr05-run02/verification.txt
+A	docs/testing/fr05/followup-run02.md
+M	docs/testing/fr05/suite-review.md
+M	docs/testing/fr05/test-results.md
+M	tests/fr05/native-runbook.md
+
+commit 23865c418ac6e645e107b1dee155d77174d563f4
+Author:     23120367 <158675897+thuytranj@users.noreply.github.com>
+AuthorDate: 2026-10-16T15:34:25+07:00
+Commit:     23120367 <158675897+thuytranj@users.noreply.github.com>
+CommitDate: 2026-10-16T15:34:25+07:00
+
+    docs(fr05): record final review and testing commit history
+
+M	docs/testing/fr05/README.md
+M	docs/testing/fr05/ai-interactions.jsonl
+M	docs/testing/fr05/ai-interactions.md
+M	docs/testing/fr05/commit-log.txt
+A	docs/testing/fr05/final-review.md
+
+commit 6b73251c0fd50d1488cbe0a0a49be9bdd1490bb0
+Author:     23120367 <158675897+thuytranj@users.noreply.github.com>
+AuthorDate: 2026-10-16T12:47:58+07:00
+Commit:     23120367 <158675897+thuytranj@users.noreply.github.com>
+CommitDate: 2026-10-16T12:47:58+07:00
+
+    docs(fr05): analyze evidenced AI gaps in mobile testing
+
+A	docs/testing/fr05/README.md
+A	docs/testing/fr05/ai-critique.md
+A	docs/testing/fr05/ai-gap-analysis.md
+M	docs/testing/fr05/ai-interactions.jsonl
+M	docs/testing/fr05/ai-interactions.md
+A	docs/testing/fr05/commit-log.txt
+
+commit 80550b2f8339fc63c15effbeebeb10d6899a0f40
+Author:     23120367 <158675897+thuytranj@users.noreply.github.com>
+AuthorDate: 2026-10-16T12:44:28+07:00
+Commit:     23120367 <158675897+thuytranj@users.noreply.github.com>
+CommitDate: 2026-10-16T12:44:28+07:00
+
+    docs(fr05): report mobile search results and observed defects
+
+M	docs/testing/fr05/ai-interactions.jsonl
+A	docs/testing/fr05/bugs.md
+A	docs/testing/fr05/evidence/fr05-run01/adjudicated-observations.json
+A	docs/testing/fr05/evidence/fr05-run01/verdict-revisions.json
+M	docs/testing/fr05/suite-review.md
+A	docs/testing/fr05/test-results.md
+
+commit 75a36a98364b87ecb1d125765d1b87d972169e3a
+Author:     23120367 <158675897+thuytranj@users.noreply.github.com>
+AuthorDate: 2026-10-16T12:39:47+07:00
+Commit:     23120367 <158675897+thuytranj@users.noreply.github.com>
+CommitDate: 2026-10-16T12:39:47+07:00
+
+    test(fr05): record native product search execution evidence
+
+M	docs/testing/fr05/ai-interactions.jsonl
+A	docs/testing/fr05/evidence/fr05-run01/api-observations.json
+A	docs/testing/fr05/evidence/fr05-run01/api/FR05-TC-034.json
+A	docs/testing/fr05/evidence/fr05-run01/api/FR05-TC-035.json
+A	docs/testing/fr05/evidence/fr05-run01/api/FR05-TC-036.json
+A	docs/testing/fr05/evidence/fr05-run01/api/FR05-TC-037.json
+A	docs/testing/fr05/evidence/fr05-run01/api/FR05-TC-038.json
+A	docs/testing/fr05/evidence/fr05-run01/api/FR05-TC-039.json
+A	docs/testing/fr05/evidence/fr05-run01/api/FR05-TC-040.json
+A	docs/testing/fr05/evidence/fr05-run01/api/FR05-TC-041.json
+A	docs/testing/fr05/evidence/fr05-run01/api/FR05-TC-042.json
+A	docs/testing/fr05/evidence/fr05-run01/api/FR05-TC-043.json
+A	docs/testing/fr05/evidence/fr05-run01/api/FR05-TC-044.json
+A	docs/testing/fr05/evidence/fr05-run01/api/FR05-TC-045.json
+A	docs/testing/fr05/evidence/fr05-run01/api/quote-reproduction.txt
+A	docs/testing/fr05/evidence/fr05-run01/environment-adjustment.diff
+A	docs/testing/fr05/evidence/fr05-run01/manifest.json
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-001.ax.txt
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-001.observation.json
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-001.png
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-002.ax.txt
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-002.observation.json
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-002.png
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-003.ax.txt
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-003.observation.json
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-003.png
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-004.ax.txt
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-004.observation.json
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-004.png
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-005.ax.txt
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-005.observation.json
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-005.png
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-006.ax.txt
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-006.observation.json
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-006.png
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-007.ax.txt
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-007.observation.json
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-007.png
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-008.ax.txt
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-008.observation.json
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-008.png
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-009.ax.txt
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-009.observation.json
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-009.png
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-010.ax.txt
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-010.observation.json
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-010.png
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-011.ax.txt
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-011.observation.json
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-011.png
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-012.ax.txt
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-012.observation.json
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-012.png
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-013.ax.txt
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-013.observation.json
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-014.ax.txt
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-014.observation.json
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-015-pending-clear.ax.txt
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-015-pending-clear.png
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-015-pending-v2.ax.txt
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-015-pending-v2.png
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-015-pending.ax.txt
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-015-pending.png
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-015-success.ax.txt
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-015-success.png
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-015.observation.json
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-016-pending.ax.txt
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-016-success.ax.txt
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-016.observation.json
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-017-after-delay.ax.txt
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-017-pending.ax.txt
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-017.observation.json
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-018.ax.txt
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-018.observation.json
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-019-beta-first.ax.txt
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-019-final.ax.txt
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-019-final.png
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-019.observation.json
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-020.observation.json
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-021.observation.json
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-022.observation.json
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-023.observation.json
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-024.observation.json
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-025.observation.json
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-026.observation.json
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-027.observation.json
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-028.ax.txt
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-028.observation.json
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-028.png
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-029.ax.txt
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-029.observation.json
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-030.ax.txt
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-030.observation.json
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-031.ax.txt
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-031.observation.json
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-032.ax.txt
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-032.observation.json
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-033-empty.ax.txt
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-033-recovered.ax.txt
+A	docs/testing/fr05/evidence/fr05-run01/native/FR05-TC-033.observation.json
+A	docs/testing/fr05/evidence/fr05-run01/native/cua-search-helper.js.txt
+A	docs/testing/fr05/evidence/fr05-run01/native/initial-launch-pending.png
+A	docs/testing/fr05/evidence/fr05-run01/native/preflight-device.png
+A	docs/testing/fr05/evidence/fr05-run01/observations.json
+A	docs/testing/fr05/evidence/fr05-run01/oracle-blockers.txt
+A	docs/testing/fr05/evidence/fr05-run01/preflight.txt
+A	docs/testing/fr05/evidence/fr05-run01/requests.jsonl
+A	docs/testing/fr05/evidence/fr05-run01/task4-red.log
+A	docs/testing/fr05/evidence/fr05-run01/task5-api-red.log
+A	docs/testing/fr05/evidence/fr05-run01/task5-env-red.log
+A	docs/testing/fr05/evidence/fr05-run01/task5-proxy-red.log
+A	docs/testing/fr05/execution-decisions.md
+A	tests/fr05/control-session.cjs
+A	tests/fr05/fixture-server.cjs
+A	tests/fr05/native-runbook.md
+A	tests/fr05/prepare-environment.cjs
+A	tests/fr05/reload-native.cjs
+A	tests/fr05/run-products-api.cjs
+A	tests/fr05/test_api_runner.cjs
+A	tests/fr05/test_environment.py
+A	tests/fr05/test_protocol.py
+
+commit f74658aa9232d117ddd400e954db18b6ce81abeb
+Author:     23120367 <158675897+thuytranj@users.noreply.github.com>
+AuthorDate: 2026-10-16T10:35:35+07:00
+Commit:     23120367 <158675897+thuytranj@users.noreply.github.com>
+CommitDate: 2026-10-16T10:35:35+07:00
+
+    test(fr05): freeze reviewed mobile domain and boundary suite
+
+M	docs/testing/fr05/ai-interactions.jsonl
+A	docs/testing/fr05/suite-review.md
+A	tests/fr05/suite.json
+A	tests/fr05/test_validate_suite.py
+A	tests/fr05/validate_suite.py
+
+commit 4f22209d4ae0e058765af0ca23a14a7926dd2aee
+Author:     23120367 <158675897+thuytranj@users.noreply.github.com>
+AuthorDate: 2026-10-16T10:32:56+07:00
+Commit:     23120367 <158675897+thuytranj@users.noreply.github.com>
+CommitDate: 2026-10-16T10:32:56+07:00
+
+    docs(fr05): derive mobile result-count boundary cases
+
+M	docs/testing/fr05/ai-interactions.jsonl
+A	docs/testing/fr05/bva-report.md
+M	docs/testing/fr05/domain-cases.md
+A	tests/fr05/bva-source.json
+
+commit 6b20f7fa8ad8eea056f7bcb2303f3bc955f7f691
+Author:     23120367 <158675897+thuytranj@users.noreply.github.com>
+AuthorDate: 2026-10-16T10:31:29+07:00
+Commit:     23120367 <158675897+thuytranj@users.noreply.github.com>
+CommitDate: 2026-10-16T10:31:29+07:00
+
+    docs(fr05): derive mobile product search domains and cases
+
+M	docs/testing/fr05/ai-interactions.jsonl
+A	docs/testing/fr05/domain-cases.md
+A	docs/testing/fr05/domain-model.md
+A	tests/fr05/domain-source.json
+A	tests/fr05/fixtures/catalog.json
+A	tests/fr05/fixtures/images/square.png
+A	tests/fr05/fixtures/images/tall.png
+A	tests/fr05/fixtures/images/wide.png
+
+commit 3502645405fc0b0cf94998d2676400ead60e6811
+Author:     23120367 <158675897+thuytranj@users.noreply.github.com>
+AuthorDate: 2026-10-16T10:28:12+07:00
+Commit:     23120367 <158675897+thuytranj@users.noreply.github.com>
+CommitDate: 2026-10-16T10:28:12+07:00
+
+    docs(fr05): analyze mobile listing and search requirements
+
+A	docs/testing/fr05/ai-interactions.jsonl
+A	docs/testing/fr05/ai-interactions.md
+A	docs/testing/fr05/requirements.md
+
+commit 96d6cb660e23cf27ac88aa8ea0a2eaefcddf3c7f
+Author:     23120367 <158675897+thuytranj@users.noreply.github.com>
+AuthorDate: 2026-10-15T23:58:49+07:00
+Commit:     23120367 <158675897+thuytranj@users.noreply.github.com>
+CommitDate: 2026-10-15T23:58:49+07:00
+
+    docs(fr15): localize testing reports into Vietnamese
+
+M	docs/testing/fr15/README.md
+M	docs/testing/fr15/ai-gap-analysis.md
+A	docs/testing/fr15/ai-interactions-vi.md
+M	docs/testing/fr15/ai-interactions.jsonl
+M	docs/testing/fr15/bugs.md
+M	docs/testing/fr15/bva-report.md
+M	docs/testing/fr15/commit-log.txt
+M	docs/testing/fr15/domain-cases.md
+M	docs/testing/fr15/domain-model.md
+M	docs/testing/fr15/evidence/harness/README.md
+M	docs/testing/fr15/execution-decisions.md
+M	docs/testing/fr15/final-review.md
+M	docs/testing/fr15/requirements.md
+M	docs/testing/fr15/suite-review.md
+M	docs/testing/fr15/test-results.md
+
+commit 875e0c222846c6cad63ef6a62e1082e973277a68
+Author:     23120367 <158675897+thuytranj@users.noreply.github.com>
+AuthorDate: 2026-10-15T22:48:42+07:00
+Commit:     23120367 <158675897+thuytranj@users.noreply.github.com>
+CommitDate: 2026-10-15T22:48:42+07:00
+
+    docs(fr15): finalize reviewed testing commit history
+
+M	docs/testing/fr15/commit-log.txt
+A	docs/testing/fr15/evidence/harness/preservation.json
+
+commit eb0f7a3f81eeb2b0b346b47078600263b7e15d96
+Author:     23120367 <158675897+thuytranj@users.noreply.github.com>
+AuthorDate: 2026-10-15T22:45:06+07:00
+Commit:     23120367 <158675897+thuytranj@users.noreply.github.com>
+CommitDate: 2026-10-15T22:45:06+07:00
+
+    test(fr15): close final review gaps and rerun CRUD suite
+
+M	docs/testing/fr15/README.md
+M	docs/testing/fr15/ai-gap-analysis.md
+A	docs/testing/fr15/ai-interactions-v2.md
+M	docs/testing/fr15/ai-interactions.jsonl
+M	docs/testing/fr15/ai-interactions.md
+M	docs/testing/fr15/bugs.md
+M	docs/testing/fr15/bva-report.md
+M	docs/testing/fr15/domain-cases.md
+M	docs/testing/fr15/domain-model.md
+A	docs/testing/fr15/evidence/fr15-run03/admin.log
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-001.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-002.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-003.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-004.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-005.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-006.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-007.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-008.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-009.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-010.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-011.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-012.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-013.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-014.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-015.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-016.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-017.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-018.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-019.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-020.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-021.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-022.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-023.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-024.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-025.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-026.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-027.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-028.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-029.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-030.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-031.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-032.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-033.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-034.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-035.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-036.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-037.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-038.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-039.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-040.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-041.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-042.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-043.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-044.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-045.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-046.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-047.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-048.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-049.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-050.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-051.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-052.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-053.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-054.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-055.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-056.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-057.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-058.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-059.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-060.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-061.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-062.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-063.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-064.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-065.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-066.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-067.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-068.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-115.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-116.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-117.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-118.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-119.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-120.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-121.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-122.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-123.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-124.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-125.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-126.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-137.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-138.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-139.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-140.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-141.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-142.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-143.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-144.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-145.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-147.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-148.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-149.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-150.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-151.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-152.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-153.json
+A	docs/testing/fr15/evidence/fr15-run03/api/FR15-TC-154.json
+A	docs/testing/fr15/evidence/fr15-run03/api/observations.json
+A	docs/testing/fr15/evidence/fr15-run03/api/runner.log
+A	docs/testing/fr15/evidence/fr15-run03/backend.log
+A	docs/testing/fr15/evidence/fr15-run03/manifest.json
+A	docs/testing/fr15/evidence/fr15-run03/web/FR15-TC-069.json
+A	docs/testing/fr15/evidence/fr15-run03/web/FR15-TC-070.json
+A	docs/testing/fr15/evidence/fr15-run03/web/FR15-TC-071.json
+A	docs/testing/fr15/evidence/fr15-run03/web/FR15-TC-072.json
+A	docs/testing/fr15/evidence/fr15-run03/web/FR15-TC-073.json
+A	docs/testing/fr15/evidence/fr15-run03/web/FR15-TC-074.json
+A	docs/testing/fr15/evidence/fr15-run03/web/FR15-TC-075.json
+A	docs/testing/fr15/evidence/fr15-run03/web/FR15-TC-076.json
+A	docs/testing/fr15/evidence/fr15-run03/web/FR15-TC-077.json
+A	docs/testing/fr15/evidence/fr15-run03/web/FR15-TC-078.json
+A	docs/testing/fr15/evidence/fr15-run03/web/FR15-TC-079.json
+A	docs/testing/fr15/evidence/fr15-run03/web/FR15-TC-080.json
+A	docs/testing/fr15/evidence/fr15-run03/web/FR15-TC-081.json
+A	docs/testing/fr15/evidence/fr15-run03/web/FR15-TC-082.json
+A	docs/testing/fr15/evidence/fr15-run03/web/FR15-TC-083.json
+A	docs/testing/fr15/evidence/fr15-run03/web/FR15-TC-084.json
+A	docs/testing/fr15/evidence/fr15-run03/web/FR15-TC-085.json
+A	docs/testing/fr15/evidence/fr15-run03/web/FR15-TC-086.json
+A	docs/testing/fr15/evidence/fr15-run03/web/FR15-TC-087.json
+A	docs/testing/fr15/evidence/fr15-run03/web/FR15-TC-088.json
+A	docs/testing/fr15/evidence/fr15-run03/web/FR15-TC-089.json
+A	docs/testing/fr15/evidence/fr15-run03/web/FR15-TC-090.json
+A	docs/testing/fr15/evidence/fr15-run03/web/FR15-TC-091.json
+A	docs/testing/fr15/evidence/fr15-run03/web/FR15-TC-092.json
+A	docs/testing/fr15/evidence/fr15-run03/web/FR15-TC-093.json
+A	docs/testing/fr15/evidence/fr15-run03/web/FR15-TC-094.json
+A	docs/testing/fr15/evidence/fr15-run03/web/FR15-TC-095.json
+A	docs/testing/fr15/evidence/fr15-run03/web/FR15-TC-096.json
+A	docs/testing/fr15/evidence/fr15-run03/web/FR15-TC-097.json
+A	docs/testing/fr15/evidence/fr15-run03/web/FR15-TC-098.json
+A	docs/testing/fr15/evidence/fr15-run03/web/FR15-TC-099.json
+A	docs/testing/fr15/evidence/fr15-run03/web/FR15-TC-100.json
+A	docs/testing/fr15/evidence/fr15-run03/web/FR15-TC-101.json
+A	docs/testing/fr15/evidence/fr15-run03/web/FR15-TC-102.json
+A	docs/testing/fr15/evidence/fr15-run03/web/FR15-TC-103.json
+A	docs/testing/fr15/evidence/fr15-run03/web/FR15-TC-104.json
+A	docs/testing/fr15/evidence/fr15-run03/web/FR15-TC-105.json
+A	docs/testing/fr15/evidence/fr15-run03/web/FR15-TC-106.json
+A	docs/testing/fr15/evidence/fr15-run03/web/FR15-TC-107.json
+A	docs/testing/fr15/evidence/fr15-run03/web/FR15-TC-108.json
+A	docs/testing/fr15/evidence/fr15-run03/web/FR15-TC-109.json
+A	docs/testing/fr15/evidence/fr15-run03/web/FR15-TC-110.json
+A	docs/testing/fr15/evidence/fr15-run03/web/FR15-TC-111.json
+A	docs/testing/fr15/evidence/fr15-run03/web/FR15-TC-112.json
+A	docs/testing/fr15/evidence/fr15-run03/web/FR15-TC-113.json
+A	docs/testing/fr15/evidence/fr15-run03/web/FR15-TC-114.json
+A	docs/testing/fr15/evidence/fr15-run03/web/FR15-TC-127.json
+A	docs/testing/fr15/evidence/fr15-run03/web/FR15-TC-128.json
+A	docs/testing/fr15/evidence/fr15-run03/web/FR15-TC-129.json
+A	docs/testing/fr15/evidence/fr15-run03/web/FR15-TC-130.json
+A	docs/testing/fr15/evidence/fr15-run03/web/FR15-TC-131.json
+A	docs/testing/fr15/evidence/fr15-run03/web/FR15-TC-132.json
+A	docs/testing/fr15/evidence/fr15-run03/web/FR15-TC-133.json
+A	docs/testing/fr15/evidence/fr15-run03/web/FR15-TC-134.json
+A	docs/testing/fr15/evidence/fr15-run03/web/FR15-TC-135.json
+A	docs/testing/fr15/evidence/fr15-run03/web/FR15-TC-136.json
+A	docs/testing/fr15/evidence/fr15-run03/web/FR15-TC-146.json
+A	docs/testing/fr15/evidence/fr15-run03/web/FR15-TC-155.json
+A	docs/testing/fr15/evidence/fr15-run03/web/FR15-TC-156.json
+A	docs/testing/fr15/evidence/fr15-run03/web/FR15-TC-157.json
+A	docs/testing/fr15/evidence/fr15-run03/web/FR15-TC-158.json
+A	docs/testing/fr15/evidence/fr15-run03/web/browser.json
+A	docs/testing/fr15/evidence/fr15-run03/web/initial-products-dom.html
+A	docs/testing/fr15/evidence/fr15-run03/web/observations.json
+A	docs/testing/fr15/evidence/fr15-run03/web/runner.log
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-069_immediate.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-069_reload.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-070_immediate.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-070_reload.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-071_immediate.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-071_reload.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-072_immediate.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-072_reload.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-073_immediate.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-073_reload.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-074_immediate.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-074_reload.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-075_immediate.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-075_reload.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-076_immediate.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-076_reload.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-077_immediate.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-077_reload.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-078_immediate.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-078_reload.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-079_immediate.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-079_reload.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-080_immediate.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-080_reload.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-081_immediate.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-081_reload.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-082_immediate.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-082_reload.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-083_immediate.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-083_reload.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-084_immediate.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-084_reload.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-085_immediate.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-085_reload.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-086_immediate.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-086_reload.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-087_immediate.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-087_reload.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-088_immediate.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-088_reload.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-089_immediate.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-089_reload.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-090_immediate.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-090_reload.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-091_immediate.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-091_reload.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-092_immediate.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-092_reload.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-093_immediate.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-093_reload.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-094_immediate.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-094_reload.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-095_immediate.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-095_reload.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-096_immediate.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-096_reload.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-097_immediate.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-097_reload.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-098_immediate.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-098_reload.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-099_immediate.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-099_reload.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-100_immediate.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-100_reload.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-101_immediate.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-101_reload.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-102_immediate.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-102_reload.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-103_immediate.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-103_reload.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-104_immediate.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-104_reload.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-105_immediate.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-105_reload.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-106_immediate.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-106_reload.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-107_immediate.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-107_reload.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-108_immediate.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-108_reload.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-109_immediate.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-109_reload.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-110_immediate.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-110_reload.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-111_immediate.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-111_reload.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-112_immediate.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-112_reload.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-113_immediate.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-113_reload.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-114_immediate.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-114_reload.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-127_immediate.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-127_reload.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-128_immediate.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-128_reload.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-129_immediate.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-129_reload.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-130_immediate.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-130_reload.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-131_immediate.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-131_reload.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-132_immediate.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-132_reload.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-133_immediate.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-133_reload.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-134_immediate.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-134_reload.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-135_immediate.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-135_reload.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-136_immediate.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-136_reload.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-146_immediate.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-146_reload.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-155_immediate.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-155_reload.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-156_immediate.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-156_reload.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-157_immediate.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-157_reload.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-158_immediate.png
+A	docs/testing/fr15/evidence/fr15-run03/web/screenshots/FR15-TC-158_reload.png
+A	docs/testing/fr15/evidence/harness/final-review-green.log
+A	docs/testing/fr15/evidence/harness/final-review-red.log
+A	docs/testing/fr15/execution-decisions.md
+A	docs/testing/fr15/final-review.md
+M	docs/testing/fr15/requirements.md
+M	docs/testing/fr15/suite-review.md
+M	docs/testing/fr15/test-results.md
+M	tests/fr15/assert-products.cjs
+M	tests/fr15/harness.test.cjs
+M	tests/fr15/obligations.json
+M	tests/fr15/run-products-web.py
+M	tests/fr15/source-cases.json
+M	tests/fr15/suite.json
+
+commit 5f9c73bf093c47e58188b46d20514b71149fb461
+Author:     23120367 <158675897+thuytranj@users.noreply.github.com>
+AuthorDate: 2026-10-15T22:34:13+07:00
+Commit:     23120367 <158675897+thuytranj@users.noreply.github.com>
+CommitDate: 2026-10-15T22:34:13+07:00
+
+    docs(fr15): export product CRUD testing commit history
+
+M	docs/testing/fr15/commit-log.txt
+
+commit c0623d2212f20ab8688e2d796b96626e5b1b5bf7
+Author:     23120367 <158675897+thuytranj@users.noreply.github.com>
+AuthorDate: 2026-10-15T22:32:54+07:00
+Commit:     23120367 <158675897+thuytranj@users.noreply.github.com>
+CommitDate: 2026-10-15T22:32:54+07:00
+
+    docs(fr15): analyze evidenced AI gaps and summarize CRUD testing
+
+A	docs/testing/fr15/README.md
+A	docs/testing/fr15/ai-gap-analysis.md
+A	docs/testing/fr15/ai-interactions-v1.md
+M	docs/testing/fr15/ai-interactions.jsonl
+A	docs/testing/fr15/ai-interactions.md
+M	docs/testing/fr15/bugs.md
+A	docs/testing/fr15/commit-log.txt
+
+commit dc0619ad09cf362f14b65f4bfd1c9764c4f88d4b
+Author:     23120367 <158675897+thuytranj@users.noreply.github.com>
+AuthorDate: 2026-10-15T22:30:25+07:00
+Commit:     23120367 <158675897+thuytranj@users.noreply.github.com>
+CommitDate: 2026-10-15T22:30:25+07:00
+
+    docs(fr15): report product CRUD results and observed defects
+
+M	docs/testing/fr15/ai-interactions.jsonl
+A	docs/testing/fr15/bugs.md
+A	docs/testing/fr15/test-results.md
+
+commit c85b6c20b0a19c8e0912010b4ffdeb4cdef934e3
+Author:     23120367 <158675897+thuytranj@users.noreply.github.com>
+AuthorDate: 2026-10-15T22:27:59+07:00
+Commit:     23120367 <158675897+thuytranj@users.noreply.github.com>
+CommitDate: 2026-10-15T22:27:59+07:00
+
+    test(fr15): execute isolated product CRUD suite and capture evidence
+
+M	docs/testing/fr15/ai-interactions.jsonl
+A	docs/testing/fr15/evidence/fr15-run01/admin.log
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-001.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-002.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-003.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-004.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-005.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-006.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-007.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-008.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-009.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-010.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-011.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-012.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-013.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-014.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-015.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-016.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-017.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-018.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-019.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-020.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-021.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-022.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-023.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-024.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-025.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-026.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-027.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-028.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-029.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-030.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-031.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-032.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-033.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-034.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-035.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-036.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-037.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-038.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-039.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-040.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-041.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-042.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-043.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-044.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-045.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-046.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-047.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-048.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-049.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-050.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-051.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-052.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-053.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-054.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-055.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-056.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-057.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-058.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-059.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-060.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-061.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-062.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-063.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-064.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-065.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-066.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-067.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-068.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-115.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-116.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-117.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-118.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-119.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-120.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-121.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-122.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-123.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-124.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-125.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-126.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-137.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-138.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-139.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-140.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-141.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-142.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-143.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-144.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-145.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-147.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-148.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-149.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-150.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-151.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-152.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-153.json
+A	docs/testing/fr15/evidence/fr15-run01/api/FR15-TC-154.json
+A	docs/testing/fr15/evidence/fr15-run01/api/observations.json
+A	docs/testing/fr15/evidence/fr15-run01/api/runner.log
+A	docs/testing/fr15/evidence/fr15-run01/backend.log
+A	docs/testing/fr15/evidence/fr15-run01/manifest.json
+A	docs/testing/fr15/evidence/fr15-run01/web/FR15-TC-069.json
+A	docs/testing/fr15/evidence/fr15-run01/web/FR15-TC-070.json
+A	docs/testing/fr15/evidence/fr15-run01/web/FR15-TC-071.json
+A	docs/testing/fr15/evidence/fr15-run01/web/FR15-TC-072.json
+A	docs/testing/fr15/evidence/fr15-run01/web/FR15-TC-073.json
+A	docs/testing/fr15/evidence/fr15-run01/web/FR15-TC-074.json
+A	docs/testing/fr15/evidence/fr15-run01/web/FR15-TC-075.json
+A	docs/testing/fr15/evidence/fr15-run01/web/FR15-TC-076.json
+A	docs/testing/fr15/evidence/fr15-run01/web/FR15-TC-077.json
+A	docs/testing/fr15/evidence/fr15-run01/web/FR15-TC-078.json
+A	docs/testing/fr15/evidence/fr15-run01/web/FR15-TC-079.json
+A	docs/testing/fr15/evidence/fr15-run01/web/FR15-TC-080.json
+A	docs/testing/fr15/evidence/fr15-run01/web/FR15-TC-081.json
+A	docs/testing/fr15/evidence/fr15-run01/web/FR15-TC-082.json
+A	docs/testing/fr15/evidence/fr15-run01/web/FR15-TC-083.json
+A	docs/testing/fr15/evidence/fr15-run01/web/FR15-TC-084.json
+A	docs/testing/fr15/evidence/fr15-run01/web/FR15-TC-085.json
+A	docs/testing/fr15/evidence/fr15-run01/web/FR15-TC-086.json
+A	docs/testing/fr15/evidence/fr15-run01/web/FR15-TC-087.json
+A	docs/testing/fr15/evidence/fr15-run01/web/FR15-TC-088.json
+A	docs/testing/fr15/evidence/fr15-run01/web/FR15-TC-089.json
+A	docs/testing/fr15/evidence/fr15-run01/web/FR15-TC-090.json
+A	docs/testing/fr15/evidence/fr15-run01/web/FR15-TC-091.json
+A	docs/testing/fr15/evidence/fr15-run01/web/FR15-TC-092.json
+A	docs/testing/fr15/evidence/fr15-run01/web/FR15-TC-093.json
+A	docs/testing/fr15/evidence/fr15-run01/web/FR15-TC-094.json
+A	docs/testing/fr15/evidence/fr15-run01/web/FR15-TC-095.json
+A	docs/testing/fr15/evidence/fr15-run01/web/FR15-TC-096.json
+A	docs/testing/fr15/evidence/fr15-run01/web/FR15-TC-097.json
+A	docs/testing/fr15/evidence/fr15-run01/web/FR15-TC-098.json
+A	docs/testing/fr15/evidence/fr15-run01/web/FR15-TC-099.json
+A	docs/testing/fr15/evidence/fr15-run01/web/FR15-TC-100.json
+A	docs/testing/fr15/evidence/fr15-run01/web/FR15-TC-101.json
+A	docs/testing/fr15/evidence/fr15-run01/web/FR15-TC-102.json
+A	docs/testing/fr15/evidence/fr15-run01/web/FR15-TC-103.json
+A	docs/testing/fr15/evidence/fr15-run01/web/FR15-TC-104.json
+A	docs/testing/fr15/evidence/fr15-run01/web/FR15-TC-105.json
+A	docs/testing/fr15/evidence/fr15-run01/web/FR15-TC-106.json
+A	docs/testing/fr15/evidence/fr15-run01/web/FR15-TC-107.json
+A	docs/testing/fr15/evidence/fr15-run01/web/FR15-TC-108.json
+A	docs/testing/fr15/evidence/fr15-run01/web/FR15-TC-109.json
+A	docs/testing/fr15/evidence/fr15-run01/web/FR15-TC-110.json
+A	docs/testing/fr15/evidence/fr15-run01/web/FR15-TC-111.json
+A	docs/testing/fr15/evidence/fr15-run01/web/FR15-TC-112.json
+A	docs/testing/fr15/evidence/fr15-run01/web/FR15-TC-113.json
+A	docs/testing/fr15/evidence/fr15-run01/web/FR15-TC-114.json
+A	docs/testing/fr15/evidence/fr15-run01/web/FR15-TC-127.json
+A	docs/testing/fr15/evidence/fr15-run01/web/FR15-TC-128.json
+A	docs/testing/fr15/evidence/fr15-run01/web/FR15-TC-129.json
+A	docs/testing/fr15/evidence/fr15-run01/web/FR15-TC-130.json
+A	docs/testing/fr15/evidence/fr15-run01/web/FR15-TC-131.json
+A	docs/testing/fr15/evidence/fr15-run01/web/FR15-TC-132.json
+A	docs/testing/fr15/evidence/fr15-run01/web/FR15-TC-133.json
+A	docs/testing/fr15/evidence/fr15-run01/web/FR15-TC-134.json
+A	docs/testing/fr15/evidence/fr15-run01/web/FR15-TC-135.json
+A	docs/testing/fr15/evidence/fr15-run01/web/FR15-TC-136.json
+A	docs/testing/fr15/evidence/fr15-run01/web/FR15-TC-146.json
+A	docs/testing/fr15/evidence/fr15-run01/web/FR15-TC-155.json
+A	docs/testing/fr15/evidence/fr15-run01/web/FR15-TC-156.json
+A	docs/testing/fr15/evidence/fr15-run01/web/FR15-TC-157.json
+A	docs/testing/fr15/evidence/fr15-run01/web/FR15-TC-158.json
+A	docs/testing/fr15/evidence/fr15-run01/web/browser.json
+A	docs/testing/fr15/evidence/fr15-run01/web/initial-products-dom.html
+A	docs/testing/fr15/evidence/fr15-run01/web/observations.json
+A	docs/testing/fr15/evidence/fr15-run01/web/runner.log
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-069_immediate.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-069_reload.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-070_immediate.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-070_reload.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-071_immediate.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-071_reload.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-072_immediate.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-072_reload.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-073_immediate.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-073_reload.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-074_immediate.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-074_reload.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-075_immediate.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-075_reload.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-076_immediate.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-076_reload.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-077_immediate.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-077_reload.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-078_immediate.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-078_reload.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-079_immediate.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-079_reload.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-080_immediate.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-080_reload.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-081_immediate.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-081_reload.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-082_immediate.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-082_reload.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-083_immediate.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-083_reload.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-084_immediate.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-084_reload.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-085_immediate.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-085_reload.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-086_immediate.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-086_reload.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-087_immediate.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-087_reload.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-088_immediate.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-088_reload.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-089_immediate.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-089_reload.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-090_immediate.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-090_reload.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-091_immediate.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-091_reload.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-092_immediate.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-092_reload.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-093_immediate.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-093_reload.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-094_immediate.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-094_reload.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-095_immediate.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-095_reload.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-096_immediate.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-096_reload.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-097_immediate.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-097_reload.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-098_immediate.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-098_reload.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-099_immediate.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-099_reload.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-100_immediate.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-100_reload.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-101_immediate.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-101_reload.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-102_immediate.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-102_reload.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-103_immediate.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-103_reload.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-104_immediate.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-104_reload.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-105_immediate.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-105_reload.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-106_immediate.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-106_reload.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-107_immediate.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-107_reload.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-108_immediate.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-108_reload.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-109_immediate.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-109_reload.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-110_immediate.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-110_reload.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-111_immediate.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-111_reload.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-112_immediate.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-112_reload.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-113_immediate.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-113_reload.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-114_immediate.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-114_reload.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-127_immediate.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-127_reload.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-128_immediate.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-128_reload.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-129_immediate.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-129_reload.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-130_immediate.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-130_reload.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-131_immediate.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-131_reload.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-132_immediate.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-132_reload.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-133_immediate.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-133_reload.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-134_immediate.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-134_reload.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-135_immediate.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-135_reload.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-136_immediate.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-136_reload.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-146_immediate.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-146_reload.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-155_immediate.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-155_reload.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-156_immediate.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-156_reload.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-157_immediate.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-157_reload.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-158_immediate.png
+A	docs/testing/fr15/evidence/fr15-run01/web/screenshots/FR15-TC-158_reload.png
+A	docs/testing/fr15/evidence/fr15-run02/admin.log
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-001.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-002.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-003.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-004.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-005.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-006.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-007.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-008.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-009.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-010.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-011.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-012.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-013.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-014.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-015.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-016.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-017.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-018.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-019.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-020.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-021.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-022.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-023.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-024.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-025.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-026.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-027.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-028.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-029.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-030.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-031.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-032.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-033.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-034.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-035.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-036.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-037.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-038.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-039.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-040.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-041.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-042.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-043.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-044.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-045.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-046.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-047.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-048.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-049.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-050.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-051.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-052.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-053.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-054.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-055.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-056.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-057.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-058.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-059.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-060.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-061.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-062.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-063.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-064.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-065.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-066.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-067.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-068.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-115.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-116.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-117.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-118.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-119.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-120.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-121.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-122.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-123.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-124.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-125.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-126.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-137.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-138.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-139.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-140.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-141.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-142.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-143.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-144.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-145.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-147.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-148.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-149.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-150.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-151.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-152.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-153.json
+A	docs/testing/fr15/evidence/fr15-run02/api/FR15-TC-154.json
+A	docs/testing/fr15/evidence/fr15-run02/api/observations.json
+A	docs/testing/fr15/evidence/fr15-run02/api/runner.log
+A	docs/testing/fr15/evidence/fr15-run02/backend.log
+A	docs/testing/fr15/evidence/fr15-run02/manifest.json
+A	docs/testing/fr15/evidence/fr15-run02/web/FR15-TC-069.json
+A	docs/testing/fr15/evidence/fr15-run02/web/FR15-TC-070.json
+A	docs/testing/fr15/evidence/fr15-run02/web/FR15-TC-071.json
+A	docs/testing/fr15/evidence/fr15-run02/web/FR15-TC-072.json
+A	docs/testing/fr15/evidence/fr15-run02/web/FR15-TC-073.json
+A	docs/testing/fr15/evidence/fr15-run02/web/FR15-TC-074.json
+A	docs/testing/fr15/evidence/fr15-run02/web/FR15-TC-075.json
+A	docs/testing/fr15/evidence/fr15-run02/web/FR15-TC-076.json
+A	docs/testing/fr15/evidence/fr15-run02/web/FR15-TC-077.json
+A	docs/testing/fr15/evidence/fr15-run02/web/FR15-TC-078.json
+A	docs/testing/fr15/evidence/fr15-run02/web/FR15-TC-079.json
+A	docs/testing/fr15/evidence/fr15-run02/web/FR15-TC-080.json
+A	docs/testing/fr15/evidence/fr15-run02/web/FR15-TC-081.json
+A	docs/testing/fr15/evidence/fr15-run02/web/FR15-TC-082.json
+A	docs/testing/fr15/evidence/fr15-run02/web/FR15-TC-083.json
+A	docs/testing/fr15/evidence/fr15-run02/web/FR15-TC-084.json
+A	docs/testing/fr15/evidence/fr15-run02/web/FR15-TC-085.json
+A	docs/testing/fr15/evidence/fr15-run02/web/FR15-TC-086.json
+A	docs/testing/fr15/evidence/fr15-run02/web/FR15-TC-087.json
+A	docs/testing/fr15/evidence/fr15-run02/web/FR15-TC-088.json
+A	docs/testing/fr15/evidence/fr15-run02/web/FR15-TC-089.json
+A	docs/testing/fr15/evidence/fr15-run02/web/FR15-TC-090.json
+A	docs/testing/fr15/evidence/fr15-run02/web/FR15-TC-091.json
+A	docs/testing/fr15/evidence/fr15-run02/web/FR15-TC-092.json
+A	docs/testing/fr15/evidence/fr15-run02/web/FR15-TC-093.json
+A	docs/testing/fr15/evidence/fr15-run02/web/FR15-TC-094.json
+A	docs/testing/fr15/evidence/fr15-run02/web/FR15-TC-095.json
+A	docs/testing/fr15/evidence/fr15-run02/web/FR15-TC-096.json
+A	docs/testing/fr15/evidence/fr15-run02/web/FR15-TC-097.json
+A	docs/testing/fr15/evidence/fr15-run02/web/FR15-TC-098.json
+A	docs/testing/fr15/evidence/fr15-run02/web/FR15-TC-099.json
+A	docs/testing/fr15/evidence/fr15-run02/web/FR15-TC-100.json
+A	docs/testing/fr15/evidence/fr15-run02/web/FR15-TC-101.json
+A	docs/testing/fr15/evidence/fr15-run02/web/FR15-TC-102.json
+A	docs/testing/fr15/evidence/fr15-run02/web/FR15-TC-103.json
+A	docs/testing/fr15/evidence/fr15-run02/web/FR15-TC-104.json
+A	docs/testing/fr15/evidence/fr15-run02/web/FR15-TC-105.json
+A	docs/testing/fr15/evidence/fr15-run02/web/FR15-TC-106.json
+A	docs/testing/fr15/evidence/fr15-run02/web/FR15-TC-107.json
+A	docs/testing/fr15/evidence/fr15-run02/web/FR15-TC-108.json
+A	docs/testing/fr15/evidence/fr15-run02/web/FR15-TC-109.json
+A	docs/testing/fr15/evidence/fr15-run02/web/FR15-TC-110.json
+A	docs/testing/fr15/evidence/fr15-run02/web/FR15-TC-111.json
+A	docs/testing/fr15/evidence/fr15-run02/web/FR15-TC-112.json
+A	docs/testing/fr15/evidence/fr15-run02/web/FR15-TC-113.json
+A	docs/testing/fr15/evidence/fr15-run02/web/FR15-TC-114.json
+A	docs/testing/fr15/evidence/fr15-run02/web/FR15-TC-127.json
+A	docs/testing/fr15/evidence/fr15-run02/web/FR15-TC-128.json
+A	docs/testing/fr15/evidence/fr15-run02/web/FR15-TC-129.json
+A	docs/testing/fr15/evidence/fr15-run02/web/FR15-TC-130.json
+A	docs/testing/fr15/evidence/fr15-run02/web/FR15-TC-131.json
+A	docs/testing/fr15/evidence/fr15-run02/web/FR15-TC-132.json
+A	docs/testing/fr15/evidence/fr15-run02/web/FR15-TC-133.json
+A	docs/testing/fr15/evidence/fr15-run02/web/FR15-TC-134.json
+A	docs/testing/fr15/evidence/fr15-run02/web/FR15-TC-135.json
+A	docs/testing/fr15/evidence/fr15-run02/web/FR15-TC-136.json
+A	docs/testing/fr15/evidence/fr15-run02/web/FR15-TC-146.json
+A	docs/testing/fr15/evidence/fr15-run02/web/FR15-TC-155.json
+A	docs/testing/fr15/evidence/fr15-run02/web/FR15-TC-156.json
+A	docs/testing/fr15/evidence/fr15-run02/web/FR15-TC-157.json
+A	docs/testing/fr15/evidence/fr15-run02/web/FR15-TC-158.json
+A	docs/testing/fr15/evidence/fr15-run02/web/browser.json
+A	docs/testing/fr15/evidence/fr15-run02/web/initial-products-dom.html
+A	docs/testing/fr15/evidence/fr15-run02/web/observations.json
+A	docs/testing/fr15/evidence/fr15-run02/web/runner.log
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-069_immediate.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-069_reload.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-070_immediate.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-070_reload.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-071_immediate.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-071_reload.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-072_immediate.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-072_reload.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-073_immediate.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-073_reload.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-074_immediate.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-074_reload.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-075_immediate.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-075_reload.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-076_immediate.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-076_reload.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-077_immediate.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-077_reload.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-078_immediate.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-078_reload.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-079_immediate.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-079_reload.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-080_immediate.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-080_reload.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-081_immediate.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-081_reload.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-082_immediate.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-082_reload.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-083_immediate.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-083_reload.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-084_immediate.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-084_reload.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-085_immediate.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-085_reload.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-086_immediate.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-086_reload.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-087_immediate.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-087_reload.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-088_immediate.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-088_reload.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-089_immediate.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-089_reload.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-090_immediate.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-090_reload.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-091_immediate.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-091_reload.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-092_immediate.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-092_reload.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-093_immediate.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-093_reload.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-094_immediate.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-094_reload.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-095_immediate.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-095_reload.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-096_immediate.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-096_reload.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-097_immediate.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-097_reload.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-098_immediate.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-098_reload.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-099_immediate.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-099_reload.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-100_immediate.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-100_reload.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-101_immediate.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-101_reload.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-102_immediate.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-102_reload.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-103_immediate.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-103_reload.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-104_immediate.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-104_reload.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-105_immediate.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-105_reload.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-106_immediate.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-106_reload.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-107_immediate.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-107_reload.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-108_immediate.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-108_reload.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-109_immediate.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-109_reload.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-110_immediate.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-110_reload.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-111_immediate.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-111_reload.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-112_immediate.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-112_reload.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-113_immediate.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-113_reload.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-114_immediate.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-114_reload.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-127_immediate.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-127_reload.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-128_immediate.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-128_reload.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-129_immediate.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-129_reload.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-130_immediate.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-130_reload.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-131_immediate.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-131_reload.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-132_immediate.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-132_reload.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-133_immediate.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-133_reload.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-134_immediate.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-134_reload.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-135_immediate.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-135_reload.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-136_immediate.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-136_reload.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-146_immediate.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-146_reload.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-155_immediate.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-155_reload.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-156_immediate.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-156_reload.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-157_immediate.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-157_reload.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-158_immediate.png
+A	docs/testing/fr15/evidence/fr15-run02/web/screenshots/FR15-TC-158_reload.png
+A	docs/testing/fr15/evidence/harness/README.md
+A	docs/testing/fr15/evidence/harness/fixture-self-check.log
+A	docs/testing/fr15/evidence/harness/png-red.log
+A	docs/testing/fr15/evidence/harness/prepare-self-check.log
+A	docs/testing/fr15/evidence/harness/readback-red.log
+A	docs/testing/fr15/evidence/harness/runner-red.log
+A	docs/testing/fr15/evidence/harness/task5-green.log
+A	docs/testing/fr15/evidence/harness/task5-red.log
+A	tests/fr15/assert-products.cjs
+A	tests/fr15/fixture-store.cjs
+M	tests/fr15/harness.test.cjs
+A	tests/fr15/prepare-environment.cjs
+A	tests/fr15/run-all.cjs
+A	tests/fr15/run-products-api.cjs
+A	tests/fr15/run-products-web.py
+A	tests/fr15/ui-sync.test.py
+
+commit 65d30b154176da7cec7e133b9c9ee792d1831925
+Author:     23120367 <158675897+thuytranj@users.noreply.github.com>
+AuthorDate: 2026-10-15T22:13:16+07:00
+Commit:     23120367 <158675897+thuytranj@users.noreply.github.com>
+CommitDate: 2026-10-15T22:13:16+07:00
+
+    test(fr15): repair PNG fixture before CRUD execution
+
+M	docs/testing/fr15/ai-interactions.jsonl
+M	docs/testing/fr15/suite-review.md
+M	tests/fr15/fixtures.json
+A	tests/fr15/png-fixture.test.cjs
+M	tests/fr15/source-cases.json
+M	tests/fr15/suite.json
+
+commit ef38fe29d4bf5a6b1a4d861b3932bf7c3f141273
+Author:     23120367 <158675897+thuytranj@users.noreply.github.com>
+AuthorDate: 2026-10-15T22:08:10+07:00
+Commit:     23120367 <158675897+thuytranj@users.noreply.github.com>
+CommitDate: 2026-10-15T22:08:10+07:00
+
+    test(fr15): freeze reviewed product CRUD suite with traceability
+
+M	docs/testing/fr15/ai-interactions.jsonl
+A	docs/testing/fr15/suite-review.md
+A	tests/fr15/harness.test.cjs
+A	tests/fr15/suite.json
+A	tests/fr15/validate-suite.cjs
+
+commit 5fe40887fc41e528bffa0f22ec70167ce68c2b98
+Author:     23120367 <158675897+thuytranj@users.noreply.github.com>
+AuthorDate: 2026-10-15T22:05:43+07:00
+Commit:     23120367 <158675897+thuytranj@users.noreply.github.com>
+CommitDate: 2026-10-15T22:05:43+07:00
+
+    test(fr15): derive product name and price boundary cases
+
+M	docs/testing/fr15/ai-interactions.jsonl
+A	docs/testing/fr15/bva-report.md
+M	tests/fr15/obligations.json
+M	tests/fr15/source-cases.json
+
+commit e54872ff2c41aea3a64455318c92481310cfdd5e
+Author:     23120367 <158675897+thuytranj@users.noreply.github.com>
+AuthorDate: 2026-10-15T22:04:55+07:00
+Commit:     23120367 <158675897+thuytranj@users.noreply.github.com>
+CommitDate: 2026-10-15T22:04:55+07:00
+
+    test(fr15): derive product CRUD domain cases and obligations
+
+M	docs/testing/fr15/ai-interactions.jsonl
+A	docs/testing/fr15/domain-cases.md
+A	docs/testing/fr15/domain-model.md
+A	tests/fr15/obligations.json
+A	tests/fr15/source-cases.json
+
+commit e625109bd040d5741d377cacea010d8ed69e8fba
+Author:     23120367 <158675897+thuytranj@users.noreply.github.com>
+AuthorDate: 2026-10-15T21:59:25+07:00
+Commit:     23120367 <158675897+thuytranj@users.noreply.github.com>
+CommitDate: 2026-10-15T21:59:25+07:00
+
+    docs(fr15): define product CRUD requirements and test fixtures
+
+A	docs/testing/fr15/ai-interactions.jsonl
+A	docs/testing/fr15/requirements.md
+A	tests/fr15/fixtures.json
+
+commit 6e29712b94349f6bbad5024265df42ec14e3cd26
+Author:     23120367 <158675897+thuytranj@users.noreply.github.com>
+AuthorDate: 2026-10-14T01:35:01+07:00
+Commit:     23120367 <158675897+thuytranj@users.noreply.github.com>
+CommitDate: 2026-10-14T01:35:01+07:00
+
+    docs(fr07): update commit log with review fix commit
+
+M	docs/testing/fr07/commit-log.txt
+
+commit 72eea957d642c25faa339a533bdc7f0e52e2d488
+Author:     23120367 <158675897+thuytranj@users.noreply.github.com>
+AuthorDate: 2026-10-14T01:34:32+07:00
+Commit:     23120367 <158675897+thuytranj@users.noreply.github.com>
+CommitDate: 2026-10-14T01:34:32+07:00
+
+    docs(fr07): update bva statistics and document return button copy defect
+
+M	docs/testing/fr07/README.md
+M	docs/testing/fr07/bugs.md
+M	docs/testing/fr07/test-results.md
+
+commit b1488410d1261ef5464feb9c5c2e15c1770f4287
+Author:     23120367 <158675897+thuytranj@users.noreply.github.com>
+AuthorDate: 2026-10-14T01:26:03+07:00
+Commit:     23120367 <158675897+thuytranj@users.noreply.github.com>
+CommitDate: 2026-10-14T01:26:03+07:00
+
+    docs(fr07): export shopping cart testing commit history
+
+M	docs/testing/fr07/ai-interactions.jsonl
+M	docs/testing/fr07/ai-interactions.md
+A	docs/testing/fr07/commit-log.txt
+
+commit 2a73647c1b77b06592f92278acf7d141ae08b7e8
+Author:     23120367 <158675897+thuytranj@users.noreply.github.com>
+AuthorDate: 2026-10-14T01:24:03+07:00
+Commit:     23120367 <158675897+thuytranj@users.noreply.github.com>
+CommitDate: 2026-10-14T01:24:03+07:00
+
+    docs(fr07): analyze evidenced cart testing AI gaps
+
+A	docs/testing/fr07/ai-gap-analysis.md
+M	docs/testing/fr07/ai-interactions.jsonl
+M	docs/testing/fr07/ai-interactions.md
+
+commit d2bc118d22e13feb443147f66b95371bbbb3e6c4
+Author:     23120367 <158675897+thuytranj@users.noreply.github.com>
+AuthorDate: 2026-10-14T01:21:02+07:00
+Commit:     23120367 <158675897+thuytranj@users.noreply.github.com>
+CommitDate: 2026-10-14T01:21:02+07:00
+
+    docs(fr07): record cart results and observed defects
+
+A	docs/testing/fr07/README.md
+M	docs/testing/fr07/ai-interactions.jsonl
+M	docs/testing/fr07/ai-interactions.md
+A	docs/testing/fr07/bugs.md
+A	docs/testing/fr07/test-results.md
+
+commit a837e7ccadcadfd7ac6031912df35588b6fc201e
+Author:     23120367 <158675897+thuytranj@users.noreply.github.com>
+AuthorDate: 2026-10-14T01:18:21+07:00
+Commit:     23120367 <158675897+thuytranj@users.noreply.github.com>
+CommitDate: 2026-10-14T01:18:21+07:00
+
+    test(fr07): execute reviewed shopping cart suite
+
+M	docs/testing/fr07/ai-interactions.jsonl
+M	docs/testing/fr07/ai-interactions.md
+A	docs/testing/fr07/evidence/fr07-run01/api/observations.json
+A	docs/testing/fr07/evidence/fr07-run01/manifest.json
+A	docs/testing/fr07/evidence/fr07-run01/web/observations.json
+A	docs/testing/fr07/evidence/fr07-run01/web/screenshots/FR07-TC-001_view_empty.png
+A	docs/testing/fr07/evidence/fr07-run01/web/screenshots/FR07-TC-002_cart_result.png
+A	docs/testing/fr07/evidence/fr07-run01/web/screenshots/FR07-TC-002_detail_before_add.png
+A	docs/testing/fr07/evidence/fr07-run01/web/screenshots/FR07-TC-003_cart_result.png
+A	docs/testing/fr07/evidence/fr07-run01/web/screenshots/FR07-TC-003_detail_before_add.png
+A	docs/testing/fr07/evidence/fr07-run01/web/screenshots/FR07-TC-004_cart_result.png
+A	docs/testing/fr07/evidence/fr07-run01/web/screenshots/FR07-TC-004_detail_before_add.png
+A	docs/testing/fr07/evidence/fr07-run01/web/screenshots/FR07-TC-005_cart_result.png
+A	docs/testing/fr07/evidence/fr07-run01/web/screenshots/FR07-TC-005_detail_before_add.png
+A	docs/testing/fr07/evidence/fr07-run01/web/screenshots/FR07-TC-006_cart_result.png
+A	docs/testing/fr07/evidence/fr07-run01/web/screenshots/FR07-TC-006_detail_before_add.png
+A	docs/testing/fr07/evidence/fr07-run01/web/screenshots/FR07-TC-007_cart_result.png
+A	docs/testing/fr07/evidence/fr07-run01/web/screenshots/FR07-TC-007_detail_before_add.png
+A	docs/testing/fr07/evidence/fr07-run01/web/screenshots/FR07-TC-008_cart_result.png
+A	docs/testing/fr07/evidence/fr07-run01/web/screenshots/FR07-TC-008_detail_before_add.png
+A	docs/testing/fr07/evidence/fr07-run01/web/screenshots/FR07-TC-014_cart_state.png
+A	docs/testing/fr07/evidence/fr07-run01/web/screenshots/FR07-TC-015_cart_state.png
+A	docs/testing/fr07/evidence/fr07-run01/web/screenshots/FR07-TC-016_cart_state.png
+A	docs/testing/fr07/evidence/fr07-run01/web/screenshots/FR07-TC-017_cart_state.png
+A	docs/testing/fr07/evidence/fr07-run01/web/screenshots/FR07-TC-018_cart_state.png
+A	docs/testing/fr07/evidence/fr07-run01/web/screenshots/FR07-TC-019_cart_state.png
+A	docs/testing/fr07/evidence/fr07-run01/web/screenshots/FR07-TC-020_check_controls.png
+A	docs/testing/fr07/evidence/fr07-run01/web/screenshots/FR07-TC-021_blocked_check.png
+A	docs/testing/fr07/evidence/fr07-run01/web/screenshots/FR07-TC-022_blocked_check.png
+A	docs/testing/fr07/evidence/fr07-run01/web/screenshots/FR07-TC-023_after_delete_click.png
+A	docs/testing/fr07/evidence/fr07-run01/web/screenshots/FR07-TC-023_before_delete.png
+A	docs/testing/fr07/evidence/fr07-run01/web/screenshots/FR07-TC-024_check.png
+A	docs/testing/fr07/evidence/fr07-run01/web/screenshots/FR07-TC-025_check.png
+A	docs/testing/fr07/evidence/fr07-run01/web/screenshots/FR07-TC-026_after_last_delete.png
+A	docs/testing/fr07/evidence/fr07-run01/web/screenshots/FR07-TC-027_columns.png
+A	docs/testing/fr07/evidence/fr07-run01/web/screenshots/FR07-TC-028_total_label.png
+A	docs/testing/fr07/evidence/fr07-run01/web/screenshots/FR07-TC-029_after_nav.png
+A	docs/testing/fr07/evidence/fr07-run01/web/screenshots/FR07-TC-029_before_click.png
+A	tests/fr07/prepare-environment.cjs
+A	tests/fr07/run-cart-api.cjs
+A	tests/fr07/run-cart-web.py
+
+commit 478c859708494fe411405c51d5ca5b643e1d6659
+Author:     23120367 <158675897+thuytranj@users.noreply.github.com>
+AuthorDate: 2026-10-14T01:03:44+07:00
+Commit:     23120367 <158675897+thuytranj@users.noreply.github.com>
+CommitDate: 2026-10-14T01:03:44+07:00
+
+    test(fr07): freeze reviewed cart domain and boundary suite
+
+M	docs/testing/fr07/ai-interactions.jsonl
+M	docs/testing/fr07/ai-interactions.md
+A	docs/testing/fr07/suite-review.md
+A	tests/fr07/suite.json
+A	tests/fr07/validate-suite.cjs
+
+commit 3ca5c3ec5b40f6700ec65e2427a5f13a57a7028d
+Author:     23120367 <158675897+thuytranj@users.noreply.github.com>
+AuthorDate: 2026-10-14T00:52:11+07:00
+Commit:     23120367 <158675897+thuytranj@users.noreply.github.com>
+CommitDate: 2026-10-14T00:52:11+07:00
+
+    docs(fr07): derive three-value cart boundary cases
+
+M	docs/testing/fr07/ai-interactions.jsonl
+M	docs/testing/fr07/ai-interactions.md
+A	docs/testing/fr07/bva-report.md
+
+commit 268089aa5afc9f7c23c79e702928ab0f3c9774f6
+Author:     23120367 <158675897+thuytranj@users.noreply.github.com>
+AuthorDate: 2026-10-14T00:49:04+07:00
+Commit:     23120367 <158675897+thuytranj@users.noreply.github.com>
+CommitDate: 2026-10-14T00:49:04+07:00
+
+    docs(fr07): derive shopping cart domain test cases
+
+M	docs/testing/fr07/ai-interactions.jsonl
+M	docs/testing/fr07/ai-interactions.md
+A	docs/testing/fr07/domain-cases.md
+A	docs/testing/fr07/domain-model.md
+
+commit 3f1dcec179910b62f1784c2fbdea62a09c8bf301
+Author:     23120367 <158675897+thuytranj@users.noreply.github.com>
+AuthorDate: 2026-10-14T00:44:47+07:00
+Commit:     23120367 <158675897+thuytranj@users.noreply.github.com>
+CommitDate: 2026-10-14T00:44:47+07:00
+
+    docs(fr07): analyze shopping cart requirements
+
+M	docs/testing/fr07/ai-interactions.jsonl
+M	docs/testing/fr07/ai-interactions.md
+A	docs/testing/fr07/requirements.md
+
+commit 6ba2c2107cc4914a1829887b9513636bc15dd529
+Author:     23120367 <158675897+thuytranj@users.noreply.github.com>
+AuthorDate: 2026-10-14T00:32:25+07:00
+Commit:     23120367 <158675897+thuytranj@users.noreply.github.com>
+CommitDate: 2026-10-14T00:32:25+07:00
+
+    docs(fr07): record shopping cart testing plan and AI evidence
+
+A	docs/testing/fr07/ai-interactions.jsonl
+A	docs/testing/fr07/ai-interactions.md
+
+commit 27a2b641654a66c5f8fe56b3d02817a3033082a8
+Author:     23120367 <158675897+thuytranj@users.noreply.github.com>
+AuthorDate: 2026-10-13T21:47:13+07:00
+Commit:     23120367 <158675897+thuytranj@users.noreply.github.com>
+CommitDate: 2026-10-13T21:47:13+07:00
+
+    chore(git): untrack superpowers folders and add to .gitignore
+
+A	.gitignore
+D	docs/superpowers/plans/2026-10-12-fr03-domain-testing.md
+
+commit 40eb0657bdef1d81421a10b2eb8395fea1f8b18c
+Author:     23120367 <158675897+thuytranj@users.noreply.github.com>
+AuthorDate: 2026-10-12T12:50:27+07:00
+Commit:     23120367 <158675897+thuytranj@users.noreply.github.com>
+CommitDate: 2026-10-12T12:50:27+07:00
+
+    docs(fr03): export testing workflow commit history
+
+A	docs/testing/fr03/commit-log.txt
+
+commit c819addf22794bfb8963f6ab477792c5f3cdc265
+Author:     23120367 <158675897+thuytranj@users.noreply.github.com>
+AuthorDate: 2026-10-12T12:49:19+07:00
+Commit:     23120367 <158675897+thuytranj@users.noreply.github.com>
+CommitDate: 2026-10-12T12:49:19+07:00
+
+    docs(fr03): analyze evidenced AI testing gaps
+
+A	docs/testing/fr03/ai-gap-analysis.md
+M	docs/testing/fr03/ai-interactions.md
+
+commit cede20fde8a570c7fa1dd7bcca5293fd5b6cb3f4
+Author:     23120367 <158675897+thuytranj@users.noreply.github.com>
+AuthorDate: 2026-10-12T12:43:14+07:00
+Commit:     23120367 <158675897+thuytranj@users.noreply.github.com>
+CommitDate: 2026-10-12T12:43:14+07:00
+
+    docs(fr03): record combined test results and defects
+
+A	docs/testing/fr03/bugs.md
+A	docs/testing/fr03/test-results.md
+
+commit 9e1e1135b5fee538fcd4706913f5d0f5052b3982
+Author:     23120367 <158675897+thuytranj@users.noreply.github.com>
+AuthorDate: 2026-10-12T12:37:26+07:00
+Commit:     23120367 <158675897+thuytranj@users.noreply.github.com>
+CommitDate: 2026-10-12T12:37:26+07:00
+
+    test(fr03): execute combined domain and BVA suite
+
+A	docs/testing/fr03/evidence/api/observations.json
+A	docs/testing/fr03/evidence/web/observations.json
+A	docs/testing/fr03/evidence/web/screenshots/FR03-TC-037.png
+A	docs/testing/fr03/evidence/web/screenshots/FR03-TC-038.png
+A	docs/testing/fr03/evidence/web/screenshots/FR03-TC-039.png
+A	docs/testing/fr03/evidence/web/screenshots/FR03-TC-040.png
+A	docs/testing/fr03/evidence/web/screenshots/FR03-TC-041.png
+A	docs/testing/fr03/evidence/web/screenshots/FR03-TC-042.png
+A	docs/testing/fr03/evidence/web/screenshots/FR03-TC-043.png
+A	docs/testing/fr03/evidence/web/screenshots/FR03-TC-044.png
+A	docs/testing/fr03/evidence/web/screenshots/FR03-TC-045.png
+A	docs/testing/fr03/evidence/web/screenshots/FR03-TC-046.png
+A	docs/testing/fr03/evidence/web/screenshots/FR03-TC-047.png
+A	docs/testing/fr03/evidence/web/screenshots/FR03-TC-048.png
+A	docs/testing/fr03/evidence/web/screenshots/FR03-TC-049.png
+A	docs/testing/fr03/evidence/web/screenshots/FR03-TC-050.png
+A	docs/testing/fr03/evidence/web/screenshots/FR03-TC-051.png
+A	docs/testing/fr03/evidence/web/screenshots/FR03-TC-052.png
+A	tests/fr03/run-domain-api.cjs
+A	tests/fr03/run-domain-web.py
+
+commit a4aa08827b443e4c04eb852ab78086b6d9d8eddc
+Author:     23120367 <158675897+thuytranj@users.noreply.github.com>
+AuthorDate: 2026-10-12T11:54:43+07:00
+Commit:     23120367 <158675897+thuytranj@users.noreply.github.com>
+CommitDate: 2026-10-12T11:54:43+07:00
+
+    test(fr03): review and deduplicate technique test suite
+
+A	docs/testing/fr03/suite-review.md
+A	tests/fr03/suite.json
+
+commit a3eb6a59af31f4d74a89dd50e223fd7e9bd312ad
+Author:     23120367 <158675897+thuytranj@users.noreply.github.com>
+AuthorDate: 2026-10-12T10:19:50+07:00
+Commit:     23120367 <158675897+thuytranj@users.noreply.github.com>
+CommitDate: 2026-10-12T10:19:50+07:00
+
+    test(fr03): derive password reset BVA cases
+
+A	docs/testing/fr03/bva-report.md
+
+commit 4420e1f15e92dd31bafb5801dd608ad70468bcd9
+Author:     23120367 <158675897+thuytranj@users.noreply.github.com>
+AuthorDate: 2026-10-12T10:10:34+07:00
+Commit:     23120367 <158675897+thuytranj@users.noreply.github.com>
+CommitDate: 2026-10-12T10:10:34+07:00
+
+    test(fr03): design password reset domain cases
+
+A	docs/testing/fr03/domain-cases.md
+A	docs/testing/fr03/domain-model.md
+
+commit c08c5c90bfe52553b1bc86e1d42b99d825920099
+Author:     23120367 <158675897+thuytranj@users.noreply.github.com>
+AuthorDate: 2026-10-12T09:57:41+07:00
+Commit:     23120367 <158675897+thuytranj@users.noreply.github.com>
+CommitDate: 2026-10-12T09:57:41+07:00
+
+    docs(fr03): analyze password reset requirements
+
+A	docs/testing/fr03/ai-interactions.md
+A	docs/testing/fr03/requirements.md
+
+commit 4e05baba0cc93ec5f73ab7d4d2a6505eba8c51d9
+Author:     23120367 <158675897+thuytranj@users.noreply.github.com>
+AuthorDate: 2026-10-12T09:07:28+07:00
+Commit:     23120367 <158675897+thuytranj@users.noreply.github.com>
+CommitDate: 2026-10-12T09:07:28+07:00
+
+    docs(fr03): align test plan with seven-stage workflow
+
+M	docs/superpowers/plans/2026-10-12-fr03-domain-testing.md
+
+commit fbb5aa997ca5a10c15be0e855665d6dc31dd0369
+Author:     23120367 <158675897+thuytranj@users.noreply.github.com>
+AuthorDate: 2026-10-12T00:29:43+07:00
+Commit:     23120367 <158675897+thuytranj@users.noreply.github.com>
+CommitDate: 2026-10-12T00:29:43+07:00
+
+    docs(fr03): plan password reset domain testing
+
+A	docs/superpowers/plans/2026-10-12-fr03-domain-testing.md
+
+commit 400e5c89de054c3cdaaaa04fee12b677c67434fa
+Author:     23120367 <158675897+thuytranj@users.noreply.github.com>
+AuthorDate: 2026-10-11T23:48:59+07:00
+Commit:     23120367 <158675897+thuytranj@users.noreply.github.com>
+CommitDate: 2026-10-11T23:48:59+07:00
+
+    feat(skills): add agent skills and documentation for QA testing, domain analysis, and Playwright automation
+
+A	.agents/skills/boundary-value-analysis/SKILL.md
+A	.agents/skills/boundary-value-analysis/agents/openai.yaml
+A	.agents/skills/boundary-value-analysis/references/bva-methods.md
+A	.agents/skills/boundary-value-analysis/references/eshop-hw02.md
+A	.agents/skills/commit-work/README.md
+A	.agents/skills/commit-work/SKILL.md
+A	.agents/skills/commit-work/references/commit-message-template.md
+A	.agents/skills/domain-testing/SKILL.md
+A	.agents/skills/domain-testing/agents/openai.yaml
+A	.agents/skills/domain-testing/references/domain-example.md
+A	.agents/skills/domain-testing/references/eshop-hw02.md
+A	.agents/skills/playwright-cli/SKILL.md
+A	.agents/skills/playwright-cli/references/element-attributes.md
+A	.agents/skills/playwright-cli/references/playwright-tests.md
+A	.agents/skills/playwright-cli/references/pr-attachments.md
+A	.agents/skills/playwright-cli/references/request-mocking.md
+A	.agents/skills/playwright-cli/references/running-code.md
+A	.agents/skills/playwright-cli/references/session-management.md
+A	.agents/skills/playwright-cli/references/storage-state.md
+A	.agents/skills/playwright-cli/references/test-generation.md
+A	.agents/skills/playwright-cli/references/tracing.md
+A	.agents/skills/playwright-cli/references/video-recording.md
+A	.agents/skills/qa-test-planner/README.md
+A	.agents/skills/qa-test-planner/SKILL.md
+A	.agents/skills/qa-test-planner/references/bug_report_templates.md
+A	.agents/skills/qa-test-planner/references/figma_validation.md
+A	.agents/skills/qa-test-planner/references/regression_testing.md
+A	.agents/skills/qa-test-planner/references/test_case_templates.md
+A	.agents/skills/qa-test-planner/scripts/create_bug_report.sh
+A	.agents/skills/qa-test-planner/scripts/generate_test_cases.sh
+A	.agents/skills/webapp-testing/LICENSE.txt
+A	.agents/skills/webapp-testing/SKILL.md
+A	.agents/skills/webapp-testing/examples/console_logging.py
+A	.agents/skills/webapp-testing/examples/element_discovery.py
+A	.agents/skills/webapp-testing/examples/static_html_automation.py
+A	.agents/skills/webapp-testing/scripts/with_server.py
+A	AGENTS.md
+M	backend/database.sqlite
+A	docs/2026.HW02.Domain Testing_En.pdf
+A	skills-lock.json
+
+commit 6a25a042e3f77573d734354b7a3ec0ce3b97479c
+Author:     23120367 <158675897+thuytranj@users.noreply.github.com>
+AuthorDate: 2026-10-11T23:46:16+07:00
+Commit:     23120367 <158675897+thuytranj@users.noreply.github.com>
+CommitDate: 2026-10-11T23:46:16+07:00
+
+    feat(skills): add AI audit logging and appendix export
+
+A	.agents/skills/ai-audit/SKILL.md
+A	.agents/skills/ai-audit/agents/openai.yaml
+A	.agents/skills/ai-audit/references/usage.md
+A	.agents/skills/ai-audit/scripts/audit.py
+A	.agents/skills/ai-audit/scripts/test_audit.py
+
+commit ae59492619426fcf83a5cce18598001e99ccea71
+Author:     23120367 <158675897+thuytranj@users.noreply.github.com>
+AuthorDate: 2026-09-24T23:55:16+07:00
+Commit:     23120367 <158675897+thuytranj@users.noreply.github.com>
+CommitDate: 2026-09-24T23:55:16+07:00
+
+    feat(deploy): add Docker and docker-compose configuration for application services
+
+A	.dockerignore
+A	backend/.dockerignore
+A	backend/.gitignore
+A	backend/Dockerfile
+M	backend/database.sqlite
+M	backend/package.json
+A	docker-compose.yml
+A	frontend-admin/.dockerignore
+A	frontend-admin/Dockerfile
+A	frontend-web/.dockerignore
+A	frontend-web/Dockerfile
+M	run_servers.sh
+
+commit 85af3ba875c88283615e22cb108f13e2fccaf0e9
+Author:     ttbhanh-hcmus <ttbhanh@hcmus.edu.vn>
+AuthorDate: 2026-05-15T08:30:35+07:00
+Commit:     ttbhanh-hcmus <ttbhanh@hcmus.edu.vn>
+CommitDate: 2026-05-15T08:30:35+07:00
+
+    first upload
+
+M	README.md
+A	api_specification.md
+A	backend/database.js
+A	backend/database.sqlite
+A	backend/package-lock.json
+A	backend/package.json
+A	backend/server.js
+A	backend/test_profile.js
+A	frontend-admin/.gitignore
+A	frontend-admin/README.md
+A	frontend-admin/eslint.config.js
+A	frontend-admin/index.html
+A	frontend-admin/package-lock.json
+A	frontend-admin/package.json
+A	frontend-admin/postcss.config.js
+A	frontend-admin/public/favicon.svg
+A	frontend-admin/public/icons.svg
+A	frontend-admin/src/App.css
+A	frontend-admin/src/App.jsx
+A	frontend-admin/src/assets/hero.png
+A	frontend-admin/src/assets/react.svg
+A	frontend-admin/src/assets/vite.svg
+A	frontend-admin/src/index.css
+A	frontend-admin/src/main.jsx
+A	frontend-admin/tailwind.config.js
+A	frontend-admin/vite.config.js
+A	frontend-mobile/.gitignore
+A	frontend-mobile/App.js
+A	frontend-mobile/app.json
+A	frontend-mobile/assets/adaptive-icon.png
+A	frontend-mobile/assets/favicon.png
+A	frontend-mobile/assets/icon.png
+A	frontend-mobile/assets/splash-icon.png
+A	frontend-mobile/index.js
+A	frontend-mobile/package-lock.json
+A	frontend-mobile/package.json
+A	frontend-web/.gitignore
+A	frontend-web/README.md
+A	frontend-web/eslint.config.js
+A	frontend-web/index.html
+A	frontend-web/package-lock.json
+A	frontend-web/package.json
+A	frontend-web/postcss.config.js
+A	frontend-web/public/favicon.svg
+A	frontend-web/public/icons.svg
+A	frontend-web/src/App.css
+A	frontend-web/src/App.jsx
+A	frontend-web/src/assets/hero.png
+A	frontend-web/src/assets/react.svg
+A	frontend-web/src/assets/vite.svg
+A	frontend-web/src/context/AuthContext.jsx
+A	frontend-web/src/context/CartContext.jsx
+A	frontend-web/src/index.css
+A	frontend-web/src/main.jsx
+A	frontend-web/src/pages/Cart.jsx
+A	frontend-web/src/pages/Checkout.jsx
+A	frontend-web/src/pages/ForgotPassword.jsx
+A	frontend-web/src/pages/Home.jsx
+A	frontend-web/src/pages/Login.jsx
+A	frontend-web/src/pages/ProductDetail.jsx
+A	frontend-web/src/pages/Profile.jsx
+A	frontend-web/src/pages/Register.jsx
+A	frontend-web/tailwind.config.js
+A	frontend-web/vite.config.js
+A	run_servers.sh
+A	setup_guide.md
+
+commit 2f9bf2bab45855abf211377a5d5eba10031649e3
+Author:     Hanh Tran <ttbhanh@fit.hcmus.edu.vn>
+AuthorDate: 2026-05-15T08:27:44+07:00
+Commit:     GitHub <noreply@github.com>
+CommitDate: 2026-05-15T08:27:44+07:00
+
+    Initial commit
+
+A	README.md
