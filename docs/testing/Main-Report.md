@@ -1,14 +1,25 @@
 # Báo cáo tổng hợp Domain Testing và BVA — FR-03, FR-05, FR-07, FR-15
 
-Quy ước ID trong báo cáo: `FRxx-DT-nnn` cho Domain Testing, `FRxx-BVA-nnn` cho BVA và `FRxx-SUP-nnn` cho probe bổ sung; mỗi nhóm đánh số từ 001 theo thứ tự trình bày. Case chung giữa hai kỹ thuật có ID trình bày riêng nhưng chỉ tính một case gốc. [Bảng ánh xạ ID](test-case-id-map.csv) liên kết từng ID báo cáo với ID trong suite/evidence lịch sử. Việc đổi mã không thay đổi Inputs, Expected Result, Actual Result hoặc Status; dữ liệu thực thi và đường dẫn evidence giữ nguyên.
+**Số lượng test case trong báo cáo**
 
-| Feature | Unique designed | Passed | Failed | Blocked | Có verdict P+F | Nguồn kết quả |
-|---|---:|---:|---:|---:|---:|---|
-| FR-03 API/WEB | 52 | 27 | 20 | 5 | 47 | API/WEB observations 2026-10-12 |
-| FR-05 native iOS + API hỗ trợ | 45 | 23 | 12 | 10 | 35 | run02 cumulative, giữ adjudication run01 |
-| FR-07 API/WEB | 32 | 13 | 15 | 4 | 28 | fr07-run01 |
-| FR-15 API/Admin WEB | 158 | 56 | 95 | 7 | 151 | fr15-run03 |
-| **Tổng lịch sử** | **287** | **119** | **142** | **26** | **261** | Không cộng rerun hoặc hàng trùng giữa technique |
+| Feature | Domain Testing | BVA | Supplementary (phụ lục) | Case duy nhất |
+|---|---:|---:|---:|---:|
+| FR-03 API/WEB | 40 | 21 | 0 | 52 |
+| FR-05 native iOS + API hỗ trợ | 35 | 3 | 10 | 45 |
+| FR-07 API/WEB | 28 | 11 | 0 | 32 |
+| FR-15 API/Admin WEB | 139 | 44 | 11 | 158 |
+| **Tổng** | **242** | **79** | **21** | **287** |
+
+**Kết quả theo case duy nhất, bao gồm phụ lục**
+
+| Feature | Case duy nhất | Passed | Failed | Blocked | Not Run | Có verdict P+F | 
+|---|---:|---:|---:|---:|---:|---:|
+| FR-03 API/WEB | 52 | 27 | 20 | 5 | 0 | 47 | 
+| FR-05 native iOS + API hỗ trợ | 45 | 23 | 12 | 10 | 0 | 35 | 
+| FR-07 API/WEB | 32 | 13 | 15 | 4 | 0 | 28 | 
+| FR-15 API/Admin WEB | 158 | 56 | 95 | 7 | 0 | 151 |
+| **Tổng** | **287** | **119** | **142** | **26** | **0** | **261** | 
+
 
 <a id="fr03"></a>
 
@@ -1658,175 +1669,19 @@ Tầng: API; Rule: FR05-R05
 | **Actual Result** | HTTP 200; body có 2 phần tử; IDs=<code>[201, 202]</code><br>[evidence FR05-DT-035](fr05/evidence/fr05-run02/cumulative-observations.json)<br>[ảnh/log chi tiết](fr05/evidence/fr05-run01/api/FR05-TC-045.json) |
 | **Status** | **Passed** |
 
-#### 2.5. Các probe Supplementary đi kèm — 10 case, không cộng coverage DT/BVA
-
-Các case này giữ nhãn gốc Supplementary; có thể có oracle derived hoặc unresolved. Blocked do thiếu oracle vẫn có actual observation, không mặc định là chưa thao tác.
-
-##### FR05-SUP-001 — NATIVE — ERROR — Network error được phân biệt với search không có kết quả
-
-Tầng: NATIVE; Rule: FR05-R07
-
-| Trường | Nội dung |
-|---|---|
-| **Test Case ID** | <code>FR05-SUP-001</code> |
-| **Title** | NATIVE — ERROR — Network error được phân biệt với search không có kết quả |
-| **Preconditions** | Target native/build/locale/network như manifest.<br>Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case.<br>Catalog snapshot=full theo FR05-F; reset riêng trước case.<br>Native iOS theo manifest; API supporting không thay thế UI native. |
-| **Inputs** | Snapshot <code>full</code>; inputs=<code>{"search": "Alpha", "mode": "search"}</code> |
-| **Test Steps** | 1. Reset backend về snapshot full; kiểm tra row count và hash fixture.<br>2. Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.<br>3. Nhập chính xác 'Alpha' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending.<br>4. Proxy chủ động ngắt request trong fixture copy; khôi phục network sau case. |
-| **Expected Result** | Network error được phân biệt với search không có kết quả; không còn loading vô hạn.<br>Assertions nguồn: <code>{"oracleKind": "derived"}</code> |
-| **Actual Result** | Khi proxy đóng socket, native hiển thị Network request failed; không hiển thị như search empty và không còn loading.<br>[evidence FR05-SUP-001](fr05/evidence/fr05-run02/cumulative-observations.json)<br>[ảnh/log chi tiết](fr05/evidence/fr05-run01/native/FR05-TC-018.ax.txt) |
-| **Status** | **Passed** |
-
-##### FR05-SUP-002 — NATIVE — RACE — Search Alpha rồi Beta
-
-Tầng: NATIVE; Rule: FR05-R05
-
-| Trường | Nội dung |
-|---|---|
-| **Test Case ID** | <code>FR05-SUP-002</code> |
-| **Title** | NATIVE — RACE — Search Alpha rồi Beta |
-| **Preconditions** | Target native/build/locale/network như manifest.<br>Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case.<br>Catalog snapshot=full theo FR05-F; reset riêng trước case.<br>Native iOS theo manifest; API supporting không thay thế UI native. |
-| **Inputs** | Snapshot <code>full</code>; inputs=<code>{"search": "Alpha", "mode": "search"}</code> |
-| **Test Steps** | 1. Reset backend về snapshot full; kiểm tra row count và hash fixture.<br>2. Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.<br>3. Nhập chính xác 'Alpha' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending.<br>4. Proxy hold Alpha, gửi Beta, release Beta rồi Alpha; lưu thứ tự request/response. |
-| **Expected Result** | Search Alpha rồi Beta; response Beta về trước Alpha; danh sách cuối tương ứng Beta và nhãn Beta.<br>Assertions nguồn: <code>{"oracleKind": "derived"}</code> |
-| **Actual Result** | Beta trả trước và từng hiển thị Beta; sau khi Alpha cũ trả về, ô/nhãn vẫn Beta nhưng card đổi thành Alpha giá 999 ₫. Đây là derived latest-query-wins oracle.<br>[evidence FR05-SUP-002](fr05/evidence/fr05-run02/cumulative-observations.json)<br>[ảnh/log chi tiết](fr05/evidence/fr05-run01/native/FR05-TC-019-beta-first.ax.txt) |
-| **Status** | **Failed** |
-
-##### FR05-SUP-003 — NATIVE — H1 — Cần xác nhận cách ánh xạ exactly-one HTML h1 sang native heading trước verdict
-
-Tầng: NATIVE; Rule: FR05-R09
-
-| Trường | Nội dung |
-|---|---|
-| **Test Case ID** | <code>FR05-SUP-003</code> |
-| **Title** | NATIVE — H1 — Cần xác nhận cách ánh xạ exactly-one HTML h1 sang native heading trước verdict |
-| **Preconditions** | Target native/build/locale/network như manifest.<br>Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case.<br>Catalog snapshot=full theo FR05-F; reset riêng trước case.<br>Native iOS theo manifest; API supporting không thay thế UI native. |
-| **Inputs** | Snapshot <code>full</code>; inputs=<code>{"search": null, "mode": "home"}</code> |
-| **Test Steps** | 1. Reset backend về snapshot full; kiểm tra row count và hash fixture.<br>2. Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.<br>3. Không nhập search; quan sát danh sách, cuộn đến phần tử cuối để đối chiếu toàn bộ catalog. |
-| **Expected Result** | Cần xác nhận cách ánh xạ exactly-one HTML h1 sang native heading trước verdict; vẫn ghi native heading probe.<br>Assertions nguồn: <code>{"oracleKind": "unresolved"}</code> |
-| **Actual Result** | Native listing AX có Danh sách sản phẩm; thiếu mapping exactly-one HTML h1 sang native heading. Không lấy text node làm bằng chứng h1.<br>Giới hạn/lý do: ORACLE_UNRESOLVED<br>[evidence FR05-SUP-003](fr05/evidence/fr05-run02/cumulative-observations.json)<br>[ảnh/log chi tiết](fr05/evidence/fr05-run02/native/listing-ready.ax.txt) |
-| **Status** | **Blocked** |
-
-##### FR05-SUP-004 — NATIVE — TRIM — Ghi observation
-
-Tầng: NATIVE; Rule: FR05-R05
-
-| Trường | Nội dung |
-|---|---|
-| **Test Case ID** | <code>FR05-SUP-004</code> |
-| **Title** | NATIVE — TRIM — Ghi observation |
-| **Preconditions** | Target native/build/locale/network như manifest.<br>Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case.<br>Catalog snapshot=full theo FR05-F; reset riêng trước case.<br>Native iOS theo manifest; API supporting không thay thế UI native. |
-| **Inputs** | Snapshot <code>full</code>; inputs=<code>{"search": " Alpha ", "mode": "search"}</code> |
-| **Test Steps** | 1. Reset backend về snapshot full; kiểm tra row count và hash fixture.<br>2. Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.<br>3. Nhập chính xác ' Alpha ' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending. |
-| **Expected Result** | Ghi observation; chưa verdict do policy trim chưa có trong requirement. Không tính vào BVA length coverage.<br>Assertions nguồn: <code>{"oracleKind": "unresolved"}</code> |
-| **Actual Result** | Native nhập ' Alpha ', bấm Tìm; request /api/products?search=%20Alpha%20; HTTP200, response IDs=[]; screenshot/AX đã thu. Có probe thực, matching verdict vẫn Blocked vì chưa có policy.<br>Giới hạn/lý do: ORACLE_UNRESOLVED<br>[evidence FR05-SUP-004](fr05/evidence/fr05-run02/cumulative-observations.json)<br>[ảnh/log chi tiết](fr05/evidence/fr05-run02/native/trim.ax.txt) |
-| **Status** | **Blocked** |
-
-##### FR05-SUP-005 — NATIVE — WILDCARD — Ghi observation
-
-Tầng: NATIVE; Rule: FR05-R05
-
-| Trường | Nội dung |
-|---|---|
-| **Test Case ID** | <code>FR05-SUP-005</code> |
-| **Title** | NATIVE — WILDCARD — Ghi observation |
-| **Preconditions** | Target native/build/locale/network như manifest.<br>Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case.<br>Catalog snapshot=full theo FR05-F; reset riêng trước case.<br>Native iOS theo manifest; API supporting không thay thế UI native. |
-| **Inputs** | Snapshot <code>full</code>; inputs=<code>{"search": "%", "mode": "search"}</code> |
-| **Test Steps** | 1. Reset backend về snapshot full; kiểm tra row count và hash fixture.<br>2. Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.<br>3. Nhập chính xác '%' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending. |
-| **Expected Result** | Ghi observation; chưa verdict do policy literal wildcard chưa có trong requirement. Không tính vào BVA length coverage.<br>Assertions nguồn: <code>{"oracleKind": "unresolved"}</code> |
-| **Actual Result** | Native nhập '%', bấm Tìm; request /api/products?search=%25; HTTP200, response IDs=[101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112]; screenshot/AX đã thu. Có probe thực, matching verdict vẫn Blocked vì chưa có policy.<br>Giới hạn/lý do: ORACLE_UNRESOLVED<br>[evidence FR05-SUP-005](fr05/evidence/fr05-run02/cumulative-observations.json)<br>[ảnh/log chi tiết](fr05/evidence/fr05-run02/native/percent-only.ax.txt) |
-| **Status** | **Blocked** |
-
-##### FR05-SUP-006 — NATIVE — CASE — Ghi observation
-
-Tầng: NATIVE; Rule: FR05-R05
-
-| Trường | Nội dung |
-|---|---|
-| **Test Case ID** | <code>FR05-SUP-006</code> |
-| **Title** | NATIVE — CASE — Ghi observation |
-| **Preconditions** | Target native/build/locale/network như manifest.<br>Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case.<br>Catalog snapshot=full theo FR05-F; reset riêng trước case.<br>Native iOS theo manifest; API supporting không thay thế UI native. |
-| **Inputs** | Snapshot <code>full</code>; inputs=<code>{"search": "ALPHA", "mode": "search"}</code> |
-| **Test Steps** | 1. Reset backend về snapshot full; kiểm tra row count và hash fixture.<br>2. Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.<br>3. Nhập chính xác 'ALPHA' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending. |
-| **Expected Result** | Ghi observation; chưa verdict do policy case sensitivity chưa có trong requirement. Không tính vào BVA length coverage.<br>Assertions nguồn: <code>{"oracleKind": "unresolved"}</code> |
-| **Actual Result** | Native nhập 'ALPHA', bấm Tìm; request /api/products?search=ALPHA; HTTP200, response IDs=[101]; screenshot/AX đã thu. Có probe thực, matching verdict vẫn Blocked vì chưa có policy.<br>Giới hạn/lý do: ORACLE_UNRESOLVED<br>[evidence FR05-SUP-006](fr05/evidence/fr05-run02/cumulative-observations.json)<br>[ảnh/log chi tiết](fr05/evidence/fr05-run02/native/case-upper.ax.txt) |
-| **Status** | **Blocked** |
-
-##### FR05-SUP-007 — NATIVE — ACCENT — Ghi observation
-
-Tầng: NATIVE; Rule: FR05-R05
-
-| Trường | Nội dung |
-|---|---|
-| **Test Case ID** | <code>FR05-SUP-007</code> |
-| **Title** | NATIVE — ACCENT — Ghi observation |
-| **Preconditions** | Target native/build/locale/network như manifest.<br>Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case.<br>Catalog snapshot=full theo FR05-F; reset riêng trước case.<br>Native iOS theo manifest; API supporting không thay thế UI native. |
-| **Inputs** | Snapshot <code>full</code>; inputs=<code>{"search": "Ca phe", "mode": "search"}</code> |
-| **Test Steps** | 1. Reset backend về snapshot full; kiểm tra row count và hash fixture.<br>2. Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.<br>3. Nhập chính xác 'Ca phe' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending. |
-| **Expected Result** | Ghi observation; chưa verdict do policy diacritic sensitivity chưa có trong requirement. Không tính vào BVA length coverage.<br>Assertions nguồn: <code>{"oracleKind": "unresolved"}</code> |
-| **Actual Result** | Native nhập 'Ca phe', bấm Tìm; request /api/products?search=Ca%20phe; HTTP200, response IDs=[]; screenshot/AX đã thu. Có probe thực, matching verdict vẫn Blocked vì chưa có policy.<br>Giới hạn/lý do: ORACLE_UNRESOLVED<br>[evidence FR05-SUP-007](fr05/evidence/fr05-run02/cumulative-observations.json)<br>[ảnh/log chi tiết](fr05/evidence/fr05-run02/native/diacritics.ax.txt) |
-| **Status** | **Blocked** |
-
-##### FR05-SUP-008 — NATIVE — EMPTY-QUERY — Ghi observation
-
-Tầng: NATIVE; Rule: FR05-R05
-
-| Trường | Nội dung |
-|---|---|
-| **Test Case ID** | <code>FR05-SUP-008</code> |
-| **Title** | NATIVE — EMPTY-QUERY — Ghi observation |
-| **Preconditions** | Target native/build/locale/network như manifest.<br>Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case.<br>Catalog snapshot=full theo FR05-F; reset riêng trước case.<br>Native iOS theo manifest; API supporting không thay thế UI native. |
-| **Inputs** | Snapshot <code>full</code>; inputs=<code>{"search": "", "mode": "search"}</code> |
-| **Test Steps** | 1. Reset backend về snapshot full; kiểm tra row count và hash fixture.<br>2. Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.<br>3. Nhập chính xác '' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending. |
-| **Expected Result** | Ghi observation; chưa verdict do policy empty vs omitted chưa có trong requirement. Không tính vào BVA length coverage.<br>Assertions nguồn: <code>{"oracleKind": "unresolved"}</code> |
-| **Actual Result** | Native nhập '', bấm Tìm; request /api/products?search=; HTTP200, response IDs=[101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112]; screenshot/AX đã thu. Có probe thực, matching verdict vẫn Blocked vì chưa có policy.<br>Giới hạn/lý do: ORACLE_UNRESOLVED<br>[evidence FR05-SUP-008](fr05/evidence/fr05-run02/cumulative-observations.json)<br>[ảnh/log chi tiết](fr05/evidence/fr05-run02/native/empty-query.ax.txt) |
-| **Status** | **Blocked** |
-
-##### FR05-SUP-009 — NATIVE — ONE-CHAR — Ghi observation
-
-Tầng: NATIVE; Rule: FR05-R05
-
-| Trường | Nội dung |
-|---|---|
-| **Test Case ID** | <code>FR05-SUP-009</code> |
-| **Title** | NATIVE — ONE-CHAR — Ghi observation |
-| **Preconditions** | Target native/build/locale/network như manifest.<br>Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case.<br>Catalog snapshot=full theo FR05-F; reset riêng trước case.<br>Native iOS theo manifest; API supporting không thay thế UI native. |
-| **Inputs** | Snapshot <code>full</code>; inputs=<code>{"search": "A", "mode": "search"}</code> |
-| **Test Steps** | 1. Reset backend về snapshot full; kiểm tra row count và hash fixture.<br>2. Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.<br>3. Nhập chính xác 'A' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending. |
-| **Expected Result** | Ghi observation; chưa verdict do policy substring chưa có trong requirement. Không tính vào BVA length coverage.<br>Assertions nguồn: <code>{"oracleKind": "unresolved"}</code> |
-| **Actual Result** | Native nhập 'A', bấm Tìm; request /api/products?search=A; HTTP200, response IDs=[101, 102, 103, 106, 107, 108, 112]; screenshot/AX đã thu. Có probe thực, matching verdict vẫn Blocked vì chưa có policy.<br>Giới hạn/lý do: ORACLE_UNRESOLVED<br>[evidence FR05-SUP-009](fr05/evidence/fr05-run02/cumulative-observations.json)<br>[ảnh/log chi tiết](fr05/evidence/fr05-run02/native/substring.ax.txt) |
-| **Status** | **Blocked** |
-
-##### FR05-SUP-010 — NATIVE — SPACE — Ghi observation
-
-Tầng: NATIVE; Rule: FR05-R05
-
-| Trường | Nội dung |
-|---|---|
-| **Test Case ID** | <code>FR05-SUP-010</code> |
-| **Title** | NATIVE — SPACE — Ghi observation |
-| **Preconditions** | Target native/build/locale/network như manifest.<br>Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case.<br>Catalog snapshot=full theo FR05-F; reset riêng trước case.<br>Native iOS theo manifest; API supporting không thay thế UI native. |
-| **Inputs** | Snapshot <code>full</code>; inputs=<code>{"search": "   ", "mode": "search"}</code> |
-| **Test Steps** | 1. Reset backend về snapshot full; kiểm tra row count và hash fixture.<br>2. Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.<br>3. Nhập chính xác '   ' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending. |
-| **Expected Result** | Ghi observation; chưa verdict do policy whitespace chưa có trong requirement. Không tính vào BVA length coverage.<br>Assertions nguồn: <code>{"oracleKind": "unresolved"}</code> |
-| **Actual Result** | Native nhập '   ', bấm Tìm; request /api/products?search=%20%20%20; HTTP200, response IDs=[]; screenshot/AX đã thu. Có probe thực, matching verdict vẫn Blocked vì chưa có policy.<br>Giới hạn/lý do: ORACLE_UNRESOLVED<br>[evidence FR05-SUP-010](fr05/evidence/fr05-run02/cumulative-observations.json)<br>[ảnh/log chi tiết](fr05/evidence/fr05-run02/native/whitespace.ax.txt) |
-| **Status** | **Blocked** |
+10 case kiểm thử bổ sung được trình bày tại [Phụ lục A — FR-05](#appendix-fr05-supplementary); không cộng vào coverage Domain Testing/BVA.
 
 ### 3. BVA
 
-#### 3.1. Bước 1 — Xác định đại lượng và nguồn phương pháp
+#### 3.1. Lập universe và phân hoạch
 
-BVA xét số kết quả n suy ra từ (q,C), không phải độ dài search input. Source lịch sử dùng ISTQB 3-value khi chưa có lecture: ở đây giữ rõ nhãn **BVA lịch sử**, không viết lại run thành Standard BVA. Theo slide, đây là kiểm chuyển behavior tại output count 0/nonzero; cùng bộ 0/1/2 hữu ích ở biên một phía với1 là phần tử nonempty đầu tiên,2 đối chứng. Không có cậnquery/pagination/timeout để tự sinh biên.
+n∈N₀, h=1; E0={0}: success-empty phải có thông báo; E1=[1,+∞): hiển thị đủ match. Count âm không thể là expected output hợp lệ; n≤M là điều kiện khả thi. Pending chưa biết final, không gán empty.
 
-#### 3.2. Bước 2 — Lập universe và phân hoạch
-
-n∈N₀, h=1; E0={0}: success-empty phải có thông báo; E1=[1,+∞): hiển thị đủ match. Count âm không thể là expected output hợp lệ; n≤M là điều kiện khả thi. Pending chưa biết finaln, không gán empty.
-
-#### 3.3. Bước 3 — Dẫn xuất điểm lịch sử và đối chiếu slide
+#### 3.2. Dẫn xuất điểm
 
 Endpoint0 có neighborhood khả thi{0,1}; endpoint1 có{0,1,2}; union={0,1,2}, ba nghĩa vụ, không phải năm. Trong cách nhìn Standard một phía của vùng nonempty,1 là LB,2 là lân cận/đối chứng,0 kiểm nhánh empty riêng. 0 là kết quả thành công hợp lệ của search, không phải lỗi validation hay negative invalid input. Không tạo n=-1, không dùng4n+1 hay worst-caseproduct cho count derived.
 
-#### 3.4. Bước 4 — Chuyển điểm thành test data
+#### 3.3. Chuyển điểm thành test data
 
 Giữ q=Alpha và response success, chỉ thay catalog: empty→n=0; one→ID201, n=1; two→IDs201/202, n=2. Hai row cùng tên Alpha nhưng giá 1000/1001 và ID khác, không được gộp do trùng tên. Giá dùng nhận diện card, không tạo price boundary của FR15. Steps là reset snapshot → Home → nhậpAlpha → Tìm → đợi success → đối chiếu matching cards/empty state.
 
@@ -1834,7 +1689,7 @@ Giữ q=Alpha và response success, chỉ thay catalog: empty→n=0; one→ID201
 
 Ba case trùng DT RESULT-ZERO/ONE/TWO về full scenario nên FR05-BVA-001/002/003 tương ứng FR05-DT-018/019/020; mỗi cặp cùng ánh xạ về một case gốc, mỗi case chỉ chạy/đếm một lần. API count-support khác interface không thay native coverage. Ba nghĩa vụ result-count được quan sát; không suy ra toàn bộ search space hay policy đã pass. Run02 cumulative là kết quả đã chọn; nhiều lần thử không tăng uniquecount.
 
-#### 3.6. Test report BVA — 3 case native chia sẻ với DT
+#### 3.6. Test report BVA
 
 ##### FR05-BVA-001 — NATIVE — RESULT-ZERO — Search Alpha trên catalog rỗng: không có card và có empty state.
 
@@ -4789,174 +4644,7 @@ Tầng: API; Rule: FR15-R07
 | **Actual Result** | Quan sát: <code>{"http": 200, "body": {"message": "Product created", "id": 1}, "failures": ["rejected-state-unchanged", "rejection-signaled"], "beforeCount": 0, "afterCount": 1}</code><br>Assertion: Dữ liệu thay đổi dù input phải bị từ chối<br>Assertion: Không có tín hiệu từ chối phù hợp<br>Snapshot: thêm IDs=<code>[1]</code>; xóa IDs=<code>[]</code>; sửa IDs=<code>[]</code><br>[evidence FR15-DT-139](fr15/evidence/fr15-run03/api/observations.json)<br>[ảnh/log chi tiết](fr15/evidence/fr15-run03/api/FR15-TC-147.json) |
 | **Status** | **Failed** |
 
-#### 2.4. Các probe Supplementary đi kèm — 11 case, không cộng coverage DT/BVA
-
-Các case này giữ nhãn gốc Supplementary; có thể có oracle derived hoặc unresolved. Blocked do thiếu oracle vẫn có actual observation, không mặc định là chưa thao tác.
-
-##### FR15-SUP-001 — API — Thêm sản phẩm, tên L=128, giá=0.5, target=101
-
-Tầng: API; Rule: FR15-R06
-
-| Trường | Nội dung |
-|---|---|
-| **Test Case ID** | <code>FR15-SUP-001</code> |
-| **Title** | API — Thêm sản phẩm, tên L=128, giá=0.5, target=101 |
-| **Preconditions** | token partition=admin.<br>Target=101 phải tồn tại nếu thao tác yêu cầu, trừ probe ID vắng; snapshot toàn bộ sản phẩm trước/sau. |
-| **Inputs** | Input dự định: <code>{"body": {"name": repeat("A",128), "price": 0.5, "description": "Nominal description", "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=", "category_id": 10}, "target": 101, "auth": "admin", "mode": "create"}</code> |
-| **Test Steps** | 1. Reset fixture bằng setup độc lập và snapshot tất cả sản phẩm.<br>2. Dùng đúng partition xác thực; POST /api/products với input dự định.<br>3. Lưu request/response và state trước/sau; đối chiếu target cùng mọi sản phẩm khác. |
-| **Expected Result** | Thêm đúng một sản phẩm, đọc lại đúng payload; mọi sản phẩm cũ giữ nguyên.<br>Oracle nguồn: <code>{"outcome": "accept", "stateContract": "Create", "description": "Representable positive price 0.5 satisfies numeric &gt;0; adjacency precision remains unresolved"}</code>; oracleStatus=<code>confirmed</code> |
-| **Actual Result** | Quan sát: <code>{"http": 200, "body": {"message": "Product created", "id": 304}, "failures": [], "beforeCount": 3, "afterCount": 4}</code><br>Snapshot: thêm IDs=<code>[304]</code>; xóa IDs=<code>[]</code>; sửa IDs=<code>[]</code><br>[evidence FR15-SUP-001](fr15/evidence/fr15-run03/api/observations.json)<br>[ảnh/log chi tiết](fr15/evidence/fr15-run03/api/FR15-TC-032.json) |
-| **Status** | **Passed** |
-
-##### FR15-SUP-002 — API — Thêm sản phẩm, tên L=3, giá=100000, target=101
-
-Tầng: API; Rule: FR15-R05
-
-| Trường | Nội dung |
-|---|---|
-| **Test Case ID** | <code>FR15-SUP-002</code> |
-| **Title** | API — Thêm sản phẩm, tên L=3, giá=100000, target=101 |
-| **Preconditions** | token partition=admin.<br>Target=101 phải tồn tại nếu thao tác yêu cầu, trừ probe ID vắng; snapshot toàn bộ sản phẩm trước/sau. |
-| **Inputs** | Input dự định: <code>{"body": {"name": "   ", "price": 100000, "description": "Nominal description", "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=", "category_id": 10}, "target": 101, "auth": "admin", "mode": "create"}</code> |
-| **Test Steps** | 1. Reset fixture bằng setup độc lập và snapshot tất cả sản phẩm.<br>2. Dùng đúng partition xác thực; POST /api/products với input dự định.<br>3. Lưu request/response và state trước/sau; đối chiếu target cùng mọi sản phẩm khác. |
-| **Expected Result** | Chưa có oracle đủ để kết luận Pass/Fail; ghi nhận hành vi và bảo toàn trạng thái để review.<br>Oracle nguồn: <code>{"outcome": "observe", "stateContract": "Create", "description": "Whitespace name characterization; trim undefined"}</code>; oracleStatus=<code>unresolved</code> |
-| **Actual Result** | Quan sát: <code>{"http": 200, "body": {"message": "Product created", "id": 304}, "failures": [], "beforeCount": 3, "afterCount": 4}</code><br>Giới hạn oracle: oracle-unresolved<br>Snapshot: thêm IDs=<code>[304]</code>; xóa IDs=<code>[]</code>; sửa IDs=<code>[]</code><br>[evidence FR15-SUP-002](fr15/evidence/fr15-run03/api/observations.json)<br>[ảnh/log chi tiết](fr15/evidence/fr15-run03/api/FR15-TC-033.json) |
-| **Status** | **Blocked** |
-
-##### FR15-SUP-003 — API — Thêm sản phẩm, tên L=255, giá=100000, target=101
-
-Tầng: API; Rule: FR15-R05
-
-| Trường | Nội dung |
-|---|---|
-| **Test Case ID** | <code>FR15-SUP-003</code> |
-| **Title** | API — Thêm sản phẩm, tên L=255, giá=100000, target=101 |
-| **Preconditions** | token partition=admin.<br>Target=101 phải tồn tại nếu thao tác yêu cầu, trừ probe ID vắng; snapshot toàn bộ sản phẩm trước/sau. |
-| **Inputs** | Input dự định: <code>{"body": {"name": repeat("😀",255), "price": 100000, "description": "Nominal description", "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=", "category_id": 10}, "target": 101, "auth": "admin", "mode": "create"}</code> |
-| **Test Steps** | 1. Reset fixture bằng setup độc lập và snapshot tất cả sản phẩm.<br>2. Dùng đúng partition xác thực; POST /api/products với input dự định.<br>3. Lưu request/response và state trước/sau; đối chiếu target cùng mọi sản phẩm khác. |
-| **Expected Result** | Chưa có oracle đủ để kết luận Pass/Fail; ghi nhận hành vi và bảo toàn trạng thái để review.<br>Oracle nguồn: <code>{"outcome": "observe", "stateContract": "Create", "description": "Unicode emoji name characterization; length unit undefined"}</code>; oracleStatus=<code>unresolved</code> |
-| **Actual Result** | Quan sát: <code>{"http": 200, "body": {"message": "Product created", "id": 304}, "failures": [], "beforeCount": 3, "afterCount": 4}</code><br>Giới hạn oracle: oracle-unresolved<br>Snapshot: thêm IDs=<code>[304]</code>; xóa IDs=<code>[]</code>; sửa IDs=<code>[]</code><br>[evidence FR15-SUP-003](fr15/evidence/fr15-run03/api/observations.json)<br>[ảnh/log chi tiết](fr15/evidence/fr15-run03/api/FR15-TC-034.json) |
-| **Status** | **Blocked** |
-
-##### FR15-SUP-004 — API — Sửa sản phẩm, tên L=128, giá=0.5, target=101
-
-Tầng: API; Rule: FR15-R06
-
-| Trường | Nội dung |
-|---|---|
-| **Test Case ID** | <code>FR15-SUP-004</code> |
-| **Title** | API — Sửa sản phẩm, tên L=128, giá=0.5, target=101 |
-| **Preconditions** | token partition=admin.<br>Target=101 phải tồn tại nếu thao tác yêu cầu, trừ probe ID vắng; snapshot toàn bộ sản phẩm trước/sau. |
-| **Inputs** | Input dự định: <code>{"body": {"name": repeat("A",128), "price": 0.5, "description": "Nominal description", "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=", "category_id": 10}, "target": 101, "auth": "admin", "mode": "update"}</code> |
-| **Test Steps** | 1. Reset fixture bằng setup độc lập và snapshot tất cả sản phẩm.<br>2. Dùng đúng partition xác thực; PUT /api/products/101 với input dự định.<br>3. Lưu request/response và state trước/sau; đối chiếu target cùng mọi sản phẩm khác. |
-| **Expected Result** | Chỉ target khớp payload mới; các field không sửa và các sản phẩm khác giữ nguyên; UI đúng ngay sau lưu và sau reload.<br>Oracle nguồn: <code>{"outcome": "accept", "stateContract": "Update", "description": "Representable positive price 0.5 satisfies numeric &gt;0; adjacency precision remains unresolved"}</code>; oracleStatus=<code>confirmed</code> |
-| **Actual Result** | Quan sát: <code>{"http": 200, "body": {"message": "Product updated"}, "failures": [], "beforeCount": 3, "afterCount": 3}</code><br>Snapshot: thêm IDs=<code>[]</code>; xóa IDs=<code>[]</code>; sửa IDs=<code>[101]</code><br>[evidence FR15-SUP-004](fr15/evidence/fr15-run03/api/observations.json)<br>[ảnh/log chi tiết](fr15/evidence/fr15-run03/api/FR15-TC-066.json) |
-| **Status** | **Passed** |
-
-##### FR15-SUP-005 — API — Sửa sản phẩm, tên L=3, giá=100000, target=101
-
-Tầng: API; Rule: FR15-R05
-
-| Trường | Nội dung |
-|---|---|
-| **Test Case ID** | <code>FR15-SUP-005</code> |
-| **Title** | API — Sửa sản phẩm, tên L=3, giá=100000, target=101 |
-| **Preconditions** | token partition=admin.<br>Target=101 phải tồn tại nếu thao tác yêu cầu, trừ probe ID vắng; snapshot toàn bộ sản phẩm trước/sau. |
-| **Inputs** | Input dự định: <code>{"body": {"name": "   ", "price": 100000, "description": "Nominal description", "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=", "category_id": 10}, "target": 101, "auth": "admin", "mode": "update"}</code> |
-| **Test Steps** | 1. Reset fixture bằng setup độc lập và snapshot tất cả sản phẩm.<br>2. Dùng đúng partition xác thực; PUT /api/products/101 với input dự định.<br>3. Lưu request/response và state trước/sau; đối chiếu target cùng mọi sản phẩm khác. |
-| **Expected Result** | Chưa có oracle đủ để kết luận Pass/Fail; ghi nhận hành vi và bảo toàn trạng thái để review.<br>Oracle nguồn: <code>{"outcome": "observe", "stateContract": "Update", "description": "Whitespace name characterization; trim undefined"}</code>; oracleStatus=<code>unresolved</code> |
-| **Actual Result** | Quan sát: <code>{"http": 200, "body": {"message": "Product updated"}, "failures": [], "beforeCount": 3, "afterCount": 3}</code><br>Giới hạn oracle: oracle-unresolved<br>Snapshot: thêm IDs=<code>[]</code>; xóa IDs=<code>[]</code>; sửa IDs=<code>[101]</code><br>[evidence FR15-SUP-005](fr15/evidence/fr15-run03/api/observations.json)<br>[ảnh/log chi tiết](fr15/evidence/fr15-run03/api/FR15-TC-067.json) |
-| **Status** | **Blocked** |
-
-##### FR15-SUP-006 — API — Sửa sản phẩm, tên L=255, giá=100000, target=101
-
-Tầng: API; Rule: FR15-R05
-
-| Trường | Nội dung |
-|---|---|
-| **Test Case ID** | <code>FR15-SUP-006</code> |
-| **Title** | API — Sửa sản phẩm, tên L=255, giá=100000, target=101 |
-| **Preconditions** | token partition=admin.<br>Target=101 phải tồn tại nếu thao tác yêu cầu, trừ probe ID vắng; snapshot toàn bộ sản phẩm trước/sau. |
-| **Inputs** | Input dự định: <code>{"body": {"name": repeat("😀",255), "price": 100000, "description": "Nominal description", "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=", "category_id": 10}, "target": 101, "auth": "admin", "mode": "update"}</code> |
-| **Test Steps** | 1. Reset fixture bằng setup độc lập và snapshot tất cả sản phẩm.<br>2. Dùng đúng partition xác thực; PUT /api/products/101 với input dự định.<br>3. Lưu request/response và state trước/sau; đối chiếu target cùng mọi sản phẩm khác. |
-| **Expected Result** | Chưa có oracle đủ để kết luận Pass/Fail; ghi nhận hành vi và bảo toàn trạng thái để review.<br>Oracle nguồn: <code>{"outcome": "observe", "stateContract": "Update", "description": "Unicode emoji name characterization; length unit undefined"}</code>; oracleStatus=<code>unresolved</code> |
-| **Actual Result** | Quan sát: <code>{"http": 200, "body": {"message": "Product updated"}, "failures": [], "beforeCount": 3, "afterCount": 3}</code><br>Giới hạn oracle: oracle-unresolved<br>Snapshot: thêm IDs=<code>[]</code>; xóa IDs=<code>[]</code>; sửa IDs=<code>[101]</code><br>[evidence FR15-SUP-006](fr15/evidence/fr15-run03/api/observations.json)<br>[ảnh/log chi tiết](fr15/evidence/fr15-run03/api/FR15-TC-068.json) |
-| **Status** | **Blocked** |
-
-##### FR15-SUP-007 — WEB — Thêm sản phẩm, tên L=128, giá=0.5, target=101
-
-Tầng: WEB; Rule: FR15-R06
-
-| Trường | Nội dung |
-|---|---|
-| **Test Case ID** | <code>FR15-SUP-007</code> |
-| **Title** | WEB — Thêm sản phẩm, tên L=128, giá=0.5, target=101 |
-| **Preconditions** | token partition=admin.<br>Target=101 phải tồn tại nếu thao tác yêu cầu, trừ probe ID vắng; snapshot toàn bộ sản phẩm trước/sau. |
-| **Inputs** | Input dự định: <code>{"body": {"name": repeat("A",128), "price": 0.5, "description": "Nominal description", "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=", "category_id": 10}, "target": 101, "auth": "admin", "mode": "create"}</code> |
-| **Test Steps** | 1. Reset fixture bằng setup độc lập và snapshot tất cả sản phẩm.<br>2. Dùng đúng partition xác thực; mở Admin Product, chọn đúng target và thực hiện Thêm với input dự định.<br>3. Lưu request/response và state trước/sau; đối chiếu target cùng mọi sản phẩm khác.<br>4. Ghi inputEffective và UI ngay sau thao tác; reload, ghi UI lần nữa. HTML chặn input không chứng minh API đã validate. |
-| **Expected Result** | Thêm đúng một sản phẩm, đọc lại đúng payload; mọi sản phẩm cũ giữ nguyên.<br>Oracle nguồn: <code>{"outcome": "accept", "stateContract": "Create", "description": "Representable positive price 0.5 satisfies numeric &gt;0; adjacency precision remains unresolved"}</code>; oracleStatus=<code>confirmed</code> |
-| **Actual Result** | Quan sát: <code>{"failures": [], "beforeCount": 3, "afterCount": 4, "mutationCount": 1, "htmlBlocked": false, "response": {"statusCode": 200, "body": {"message": "Product created", "id": 304}}}</code><br>Snapshot: thêm IDs=<code>[304]</code>; xóa IDs=<code>[]</code>; sửa IDs=<code>[]</code><br>Input thực tế sau nhập UI: <code>{"name": repeat("A",128), "price": "0.5", "category_id": "10"}</code><br>[evidence FR15-SUP-007](fr15/evidence/fr15-run03/web/observations.json)<br>[ảnh/log chi tiết](fr15/evidence/fr15-run03/web/screenshots/FR15-TC-091_immediate.png) |
-| **Status** | **Passed** |
-
-##### FR15-SUP-008 — WEB — Sửa sản phẩm, tên L=128, giá=0.5, target=101
-
-Tầng: WEB; Rule: FR15-R06
-
-| Trường | Nội dung |
-|---|---|
-| **Test Case ID** | <code>FR15-SUP-008</code> |
-| **Title** | WEB — Sửa sản phẩm, tên L=128, giá=0.5, target=101 |
-| **Preconditions** | token partition=admin.<br>Target=101 phải tồn tại nếu thao tác yêu cầu, trừ probe ID vắng; snapshot toàn bộ sản phẩm trước/sau. |
-| **Inputs** | Input dự định: <code>{"body": {"name": repeat("A",128), "price": 0.5, "description": "Nominal description", "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=", "category_id": 10}, "target": 101, "auth": "admin", "mode": "update"}</code> |
-| **Test Steps** | 1. Reset fixture bằng setup độc lập và snapshot tất cả sản phẩm.<br>2. Dùng đúng partition xác thực; mở Admin Product, chọn đúng target và thực hiện Sửa với input dự định.<br>3. Lưu request/response và state trước/sau; đối chiếu target cùng mọi sản phẩm khác.<br>4. Ghi inputEffective và UI ngay sau thao tác; reload, ghi UI lần nữa. HTML chặn input không chứng minh API đã validate. |
-| **Expected Result** | Chỉ target khớp payload mới; các field không sửa và các sản phẩm khác giữ nguyên; UI đúng ngay sau lưu và sau reload.<br>Oracle nguồn: <code>{"outcome": "accept", "stateContract": "Update", "description": "Representable positive price 0.5 satisfies numeric &gt;0; adjacency precision remains unresolved"}</code>; oracleStatus=<code>confirmed</code> |
-| **Actual Result** | Quan sát: <code>{"failures": ["ui-immediate-correct"], "beforeCount": 3, "afterCount": 3, "mutationCount": 1, "htmlBlocked": false, "response": {"statusCode": 200, "body": {"message": "Product updated"}}}</code><br>Assertion: UI ngay sau thao tác không khớp kết quả kỳ vọng<br>Snapshot: thêm IDs=<code>[]</code>; xóa IDs=<code>[]</code>; sửa IDs=<code>[101]</code><br>Input thực tế sau nhập UI: <code>{"name": repeat("A",128), "price": "0.5", "category_id": "10"}</code><br>[evidence FR15-SUP-008](fr15/evidence/fr15-run03/web/observations.json)<br>[ảnh/log chi tiết](fr15/evidence/fr15-run03/web/screenshots/FR15-TC-114_immediate.png) |
-| **Status** | **Failed** |
-
-##### FR15-SUP-009 — API — Xem sản phẩm, tên L=128, giá=100000, target=999999
-
-Tầng: API; Rule: FR15-R02
-
-| Trường | Nội dung |
-|---|---|
-| **Test Case ID** | <code>FR15-SUP-009</code> |
-| **Title** | API — Xem sản phẩm, tên L=128, giá=100000, target=999999 |
-| **Preconditions** | token partition=admin.<br>Target=999999 phải tồn tại nếu thao tác yêu cầu, trừ probe ID vắng; snapshot toàn bộ sản phẩm trước/sau. |
-| **Inputs** | Input dự định: <code>{"body": {"name": repeat("A",128), "price": 100000, "description": "Nominal description", "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=", "category_id": 10}, "target": 999999, "auth": "admin", "mode": "detail"}</code> |
-| **Test Steps** | 1. Reset fixture bằng setup độc lập và snapshot tất cả sản phẩm.<br>2. Dùng đúng partition xác thực; GET /api/products/999999 với input dự định.<br>3. Lưu request/response và state trước/sau; đối chiếu target cùng mọi sản phẩm khác. |
-| **Expected Result** | Chưa có oracle đủ để kết luận Pass/Fail; ghi nhận hành vi và bảo toàn trạng thái để review.<br>Oracle nguồn: <code>{"outcome": "observe", "stateContract": "Read", "description": "Missing target characterization; exact response not specified"}</code>; oracleStatus=<code>unresolved</code> |
-| **Actual Result** | Quan sát: <code>{"http": 200, "body": {}, "failures": [], "beforeCount": 3, "afterCount": 3}</code><br>Giới hạn oracle: oracle-unresolved<br>Snapshot: thêm IDs=<code>[]</code>; xóa IDs=<code>[]</code>; sửa IDs=<code>[]</code><br>[evidence FR15-SUP-009](fr15/evidence/fr15-run03/api/observations.json)<br>[ảnh/log chi tiết](fr15/evidence/fr15-run03/api/FR15-TC-148.json) |
-| **Status** | **Blocked** |
-
-##### FR15-SUP-010 — API — Sửa sản phẩm, tên L=128, giá=100000, target=999999
-
-Tầng: API; Rule: FR15-R03
-
-| Trường | Nội dung |
-|---|---|
-| **Test Case ID** | <code>FR15-SUP-010</code> |
-| **Title** | API — Sửa sản phẩm, tên L=128, giá=100000, target=999999 |
-| **Preconditions** | token partition=admin.<br>Target=999999 phải tồn tại nếu thao tác yêu cầu, trừ probe ID vắng; snapshot toàn bộ sản phẩm trước/sau. |
-| **Inputs** | Input dự định: <code>{"body": {"name": repeat("A",128), "price": 100000, "description": "Nominal description", "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=", "category_id": 10}, "target": 999999, "auth": "admin", "mode": "update"}</code> |
-| **Test Steps** | 1. Reset fixture bằng setup độc lập và snapshot tất cả sản phẩm.<br>2. Dùng đúng partition xác thực; PUT /api/products/999999 với input dự định.<br>3. Lưu request/response và state trước/sau; đối chiếu target cùng mọi sản phẩm khác. |
-| **Expected Result** | Chưa có oracle đủ để kết luận Pass/Fail; ghi nhận hành vi và bảo toàn trạng thái để review.<br>Oracle nguồn: <code>{"outcome": "observe", "stateContract": "Update", "description": "Missing target characterization; exact response not specified"}</code>; oracleStatus=<code>unresolved</code> |
-| **Actual Result** | Quan sát: <code>{"http": 200, "body": {"message": "Product updated"}, "failures": [], "beforeCount": 3, "afterCount": 3}</code><br>Giới hạn oracle: oracle-unresolved<br>Snapshot: thêm IDs=<code>[]</code>; xóa IDs=<code>[]</code>; sửa IDs=<code>[]</code><br>[evidence FR15-SUP-010](fr15/evidence/fr15-run03/api/observations.json)<br>[ảnh/log chi tiết](fr15/evidence/fr15-run03/api/FR15-TC-149.json) |
-| **Status** | **Blocked** |
-
-##### FR15-SUP-011 — API — Xóa sản phẩm, tên L=128, giá=100000, target=999999
-
-Tầng: API; Rule: FR15-R04
-
-| Trường | Nội dung |
-|---|---|
-| **Test Case ID** | <code>FR15-SUP-011</code> |
-| **Title** | API — Xóa sản phẩm, tên L=128, giá=100000, target=999999 |
-| **Preconditions** | token partition=admin.<br>Target=999999 phải tồn tại nếu thao tác yêu cầu, trừ probe ID vắng; snapshot toàn bộ sản phẩm trước/sau. |
-| **Inputs** | Input dự định: <code>{"body": {"name": repeat("A",128), "price": 100000, "description": "Nominal description", "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=", "category_id": 10}, "target": 999999, "auth": "admin", "mode": "delete"}</code> |
-| **Test Steps** | 1. Reset fixture bằng setup độc lập và snapshot tất cả sản phẩm.<br>2. Dùng đúng partition xác thực; DELETE /api/products/999999 với input dự định.<br>3. Lưu request/response và state trước/sau; đối chiếu target cùng mọi sản phẩm khác. |
-| **Expected Result** | Chưa có oracle đủ để kết luận Pass/Fail; ghi nhận hành vi và bảo toàn trạng thái để review.<br>Oracle nguồn: <code>{"outcome": "observe", "stateContract": "Delete", "description": "Missing target characterization; exact response not specified"}</code>; oracleStatus=<code>unresolved</code> |
-| **Actual Result** | Quan sát: <code>{"http": 200, "body": {"message": "Product deleted"}, "failures": [], "beforeCount": 3, "afterCount": 3}</code><br>Giới hạn oracle: oracle-unresolved<br>Snapshot: thêm IDs=<code>[]</code>; xóa IDs=<code>[]</code>; sửa IDs=<code>[]</code><br>[evidence FR15-SUP-011](fr15/evidence/fr15-run03/api/observations.json)<br>[ảnh/log chi tiết](fr15/evidence/fr15-run03/api/FR15-TC-150.json) |
-| **Status** | **Blocked** |
+11 case kiểm thử bổ sung được trình bày tại [Phụ lục B — FR-15](#appendix-fr15-supplementary); không cộng vào coverage Domain Testing/BVA.
 
 ### 3. BVA
 
@@ -5636,3 +5324,330 @@ Tầng: WEB; Rule: FR15-R06
 | **Status** | **Failed** |
 
 ---
+
+## Phụ lục — Kiểm thử bổ sung (Supplementary)
+
+Các case dưới đây lưu các quan sát bổ sung và những hành vi có oracle suy luận hoặc chưa được đặc tả đầy đủ. Chúng được tính trong tổng số case lịch sử ở đầu báo cáo, nhưng không cộng vào coverage Domain Testing/BVA.
+
+<a id="appendix-fr05-supplementary"></a>
+
+### A. FR-05 — 10 case bổ sung
+
+#### FR05-SUP-001 — NATIVE — ERROR — Network error được phân biệt với search không có kết quả
+
+Tầng: NATIVE; Rule: FR05-R07
+
+| Trường | Nội dung |
+|---|---|
+| **Test Case ID** | <code>FR05-SUP-001</code> |
+| **Title** | NATIVE — ERROR — Network error được phân biệt với search không có kết quả |
+| **Preconditions** | Target native/build/locale/network như manifest.<br>Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case.<br>Catalog snapshot=full theo FR05-F; reset riêng trước case.<br>Native iOS theo manifest; API supporting không thay thế UI native. |
+| **Inputs** | Snapshot <code>full</code>; inputs=<code>{"search": "Alpha", "mode": "search"}</code> |
+| **Test Steps** | 1. Reset backend về snapshot full; kiểm tra row count và hash fixture.<br>2. Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.<br>3. Nhập chính xác 'Alpha' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending.<br>4. Proxy chủ động ngắt request trong fixture copy; khôi phục network sau case. |
+| **Expected Result** | Network error được phân biệt với search không có kết quả; không còn loading vô hạn.<br>Assertions nguồn: <code>{"oracleKind": "derived"}</code> |
+| **Actual Result** | Khi proxy đóng socket, native hiển thị Network request failed; không hiển thị như search empty và không còn loading.<br>[evidence FR05-SUP-001](fr05/evidence/fr05-run02/cumulative-observations.json)<br>[ảnh/log chi tiết](fr05/evidence/fr05-run01/native/FR05-TC-018.ax.txt) |
+| **Status** | **Passed** |
+
+#### FR05-SUP-002 — NATIVE — RACE — Search Alpha rồi Beta
+
+Tầng: NATIVE; Rule: FR05-R05
+
+| Trường | Nội dung |
+|---|---|
+| **Test Case ID** | <code>FR05-SUP-002</code> |
+| **Title** | NATIVE — RACE — Search Alpha rồi Beta |
+| **Preconditions** | Target native/build/locale/network như manifest.<br>Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case.<br>Catalog snapshot=full theo FR05-F; reset riêng trước case.<br>Native iOS theo manifest; API supporting không thay thế UI native. |
+| **Inputs** | Snapshot <code>full</code>; inputs=<code>{"search": "Alpha", "mode": "search"}</code> |
+| **Test Steps** | 1. Reset backend về snapshot full; kiểm tra row count và hash fixture.<br>2. Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.<br>3. Nhập chính xác 'Alpha' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending.<br>4. Proxy hold Alpha, gửi Beta, release Beta rồi Alpha; lưu thứ tự request/response. |
+| **Expected Result** | Search Alpha rồi Beta; response Beta về trước Alpha; danh sách cuối tương ứng Beta và nhãn Beta.<br>Assertions nguồn: <code>{"oracleKind": "derived"}</code> |
+| **Actual Result** | Beta trả trước và từng hiển thị Beta; sau khi Alpha cũ trả về, ô/nhãn vẫn Beta nhưng card đổi thành Alpha giá 999 ₫. Đây là derived latest-query-wins oracle.<br>[evidence FR05-SUP-002](fr05/evidence/fr05-run02/cumulative-observations.json)<br>[ảnh/log chi tiết](fr05/evidence/fr05-run01/native/FR05-TC-019-beta-first.ax.txt) |
+| **Status** | **Failed** |
+
+#### FR05-SUP-003 — NATIVE — H1 — Cần xác nhận cách ánh xạ exactly-one HTML h1 sang native heading trước verdict
+
+Tầng: NATIVE; Rule: FR05-R09
+
+| Trường | Nội dung |
+|---|---|
+| **Test Case ID** | <code>FR05-SUP-003</code> |
+| **Title** | NATIVE — H1 — Cần xác nhận cách ánh xạ exactly-one HTML h1 sang native heading trước verdict |
+| **Preconditions** | Target native/build/locale/network như manifest.<br>Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case.<br>Catalog snapshot=full theo FR05-F; reset riêng trước case.<br>Native iOS theo manifest; API supporting không thay thế UI native. |
+| **Inputs** | Snapshot <code>full</code>; inputs=<code>{"search": null, "mode": "home"}</code> |
+| **Test Steps** | 1. Reset backend về snapshot full; kiểm tra row count và hash fixture.<br>2. Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.<br>3. Không nhập search; quan sát danh sách, cuộn đến phần tử cuối để đối chiếu toàn bộ catalog. |
+| **Expected Result** | Cần xác nhận cách ánh xạ exactly-one HTML h1 sang native heading trước verdict; vẫn ghi native heading probe.<br>Assertions nguồn: <code>{"oracleKind": "unresolved"}</code> |
+| **Actual Result** | Native listing AX có Danh sách sản phẩm; thiếu mapping exactly-one HTML h1 sang native heading. Không lấy text node làm bằng chứng h1.<br>Giới hạn/lý do: ORACLE_UNRESOLVED<br>[evidence FR05-SUP-003](fr05/evidence/fr05-run02/cumulative-observations.json)<br>[ảnh/log chi tiết](fr05/evidence/fr05-run02/native/listing-ready.ax.txt) |
+| **Status** | **Blocked** |
+
+#### FR05-SUP-004 — NATIVE — TRIM — Ghi observation
+
+Tầng: NATIVE; Rule: FR05-R05
+
+| Trường | Nội dung |
+|---|---|
+| **Test Case ID** | <code>FR05-SUP-004</code> |
+| **Title** | NATIVE — TRIM — Ghi observation |
+| **Preconditions** | Target native/build/locale/network như manifest.<br>Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case.<br>Catalog snapshot=full theo FR05-F; reset riêng trước case.<br>Native iOS theo manifest; API supporting không thay thế UI native. |
+| **Inputs** | Snapshot <code>full</code>; inputs=<code>{"search": " Alpha ", "mode": "search"}</code> |
+| **Test Steps** | 1. Reset backend về snapshot full; kiểm tra row count và hash fixture.<br>2. Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.<br>3. Nhập chính xác ' Alpha ' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending. |
+| **Expected Result** | Ghi observation; chưa verdict do policy trim chưa có trong requirement. Không tính vào BVA length coverage.<br>Assertions nguồn: <code>{"oracleKind": "unresolved"}</code> |
+| **Actual Result** | Native nhập ' Alpha ', bấm Tìm; request /api/products?search=%20Alpha%20; HTTP200, response IDs=[]; screenshot/AX đã thu. Có probe thực, matching verdict vẫn Blocked vì chưa có policy.<br>Giới hạn/lý do: ORACLE_UNRESOLVED<br>[evidence FR05-SUP-004](fr05/evidence/fr05-run02/cumulative-observations.json)<br>[ảnh/log chi tiết](fr05/evidence/fr05-run02/native/trim.ax.txt) |
+| **Status** | **Blocked** |
+
+#### FR05-SUP-005 — NATIVE — WILDCARD — Ghi observation
+
+Tầng: NATIVE; Rule: FR05-R05
+
+| Trường | Nội dung |
+|---|---|
+| **Test Case ID** | <code>FR05-SUP-005</code> |
+| **Title** | NATIVE — WILDCARD — Ghi observation |
+| **Preconditions** | Target native/build/locale/network như manifest.<br>Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case.<br>Catalog snapshot=full theo FR05-F; reset riêng trước case.<br>Native iOS theo manifest; API supporting không thay thế UI native. |
+| **Inputs** | Snapshot <code>full</code>; inputs=<code>{"search": "%", "mode": "search"}</code> |
+| **Test Steps** | 1. Reset backend về snapshot full; kiểm tra row count và hash fixture.<br>2. Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.<br>3. Nhập chính xác '%' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending. |
+| **Expected Result** | Ghi observation; chưa verdict do policy literal wildcard chưa có trong requirement. Không tính vào BVA length coverage.<br>Assertions nguồn: <code>{"oracleKind": "unresolved"}</code> |
+| **Actual Result** | Native nhập '%', bấm Tìm; request /api/products?search=%25; HTTP200, response IDs=[101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112]; screenshot/AX đã thu. Có probe thực, matching verdict vẫn Blocked vì chưa có policy.<br>Giới hạn/lý do: ORACLE_UNRESOLVED<br>[evidence FR05-SUP-005](fr05/evidence/fr05-run02/cumulative-observations.json)<br>[ảnh/log chi tiết](fr05/evidence/fr05-run02/native/percent-only.ax.txt) |
+| **Status** | **Blocked** |
+
+#### FR05-SUP-006 — NATIVE — CASE — Ghi observation
+
+Tầng: NATIVE; Rule: FR05-R05
+
+| Trường | Nội dung |
+|---|---|
+| **Test Case ID** | <code>FR05-SUP-006</code> |
+| **Title** | NATIVE — CASE — Ghi observation |
+| **Preconditions** | Target native/build/locale/network như manifest.<br>Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case.<br>Catalog snapshot=full theo FR05-F; reset riêng trước case.<br>Native iOS theo manifest; API supporting không thay thế UI native. |
+| **Inputs** | Snapshot <code>full</code>; inputs=<code>{"search": "ALPHA", "mode": "search"}</code> |
+| **Test Steps** | 1. Reset backend về snapshot full; kiểm tra row count và hash fixture.<br>2. Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.<br>3. Nhập chính xác 'ALPHA' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending. |
+| **Expected Result** | Ghi observation; chưa verdict do policy case sensitivity chưa có trong requirement. Không tính vào BVA length coverage.<br>Assertions nguồn: <code>{"oracleKind": "unresolved"}</code> |
+| **Actual Result** | Native nhập 'ALPHA', bấm Tìm; request /api/products?search=ALPHA; HTTP200, response IDs=[101]; screenshot/AX đã thu. Có probe thực, matching verdict vẫn Blocked vì chưa có policy.<br>Giới hạn/lý do: ORACLE_UNRESOLVED<br>[evidence FR05-SUP-006](fr05/evidence/fr05-run02/cumulative-observations.json)<br>[ảnh/log chi tiết](fr05/evidence/fr05-run02/native/case-upper.ax.txt) |
+| **Status** | **Blocked** |
+
+#### FR05-SUP-007 — NATIVE — ACCENT — Ghi observation
+
+Tầng: NATIVE; Rule: FR05-R05
+
+| Trường | Nội dung |
+|---|---|
+| **Test Case ID** | <code>FR05-SUP-007</code> |
+| **Title** | NATIVE — ACCENT — Ghi observation |
+| **Preconditions** | Target native/build/locale/network như manifest.<br>Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case.<br>Catalog snapshot=full theo FR05-F; reset riêng trước case.<br>Native iOS theo manifest; API supporting không thay thế UI native. |
+| **Inputs** | Snapshot <code>full</code>; inputs=<code>{"search": "Ca phe", "mode": "search"}</code> |
+| **Test Steps** | 1. Reset backend về snapshot full; kiểm tra row count và hash fixture.<br>2. Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.<br>3. Nhập chính xác 'Ca phe' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending. |
+| **Expected Result** | Ghi observation; chưa verdict do policy diacritic sensitivity chưa có trong requirement. Không tính vào BVA length coverage.<br>Assertions nguồn: <code>{"oracleKind": "unresolved"}</code> |
+| **Actual Result** | Native nhập 'Ca phe', bấm Tìm; request /api/products?search=Ca%20phe; HTTP200, response IDs=[]; screenshot/AX đã thu. Có probe thực, matching verdict vẫn Blocked vì chưa có policy.<br>Giới hạn/lý do: ORACLE_UNRESOLVED<br>[evidence FR05-SUP-007](fr05/evidence/fr05-run02/cumulative-observations.json)<br>[ảnh/log chi tiết](fr05/evidence/fr05-run02/native/diacritics.ax.txt) |
+| **Status** | **Blocked** |
+
+#### FR05-SUP-008 — NATIVE — EMPTY-QUERY — Ghi observation
+
+Tầng: NATIVE; Rule: FR05-R05
+
+| Trường | Nội dung |
+|---|---|
+| **Test Case ID** | <code>FR05-SUP-008</code> |
+| **Title** | NATIVE — EMPTY-QUERY — Ghi observation |
+| **Preconditions** | Target native/build/locale/network như manifest.<br>Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case.<br>Catalog snapshot=full theo FR05-F; reset riêng trước case.<br>Native iOS theo manifest; API supporting không thay thế UI native. |
+| **Inputs** | Snapshot <code>full</code>; inputs=<code>{"search": "", "mode": "search"}</code> |
+| **Test Steps** | 1. Reset backend về snapshot full; kiểm tra row count và hash fixture.<br>2. Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.<br>3. Nhập chính xác '' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending. |
+| **Expected Result** | Ghi observation; chưa verdict do policy empty vs omitted chưa có trong requirement. Không tính vào BVA length coverage.<br>Assertions nguồn: <code>{"oracleKind": "unresolved"}</code> |
+| **Actual Result** | Native nhập '', bấm Tìm; request /api/products?search=; HTTP200, response IDs=[101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112]; screenshot/AX đã thu. Có probe thực, matching verdict vẫn Blocked vì chưa có policy.<br>Giới hạn/lý do: ORACLE_UNRESOLVED<br>[evidence FR05-SUP-008](fr05/evidence/fr05-run02/cumulative-observations.json)<br>[ảnh/log chi tiết](fr05/evidence/fr05-run02/native/empty-query.ax.txt) |
+| **Status** | **Blocked** |
+
+#### FR05-SUP-009 — NATIVE — ONE-CHAR — Ghi observation
+
+Tầng: NATIVE; Rule: FR05-R05
+
+| Trường | Nội dung |
+|---|---|
+| **Test Case ID** | <code>FR05-SUP-009</code> |
+| **Title** | NATIVE — ONE-CHAR — Ghi observation |
+| **Preconditions** | Target native/build/locale/network như manifest.<br>Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case.<br>Catalog snapshot=full theo FR05-F; reset riêng trước case.<br>Native iOS theo manifest; API supporting không thay thế UI native. |
+| **Inputs** | Snapshot <code>full</code>; inputs=<code>{"search": "A", "mode": "search"}</code> |
+| **Test Steps** | 1. Reset backend về snapshot full; kiểm tra row count và hash fixture.<br>2. Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.<br>3. Nhập chính xác 'A' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending. |
+| **Expected Result** | Ghi observation; chưa verdict do policy substring chưa có trong requirement. Không tính vào BVA length coverage.<br>Assertions nguồn: <code>{"oracleKind": "unresolved"}</code> |
+| **Actual Result** | Native nhập 'A', bấm Tìm; request /api/products?search=A; HTTP200, response IDs=[101, 102, 103, 106, 107, 108, 112]; screenshot/AX đã thu. Có probe thực, matching verdict vẫn Blocked vì chưa có policy.<br>Giới hạn/lý do: ORACLE_UNRESOLVED<br>[evidence FR05-SUP-009](fr05/evidence/fr05-run02/cumulative-observations.json)<br>[ảnh/log chi tiết](fr05/evidence/fr05-run02/native/substring.ax.txt) |
+| **Status** | **Blocked** |
+
+#### FR05-SUP-010 — NATIVE — SPACE — Ghi observation
+
+Tầng: NATIVE; Rule: FR05-R05
+
+| Trường | Nội dung |
+|---|---|
+| **Test Case ID** | <code>FR05-SUP-010</code> |
+| **Title** | NATIVE — SPACE — Ghi observation |
+| **Preconditions** | Target native/build/locale/network như manifest.<br>Không đăng nhập, không mở detail/cart; reset q/navigation/network trước case.<br>Catalog snapshot=full theo FR05-F; reset riêng trước case.<br>Native iOS theo manifest; API supporting không thay thế UI native. |
+| **Inputs** | Snapshot <code>full</code>; inputs=<code>{"search": "   ", "mode": "search"}</code> |
+| **Test Steps** | 1. Reset backend về snapshot full; kiểm tra row count và hash fixture.<br>2. Mở Home từ state sạch; chờ response trước khi nhập, trừ case loading.<br>3. Nhập chính xác '   ' vào search; bấm Tìm; đợi request hoàn tất, trừ case pending. |
+| **Expected Result** | Ghi observation; chưa verdict do policy whitespace chưa có trong requirement. Không tính vào BVA length coverage.<br>Assertions nguồn: <code>{"oracleKind": "unresolved"}</code> |
+| **Actual Result** | Native nhập '   ', bấm Tìm; request /api/products?search=%20%20%20; HTTP200, response IDs=[]; screenshot/AX đã thu. Có probe thực, matching verdict vẫn Blocked vì chưa có policy.<br>Giới hạn/lý do: ORACLE_UNRESOLVED<br>[evidence FR05-SUP-010](fr05/evidence/fr05-run02/cumulative-observations.json)<br>[ảnh/log chi tiết](fr05/evidence/fr05-run02/native/whitespace.ax.txt) |
+| **Status** | **Blocked** |
+
+<a id="appendix-fr15-supplementary"></a>
+
+### B. FR-15 — 11 case bổ sung
+
+#### FR15-SUP-001 — API — Thêm sản phẩm, tên L=128, giá=0.5, target=101
+
+Tầng: API; Rule: FR15-R06
+
+| Trường | Nội dung |
+|---|---|
+| **Test Case ID** | <code>FR15-SUP-001</code> |
+| **Title** | API — Thêm sản phẩm, tên L=128, giá=0.5, target=101 |
+| **Preconditions** | token partition=admin.<br>Target=101 phải tồn tại nếu thao tác yêu cầu, trừ probe ID vắng; snapshot toàn bộ sản phẩm trước/sau. |
+| **Inputs** | Input dự định: <code>{"body": {"name": repeat("A",128), "price": 0.5, "description": "Nominal description", "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=", "category_id": 10}, "target": 101, "auth": "admin", "mode": "create"}</code> |
+| **Test Steps** | 1. Reset fixture bằng setup độc lập và snapshot tất cả sản phẩm.<br>2. Dùng đúng partition xác thực; POST /api/products với input dự định.<br>3. Lưu request/response và state trước/sau; đối chiếu target cùng mọi sản phẩm khác. |
+| **Expected Result** | Thêm đúng một sản phẩm, đọc lại đúng payload; mọi sản phẩm cũ giữ nguyên.<br>Oracle nguồn: <code>{"outcome": "accept", "stateContract": "Create", "description": "Representable positive price 0.5 satisfies numeric &gt;0; adjacency precision remains unresolved"}</code>; oracleStatus=<code>confirmed</code> |
+| **Actual Result** | Quan sát: <code>{"http": 200, "body": {"message": "Product created", "id": 304}, "failures": [], "beforeCount": 3, "afterCount": 4}</code><br>Snapshot: thêm IDs=<code>[304]</code>; xóa IDs=<code>[]</code>; sửa IDs=<code>[]</code><br>[evidence FR15-SUP-001](fr15/evidence/fr15-run03/api/observations.json)<br>[ảnh/log chi tiết](fr15/evidence/fr15-run03/api/FR15-TC-032.json) |
+| **Status** | **Passed** |
+
+#### FR15-SUP-002 — API — Thêm sản phẩm, tên L=3, giá=100000, target=101
+
+Tầng: API; Rule: FR15-R05
+
+| Trường | Nội dung |
+|---|---|
+| **Test Case ID** | <code>FR15-SUP-002</code> |
+| **Title** | API — Thêm sản phẩm, tên L=3, giá=100000, target=101 |
+| **Preconditions** | token partition=admin.<br>Target=101 phải tồn tại nếu thao tác yêu cầu, trừ probe ID vắng; snapshot toàn bộ sản phẩm trước/sau. |
+| **Inputs** | Input dự định: <code>{"body": {"name": "   ", "price": 100000, "description": "Nominal description", "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=", "category_id": 10}, "target": 101, "auth": "admin", "mode": "create"}</code> |
+| **Test Steps** | 1. Reset fixture bằng setup độc lập và snapshot tất cả sản phẩm.<br>2. Dùng đúng partition xác thực; POST /api/products với input dự định.<br>3. Lưu request/response và state trước/sau; đối chiếu target cùng mọi sản phẩm khác. |
+| **Expected Result** | Chưa có oracle đủ để kết luận Pass/Fail; ghi nhận hành vi và bảo toàn trạng thái để review.<br>Oracle nguồn: <code>{"outcome": "observe", "stateContract": "Create", "description": "Whitespace name characterization; trim undefined"}</code>; oracleStatus=<code>unresolved</code> |
+| **Actual Result** | Quan sát: <code>{"http": 200, "body": {"message": "Product created", "id": 304}, "failures": [], "beforeCount": 3, "afterCount": 4}</code><br>Giới hạn oracle: oracle-unresolved<br>Snapshot: thêm IDs=<code>[304]</code>; xóa IDs=<code>[]</code>; sửa IDs=<code>[]</code><br>[evidence FR15-SUP-002](fr15/evidence/fr15-run03/api/observations.json)<br>[ảnh/log chi tiết](fr15/evidence/fr15-run03/api/FR15-TC-033.json) |
+| **Status** | **Blocked** |
+
+#### FR15-SUP-003 — API — Thêm sản phẩm, tên L=255, giá=100000, target=101
+
+Tầng: API; Rule: FR15-R05
+
+| Trường | Nội dung |
+|---|---|
+| **Test Case ID** | <code>FR15-SUP-003</code> |
+| **Title** | API — Thêm sản phẩm, tên L=255, giá=100000, target=101 |
+| **Preconditions** | token partition=admin.<br>Target=101 phải tồn tại nếu thao tác yêu cầu, trừ probe ID vắng; snapshot toàn bộ sản phẩm trước/sau. |
+| **Inputs** | Input dự định: <code>{"body": {"name": repeat("😀",255), "price": 100000, "description": "Nominal description", "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=", "category_id": 10}, "target": 101, "auth": "admin", "mode": "create"}</code> |
+| **Test Steps** | 1. Reset fixture bằng setup độc lập và snapshot tất cả sản phẩm.<br>2. Dùng đúng partition xác thực; POST /api/products với input dự định.<br>3. Lưu request/response và state trước/sau; đối chiếu target cùng mọi sản phẩm khác. |
+| **Expected Result** | Chưa có oracle đủ để kết luận Pass/Fail; ghi nhận hành vi và bảo toàn trạng thái để review.<br>Oracle nguồn: <code>{"outcome": "observe", "stateContract": "Create", "description": "Unicode emoji name characterization; length unit undefined"}</code>; oracleStatus=<code>unresolved</code> |
+| **Actual Result** | Quan sát: <code>{"http": 200, "body": {"message": "Product created", "id": 304}, "failures": [], "beforeCount": 3, "afterCount": 4}</code><br>Giới hạn oracle: oracle-unresolved<br>Snapshot: thêm IDs=<code>[304]</code>; xóa IDs=<code>[]</code>; sửa IDs=<code>[]</code><br>[evidence FR15-SUP-003](fr15/evidence/fr15-run03/api/observations.json)<br>[ảnh/log chi tiết](fr15/evidence/fr15-run03/api/FR15-TC-034.json) |
+| **Status** | **Blocked** |
+
+#### FR15-SUP-004 — API — Sửa sản phẩm, tên L=128, giá=0.5, target=101
+
+Tầng: API; Rule: FR15-R06
+
+| Trường | Nội dung |
+|---|---|
+| **Test Case ID** | <code>FR15-SUP-004</code> |
+| **Title** | API — Sửa sản phẩm, tên L=128, giá=0.5, target=101 |
+| **Preconditions** | token partition=admin.<br>Target=101 phải tồn tại nếu thao tác yêu cầu, trừ probe ID vắng; snapshot toàn bộ sản phẩm trước/sau. |
+| **Inputs** | Input dự định: <code>{"body": {"name": repeat("A",128), "price": 0.5, "description": "Nominal description", "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=", "category_id": 10}, "target": 101, "auth": "admin", "mode": "update"}</code> |
+| **Test Steps** | 1. Reset fixture bằng setup độc lập và snapshot tất cả sản phẩm.<br>2. Dùng đúng partition xác thực; PUT /api/products/101 với input dự định.<br>3. Lưu request/response và state trước/sau; đối chiếu target cùng mọi sản phẩm khác. |
+| **Expected Result** | Chỉ target khớp payload mới; các field không sửa và các sản phẩm khác giữ nguyên; UI đúng ngay sau lưu và sau reload.<br>Oracle nguồn: <code>{"outcome": "accept", "stateContract": "Update", "description": "Representable positive price 0.5 satisfies numeric &gt;0; adjacency precision remains unresolved"}</code>; oracleStatus=<code>confirmed</code> |
+| **Actual Result** | Quan sát: <code>{"http": 200, "body": {"message": "Product updated"}, "failures": [], "beforeCount": 3, "afterCount": 3}</code><br>Snapshot: thêm IDs=<code>[]</code>; xóa IDs=<code>[]</code>; sửa IDs=<code>[101]</code><br>[evidence FR15-SUP-004](fr15/evidence/fr15-run03/api/observations.json)<br>[ảnh/log chi tiết](fr15/evidence/fr15-run03/api/FR15-TC-066.json) |
+| **Status** | **Passed** |
+
+#### FR15-SUP-005 — API — Sửa sản phẩm, tên L=3, giá=100000, target=101
+
+Tầng: API; Rule: FR15-R05
+
+| Trường | Nội dung |
+|---|---|
+| **Test Case ID** | <code>FR15-SUP-005</code> |
+| **Title** | API — Sửa sản phẩm, tên L=3, giá=100000, target=101 |
+| **Preconditions** | token partition=admin.<br>Target=101 phải tồn tại nếu thao tác yêu cầu, trừ probe ID vắng; snapshot toàn bộ sản phẩm trước/sau. |
+| **Inputs** | Input dự định: <code>{"body": {"name": "   ", "price": 100000, "description": "Nominal description", "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=", "category_id": 10}, "target": 101, "auth": "admin", "mode": "update"}</code> |
+| **Test Steps** | 1. Reset fixture bằng setup độc lập và snapshot tất cả sản phẩm.<br>2. Dùng đúng partition xác thực; PUT /api/products/101 với input dự định.<br>3. Lưu request/response và state trước/sau; đối chiếu target cùng mọi sản phẩm khác. |
+| **Expected Result** | Chưa có oracle đủ để kết luận Pass/Fail; ghi nhận hành vi và bảo toàn trạng thái để review.<br>Oracle nguồn: <code>{"outcome": "observe", "stateContract": "Update", "description": "Whitespace name characterization; trim undefined"}</code>; oracleStatus=<code>unresolved</code> |
+| **Actual Result** | Quan sát: <code>{"http": 200, "body": {"message": "Product updated"}, "failures": [], "beforeCount": 3, "afterCount": 3}</code><br>Giới hạn oracle: oracle-unresolved<br>Snapshot: thêm IDs=<code>[]</code>; xóa IDs=<code>[]</code>; sửa IDs=<code>[101]</code><br>[evidence FR15-SUP-005](fr15/evidence/fr15-run03/api/observations.json)<br>[ảnh/log chi tiết](fr15/evidence/fr15-run03/api/FR15-TC-067.json) |
+| **Status** | **Blocked** |
+
+#### FR15-SUP-006 — API — Sửa sản phẩm, tên L=255, giá=100000, target=101
+
+Tầng: API; Rule: FR15-R05
+
+| Trường | Nội dung |
+|---|---|
+| **Test Case ID** | <code>FR15-SUP-006</code> |
+| **Title** | API — Sửa sản phẩm, tên L=255, giá=100000, target=101 |
+| **Preconditions** | token partition=admin.<br>Target=101 phải tồn tại nếu thao tác yêu cầu, trừ probe ID vắng; snapshot toàn bộ sản phẩm trước/sau. |
+| **Inputs** | Input dự định: <code>{"body": {"name": repeat("😀",255), "price": 100000, "description": "Nominal description", "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=", "category_id": 10}, "target": 101, "auth": "admin", "mode": "update"}</code> |
+| **Test Steps** | 1. Reset fixture bằng setup độc lập và snapshot tất cả sản phẩm.<br>2. Dùng đúng partition xác thực; PUT /api/products/101 với input dự định.<br>3. Lưu request/response và state trước/sau; đối chiếu target cùng mọi sản phẩm khác. |
+| **Expected Result** | Chưa có oracle đủ để kết luận Pass/Fail; ghi nhận hành vi và bảo toàn trạng thái để review.<br>Oracle nguồn: <code>{"outcome": "observe", "stateContract": "Update", "description": "Unicode emoji name characterization; length unit undefined"}</code>; oracleStatus=<code>unresolved</code> |
+| **Actual Result** | Quan sát: <code>{"http": 200, "body": {"message": "Product updated"}, "failures": [], "beforeCount": 3, "afterCount": 3}</code><br>Giới hạn oracle: oracle-unresolved<br>Snapshot: thêm IDs=<code>[]</code>; xóa IDs=<code>[]</code>; sửa IDs=<code>[101]</code><br>[evidence FR15-SUP-006](fr15/evidence/fr15-run03/api/observations.json)<br>[ảnh/log chi tiết](fr15/evidence/fr15-run03/api/FR15-TC-068.json) |
+| **Status** | **Blocked** |
+
+#### FR15-SUP-007 — WEB — Thêm sản phẩm, tên L=128, giá=0.5, target=101
+
+Tầng: WEB; Rule: FR15-R06
+
+| Trường | Nội dung |
+|---|---|
+| **Test Case ID** | <code>FR15-SUP-007</code> |
+| **Title** | WEB — Thêm sản phẩm, tên L=128, giá=0.5, target=101 |
+| **Preconditions** | token partition=admin.<br>Target=101 phải tồn tại nếu thao tác yêu cầu, trừ probe ID vắng; snapshot toàn bộ sản phẩm trước/sau. |
+| **Inputs** | Input dự định: <code>{"body": {"name": repeat("A",128), "price": 0.5, "description": "Nominal description", "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=", "category_id": 10}, "target": 101, "auth": "admin", "mode": "create"}</code> |
+| **Test Steps** | 1. Reset fixture bằng setup độc lập và snapshot tất cả sản phẩm.<br>2. Dùng đúng partition xác thực; mở Admin Product, chọn đúng target và thực hiện Thêm với input dự định.<br>3. Lưu request/response và state trước/sau; đối chiếu target cùng mọi sản phẩm khác.<br>4. Ghi inputEffective và UI ngay sau thao tác; reload, ghi UI lần nữa. HTML chặn input không chứng minh API đã validate. |
+| **Expected Result** | Thêm đúng một sản phẩm, đọc lại đúng payload; mọi sản phẩm cũ giữ nguyên.<br>Oracle nguồn: <code>{"outcome": "accept", "stateContract": "Create", "description": "Representable positive price 0.5 satisfies numeric &gt;0; adjacency precision remains unresolved"}</code>; oracleStatus=<code>confirmed</code> |
+| **Actual Result** | Quan sát: <code>{"failures": [], "beforeCount": 3, "afterCount": 4, "mutationCount": 1, "htmlBlocked": false, "response": {"statusCode": 200, "body": {"message": "Product created", "id": 304}}}</code><br>Snapshot: thêm IDs=<code>[304]</code>; xóa IDs=<code>[]</code>; sửa IDs=<code>[]</code><br>Input thực tế sau nhập UI: <code>{"name": repeat("A",128), "price": "0.5", "category_id": "10"}</code><br>[evidence FR15-SUP-007](fr15/evidence/fr15-run03/web/observations.json)<br>[ảnh/log chi tiết](fr15/evidence/fr15-run03/web/screenshots/FR15-TC-091_immediate.png) |
+| **Status** | **Passed** |
+
+#### FR15-SUP-008 — WEB — Sửa sản phẩm, tên L=128, giá=0.5, target=101
+
+Tầng: WEB; Rule: FR15-R06
+
+| Trường | Nội dung |
+|---|---|
+| **Test Case ID** | <code>FR15-SUP-008</code> |
+| **Title** | WEB — Sửa sản phẩm, tên L=128, giá=0.5, target=101 |
+| **Preconditions** | token partition=admin.<br>Target=101 phải tồn tại nếu thao tác yêu cầu, trừ probe ID vắng; snapshot toàn bộ sản phẩm trước/sau. |
+| **Inputs** | Input dự định: <code>{"body": {"name": repeat("A",128), "price": 0.5, "description": "Nominal description", "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=", "category_id": 10}, "target": 101, "auth": "admin", "mode": "update"}</code> |
+| **Test Steps** | 1. Reset fixture bằng setup độc lập và snapshot tất cả sản phẩm.<br>2. Dùng đúng partition xác thực; mở Admin Product, chọn đúng target và thực hiện Sửa với input dự định.<br>3. Lưu request/response và state trước/sau; đối chiếu target cùng mọi sản phẩm khác.<br>4. Ghi inputEffective và UI ngay sau thao tác; reload, ghi UI lần nữa. HTML chặn input không chứng minh API đã validate. |
+| **Expected Result** | Chỉ target khớp payload mới; các field không sửa và các sản phẩm khác giữ nguyên; UI đúng ngay sau lưu và sau reload.<br>Oracle nguồn: <code>{"outcome": "accept", "stateContract": "Update", "description": "Representable positive price 0.5 satisfies numeric &gt;0; adjacency precision remains unresolved"}</code>; oracleStatus=<code>confirmed</code> |
+| **Actual Result** | Quan sát: <code>{"failures": ["ui-immediate-correct"], "beforeCount": 3, "afterCount": 3, "mutationCount": 1, "htmlBlocked": false, "response": {"statusCode": 200, "body": {"message": "Product updated"}}}</code><br>Assertion: UI ngay sau thao tác không khớp kết quả kỳ vọng<br>Snapshot: thêm IDs=<code>[]</code>; xóa IDs=<code>[]</code>; sửa IDs=<code>[101]</code><br>Input thực tế sau nhập UI: <code>{"name": repeat("A",128), "price": "0.5", "category_id": "10"}</code><br>[evidence FR15-SUP-008](fr15/evidence/fr15-run03/web/observations.json)<br>[ảnh/log chi tiết](fr15/evidence/fr15-run03/web/screenshots/FR15-TC-114_immediate.png) |
+| **Status** | **Failed** |
+
+#### FR15-SUP-009 — API — Xem sản phẩm, tên L=128, giá=100000, target=999999
+
+Tầng: API; Rule: FR15-R02
+
+| Trường | Nội dung |
+|---|---|
+| **Test Case ID** | <code>FR15-SUP-009</code> |
+| **Title** | API — Xem sản phẩm, tên L=128, giá=100000, target=999999 |
+| **Preconditions** | token partition=admin.<br>Target=999999 phải tồn tại nếu thao tác yêu cầu, trừ probe ID vắng; snapshot toàn bộ sản phẩm trước/sau. |
+| **Inputs** | Input dự định: <code>{"body": {"name": repeat("A",128), "price": 100000, "description": "Nominal description", "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=", "category_id": 10}, "target": 999999, "auth": "admin", "mode": "detail"}</code> |
+| **Test Steps** | 1. Reset fixture bằng setup độc lập và snapshot tất cả sản phẩm.<br>2. Dùng đúng partition xác thực; GET /api/products/999999 với input dự định.<br>3. Lưu request/response và state trước/sau; đối chiếu target cùng mọi sản phẩm khác. |
+| **Expected Result** | Chưa có oracle đủ để kết luận Pass/Fail; ghi nhận hành vi và bảo toàn trạng thái để review.<br>Oracle nguồn: <code>{"outcome": "observe", "stateContract": "Read", "description": "Missing target characterization; exact response not specified"}</code>; oracleStatus=<code>unresolved</code> |
+| **Actual Result** | Quan sát: <code>{"http": 200, "body": {}, "failures": [], "beforeCount": 3, "afterCount": 3}</code><br>Giới hạn oracle: oracle-unresolved<br>Snapshot: thêm IDs=<code>[]</code>; xóa IDs=<code>[]</code>; sửa IDs=<code>[]</code><br>[evidence FR15-SUP-009](fr15/evidence/fr15-run03/api/observations.json)<br>[ảnh/log chi tiết](fr15/evidence/fr15-run03/api/FR15-TC-148.json) |
+| **Status** | **Blocked** |
+
+#### FR15-SUP-010 — API — Sửa sản phẩm, tên L=128, giá=100000, target=999999
+
+Tầng: API; Rule: FR15-R03
+
+| Trường | Nội dung |
+|---|---|
+| **Test Case ID** | <code>FR15-SUP-010</code> |
+| **Title** | API — Sửa sản phẩm, tên L=128, giá=100000, target=999999 |
+| **Preconditions** | token partition=admin.<br>Target=999999 phải tồn tại nếu thao tác yêu cầu, trừ probe ID vắng; snapshot toàn bộ sản phẩm trước/sau. |
+| **Inputs** | Input dự định: <code>{"body": {"name": repeat("A",128), "price": 100000, "description": "Nominal description", "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=", "category_id": 10}, "target": 999999, "auth": "admin", "mode": "update"}</code> |
+| **Test Steps** | 1. Reset fixture bằng setup độc lập và snapshot tất cả sản phẩm.<br>2. Dùng đúng partition xác thực; PUT /api/products/999999 với input dự định.<br>3. Lưu request/response và state trước/sau; đối chiếu target cùng mọi sản phẩm khác. |
+| **Expected Result** | Chưa có oracle đủ để kết luận Pass/Fail; ghi nhận hành vi và bảo toàn trạng thái để review.<br>Oracle nguồn: <code>{"outcome": "observe", "stateContract": "Update", "description": "Missing target characterization; exact response not specified"}</code>; oracleStatus=<code>unresolved</code> |
+| **Actual Result** | Quan sát: <code>{"http": 200, "body": {"message": "Product updated"}, "failures": [], "beforeCount": 3, "afterCount": 3}</code><br>Giới hạn oracle: oracle-unresolved<br>Snapshot: thêm IDs=<code>[]</code>; xóa IDs=<code>[]</code>; sửa IDs=<code>[]</code><br>[evidence FR15-SUP-010](fr15/evidence/fr15-run03/api/observations.json)<br>[ảnh/log chi tiết](fr15/evidence/fr15-run03/api/FR15-TC-149.json) |
+| **Status** | **Blocked** |
+
+#### FR15-SUP-011 — API — Xóa sản phẩm, tên L=128, giá=100000, target=999999
+
+Tầng: API; Rule: FR15-R04
+
+| Trường | Nội dung |
+|---|---|
+| **Test Case ID** | <code>FR15-SUP-011</code> |
+| **Title** | API — Xóa sản phẩm, tên L=128, giá=100000, target=999999 |
+| **Preconditions** | token partition=admin.<br>Target=999999 phải tồn tại nếu thao tác yêu cầu, trừ probe ID vắng; snapshot toàn bộ sản phẩm trước/sau. |
+| **Inputs** | Input dự định: <code>{"body": {"name": repeat("A",128), "price": 100000, "description": "Nominal description", "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=", "category_id": 10}, "target": 999999, "auth": "admin", "mode": "delete"}</code> |
+| **Test Steps** | 1. Reset fixture bằng setup độc lập và snapshot tất cả sản phẩm.<br>2. Dùng đúng partition xác thực; DELETE /api/products/999999 với input dự định.<br>3. Lưu request/response và state trước/sau; đối chiếu target cùng mọi sản phẩm khác. |
+| **Expected Result** | Chưa có oracle đủ để kết luận Pass/Fail; ghi nhận hành vi và bảo toàn trạng thái để review.<br>Oracle nguồn: <code>{"outcome": "observe", "stateContract": "Delete", "description": "Missing target characterization; exact response not specified"}</code>; oracleStatus=<code>unresolved</code> |
+| **Actual Result** | Quan sát: <code>{"http": 200, "body": {"message": "Product deleted"}, "failures": [], "beforeCount": 3, "afterCount": 3}</code><br>Giới hạn oracle: oracle-unresolved<br>Snapshot: thêm IDs=<code>[]</code>; xóa IDs=<code>[]</code>; sửa IDs=<code>[]</code><br>[evidence FR15-SUP-011](fr15/evidence/fr15-run03/api/observations.json)<br>[ảnh/log chi tiết](fr15/evidence/fr15-run03/api/FR15-TC-150.json) |
+| **Status** | **Blocked** |

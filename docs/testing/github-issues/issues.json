@@ -1,0 +1,321 @@
+{
+  "repository": "thuytranj/eshop-sut",
+  "evidence_ref": "46f7bbd7d356bc25a94f32d74fcbc4d3383d2663",
+  "published": false,
+  "issues": [
+    {
+      "bug_id": "BUG-FR03-01",
+      "title": "[BUG]: [FR-03] [BUG-FR03-01] Backend cấp phát mã OTP 4 chữ số thay vì 6 chữ số ngẫu nhiên",
+      "body_file": "BUG-FR03-01.md",
+      "classification": "Observed",
+      "suggested_labels": [
+        "type: bug",
+        "status: new",
+        "fr-03",
+        "severity:high",
+        "priority:p1"
+      ]
+    },
+    {
+      "bug_id": "BUG-FR03-02",
+      "title": "[BUG]: [FR-03] [BUG-FR03-02] API chấp nhận mật khẩu mới vi phạm độ dài hoặc độ mạnh",
+      "body_file": "BUG-FR03-02.md",
+      "classification": "Observed",
+      "suggested_labels": [
+        "type: bug",
+        "status: new",
+        "fr-03",
+        "severity:high",
+        "priority:p1"
+      ]
+    },
+    {
+      "bug_id": "BUG-FR03-03",
+      "title": "[BUG]: [FR-03] [BUG-FR03-03] Giao diện Web thiếu chỉ báo bước (Step Indicator)",
+      "body_file": "BUG-FR03-03.md",
+      "classification": "Observed",
+      "suggested_labels": [
+        "type: bug",
+        "status: new",
+        "fr-03",
+        "severity:low",
+        "priority:p3"
+      ]
+    },
+    {
+      "bug_id": "BUG-FR03-04",
+      "title": "[BUG]: [Needs clarification] [FR-03] [BUG-FR03-04] Nghi vấn thiếu liên kết quay lại đăng nhập trong form bước 1",
+      "body_file": "BUG-FR03-04.md",
+      "classification": "Suspected",
+      "suggested_labels": [
+        "status: new",
+        "needs-clarification",
+        "fr-03",
+        "severity:medium",
+        "priority:p2"
+      ]
+    },
+    {
+      "bug_id": "BUG-FR03-05",
+      "title": "[BUG]: [FR-03] [BUG-FR03-05] Form Bước 2 hoàn toàn thiếu trường \"Xác nhận mật khẩu mới\"",
+      "body_file": "BUG-FR03-05.md",
+      "classification": "Observed",
+      "suggested_labels": [
+        "type: bug",
+        "status: new",
+        "fr-03",
+        "severity:high",
+        "priority:p1"
+      ]
+    },
+    {
+      "bug_id": "BUG-FR03-06",
+      "title": "[BUG]: [FR-03] [BUG-FR03-06] Regex kiểm tra mật khẩu phía Frontend Web bị lỗi ngược (Yêu cầu khoảng trắng, từ chối ký tự đặc biệt)",
+      "body_file": "BUG-FR03-06.md",
+      "classification": "Observed",
+      "suggested_labels": [
+        "type: bug",
+        "status: new",
+        "fr-03",
+        "severity:high",
+        "priority:p1"
+      ]
+    },
+    {
+      "bug_id": "FR05-BUG-001",
+      "title": "[BUG]: [FR-05] [FR05-BUG-001] Search tên chứa apostrophe trả Database Error",
+      "body_file": "FR05-BUG-001.md",
+      "classification": "Observed",
+      "suggested_labels": [
+        "type: bug",
+        "status: new",
+        "fr-05",
+        "severity:high",
+        "priority:p1"
+      ]
+    },
+    {
+      "bug_id": "FR05-BUG-002",
+      "title": "[BUG]: [FR-05] [FR05-BUG-002] Mobile không bảo toàn reserved characters trong search query",
+      "body_file": "FR05-BUG-002.md",
+      "classification": "Observed",
+      "suggested_labels": [
+        "type: bug",
+        "status: new",
+        "fr-05",
+        "severity:high",
+        "priority:p1"
+      ]
+    },
+    {
+      "bug_id": "FR05-BUG-003",
+      "title": "[BUG]: [FR-05] [FR05-BUG-003] Search success rỗng không có empty state",
+      "body_file": "FR05-BUG-003.md",
+      "classification": "Observed",
+      "suggested_labels": [
+        "type: bug",
+        "status: new",
+        "fr-05",
+        "severity:medium",
+        "priority:p2"
+      ]
+    },
+    {
+      "bug_id": "FR05-BUG-004",
+      "title": "[BUG]: [FR-05] [FR05-BUG-004] Ảnh nguồn vuông bị stretch thành hình chữ nhật",
+      "body_file": "FR05-BUG-004.md",
+      "classification": "Observed",
+      "suggested_labels": [
+        "type: bug",
+        "status: new",
+        "fr-05",
+        "severity:medium",
+        "priority:p2"
+      ]
+    },
+    {
+      "bug_id": "FR05-BUG-005",
+      "title": "[BUG]: [Needs clarification] [FR-05] [FR05-BUG-005] Response cũ ghi đè card trong khi keyword vẫn là query mới",
+      "body_file": "FR05-BUG-005.md",
+      "classification": "Derived",
+      "suggested_labels": [
+        "status: new",
+        "needs-clarification",
+        "fr-05",
+        "severity:high",
+        "priority:p1"
+      ]
+    },
+    {
+      "bug_id": "FR07-BUG-001",
+      "title": "[BUG]: [FR-07] [FR07-BUG-001] Thêm cùng sản phẩm vào giỏ không gộp số lượng mà tạo dòng mới",
+      "body_file": "FR07-BUG-001.md",
+      "classification": "Observed",
+      "suggested_labels": [
+        "type: bug",
+        "status: new",
+        "fr-07",
+        "severity:high",
+        "priority:p1"
+      ]
+    },
+    {
+      "bug_id": "FR07-BUG-002",
+      "title": "[BUG]: [FR-07] [FR07-BUG-002] Bảng giỏ hàng thiếu các nút điều khiển '+' và '-' để chỉnh số lượng",
+      "body_file": "FR07-BUG-002.md",
+      "classification": "Observed",
+      "suggested_labels": [
+        "type: bug",
+        "status: new",
+        "fr-07",
+        "severity:high",
+        "priority:p1"
+      ]
+    },
+    {
+      "bug_id": "FR07-BUG-003",
+      "title": "[BUG]: [FR-07] [FR07-BUG-003] Nút Xóa sản phẩm xóa lập tức mà không có Dialog xác nhận",
+      "body_file": "FR07-BUG-003.md",
+      "classification": "Observed",
+      "suggested_labels": [
+        "type: bug",
+        "status: new",
+        "fr-07",
+        "severity:medium",
+        "priority:p2"
+      ]
+    },
+    {
+      "bug_id": "FR07-BUG-004",
+      "title": "[BUG]: [FR-07] [FR07-BUG-004] Sai tiêu đề cột 'Đơn giá' thành 'Giá' trên bảng giỏ hàng",
+      "body_file": "FR07-BUG-004.md",
+      "classification": "Observed",
+      "suggested_labels": [
+        "type: bug",
+        "status: new",
+        "fr-07",
+        "severity:low",
+        "priority:p3"
+      ]
+    },
+    {
+      "bug_id": "FR07-BUG-005",
+      "title": "[BUG]: [FR-07] [FR07-BUG-005] Nhãn hiển thị tổng tiền bị sai thành 'Tổng tạm tính:' thay vì 'Tổng cộng'",
+      "body_file": "FR07-BUG-005.md",
+      "classification": "Observed",
+      "suggested_labels": [
+        "type: bug",
+        "status: new",
+        "fr-07",
+        "severity:low",
+        "priority:p3"
+      ]
+    },
+    {
+      "bug_id": "FR07-BUG-006",
+      "title": "[BUG]: [FR-07] [FR07-BUG-006] Giỏ hàng trống không có hình minh họa theo yêu cầu đặc tả",
+      "body_file": "FR07-BUG-006.md",
+      "classification": "Observed",
+      "suggested_labels": [
+        "type: bug",
+        "status: new",
+        "fr-07",
+        "severity:low",
+        "priority:p3"
+      ]
+    },
+    {
+      "bug_id": "FR07-BUG-007",
+      "title": "[BUG]: [FR-07] [FR07-BUG-007] [Dependency] Nút 'Thêm vào giỏ hàng' không hoạt động ở lần bấm đầu tiên",
+      "body_file": "FR07-BUG-007.md",
+      "classification": "Observed",
+      "suggested_labels": [
+        "type: bug",
+        "status: new",
+        "fr-07",
+        "severity:high",
+        "priority:p1",
+        "dependency"
+      ]
+    },
+    {
+      "bug_id": "FR07-BUG-008",
+      "title": "[BUG]: [FR-07] [FR07-BUG-008] Nhãn nút quay lại trang chủ trên giỏ hàng có sản phẩm bị sai thành '← Mua tiếp' thay vì 'Tiếp tục mua sắm'",
+      "body_file": "FR07-BUG-008.md",
+      "classification": "Observed",
+      "suggested_labels": [
+        "type: bug",
+        "status: new",
+        "fr-07",
+        "severity:low",
+        "priority:p3"
+      ]
+    },
+    {
+      "bug_id": "FR15-BUG-001",
+      "title": "[BUG]: [FR-15] [FR15-BUG-001] Không kiểm tra đầy đủ tên bắt buộc và giới hạn 255 ký tự",
+      "body_file": "FR15-BUG-001.md",
+      "classification": "Observed",
+      "suggested_labels": [
+        "type: bug",
+        "status: new",
+        "fr-15",
+        "severity:high",
+        "priority:p1"
+      ]
+    },
+    {
+      "bug_id": "FR15-BUG-002",
+      "title": "[BUG]: [FR-15] [FR15-BUG-002] Không kiểm tra đầy đủ giá bắt buộc, dạng số và điều kiện lớn hơn 0",
+      "body_file": "FR15-BUG-002.md",
+      "classification": "Observed",
+      "suggested_labels": [
+        "type: bug",
+        "status: new",
+        "fr-15",
+        "severity:high",
+        "priority:p1"
+      ]
+    },
+    {
+      "bug_id": "FR15-BUG-003",
+      "title": "[BUG]: [FR-15] [FR15-BUG-003] Cho phép lưu sản phẩm với danh mục bị thiếu hoặc không tồn tại",
+      "body_file": "FR15-BUG-003.md",
+      "classification": "Observed",
+      "suggested_labels": [
+        "type: bug",
+        "status: new",
+        "fr-15",
+        "severity:high",
+        "priority:p1"
+      ]
+    },
+    {
+      "bug_id": "FR15-BUG-004",
+      "title": "[BUG]: [FR-15] [FR15-BUG-004] Sửa một sản phẩm làm sai tên sản phẩm khác và để dữ liệu UI của target bị cũ",
+      "body_file": "FR15-BUG-004.md",
+      "classification": "Observed",
+      "suggested_labels": [
+        "type: bug",
+        "status: new",
+        "fr-15",
+        "severity:high",
+        "priority:p1"
+      ]
+    },
+    {
+      "bug_id": "FR15-BUG-005",
+      "title": "[BUG]: [FR-15] [FR15-BUG-005] [Dependency FR-12] API ghi sản phẩm không chặn token thiếu, lỗi hoặc không có quyền admin",
+      "body_file": "FR15-BUG-005.md",
+      "classification": "Observed",
+      "suggested_labels": [
+        "type: bug",
+        "status: new",
+        "fr-15",
+        "severity:high",
+        "priority:p1",
+        "dependency"
+      ]
+    }
+  ]
+}
