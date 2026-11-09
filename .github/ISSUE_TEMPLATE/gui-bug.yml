@@ -1,0 +1,97 @@
+name: 'Báo cáo Lỗi GUI EShop (HW03)'
+description: 'Mẫu báo cáo lỗi GUI truy vết theo Checklist ID và Yêu cầu nguyên tử'
+title: '[GUI-xxx][Chrome] <Mô tả tóm tắt lỗi>'
+labels: ['bug', 'gui']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Cảm ơn bạn đã báo cáo lỗi GUI cho hệ thống EShop SUT (HW03).
+  - type: input
+    id: checklist_ids
+    attributes:
+      label: 'Checklist IDs'
+      description: 'Mã định danh trong checklist (ví dụ: GUI-019; GUI-048)'
+      placeholder: 'GUI-019'
+    validations:
+      required: true
+  - type: input
+    id: requirement_ids
+    attributes:
+      label: 'Requirement IDs'
+      description: 'Mã yêu cầu nguyên tử (ví dụ: FR21-H1-COUNT)'
+      placeholder: 'FR21-H1-COUNT'
+    validations:
+      required: true
+  - type: dropdown
+    id: severity
+    attributes:
+      label: 'Mức độ nghiêm trọng (Severity)'
+      options:
+        - 'S1 - Blocker (Chặn luồng chính, không có giải pháp thay thế)'
+        - 'S2 - Critical (Hỏng chức năng chính, mất/sai dữ liệu)'
+        - 'S3 - Major (Sai lệch giao diện/điều hướng, có cách xử lý tạm)'
+        - 'S4 - Minor (Lỗi thẩm mỹ, hiển thị nhỏ)'
+    validations:
+      required: true
+  - type: dropdown
+    id: priority
+    attributes:
+      label: 'Độ ưu tiên (Priority)'
+      options:
+        - 'P1 - Khắc phục khẩn cấp'
+        - 'P2 - Khắc phục trong sprint hiện tại'
+        - 'P3 - Xem xét cải tiến sau'
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: 'Môi trường kiểm thử'
+      description: 'Trình duyệt, phiên bản OS, commit build và URL'
+      value: |
+        - Browser: Google Chrome (bản trên máy chạy)
+        - OS: macOS
+        - Build Commit: HEAD
+        - Viewport: 1440x900
+    validations:
+      required: true
+  - type: textarea
+    id: preconditions
+    attributes:
+      label: 'Tiền điều kiện & Dữ liệu kiểm thử'
+      placeholder: 'Dữ liệu 5 sản phẩm baseline điện tử...'
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 'Các bước tái hiện lỗi'
+      value: |
+        1. Mở trang ...
+        2. Thao tác ...
+        3. Quan sát kết quả ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 'Kết quả mong đợi (Expected)'
+      placeholder: 'Đặc tả theo checklist và README...'
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: 'Kết quả thực tế (Actual)'
+      placeholder: 'Ghi nhận thực tế quan sát được...'
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 'Bằng chứng (Evidence & Screenshots)'
+      description: 'Đường dẫn ảnh chụp màn hình, logs hoặc trace'
+      placeholder: 'Đính kèm ảnh chụp màn hình hoặc link ảnh...'
+    validations:
+      required: true
