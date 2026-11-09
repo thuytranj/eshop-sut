@@ -1,5 +1,5 @@
 ## Tóm tắt
-[GUI-036] Error: Quantity controls missing in cart row: minus=false, plus=false, input=fal
+[FR-07] Dòng giỏ hàng thiếu cụm nút tăng giảm số lượng (+/-) và ô nhập
 
 ## Truy vết
 - Bug key: BUG-GUI-036
@@ -10,7 +10,7 @@
 
 ## Môi trường
 - Build/commit + dirty flag: HEAD, clean
-- Run ID và timestamp có timezone: 2026-11-09T14:35:47.338Z
+- Run ID và timestamp có timezone: 2026-11-09T16:53:30.026Z
 - Nền tảng, OS/device và browser version thật: darwin, Google Chrome
 - URL, viewport và mode: http://localhost:5173; 1440x900; mock-ui
 - Mock đang bật: none

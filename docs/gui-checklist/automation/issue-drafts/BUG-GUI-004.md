@@ -1,7 +1,5 @@
 ## Tóm tắt
-[GUI-004] Error: Email input must have type="email"
-
-[2mexpect([22m[31mreceived[39m[2
+[FR-03] Ô nhập Email thiếu thuộc tính type="email"
 
 ## Truy vết
 - Bug key: BUG-GUI-004
@@ -12,7 +10,7 @@
 
 ## Môi trường
 - Build/commit + dirty flag: HEAD, clean
-- Run ID và timestamp có timezone: 2026-11-09T14:35:47.335Z
+- Run ID và timestamp có timezone: 2026-11-09T16:53:30.024Z
 - Nền tảng, OS/device và browser version thật: darwin, Google Chrome
 - URL, viewport và mode: http://localhost:5173; 1440x900; mock-ui
 - Mock đang bật: none
@@ -32,10 +30,10 @@ email-validation
 ## Kết quả thực tế
 Error: Email input must have type="email"
 
-[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+expect(received).toBe(expected) // Object.is equality
 
-Expected: [32m"email"[39m
-Received: [31m"text"[39m
+Expected: "email"
+Received: "text"
 
 ## Bằng chứng
 - Local file: `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr03-FR-03-Forgot-and-Rese-cab66-e-email-and-required-marker-chrome-local/test-failed-1.png`

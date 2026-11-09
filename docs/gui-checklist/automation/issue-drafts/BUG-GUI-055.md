@@ -1,7 +1,5 @@
 ## Tóm tắt
-[GUI-055] Error: Validation error element must appear in DOM
-
-[2mexpect([22m[31mreceive
+[FR-15] Khối thông báo lỗi form sản phẩm không nằm phía trên nút submit
 
 ## Truy vết
 - Bug key: BUG-GUI-055
@@ -12,7 +10,7 @@
 
 ## Môi trường
 - Build/commit + dirty flag: HEAD, clean
-- Run ID và timestamp có timezone: 2026-11-09T14:35:47.339Z
+- Run ID và timestamp có timezone: 2026-11-09T16:53:30.028Z
 - Nền tảng, OS/device và browser version thật: darwin, Google Chrome
 - URL, viewport và mode: http://localhost:5173; 1440x900; mock-ui
 - Mock đang bật: none
@@ -32,10 +30,10 @@ error-position-above-submit
 ## Kết quả thực tế
 Error: Validation error element must appear in DOM
 
-[2mexpect([22m[31mreceived[39m[2m).[22mtoBeGreaterThan[2m([22m[32mexpected[39m[2m)[22m
+expect(received).toBeGreaterThan(expected)
 
-Expected: > [32m0[39m
-Received:   [31m0[39m
+Expected: > 0
+Received:   0
 
 ## Bằng chứng
 - Local file: `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr15-FR-15-Admin-Product-M-eeb70-irectly-above-submit-button-chrome-local/test-failed-1.png`

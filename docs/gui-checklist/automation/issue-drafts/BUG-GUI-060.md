@@ -1,5 +1,5 @@
 ## Tóm tắt
-[GUI-060] Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoContainText[2m([22m[32me
+[FR-15] Cập nhật thông tin sản phẩm không đảm bảo tính cô lập dữ liệu
 
 ## Truy vết
 - Bug key: BUG-GUI-060
@@ -10,7 +10,7 @@
 
 ## Môi trường
 - Build/commit + dirty flag: HEAD, clean
-- Run ID và timestamp có timezone: 2026-11-09T14:35:47.339Z
+- Run ID và timestamp có timezone: 2026-11-09T16:53:30.029Z
 - Nền tảng, OS/device và browser version thật: darwin, Google Chrome
 - URL, viewport và mode: http://localhost:5173; 1440x900; mock-ui
 - Mock đang bật: none
@@ -28,15 +28,15 @@ Dữ liệu 5 sản phẩm baseline điện tử (iPhone 15 Pro Max, Samsung Gal
 isolate-update
 
 ## Kết quả thực tế
-Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoContainText[2m([22m[32mexpected[39m[2m)[22m failed
+Error: expect(locator).toContainText(expected) failed
 
 Locator: locator('tbody tr').filter({ hasText: 'Samsung Galaxy S24 Ultra' })
-Expected substring: [32m"28000000"[39m
+Expected substring: "28000000"
 Timeout: 5000ms
 Error: element(s) not found
 
 Call log:
-[2m  - Expect "
+  - Expect "
 
 ## Bằng chứng
 - Local file: `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr15-FR-15-Admin-Product-M-f39a4-d-does-not-modify-product-B-chrome-local/test-failed-1.png`

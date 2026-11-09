@@ -1,5 +1,5 @@
 ## Tóm tắt
-[GUI-032] Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpect
+[FR-07] Bảng giỏ hàng không hiển thị đầy đủ 5 cột theo quy định đặc tả
 
 ## Truy vết
 - Bug key: BUG-GUI-032
@@ -10,7 +10,7 @@
 
 ## Môi trường
 - Build/commit + dirty flag: HEAD, clean
-- Run ID và timestamp có timezone: 2026-11-09T14:35:47.337Z
+- Run ID và timestamp có timezone: 2026-11-09T16:53:30.026Z
 - Nền tảng, OS/device và browser version thật: darwin, Google Chrome
 - URL, viewport và mode: http://localhost:5173; 1440x900; mock-ui
 - Mock đang bật: none
@@ -28,17 +28,17 @@ Dữ liệu 5 sản phẩm baseline điện tử (iPhone 15 Pro Max, Samsung Gal
 table-5-columns
 
 ## Kết quả thực tế
-Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+Error: expect(received).toEqual(expected) // deep equality
 
-[32m- Expected  - 1[39m
-[31m+ Received  + 1[39m
+- Expected  - 1
++ Received  + 1
 
-[2m  Array [[22m
-[2m    "Sản phẩm",[22m
-[32m-   "Đơn giá",[39m
-[31m+   "Giá",[39m
-[2m    "Số lượng",[22m
-[2m    "Thành t
+  Array [
+    "Sản phẩm",
+-   "Đơn giá",
++   "Giá",
+    "Số lượng",
+    "Thành t
 
 ## Bằng chứng
 - Local file: `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr07-FR-07-Shopping-Cart-D-cd1fa--5-columns-in-correct-order-chrome-local/test-failed-1.png`

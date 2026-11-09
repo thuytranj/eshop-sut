@@ -1,7 +1,5 @@
 ## Tóm tắt
-[GUI-050] Error: Required fields (Tên, Giá, Danh mục) must have explicit * labels
-
-[2mexp
+[FR-15] Các trường bắt buộc trong form sản phẩm thiếu ký hiệu dấu sao (*)
 
 ## Truy vết
 - Bug key: BUG-GUI-050
@@ -12,7 +10,7 @@
 
 ## Môi trường
 - Build/commit + dirty flag: HEAD, clean
-- Run ID và timestamp có timezone: 2026-11-09T14:35:47.339Z
+- Run ID và timestamp có timezone: 2026-11-09T16:53:30.028Z
 - Nền tảng, OS/device và browser version thật: darwin, Google Chrome
 - URL, viewport và mode: http://localhost:5173; 1440x900; mock-ui
 - Mock đang bật: none
@@ -32,12 +30,12 @@ required-field-markers
 ## Kết quả thực tế
 Error: Required fields (Tên, Giá, Danh mục) must have explicit * labels
 
-[2mexpect([22m[31mreceived[39m[2m).[22mtoContain[2m([22m[32mexpected[39m[2m) // indexOf[22m
+expect(received).toContain(expected) // indexOf
 
-Expected substring: [32m"*"[39m
-Received string:    [31m"Thêm sản phẩm mới[39m
-[31mĐiện thoại[39m
-[31mLaptop[39m
+Expected substring: "*"
+Received string:    "Thêm sản phẩm mới
+Điện thoại
+Laptop
 
 
 ## Bằng chứng

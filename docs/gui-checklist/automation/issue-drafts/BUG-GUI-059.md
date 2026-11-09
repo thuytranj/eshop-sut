@@ -1,7 +1,5 @@
 ## Tóm tắt
-[GUI-059] Error: Editing must open in an accessible modal dialog with focus trap
-
-[2mexpe
+[FR-15] Form Sửa sản phẩm không mở dưới dạng modal có bẫy focus bàn phím
 
 ## Truy vết
 - Bug key: BUG-GUI-059
@@ -12,7 +10,7 @@
 
 ## Môi trường
 - Build/commit + dirty flag: HEAD, clean
-- Run ID và timestamp có timezone: 2026-11-09T14:35:47.339Z
+- Run ID và timestamp có timezone: 2026-11-09T16:53:30.029Z
 - Nền tảng, OS/device và browser version thật: darwin, Google Chrome
 - URL, viewport và mode: http://localhost:5173; 1440x900; mock-ui
 - Mock đang bật: none
@@ -32,7 +30,7 @@ modal-focus-trap
 ## Kết quả thực tế
 Error: Editing must open in an accessible modal dialog with focus trap
 
-[2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+expect(locator).toBeVisible() failed
 
 Locator: locator('dialog, [role="dialog"], .modal')
 Expected: visible
@@ -40,7 +38,7 @@ Timeout: 5000ms
 Error: element(s) not found
 
 Call log:
-[2m  - Editing mus
+  - Editing mus
 
 ## Bằng chứng
 - Local file: `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr15-FR-15-Admin-Product-M-34786-lements-keyboard-focus-trap-chrome-local/test-failed-1.png`

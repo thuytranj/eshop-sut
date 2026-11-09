@@ -1,7 +1,5 @@
 ## Tóm tắt
-[GUI-061] Error: Confirmation modal must appear before deleting product
-
-[2mexpect([22m
+[FR-15] Thiếu modal xác nhận cảnh báo trước khi xóa sản phẩm quản trị
 
 ## Truy vết
 - Bug key: BUG-GUI-061
@@ -12,7 +10,7 @@
 
 ## Môi trường
 - Build/commit + dirty flag: HEAD, clean
-- Run ID và timestamp có timezone: 2026-11-09T14:35:47.339Z
+- Run ID và timestamp có timezone: 2026-11-09T16:53:30.029Z
 - Nền tảng, OS/device và browser version thật: darwin, Google Chrome
 - URL, viewport và mode: http://localhost:5173; 1440x900; mock-ui
 - Mock đang bật: none
@@ -32,7 +30,7 @@ confirm-delete-modal
 ## Kết quả thực tế
 Error: Confirmation modal must appear before deleting product
 
-[2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+expect(locator).toBeVisible() failed
 
 Locator: locator('dialog, [role="dialog"], .modal').filter({ hasText: /Xác nhận xóa|Cảnh báo/i })
 Expected: visible

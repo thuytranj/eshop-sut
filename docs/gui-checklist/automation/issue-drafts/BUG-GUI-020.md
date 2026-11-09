@@ -1,5 +1,5 @@
 ## Tóm tắt
-[GUI-020] Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBeGreaterThanOrEqual[2m(
+[FR-05] Độ tương phản màu sắc chữ trên thẻ sản phẩm không đạt chuẩn WCAG AA
 
 ## Truy vết
 - Bug key: BUG-GUI-020
@@ -10,7 +10,7 @@
 
 ## Môi trường
 - Build/commit + dirty flag: HEAD, clean
-- Run ID và timestamp có timezone: 2026-11-09T14:35:47.337Z
+- Run ID và timestamp có timezone: 2026-11-09T16:53:30.025Z
 - Nền tảng, OS/device và browser version thật: darwin, Google Chrome
 - URL, viewport và mode: http://localhost:5173; 1440x900; mock-ui
 - Mock đang bật: none
@@ -28,10 +28,10 @@ Dữ liệu 5 sản phẩm baseline điện tử (iPhone 15 Pro Max, Samsung Gal
 color-contrast
 
 ## Kết quả thực tế
-Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBeGreaterThanOrEqual[2m([22m[32mexpected[39m[2m)[22m
+Error: expect(received).toBeGreaterThanOrEqual(expected)
 
-Expected: >= [32m4.5[39m
-Received:    [31m1[39m
+Expected: >= 4.5
+Received:    1
 
 ## Bằng chứng
 - Local file: `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr05-FR-05-Product-Catalog-ff674--Color-contrast-ratio-4-5-1-chrome-local/test-failed-1.png`

@@ -1,7 +1,5 @@
 ## Tóm tắt
-[GUI-033] Error: Cart total label must be exact "Tổng cộng", not "Tổng tạm tính"
-
-[2mexpe
+[FR-07] Nhãn tổng tiền hiển thị sai thành "Tổng tạm tính" thay vì "Tổng cộng"
 
 ## Truy vết
 - Bug key: BUG-GUI-033
@@ -12,7 +10,7 @@
 
 ## Môi trường
 - Build/commit + dirty flag: HEAD, clean
-- Run ID và timestamp có timezone: 2026-11-09T14:35:47.337Z
+- Run ID và timestamp có timezone: 2026-11-09T16:53:30.026Z
 - Nền tảng, OS/device và browser version thật: darwin, Google Chrome
 - URL, viewport và mode: http://localhost:5173; 1440x900; mock-ui
 - Mock đang bật: none
@@ -32,10 +30,10 @@ exact-total-label
 ## Kết quả thực tế
 Error: Cart total label must be exact "Tổng cộng", not "Tổng tạm tính"
 
-[2mexpect([22m[31mreceived[39m[2m).[22mtoContain[2m([22m[32mexpected[39m[2m) // indexOf[22m
+expect(received).toContain(expected) // indexOf
 
-Expected substring: [32m"Tổng cộng"[39m
-Received string:    [31m"Tổng tạm tính: 30.000.000 ₫"[39m
+Expected substring: "Tổng cộng"
+Received string:    "Tổng tạm tính: 30.000.000 ₫"
 
 ## Bằng chứng
 - Local file: `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr07-FR-07-Shopping-Cart-D-0bb04-strictly-matches-Tổng-cộng--chrome-local/test-failed-1.png`

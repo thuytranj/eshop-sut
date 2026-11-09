@@ -1,7 +1,5 @@
 ## Tóm tắt
-[GUI-034] Error: Money column must be right-aligned
-
-[2mexpect([22m[31mreceived[39m[2
+[FR-07] Các cột số tiền trong bảng giỏ hàng không được căn lề phải
 
 ## Truy vết
 - Bug key: BUG-GUI-034
@@ -12,7 +10,7 @@
 
 ## Môi trường
 - Build/commit + dirty flag: HEAD, clean
-- Run ID và timestamp có timezone: 2026-11-09T14:35:47.337Z
+- Run ID và timestamp có timezone: 2026-11-09T16:53:30.026Z
 - Nền tảng, OS/device và browser version thật: darwin, Google Chrome
 - URL, viewport và mode: http://localhost:5173; 1440x900; mock-ui
 - Mock đang bật: none
@@ -32,10 +30,10 @@ money-align-right
 ## Kết quả thực tế
 Error: Money column must be right-aligned
 
-[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+expect(received).toBe(expected) // Object.is equality
 
-Expected: [32m"[7mrigh[27mt"[39m
-Received: [31m"[7mlef[27mt"[39m
+Expected: "right"
+Received: "left"
 
 ## Bằng chứng
 - Local file: `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr07-FR-07-Shopping-Cart-D-decca-nd-right-aligned-in-columns-chrome-local/test-failed-1.png`

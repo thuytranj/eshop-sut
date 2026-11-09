@@ -1,7 +1,5 @@
 ## Tóm tắt
-[GUI-003] Error: Password reset page must have exactly 1 h1 heading
-
-[2mexpect([22m[31m
+[FR-03] Trang Quên mật khẩu thiếu thẻ tiêu đề h1 duy nhất
 
 ## Truy vết
 - Bug key: BUG-GUI-003
@@ -12,7 +10,7 @@
 
 ## Môi trường
 - Build/commit + dirty flag: HEAD, clean
-- Run ID và timestamp có timezone: 2026-11-09T14:35:47.334Z
+- Run ID và timestamp có timezone: 2026-11-09T16:53:30.023Z
 - Nền tảng, OS/device và browser version thật: darwin, Google Chrome
 - URL, viewport và mode: http://localhost:5173; 1440x900; mock-ui
 - Mock đang bật: none
@@ -32,10 +30,10 @@ h1-count
 ## Kết quả thực tế
 Error: Password reset page must have exactly 1 h1 heading
 
-[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+expect(received).toBe(expected) // Object.is equality
 
-Expected: [32m1[39m
-Received: [31m0[39m
+Expected: 1
+Received: 0
 
 ## Bằng chứng
 - Local file: `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr03-FR-03-Forgot-and-Rese-1ed77--describing-forgot-password-chrome-local/test-failed-1.png`

@@ -1,5 +1,5 @@
 ## Tóm tắt
-[GUI-070] Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoHaveCount[2m([22m[32mexp
+[FR-05] Nút Thêm vào giỏ hàng thiếu cơ chế chống click spam liên tục
 
 ## Truy vết
 - Bug key: BUG-GUI-070
@@ -10,7 +10,7 @@
 
 ## Môi trường
 - Build/commit + dirty flag: HEAD, clean
-- Run ID và timestamp có timezone: 2026-11-09T14:35:47.339Z
+- Run ID và timestamp có timezone: 2026-11-09T16:53:30.029Z
 - Nền tảng, OS/device và browser version thật: darwin, Google Chrome
 - URL, viewport và mode: http://localhost:5173; 1440x900; mock-ui
 - Mock đang bật: none
@@ -28,15 +28,15 @@ Dữ liệu 5 sản phẩm baseline điện tử (iPhone 15 Pro Max, Samsung Gal
 click-spam-prevent
 
 ## Kết quả thực tế
-Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoHaveCount[2m([22m[32mexpected[39m[2m)[22m failed
+Error: expect(locator).toHaveCount(expected) failed
 
 Locator:  locator('tbody tr').filter({ hasText: 'iPhone 15 Pro Max' })
-Expected: [32m1[39m
-Received: [31m3[39m
+Expected: 1
+Received: 3
 Timeout:  5000ms
 
 Call log:
-[2m  - Expect "toHaveCount" locator('tbody tr')
+  - Expect "toHaveCount" locator('tbody tr')
 
 ## Bằng chứng
 - Local file: `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr05-FR-05-Product-Catalog-64afc-prevent-duplicate-mutations-chrome-local/test-failed-1.png`

@@ -1,5 +1,5 @@
 ## Tóm tắt
-[GUI-043] Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoHaveCount[2m([22m[32mexp
+[FR-07] Thêm cùng một sản phẩm nhiều lần không tự động cộng dồn số lượng
 
 ## Truy vết
 - Bug key: BUG-GUI-043
@@ -10,7 +10,7 @@
 
 ## Môi trường
 - Build/commit + dirty flag: HEAD, clean
-- Run ID và timestamp có timezone: 2026-11-09T14:35:47.338Z
+- Run ID và timestamp có timezone: 2026-11-09T16:53:30.027Z
 - Nền tảng, OS/device và browser version thật: darwin, Google Chrome
 - URL, viewport và mode: http://localhost:5173; 1440x900; mock-ui
 - Mock đang bật: none
@@ -28,15 +28,15 @@ Dữ liệu 5 sản phẩm baseline điện tử (iPhone 15 Pro Max, Samsung Gal
 merge-same-product
 
 ## Kết quả thực tế
-Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoHaveCount[2m([22m[32mexpected[39m[2m)[22m failed
+Error: expect(locator).toHaveCount(expected) failed
 
 Locator:  locator('tbody tr').filter({ hasText: 'iPhone 15 Pro Max' })
-Expected: [32m1[39m
-Received: [31m2[39m
+Expected: 1
+Received: 2
 Timeout:  5000ms
 
 Call log:
-[2m  - Expect "toHaveCount" locator('tbody tr')
+  - Expect "toHaveCount" locator('tbody tr')
 
 ## Bằng chứng
 - Local file: `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr07-FR-07-Shopping-Cart-D-e44e8-ng-product-A-multiple-times-chrome-local/test-failed-1.png`

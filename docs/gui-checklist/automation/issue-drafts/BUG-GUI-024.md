@@ -1,5 +1,5 @@
 ## Tóm tắt
-[GUI-024] Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[2
+[FR-05] Mục "Trang chủ" trên Navbar không có trạng thái active khi đang xem
 
 ## Truy vết
 - Bug key: BUG-GUI-024
@@ -10,7 +10,7 @@
 
 ## Môi trường
 - Build/commit + dirty flag: HEAD, clean
-- Run ID và timestamp có timezone: 2026-11-09T14:35:47.337Z
+- Run ID và timestamp có timezone: 2026-11-09T16:53:30.025Z
 - Nền tảng, OS/device và browser version thật: darwin, Google Chrome
 - URL, viewport và mode: http://localhost:5173; 1440x900; mock-ui
 - Mock đang bật: none
@@ -28,7 +28,7 @@ Dữ liệu 5 sản phẩm baseline điện tử (iPhone 15 Pro Max, Samsung Gal
 active-home-nav
 
 ## Kết quả thực tế
-Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+Error: expect(locator).toBeVisible() failed
 
 Locator: getByRole('link', { name: /Trang chủ|Cửa hàng/i })
 Expected: visible
@@ -36,7 +36,7 @@ Timeout: 5000ms
 Error: element(s) not found
 
 Call log:
-[2m  - Expect "toBeVisible" getByRole('link', { name: /Trang chủ|Cửa hàng/i
+  - Expect "toBeVisible" getByRole('link', { name: /Trang chủ|Cửa hàng/i
 
 ## Bằng chứng
 - Local file: `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr05-FR-05-Product-Catalog-befb3-ion-highlight-for-Trang-chu-chrome-local/test-failed-1.png`

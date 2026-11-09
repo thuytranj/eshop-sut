@@ -1,6 +1,5 @@
 ## Tóm tắt
-[GUI-015] AggregateError: apiRequestContext.post: connect ECONNREFUSED ::1:3000
-connect EC
+[FR-03] Lỗi kết nối Backend API khi kiểm tra hoàn tất đặt lại mật khẩu
 
 ## Truy vết
 - Bug key: BUG-GUI-015
@@ -11,7 +10,7 @@ connect EC
 
 ## Môi trường
 - Build/commit + dirty flag: HEAD, clean
-- Run ID và timestamp có timezone: 2026-11-09T14:35:47.336Z
+- Run ID và timestamp có timezone: 2026-11-09T16:53:30.025Z
 - Nền tảng, OS/device và browser version thật: darwin, Google Chrome
 - URL, viewport và mode: http://localhost:5173; 1440x900; mock-ui
 - Mock đang bật: none
@@ -32,10 +31,10 @@ reset-success
 AggregateError: apiRequestContext.post: connect ECONNREFUSED ::1:3000
 connect ECONNREFUSED 127.0.0.1:3000
 Call log:
-[2m  - → POST http://localhost:3000/api/forgot-password[22m
-[2m    - user-agent: Playwright/1.65.0 (arm64; macOS 27.0) node/22.17[22m
-[2m    - accept: */*[22m
-[2m    - accept-en
+  - → POST http://localhost:3000/api/forgot-password
+    - user-agent: Playwright/1.65.0 (arm64; macOS 27.0) node/22.17
+    - accept: */*
+    - accept-en
 
 ## Bằng chứng
 - Local file: `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr03-FR-03-Forgot-and-Rese-f5213--login-with-new-credentials-chrome-local/test-failed-1.png`

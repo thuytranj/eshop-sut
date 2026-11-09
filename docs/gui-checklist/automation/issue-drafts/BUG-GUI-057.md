@@ -1,6 +1,5 @@
 ## Tóm tắt
-[GUI-057] Error: Logout button must have exact text "Đăng xuất", not "Thoát" or "Log out"
-
+[FR-15] Nút đăng xuất dùng nhãn "Thoát"/"Log out" thay vì "Đăng xuất"
 
 ## Truy vết
 - Bug key: BUG-GUI-057
@@ -11,7 +10,7 @@
 
 ## Môi trường
 - Build/commit + dirty flag: HEAD, clean
-- Run ID và timestamp có timezone: 2026-11-09T14:35:47.339Z
+- Run ID và timestamp có timezone: 2026-11-09T16:53:30.028Z
 - Nền tảng, OS/device và browser version thật: darwin, Google Chrome
 - URL, viewport và mode: http://localhost:5173; 1440x900; mock-ui
 - Mock đang bật: none
@@ -31,7 +30,7 @@ logout-button-exact
 ## Kết quả thực tế
 Error: Logout button must have exact text "Đăng xuất", not "Thoát" or "Log out"
 
-[2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+expect(locator).toBeVisible() failed
 
 Locator: getByRole('button', { name: 'Đăng xuất' })
 Expected: visible
@@ -39,7 +38,7 @@ Timeout: 5000ms
 Error: element(s) not found
 
 Call log:
-[2m  - Lo
+  - Lo
 
 ## Bằng chứng
 - Local file: `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr15-FR-15-Admin-Product-M-91514--label-in-header-or-sidebar-chrome-local/test-failed-1.png`

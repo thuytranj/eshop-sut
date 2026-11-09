@@ -1,7 +1,5 @@
 ## Tóm tắt
-[GUI-009] Error: Link "Quay lại đăng nhập" must exist on step 1
-
-[2mexpect([22m[31mloca
+[FR-03] Thiếu liên kết "Quay lại đăng nhập" tại Bước 1
 
 ## Truy vết
 - Bug key: BUG-GUI-009
@@ -12,7 +10,7 @@
 
 ## Môi trường
 - Build/commit + dirty flag: HEAD, clean
-- Run ID và timestamp có timezone: 2026-11-09T14:35:47.336Z
+- Run ID và timestamp có timezone: 2026-11-09T16:53:30.025Z
 - Nền tảng, OS/device và browser version thật: darwin, Google Chrome
 - URL, viewport và mode: http://localhost:5173; 1440x900; mock-ui
 - Mock đang bật: none
@@ -32,7 +30,7 @@ back-login-link
 ## Kết quả thực tế
 Error: Link "Quay lại đăng nhập" must exist on step 1
 
-[2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+expect(locator).toBeVisible() failed
 
 Locator: getByRole('link', { name: 'Quay lại đăng nhập' })
 Expected: visible
@@ -40,7 +38,7 @@ Timeout: 5000ms
 Error: element(s) not found
 
 Call log:
-[2m  - Link "Quay lại đăng n
+  - Link "Quay lại đăng n
 
 ## Bằng chứng
 - Local file: `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr03-FR-03-Forgot-and-Rese-45871-back-to-login-on-both-steps-chrome-local/test-failed-1.png`

@@ -1,7 +1,5 @@
 ## Tóm tắt
-[GUI-052] Error: Error message required for price <= 0
-
-[2mexpect([22m[31mlocator[39m
+[FR-15] Không hiển thị thông báo lỗi khi nhập giá sản phẩm nhỏ hơn hoặc bằng 0
 
 ## Truy vết
 - Bug key: BUG-GUI-052
@@ -12,7 +10,7 @@
 
 ## Môi trường
 - Build/commit + dirty flag: HEAD, clean
-- Run ID và timestamp có timezone: 2026-11-09T14:35:47.339Z
+- Run ID và timestamp có timezone: 2026-11-09T16:53:30.028Z
 - Nền tảng, OS/device và browser version thật: darwin, Google Chrome
 - URL, viewport và mode: http://localhost:5173; 1440x900; mock-ui
 - Mock đang bật: none
@@ -32,7 +30,7 @@ product-price-bounds
 ## Kết quả thực tế
 Error: Error message required for price <= 0
 
-[2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+expect(locator).toBeVisible() failed
 
 Locator: locator('text=/Giá phải lớn hơn 0|không hợp lệ/i')
 Expected: visible
@@ -40,7 +38,7 @@ Timeout: 5000ms
 Error: element(s) not found
 
 Call log:
-[2m  - Error message required for pr
+  - Error message required for pr
 
 ## Bằng chứng
 - Local file: `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr15-FR-15-Admin-Product-M-ba58a-pts-only-positive-amounts-0-chrome-local/test-failed-1.png`

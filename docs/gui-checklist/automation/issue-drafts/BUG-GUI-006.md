@@ -1,7 +1,5 @@
 ## Tóm tắt
-[GUI-006] Error: Confirm password input must exist
-
-[2mexpect([22m[31mlocator[39m[2m)
+[FR-03] Thiếu trường nhập xác nhận mật khẩu tại Bước 2
 
 ## Truy vết
 - Bug key: BUG-GUI-006
@@ -12,7 +10,7 @@
 
 ## Môi trường
 - Build/commit + dirty flag: HEAD, clean
-- Run ID và timestamp có timezone: 2026-11-09T14:35:47.336Z
+- Run ID và timestamp có timezone: 2026-11-09T16:53:30.025Z
 - Nền tảng, OS/device và browser version thật: darwin, Google Chrome
 - URL, viewport và mode: http://localhost:5173; 1440x900; mock-ui
 - Mock đang bật: none
@@ -32,7 +30,7 @@ password-fields
 ## Kết quả thực tế
 Error: Confirm password input must exist
 
-[2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+expect(locator).toBeVisible() failed
 
 Locator: locator('input[type="password"]').nth(1)
 Expected: visible
@@ -40,7 +38,7 @@ Timeout: 5000ms
 Error: element(s) not found
 
 Call log:
-[2m  - Confirm password input must exist locator('
+  - Confirm password input must exist locator('
 
 ## Bằng chứng
 - Local file: `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr03-FR-03-Forgot-and-Rese-723d2-ds-exist-with-type-password-chrome-local/test-failed-1.png`

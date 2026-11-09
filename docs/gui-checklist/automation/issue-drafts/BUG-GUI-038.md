@@ -1,7 +1,5 @@
 ## Tóm tắt
-[GUI-038] Error: Quantity input required to test boundaries
-
-[2mexpect([22m[31mreceived
+[FR-07] Không thể kiểm thử giá trị số lượng biên do thiếu ô nhập liệu
 
 ## Truy vết
 - Bug key: BUG-GUI-038
@@ -12,7 +10,7 @@
 
 ## Môi trường
 - Build/commit + dirty flag: HEAD, clean
-- Run ID và timestamp có timezone: 2026-11-09T14:35:47.338Z
+- Run ID và timestamp có timezone: 2026-11-09T16:53:30.027Z
 - Nền tảng, OS/device và browser version thật: darwin, Google Chrome
 - URL, viewport và mode: http://localhost:5173; 1440x900; mock-ui
 - Mock đang bật: none
@@ -32,10 +30,10 @@ invalid-quantity
 ## Kết quả thực tế
 Error: Quantity input required to test boundaries
 
-[2mexpect([22m[31mreceived[39m[2m).[22mtoBeGreaterThan[2m([22m[32mexpected[39m[2m)[22m
+expect(received).toBeGreaterThan(expected)
 
-Expected: > [32m0[39m
-Received:   [31m0[39m
+Expected: > 0
+Received:   0
 
 ## Bằng chứng
 - Local file: `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr07-FR-07-Shopping-Cart-D-bd610--handled-safely-without-NaN-chrome-local/test-failed-1.png`

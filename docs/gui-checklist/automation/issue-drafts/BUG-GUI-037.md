@@ -1,7 +1,5 @@
 ## Tóm tắt
-[GUI-037] Error: Cart row must contain a quantity input field
-
-[2mexpect([22m[31mlocato
+[FR-07] Giỏ hàng thiếu trường nhập trực tiếp số lượng bằng bàn phím
 
 ## Truy vết
 - Bug key: BUG-GUI-037
@@ -12,7 +10,7 @@
 
 ## Môi trường
 - Build/commit + dirty flag: HEAD, clean
-- Run ID và timestamp có timezone: 2026-11-09T14:35:47.338Z
+- Run ID và timestamp có timezone: 2026-11-09T16:53:30.027Z
 - Nền tảng, OS/device và browser version thật: darwin, Google Chrome
 - URL, viewport và mode: http://localhost:5173; 1440x900; mock-ui
 - Mock đang bật: none
@@ -32,7 +30,7 @@ direct-quantity-input
 ## Kết quả thực tế
 Error: Cart row must contain a quantity input field
 
-[2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+expect(locator).toBeVisible() failed
 
 Locator: locator('tbody tr').filter({ hasText: 'iPhone 15 Pro Max' }).locator('input[type="number"], input')
 Expected: visible

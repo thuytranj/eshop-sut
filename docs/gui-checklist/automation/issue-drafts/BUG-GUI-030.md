@@ -1,7 +1,5 @@
 ## Tóm tắt
-[GUI-030] Error: Image #0 has empty alt text
-
-[2mexpect([22m[31mreceived[39m[2m).[22
+[FR-05] Hình ảnh sản phẩm thiếu thuộc tính alt mô tả nội dung
 
 ## Truy vết
 - Bug key: BUG-GUI-030
@@ -12,7 +10,7 @@
 
 ## Môi trường
 - Build/commit + dirty flag: HEAD, clean
-- Run ID và timestamp có timezone: 2026-11-09T14:35:47.337Z
+- Run ID và timestamp có timezone: 2026-11-09T16:53:30.026Z
 - Nền tảng, OS/device và browser version thật: darwin, Google Chrome
 - URL, viewport và mode: http://localhost:5173; 1440x900; mock-ui
 - Mock đang bật: none
@@ -32,9 +30,9 @@ image-alt
 ## Kết quả thực tế
 Error: Image #0 has empty alt text
 
-[2mexpect([22m[31mreceived[39m[2m).[22mtoBeTruthy[2m()[22m
+expect(received).toBeTruthy()
 
-Received: [31m""[39m
+Received: ""
 
 ## Bằng chứng
 - Local file: `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr05-FR-05-Product-Catalog-c1c4f-criptive-non-empty-alt-text-chrome-local/test-failed-1.png`

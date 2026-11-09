@@ -1,5 +1,5 @@
 ## Tóm tắt
-[GUI-047] Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpect
+[FR-15] Tiêu đề các cột trong bảng quản trị sản phẩm Admin chưa được Việt hóa
 
 ## Truy vết
 - Bug key: BUG-GUI-047
@@ -10,7 +10,7 @@
 
 ## Môi trường
 - Build/commit + dirty flag: HEAD, clean
-- Run ID và timestamp có timezone: 2026-11-09T14:35:47.338Z
+- Run ID và timestamp có timezone: 2026-11-09T16:53:30.028Z
 - Nền tảng, OS/device và browser version thật: darwin, Google Chrome
 - URL, viewport và mode: http://localhost:5173; 1440x900; mock-ui
 - Mock đang bật: none
@@ -28,17 +28,17 @@ Dữ liệu 5 sản phẩm baseline điện tử (iPhone 15 Pro Max, Samsung Gal
 admin-table-columns
 
 ## Kết quả thực tế
-Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+Error: expect(received).toEqual(expected) // deep equality
 
-[32m- Expected  - 3[39m
-[31m+ Received  + 2[39m
+- Expected  - 3
++ Received  + 2
 
-[2m  Array [[22m
-[2m    "Ảnh",[22m
-[32m-   "Tên sản phẩm",[39m
-[31m+   "Tên SP",[39m
-[2m    "Giá",[22m
-[32m-   "Danh mục
+  Array [
+    "Ảnh",
+-   "Tên sản phẩm",
++   "Tên SP",
+    "Giá",
+-   "Danh mục
 
 ## Bằng chứng
 - Local file: `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr15-FR-15-Admin-Product-M-73049-s-Vietnamese-column-headers-chrome-local/test-failed-1.png`

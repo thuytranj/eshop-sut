@@ -1,7 +1,5 @@
 ## Tóm tắt
-[GUI-066] Error: Delete button must have descriptive aria-label
-
-[2mexpect([22m[31mrece
+[FR-07] Nút Xóa sản phẩm thiếu thuộc tính aria-label cho công nghệ hỗ trợ
 
 ## Truy vết
 - Bug key: BUG-GUI-066
@@ -12,7 +10,7 @@
 
 ## Môi trường
 - Build/commit + dirty flag: HEAD, clean
-- Run ID và timestamp có timezone: 2026-11-09T14:35:47.339Z
+- Run ID và timestamp có timezone: 2026-11-09T16:53:30.029Z
 - Nền tảng, OS/device và browser version thật: darwin, Google Chrome
 - URL, viewport và mode: http://localhost:5173; 1440x900; mock-ui
 - Mock đang bật: none
@@ -32,9 +30,9 @@ a11y-aria-dom
 ## Kết quả thực tế
 Error: Delete button must have descriptive aria-label
 
-[2mexpect([22m[31mreceived[39m[2m).[22mtoBeTruthy[2m()[22m
+expect(received).toBeTruthy()
 
-Received: [31mnull[39m
+Received: null
 
 ## Bằng chứng
 - Local file: `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr07-FR-07-Shopping-Cart-D-d6cf4-d-live-status-announcements-chrome-local/test-failed-1.png`

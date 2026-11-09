@@ -1,7 +1,5 @@
 ## Tóm tắt
-[GUI-041] Error: Link text must be exact "Tiếp tục mua sắm", not "← Mua tiếp"
-
-[2mexpect(
+[FR-07] Nút tiếp tục mua sắm hiển thị nhãn "← Mua tiếp" thay vì "Tiếp tục mua sắm"
 
 ## Truy vết
 - Bug key: BUG-GUI-041
@@ -12,7 +10,7 @@
 
 ## Môi trường
 - Build/commit + dirty flag: HEAD, clean
-- Run ID và timestamp có timezone: 2026-11-09T14:35:47.338Z
+- Run ID và timestamp có timezone: 2026-11-09T16:53:30.027Z
 - Nền tảng, OS/device và browser version thật: darwin, Google Chrome
 - URL, viewport và mode: http://localhost:5173; 1440x900; mock-ui
 - Mock đang bật: none
@@ -32,7 +30,7 @@ continue-shopping-exact
 ## Kết quả thực tế
 Error: Link text must be exact "Tiếp tục mua sắm", not "← Mua tiếp"
 
-[2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+expect(locator).toBeVisible() failed
 
 Locator: getByRole('link', { name: 'Tiếp tục mua sắm' })
 Expected: visible
@@ -40,7 +38,7 @@ Timeout: 5000ms
 Error: element(s) not found
 
 Call log:
-[2m  - Link text
+  - Link text
 
 ## Bằng chứng
 - Local file: `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr07-FR-07-Shopping-Cart-D-1e735-k-navigates-back-to-catalog-chrome-local/test-failed-1.png`

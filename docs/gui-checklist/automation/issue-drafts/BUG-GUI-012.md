@@ -1,5 +1,5 @@
 ## Tóm tắt
-[GUI-012] Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[2
+[FR-03] Phím Enter không kích hoạt gửi form chuyển bước
 
 ## Truy vết
 - Bug key: BUG-GUI-012
@@ -10,7 +10,7 @@
 
 ## Môi trường
 - Build/commit + dirty flag: HEAD, clean
-- Run ID và timestamp có timezone: 2026-11-09T14:35:47.336Z
+- Run ID và timestamp có timezone: 2026-11-09T16:53:30.025Z
 - Nền tảng, OS/device và browser version thật: darwin, Google Chrome
 - URL, viewport và mode: http://localhost:5173; 1440x900; mock-ui
 - Mock đang bật: none
@@ -28,7 +28,7 @@ Dữ liệu 5 sản phẩm baseline điện tử (iPhone 15 Pro Max, Samsung Gal
 enter-key
 
 ## Kết quả thực tế
-Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+Error: expect(locator).toBeVisible() failed
 
 Locator: locator('text=/Bước 2|Mã OTP/i')
 Expected: visible

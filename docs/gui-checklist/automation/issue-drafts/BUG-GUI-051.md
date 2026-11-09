@@ -1,7 +1,5 @@
 ## Tóm tắt
-[GUI-051] Error: Product name must be truncated or blocked at max 255 chars
-
-[2mexpect([
+[FR-15] Trường tên sản phẩm không giới hạn độ dài tối đa 255 ký tự
 
 ## Truy vết
 - Bug key: BUG-GUI-051
@@ -12,7 +10,7 @@
 
 ## Môi trường
 - Build/commit + dirty flag: HEAD, clean
-- Run ID và timestamp có timezone: 2026-11-09T14:35:47.339Z
+- Run ID và timestamp có timezone: 2026-11-09T16:53:30.028Z
 - Nền tảng, OS/device và browser version thật: darwin, Google Chrome
 - URL, viewport và mode: http://localhost:5173; 1440x900; mock-ui
 - Mock đang bật: none
@@ -32,10 +30,10 @@ product-name-255
 ## Kết quả thực tế
 Error: Product name must be truncated or blocked at max 255 chars
 
-[2mexpect([22m[31mreceived[39m[2m).[22mtoBeLessThanOrEqual[2m([22m[32mexpected[39m[2m)[22m
+expect(received).toBeLessThanOrEqual(expected)
 
-Expected: <= [32m255[39m
-Received:    [31m256[39m
+Expected: <= 255
+Received:    256
 
 ## Bằng chứng
 - Local file: `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr15-FR-15-Admin-Product-M-1b73d-ax-length-of-255-characters-chrome-local/test-failed-1.png`

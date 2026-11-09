@@ -1,7 +1,5 @@
 ## Tóm tắt
-[GUI-005] Error: Step indicator (Bước 1/2) must be visible on step 1
-
-[2mexpect([22m[31
+[FR-03] Thiếu chỉ báo tiến trình bước (Bước 1/2) tại Bước 1
 
 ## Truy vết
 - Bug key: BUG-GUI-005
@@ -12,7 +10,7 @@
 
 ## Môi trường
 - Build/commit + dirty flag: HEAD, clean
-- Run ID và timestamp có timezone: 2026-11-09T14:35:47.335Z
+- Run ID và timestamp có timezone: 2026-11-09T16:53:30.024Z
 - Nền tảng, OS/device và browser version thật: darwin, Google Chrome
 - URL, viewport và mode: http://localhost:5173; 1440x900; mock-ui
 - Mock đang bật: none
@@ -32,7 +30,7 @@ step-indicator
 ## Kết quả thực tế
 Error: Step indicator (Bước 1/2) must be visible on step 1
 
-[2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+expect(locator).toBeVisible() failed
 
 Locator: .step-indicator, text=/Bước 1/i
 Expected: visible

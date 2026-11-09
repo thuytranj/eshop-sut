@@ -1,7 +1,5 @@
 ## Tóm tắt
-[GUI-019] Error: Expected exactly 1 h1 tag, found 2
-
-[2mexpect([22m[31mreceived[39m[2
+[FR-05] Trang danh sách sản phẩm tồn tại 2 thẻ h1 thay vì duy nhất 1
 
 ## Truy vết
 - Bug key: BUG-GUI-019
@@ -12,7 +10,7 @@
 
 ## Môi trường
 - Build/commit + dirty flag: HEAD, clean
-- Run ID và timestamp có timezone: 2026-11-09T14:35:47.337Z
+- Run ID và timestamp có timezone: 2026-11-09T16:53:30.025Z
 - Nền tảng, OS/device và browser version thật: darwin, Google Chrome
 - URL, viewport và mode: http://localhost:5173; 1440x900; mock-ui
 - Mock đang bật: none
@@ -32,10 +30,10 @@ single-h1
 ## Kết quả thực tế
 Error: Expected exactly 1 h1 tag, found 2
 
-[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+expect(received).toBe(expected) // Object.is equality
 
-Expected: [32m1[39m
-Received: [31m2[39m
+Expected: 1
+Received: 2
 
 ## Bằng chứng
 - Local file: `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr05-FR-05-Product-Catalog-eb30b--on-page-describing-content-chrome-local/test-failed-1.png`

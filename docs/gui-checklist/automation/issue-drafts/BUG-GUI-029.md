@@ -1,5 +1,5 @@
 ## Tóm tắt
-[GUI-029] Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[2
+[FR-05] Thiếu giao diện empty state thân thiện khi tìm kiếm không có kết quả
 
 ## Truy vết
 - Bug key: BUG-GUI-029
@@ -10,7 +10,7 @@
 
 ## Môi trường
 - Build/commit + dirty flag: HEAD, clean
-- Run ID và timestamp có timezone: 2026-11-09T14:35:47.337Z
+- Run ID và timestamp có timezone: 2026-11-09T16:53:30.026Z
 - Nền tảng, OS/device và browser version thật: darwin, Google Chrome
 - URL, viewport và mode: http://localhost:5173; 1440x900; mock-ui
 - Mock đang bật: none
@@ -28,7 +28,7 @@ Dữ liệu 5 sản phẩm baseline điện tử (iPhone 15 Pro Max, Samsung Gal
 search-empty-state
 
 ## Kết quả thực tế
-Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+Error: expect(locator).toBeVisible() failed
 
 Locator: locator('text=/Không tìm thấy|không có sản phẩm/i')
 Expected: visible
@@ -36,7 +36,7 @@ Timeout: 5000ms
 Error: element(s) not found
 
 Call log:
-[2m  - Expect "toBeVisible" locator('text=/Không tìm thấy|không có sản phẩ
+  - Expect "toBeVisible" locator('text=/Không tìm thấy|không có sản phẩ
 
 ## Bằng chứng
 - Local file: `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr05-FR-05-Product-Catalog-d0ce8-ly-illustration-and-message-chrome-local/test-failed-1.png`

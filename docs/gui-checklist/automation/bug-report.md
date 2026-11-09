@@ -15,114 +15,58 @@
 
 | Bug Key | Checklist ID | Mức độ (Severity) | Ưu tiên (Priority) | Căn cứ | Tóm tắt lỗi |
 | --- | --- | :---: | :---: | :---: | --- |
-| **BUG-GUI-003** | `GUI-003` | S3 | P2 | README | [GUI-003] Error: Password reset page must have exactly 1 h1 heading
-
-[2mexpect([22m[31m |
-| **BUG-GUI-004** | `GUI-004` | S3 | P2 | README | [GUI-004] Error: Email input must have type="email"
-
-[2mexpect([22m[31mreceived[39m[2 |
-| **BUG-GUI-005** | `GUI-005` | S3 | P2 | README | [GUI-005] Error: Step indicator (Bước 1/2) must be visible on step 1
-
-[2mexpect([22m[31 |
-| **BUG-GUI-006** | `GUI-006` | S3 | P2 | README | [GUI-006] Error: Confirm password input must exist
-
-[2mexpect([22m[31mlocator[39m[2m) |
-| **BUG-GUI-007** | `GUI-007` | S3 | P2 | README | [GUI-007] Error: Error container must exist in DOM above submit button
-
-[2mexpect([22m[ |
-| **BUG-GUI-008** | `GUI-008` | S3 | P2 | README | [GUI-008] Error: Error must indicate OTP format requires 6 digits
-
-[2mexpect([22m[31mlo |
-| **BUG-GUI-009** | `GUI-009` | S3 | P2 | README | [GUI-009] Error: Link "Quay lại đăng nhập" must exist on step 1
-
-[2mexpect([22m[31mloca |
-| **BUG-GUI-012** | `GUI-012` | S3 | P2 | checklist-extension | [GUI-012] Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[2 |
-| **BUG-GUI-013** | `GUI-013` | S3 | P2 | README | [GUI-013] AggregateError: apiRequestContext.post: connect ECONNREFUSED ::1:3000
-connect EC |
-| **BUG-GUI-014** | `GUI-014` | S2 | P1 | README | [GUI-014] AggregateError: apiRequestContext.post: connect ECONNREFUSED ::1:3000
-connect EC |
-| **BUG-GUI-015** | `GUI-015` | S2 | P1 | checklist-extension | [GUI-015] AggregateError: apiRequestContext.post: connect ECONNREFUSED ::1:3000
-connect EC |
-| **BUG-GUI-018** | `GUI-018` | S3 | P2 | README | [GUI-018] Error: Currency must use '₫', found 'VND' in "30.000.000 VND" |
-| **BUG-GUI-019** | `GUI-019` | S3 | P2 | README | [GUI-019] Error: Expected exactly 1 h1 tag, found 2
-
-[2mexpect([22m[31mreceived[39m[2 |
-| **BUG-GUI-020** | `GUI-020` | S3 | P2 | checklist-extension | [GUI-020] Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBeGreaterThanOrEqual[2m( |
-| **BUG-GUI-021** | `GUI-021` | S3 | P2 | README | [GUI-021] Error: Search term must be escaped text literal, not raw HTML <b> tag
-
-[2mexpec |
-| **BUG-GUI-024** | `GUI-024` | S3 | P2 | README | [GUI-024] Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[2 |
-| **BUG-GUI-025** | `GUI-025` | S3 | P2 | README | [GUI-025] Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoHaveText[2m([22m[32mexpe |
-| **BUG-GUI-026** | `GUI-026` | S3 | P2 | checklist-extension | [GUI-026] Error: [2mexpect([22m[31mpage[39m[2m).[22mtoHaveURL[2m([22m[32mexpected |
-| **BUG-GUI-028** | `GUI-028` | S3 | P2 | README | [GUI-028] Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[2 |
-| **BUG-GUI-029** | `GUI-029` | S3 | P2 | README | [GUI-029] Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[2 |
-| **BUG-GUI-030** | `GUI-030` | S4 | P3 | README | [GUI-030] Error: Image #0 has empty alt text
-
-[2mexpect([22m[31mreceived[39m[2m).[22 |
-| **BUG-GUI-031** | `GUI-031` | S3 | P2 | README | [GUI-031] Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[2 |
-| **BUG-GUI-032** | `GUI-032` | S3 | P2 | README | [GUI-032] Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpect |
-| **BUG-GUI-033** | `GUI-033` | S3 | P2 | README | [GUI-033] Error: Cart total label must be exact "Tổng cộng", not "Tổng tạm tính"
-
-[2mexpe |
-| **BUG-GUI-034** | `GUI-034` | S3 | P2 | README | [GUI-034] Error: Money column must be right-aligned
-
-[2mexpect([22m[31mreceived[39m[2 |
-| **BUG-GUI-036** | `GUI-036` | S3 | P2 | README | [GUI-036] Error: Quantity controls missing in cart row: minus=false, plus=false, input=fal |
-| **BUG-GUI-037** | `GUI-037` | S3 | P2 | checklist-extension | [GUI-037] Error: Cart row must contain a quantity input field
-
-[2mexpect([22m[31mlocato |
-| **BUG-GUI-038** | `GUI-038` | S3 | P2 | checklist-extension | [GUI-038] Error: Quantity input required to test boundaries
-
-[2mexpect([22m[31mreceived |
-| **BUG-GUI-039** | `GUI-039` | S3 | P2 | README | [GUI-039] Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoMatch[2m([22m[32mexpect |
-| **BUG-GUI-040** | `GUI-040` | S3 | P2 | README | [GUI-040] Error: Breadcrumb navigation must exist on Cart page
-
-[2mexpect([22m[31mlocat |
-| **BUG-GUI-041** | `GUI-041` | S3 | P2 | README | [GUI-041] Error: Link text must be exact "Tiếp tục mua sắm", not "← Mua tiếp"
-
-[2mexpect( |
-| **BUG-GUI-043** | `GUI-043` | S3 | P2 | README | [GUI-043] Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoHaveCount[2m([22m[32mexp |
-| **BUG-GUI-044** | `GUI-044` | S3 | P2 | README | [GUI-044] Error: Confirmation dialog must appear before removing item
-
-[2mexpect([22m[3 |
-| **BUG-GUI-045** | `GUI-045` | S3 | P2 | README | [GUI-045] Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoHaveCount[2m([22m[32mexp |
-| **BUG-GUI-047** | `GUI-047` | S3 | P2 | README | [GUI-047] Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpect |
-| **BUG-GUI-048** | `GUI-048` | S3 | P2 | README | [GUI-048] Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoMatch[2m([22m[32mexpect |
-| **BUG-GUI-050** | `GUI-050` | S3 | P2 | README | [GUI-050] Error: Required fields (Tên, Giá, Danh mục) must have explicit * labels
-
-[2mexp |
-| **BUG-GUI-051** | `GUI-051` | S3 | P2 | README | [GUI-051] Error: Product name must be truncated or blocked at max 255 chars
-
-[2mexpect([ |
-| **BUG-GUI-052** | `GUI-052` | S3 | P2 | README | [GUI-052] Error: Error message required for price <= 0
-
-[2mexpect([22m[31mlocator[39m |
-| **BUG-GUI-055** | `GUI-055` | S3 | P2 | README | [GUI-055] Error: Validation error element must appear in DOM
-
-[2mexpect([22m[31mreceive |
-| **BUG-GUI-057** | `GUI-057` | S3 | P2 | README | [GUI-057] Error: Logout button must have exact text "Đăng xuất", not "Thoát" or "Log out"
- |
-| **BUG-GUI-059** | `GUI-059` | S3 | P2 | README | [GUI-059] Error: Editing must open in an accessible modal dialog with focus trap
-
-[2mexpe |
-| **BUG-GUI-060** | `GUI-060` | S2 | P1 | README | [GUI-060] Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoContainText[2m([22m[32me |
-| **BUG-GUI-061** | `GUI-061` | S3 | P2 | checklist-extension | [GUI-061] Error: Confirmation modal must appear before deleting product
-
-[2mexpect([22m |
-| **BUG-GUI-066** | `GUI-066` | S3 | P2 | checklist-extension | [GUI-066] Error: Delete button must have descriptive aria-label
-
-[2mexpect([22m[31mrece |
-| **BUG-GUI-067** | `GUI-067` | S3 | P2 | checklist-extension | [GUI-067] Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[2 |
-| **BUG-GUI-068** | `GUI-068` | S3 | P2 | checklist-extension | [GUI-068] Error: Quantity input required to test transient empty state
-
-[2mexpect([22m[ |
-| **BUG-GUI-070** | `GUI-070` | S3 | P2 | checklist-extension | [GUI-070] Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoHaveCount[2m([22m[32mexp |
+| **BUG-GUI-003** | `GUI-003` | S3 | P2 | README | [FR-03] Trang Quên mật khẩu thiếu thẻ tiêu đề h1 duy nhất |
+| **BUG-GUI-004** | `GUI-004` | S3 | P2 | README | [FR-03] Ô nhập Email thiếu thuộc tính type="email" |
+| **BUG-GUI-005** | `GUI-005` | S3 | P2 | README | [FR-03] Thiếu chỉ báo tiến trình bước (Bước 1/2) tại Bước 1 |
+| **BUG-GUI-006** | `GUI-006` | S3 | P2 | README | [FR-03] Thiếu trường nhập xác nhận mật khẩu tại Bước 2 |
+| **BUG-GUI-007** | `GUI-007` | S3 | P2 | README | [FR-03] Thiếu khối hiển thị lỗi validation phía trên nút gửi |
+| **BUG-GUI-008** | `GUI-008` | S3 | P2 | README | [FR-03] Ô nhập OTP không thông báo lỗi khi không đúng định dạng 6 chữ số |
+| **BUG-GUI-009** | `GUI-009` | S3 | P2 | README | [FR-03] Thiếu liên kết "Quay lại đăng nhập" tại Bước 1 |
+| **BUG-GUI-012** | `GUI-012` | S3 | P2 | checklist-extension | [FR-03] Phím Enter không kích hoạt gửi form chuyển bước |
+| **BUG-GUI-013** | `GUI-013` | S3 | P2 | README | [FR-03] Lỗi kết nối Backend API khi kiểm tra sinh mã OTP |
+| **BUG-GUI-014** | `GUI-014` | S2 | P1 | README | [FR-03] Lỗi kết nối Backend API khi kiểm tra ràng buộc OTP với email |
+| **BUG-GUI-015** | `GUI-015` | S2 | P1 | checklist-extension | [FR-03] Lỗi kết nối Backend API khi kiểm tra hoàn tất đặt lại mật khẩu |
+| **BUG-GUI-018** | `GUI-018` | S3 | P2 | README | [FR-05] Thẻ sản phẩm dùng đơn vị tiền tệ "VND" thay vì ký hiệu "₫" |
+| **BUG-GUI-019** | `GUI-019` | S3 | P2 | README | [FR-05] Trang danh sách sản phẩm tồn tại 2 thẻ h1 thay vì duy nhất 1 |
+| **BUG-GUI-020** | `GUI-020` | S3 | P2 | checklist-extension | [FR-05] Độ tương phản màu sắc chữ trên thẻ sản phẩm không đạt chuẩn WCAG AA |
+| **BUG-GUI-021** | `GUI-021` | S3 | P2 | README | [FR-05] Từ khóa tìm kiếm render trực tiếp thẻ HTML <b> chưa được escape |
+| **BUG-GUI-024** | `GUI-024` | S3 | P2 | README | [FR-05] Mục "Trang chủ" trên Navbar không có trạng thái active khi đang xem |
+| **BUG-GUI-025** | `GUI-025` | S3 | P2 | README | [FR-05] Badge số lượng giỏ hàng trên Navbar không cập nhật sau khi thêm hàng |
+| **BUG-GUI-026** | `GUI-026` | S3 | P2 | checklist-extension | [FR-05] Nhấp vào thẻ sản phẩm không điều hướng sang trang Chi tiết |
+| **BUG-GUI-028** | `GUI-028` | S3 | P2 | README | [FR-05] Thiếu hiệu ứng skeleton/loading khi đang tải danh sách sản phẩm |
+| **BUG-GUI-029** | `GUI-029` | S3 | P2 | README | [FR-05] Thiếu giao diện empty state thân thiện khi tìm kiếm không có kết quả |
+| **BUG-GUI-030** | `GUI-030` | S4 | P3 | README | [FR-05] Hình ảnh sản phẩm thiếu thuộc tính alt mô tả nội dung |
+| **BUG-GUI-031** | `GUI-031` | S3 | P2 | README | [FR-05] Thiếu thông báo toast phản hồi trực quan khi bấm Thêm vào giỏ hàng |
+| **BUG-GUI-032** | `GUI-032` | S3 | P2 | README | [FR-07] Bảng giỏ hàng không hiển thị đầy đủ 5 cột theo quy định đặc tả |
+| **BUG-GUI-033** | `GUI-033` | S3 | P2 | README | [FR-07] Nhãn tổng tiền hiển thị sai thành "Tổng tạm tính" thay vì "Tổng cộng" |
+| **BUG-GUI-034** | `GUI-034` | S3 | P2 | README | [FR-07] Các cột số tiền trong bảng giỏ hàng không được căn lề phải |
+| **BUG-GUI-036** | `GUI-036` | S3 | P2 | README | [FR-07] Dòng giỏ hàng thiếu cụm nút tăng giảm số lượng (+/-) và ô nhập |
+| **BUG-GUI-037** | `GUI-037` | S3 | P2 | checklist-extension | [FR-07] Giỏ hàng thiếu trường nhập trực tiếp số lượng bằng bàn phím |
+| **BUG-GUI-038** | `GUI-038` | S3 | P2 | checklist-extension | [FR-07] Không thể kiểm thử giá trị số lượng biên do thiếu ô nhập liệu |
+| **BUG-GUI-039** | `GUI-039` | S3 | P2 | README | [FR-07] Mục "Giỏ hàng" trên Navbar không được highlight active khi đang xem |
+| **BUG-GUI-040** | `GUI-040` | S3 | P2 | README | [FR-07] Trang Giỏ hàng thiếu thanh điều hướng phân cấp Breadcrumb |
+| **BUG-GUI-041** | `GUI-041` | S3 | P2 | README | [FR-07] Nút tiếp tục mua sắm hiển thị nhãn "← Mua tiếp" thay vì "Tiếp tục mua sắm" |
+| **BUG-GUI-043** | `GUI-043` | S3 | P2 | README | [FR-07] Thêm cùng một sản phẩm nhiều lần không tự động cộng dồn số lượng |
+| **BUG-GUI-044** | `GUI-044` | S3 | P2 | README | [FR-07] Thiếu hộp thoại xác nhận trước khi xóa sản phẩm khỏi giỏ hàng |
+| **BUG-GUI-045** | `GUI-045` | S3 | P2 | README | [FR-07] Thao tác Hủy hoặc phím Escape không giữ lại sản phẩm trong giỏ hàng |
+| **BUG-GUI-047** | `GUI-047` | S3 | P2 | README | [FR-15] Tiêu đề các cột trong bảng quản trị sản phẩm Admin chưa được Việt hóa |
+| **BUG-GUI-048** | `GUI-048` | S3 | P2 | README | [FR-15] Trang Quản lý sản phẩm thiếu thẻ tiêu đề h1 duy nhất |
+| **BUG-GUI-050** | `GUI-050` | S3 | P2 | README | [FR-15] Các trường bắt buộc trong form sản phẩm thiếu ký hiệu dấu sao (*) |
+| **BUG-GUI-051** | `GUI-051` | S3 | P2 | README | [FR-15] Trường tên sản phẩm không giới hạn độ dài tối đa 255 ký tự |
+| **BUG-GUI-052** | `GUI-052` | S3 | P2 | README | [FR-15] Không hiển thị thông báo lỗi khi nhập giá sản phẩm nhỏ hơn hoặc bằng 0 |
+| **BUG-GUI-055** | `GUI-055` | S3 | P2 | README | [FR-15] Khối thông báo lỗi form sản phẩm không nằm phía trên nút submit |
+| **BUG-GUI-057** | `GUI-057` | S3 | P2 | README | [FR-15] Nút đăng xuất dùng nhãn "Thoát"/"Log out" thay vì "Đăng xuất" |
+| **BUG-GUI-059** | `GUI-059` | S3 | P2 | README | [FR-15] Form Sửa sản phẩm không mở dưới dạng modal có bẫy focus bàn phím |
+| **BUG-GUI-060** | `GUI-060` | S2 | P1 | README | [FR-15] Cập nhật thông tin sản phẩm không đảm bảo tính cô lập dữ liệu |
+| **BUG-GUI-061** | `GUI-061` | S3 | P2 | checklist-extension | [FR-15] Thiếu modal xác nhận cảnh báo trước khi xóa sản phẩm quản trị |
+| **BUG-GUI-066** | `GUI-066` | S3 | P2 | checklist-extension | [FR-07] Nút Xóa sản phẩm thiếu thuộc tính aria-label cho công nghệ hỗ trợ |
+| **BUG-GUI-067** | `GUI-067` | S3 | P2 | checklist-extension | [FR-05] Thiếu giao diện thông báo lỗi mạng và nút "Thử lại" khi mất kết nối API |
+| **BUG-GUI-068** | `GUI-068` | S3 | P2 | checklist-extension | [FR-07] Ô nhập số lượng giỏ hàng xử lý chưa an toàn khi xóa trắng giá trị |
+| **BUG-GUI-070** | `GUI-070` | S3 | P2 | checklist-extension | [FR-05] Nút Thêm vào giỏ hàng thiếu cơ chế chống click spam liên tục |
 
 ## 3. Chi tiết Từng Lỗi và Bước Tái hiện
 
-### BUG-GUI-003: [GUI-003] Error: Password reset page must have exactly 1 h1 heading
-
-[2mexpect([22m[31m
+### BUG-GUI-003: [FR-03] Trang Quên mật khẩu thiếu thẻ tiêu đề h1 duy nhất
 
 - **Checklist IDs**: `GUI-003`
 - **Yêu cầu liên quan**: `FR21-H1`
@@ -138,10 +82,10 @@ connect EC |
 ```
 Error: Password reset page must have exactly 1 h1 heading
 
-[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+expect(received).toBe(expected) // Object.is equality
 
-Expected: [32m1[39m
-Received: [31m0[39m
+Expected: 1
+Received: 0
 ```
 
 **Bằng chứng (Evidence)**:
@@ -149,9 +93,7 @@ Received: [31m0[39m
 
 ---
 
-### BUG-GUI-004: [GUI-004] Error: Email input must have type="email"
-
-[2mexpect([22m[31mreceived[39m[2
+### BUG-GUI-004: [FR-03] Ô nhập Email thiếu thuộc tính type="email"
 
 - **Checklist IDs**: `GUI-004`
 - **Yêu cầu liên quan**: `FR22-REQ`, `FR22-EMAIL`, `FR03-EMAIL-INPUT`
@@ -167,10 +109,10 @@ Received: [31m0[39m
 ```
 Error: Email input must have type="email"
 
-[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+expect(received).toBe(expected) // Object.is equality
 
-Expected: [32m"email"[39m
-Received: [31m"text"[39m
+Expected: "email"
+Received: "text"
 ```
 
 **Bằng chứng (Evidence)**:
@@ -178,9 +120,7 @@ Received: [31m"text"[39m
 
 ---
 
-### BUG-GUI-005: [GUI-005] Error: Step indicator (Bước 1/2) must be visible on step 1
-
-[2mexpect([22m[31
+### BUG-GUI-005: [FR-03] Thiếu chỉ báo tiến trình bước (Bước 1/2) tại Bước 1
 
 - **Checklist IDs**: `GUI-005`
 - **Yêu cầu liên quan**: `FR22-STEP`, `FR03-STEP-IND`
@@ -196,7 +136,7 @@ Received: [31m"text"[39m
 ```
 Error: Step indicator (Bước 1/2) must be visible on step 1
 
-[2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+expect(locator).toBeVisible() failed
 
 Locator: .step-indicator, text=/Bước 1/i
 Expected: visible
@@ -208,9 +148,7 @@ Error: Unexpected token "=" while parsing css selector ".step-indicator, text=/B
 
 ---
 
-### BUG-GUI-006: [GUI-006] Error: Confirm password input must exist
-
-[2mexpect([22m[31mlocator[39m[2m)
+### BUG-GUI-006: [FR-03] Thiếu trường nhập xác nhận mật khẩu tại Bước 2
 
 - **Checklist IDs**: `GUI-006`
 - **Yêu cầu liên quan**: `FR22-PWD`, `FR03-RESET-INPUTS`
@@ -226,7 +164,7 @@ Error: Unexpected token "=" while parsing css selector ".step-indicator, text=/B
 ```
 Error: Confirm password input must exist
 
-[2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+expect(locator).toBeVisible() failed
 
 Locator: locator('input[type="password"]').nth(1)
 Expected: visible
@@ -234,7 +172,7 @@ Timeout: 5000ms
 Error: element(s) not found
 
 Call log:
-[2m  - Confirm password input must exist locator('
+  - Confirm password input must exist locator('
 ```
 
 **Bằng chứng (Evidence)**:
@@ -242,9 +180,7 @@ Call log:
 
 ---
 
-### BUG-GUI-007: [GUI-007] Error: Error container must exist in DOM above submit button
-
-[2mexpect([22m[
+### BUG-GUI-007: [FR-03] Thiếu khối hiển thị lỗi validation phía trên nút gửi
 
 - **Checklist IDs**: `GUI-007`
 - **Yêu cầu liên quan**: `FR03-PWD-RULES`, `FR03-PWD-CONFIRM`, `FR22-ERR-POS`
@@ -260,7 +196,7 @@ Call log:
 ```
 Error: Error container must exist in DOM above submit button
 
-[2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+expect(locator).toBeVisible() failed
 
 Locator: locator('.error, [role="alert"]').first()
 Expected: visible
@@ -268,7 +204,7 @@ Timeout: 5000ms
 Error: element(s) not found
 
 Call log:
-[2m  - Error container must e
+  - Error container must e
 ```
 
 **Bằng chứng (Evidence)**:
@@ -276,9 +212,7 @@ Call log:
 
 ---
 
-### BUG-GUI-008: [GUI-008] Error: Error must indicate OTP format requires 6 digits
-
-[2mexpect([22m[31mlo
+### BUG-GUI-008: [FR-03] Ô nhập OTP không thông báo lỗi khi không đúng định dạng 6 chữ số
 
 - **Checklist IDs**: `GUI-008`
 - **Yêu cầu liên quan**: `FR03-RESET-INPUTS`
@@ -294,7 +228,7 @@ Call log:
 ```
 Error: Error must indicate OTP format requires 6 digits
 
-[2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+expect(locator).toBeVisible() failed
 
 Locator: locator('text=/Mã OTP phải có 6 chữ số|không đúng định dạng/i')
 Expected: visible
@@ -302,7 +236,7 @@ Timeout: 5000ms
 Error: element(s) not found
 
 Call log:
-[2m  - Error
+  - Error
 ```
 
 **Bằng chứng (Evidence)**:
@@ -310,9 +244,7 @@ Call log:
 
 ---
 
-### BUG-GUI-009: [GUI-009] Error: Link "Quay lại đăng nhập" must exist on step 1
-
-[2mexpect([22m[31mloca
+### BUG-GUI-009: [FR-03] Thiếu liên kết "Quay lại đăng nhập" tại Bước 1
 
 - **Checklist IDs**: `GUI-009`
 - **Yêu cầu liên quan**: `FR03-BACK-LOGIN`
@@ -328,7 +260,7 @@ Call log:
 ```
 Error: Link "Quay lại đăng nhập" must exist on step 1
 
-[2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+expect(locator).toBeVisible() failed
 
 Locator: getByRole('link', { name: 'Quay lại đăng nhập' })
 Expected: visible
@@ -336,7 +268,7 @@ Timeout: 5000ms
 Error: element(s) not found
 
 Call log:
-[2m  - Link "Quay lại đăng n
+  - Link "Quay lại đăng n
 ```
 
 **Bằng chứng (Evidence)**:
@@ -344,7 +276,7 @@ Call log:
 
 ---
 
-### BUG-GUI-012: [GUI-012] Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[2
+### BUG-GUI-012: [FR-03] Phím Enter không kích hoạt gửi form chuyển bước
 
 - **Checklist IDs**: `GUI-012`
 - **Yêu cầu liên quan**: `USR-KBD-NAV`
@@ -358,7 +290,7 @@ Call log:
 
 **Kết quả thực tế**:
 ```
-Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+Error: expect(locator).toBeVisible() failed
 
 Locator: locator('text=/Bước 2|Mã OTP/i')
 Expected: visible
@@ -371,8 +303,7 @@ Error: strict mode violation: locator('text=/Bước 2|Mã OTP/i') resolved to 2
 
 ---
 
-### BUG-GUI-013: [GUI-013] AggregateError: apiRequestContext.post: connect ECONNREFUSED ::1:3000
-connect EC
+### BUG-GUI-013: [FR-03] Lỗi kết nối Backend API khi kiểm tra sinh mã OTP
 
 - **Checklist IDs**: `GUI-013`
 - **Yêu cầu liên quan**: `FR03-OTP-GEN`
@@ -389,10 +320,10 @@ connect EC
 AggregateError: apiRequestContext.post: connect ECONNREFUSED ::1:3000
 connect ECONNREFUSED 127.0.0.1:3000
 Call log:
-[2m  - → POST http://localhost:3000/api/forgot-password[22m
-[2m    - user-agent: Playwright/1.65.0 (arm64; macOS 27.0) node/22.17[22m
-[2m    - accept: */*[22m
-[2m    - accept-en
+  - → POST http://localhost:3000/api/forgot-password
+    - user-agent: Playwright/1.65.0 (arm64; macOS 27.0) node/22.17
+    - accept: */*
+    - accept-en
 ```
 
 **Bằng chứng (Evidence)**:
@@ -400,8 +331,7 @@ Call log:
 
 ---
 
-### BUG-GUI-014: [GUI-014] AggregateError: apiRequestContext.post: connect ECONNREFUSED ::1:3000
-connect EC
+### BUG-GUI-014: [FR-03] Lỗi kết nối Backend API khi kiểm tra ràng buộc OTP với email
 
 - **Checklist IDs**: `GUI-014`
 - **Yêu cầu liên quan**: `FR03-OTP-BIND`
@@ -418,10 +348,10 @@ connect EC
 AggregateError: apiRequestContext.post: connect ECONNREFUSED ::1:3000
 connect ECONNREFUSED 127.0.0.1:3000
 Call log:
-[2m  - → POST http://localhost:3000/api/forgot-password[22m
-[2m    - user-agent: Playwright/1.65.0 (arm64; macOS 27.0) node/22.17[22m
-[2m    - accept: */*[22m
-[2m    - accept-en
+  - → POST http://localhost:3000/api/forgot-password
+    - user-agent: Playwright/1.65.0 (arm64; macOS 27.0) node/22.17
+    - accept: */*
+    - accept-en
 ```
 
 **Bằng chứng (Evidence)**:
@@ -429,8 +359,7 @@ Call log:
 
 ---
 
-### BUG-GUI-015: [GUI-015] AggregateError: apiRequestContext.post: connect ECONNREFUSED ::1:3000
-connect EC
+### BUG-GUI-015: [FR-03] Lỗi kết nối Backend API khi kiểm tra hoàn tất đặt lại mật khẩu
 
 - **Checklist IDs**: `GUI-015`
 - **Yêu cầu liên quan**: `USR-FEEDBACK-RESET`
@@ -447,10 +376,10 @@ connect EC
 AggregateError: apiRequestContext.post: connect ECONNREFUSED ::1:3000
 connect ECONNREFUSED 127.0.0.1:3000
 Call log:
-[2m  - → POST http://localhost:3000/api/forgot-password[22m
-[2m    - user-agent: Playwright/1.65.0 (arm64; macOS 27.0) node/22.17[22m
-[2m    - accept: */*[22m
-[2m    - accept-en
+  - → POST http://localhost:3000/api/forgot-password
+    - user-agent: Playwright/1.65.0 (arm64; macOS 27.0) node/22.17
+    - accept: */*
+    - accept-en
 ```
 
 **Bằng chứng (Evidence)**:
@@ -458,7 +387,7 @@ Call log:
 
 ---
 
-### BUG-GUI-018: [GUI-018] Error: Currency must use '₫', found 'VND' in "30.000.000 VND"
+### BUG-GUI-018: [FR-05] Thẻ sản phẩm dùng đơn vị tiền tệ "VND" thay vì ký hiệu "₫"
 
 - **Checklist IDs**: `GUI-018`
 - **Yêu cầu liên quan**: `FR21-CURRENCY`, `USR-UI-ALIGN`
@@ -480,9 +409,7 @@ Error: Currency must use '₫', found 'VND' in "30.000.000 VND"
 
 ---
 
-### BUG-GUI-019: [GUI-019] Error: Expected exactly 1 h1 tag, found 2
-
-[2mexpect([22m[31mreceived[39m[2
+### BUG-GUI-019: [FR-05] Trang danh sách sản phẩm tồn tại 2 thẻ h1 thay vì duy nhất 1
 
 - **Checklist IDs**: `GUI-019`
 - **Yêu cầu liên quan**: `FR21-H1`
@@ -498,10 +425,10 @@ Error: Currency must use '₫', found 'VND' in "30.000.000 VND"
 ```
 Error: Expected exactly 1 h1 tag, found 2
 
-[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+expect(received).toBe(expected) // Object.is equality
 
-Expected: [32m1[39m
-Received: [31m2[39m
+Expected: 1
+Received: 2
 ```
 
 **Bằng chứng (Evidence)**:
@@ -509,7 +436,7 @@ Received: [31m2[39m
 
 ---
 
-### BUG-GUI-020: [GUI-020] Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBeGreaterThanOrEqual[2m(
+### BUG-GUI-020: [FR-05] Độ tương phản màu sắc chữ trên thẻ sản phẩm không đạt chuẩn WCAG AA
 
 - **Checklist IDs**: `GUI-020`
 - **Yêu cầu liên quan**: `USR-CONTRAST`
@@ -523,10 +450,10 @@ Received: [31m2[39m
 
 **Kết quả thực tế**:
 ```
-Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBeGreaterThanOrEqual[2m([22m[32mexpected[39m[2m)[22m
+Error: expect(received).toBeGreaterThanOrEqual(expected)
 
-Expected: >= [32m4.5[39m
-Received:    [31m1[39m
+Expected: >= 4.5
+Received:    1
 ```
 
 **Bằng chứng (Evidence)**:
@@ -534,9 +461,7 @@ Received:    [31m1[39m
 
 ---
 
-### BUG-GUI-021: [GUI-021] Error: Search term must be escaped text literal, not raw HTML <b> tag
-
-[2mexpec
+### BUG-GUI-021: [FR-05] Từ khóa tìm kiếm render trực tiếp thẻ HTML <b> chưa được escape
 
 - **Checklist IDs**: `GUI-021`
 - **Yêu cầu liên quan**: `FR05-SEARCH-SEC`
@@ -552,10 +477,10 @@ Received:    [31m1[39m
 ```
 Error: Search term must be escaped text literal, not raw HTML <b> tag
 
-[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+expect(received).toBe(expected) // Object.is equality
 
-Expected: [32m0[39m
-Received: [31m1[39m
+Expected: 0
+Received: 1
 ```
 
 **Bằng chứng (Evidence)**:
@@ -563,7 +488,7 @@ Received: [31m1[39m
 
 ---
 
-### BUG-GUI-024: [GUI-024] Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[2
+### BUG-GUI-024: [FR-05] Mục "Trang chủ" trên Navbar không có trạng thái active khi đang xem
 
 - **Checklist IDs**: `GUI-024`
 - **Yêu cầu liên quan**: `FR23-NAV-ACT`
@@ -577,7 +502,7 @@ Received: [31m1[39m
 
 **Kết quả thực tế**:
 ```
-Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+Error: expect(locator).toBeVisible() failed
 
 Locator: getByRole('link', { name: /Trang chủ|Cửa hàng/i })
 Expected: visible
@@ -585,7 +510,7 @@ Timeout: 5000ms
 Error: element(s) not found
 
 Call log:
-[2m  - Expect "toBeVisible" getByRole('link', { name: /Trang chủ|Cửa hàng/i
+  - Expect "toBeVisible" getByRole('link', { name: /Trang chủ|Cửa hàng/i
 ```
 
 **Bằng chứng (Evidence)**:
@@ -593,7 +518,7 @@ Call log:
 
 ---
 
-### BUG-GUI-025: [GUI-025] Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoHaveText[2m([22m[32mexpe
+### BUG-GUI-025: [FR-05] Badge số lượng giỏ hàng trên Navbar không cập nhật sau khi thêm hàng
 
 - **Checklist IDs**: `GUI-025`
 - **Yêu cầu liên quan**: `FR23-CART-BADGE`
@@ -607,15 +532,15 @@ Call log:
 
 **Kết quả thực tế**:
 ```
-Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoHaveText[2m([22m[32mexpected[39m[2m)[22m failed
+Error: expect(locator).toHaveText(expected) failed
 
 Locator: getByRole('link', { name: /Giỏ hàng/i }).locator('span, .badge').first()
-Expected pattern: [32m/1/[39m
+Expected pattern: /1/
 Timeout: 5000ms
 Error: element(s) not found
 
 Call log:
-[2m  - Expect "toHaveT
+  - Expect "toHaveT
 ```
 
 **Bằng chứng (Evidence)**:
@@ -623,7 +548,7 @@ Call log:
 
 ---
 
-### BUG-GUI-026: [GUI-026] Error: [2mexpect([22m[31mpage[39m[2m).[22mtoHaveURL[2m([22m[32mexpected
+### BUG-GUI-026: [FR-05] Nhấp vào thẻ sản phẩm không điều hướng sang trang Chi tiết
 
 - **Checklist IDs**: `GUI-026`
 - **Yêu cầu liên quan**: `USR-NAV-PROD-DETAIL`
@@ -637,15 +562,15 @@ Call log:
 
 **Kết quả thực tế**:
 ```
-Error: [2mexpect([22m[31mpage[39m[2m).[22mtoHaveURL[2m([22m[32mexpected[39m[2m)[22m failed
+Error: expect(page).toHaveURL(expected) failed
 
-Expected pattern: [32m/\/product\/1/[39m
-Received string:  [31m"http://localhost:5173/"[39m
+Expected pattern: /\/product\/1/
+Received string:  "http://localhost:5173/"
 Timeout: 5000ms
 
 Call log:
-[2m  - Expect "toHaveURL" with timeout 5000ms[22m
-[2m    13 × locator 
+  - Expect "toHaveURL" with timeout 5000ms
+    13 × locator 
 ```
 
 **Bằng chứng (Evidence)**:
@@ -653,7 +578,7 @@ Call log:
 
 ---
 
-### BUG-GUI-028: [GUI-028] Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[2
+### BUG-GUI-028: [FR-05] Thiếu hiệu ứng skeleton/loading khi đang tải danh sách sản phẩm
 
 - **Checklist IDs**: `GUI-028`
 - **Yêu cầu liên quan**: `FR05-LOADING`, `USR-STATE-SKELETON`
@@ -667,7 +592,7 @@ Call log:
 
 **Kết quả thực tế**:
 ```
-Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+Error: expect(locator).toBeVisible() failed
 
 Locator: .loading, .skeleton, text=/Đang tải|Loading/i
 Expected: visible
@@ -681,7 +606,7 @@ Error: Unexpected token "=" while parsing css selector ".loading, .skeleton, tex
 
 ---
 
-### BUG-GUI-029: [GUI-029] Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[2
+### BUG-GUI-029: [FR-05] Thiếu giao diện empty state thân thiện khi tìm kiếm không có kết quả
 
 - **Checklist IDs**: `GUI-029`
 - **Yêu cầu liên quan**: `FR05-EMPTY`, `FR24-EMPTY`
@@ -695,7 +620,7 @@ Error: Unexpected token "=" while parsing css selector ".loading, .skeleton, tex
 
 **Kết quả thực tế**:
 ```
-Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+Error: expect(locator).toBeVisible() failed
 
 Locator: locator('text=/Không tìm thấy|không có sản phẩm/i')
 Expected: visible
@@ -703,7 +628,7 @@ Timeout: 5000ms
 Error: element(s) not found
 
 Call log:
-[2m  - Expect "toBeVisible" locator('text=/Không tìm thấy|không có sản phẩ
+  - Expect "toBeVisible" locator('text=/Không tìm thấy|không có sản phẩ
 ```
 
 **Bằng chứng (Evidence)**:
@@ -711,9 +636,7 @@ Call log:
 
 ---
 
-### BUG-GUI-030: [GUI-030] Error: Image #0 has empty alt text
-
-[2mexpect([22m[31mreceived[39m[2m).[22
+### BUG-GUI-030: [FR-05] Hình ảnh sản phẩm thiếu thuộc tính alt mô tả nội dung
 
 - **Checklist IDs**: `GUI-030`
 - **Yêu cầu liên quan**: `FR24-ALT`
@@ -729,9 +652,9 @@ Call log:
 ```
 Error: Image #0 has empty alt text
 
-[2mexpect([22m[31mreceived[39m[2m).[22mtoBeTruthy[2m()[22m
+expect(received).toBeTruthy()
 
-Received: [31m""[39m
+Received: ""
 ```
 
 **Bằng chứng (Evidence)**:
@@ -739,7 +662,7 @@ Received: [31m""[39m
 
 ---
 
-### BUG-GUI-031: [GUI-031] Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[2
+### BUG-GUI-031: [FR-05] Thiếu thông báo toast phản hồi trực quan khi bấm Thêm vào giỏ hàng
 
 - **Checklist IDs**: `GUI-031`
 - **Yêu cầu liên quan**: `FR24-ADD-FEEDBACK`, `USR-STATE-TOAST`
@@ -753,7 +676,7 @@ Received: [31m""[39m
 
 **Kết quả thực tế**:
 ```
-Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+Error: expect(locator).toBeVisible() failed
 
 Locator: .toast, [role="status"], [role="alert"], text=/Đã thêm vào giỏ|thành công/i
 Expected: visible
@@ -765,7 +688,7 @@ Error: Unexpected token "=" while parsing css selector ".toast, [role="status"],
 
 ---
 
-### BUG-GUI-032: [GUI-032] Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpect
+### BUG-GUI-032: [FR-07] Bảng giỏ hàng không hiển thị đầy đủ 5 cột theo quy định đặc tả
 
 - **Checklist IDs**: `GUI-032`
 - **Yêu cầu liên quan**: `FR07-COLS`
@@ -779,17 +702,17 @@ Error: Unexpected token "=" while parsing css selector ".toast, [role="status"],
 
 **Kết quả thực tế**:
 ```
-Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+Error: expect(received).toEqual(expected) // deep equality
 
-[32m- Expected  - 1[39m
-[31m+ Received  + 1[39m
+- Expected  - 1
++ Received  + 1
 
-[2m  Array [[22m
-[2m    "Sản phẩm",[22m
-[32m-   "Đơn giá",[39m
-[31m+   "Giá",[39m
-[2m    "Số lượng",[22m
-[2m    "Thành t
+  Array [
+    "Sản phẩm",
+-   "Đơn giá",
++   "Giá",
+    "Số lượng",
+    "Thành t
 ```
 
 **Bằng chứng (Evidence)**:
@@ -797,9 +720,7 @@ Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpect
 
 ---
 
-### BUG-GUI-033: [GUI-033] Error: Cart total label must be exact "Tổng cộng", not "Tổng tạm tính"
-
-[2mexpe
+### BUG-GUI-033: [FR-07] Nhãn tổng tiền hiển thị sai thành "Tổng tạm tính" thay vì "Tổng cộng"
 
 - **Checklist IDs**: `GUI-033`
 - **Yêu cầu liên quan**: `FR07-TOTAL-LABEL`
@@ -815,10 +736,10 @@ Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpect
 ```
 Error: Cart total label must be exact "Tổng cộng", not "Tổng tạm tính"
 
-[2mexpect([22m[31mreceived[39m[2m).[22mtoContain[2m([22m[32mexpected[39m[2m) // indexOf[22m
+expect(received).toContain(expected) // indexOf
 
-Expected substring: [32m"Tổng cộng"[39m
-Received string:    [31m"Tổng tạm tính: 30.000.000 ₫"[39m
+Expected substring: "Tổng cộng"
+Received string:    "Tổng tạm tính: 30.000.000 ₫"
 ```
 
 **Bằng chứng (Evidence)**:
@@ -826,9 +747,7 @@ Received string:    [31m"Tổng tạm tính: 30.000.000 ₫"[39m
 
 ---
 
-### BUG-GUI-034: [GUI-034] Error: Money column must be right-aligned
-
-[2mexpect([22m[31mreceived[39m[2
+### BUG-GUI-034: [FR-07] Các cột số tiền trong bảng giỏ hàng không được căn lề phải
 
 - **Checklist IDs**: `GUI-034`
 - **Yêu cầu liên quan**: `FR21-CURRENCY`, `USR-UI-ALIGN`
@@ -844,10 +763,10 @@ Received string:    [31m"Tổng tạm tính: 30.000.000 ₫"[39m
 ```
 Error: Money column must be right-aligned
 
-[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+expect(received).toBe(expected) // Object.is equality
 
-Expected: [32m"[7mrigh[27mt"[39m
-Received: [31m"[7mlef[27mt"[39m
+Expected: "right"
+Received: "left"
 ```
 
 **Bằng chứng (Evidence)**:
@@ -855,7 +774,7 @@ Received: [31m"[7mlef[27mt"[39m
 
 ---
 
-### BUG-GUI-036: [GUI-036] Error: Quantity controls missing in cart row: minus=false, plus=false, input=fal
+### BUG-GUI-036: [FR-07] Dòng giỏ hàng thiếu cụm nút tăng giảm số lượng (+/-) và ô nhập
 
 - **Checklist IDs**: `GUI-036`
 - **Yêu cầu liên quan**: `FR07-QTY-CTRL`
@@ -877,9 +796,7 @@ Error: Quantity controls missing in cart row: minus=false, plus=false, input=fal
 
 ---
 
-### BUG-GUI-037: [GUI-037] Error: Cart row must contain a quantity input field
-
-[2mexpect([22m[31mlocato
+### BUG-GUI-037: [FR-07] Giỏ hàng thiếu trường nhập trực tiếp số lượng bằng bàn phím
 
 - **Checklist IDs**: `GUI-037`
 - **Yêu cầu liên quan**: `USR-QTY-VALID`
@@ -895,7 +812,7 @@ Error: Quantity controls missing in cart row: minus=false, plus=false, input=fal
 ```
 Error: Cart row must contain a quantity input field
 
-[2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+expect(locator).toBeVisible() failed
 
 Locator: locator('tbody tr').filter({ hasText: 'iPhone 15 Pro Max' }).locator('input[type="number"], input')
 Expected: visible
@@ -908,9 +825,7 @@ Error: element(s) no
 
 ---
 
-### BUG-GUI-038: [GUI-038] Error: Quantity input required to test boundaries
-
-[2mexpect([22m[31mreceived
+### BUG-GUI-038: [FR-07] Không thể kiểm thử giá trị số lượng biên do thiếu ô nhập liệu
 
 - **Checklist IDs**: `GUI-038`
 - **Yêu cầu liên quan**: `USR-QTY-VALID`
@@ -926,10 +841,10 @@ Error: element(s) no
 ```
 Error: Quantity input required to test boundaries
 
-[2mexpect([22m[31mreceived[39m[2m).[22mtoBeGreaterThan[2m([22m[32mexpected[39m[2m)[22m
+expect(received).toBeGreaterThan(expected)
 
-Expected: > [32m0[39m
-Received:   [31m0[39m
+Expected: > 0
+Received:   0
 ```
 
 **Bằng chứng (Evidence)**:
@@ -937,7 +852,7 @@ Received:   [31m0[39m
 
 ---
 
-### BUG-GUI-039: [GUI-039] Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoMatch[2m([22m[32mexpect
+### BUG-GUI-039: [FR-07] Mục "Giỏ hàng" trên Navbar không được highlight active khi đang xem
 
 - **Checklist IDs**: `GUI-039`
 - **Yêu cầu liên quan**: `FR23-NAV-ACT`
@@ -951,10 +866,10 @@ Received:   [31m0[39m
 
 **Kết quả thực tế**:
 ```
-Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoMatch[2m([22m[32mexpected[39m[2m)[22m
+Error: expect(received).toMatch(expected)
 
-Expected pattern: [32m/active|font-bold|text-blue/[39m
-Received string:  [31m"hover:underline"[39m
+Expected pattern: /active|font-bold|text-blue/
+Received string:  "hover:underline"
 ```
 
 **Bằng chứng (Evidence)**:
@@ -962,9 +877,7 @@ Received string:  [31m"hover:underline"[39m
 
 ---
 
-### BUG-GUI-040: [GUI-040] Error: Breadcrumb navigation must exist on Cart page
-
-[2mexpect([22m[31mlocat
+### BUG-GUI-040: [FR-07] Trang Giỏ hàng thiếu thanh điều hướng phân cấp Breadcrumb
 
 - **Checklist IDs**: `GUI-040`
 - **Yêu cầu liên quan**: `FR23-BREADCRUMB`
@@ -980,7 +893,7 @@ Received string:  [31m"hover:underline"[39m
 ```
 Error: Breadcrumb navigation must exist on Cart page
 
-[2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+expect(locator).toBeVisible() failed
 
 Locator: locator('nav[aria-label="breadcrumb"], .breadcrumb')
 Expected: visible
@@ -988,7 +901,7 @@ Timeout: 5000ms
 Error: element(s) not found
 
 Call log:
-[2m  - Breadcrumb navigati
+  - Breadcrumb navigati
 ```
 
 **Bằng chứng (Evidence)**:
@@ -996,9 +909,7 @@ Call log:
 
 ---
 
-### BUG-GUI-041: [GUI-041] Error: Link text must be exact "Tiếp tục mua sắm", not "← Mua tiếp"
-
-[2mexpect(
+### BUG-GUI-041: [FR-07] Nút tiếp tục mua sắm hiển thị nhãn "← Mua tiếp" thay vì "Tiếp tục mua sắm"
 
 - **Checklist IDs**: `GUI-041`
 - **Yêu cầu liên quan**: `FR07-CONTINUE`
@@ -1014,7 +925,7 @@ Call log:
 ```
 Error: Link text must be exact "Tiếp tục mua sắm", not "← Mua tiếp"
 
-[2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+expect(locator).toBeVisible() failed
 
 Locator: getByRole('link', { name: 'Tiếp tục mua sắm' })
 Expected: visible
@@ -1022,7 +933,7 @@ Timeout: 5000ms
 Error: element(s) not found
 
 Call log:
-[2m  - Link text
+  - Link text
 ```
 
 **Bằng chứng (Evidence)**:
@@ -1030,7 +941,7 @@ Call log:
 
 ---
 
-### BUG-GUI-043: [GUI-043] Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoHaveCount[2m([22m[32mexp
+### BUG-GUI-043: [FR-07] Thêm cùng một sản phẩm nhiều lần không tự động cộng dồn số lượng
 
 - **Checklist IDs**: `GUI-043`
 - **Yêu cầu liên quan**: `FR07-ACCUMULATE`
@@ -1044,15 +955,15 @@ Call log:
 
 **Kết quả thực tế**:
 ```
-Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoHaveCount[2m([22m[32mexpected[39m[2m)[22m failed
+Error: expect(locator).toHaveCount(expected) failed
 
 Locator:  locator('tbody tr').filter({ hasText: 'iPhone 15 Pro Max' })
-Expected: [32m1[39m
-Received: [31m2[39m
+Expected: 1
+Received: 2
 Timeout:  5000ms
 
 Call log:
-[2m  - Expect "toHaveCount" locator('tbody tr')
+  - Expect "toHaveCount" locator('tbody tr')
 ```
 
 **Bằng chứng (Evidence)**:
@@ -1060,9 +971,7 @@ Call log:
 
 ---
 
-### BUG-GUI-044: [GUI-044] Error: Confirmation dialog must appear before removing item
-
-[2mexpect([22m[3
+### BUG-GUI-044: [FR-07] Thiếu hộp thoại xác nhận trước khi xóa sản phẩm khỏi giỏ hàng
 
 - **Checklist IDs**: `GUI-044`
 - **Yêu cầu liên quan**: `FR07-DEL-CONFIRM`, `FR24-DEL-CONFIRM`
@@ -1078,9 +987,9 @@ Call log:
 ```
 Error: Confirmation dialog must appear before removing item
 
-[2mexpect([22m[31mreceived[39m[2m).[22mtoBeTruthy[2m()[22m
+expect(received).toBeTruthy()
 
-Received: [31mfalse[39m
+Received: false
 ```
 
 **Bằng chứng (Evidence)**:
@@ -1088,7 +997,7 @@ Received: [31mfalse[39m
 
 ---
 
-### BUG-GUI-045: [GUI-045] Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoHaveCount[2m([22m[32mexp
+### BUG-GUI-045: [FR-07] Thao tác Hủy hoặc phím Escape không giữ lại sản phẩm trong giỏ hàng
 
 - **Checklist IDs**: `GUI-045`
 - **Yêu cầu liên quan**: `FR07-DEL-CONFIRM`, `FR24-DEL-CONFIRM`
@@ -1102,15 +1011,15 @@ Received: [31mfalse[39m
 
 **Kết quả thực tế**:
 ```
-Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoHaveCount[2m([22m[32mexpected[39m[2m)[22m failed
+Error: expect(locator).toHaveCount(expected) failed
 
 Locator:  locator('tbody tr').filter({ hasText: 'iPhone 15 Pro Max' })
-Expected: [32m1[39m
-Received: [31m0[39m
+Expected: 1
+Received: 0
 Timeout:  5000ms
 
 Call log:
-[2m  - Expect "toHaveCount" locator('tbody tr')
+  - Expect "toHaveCount" locator('tbody tr')
 ```
 
 **Bằng chứng (Evidence)**:
@@ -1118,7 +1027,7 @@ Call log:
 
 ---
 
-### BUG-GUI-047: [GUI-047] Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpect
+### BUG-GUI-047: [FR-15] Tiêu đề các cột trong bảng quản trị sản phẩm Admin chưa được Việt hóa
 
 - **Checklist IDs**: `GUI-047`
 - **Yêu cầu liên quan**: `FR15-CRUD-VIEW`, `FR21-LANG`
@@ -1132,17 +1041,17 @@ Call log:
 
 **Kết quả thực tế**:
 ```
-Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+Error: expect(received).toEqual(expected) // deep equality
 
-[32m- Expected  - 3[39m
-[31m+ Received  + 2[39m
+- Expected  - 3
++ Received  + 2
 
-[2m  Array [[22m
-[2m    "Ảnh",[22m
-[32m-   "Tên sản phẩm",[39m
-[31m+   "Tên SP",[39m
-[2m    "Giá",[22m
-[32m-   "Danh mục
+  Array [
+    "Ảnh",
+-   "Tên sản phẩm",
++   "Tên SP",
+    "Giá",
+-   "Danh mục
 ```
 
 **Bằng chứng (Evidence)**:
@@ -1150,7 +1059,7 @@ Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpect
 
 ---
 
-### BUG-GUI-048: [GUI-048] Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoMatch[2m([22m[32mexpect
+### BUG-GUI-048: [FR-15] Trang Quản lý sản phẩm thiếu thẻ tiêu đề h1 duy nhất
 
 - **Checklist IDs**: `GUI-048`
 - **Yêu cầu liên quan**: `FR21-H1`
@@ -1164,10 +1073,10 @@ Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpect
 
 **Kết quả thực tế**:
 ```
-Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoMatch[2m([22m[32mexpected[39m[2m)[22m
+Error: expect(received).toMatch(expected)
 
-Expected pattern: [32m/Quản lý Sản phẩm|Sản phẩm/i[39m
-Received string:  [31m"EShop Admin"[39m
+Expected pattern: /Quản lý Sản phẩm|Sản phẩm/i
+Received string:  "EShop Admin"
 ```
 
 **Bằng chứng (Evidence)**:
@@ -1175,9 +1084,7 @@ Received string:  [31m"EShop Admin"[39m
 
 ---
 
-### BUG-GUI-050: [GUI-050] Error: Required fields (Tên, Giá, Danh mục) must have explicit * labels
-
-[2mexp
+### BUG-GUI-050: [FR-15] Các trường bắt buộc trong form sản phẩm thiếu ký hiệu dấu sao (*)
 
 - **Checklist IDs**: `GUI-050`
 - **Yêu cầu liên quan**: `FR22-REQ`
@@ -1193,12 +1100,12 @@ Received string:  [31m"EShop Admin"[39m
 ```
 Error: Required fields (Tên, Giá, Danh mục) must have explicit * labels
 
-[2mexpect([22m[31mreceived[39m[2m).[22mtoContain[2m([22m[32mexpected[39m[2m) // indexOf[22m
+expect(received).toContain(expected) // indexOf
 
-Expected substring: [32m"*"[39m
-Received string:    [31m"Thêm sản phẩm mới[39m
-[31mĐiện thoại[39m
-[31mLaptop[39m
+Expected substring: "*"
+Received string:    "Thêm sản phẩm mới
+Điện thoại
+Laptop
 
 ```
 
@@ -1207,9 +1114,7 @@ Received string:    [31m"Thêm sản phẩm mới[39m
 
 ---
 
-### BUG-GUI-051: [GUI-051] Error: Product name must be truncated or blocked at max 255 chars
-
-[2mexpect([
+### BUG-GUI-051: [FR-15] Trường tên sản phẩm không giới hạn độ dài tối đa 255 ký tự
 
 - **Checklist IDs**: `GUI-051`
 - **Yêu cầu liên quan**: `FR15-NAME-REQ`
@@ -1225,10 +1130,10 @@ Received string:    [31m"Thêm sản phẩm mới[39m
 ```
 Error: Product name must be truncated or blocked at max 255 chars
 
-[2mexpect([22m[31mreceived[39m[2m).[22mtoBeLessThanOrEqual[2m([22m[32mexpected[39m[2m)[22m
+expect(received).toBeLessThanOrEqual(expected)
 
-Expected: <= [32m255[39m
-Received:    [31m256[39m
+Expected: <= 255
+Received:    256
 ```
 
 **Bằng chứng (Evidence)**:
@@ -1236,9 +1141,7 @@ Received:    [31m256[39m
 
 ---
 
-### BUG-GUI-052: [GUI-052] Error: Error message required for price <= 0
-
-[2mexpect([22m[31mlocator[39m
+### BUG-GUI-052: [FR-15] Không hiển thị thông báo lỗi khi nhập giá sản phẩm nhỏ hơn hoặc bằng 0
 
 - **Checklist IDs**: `GUI-052`
 - **Yêu cầu liên quan**: `FR15-PRICE-REQ`
@@ -1254,7 +1157,7 @@ Received:    [31m256[39m
 ```
 Error: Error message required for price <= 0
 
-[2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+expect(locator).toBeVisible() failed
 
 Locator: locator('text=/Giá phải lớn hơn 0|không hợp lệ/i')
 Expected: visible
@@ -1262,7 +1165,7 @@ Timeout: 5000ms
 Error: element(s) not found
 
 Call log:
-[2m  - Error message required for pr
+  - Error message required for pr
 ```
 
 **Bằng chứng (Evidence)**:
@@ -1270,9 +1173,7 @@ Call log:
 
 ---
 
-### BUG-GUI-055: [GUI-055] Error: Validation error element must appear in DOM
-
-[2mexpect([22m[31mreceive
+### BUG-GUI-055: [FR-15] Khối thông báo lỗi form sản phẩm không nằm phía trên nút submit
 
 - **Checklist IDs**: `GUI-055`
 - **Yêu cầu liên quan**: `FR22-ERR-POS`
@@ -1288,10 +1189,10 @@ Call log:
 ```
 Error: Validation error element must appear in DOM
 
-[2mexpect([22m[31mreceived[39m[2m).[22mtoBeGreaterThan[2m([22m[32mexpected[39m[2m)[22m
+expect(received).toBeGreaterThan(expected)
 
-Expected: > [32m0[39m
-Received:   [31m0[39m
+Expected: > 0
+Received:   0
 ```
 
 **Bằng chứng (Evidence)**:
@@ -1299,8 +1200,7 @@ Received:   [31m0[39m
 
 ---
 
-### BUG-GUI-057: [GUI-057] Error: Logout button must have exact text "Đăng xuất", not "Thoát" or "Log out"
-
+### BUG-GUI-057: [FR-15] Nút đăng xuất dùng nhãn "Thoát"/"Log out" thay vì "Đăng xuất"
 
 - **Checklist IDs**: `GUI-057`
 - **Yêu cầu liên quan**: `FR23-LOGOUT`
@@ -1316,7 +1216,7 @@ Received:   [31m0[39m
 ```
 Error: Logout button must have exact text "Đăng xuất", not "Thoát" or "Log out"
 
-[2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+expect(locator).toBeVisible() failed
 
 Locator: getByRole('button', { name: 'Đăng xuất' })
 Expected: visible
@@ -1324,7 +1224,7 @@ Timeout: 5000ms
 Error: element(s) not found
 
 Call log:
-[2m  - Lo
+  - Lo
 ```
 
 **Bằng chứng (Evidence)**:
@@ -1332,9 +1232,7 @@ Call log:
 
 ---
 
-### BUG-GUI-059: [GUI-059] Error: Editing must open in an accessible modal dialog with focus trap
-
-[2mexpe
+### BUG-GUI-059: [FR-15] Form Sửa sản phẩm không mở dưới dạng modal có bẫy focus bàn phím
 
 - **Checklist IDs**: `GUI-059`
 - **Yêu cầu liên quan**: `FR21-TABORDER`, `USR-KBD-NAV`
@@ -1350,7 +1248,7 @@ Call log:
 ```
 Error: Editing must open in an accessible modal dialog with focus trap
 
-[2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+expect(locator).toBeVisible() failed
 
 Locator: locator('dialog, [role="dialog"], .modal')
 Expected: visible
@@ -1358,7 +1256,7 @@ Timeout: 5000ms
 Error: element(s) not found
 
 Call log:
-[2m  - Editing mus
+  - Editing mus
 ```
 
 **Bằng chứng (Evidence)**:
@@ -1366,7 +1264,7 @@ Call log:
 
 ---
 
-### BUG-GUI-060: [GUI-060] Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoContainText[2m([22m[32me
+### BUG-GUI-060: [FR-15] Cập nhật thông tin sản phẩm không đảm bảo tính cô lập dữ liệu
 
 - **Checklist IDs**: `GUI-060`
 - **Yêu cầu liên quan**: `FR15-ISOLATE`
@@ -1380,15 +1278,15 @@ Call log:
 
 **Kết quả thực tế**:
 ```
-Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoContainText[2m([22m[32mexpected[39m[2m)[22m failed
+Error: expect(locator).toContainText(expected) failed
 
 Locator: locator('tbody tr').filter({ hasText: 'Samsung Galaxy S24 Ultra' })
-Expected substring: [32m"28000000"[39m
+Expected substring: "28000000"
 Timeout: 5000ms
 Error: element(s) not found
 
 Call log:
-[2m  - Expect "
+  - Expect "
 ```
 
 **Bằng chứng (Evidence)**:
@@ -1396,9 +1294,7 @@ Call log:
 
 ---
 
-### BUG-GUI-061: [GUI-061] Error: Confirmation modal must appear before deleting product
-
-[2mexpect([22m
+### BUG-GUI-061: [FR-15] Thiếu modal xác nhận cảnh báo trước khi xóa sản phẩm quản trị
 
 - **Checklist IDs**: `GUI-061`
 - **Yêu cầu liên quan**: `USR-DELETE-ADMIN`
@@ -1414,7 +1310,7 @@ Call log:
 ```
 Error: Confirmation modal must appear before deleting product
 
-[2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+expect(locator).toBeVisible() failed
 
 Locator: locator('dialog, [role="dialog"], .modal').filter({ hasText: /Xác nhận xóa|Cảnh báo/i })
 Expected: visible
@@ -1427,9 +1323,7 @@ Error: element(s) not
 
 ---
 
-### BUG-GUI-066: [GUI-066] Error: Delete button must have descriptive aria-label
-
-[2mexpect([22m[31mrece
+### BUG-GUI-066: [FR-07] Nút Xóa sản phẩm thiếu thuộc tính aria-label cho công nghệ hỗ trợ
 
 - **Checklist IDs**: `GUI-066`
 - **Yêu cầu liên quan**: `USR-A11Y-SR`
@@ -1445,9 +1339,9 @@ Error: element(s) not
 ```
 Error: Delete button must have descriptive aria-label
 
-[2mexpect([22m[31mreceived[39m[2m).[22mtoBeTruthy[2m()[22m
+expect(received).toBeTruthy()
 
-Received: [31mnull[39m
+Received: null
 ```
 
 **Bằng chứng (Evidence)**:
@@ -1455,7 +1349,7 @@ Received: [31mnull[39m
 
 ---
 
-### BUG-GUI-067: [GUI-067] Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[2
+### BUG-GUI-067: [FR-05] Thiếu giao diện thông báo lỗi mạng và nút "Thử lại" khi mất kết nối API
 
 - **Checklist IDs**: `GUI-067`
 - **Yêu cầu liên quan**: `USR-STATE-NET-ERR`
@@ -1469,7 +1363,7 @@ Received: [31mnull[39m
 
 **Kết quả thực tế**:
 ```
-Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+Error: expect(locator).toBeVisible() failed
 
 Locator: getByRole('button', { name: /Thử lại/i })
 Expected: visible
@@ -1477,7 +1371,7 @@ Timeout: 3000ms
 Error: element(s) not found
 
 Call log:
-[2m  - Expect "toBeVisible" getByRole('button', { name: /Thử lại/i }) with timeout 3
+  - Expect "toBeVisible" getByRole('button', { name: /Thử lại/i }) with timeout 3
 ```
 
 **Bằng chứng (Evidence)**:
@@ -1485,9 +1379,7 @@ Call log:
 
 ---
 
-### BUG-GUI-068: [GUI-068] Error: Quantity input required to test transient empty state
-
-[2mexpect([22m[
+### BUG-GUI-068: [FR-07] Ô nhập số lượng giỏ hàng xử lý chưa an toàn khi xóa trắng giá trị
 
 - **Checklist IDs**: `GUI-068`
 - **Yêu cầu liên quan**: `USR-QTY-VALID`
@@ -1503,10 +1395,10 @@ Call log:
 ```
 Error: Quantity input required to test transient empty state
 
-[2mexpect([22m[31mreceived[39m[2m).[22mtoBeGreaterThan[2m([22m[32mexpected[39m[2m)[22m
+expect(received).toBeGreaterThan(expected)
 
-Expected: > [32m0[39m
-Received:   [31m0[39m
+Expected: > 0
+Received:   0
 ```
 
 **Bằng chứng (Evidence)**:
@@ -1514,7 +1406,7 @@ Received:   [31m0[39m
 
 ---
 
-### BUG-GUI-070: [GUI-070] Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoHaveCount[2m([22m[32mexp
+### BUG-GUI-070: [FR-05] Nút Thêm vào giỏ hàng thiếu cơ chế chống click spam liên tục
 
 - **Checklist IDs**: `GUI-070`
 - **Yêu cầu liên quan**: `USR-STATE-DEBOUNCE`
@@ -1528,15 +1420,15 @@ Received:   [31m0[39m
 
 **Kết quả thực tế**:
 ```
-Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoHaveCount[2m([22m[32mexpected[39m[2m)[22m failed
+Error: expect(locator).toHaveCount(expected) failed
 
 Locator:  locator('tbody tr').filter({ hasText: 'iPhone 15 Pro Max' })
-Expected: [32m1[39m
-Received: [31m3[39m
+Expected: 1
+Received: 3
 Timeout:  5000ms
 
 Call log:
-[2m  - Expect "toHaveCount" locator('tbody tr')
+  - Expect "toHaveCount" locator('tbody tr')
 ```
 
 **Bằng chứng (Evidence)**:

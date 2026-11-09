@@ -1,5 +1,5 @@
 ## Tóm tắt
-[GUI-039] Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoMatch[2m([22m[32mexpect
+[FR-07] Mục "Giỏ hàng" trên Navbar không được highlight active khi đang xem
 
 ## Truy vết
 - Bug key: BUG-GUI-039
@@ -10,7 +10,7 @@
 
 ## Môi trường
 - Build/commit + dirty flag: HEAD, clean
-- Run ID và timestamp có timezone: 2026-11-09T14:35:47.338Z
+- Run ID và timestamp có timezone: 2026-11-09T16:53:30.027Z
 - Nền tảng, OS/device và browser version thật: darwin, Google Chrome
 - URL, viewport và mode: http://localhost:5173; 1440x900; mock-ui
 - Mock đang bật: none
@@ -28,10 +28,10 @@ Dữ liệu 5 sản phẩm baseline điện tử (iPhone 15 Pro Max, Samsung Gal
 active-cart-nav
 
 ## Kết quả thực tế
-Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoMatch[2m([22m[32mexpected[39m[2m)[22m
+Error: expect(received).toMatch(expected)
 
-Expected pattern: [32m/active|font-bold|text-blue/[39m
-Received string:  [31m"hover:underline"[39m
+Expected pattern: /active|font-bold|text-blue/
+Received string:  "hover:underline"
 
 ## Bằng chứng
 - Local file: `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr07-FR-07-Shopping-Cart-D-955e4-avigation-highlight-on-cart-chrome-local/test-failed-1.png`
