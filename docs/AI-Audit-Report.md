@@ -452,3 +452,117 @@ Tài liệu có bảng rủi ro, mốc commit, lệnh kiểm chứng và điều
 
 Theo [writing-plans](/Users/thuytran/.codex/plugins/cache/openai-curated-remote/superpowers/7.0.1/skills/writing-plans/SKILL.md), cần “review the plan and choose an execution method before implementation”. Bạn xem kế hoạch đã đúng ý chưa; nếu triển khai tiếp, bạn chọn **Native** hay **Subagent-driven**? Tôi đề xuất **Native** vì các task dùng chung nhiều interface.
 ```
+<!-- audit-event:f09131b69b075313e4849bca431d77ffad9d845b819276e2efd4df8c73cf9c5e -->
+## Generation (prepared/exported) | eshop-hw03-playwright-automation-execution
+
+- Date: 2026-11-09
+- Time: 21:48:09+07:00
+- Event timestamp UTC: 2026-11-09T14:48:09+00:00
+- Model identity: Gemini 3.8 Flash (Medium)
+- Source: Explicit raw files supplied by agent; preparation/export time, not delivery confirmation
+- Imported at UTC: 2026-11-09T14:48:14.690110+00:00
+
+### Input prompt (raw text)
+
+```text
+thực hiện các task trong plan docs/superpowers/plans/2026-11-09-playwright-test-automation-execution.md
+
+```
+
+### Raw generation output
+
+```text
+# Báo Cáo Hoàn Thành Toàn Bộ Kế Hoạch Playwright Test Automation & Execution (HW03)
+
+Toàn bộ các task trong kế hoạch [`docs/superpowers/plans/2026-11-09-playwright-test-automation-execution.md`](file:///Users/thuytran/Workspace/eshop-sut/docs/superpowers/plans/2026-11-09-playwright-test-automation-execution.md) đã được thực hiện và bàn giao hoàn tất trên branch `hw03-gui-usability`.
+
+---
+
+## 1. Tổng Quan Kiến Trúc & Các Task Đã Hoàn Thành
+
+1. **Giai đoạn 1 (Chuẩn bị kiến trúc & Quản lý Excel an toàn):**
+   - **Task 1:** Thiết lập độc lập gói Playwright TypeScript tại [`tests/gui/`](file:///Users/thuytran/Workspace/eshop-sut/tests/gui/), cấu hình project duy nhất `chrome-local` sử dụng Google Chrome thật (`channel: 'chrome'`), viewport mặc định 1440×900 kèm responsive 768×1024 và 360×800. Xây dựng các Page Object Models: `CatalogPage`, `CartPage`, `ResetPasswordPage`, `AdminProductsPage`. (Commit `23ac07c`)
+   - **Task 2:** Xây dựng [`excel-store.ts`](file:///Users/thuytran/Workspace/eshop-sut/tests/gui/checklist/excel-store.ts) với cơ chế bảo vệ nghiêm ngặt: tạo backup timestamp, khóa ghi file (file lock), kiểm tra hash SHA-256 chống ghi đè xung đột, cập nhật an toàn đúng 4 cột (`status`, `actual_result`, `notes`, `evidence_path`) theo ID mà không làm thay đổi định dạng, công thức hay cấu trúc của 5 worksheets. (Commit `c6b3ef9`)
+
+2. **Giai đoạn 2 (Xây dựng kịch bản kiểm thử cho 70 Checklist Items):**
+   - **Task 3 (FR-05 - 19 items):** Catalog, tìm kiếm, lọc danh mục, phân trang, hiển thị giá `₫`, responsive grid, bảo vệ XSS và xử lý lỗi mạng (`fr05.spec.ts`). Ánh xạ đúng 5 sản phẩm điện tử thực tế từ seed (`execution-data.ts`). (Commit `5a469f0`)
+   - **Task 4 (FR-07 - 18 items):** Giỏ hàng, tính toán tổng tiền, bảng dữ liệu, kiểm tra phím Tab, aria-live, tương thích touch target và phát hiện thiếu control số lượng (+/−) (`fr07.spec.ts`). Cổng kiểm tra thủ công tại [`manual-checks.md`](file:///Users/thuytran/Workspace/eshop-sut/docs/gui-checklist/automation/manual-checks.md). (Commit `666ec96`)
+   - **Task 5 (FR-03 - 15 items):** Quên & đặt lại mật khẩu, luồng 2 bước, kiểm tra kiểu input email, độ dài mã OTP, xác nhận mật khẩu và liên kết quay lại (`fr03.spec.ts`). (Commit `20d95a0`)
+   - **Task 6 (FR-15 - 18 items):** Quản trị viên quản lý sản phẩm CRUD, form validation, modal cảnh báo xóa và kiểm tra tính độc lập dữ liệu khi cập nhật sản phẩm (`fr15.spec.ts`). (Commit `516b7b5`)
+
+3. **Giai đoạn 3 (Bằng chứng, Bộ điều phối thực thi & Cập nhật kết quả):**
+   - **Task 7:** Bộ thu thập bằng chứng tự động (`evidence.ts`), chụp ảnh màn hình khi assertion fail, quay trace, gom nhóm kết quả nhiều lần chạy vào `matrix.json`. (Commit `c282bf2`)
+   - **Task 8:** Bộ điều phối thực thi độc lập (`runner/run.ts`), tích hợp backend SQLite sandbox tự phục hồi, cập nhật kết quả vào file Excel và tạo bản sao lưu. (Commit `720d8a4`)
+   - **Thực thi trên Google Chrome thật & Ghi nhận kết quả:** Hoàn tất chạy toàn bộ suite, writeback vào workbook và xuất báo cáo tổng kết. (Commit `a72f378`)
+
+4. **Giai đoạn 4 (Báo cáo lỗi & Xuất bản nháp GitHub Issues):**
+   - **Task 9:** Bộ triage lỗi (`reporting/bugs.ts`), xuất [`bug-report.md`](file:///Users/thuytran/Workspace/eshop-sut/docs/gui-checklist/automation/bug-report.md), tạo 48 bản nháp Markdown issue tại [`docs/gui-checklist/automation/issue-drafts/`](file:///Users/thuytran/Workspace/eshop-sut/docs/gui-checklist/automation/issue-drafts/) kèm [`issues.json`](file:///Users/thuytran/Workspace/eshop-sut/docs/gui-checklist/automation/issue-drafts/issues.json) và GitHub issue template. (Commit `1549f71`)
+
+---
+
+## 2. Kết Quả Thực Thi Thực Tế Trên Google Chrome
+
+Kết quả tổng hợp từ file [`execution-summary.md`](file:///Users/thuytran/Workspace/eshop-sut/docs/gui-checklist/automation/execution-summary.md) sau khi chạy toàn bộ test suite trên Google Chrome:
+
+| Chỉ số | Số lượng | Tỷ lệ | Ghi chú |
+| :--- | :---: | :---: | :--- |
+| **Tổng số mục checklist** | **70** | 100% | Đầy đủ 70 Checklist Items |
+| **Đã thực thi (Executed)** | **68** | 97.1% | Đã chạy và có phán quyết tự động |
+| **Đạt (Passed)** | **20** | **29.4%** | Đáp ứng đúng tiêu chí đặc tả |
+| **Lỗi (Failed)** | **48** | **70.6%** | Phát hiện lỗi giao diện hoặc hành vi thực tế |
+| **Chưa thực thi (Not Run)** | **2** | 2.9% | GUI-065 (chờ IME gõ tiếng Việt) & GUI-066 (chờ Screen Reader) |
+
+### Phân Bổ Theo Màn Hình & Khía Cạnh Đánh Giá (IA)
+
+- **Theo Màn hình:**
+  - **FR-03 (Quên mật khẩu):** 15 items $\rightarrow$ 4 Passed, 11 Failed, 0 Not Run.
+  - **FR-05 (Danh sách & Tìm kiếm):** 19 items $\rightarrow$ 5 Passed, 13 Failed, 1 Not Run.
+  - **FR-07 (Chi tiết giỏ hàng):** 18 items $\rightarrow$ 4 Passed, 14 Failed, 0 Not Run.
+  - **FR-15 (Admin Quản lý sản phẩm):** 18 items $\rightarrow$ 7 Passed, 10 Failed, 1 Not Run.
+- **Theo Khía cạnh (IA):**
+  - **IA-01 (Tiêu chuẩn chung & Responsive):** 18 items $\rightarrow$ 7 Passed, 11 Failed, 0 Not Run.
+  - **IA-02 (Biểu mẫu & Dữ liệu):** 18 items $\rightarrow$ 4 Passed, 13 Failed, 1 Not Run.
+  - **IA-03 (Điều hướng & Tương tác):** 16 items $\rightarrow$ 6 Passed, 10 Failed, 0 Not Run.
+  - **IA-04 (Phản hồi & Trạng thái lỗi):** 18 items $\rightarrow$ 3 Passed, 14 Failed, 1 Not Run.
+
+---
+
+## 3. Các Lỗi Giao Diện & Hành Vi Nổi Bật Phát Hiện Trên SUT
+
+Bộ kiểm thử đã phản ánh trung thực trạng thái hiện tại của ứng dụng SUT (không sửa mã nguồn SUT để làm test xanh giả tạo):
+1. **Màn hình Danh sách sản phẩm (FR-05):**
+   - Giá hiển thị ký hiệu `VND` thay vì `₫` chuẩn đặc tả (GUI-018).
+   - Trang chủ vi phạm cấu trúc thẻ tiêu đề: có 2 thẻ `<h1>` ("Danh sách sản phẩm" và "Hiển thị 5 sản phẩm") (GUI-019).
+   - Ô tìm kiếm render HTML thô qua `dangerouslySetInnerHTML`, tiềm ẩn rủi ro XSS (GUI-021).
+2. **Màn hình Quên mật khẩu (FR-03):**
+   - Tiêu đề form là `<h2>Quên Mật Khẩu</h2>`, trang hoàn toàn thiếu thẻ `<h1>` (GUI-003).
+   - Ô nhập email có thuộc tính `type="text"` thay vì `type="email"` (GUI-004).
+   - Thiếu chỉ báo bước (step indicator) (GUI-005) và thiếu trường xác nhận mật khẩu mới (GUI-006).
+   - Backend sinh mã OTP 4 chữ số thay vì 6 chữ số theo đặc tả (GUI-008, GUI-013).
+   - Nút quay lại không có đường link về trang đăng nhập `/login` (GUI-009).
+3. **Màn hình Giỏ hàng (FR-07):**
+   - Header bảng ghi "Giá" thay vì "Đơn giá" (GUI-032); nhãn hiển thị "Tổng tạm tính" thay vì "Tổng cộng" (GUI-033).
+   - Hoàn toàn thiếu nút tăng giảm số lượng (+/−) và ô nhập trực tiếp trong bảng giỏ hàng (GUI-036, GUI-037).
+   - Nút quay lại ghi "← Mua tiếp" thay vì "Tiếp tục mua sắm" (GUI-041).
+   - Giỏ hàng lưu trên React memory, không đồng bộ xuống storage hoặc API giỏ hàng.
+4. **Màn hình Quản trị viên (FR-15):**
+   - Bảng quản lý sản phẩm thiếu cột hiển thị "Danh mục" (GUI-047).
+   - Nút xóa sản phẩm gọi xóa trực tiếp và alert trình duyệt, thiếu modal cảnh báo xác nhận xóa (GUI-061).
+   - **Lỗi nghiêm trọng (State Mutation):** Chỉnh sửa sản phẩm A làm thay đổi toàn bộ tên các sản phẩm khác trong local React state (`App.jsx:110`) (GUI-060).
+
+---
+
+## 4. Danh Mục Tập Tin Đầu Ra & Bàn Giao
+
+| Đường dẫn tập tin | Nội dung & Vai trò |
+| :--- | :--- |
+| [`docs/gui-checklist/EShop-GUI-Checklist.xlsx`](file:///Users/thuytran/Workspace/eshop-sut/docs/gui-checklist/EShop-GUI-Checklist.xlsx) | Sổ làm việc Excel đã được cập nhật an toàn 4 cột (`status`, `actual_result`, `notes`, `evidence_path`) từ kết quả chạy Chrome thật |
+| [`docs/gui-checklist/backups/`](file:///Users/thuytran/Workspace/eshop-sut/docs/gui-checklist/backups/) | Thư mục chứa bản sao lưu nguyên bản byte của file Excel trước khi ghi |
+| [`docs/gui-checklist/automation/execution-summary.md`](file:///Users/thuytran/Workspace/eshop-sut/docs/gui-checklist/automation/execution-summary.md) | Báo cáo tổng kết thực thi kiểm thử chi tiết |
+| [`docs/gui-checklist/automation/bug-report.md`](file:///Users/thuytran/Workspace/eshop-sut/docs/gui-checklist/automation/bug-report.md) | Báo cáo chi tiết 48 lỗi phát hiện trên SUT kèm truy vết checklist |
+| [`docs/gui-checklist/automation/issue-drafts/`](file:///Users/thuytran/Workspace/eshop-sut/docs/gui-checklist/automation/issue-drafts/) | 48 bản nháp GitHub Issues (`BUG-GUI-*.md`) và danh mục JSON (`issues.json`) |
+| [`docs/gui-checklist/automation/manual-checks.md`](file:///Users/thuytran/Workspace/eshop-sut/docs/gui-checklist/automation/manual-checks.md) | Tài liệu hướng dẫn thực hiện và nhập kết quả kiểm tra thủ công cho GUI-065 & GUI-066 |
+| [`docs/gui-checklist/automation/git-commit-log.txt`](file:///Users/thuytran/Workspace/eshop-sut/docs/gui-checklist/automation/git-commit-log.txt) | Lịch sử commit Git có ngày giờ ISO-8601 và author provenance |
+| [`tests/gui/`](file:///Users/thuytran/Workspace/eshop-sut/tests/gui/) | Toàn bộ mã nguồn kiểm thử tự động Playwright TypeScript, Page Objects, runner và test suites |
+
+```
