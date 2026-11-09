@@ -9,7 +9,9 @@
     "typecheck": "tsc --noEmit",
     "test:e2e": "playwright test",
     "browsers:install": "playwright install",
-    "checklist:validate": "tsx checklist/validate.ts"
+    "checklist:validate": "tsx checklist/validate.ts",
+    "gui:run": "tsx runner/run.ts",
+    "manual:import": "tsx runner/import-manual.ts"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.14.0",
