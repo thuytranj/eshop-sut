@@ -78,11 +78,11 @@ export async function loginViaUi(
 ): Promise<void> {
   await page.goto(baseURL);
   // If login form is shown
-  const emailInput = page.locator('input[type="email"], input').first();
-  const pwdInput = page.locator('input[type="password"]');
-  const loginBtn = page.getByRole('button', { name: /Đăng nhập/i });
+  const loginBtn = page.getByRole('button', { name: /Login|Đăng nhập/i });
 
   if (await loginBtn.isVisible()) {
+    const emailInput = page.getByPlaceholder('Email').or(page.locator('input').first());
+    const pwdInput = page.getByPlaceholder('Password').or(page.locator('input[type="password"]'));
     await emailInput.fill(account.email);
     await pwdInput.fill(account.password);
     await loginBtn.click();

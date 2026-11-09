@@ -62,11 +62,12 @@ test('patches_by_id_after_sort_and_header_reorder', async () => {
     assert.equal(patched.notes, 'run=test; target=chrome-local');
     assert.equal(patched.evidence_path, 'artifacts/gui/test/error.png');
 
-    // All other 69 items must still be Not Run
+    // All other 69 items must keep their prior status unchanged
     const otherItems = patchedItems.filter(i => i.id !== 'GUI-067');
     assert.equal(otherItems.length, 69);
     for (const other of otherItems) {
-      assert.equal(other.status, 'Not Run');
+      const orig = items.find(i => i.id === other.id);
+      assert.equal(other.status, orig?.status);
     }
   } finally {
     fs.rmSync(tmpDir, { recursive: true, force: true });

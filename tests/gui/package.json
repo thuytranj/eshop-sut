@@ -11,6 +11,7 @@
     "browsers:install": "playwright install",
     "checklist:validate": "tsx checklist/validate.ts",
     "gui:run": "tsx runner/run.ts",
+    "gui:finalize": "tsx runner/finalize.ts",
     "manual:import": "tsx runner/import-manual.ts",
     "bugs:export": "tsx reporting/export-issues.ts"
   },

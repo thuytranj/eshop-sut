@@ -1,0 +1,22 @@
+1549f71 2026-11-09T21:24:01+07:00 23120367 test(gui): export evidence-backed bug reports and GitHub issue drafts
+720d8a4 2026-11-09T21:21:49+07:00 23120367 test(gui): orchestrate isolated execution and atomic Excel writeback
+c282bf2 2026-11-09T21:20:14+07:00 23120367 test(gui): capture assertion evidence and aggregate checklist outcomes
+516b7b5 2026-11-09T21:18:59+07:00 23120367 test(gui): cover admin product checklist with isolated CRUD states
+20d95a0 2026-11-09T21:17:22+07:00 23120367 test(gui): cover password reset checklist and live OTP contracts
+666ec96 2026-11-09T21:16:22+07:00 23120367 test(gui): cover cart checklist with accessibility and touch gates
+5a469f0 2026-11-09T21:14:10+07:00 23120367 test(gui): cover catalog checklist and network composition states
+c6b3ef9 2026-11-09T21:11:20+07:00 23120367 test(gui): add safe Excel checklist store and traceability checks
+23ac07c 2026-11-09T21:08:38+07:00 23120367 test(gui): bootstrap Playwright config and page objects
+8efd8fe 2026-11-09T20:59:15+07:00 23120367 docs(audit): add detailed Playwright Test Automation & Execution Plan and raw generation output
+1899aa8 2026-11-09T15:15:18+07:00 23120367 docs(audit): record playwright test automation plan session
+597cf2d 2026-11-09T13:27:03+07:00 23120367 docs(audit): update AI Audit Report
+4626de0 2026-11-09T13:24:24+07:00 23120367 docs(checklist): add six review checks and sync supporting artifacts
+7376df4 2026-11-08T23:15:29+07:00 23120367 docs(audit): record available HW03 AI sessions and responses
+6bcc1c3 2026-11-08T23:14:57+07:00 23120367 chore(git): ignore local Superpowers planning documents
+c3579f2 2026-11-08T23:14:50+07:00 23120367 docs(hw03): add 64-item EShop GUI checklist and traceability
+1fabb2a 2026-11-08T23:14:31+07:00 23120367 feat(hw03): add audit logging and checklist validation tools
+51e308e 2026-11-08T23:14:13+07:00 23120367 chore(skills): add UI review and browser testing skills
+e7267e8 2026-11-08T12:54:26+07:00 23120367 feat: refactor API endpoints to use environment variable for base URL
+ae59492 2026-09-24T23:55:16+07:00 23120367 feat(deploy): add Docker and docker-compose configuration for application services
+85af3ba 2026-05-15T08:30:35+07:00 ttbhanh-hcmus first upload
+2f9bf2b 2026-05-15T08:27:44+07:00 Hanh Tran Initial commit
