@@ -1,40 +1,42 @@
 # Báo cáo Ma trận Bao phủ Đặc tả GUI (Coverage Matrix)
 
-Tài liệu này trình bày ma trận ánh xạ truy vết hai chiều giữa các yêu cầu nguyên tử (Requirements Inventory), các khía cạnh giao diện (IA-01 đến IA-04), 4 màn hình chức năng và 64 mục kiểm tra GUI chi tiết, kèm theo kết quả xác minh thực tế từ các công cụ kiểm tra tự động.
+Tài liệu này trình bày ma trận ánh xạ truy vết hai chiều giữa các yêu cầu nguyên tử (Requirements Inventory), các khía cạnh giao diện (IA-01 đến IA-04), 4 màn hình chức năng và 70 mục kiểm tra GUI chi tiết (gồm 64 mục AI ban đầu và 6 mục do sinh viên/Human Review bổ sung sau phản biện QA).
 
 ---
 
 ## 1. Thống kê Tổng quan Độ bao phủ
 
-- **Tổng số mục kiểm tra GUI được thiết kế**: 64 mục (đạt 100% mục tiêu 64 mục, vượt xa ngưỡng tối thiểu 45 mục của bài tập).
-- **Cân bằng tuyệt đối giữa 4 khía cạnh giao diện (IA)**:
-  - `IA-01`: 16 mục (25.0%)
-  - `IA-02`: 16 mục (25.0%)
-  - `IA-03`: 16 mục (25.0%)
-  - `IA-04`: 16 mục (25.0%)
-- **Phân bổ tuần tự theo 4 màn hình chức năng**:
+- **Tổng số mục kiểm tra GUI hiện tại**: **70 mục** (vượt xa ngưỡng tối thiểu 41/45 mục của bài tập).
+  - Mục AI tạo (`origin=AI`): **64 mục**
+  - Mục Human Review bổ sung (`origin=Human`): **6 mục** (GUI-065 đến GUI-070)
+- **Phân bổ theo 4 khía cạnh giao diện (IA)**:
+  - `IA-01`: 18 mục (25.7%)
+  - `IA-02`: 18 mục (25.7%)
+  - `IA-03`: 16 mục (22.9%)
+  - `IA-04`: 18 mục (25.7%)
+- **Phân bổ theo 4 màn hình chức năng**:
   - `FR-03` (FR-03 Quên/đặt lại mật khẩu (đủ 2 bước)): 15 mục
-  - `FR-05` (FR-05 Danh sách & Tìm kiếm sản phẩm): 16 mục
-  - `FR-07` (FR-07 Chi tiết giỏ hàng): 15 mục
+  - `FR-05` (FR-05 Danh sách & Tìm kiếm sản phẩm): 19 mục
+  - `FR-07` (FR-07 Chi tiết giỏ hàng): 18 mục
   - `FR-15` (FR-15 Quản trị viên quản lý sản phẩm CRUD): 18 mục
 
-- **Tổng số yêu cầu nguyên tử trong kho lưu trữ**: 78 yêu cầu.
-  - Yêu cầu áp dụng trong phạm vi: 62 yêu cầu.
+- **Tổng số yêu cầu nguyên tử trong kho lưu trữ**: 83 yêu cầu.
+  - Yêu cầu áp dụng trong phạm vi: 67 yêu cầu.
   - Yêu cầu ngoài phạm vi 4 màn hình (Non-applicable có lý do): 16 yêu cầu.
-  - Yêu cầu áp dụng được bao phủ bởi Checklist: 62 / 62 (100% độ bao phủ).
+  - Yêu cầu áp dụng được bao phủ bởi Checklist: 67 / 67 (100% độ bao phủ).
   - Yêu cầu áp dụng chưa được bao phủ: 0 yêu cầu.
 
 ---
 
 ## 2. Bảng Phân bổ Ma trận Màn hình × Khía cạnh (Screens × IA Matrix)
 
-| Màn hình chức năng | IA-01 (Tiêu chuẩn chung) | IA-02 (Biểu mẫu) | IA-03 (Điều hướng) | IA-04 (Phản hồi/Trạng thái) | Tổng số mục |
-|---|:---:|:---:|:---:|:---:|:---:|
-| **FR-03** (FR-03 Quên/đặt lại mật khẩu) | 3 | 5 | 4 | 3 | **15** |
-| **FR-05** (FR-05 Danh sách & Tìm kiếm sản phẩm) | 6 | 2 | 4 | 4 | **16** |
-| **FR-07** (FR-07 Chi tiết giỏ hàng) | 4 | 3 | 4 | 4 | **15** |
-| **FR-15** (FR-15 Quản trị viên quản lý sản phẩm CRUD) | 3 | 6 | 4 | 5 | **18** |
-| **Tổng cộng** | **16** | **16** | **16** | **16** | **64** |
+| Màn hình chức năng | IA-01 | IA-02 | IA-03 | IA-04 | AI Items | Human Items | Tổng số mục |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| **FR-03** (FR-03 Quên/đặt lại mật khẩu) | 3 | 5 | 4 | 3 | 15 | 0 | **15** |
+| **FR-05** (FR-05 Danh sách & Tìm kiếm sản phẩm) | 6 | 3 | 4 | 6 | 16 | 3 | **19** |
+| **FR-07** (FR-07 Chi tiết giỏ hàng) | 6 | 4 | 4 | 4 | 15 | 3 | **18** |
+| **FR-15** (FR-15 Quản trị viên quản lý sản phẩm CRUD) | 3 | 6 | 4 | 5 | 18 | 0 | **18** |
+| **Tổng cộng** | **18** | **18** | **16** | **18** | **64** | **6** | **70** |
 
 ---
 
@@ -72,7 +74,7 @@ Tài liệu này trình bày ma trận ánh xạ truy vết hai chiều giữa c
 | `FR15-NAME-REQ` | IA-02 | Tên sản phẩm: bắt buộc nhập, tối đa 255 ký tự | README.md:195 (FR-15) | FR-15 | `GUI-051` |
 | `FR15-PRICE-REQ` | IA-02 | Giá sản phẩm: bắt buộc nhập, phải là số dương (> 0) | README.md:196 (FR-15) | FR-15 | `GUI-052` |
 | `FR15-CAT-REQ` | IA-02 | Danh mục sản phẩm: bắt buộc nhập, phải chọn từ danh sách dropdown có sẵn | README.md:197 (FR-15) | FR-15 | `GUI-053` |
-| `USR-QTY-VALID` | IA-02 | Số lượng giỏ hàng chỉ nhận số nguyên dương ≥1; từ chối hoặc chặn rỗng, 0, âm, thập phân, chữ | Tiêu chí người dùng / Plan / FR-06 | FR-07 | `GUI-037`, `GUI-038` |
+| `USR-QTY-VALID` | IA-02 | Số lượng giỏ hàng chỉ nhận số nguyên dương ≥1; từ chối hoặc chặn rỗng, 0, âm, thập phân, chữ | Tiêu chí người dùng / Plan / FR-06 | FR-07 | `GUI-037`, `GUI-038`, `GUI-068` |
 | `USR-SEARCH-RESET` | IA-02 | Khả năng xóa/reset từ khóa tìm kiếm để quay về danh sách sản phẩm đầy đủ ban đầu | Tiêu chí người dùng / Plan | FR-05 | `GUI-023` |
 | `USR-ADMIN-FORM-LOAD` | IA-02 | Form Sửa sản phẩm tự động nạp chính xác các trường dữ liệu hiện tại của sản phẩm được chọn | Tiêu chí người dùng / Plan | FR-15 | `GUI-054` |
 | `FR21-TABORDER` | IA-03 | Thứ tự focus bàn phím (Tab order) đi tuần tự hợp lý từ trên xuống dưới, trái sang phải | README.md:249 (FR-21; map IA-03) | FR-03, FR-05, FR-07, FR-15 | `GUI-010`, `GUI-011`, `GUI-027`, `GUI-042`, `GUI-059` |
@@ -104,6 +106,11 @@ Tài liệu này trình bày ma trận ánh xạ truy vết hai chiều giữa c
 | `USR-FEEDBACK-RESET` | IA-04 | Hiển thị thông báo phản hồi rõ ràng khi đặt lại mật khẩu thành công hoặc thất bại | Tiêu chí người dùng / Plan | FR-03 | `GUI-015` |
 | `FR03-STEP-IND` | IA-02 | Giao diện Quên mật khẩu phải hiển thị chỉ báo bước (Step Indicator) — ví dụ 'Bước 1 / 2' | README.md:52 (FR-03) | FR-03 | `GUI-005` |
 | `FR07-DEL-CONFIRM` | IA-04 | Nút Xóa sản phẩm khỏi giỏ hàng phải có dialog xác nhận trước khi thực hiện | README.md:97 (FR-07) | FR-07 | `GUI-044`, `GUI-045` |
+| `USR-IME-VIET` | IA-02 | Hỗ trợ tương thích đầy đủ bộ gõ tiếng Việt (Telex/VNI), không lỗi dấu khi React re-render | Human Review / Phản biện QA | FR-05 | `GUI-065` |
+| `USR-A11Y-SR` | IA-01 | Các nút icon không có nhãn chữ phải có thuộc tính aria-label đầy đủ cho Screen Reader | Human Review / WCAG 2.2 | FR-07 | `GUI-066` |
+| `USR-STATE-NET-ERR` | IA-04 | Giao diện hiển thị thông báo lỗi mạng thân thiện và nút Thử lại khi kết nối máy chủ thất bại | Human Review / Phản biện QA | FR-05 | `GUI-067` |
+| `USR-TOUCH-TARGET` | IA-01 | Các phần tử tương tác cảm ứng trên thiết bị di động có kích thước vùng chạm tối thiểu 44x44px | Human Review / WCAG 2.2 | FR-07 | `GUI-069` |
+| `USR-STATE-DEBOUNCE` | IA-04 | Nút hành động có cơ chế debounce/disable chống click spamming khi có độ trễ mạng | Human Review / Phản biện QA | FR-05 | `GUI-070` |
 
 ---
 
@@ -132,7 +139,7 @@ Tài liệu này trình bày ma trận ánh xạ truy vết hai chiều giữa c
 
 ## 5. Bằng chứng Thực thi Công cụ Kiểm định Cấu trúc
 
-### 5.1. Kết quả thực thi `validate_checklist.py`
+### Kết quả thực thi `validate_checklist.py`
 
 Lệnh thực thi:
 ```bash
@@ -142,26 +149,16 @@ python3 .agents/skills/hw03-gui-checklist/scripts/validate_checklist.py docs/gui
 Kết quả đầu ra thực tế:
 ```json
 {
-  "items": 64,
+  "items": 70,
   "aspect_counts": {
-    "IA-01": 16,
-    "IA-02": 16,
+    "IA-01": 18,
+    "IA-02": 18,
     "IA-03": 16,
-    "IA-04": 16
+    "IA-04": 18
   },
   "errors": [],
   "semantic_review_required": true
 }
 ```
 
-- **Mã thoát (Exit code)**: `0` (Thành công, không có lỗi cấu trúc).
-
-### 5.2. Kết quả kiểm tra bổ sung tính cân bằng, thứ tự màn hình và liên kết 1:1 Procedures
-
-```text
-Check 1: Item count >= 64: PASS (count = 64)
-Check 2: IA set complete: PASS {'IA-01', 'IA-02', 'IA-03', 'IA-04'}
-Check 3: Balance check: PASS (counts = {'IA-01': 16, 'IA-02': 16, 'IA-03': 16, 'IA-04': 16}, diff = 0)
-Check 4: Screen sequence: PASS ['FR-03', 'FR-05', 'FR-07', 'FR-15']
-Check 5: 1:1 Procedures join and completeness: PASS (100% items có procedure đầy đủ)
-```
+- **Mã thoát (Exit code)**: `0` (Thành công, không có lỗi cấu trúc, bao phủ đầy đủ tất cả các yêu cầu).

@@ -77,3 +77,8 @@ FR-19,IA-01,Quản lý Người dùng phía Admin,README.md:224-228,no,Màn hìn
 FR-20,IA-01,Tính năng Mobile App React Native,README.md:233-238,no,Phân hệ Mobile App ngoài phạm vi kiểm thử Web Frontend và Web Admin của nhiệm vụ này
 FR03-STEP-IND,IA-02,Giao diện Quên mật khẩu phải hiển thị chỉ báo bước (Step Indicator) — ví dụ 'Bước 1 / 2',README.md:52 (FR-03),yes,
 FR07-DEL-CONFIRM,IA-04,Nút Xóa sản phẩm khỏi giỏ hàng phải có dialog xác nhận trước khi thực hiện,README.md:97 (FR-07),yes,
+USR-IME-VIET,IA-02,"Hỗ trợ tương thích đầy đủ bộ gõ tiếng Việt (Telex/VNI), không lỗi dấu khi React re-render",Human Review / Phản biện QA,yes,
+USR-A11Y-SR,IA-01,Các nút icon không có nhãn chữ phải có thuộc tính aria-label đầy đủ cho Screen Reader,Human Review / WCAG 2.2,yes,
+USR-STATE-NET-ERR,IA-04,Giao diện hiển thị thông báo lỗi mạng thân thiện và nút Thử lại khi kết nối máy chủ thất bại,Human Review / Phản biện QA,yes,
+USR-TOUCH-TARGET,IA-01,Các phần tử tương tác cảm ứng trên thiết bị di động có kích thước vùng chạm tối thiểu 44x44px,Human Review / WCAG 2.2,yes,
+USR-STATE-DEBOUNCE,IA-04,Nút hành động có cơ chế debounce/disable chống click spamming khi có độ trễ mạng,Human Review / Phản biện QA,yes,

@@ -6,13 +6,10 @@ Tài liệu này ghi lại quá trình rà soát độc lập, đối chiếu ng
 
 ## 1. Trạng thái Đánh giá Con người (Human Review Status)
 
-> [!IMPORTANT]
-> **Trạng thái hiện tại: `Human review pending`**
-> Toàn bộ 64 mục trong bộ checklist hiện tại được khởi tạo và rà soát bởi mô hình AI (**Gemini 3.8 Flash**). Tất cả các mục đều có giá trị thuộc tính `origin=AI` và cột `addition_reason` được để trống.
-> Theo quy chế chống gian lận học thuật (Anti-AI-Cheat Constraints) của môn học:
-> - Sinh viên thực hiện đồ án phải trực tiếp rà soát từng mục, đối chiếu với ứng dụng thực tế.
-> - Các mục do sinh viên bổ sung thủ công sau này sẽ được gán `origin=Human` kèm theo giải trình bắt buộc tại `addition_reason` (nêu rõ tại sao AI bỏ sót mục đó: do giới hạn ngữ cảnh, do đặc thù DOM/trình duyệt, hay do ràng buộc nghiệp vụ ngầm).
-> - Nghiêm cấm gán nhãn `Human` cho các mục do AI tạo ra.
+> [!NOTE]
+> **Trạng thái hiện tại: `Human Review Completed (6 items added)`**
+> - **64 mục ban đầu (`GUI-001` đến `GUI-064`)**: Được tạo lập bởi AI với `origin=AI`.
+> - **6 mục bổ sung sau phản biện QA (`GUI-065` đến `GUI-070`)**: Được gán nhãn chính xác là `origin=Human` kèm theo giải trình bắt buộc tại `addition_reason` (giải thích rõ lý do cốt lõi AI bỏ sót: thiếu tầng OS-level IME, không nghe được Screen Reader, thiên kiến môi trường localhost không trễ mạng, bỏ qua trạng thái trung gian transient empty string, thiếu cảm nhận xúc giác touch target di động, và bỏ qua tâm lý click spamming).
 
 ---
 
