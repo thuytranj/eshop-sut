@@ -1,2 +1,10 @@
 .DS_Store
 docs/superpowers
+node_modules/
+artifacts/
+*.sqlite-journal
+*.lock
+.env
+.env.local
+test-results/
+playwright-report/

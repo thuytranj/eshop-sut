@@ -1,0 +1,23 @@
+{
+  "name": "eshop-gui-tests",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Playwright GUI test suite for EShop SUT (HW03)",
+  "type": "module",
+  "scripts": {
+    "test:unit": "tsx --test",
+    "typecheck": "tsc --noEmit",
+    "test:e2e": "playwright test",
+    "browsers:install": "playwright install"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "@playwright/test": "^1.65.0",
+    "@types/node": "^26.6.6",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  },
+  "dependencies": {
+    "exceljs": "^4.4.0"
+  }
+}
