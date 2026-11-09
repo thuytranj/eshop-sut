@@ -15,6 +15,7 @@ export default defineConfig({
   reporter: [
     ['list'],
     ['html', { open: 'never', outputFolder: 'artifacts/gui/html' }],
+    ['./reporting/attempt-reporter.ts'],
   ],
   use: {
     baseURL: 'http://localhost:5173',
