@@ -70,3 +70,21 @@ export async function measureTouchTarget(locator: Locator): Promise<{ width: num
   }
   return { width: box.width, height: box.height };
 }
+
+export async function loginViaUi(
+  page: Page,
+  baseURL: string,
+  account: { email: string; password: string }
+): Promise<void> {
+  await page.goto(baseURL);
+  // If login form is shown
+  const emailInput = page.locator('input[type="email"], input').first();
+  const pwdInput = page.locator('input[type="password"]');
+  const loginBtn = page.getByRole('button', { name: /Đăng nhập/i });
+
+  if (await loginBtn.isVisible()) {
+    await emailInput.fill(account.email);
+    await pwdInput.fill(account.password);
+    await loginBtn.click();
+  }
+}
