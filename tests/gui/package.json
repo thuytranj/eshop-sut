@@ -13,7 +13,11 @@
     "gui:run": "tsx runner/run.ts",
     "gui:finalize": "tsx runner/finalize.ts",
     "manual:import": "tsx runner/import-manual.ts",
-    "bugs:export": "tsx reporting/export-issues.ts"
+    "bugs:export": "tsx reporting/export-issues.ts",
+    "cp:preflight": "tsx cross-platform/run.ts --phase preflight",
+    "cp:pilot": "tsx cross-platform/run.ts --phase pilot",
+    "cp:run": "tsx cross-platform/run.ts --phase qualification",
+    "cp:report": "tsx cross-platform/report.ts"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.14.0",

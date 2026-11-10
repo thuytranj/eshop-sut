@@ -15,15 +15,21 @@ export class AttemptReporter implements Reporter {
   }
 
   onTestEnd(test: TestCase, result: TestResult): void {
-    // Extract ItemId and CaseId from annotations or title
+    // Extract ItemId, CaseId, and session metadata from annotations or title
     let itemId: ItemId | null = null;
     let caseId: string | null = null;
     let mode: Mode = 'mock-ui';
+    let sessionIdentity: any = null;
 
     for (const ann of test.annotations) {
       if (ann.type === 'itemId') itemId = ann.description as ItemId;
       if (ann.type === 'caseId') caseId = ann.description || '';
       if (ann.type === 'mode') mode = ann.description as Mode;
+      if (ann.type === 'sessionIdentity' && ann.description) {
+        try {
+          sessionIdentity = JSON.parse(ann.description);
+        } catch {}
+      }
     }
 
     if (!itemId) {
@@ -59,11 +65,29 @@ export class AttemptReporter implements Reporter {
       }
     }
 
+    const projectName = test.parent?.project()?.name || 'chrome-local';
+    const targetId = sessionIdentity?.platformId || projectName;
+
+    const environment: Record<string, string> = sessionIdentity
+      ? {
+          browser: sessionIdentity.browser,
+          browserVersion: sessionIdentity.browserVersion,
+          os: sessionIdentity.os,
+          osVersion: sessionIdentity.osVersion,
+          ...(sessionIdentity.device ? { device: sessionIdentity.device } : {}),
+          platformId: sessionIdentity.platformId,
+          sessionId: sessionIdentity.id,
+        }
+      : {
+          browser: 'chrome',
+          platform: process.platform,
+        };
+
     const attempt: Attempt = {
       runId: this.runId,
       itemId,
       caseId: caseId || test.title,
-      targetId: 'chrome-local',
+      targetId,
       mode,
       retry: result.retry,
       outcome,
@@ -73,10 +97,7 @@ export class AttemptReporter implements Reporter {
       evidence,
       startedAt: result.startTime.toISOString(),
       endedAt: new Date(result.startTime.getTime() + result.duration).toISOString(),
-      environment: {
-        browser: 'chrome',
-        platform: process.platform,
-      },
+      environment,
     };
 
     this.attempts.push(attempt);
