@@ -13,8 +13,16 @@ export async function runCheck(
     await check();
   } catch (err: any) {
     try {
-      const screenshot = await page.screenshot({ fullPage: true });
+      const screenshotDir = path.resolve('artifacts/gui/screenshots');
+      try {
+        fs.mkdirSync(screenshotDir, { recursive: true });
+      } catch {}
+      const safeStep = stepName.replace(/[^a-zA-Z0-9_-]/g, '_');
+      const screenshotPath = path.join(screenshotDir, `fail-${Date.now()}-${safeStep}.png`);
+      const screenshot = await page.screenshot({ path: screenshotPath, fullPage: true });
+
       await testInfo.attach(`assertion-failure-${stepName}`, {
+        path: fs.existsSync(screenshotPath) ? screenshotPath : undefined,
         body: screenshot,
         contentType: 'image/png',
       });
