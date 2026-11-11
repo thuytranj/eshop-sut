@@ -153,6 +153,7 @@ export async function startLocalEnvironment(options: {
       env: {
         ...process.env,
         VITE_API_URL: remoteURLs.api,
+        __VITE_ADDITIONAL_SERVER_ALLOWED_HOSTS: 'bs-local.com',
       },
       stdio: 'ignore',
     }
@@ -169,11 +170,27 @@ export async function startLocalEnvironment(options: {
       env: {
         ...process.env,
         VITE_API_URL: remoteURLs.api,
+        __VITE_ADDITIONAL_SERVER_ALLOWED_HOSTS: 'bs-local.com',
       },
       stdio: 'ignore',
     }
   );
   spawnedProcesses.push(adminProc);
+
+  // Poll until web and admin frontends are ready
+  const startWait = Date.now();
+  while (Date.now() - startWait < 30000) {
+    try {
+      const [resWeb, resAdmin] = await Promise.all([
+        fetch(runnerURLs.web),
+        fetch(runnerURLs.admin),
+      ]);
+      if (resWeb.ok && resAdmin.ok) {
+        break;
+      }
+    } catch {}
+    await new Promise(r => setTimeout(r, 500));
+  }
 
   return {
     runnerURLs,

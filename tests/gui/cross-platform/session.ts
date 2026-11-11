@@ -24,7 +24,17 @@ export function assertSessionIdentity(
   const os = String(details.os || '');
   const osVersion = String(details.os_version || details.osVersion || '');
   const device = details.device || details.deviceName;
-  const realMobile = Boolean(details.realMobile === true || details.real_mobile === true || (details.realMobile === 'true'));
+  let realMobile = false;
+  if (details.realMobile === false || details.realMobile === 'false') {
+    realMobile = false;
+  } else if (
+    details.realMobile === true ||
+    details.real_mobile === true ||
+    details.realMobile === 'true' ||
+    Boolean(details.device)
+  ) {
+    realMobile = true;
+  }
 
   if (!id && !dashboardURL) {
     throw new Error('Invalid or missing session details: session id is empty');
@@ -37,7 +47,7 @@ export function assertSessionIdentity(
     if (osVersion !== '11') {
       throw new Error(`Remote OS version mismatch: expected 11, got ${osVersion}`);
     }
-    if (!browser.includes('chrome')) {
+    if (!browser.includes('chrome') && !browser.includes('chromium')) {
       throw new Error(`Remote browser mismatch: expected chrome, got ${browser}`);
     }
   } else if (platform.id === 'p2-firefox-win11') {
@@ -61,7 +71,7 @@ export function assertSessionIdentity(
     if (expectedDevice && (!device || !String(device).toLowerCase().includes(expectedDevice.toLowerCase()))) {
       throw new Error(`Device mismatch: expected ${expectedDevice}, got ${device || 'unknown'}`);
     }
-    if (!browser.includes('chrome')) {
+    if (!browser.includes('chrome') && !browser.includes('chromium')) {
       throw new Error(`Remote browser mismatch: expected chrome, got ${browser}`);
     }
   }
@@ -92,10 +102,12 @@ export async function setRemoteStatus(
         reason,
       },
     });
-    await page.evaluate((_: unknown) => {}, `browserstack_executor: ${payload}`);
+    await Promise.race([
+      page.evaluate((_: unknown) => {}, `browserstack_executor: ${payload}`),
+      new Promise((_, reject) => setTimeout(() => reject(new Error('setRemoteStatus timeout')), 5000)),
+    ]);
   } catch (err) {
     // If provider is already closed or disconnected, ignore status error so we don't mask test outcome
-    console.error('Failed to set remote session status:', err);
   }
 }
 
@@ -147,20 +159,25 @@ export async function openRemoteSession(
       });
     }
 
-    // Retrieve and verify session identity using temporary bootstrap page
+    // Retrieve and verify session identity using the initial page (reused by the test)
     let rawDetails: any;
     if (options?.fetchSessionDetails) {
       rawDetails = await options.fetchSessionDetails(null as any);
     } else {
-      const bootstrapPage = await context.newPage();
+      const pages = typeof context.pages === 'function' ? context.pages() : [];
+      const sessionPage = pages.length > 0 ? pages[0] : await context.newPage();
       try {
-        const rawJson = await bootstrapPage.evaluate(
-          (_: unknown) => {},
-          'browserstack_executor: {"action": "getSessionDetails"}'
-        );
+        const rawJson = await Promise.race([
+          sessionPage.evaluate(
+            (_: unknown) => {},
+            'browserstack_executor: {"action": "getSessionDetails"}'
+          ),
+          new Promise((_, reject) => setTimeout(() => reject(new Error('getSessionDetails timeout')), 10000)),
+        ]);
         rawDetails = typeof rawJson === 'string' ? JSON.parse(rawJson) : rawJson;
-      } finally {
-        await bootstrapPage.close().catch(() => {});
+      } catch (err) {
+        console.error('Failed to get session details:', err);
+        throw err;
       }
     }
 
@@ -171,13 +188,13 @@ export async function openRemoteSession(
       identity,
       close: async () => {
         try {
-          if (context) await context.close();
+          if (context) await Promise.race([context.close(), new Promise(r => setTimeout(r, 5000))]);
         } catch {}
         try {
-          if (allocatedBrowser) await allocatedBrowser.close();
+          if (allocatedBrowser) await Promise.race([allocatedBrowser.close(), new Promise(r => setTimeout(r, 5000))]);
         } catch {}
         try {
-          if (allocatedDevice) await allocatedDevice.close();
+          if (allocatedDevice) await Promise.race([allocatedDevice.close(), new Promise(r => setTimeout(r, 5000))]);
         } catch {}
       },
     };

@@ -1,5 +1,14 @@
+import fs from 'node:fs';
+import path from 'node:path';
 import { defineConfig } from '@playwright/test';
 import { PLATFORMS } from './cross-platform/config.js';
+
+const envPath = path.resolve(import.meta.dirname, '.env');
+if (fs.existsSync(envPath) && typeof (process as any).loadEnvFile === 'function') {
+  try {
+    (process as any).loadEnvFile(envPath);
+  } catch {}
+}
 
 export default defineConfig({
   testDir: './specs',
@@ -10,7 +19,7 @@ export default defineConfig({
     '**/fr15.spec.ts',
     '**/cross-platform-smoke.spec.ts',
   ],
-  timeout: 120000,
+  timeout: 90000,
   expect: {
     timeout: 15000,
   },

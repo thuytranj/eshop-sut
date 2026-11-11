@@ -106,7 +106,14 @@ export class AttemptReporter implements Reporter {
   async onEnd(result: FullResult): Promise<void> {
     fs.mkdirSync(this.outputDir, { recursive: true });
     const attemptsPath = path.join(this.outputDir, 'attempts.json');
-    fs.writeFileSync(attemptsPath, JSON.stringify(this.attempts, null, 2), 'utf-8');
+    let existingAttempts: Attempt[] = [];
+    if (fs.existsSync(attemptsPath)) {
+      try {
+        existingAttempts = JSON.parse(fs.readFileSync(attemptsPath, 'utf-8'));
+      } catch {}
+    }
+    const combined = [...existingAttempts, ...this.attempts];
+    fs.writeFileSync(attemptsPath, JSON.stringify(combined, null, 2), 'utf-8');
   }
 
   getAttempts(): Attempt[] {

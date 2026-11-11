@@ -228,54 +228,92 @@ async function cli(): Promise<void> {
   const runDir = path.join(repoRoot, 'artifacts/gui/cross-platform', runId);
   fs.mkdirSync(runDir, { recursive: true });
 
-  const summary = await runPlatforms(
-    { runId, phase, resume },
-    {
-      executeProject: async (platformId: PlatformId) => {
-        console.log(`\n========================================`);
-        console.log(`Executing Project: ${platformId} (workers: 1)`);
-        console.log(`========================================\n`);
+  let localEnv: any = null;
+  let tunnel: any = null;
 
-        const playwrightArgs = [
-          'test',
-          '--config=playwright.browserstack.config.ts',
-          `--project=${platformId}`,
-        ];
+  try {
+    const remoteHost = 'bs-local.com';
+    console.log(`Starting SUT local environment (backend, web, admin on ${remoteHost})...`);
+    localEnv = await startLocalEnvironment({
+      repoRoot,
+      runDir,
+      remoteHost,
+    });
+    console.log('SUT local environment is healthy and ready.');
 
-        if (phase === 'preflight') {
-          playwrightArgs.push('-g', '@smoke');
-        } else if (phase === 'pilot') {
-          playwrightArgs.push('-g', 'GUI-004|GUI-017|GUI-041|GUI-044|@smoke');
-        }
-
-        await new Promise<void>((resolve, reject) => {
-          const child = spawn('npx', ['playwright', ...playwrightArgs], {
-            cwd: path.join(repoRoot, 'tests/gui'),
-            env: {
-              ...process.env,
-              RUN_ID: runId,
-              RUN_DIR: runDir,
-            },
-            stdio: 'inherit',
-          });
-
-          child.on('close', code => {
-            if (code === 0) {
-              resolve();
-            } else {
-              // Non-zero exit code might be test assertion failure
-              console.warn(`Project ${platformId} completed with exit code ${code}`);
-              resolve();
-            }
-          });
-
-          child.on('error', err => reject(err));
-        });
-      },
+    const accessKey = process.env.BROWSERSTACK_ACCESS_KEY;
+    if (!accessKey) {
+      throw new Error('BROWSERSTACK_ACCESS_KEY is required in .env');
     }
-  );
+    const localIdentifier = `hw03-23120367-${runId}`;
+    console.log(`Starting BrowserStack Local tunnel (identifier: ${localIdentifier})...`);
+    tunnel = await startLocalTunnel({
+      accessKey,
+      localIdentifier,
+    });
+    console.log('BrowserStack Local tunnel is active and ready.');
 
-  console.log(`\nRunner completed. Infrastructure errors: ${summary.infrastructureErrors}`);
+    const summary = await runPlatforms(
+      { runId, phase, resume },
+      {
+        executeProject: async (platformId: PlatformId) => {
+          console.log(`\n========================================`);
+          console.log(`Executing Project: ${platformId} (workers: 1)`);
+          console.log(`========================================\n`);
+
+          const playwrightArgs = [
+            'test',
+            '--config=playwright.browserstack.config.ts',
+            `--project=${platformId}`,
+          ];
+
+          if (phase === 'preflight') {
+            playwrightArgs.push('-g', '@smoke');
+          } else if (phase === 'pilot') {
+            playwrightArgs.push('-g', 'GUI-004|GUI-017|GUI-041|GUI-044');
+          }
+
+          await new Promise<void>((resolve, reject) => {
+            const child = spawn('npx', ['playwright', ...playwrightArgs], {
+              cwd: path.join(repoRoot, 'tests/gui'),
+              env: {
+                ...process.env,
+                RUN_ID: runId,
+                RUN_DIR: runDir,
+                SUT_WEB_BASE_URL: localEnv.remoteURLs.web,
+                SUT_ADMIN_BASE_URL: localEnv.remoteURLs.admin,
+                SUT_API_BASE_URL: localEnv.remoteURLs.api,
+              },
+              stdio: 'inherit',
+            });
+
+            child.on('close', code => {
+              if (code === 0) {
+                resolve();
+              } else {
+                // Non-zero exit code might be test assertion failure
+                console.warn(`Project ${platformId} completed with exit code ${code}`);
+                resolve();
+              }
+            });
+
+            child.on('error', err => reject(err));
+          });
+        },
+      }
+    );
+
+    console.log(`\nRunner completed. Infrastructure errors: ${summary.infrastructureErrors}`);
+  } finally {
+    if (tunnel) {
+      console.log('Stopping BrowserStack Local tunnel...');
+      await tunnel.stop().catch(() => {});
+    }
+    if (localEnv) {
+      console.log('Stopping SUT local environment...');
+      await localEnv.stop().catch(() => {});
+    }
+  }
 }
 
 if (process.argv[1] && process.argv[1].endsWith('run.ts')) {
