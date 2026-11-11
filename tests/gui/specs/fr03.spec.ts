@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from '../fixtures/test.js';
 import { ResetPasswordPage } from '../pages/reset-password.page.ts';
 import { installNetwork, type NetworkController } from '../fixtures/network.ts';
 import { BASELINE_PRODUCTS, BASELINE_CATEGORIES } from '../fixtures/products.ts';

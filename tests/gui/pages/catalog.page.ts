@@ -4,7 +4,7 @@ export class CatalogPage {
   readonly page: Page;
   readonly baseURL: string;
 
-  constructor(page: Page, baseURL: string = 'http://localhost:5173') {
+  constructor(page: Page, baseURL: string = process.env.SUT_WEB_BASE_URL || 'http://localhost:5173') {
     this.page = page;
     this.baseURL = baseURL;
   }

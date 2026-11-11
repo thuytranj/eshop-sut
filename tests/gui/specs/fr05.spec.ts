@@ -1,9 +1,11 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from '../fixtures/test.js';
 import { CatalogPage } from '../pages/catalog.page.ts';
 import { installNetwork, type NetworkController } from '../fixtures/network.ts';
 import { BASELINE_PRODUCTS, BASELINE_CATEGORIES } from '../fixtures/products.ts';
 import { assertMoney, measureContrast, captureTabOrder } from '../support/ui-assertions.ts';
 import { captureComposition, readComposition } from '../support/composition.ts';
+
+const getWebUrl = () => process.env.SUT_WEB_BASE_URL || 'http://localhost:5173';
 
 test.describe('FR-05: Product Catalog and Search (19 items)', () => {
   let catalogPage: CatalogPage;
@@ -199,7 +201,7 @@ test.describe('FR-05: Product Catalog and Search (19 items)', () => {
     );
 
     network.setProductsState('pending');
-    await page.goto('http://localhost:5173');
+    await page.goto(getWebUrl());
     const loader = page.locator('.loading, .skeleton, text=/Đang tải|Loading/i');
     await expect(loader).toBeVisible({ timeout: 2000 });
     network.releaseProducts();
@@ -280,7 +282,7 @@ test.describe('FR-05: Product Catalog and Search (19 items)', () => {
     );
 
     network.setProductsState('abort');
-    await page.goto('http://localhost:5173');
+    await page.goto(getWebUrl());
 
     // Should display Vietnamese error message and Retry button
     const retryBtn = page.getByRole('button', { name: /Thử lại/i });

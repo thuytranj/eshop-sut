@@ -56,11 +56,28 @@ export async function installNetwork(
   };
 
   const routeHandler = async (route: Route) => {
+    const fulfill = async (resp: Parameters<Route['fulfill']>[0]) => {
+      await route.fulfill({
+        ...resp,
+        headers: {
+          'access-control-allow-origin': '*',
+          'access-control-allow-methods': 'GET, POST, PUT, DELETE, OPTIONS, PATCH',
+          'access-control-allow-headers': '*',
+          ...(resp?.headers || {}),
+        },
+      });
+    };
+
     const req = route.request();
     recordRequest(req);
     const url = new URL(req.url());
     const pathname = url.pathname;
     const method = req.method().toUpperCase();
+
+    if (method === 'OPTIONS') {
+      await fulfill({ status: 204 });
+      return;
+    }
 
     // 1. /api/products
     if (pathname === '/api/products' || pathname === '/api/products/') {
@@ -70,7 +87,7 @@ export async function installNetwork(
           return;
         }
         if (productsState === 'http500') {
-          await route.fulfill({
+          await fulfill({
             status: 500,
             contentType: 'application/json',
             body: JSON.stringify({ error: 'Lỗi máy chủ nội bộ' }),
@@ -98,7 +115,7 @@ export async function installNetwork(
               (p.description && p.description.toLowerCase().includes(q))
           );
         }
-        await route.fulfill({
+        await fulfill({
           status: 200,
           contentType: 'application/json',
           body: JSON.stringify(matched),
@@ -119,7 +136,7 @@ export async function installNetwork(
           category_id: Number(postData.category_id) || 1,
         };
         currentProducts.push(newProd);
-        await route.fulfill({
+        await fulfill({
           status: 201,
           contentType: 'application/json',
           body: JSON.stringify(newProd),
@@ -135,13 +152,13 @@ export async function installNetwork(
       if (method === 'GET') {
         const found = currentProducts.find((p) => p.id === id);
         if (found) {
-          await route.fulfill({
+          await fulfill({
             status: 200,
             contentType: 'application/json',
             body: JSON.stringify(found),
           });
         } else {
-          await route.fulfill({
+          await fulfill({
             status: 404,
             contentType: 'application/json',
             body: JSON.stringify({ error: 'Không tìm thấy sản phẩm' }),
@@ -169,20 +186,20 @@ export async function installNetwork(
                 ? Number(putData.category_id)
                 : currentProducts[idx].category_id,
           };
-          await route.fulfill({
+          await fulfill({
             status: 200,
             contentType: 'application/json',
             body: JSON.stringify(currentProducts[idx]),
           });
         } else {
-          await route.fulfill({ status: 404, body: JSON.stringify({ error: 'Not found' }) });
+          await fulfill({ status: 404, body: JSON.stringify({ error: 'Not found' }) });
         }
         return;
       }
 
       if (method === 'DELETE') {
         currentProducts = currentProducts.filter((p) => p.id !== id);
-        await route.fulfill({
+        await fulfill({
           status: 200,
           contentType: 'application/json',
           body: JSON.stringify({ message: 'Đã xóa thành công' }),
@@ -193,7 +210,7 @@ export async function installNetwork(
 
     // 3. /api/categories
     if (pathname === '/api/categories') {
-      await route.fulfill({
+      await fulfill({
         status: 200,
         contentType: 'application/json',
         body: JSON.stringify(currentCategories),
@@ -203,7 +220,7 @@ export async function installNetwork(
 
     // 4. Admin bootstrap endpoints
     if (pathname === '/api/admin/users') {
-      await route.fulfill({
+      await fulfill({
         status: 200,
         contentType: 'application/json',
         body: JSON.stringify([
@@ -214,7 +231,7 @@ export async function installNetwork(
       return;
     }
     if (pathname === '/api/admin/orders') {
-      await route.fulfill({
+      await fulfill({
         status: 200,
         contentType: 'application/json',
         body: JSON.stringify([]),
@@ -222,7 +239,7 @@ export async function installNetwork(
       return;
     }
     if (pathname === '/api/coupons') {
-      await route.fulfill({
+      await fulfill({
         status: 200,
         contentType: 'application/json',
         body: JSON.stringify([]),
@@ -234,7 +251,7 @@ export async function installNetwork(
     if (pathname === '/api/login') {
       const data = req.postDataJSON() || {};
       const role = data.email?.includes('admin') ? 'admin' : 'user';
-      await route.fulfill({
+      await fulfill({
         status: 200,
         contentType: 'application/json',
         body: JSON.stringify({
@@ -249,7 +266,7 @@ export async function installNetwork(
     if (pathname === '/api/forgot-password') {
       const data = req.postDataJSON() || {};
       const token = (options.resetTokens && options.resetTokens[data.email]) || '123456';
-      await route.fulfill({
+      await fulfill({
         status: 200,
         contentType: 'application/json',
         body: JSON.stringify({
@@ -264,14 +281,14 @@ export async function installNetwork(
       const data = req.postDataJSON() || {};
       const expectedToken = (options.resetTokens && options.resetTokens[data.email]) || '123456';
       if (data.resetToken !== expectedToken) {
-        await route.fulfill({
+        await fulfill({
           status: 400,
           contentType: 'application/json',
           body: JSON.stringify({ error: 'Mã OTP không đúng' }),
         });
         return;
       }
-      await route.fulfill({
+      await fulfill({
         status: 200,
         contentType: 'application/json',
         body: JSON.stringify({ message: 'Đổi mật khẩu thành công!' }),
@@ -304,7 +321,12 @@ export async function installNetwork(
         pendingDeferred.resolve();
         pendingDeferred = null;
       }
-      await context.unroute('**/api/**', routeHandler);
+      try {
+        await Promise.race([
+          context.unroute('**/api/**', routeHandler),
+          new Promise((r) => setTimeout(r, 1000)),
+        ]);
+      } catch {}
     },
   };
 }

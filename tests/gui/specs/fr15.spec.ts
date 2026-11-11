@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from '../fixtures/test.js';
 import { AdminProductsPage } from '../pages/admin-products.page.ts';
 import { installNetwork, type NetworkController } from '../fixtures/network.ts';
 import { BASELINE_PRODUCTS, BASELINE_CATEGORIES } from '../fixtures/products.ts';
@@ -16,7 +16,8 @@ test.describe('FR-15: Admin Product Management CRUD (18 items)', () => {
       mode: 'mock-ui',
     });
     adminPage = new AdminProductsPage(page);
-    await loginViaUi(page, 'http://localhost:5174', TEST_ACCOUNTS.admin);
+    const adminUrl = process.env.SUT_ADMIN_BASE_URL || 'http://localhost:5174';
+    await loginViaUi(page, adminUrl, TEST_ACCOUNTS.admin);
     await adminPage.openProductsTab();
   });
 

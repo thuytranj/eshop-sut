@@ -8,12 +8,13 @@ export interface SeedOptions {
 
 export async function seedCartViaUi(
   page: Page,
-  baseURL: string,
+  baseURL: string = process.env.SUT_WEB_BASE_URL || 'http://localhost:5173',
   lines: { product: Product; quantity: number }[],
   options?: SeedOptions
 ): Promise<void> {
+  const targetBaseURL = baseURL || process.env.SUT_WEB_BASE_URL || 'http://localhost:5173';
   const detailClicks = options?.detailAddClicks || 1;
-  const catalog = new CatalogPage(page, baseURL);
+  const catalog = new CatalogPage(page, targetBaseURL);
   await catalog.open();
 
   for (const line of lines) {

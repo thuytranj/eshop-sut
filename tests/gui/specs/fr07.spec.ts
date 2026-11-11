@@ -1,10 +1,12 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from '../fixtures/test.js';
 import { CartPage } from '../pages/cart.page.ts';
 import { CatalogPage } from '../pages/catalog.page.ts';
 import { installNetwork, type NetworkController } from '../fixtures/network.ts';
 import { BASELINE_PRODUCTS, BASELINE_CATEGORIES } from '../fixtures/products.ts';
 import { seedCartViaUi, assertQuantityControls, measureTouchTarget } from '../fixtures/session.ts';
 import { assertMoney, captureTabOrder } from '../support/ui-assertions.ts';
+
+const getWebUrl = () => process.env.SUT_WEB_BASE_URL || 'http://localhost:5173';
 
 test.describe('FR-07: Shopping Cart Details (18 items)', () => {
   let cartPage: CartPage;
@@ -34,7 +36,7 @@ test.describe('FR-07: Shopping Cart Details (18 items)', () => {
       { type: 'mode', description: 'mock-ui' }
     );
 
-    await seedCartViaUi(page, 'http://localhost:5173', [
+    await seedCartViaUi(page, getWebUrl(), [
       { product: BASELINE_PRODUCTS[0], quantity: 1 },
     ]);
 
@@ -51,7 +53,7 @@ test.describe('FR-07: Shopping Cart Details (18 items)', () => {
       { type: 'mode', description: 'mock-ui' }
     );
 
-    await seedCartViaUi(page, 'http://localhost:5173', [
+    await seedCartViaUi(page, getWebUrl(), [
       { product: BASELINE_PRODUCTS[0], quantity: 1 },
     ]);
 
@@ -69,7 +71,7 @@ test.describe('FR-07: Shopping Cart Details (18 items)', () => {
     );
 
     // Seed A x 1 (30.000.000 ₫)
-    await seedCartViaUi(page, 'http://localhost:5173', [
+    await seedCartViaUi(page, getWebUrl(), [
       { product: BASELINE_PRODUCTS[0], quantity: 1 },
     ]);
 
@@ -88,7 +90,7 @@ test.describe('FR-07: Shopping Cart Details (18 items)', () => {
       { type: 'mode', description: 'mock-ui' }
     );
 
-    await seedCartViaUi(page, 'http://localhost:5173', [
+    await seedCartViaUi(page, getWebUrl(), [
       { product: BASELINE_PRODUCTS[0], quantity: 1 },
     ]);
 
@@ -106,7 +108,7 @@ test.describe('FR-07: Shopping Cart Details (18 items)', () => {
       { type: 'mode', description: 'mock-ui' }
     );
 
-    await seedCartViaUi(page, 'http://localhost:5173', [
+    await seedCartViaUi(page, getWebUrl(), [
       { product: BASELINE_PRODUCTS[0], quantity: 1 },
     ]);
 
@@ -121,7 +123,7 @@ test.describe('FR-07: Shopping Cart Details (18 items)', () => {
       { type: 'mode', description: 'mock-ui' }
     );
 
-    await seedCartViaUi(page, 'http://localhost:5173', [
+    await seedCartViaUi(page, getWebUrl(), [
       { product: BASELINE_PRODUCTS[0], quantity: 1 },
     ]);
 
@@ -138,7 +140,7 @@ test.describe('FR-07: Shopping Cart Details (18 items)', () => {
       { type: 'mode', description: 'mock-ui' }
     );
 
-    await seedCartViaUi(page, 'http://localhost:5173', [
+    await seedCartViaUi(page, getWebUrl(), [
       { product: BASELINE_PRODUCTS[0], quantity: 1 },
     ]);
 
@@ -162,7 +164,7 @@ test.describe('FR-07: Shopping Cart Details (18 items)', () => {
       { type: 'mode', description: 'mock-ui' }
     );
 
-    await seedCartViaUi(page, 'http://localhost:5173', [
+    await seedCartViaUi(page, getWebUrl(), [
       { product: BASELINE_PRODUCTS[0], quantity: 1 },
     ]);
 
@@ -178,7 +180,7 @@ test.describe('FR-07: Shopping Cart Details (18 items)', () => {
       { type: 'mode', description: 'mock-ui' }
     );
 
-    await seedCartViaUi(page, 'http://localhost:5173', [
+    await seedCartViaUi(page, getWebUrl(), [
       { product: BASELINE_PRODUCTS[0], quantity: 1 },
     ]);
 
@@ -193,14 +195,14 @@ test.describe('FR-07: Shopping Cart Details (18 items)', () => {
       { type: 'mode', description: 'mock-ui' }
     );
 
-    await seedCartViaUi(page, 'http://localhost:5173', [
+    await seedCartViaUi(page, getWebUrl(), [
       { product: BASELINE_PRODUCTS[0], quantity: 1 },
     ]);
 
     const continueLink = page.getByRole('link', { name: 'Tiếp tục mua sắm' });
     await expect(continueLink, 'Link text must be exact "Tiếp tục mua sắm", not "← Mua tiếp"').toBeVisible();
     await continueLink.click();
-    expect(page.url()).toBe('http://localhost:5173/');
+    expect(page.url()).toBe(`${getWebUrl()}/`);
   });
 
   test('[GUI-042] Logical keyboard tab order inside Cart', async ({ page }) => {
@@ -210,7 +212,7 @@ test.describe('FR-07: Shopping Cart Details (18 items)', () => {
       { type: 'mode', description: 'mock-ui' }
     );
 
-    await seedCartViaUi(page, 'http://localhost:5173', [
+    await seedCartViaUi(page, getWebUrl(), [
       { product: BASELINE_PRODUCTS[0], quantity: 1 },
     ]);
 
@@ -249,7 +251,7 @@ test.describe('FR-07: Shopping Cart Details (18 items)', () => {
       { type: 'mode', description: 'mock-ui' }
     );
 
-    await seedCartViaUi(page, 'http://localhost:5173', [
+    await seedCartViaUi(page, getWebUrl(), [
       { product: BASELINE_PRODUCTS[0], quantity: 1 },
     ]);
 
@@ -270,7 +272,7 @@ test.describe('FR-07: Shopping Cart Details (18 items)', () => {
       { type: 'mode', description: 'mock-ui' }
     );
 
-    await seedCartViaUi(page, 'http://localhost:5173', [
+    await seedCartViaUi(page, getWebUrl(), [
       { product: BASELINE_PRODUCTS[0], quantity: 1 },
     ]);
 
@@ -296,7 +298,7 @@ test.describe('FR-07: Shopping Cart Details (18 items)', () => {
       { type: 'mode', description: 'mock-ui' }
     );
 
-    await page.goto('http://localhost:5173');
+    await page.goto(getWebUrl());
     await cartPage.openFromNavbar();
 
     const emptyMsg = page.locator('text=/Giỏ hàng của bạn đang trống/i');
@@ -312,7 +314,7 @@ test.describe('FR-07: Shopping Cart Details (18 items)', () => {
       { type: 'mode', description: 'mock-ui' }
     );
 
-    await seedCartViaUi(page, 'http://localhost:5173', [
+    await seedCartViaUi(page, getWebUrl(), [
       { product: BASELINE_PRODUCTS[0], quantity: 1 },
     ]);
 
@@ -328,7 +330,7 @@ test.describe('FR-07: Shopping Cart Details (18 items)', () => {
       { type: 'mode', description: 'mock-ui' }
     );
 
-    await seedCartViaUi(page, 'http://localhost:5173', [
+    await seedCartViaUi(page, getWebUrl(), [
       { product: BASELINE_PRODUCTS[0], quantity: 1 },
     ]);
 
@@ -350,7 +352,7 @@ test.describe('FR-07: Shopping Cart Details (18 items)', () => {
       { type: 'mode', description: 'mock-ui' }
     );
 
-    await seedCartViaUi(page, 'http://localhost:5173', [
+    await seedCartViaUi(page, getWebUrl(), [
       { product: BASELINE_PRODUCTS[0], quantity: 1 },
     ]);
 

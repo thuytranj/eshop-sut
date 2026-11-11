@@ -59,7 +59,8 @@ export const test = baseTest.extend<TestFixtures>({
       throw new Error(`Unknown platformId "${platformId}" in project metadata`);
     }
 
-    const runId = (testInfo.project.metadata?.runId as string) || 'default-run';
+    const runId =
+      (testInfo.project.metadata?.runId as string) || process.env.RUN_ID || 'default-run';
     const env = loadCloudEnv(
       process.env,
       {
@@ -72,11 +73,14 @@ export const test = baseTest.extend<TestFixtures>({
         verified: true,
       },
       runId,
-      { phase: 'qualification' }
+      { phase: 'qualification', verifiedMapping: true }
     );
 
     const testTitle = `${platform.id}/${testInfo.title}`;
-    const buildName = (testInfo.project.metadata?.buildName as string) || `hw03-cp-${runId}`;
+    const buildName =
+      (testInfo.project.metadata?.buildName as string) ||
+      process.env.BUILD_NAME ||
+      `hw03-cp-${runId}`;
 
     let remoteSession: RemoteSession | null = null;
     try {
@@ -94,31 +98,46 @@ export const test = baseTest.extend<TestFixtures>({
         description: JSON.stringify(remoteSession.identity),
       });
 
+      if (typeof remoteSession.context.setDefaultNavigationTimeout === 'function') {
+        remoteSession.context.setDefaultNavigationTimeout(60000);
+      }
+      if (typeof remoteSession.context.setDefaultTimeout === 'function') {
+        remoteSession.context.setDefaultTimeout(30000);
+      }
+
       await use(remoteSession.context);
     } finally {
       if (remoteSession) {
-        try {
-          const pages = remoteSession.context.pages();
-          if (pages.length > 0) {
-            const status = testInfo.status === 'passed' ? 'passed' : 'failed';
-            const reason =
-              testInfo.error?.message?.slice(0, 200) || `Test finished with status ${status}`;
-            await setRemoteStatus(pages[0], status, reason);
-          }
-        } catch (e) {
-          console.error('Failed to report test status to BrowserStack:', e);
-        }
         await remoteSession.close();
       }
     }
   },
 
-  page: async ({ context }, use) => {
-    const page = await context.newPage();
+  page: async ({ context }, use, testInfo) => {
+    const pages = typeof context.pages === 'function' ? context.pages() : [];
+    const page = pages.length > 0 ? pages[0] : await context.newPage();
+    if (typeof page.setDefaultNavigationTimeout === 'function') {
+      page.setDefaultNavigationTimeout(60000);
+    }
+    if (typeof page.setDefaultTimeout === 'function') {
+      page.setDefaultTimeout(30000);
+    }
     try {
       await use(page);
     } finally {
-      await page.close().catch(() => {});
+      const platformId = testInfo.project.metadata?.platformId as PlatformId | undefined;
+      if (platformId) {
+        try {
+          const status = testInfo.status === 'passed' ? 'passed' : 'failed';
+          const reason =
+            testInfo.error?.message?.slice(0, 200) || `Test finished with status ${status}`;
+          await setRemoteStatus(page, status, reason);
+        } catch {}
+      } else {
+        try {
+          await page.close();
+        } catch {}
+      }
     }
   },
 

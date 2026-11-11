@@ -4,7 +4,7 @@ export class AdminProductsPage {
   readonly page: Page;
   readonly baseURL: string;
 
-  constructor(page: Page, baseURL: string = 'http://localhost:5174') {
+  constructor(page: Page, baseURL: string = process.env.SUT_ADMIN_BASE_URL || 'http://localhost:5174') {
     this.page = page;
     this.baseURL = baseURL;
   }
