@@ -35,10 +35,22 @@ expect(received).toBeTruthy()
 Received: null
 
 ## Bằng chứng
-- Local file: `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr07-FR-07-Shopping-Cart-D-d6cf4-d-live-status-announcements-chrome-local/test-failed-1.png`
+Ảnh cũ đã được thay bằng các liên kết chuẩn trong mục bằng chứng bổ sung bên dưới.
 - Quan sát trên Chrome: Đã xác minh trên Google Chrome
 
 ## Tái hiện và kiểm thử lại
 - Attempts: 1/1; retries/flaky: 0
 - Lệnh chạy lại: npx playwright test --grep "GUI-066"
 - Kết quả sau fix: Not Run
+
+## Ảnh bằng chứng chuẩn (phiên chụp bổ sung)
+
+Ảnh dưới đây thuộc phiên chụp bổ sung được ghi rõ trong manifest, không thay đổi môi trường, thời gian hoặc kết quả của lượt chạy lịch sử ở trên. Với báo cáo macOS cũ, ảnh Windows/Android là bằng chứng tái hiện riêng, không phải ảnh macOS gốc.
+
+[Toàn bộ ảnh đã duyệt và độ phủ trên ba nền tảng](../../cross-platform/browser-evidence/README.md). Bảng dưới liệt kê các checklist ID được nhắc trong báo cáo này.
+
+| Checklist | Nền tảng chụp | Ảnh chuẩn | Kết quả ca tự động của phiên chụp | Phiên thật |
+|---|---|---|---|---|
+| GUI-066 | p1-chrome-win11 | [Xem ảnh](../../cross-platform/browser-evidence/images/p1-chrome-win11/GUI-066.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/1c88c681a8ff706ba8fd4404b19b976496a8d9de) |
+| GUI-066 | p2-firefox-win11 | [Xem ảnh](../../cross-platform/browser-evidence/images/p2-firefox-win11/GUI-066.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/54d9faa6b177c8461ce283474a00428e515573c5) |
+| GUI-066 | p3-android-chrome | [Xem ảnh](../../cross-platform/browser-evidence/images/p3-android-chrome/GUI-066.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/b76a2c23f2c624cd04485a68a20d3f89734d77ec) |

@@ -41,10 +41,22 @@ Error: expect(received).toEqual(expected) // deep equality
 -   "Danh mục
 
 ## Bằng chứng
-- Local file: `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr15-FR-15-Admin-Product-M-73049-s-Vietnamese-column-headers-chrome-local/test-failed-1.png`
+Ảnh cũ đã được thay bằng các liên kết chuẩn trong mục bằng chứng bổ sung bên dưới.
 - Quan sát trên Chrome: Đã xác minh trên Google Chrome
 
 ## Tái hiện và kiểm thử lại
 - Attempts: 1/1; retries/flaky: 0
 - Lệnh chạy lại: npx playwright test --grep "GUI-047"
 - Kết quả sau fix: Not Run
+
+## Ảnh bằng chứng chuẩn (phiên chụp bổ sung)
+
+Ảnh dưới đây thuộc phiên chụp bổ sung được ghi rõ trong manifest, không thay đổi môi trường, thời gian hoặc kết quả của lượt chạy lịch sử ở trên. Với báo cáo macOS cũ, ảnh Windows/Android là bằng chứng tái hiện riêng, không phải ảnh macOS gốc.
+
+[Toàn bộ ảnh đã duyệt và độ phủ trên ba nền tảng](../../cross-platform/browser-evidence/README.md). Bảng dưới liệt kê các checklist ID được nhắc trong báo cáo này.
+
+| Checklist | Nền tảng chụp | Ảnh chuẩn | Kết quả ca tự động của phiên chụp | Phiên thật |
+|---|---|---|---|---|
+| GUI-047 | p1-chrome-win11 | [Xem ảnh](../../cross-platform/browser-evidence/images/p1-chrome-win11/GUI-047.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/afbd73711233aa6e106d845371fcaade2328150d) |
+| GUI-047 | p2-firefox-win11 | [Xem ảnh](../../cross-platform/browser-evidence/images/p2-firefox-win11/GUI-047.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/eec8f6a648027064e4d8d7fc0b4bea80bc71cddc) |
+| GUI-047 | p3-android-chrome | [Xem ảnh](../../cross-platform/browser-evidence/images/p3-android-chrome/GUI-047.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/cbdb71d9c2df2ad92ddcf6d28448fc488ccb1cf7) |

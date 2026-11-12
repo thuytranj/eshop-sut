@@ -41,10 +41,22 @@ Call log:
   - Error message required for pr
 
 ## Bằng chứng
-- Local file: `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr15-FR-15-Admin-Product-M-ba58a-pts-only-positive-amounts-0-chrome-local/test-failed-1.png`
+Ảnh cũ đã được thay bằng các liên kết chuẩn trong mục bằng chứng bổ sung bên dưới.
 - Quan sát trên Chrome: Đã xác minh trên Google Chrome
 
 ## Tái hiện và kiểm thử lại
 - Attempts: 1/1; retries/flaky: 0
 - Lệnh chạy lại: npx playwright test --grep "GUI-052"
 - Kết quả sau fix: Not Run
+
+## Ảnh bằng chứng chuẩn (phiên chụp bổ sung)
+
+Ảnh dưới đây thuộc phiên chụp bổ sung được ghi rõ trong manifest, không thay đổi môi trường, thời gian hoặc kết quả của lượt chạy lịch sử ở trên. Với báo cáo macOS cũ, ảnh Windows/Android là bằng chứng tái hiện riêng, không phải ảnh macOS gốc.
+
+[Toàn bộ ảnh đã duyệt và độ phủ trên ba nền tảng](../../cross-platform/browser-evidence/README.md). Bảng dưới liệt kê các checklist ID được nhắc trong báo cáo này.
+
+| Checklist | Nền tảng chụp | Ảnh chuẩn | Kết quả ca tự động của phiên chụp | Phiên thật |
+|---|---|---|---|---|
+| GUI-052 | p1-chrome-win11 | [Xem ảnh](../../cross-platform/browser-evidence/images/p1-chrome-win11/GUI-052.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/2a62cec3af291fa4b10ec3972981edf41ce35311) |
+| GUI-052 | p2-firefox-win11 | [Xem ảnh](../../cross-platform/browser-evidence/images/p2-firefox-win11/GUI-052.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/aa4e16e0e8fd35051be5ff80b36c1a1a86dac0c4) |
+| GUI-052 | p3-android-chrome | [Xem ảnh](../../cross-platform/browser-evidence/images/p3-android-chrome/GUI-052.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/641545c1d386ce14eff86b6fdf9f27e63c9618d0) |

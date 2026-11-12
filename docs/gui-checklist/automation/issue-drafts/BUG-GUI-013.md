@@ -37,10 +37,22 @@ Call log:
     - accept-en
 
 ## Bằng chứng
-- Local file: `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr03-FR-03-Forgot-and-Rese-0456a-rs-exactly-6-numeric-digits-chrome-local/test-failed-1.png`
+Ảnh cũ đã được thay bằng các liên kết chuẩn trong mục bằng chứng bổ sung bên dưới.
 - Quan sát trên Chrome: Đã xác minh trên Google Chrome
 
 ## Tái hiện và kiểm thử lại
 - Attempts: 1/1; retries/flaky: 0
 - Lệnh chạy lại: npx playwright test --grep "GUI-013"
 - Kết quả sau fix: Not Run
+
+## Ảnh bằng chứng chuẩn (phiên chụp bổ sung)
+
+Ảnh dưới đây thuộc phiên chụp bổ sung được ghi rõ trong manifest, không thay đổi môi trường, thời gian hoặc kết quả của lượt chạy lịch sử ở trên. Với báo cáo macOS cũ, ảnh Windows/Android là bằng chứng tái hiện riêng, không phải ảnh macOS gốc.
+
+[Toàn bộ ảnh đã duyệt và độ phủ trên ba nền tảng](../../cross-platform/browser-evidence/README.md). Bảng dưới liệt kê các checklist ID được nhắc trong báo cáo này.
+
+| Checklist | Nền tảng chụp | Ảnh chuẩn | Kết quả ca tự động của phiên chụp | Phiên thật |
+|---|---|---|---|---|
+| GUI-013 | p1-chrome-win11 | [Xem ảnh](../../cross-platform/browser-evidence/images/p1-chrome-win11/GUI-013.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/16cdfb162c4542ba2b5c997ba4dc1080ab8f3ffa) |
+| GUI-013 | p2-firefox-win11 | [Xem ảnh](../../cross-platform/browser-evidence/images/p2-firefox-win11/GUI-013.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/061bdd57b524c96378c75f1b015b41e5edcd850e) |
+| GUI-013 | p3-android-chrome | [Xem ảnh](../../cross-platform/browser-evidence/images/p3-android-chrome/GUI-013.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/d3ee10ea3dd4c55af8a442dd63b72d6a272a1a79) |

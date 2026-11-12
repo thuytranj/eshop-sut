@@ -31,10 +31,22 @@ plus-minus-buttons
 Error: Quantity controls missing in cart row: minus=false, plus=false, input=false
 
 ## Bằng chứng
-- Local file: `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr07-FR-07-Shopping-Cart-D-f2b27-for-adjusting-item-quantity-chrome-local/test-failed-1.png`
+Ảnh cũ đã được thay bằng các liên kết chuẩn trong mục bằng chứng bổ sung bên dưới.
 - Quan sát trên Chrome: Đã xác minh trên Google Chrome
 
 ## Tái hiện và kiểm thử lại
 - Attempts: 1/1; retries/flaky: 0
 - Lệnh chạy lại: npx playwright test --grep "GUI-036"
 - Kết quả sau fix: Not Run
+
+## Ảnh bằng chứng chuẩn (phiên chụp bổ sung)
+
+Ảnh dưới đây thuộc phiên chụp bổ sung được ghi rõ trong manifest, không thay đổi môi trường, thời gian hoặc kết quả của lượt chạy lịch sử ở trên. Với báo cáo macOS cũ, ảnh Windows/Android là bằng chứng tái hiện riêng, không phải ảnh macOS gốc.
+
+[Toàn bộ ảnh đã duyệt và độ phủ trên ba nền tảng](../../cross-platform/browser-evidence/README.md). Bảng dưới liệt kê các checklist ID được nhắc trong báo cáo này.
+
+| Checklist | Nền tảng chụp | Ảnh chuẩn | Kết quả ca tự động của phiên chụp | Phiên thật |
+|---|---|---|---|---|
+| GUI-036 | p1-chrome-win11 | [Xem ảnh](../../cross-platform/browser-evidence/images/p1-chrome-win11/GUI-036.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/e7f1d57eefb1ad64b6a1483e28f7b178901dfe4c) |
+| GUI-036 | p2-firefox-win11 | [Xem ảnh](../../cross-platform/browser-evidence/images/p2-firefox-win11/GUI-036.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/8d53b6b89dfc8c0b13260b2f5ab7f0c636b9610e) |
+| GUI-036 | p3-android-chrome | [Xem ảnh](../../cross-platform/browser-evidence/images/p3-android-chrome/GUI-036.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/8558cf5cb1bc5bf89432ccff34939a0c6276e3de) |

@@ -35,10 +35,22 @@ Expected: visible
 Error: Unexpected token "=" while parsing css selector ".toast, [role="status"], [role="alert"], text=/Đã 
 
 ## Bằng chứng
-- Local file: `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr05-FR-05-Product-Catalog-48431-when-adding-product-to-cart-chrome-local/test-failed-1.png`
+Ảnh cũ đã được thay bằng các liên kết chuẩn trong mục bằng chứng bổ sung bên dưới.
 - Quan sát trên Chrome: Đã xác minh trên Google Chrome
 
 ## Tái hiện và kiểm thử lại
 - Attempts: 1/1; retries/flaky: 0
 - Lệnh chạy lại: npx playwright test --grep "GUI-031"
 - Kết quả sau fix: Not Run
+
+## Ảnh bằng chứng chuẩn (phiên chụp bổ sung)
+
+Ảnh dưới đây thuộc phiên chụp bổ sung được ghi rõ trong manifest, không thay đổi môi trường, thời gian hoặc kết quả của lượt chạy lịch sử ở trên. Với báo cáo macOS cũ, ảnh Windows/Android là bằng chứng tái hiện riêng, không phải ảnh macOS gốc.
+
+[Toàn bộ ảnh đã duyệt và độ phủ trên ba nền tảng](../../cross-platform/browser-evidence/README.md). Bảng dưới liệt kê các checklist ID được nhắc trong báo cáo này.
+
+| Checklist | Nền tảng chụp | Ảnh chuẩn | Kết quả ca tự động của phiên chụp | Phiên thật |
+|---|---|---|---|---|
+| GUI-031 | p1-chrome-win11 | [Xem ảnh](../../cross-platform/browser-evidence/images/p1-chrome-win11/GUI-031.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/33aa6ae9da708ca54fdbd365b9410e4516260465) |
+| GUI-031 | p2-firefox-win11 | [Xem ảnh](../../cross-platform/browser-evidence/images/p2-firefox-win11/GUI-031.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/2817fe8d52a14abfd5d174c94cc17af1f9b3c3b1) |
+| GUI-031 | p3-android-chrome | [Xem ảnh](../../cross-platform/browser-evidence/images/p3-android-chrome/GUI-031.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/6cf8860e4ba5490400ecb70ab3a0cf9a8c12efae) |

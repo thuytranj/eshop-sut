@@ -42,3 +42,21 @@ Tài liệu này ghi nhận hướng dẫn kiểm tra thủ công cho các hạn
   1. Mở DevTools, chọn responsive mode 360x800.
   2. Đo kích thước bounding box của các nút thao tác.
   3. Xác nhận nút bấm có thể click được và không bị che khuất sau khi cuộn trang.
+
+## Ảnh bằng chứng chuẩn (phiên chụp bổ sung)
+
+Ảnh dưới đây thuộc phiên chụp bổ sung được ghi rõ trong manifest, không thay đổi môi trường, thời gian hoặc kết quả của lượt chạy lịch sử ở trên. Với báo cáo macOS cũ, ảnh Windows/Android là bằng chứng tái hiện riêng, không phải ảnh macOS gốc.
+
+[Toàn bộ ảnh đã duyệt và độ phủ trên ba nền tảng](../cross-platform/browser-evidence/README.md). Bảng dưới liệt kê các checklist ID được nhắc trong báo cáo này.
+
+| Checklist | Nền tảng chụp | Ảnh chuẩn | Kết quả ca tự động của phiên chụp | Phiên thật |
+|---|---|---|---|---|
+| GUI-065 | p1-chrome-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p1-chrome-win11/GUI-065.png) | passed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/64178bc5609b0048ab0e74d6874acda0af1a89ea) |
+| GUI-065 | p2-firefox-win11 | Not Run — chờ kiểm tra thủ công | — | — |
+| GUI-065 | p3-android-chrome | Not Run — chờ kiểm tra thủ công | — | — |
+| GUI-066 | p1-chrome-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p1-chrome-win11/GUI-066.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/1c88c681a8ff706ba8fd4404b19b976496a8d9de) |
+| GUI-066 | p2-firefox-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p2-firefox-win11/GUI-066.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/54d9faa6b177c8461ce283474a00428e515573c5) |
+| GUI-066 | p3-android-chrome | [Xem ảnh](../cross-platform/browser-evidence/images/p3-android-chrome/GUI-066.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/b76a2c23f2c624cd04485a68a20d3f89734d77ec) |
+| GUI-069 | p1-chrome-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p1-chrome-win11/GUI-069.png) | passed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/5475f6b7f231790d2cd47860e03d112f00ce7856) |
+| GUI-069 | p2-firefox-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p2-firefox-win11/GUI-069.png) | passed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/dca465efed13fcffdf3db7e2b09abbc4e47b3d7f) |
+| GUI-069 | p3-android-chrome | [Xem ảnh](../cross-platform/browser-evidence/images/p3-android-chrome/GUI-069.png) | passed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/bc225aa17be480bef82bd36644be404513583be4) |

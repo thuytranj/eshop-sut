@@ -89,7 +89,7 @@ Received: 0
 ```
 
 **Bằng chứng (Evidence)**:
-- `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr03-FR-03-Forgot-and-Rese-1ed77--describing-forgot-password-chrome-local/test-failed-1.png`
+Ảnh cũ đã được thay bằng các liên kết chuẩn trong mục bằng chứng bổ sung bên dưới.
 
 ---
 
@@ -116,7 +116,7 @@ Received: "text"
 ```
 
 **Bằng chứng (Evidence)**:
-- `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr03-FR-03-Forgot-and-Rese-cab66-e-email-and-required-marker-chrome-local/test-failed-1.png`
+Ảnh cũ đã được thay bằng các liên kết chuẩn trong mục bằng chứng bổ sung bên dưới.
 
 ---
 
@@ -144,7 +144,7 @@ Error: Unexpected token "=" while parsing css selector ".step-indicator, text=/B
 ```
 
 **Bằng chứng (Evidence)**:
-- `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr03-FR-03-Forgot-and-Rese-7d6f2-t-step-out-of-total-2-steps-chrome-local/test-failed-1.png`
+Ảnh cũ đã được thay bằng các liên kết chuẩn trong mục bằng chứng bổ sung bên dưới.
 
 ---
 
@@ -176,7 +176,7 @@ Call log:
 ```
 
 **Bằng chứng (Evidence)**:
-- `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr03-FR-03-Forgot-and-Rese-723d2-ds-exist-with-type-password-chrome-local/test-failed-1.png`
+Ảnh cũ đã được thay bằng các liên kết chuẩn trong mục bằng chứng bổ sung bên dưới.
 
 ---
 
@@ -208,7 +208,7 @@ Call log:
 ```
 
 **Bằng chứng (Evidence)**:
-- `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr03-FR-03-Forgot-and-Rese-9b4a8-age-positioned-above-submit-chrome-local/test-failed-1.png`
+Ảnh cũ đã được thay bằng các liên kết chuẩn trong mục bằng chứng bổ sung bên dưới.
 
 ---
 
@@ -240,7 +240,7 @@ Call log:
 ```
 
 **Bằng chứng (Evidence)**:
-- `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr03-FR-03-Forgot-and-Rese-7deef-tes-6-digit-format-strictly-chrome-local/test-failed-1.png`
+Ảnh cũ đã được thay bằng các liên kết chuẩn trong mục bằng chứng bổ sung bên dưới.
 
 ---
 
@@ -272,7 +272,7 @@ Call log:
 ```
 
 **Bằng chứng (Evidence)**:
-- `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr03-FR-03-Forgot-and-Rese-45871-back-to-login-on-both-steps-chrome-local/test-failed-1.png`
+Ảnh cũ đã được thay bằng các liên kết chuẩn trong mục bằng chứng bổ sung bên dưới.
 
 ---
 
@@ -299,7 +299,7 @@ Error: strict mode violation: locator('text=/Bước 2|Mã OTP/i') resolved to 2
 ```
 
 **Bằng chứng (Evidence)**:
-- `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr03-FR-03-Forgot-and-Rese-5c9c8-m-on-both-step-1-and-step-2-chrome-local/test-failed-1.png`
+Ảnh cũ đã được thay bằng các liên kết chuẩn trong mục bằng chứng bổ sung bên dưới.
 
 ---
 
@@ -327,7 +327,7 @@ Call log:
 ```
 
 **Bằng chứng (Evidence)**:
-- `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr03-FR-03-Forgot-and-Rese-0456a-rs-exactly-6-numeric-digits-chrome-local/test-failed-1.png`
+Ảnh cũ đã được thay bằng các liên kết chuẩn trong mục bằng chứng bổ sung bên dưới.
 
 ---
 
@@ -355,7 +355,7 @@ Call log:
 ```
 
 **Bằng chứng (Evidence)**:
-- `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr03-FR-03-Forgot-and-Rese-82088-en-for-another-user-account-chrome-local/test-failed-1.png`
+Ảnh cũ đã được thay bằng các liên kết chuẩn trong mục bằng chứng bổ sung bên dưới.
 
 ---
 
@@ -383,7 +383,7 @@ Call log:
 ```
 
 **Bằng chứng (Evidence)**:
-- `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr03-FR-03-Forgot-and-Rese-f5213--login-with-new-credentials-chrome-local/test-failed-1.png`
+Ảnh cũ đã được thay bằng các liên kết chuẩn trong mục bằng chứng bổ sung bên dưới.
 
 ---
 
@@ -405,7 +405,7 @@ Error: Currency must use '₫', found 'VND' in "30.000.000 VND"
 ```
 
 **Bằng chứng (Evidence)**:
-- `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr05-FR-05-Product-Catalog-eb74b-s-₫-and-thousand-separators-chrome-local/test-failed-1.png`
+Ảnh cũ đã được thay bằng các liên kết chuẩn trong mục bằng chứng bổ sung bên dưới.
 
 ---
 
@@ -432,7 +432,7 @@ Received: 2
 ```
 
 **Bằng chứng (Evidence)**:
-- `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr05-FR-05-Product-Catalog-eb30b--on-page-describing-content-chrome-local/test-failed-1.png`
+Ảnh cũ đã được thay bằng các liên kết chuẩn trong mục bằng chứng bổ sung bên dưới.
 
 ---
 
@@ -457,7 +457,7 @@ Received:    1
 ```
 
 **Bằng chứng (Evidence)**:
-- `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr05-FR-05-Product-Catalog-ff674--Color-contrast-ratio-4-5-1-chrome-local/test-failed-1.png`
+Ảnh cũ đã được thay bằng các liên kết chuẩn trong mục bằng chứng bổ sung bên dưới.
 
 ---
 
@@ -484,7 +484,7 @@ Received: 1
 ```
 
 **Bằng chứng (Evidence)**:
-- `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr05-FR-05-Product-Catalog-89571--execution-or-tag-injection-chrome-local/test-failed-1.png`
+Ảnh cũ đã được thay bằng các liên kết chuẩn trong mục bằng chứng bổ sung bên dưới.
 
 ---
 
@@ -514,7 +514,7 @@ Call log:
 ```
 
 **Bằng chứng (Evidence)**:
-- `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr05-FR-05-Product-Catalog-befb3-ion-highlight-for-Trang-chu-chrome-local/test-failed-1.png`
+Ảnh cũ đã được thay bằng các liên kết chuẩn trong mục bằng chứng bổ sung bên dưới.
 
 ---
 
@@ -544,7 +544,7 @@ Call log:
 ```
 
 **Bằng chứng (Evidence)**:
-- `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr05-FR-05-Product-Catalog-558f4-ates-after-adding-product-A-chrome-local/test-failed-1.png`
+Ảnh cũ đã được thay bằng các liên kết chuẩn trong mục bằng chứng bổ sung bên dưới.
 
 ---
 
@@ -574,7 +574,7 @@ Call log:
 ```
 
 **Bằng chứng (Evidence)**:
-- `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr05-FR-05-Product-Catalog-70860-le-navigates-to-detail-page-chrome-local/test-failed-1.png`
+Ảnh cũ đã được thay bằng các liên kết chuẩn trong mục bằng chứng bổ sung bên dưới.
 
 ---
 
@@ -602,7 +602,7 @@ Error: Unexpected token "=" while parsing css selector ".loading, .skeleton, tex
 ```
 
 **Bằng chứng (Evidence)**:
-- `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr05-FR-05-Product-Catalog-51b25-r-while-waiting-for-network-chrome-local/test-failed-1.png`
+Ảnh cũ đã được thay bằng các liên kết chuẩn trong mục bằng chứng bổ sung bên dưới.
 
 ---
 
@@ -632,7 +632,7 @@ Call log:
 ```
 
 **Bằng chứng (Evidence)**:
-- `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr05-FR-05-Product-Catalog-d0ce8-ly-illustration-and-message-chrome-local/test-failed-1.png`
+Ảnh cũ đã được thay bằng các liên kết chuẩn trong mục bằng chứng bổ sung bên dưới.
 
 ---
 
@@ -658,7 +658,7 @@ Received: ""
 ```
 
 **Bằng chứng (Evidence)**:
-- `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr05-FR-05-Product-Catalog-c1c4f-criptive-non-empty-alt-text-chrome-local/test-failed-1.png`
+Ảnh cũ đã được thay bằng các liên kết chuẩn trong mục bằng chứng bổ sung bên dưới.
 
 ---
 
@@ -684,7 +684,7 @@ Error: Unexpected token "=" while parsing css selector ".toast, [role="status"],
 ```
 
 **Bằng chứng (Evidence)**:
-- `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr05-FR-05-Product-Catalog-48431-when-adding-product-to-cart-chrome-local/test-failed-1.png`
+Ảnh cũ đã được thay bằng các liên kết chuẩn trong mục bằng chứng bổ sung bên dưới.
 
 ---
 
@@ -716,7 +716,7 @@ Error: expect(received).toEqual(expected) // deep equality
 ```
 
 **Bằng chứng (Evidence)**:
-- `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr07-FR-07-Shopping-Cart-D-cd1fa--5-columns-in-correct-order-chrome-local/test-failed-1.png`
+Ảnh cũ đã được thay bằng các liên kết chuẩn trong mục bằng chứng bổ sung bên dưới.
 
 ---
 
@@ -743,7 +743,7 @@ Received string:    "Tổng tạm tính: 30.000.000 ₫"
 ```
 
 **Bằng chứng (Evidence)**:
-- `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr07-FR-07-Shopping-Cart-D-0bb04-strictly-matches-Tổng-cộng--chrome-local/test-failed-1.png`
+Ảnh cũ đã được thay bằng các liên kết chuẩn trong mục bằng chứng bổ sung bên dưới.
 
 ---
 
@@ -770,7 +770,7 @@ Received: "left"
 ```
 
 **Bằng chứng (Evidence)**:
-- `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr07-FR-07-Shopping-Cart-D-decca-nd-right-aligned-in-columns-chrome-local/test-failed-1.png`
+Ảnh cũ đã được thay bằng các liên kết chuẩn trong mục bằng chứng bổ sung bên dưới.
 
 ---
 
@@ -792,7 +792,7 @@ Error: Quantity controls missing in cart row: minus=false, plus=false, input=fal
 ```
 
 **Bằng chứng (Evidence)**:
-- `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr07-FR-07-Shopping-Cart-D-f2b27-for-adjusting-item-quantity-chrome-local/test-failed-1.png`
+Ảnh cũ đã được thay bằng các liên kết chuẩn trong mục bằng chứng bổ sung bên dưới.
 
 ---
 
@@ -821,7 +821,7 @@ Error: element(s) no
 ```
 
 **Bằng chứng (Evidence)**:
-- `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr07-FR-07-Shopping-Cart-D-1a78a-llows-typing-quantity-value-chrome-local/test-failed-1.png`
+Ảnh cũ đã được thay bằng các liên kết chuẩn trong mục bằng chứng bổ sung bên dưới.
 
 ---
 
@@ -848,7 +848,7 @@ Received:   0
 ```
 
 **Bằng chứng (Evidence)**:
-- `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr07-FR-07-Shopping-Cart-D-bd610--handled-safely-without-NaN-chrome-local/test-failed-1.png`
+Ảnh cũ đã được thay bằng các liên kết chuẩn trong mục bằng chứng bổ sung bên dưới.
 
 ---
 
@@ -873,7 +873,7 @@ Received string:  "hover:underline"
 ```
 
 **Bằng chứng (Evidence)**:
-- `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr07-FR-07-Shopping-Cart-D-955e4-avigation-highlight-on-cart-chrome-local/test-failed-1.png`
+Ảnh cũ đã được thay bằng các liên kết chuẩn trong mục bằng chứng bổ sung bên dưới.
 
 ---
 
@@ -905,7 +905,7 @@ Call log:
 ```
 
 **Bằng chứng (Evidence)**:
-- `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr07-FR-07-Shopping-Cart-D-966ef-tion-from-Cart-back-to-Home-chrome-local/test-failed-1.png`
+Ảnh cũ đã được thay bằng các liên kết chuẩn trong mục bằng chứng bổ sung bên dưới.
 
 ---
 
@@ -937,7 +937,7 @@ Call log:
 ```
 
 **Bằng chứng (Evidence)**:
-- `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr07-FR-07-Shopping-Cart-D-1e735-k-navigates-back-to-catalog-chrome-local/test-failed-1.png`
+Ảnh cũ đã được thay bằng các liên kết chuẩn trong mục bằng chứng bổ sung bên dưới.
 
 ---
 
@@ -967,7 +967,7 @@ Call log:
 ```
 
 **Bằng chứng (Evidence)**:
-- `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr07-FR-07-Shopping-Cart-D-e44e8-ng-product-A-multiple-times-chrome-local/test-failed-1.png`
+Ảnh cũ đã được thay bằng các liên kết chuẩn trong mục bằng chứng bổ sung bên dưới.
 
 ---
 
@@ -993,7 +993,7 @@ Received: false
 ```
 
 **Bằng chứng (Evidence)**:
-- `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr07-FR-07-Shopping-Cart-D-c397b-s-before-deleting-cart-item-chrome-local/test-failed-1.png`
+Ảnh cũ đã được thay bằng các liên kết chuẩn trong mục bằng chứng bổ sung bên dưới.
 
 ---
 
@@ -1023,7 +1023,7 @@ Call log:
 ```
 
 **Bằng chứng (Evidence)**:
-- `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr07-FR-07-Shopping-Cart-D-4d096-t-item-Confirm-deletes-item-chrome-local/test-failed-1.png`
+Ảnh cũ đã được thay bằng các liên kết chuẩn trong mục bằng chứng bổ sung bên dưới.
 
 ---
 
@@ -1055,7 +1055,7 @@ Error: expect(received).toEqual(expected) // deep equality
 ```
 
 **Bằng chứng (Evidence)**:
-- `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr15-FR-15-Admin-Product-M-73049-s-Vietnamese-column-headers-chrome-local/test-failed-1.png`
+Ảnh cũ đã được thay bằng các liên kết chuẩn trong mục bằng chứng bổ sung bên dưới.
 
 ---
 
@@ -1080,7 +1080,7 @@ Received string:  "EShop Admin"
 ```
 
 **Bằng chứng (Evidence)**:
-- `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr15-FR-15-Admin-Product-M-6c27d-scribing-product-management-chrome-local/test-failed-1.png`
+Ảnh cũ đã được thay bằng các liên kết chuẩn trong mục bằng chứng bổ sung bên dưới.
 
 ---
 
@@ -1110,7 +1110,7 @@ Laptop
 ```
 
 **Bằng chứng (Evidence)**:
-- `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr15-FR-15-Admin-Product-M-75675-ields-show-asterisk-marker--chrome-local/test-failed-1.png`
+Ảnh cũ đã được thay bằng các liên kết chuẩn trong mục bằng chứng bổ sung bên dưới.
 
 ---
 
@@ -1137,7 +1137,7 @@ Received:    256
 ```
 
 **Bằng chứng (Evidence)**:
-- `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr15-FR-15-Admin-Product-M-1b73d-ax-length-of-255-characters-chrome-local/test-failed-1.png`
+Ảnh cũ đã được thay bằng các liên kết chuẩn trong mục bằng chứng bổ sung bên dưới.
 
 ---
 
@@ -1169,7 +1169,7 @@ Call log:
 ```
 
 **Bằng chứng (Evidence)**:
-- `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr15-FR-15-Admin-Product-M-ba58a-pts-only-positive-amounts-0-chrome-local/test-failed-1.png`
+Ảnh cũ đã được thay bằng các liên kết chuẩn trong mục bằng chứng bổ sung bên dưới.
 
 ---
 
@@ -1196,7 +1196,7 @@ Received:   0
 ```
 
 **Bằng chứng (Evidence)**:
-- `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr15-FR-15-Admin-Product-M-eeb70-irectly-above-submit-button-chrome-local/test-failed-1.png`
+Ảnh cũ đã được thay bằng các liên kết chuẩn trong mục bằng chứng bổ sung bên dưới.
 
 ---
 
@@ -1228,7 +1228,7 @@ Call log:
 ```
 
 **Bằng chứng (Evidence)**:
-- `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr15-FR-15-Admin-Product-M-91514--label-in-header-or-sidebar-chrome-local/test-failed-1.png`
+Ảnh cũ đã được thay bằng các liên kết chuẩn trong mục bằng chứng bổ sung bên dưới.
 
 ---
 
@@ -1260,7 +1260,7 @@ Call log:
 ```
 
 **Bằng chứng (Evidence)**:
-- `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr15-FR-15-Admin-Product-M-34786-lements-keyboard-focus-trap-chrome-local/test-failed-1.png`
+Ảnh cũ đã được thay bằng các liên kết chuẩn trong mục bằng chứng bổ sung bên dưới.
 
 ---
 
@@ -1290,7 +1290,7 @@ Call log:
 ```
 
 **Bằng chứng (Evidence)**:
-- `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr15-FR-15-Admin-Product-M-f39a4-d-does-not-modify-product-B-chrome-local/test-failed-1.png`
+Ảnh cũ đã được thay bằng các liên kết chuẩn trong mục bằng chứng bổ sung bên dưới.
 
 ---
 
@@ -1319,7 +1319,7 @@ Error: element(s) not
 ```
 
 **Bằng chứng (Evidence)**:
-- `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr15-FR-15-Admin-Product-M-18c6b-ars-before-deleting-product-chrome-local/test-failed-1.png`
+Ảnh cũ đã được thay bằng các liên kết chuẩn trong mục bằng chứng bổ sung bên dưới.
 
 ---
 
@@ -1345,7 +1345,7 @@ Received: null
 ```
 
 **Bằng chứng (Evidence)**:
-- `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr07-FR-07-Shopping-Cart-D-d6cf4-d-live-status-announcements-chrome-local/test-failed-1.png`
+Ảnh cũ đã được thay bằng các liên kết chuẩn trong mục bằng chứng bổ sung bên dưới.
 
 ---
 
@@ -1375,7 +1375,7 @@ Call log:
 ```
 
 **Bằng chứng (Evidence)**:
-- `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr05-FR-05-Product-Catalog-c3e25-or-state-and-retry-recovery-chrome-local/test-failed-1.png`
+Ảnh cũ đã được thay bằng các liên kết chuẩn trong mục bằng chứng bổ sung bên dưới.
 
 ---
 
@@ -1402,7 +1402,7 @@ Received:   0
 ```
 
 **Bằng chứng (Evidence)**:
-- `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr07-FR-07-Shopping-Cart-D-cb537-r-immediate-NaN-before-blur-chrome-local/test-failed-1.png`
+Ảnh cũ đã được thay bằng các liên kết chuẩn trong mục bằng chứng bổ sung bên dưới.
 
 ---
 
@@ -1432,7 +1432,159 @@ Call log:
 ```
 
 **Bằng chứng (Evidence)**:
-- `/Users/thuytran/Workspace/eshop-sut/tests/gui/test-results/fr05-FR-05-Product-Catalog-64afc-prevent-duplicate-mutations-chrome-local/test-failed-1.png`
+Ảnh cũ đã được thay bằng các liên kết chuẩn trong mục bằng chứng bổ sung bên dưới.
 
 ---
 
+## Ảnh bằng chứng chuẩn (phiên chụp bổ sung)
+
+Ảnh dưới đây thuộc phiên chụp bổ sung được ghi rõ trong manifest, không thay đổi môi trường, thời gian hoặc kết quả của lượt chạy lịch sử ở trên. Với báo cáo macOS cũ, ảnh Windows/Android là bằng chứng tái hiện riêng, không phải ảnh macOS gốc.
+
+[Toàn bộ ảnh đã duyệt và độ phủ trên ba nền tảng](../cross-platform/browser-evidence/README.md). Bảng dưới liệt kê các checklist ID được nhắc trong báo cáo này.
+
+| Checklist | Nền tảng chụp | Ảnh chuẩn | Kết quả ca tự động của phiên chụp | Phiên thật |
+|---|---|---|---|---|
+| GUI-003 | p1-chrome-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p1-chrome-win11/GUI-003.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/a9463dfc60c152adcef2d5fb97e7d6f0c7c2b4e5) |
+| GUI-003 | p2-firefox-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p2-firefox-win11/GUI-003.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/124734b556902aaac895e1caa4d7ac7eaefb37fb) |
+| GUI-003 | p3-android-chrome | [Xem ảnh](../cross-platform/browser-evidence/images/p3-android-chrome/GUI-003.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/5abadcac9067f40ebb6d0947804e390f42045453) |
+| GUI-004 | p1-chrome-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p1-chrome-win11/GUI-004.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/c26bb9f5b9657715d7367cad8194ba37804c954e) |
+| GUI-004 | p2-firefox-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p2-firefox-win11/GUI-004.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/e6b5ec44aada622fd7343755fd68c435ec0ed1c7) |
+| GUI-004 | p3-android-chrome | [Xem ảnh](../cross-platform/browser-evidence/images/p3-android-chrome/GUI-004.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/6de2d32bc96eea1a2f94e4c1fdce4944031c1f74) |
+| GUI-005 | p1-chrome-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p1-chrome-win11/GUI-005.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/5ab5ad4d9669782adaaec4a59922f66788e690f8) |
+| GUI-005 | p2-firefox-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p2-firefox-win11/GUI-005.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/365b98c4131105c1547e6eca68da39bd7c899cc8) |
+| GUI-005 | p3-android-chrome | [Xem ảnh](../cross-platform/browser-evidence/images/p3-android-chrome/GUI-005.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/55c72dd618a8ad2a0289d004d4ca8000f614f1ae) |
+| GUI-006 | p1-chrome-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p1-chrome-win11/GUI-006.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/569cba8455f71f8a3fb9e91eae24765ea0c9ca38) |
+| GUI-006 | p2-firefox-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p2-firefox-win11/GUI-006.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/034b53f63d33c8374f2d26a42b08e236e0cbec20) |
+| GUI-006 | p3-android-chrome | [Xem ảnh](../cross-platform/browser-evidence/images/p3-android-chrome/GUI-006.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/90b09ddf69e520e2fda77e420b54e0ec84a58a14) |
+| GUI-007 | p1-chrome-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p1-chrome-win11/GUI-007.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/37ad72d06c2304c4d2279f3b58b117c76fc5d488) |
+| GUI-007 | p2-firefox-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p2-firefox-win11/GUI-007.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/c2c8f51bb9e7251bcdc04c59f023d21ed87aee4f) |
+| GUI-007 | p3-android-chrome | [Xem ảnh](../cross-platform/browser-evidence/images/p3-android-chrome/GUI-007.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/ca692491a6fb1299e812eb0f62f274084e0eb2af) |
+| GUI-008 | p1-chrome-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p1-chrome-win11/GUI-008.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/cc10c0e6d2cd2ccde868ab3e799567490db11e22) |
+| GUI-008 | p2-firefox-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p2-firefox-win11/GUI-008.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/6c34c337038b4847e66db0d4e2d31601542c45fd) |
+| GUI-008 | p3-android-chrome | [Xem ảnh](../cross-platform/browser-evidence/images/p3-android-chrome/GUI-008.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/9b9c135468fa48f5b7e1cfc4e43bc0b29f6462c6) |
+| GUI-009 | p1-chrome-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p1-chrome-win11/GUI-009.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/222509689cd5d9fe54f98d21fee2118ec549feed) |
+| GUI-009 | p2-firefox-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p2-firefox-win11/GUI-009.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/e752091369a6bd62b9295b9cb554a5b0a247aedb) |
+| GUI-009 | p3-android-chrome | [Xem ảnh](../cross-platform/browser-evidence/images/p3-android-chrome/GUI-009.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/961c035b73fdc25dec858997171d32dd8b73bd0a) |
+| GUI-012 | p1-chrome-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p1-chrome-win11/GUI-012.png) | passed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/592d4051c482bbbc5ad089d8d6ee4744e0220c3d) |
+| GUI-012 | p2-firefox-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p2-firefox-win11/GUI-012.png) | passed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/7bbd221789c7141ca9f3ddae7cfc1f4c73fdaa89) |
+| GUI-012 | p3-android-chrome | [Xem ảnh](../cross-platform/browser-evidence/images/p3-android-chrome/GUI-012.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/60617966321f60ad0a2ca2c4df7f2673a2f00c41) |
+| GUI-013 | p1-chrome-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p1-chrome-win11/GUI-013.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/16cdfb162c4542ba2b5c997ba4dc1080ab8f3ffa) |
+| GUI-013 | p2-firefox-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p2-firefox-win11/GUI-013.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/061bdd57b524c96378c75f1b015b41e5edcd850e) |
+| GUI-013 | p3-android-chrome | [Xem ảnh](../cross-platform/browser-evidence/images/p3-android-chrome/GUI-013.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/d3ee10ea3dd4c55af8a442dd63b72d6a272a1a79) |
+| GUI-014 | p1-chrome-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p1-chrome-win11/GUI-014.png) | passed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/80da17ac3404cdbf4a28fdcbf876835074a76e25) |
+| GUI-014 | p2-firefox-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p2-firefox-win11/GUI-014.png) | passed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/238d624dbdfdd40f8220d7fa9d9f17f56f47346c) |
+| GUI-014 | p3-android-chrome | [Xem ảnh](../cross-platform/browser-evidence/images/p3-android-chrome/GUI-014.png) | passed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/a7c4720f7f024fd307c57210fd3e5a87843913b4) |
+| GUI-015 | p1-chrome-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p1-chrome-win11/GUI-015.png) | passed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/261acfa0157ee2be71a297f0e450536386364649) |
+| GUI-015 | p2-firefox-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p2-firefox-win11/GUI-015.png) | passed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/cae55fac98fef6a040d2f65d7663373965211c85) |
+| GUI-015 | p3-android-chrome | [Xem ảnh](../cross-platform/browser-evidence/images/p3-android-chrome/GUI-015.png) | passed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/e8af52922f98a6aa8b2cb3caf1abb4bd055f17a2) |
+| GUI-018 | p1-chrome-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p1-chrome-win11/GUI-018.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/058b0bd1b500900c1eb1f5ced602d09ad9efd841) |
+| GUI-018 | p2-firefox-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p2-firefox-win11/GUI-018.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/ef7aa76ae0ad2aac5c39ed0ab3a50f5ef0e1279d) |
+| GUI-018 | p3-android-chrome | [Xem ảnh](../cross-platform/browser-evidence/images/p3-android-chrome/GUI-018.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/53c57df3ae92d857a0109376d6c5a767a5061c9d) |
+| GUI-019 | p1-chrome-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p1-chrome-win11/GUI-019.png) | passed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/11092800711be08785da43b48492491dc8b06d0a) |
+| GUI-019 | p2-firefox-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p2-firefox-win11/GUI-019.png) | passed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/bcd5841161120d1f77c80edc9a5eb32c09a9f7d0) |
+| GUI-019 | p3-android-chrome | [Xem ảnh](../cross-platform/browser-evidence/images/p3-android-chrome/GUI-019.png) | passed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/380014aa596943055dea9e538b1503417fd0af05) |
+| GUI-020 | p1-chrome-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p1-chrome-win11/GUI-020.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/5ebee47a12efe067bfbe080dc89c9e59d07d9efd) |
+| GUI-020 | p2-firefox-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p2-firefox-win11/GUI-020.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/657cc1160b66e2f80746f45336858e61dfb576a1) |
+| GUI-020 | p3-android-chrome | [Xem ảnh](../cross-platform/browser-evidence/images/p3-android-chrome/GUI-020.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/d0b6076be41547b08abf12bc140b4c76355b44ab) |
+| GUI-021 | p1-chrome-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p1-chrome-win11/GUI-021.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/d9676b65ca07a119728691970e93ca7e2aaf90f5) |
+| GUI-021 | p2-firefox-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p2-firefox-win11/GUI-021.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/39dc33b5de8eb6fbaa5ac2695d5466ec098d03a3) |
+| GUI-021 | p3-android-chrome | [Xem ảnh](../cross-platform/browser-evidence/images/p3-android-chrome/GUI-021.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/de6af8947281141747da17efdf51f27d65376b1c) |
+| GUI-024 | p1-chrome-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p1-chrome-win11/GUI-024.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/28c17efc84af2119d909963eafa83eae1e7a05e2) |
+| GUI-024 | p2-firefox-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p2-firefox-win11/GUI-024.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/be8a135fb1bb0cf121d791bcc532a0cb11daf1d1) |
+| GUI-024 | p3-android-chrome | [Xem ảnh](../cross-platform/browser-evidence/images/p3-android-chrome/GUI-024.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/853cea673e1c147921f5b58df960ba6ef98d7e5f) |
+| GUI-025 | p1-chrome-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p1-chrome-win11/GUI-025.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/63a39b800632720c2f218427152530097cf02d03) |
+| GUI-025 | p2-firefox-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p2-firefox-win11/GUI-025.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/7af1a880105e68184d7c76aafa43e8b744b373b7) |
+| GUI-025 | p3-android-chrome | [Xem ảnh](../cross-platform/browser-evidence/images/p3-android-chrome/GUI-025.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/2469699e42cc8c1422892cd558200f61ff6f617d) |
+| GUI-026 | p1-chrome-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p1-chrome-win11/GUI-026.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/723bd513287882b9197c60540e7cccdf9af9a390) |
+| GUI-026 | p2-firefox-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p2-firefox-win11/GUI-026.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/c4816d2fe67df2946b67270a9b8dfc8f22346151) |
+| GUI-026 | p3-android-chrome | [Xem ảnh](../cross-platform/browser-evidence/images/p3-android-chrome/GUI-026.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/24abe05e40cd8ece2267583ff96beffb50f9c8e6) |
+| GUI-028 | p1-chrome-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p1-chrome-win11/GUI-028.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/7e5ff0377687b7b1a88879147c68402d49ea104c) |
+| GUI-028 | p2-firefox-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p2-firefox-win11/GUI-028.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/4b69664b30244a6821a621ab23fe6ae15b2646a7) |
+| GUI-028 | p3-android-chrome | [Xem ảnh](../cross-platform/browser-evidence/images/p3-android-chrome/GUI-028.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/836e6d07d68728176154a16912882fe87c647716) |
+| GUI-029 | p1-chrome-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p1-chrome-win11/GUI-029.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/a3276497db69f34beea317a901a37da1934119bb) |
+| GUI-029 | p2-firefox-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p2-firefox-win11/GUI-029.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/1e4a508bda1c40807c305a2e119efe439822ab53) |
+| GUI-029 | p3-android-chrome | [Xem ảnh](../cross-platform/browser-evidence/images/p3-android-chrome/GUI-029.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/e3126dd35c88debd3f660921db7a3f36ac90a7e9) |
+| GUI-030 | p1-chrome-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p1-chrome-win11/GUI-030.png) | passed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/9938e081f919b1ee79fb3eec5659f9930f36a7a4) |
+| GUI-030 | p2-firefox-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p2-firefox-win11/GUI-030.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/1b5cff6a22e7bf1273a93c26f13f18cf833a0b66) |
+| GUI-030 | p3-android-chrome | [Xem ảnh](../cross-platform/browser-evidence/images/p3-android-chrome/GUI-030.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/3aa092311c927fa69054693bee36b05c776b2caf) |
+| GUI-031 | p1-chrome-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p1-chrome-win11/GUI-031.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/33aa6ae9da708ca54fdbd365b9410e4516260465) |
+| GUI-031 | p2-firefox-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p2-firefox-win11/GUI-031.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/2817fe8d52a14abfd5d174c94cc17af1f9b3c3b1) |
+| GUI-031 | p3-android-chrome | [Xem ảnh](../cross-platform/browser-evidence/images/p3-android-chrome/GUI-031.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/6cf8860e4ba5490400ecb70ab3a0cf9a8c12efae) |
+| GUI-032 | p1-chrome-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p1-chrome-win11/GUI-032.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/7a8c031b464fa3c82817037e2fa15c6a45c1a06a) |
+| GUI-032 | p2-firefox-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p2-firefox-win11/GUI-032.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/d66b5cbf8cf442a3b52e4b511f4dd947e1700f0e) |
+| GUI-032 | p3-android-chrome | [Xem ảnh](../cross-platform/browser-evidence/images/p3-android-chrome/GUI-032.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/a4b8d57ef2bdb6fdb71a683e932cbd87738c357e) |
+| GUI-033 | p1-chrome-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p1-chrome-win11/GUI-033.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/ca1a783ec2b06e1a9155817d121f10fbac99a6ac) |
+| GUI-033 | p2-firefox-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p2-firefox-win11/GUI-033.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/41f2f00a4482aa4d4c391f88ec277301a4b10de3) |
+| GUI-033 | p3-android-chrome | [Xem ảnh](../cross-platform/browser-evidence/images/p3-android-chrome/GUI-033.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/2e5e2e801331e68bf8aaa02ff808b3c04284892d) |
+| GUI-034 | p1-chrome-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p1-chrome-win11/GUI-034.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/897f09942a2e0c5e857f8898194cba191d5b3c67) |
+| GUI-034 | p2-firefox-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p2-firefox-win11/GUI-034.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/600920fc152dd8fde40ad57b1f798948a5760e4c) |
+| GUI-034 | p3-android-chrome | [Xem ảnh](../cross-platform/browser-evidence/images/p3-android-chrome/GUI-034.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/01c3646bad52c5b6f63a3ee176154c956c14ccd5) |
+| GUI-036 | p1-chrome-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p1-chrome-win11/GUI-036.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/e7f1d57eefb1ad64b6a1483e28f7b178901dfe4c) |
+| GUI-036 | p2-firefox-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p2-firefox-win11/GUI-036.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/8d53b6b89dfc8c0b13260b2f5ab7f0c636b9610e) |
+| GUI-036 | p3-android-chrome | [Xem ảnh](../cross-platform/browser-evidence/images/p3-android-chrome/GUI-036.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/8558cf5cb1bc5bf89432ccff34939a0c6276e3de) |
+| GUI-037 | p1-chrome-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p1-chrome-win11/GUI-037.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/7d7c1dc6df85171424a86911fe808285f43e4577) |
+| GUI-037 | p2-firefox-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p2-firefox-win11/GUI-037.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/1e128a1b9a16eabe4bd63f8f037737f19be093cc) |
+| GUI-037 | p3-android-chrome | [Xem ảnh](../cross-platform/browser-evidence/images/p3-android-chrome/GUI-037.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/0493cc34f3f45ce851cc507da02073396b263cc5) |
+| GUI-038 | p1-chrome-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p1-chrome-win11/GUI-038.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/86bf6da49265c2c4d99449a08cab4c869415bee4) |
+| GUI-038 | p2-firefox-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p2-firefox-win11/GUI-038.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/87d42d13ac5556354f2663dc9b6f806d647f43f6) |
+| GUI-038 | p3-android-chrome | [Xem ảnh](../cross-platform/browser-evidence/images/p3-android-chrome/GUI-038.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/91271b543958ea3bce8d1fbdbe60607a57c1369d) |
+| GUI-039 | p1-chrome-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p1-chrome-win11/GUI-039.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/861ded2b1a4ed08a0cb7195946bdad2cb10b546d) |
+| GUI-039 | p2-firefox-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p2-firefox-win11/GUI-039.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/cfb0b5527394a9af00e6e1434e5329e1357216f7) |
+| GUI-039 | p3-android-chrome | [Xem ảnh](../cross-platform/browser-evidence/images/p3-android-chrome/GUI-039.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/849183512c1534d983eadb74be4c7e7a09134a29) |
+| GUI-040 | p1-chrome-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p1-chrome-win11/GUI-040.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/228614bc8f39a2cf9435c5729d8e5e0b80d58e31) |
+| GUI-040 | p2-firefox-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p2-firefox-win11/GUI-040.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/c3e643a9bb996d6ee0ff9c16af5853408ff2f9d6) |
+| GUI-040 | p3-android-chrome | [Xem ảnh](../cross-platform/browser-evidence/images/p3-android-chrome/GUI-040.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/a9d2c6880220381f0819cdc3b4366ffd6c2b6841) |
+| GUI-041 | p1-chrome-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p1-chrome-win11/GUI-041.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/d6dbc508e6c8b0ddaf2a0d53f8e838c885168371) |
+| GUI-041 | p2-firefox-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p2-firefox-win11/GUI-041.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/40cca0826dd912b79fcb843a525d51290ef3d443) |
+| GUI-041 | p3-android-chrome | [Xem ảnh](../cross-platform/browser-evidence/images/p3-android-chrome/GUI-041.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/1f4fc0d45b47a924eef6021b9c093b3ed7364944) |
+| GUI-043 | p1-chrome-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p1-chrome-win11/GUI-043.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/4c96e7e8f2ca12a8fe31a84201ce8ea4f9ec07a8) |
+| GUI-043 | p2-firefox-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p2-firefox-win11/GUI-043.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/7a6aa5dc6bb4a2e557db105b8368da172f32afb7) |
+| GUI-043 | p3-android-chrome | [Xem ảnh](../cross-platform/browser-evidence/images/p3-android-chrome/GUI-043.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/98a56deaeb4aee62b0a02f3a4e012db7a7fc61aa) |
+| GUI-044 | p1-chrome-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p1-chrome-win11/GUI-044.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/aa6d4bca2d3e7fa4638ce2cd3052b9c87f6f1117) |
+| GUI-044 | p2-firefox-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p2-firefox-win11/GUI-044.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/c11dc65a57e5654eacbd04ce6cf4260cd6ea6209) |
+| GUI-044 | p3-android-chrome | [Xem ảnh](../cross-platform/browser-evidence/images/p3-android-chrome/GUI-044.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/e2aac05ee8b9cc43bf2b6cd49962ea6edd5a311b) |
+| GUI-045 | p1-chrome-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p1-chrome-win11/GUI-045.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/e3066d431b1898a7d4cf2c3fba755a1591b9a73b) |
+| GUI-045 | p2-firefox-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p2-firefox-win11/GUI-045.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/a345536043c16368c4595d656158ed10a8b5a8c2) |
+| GUI-045 | p3-android-chrome | [Xem ảnh](../cross-platform/browser-evidence/images/p3-android-chrome/GUI-045.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/f080592898c651f9943b5f3fdc491bf745e227e8) |
+| GUI-047 | p1-chrome-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p1-chrome-win11/GUI-047.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/afbd73711233aa6e106d845371fcaade2328150d) |
+| GUI-047 | p2-firefox-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p2-firefox-win11/GUI-047.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/eec8f6a648027064e4d8d7fc0b4bea80bc71cddc) |
+| GUI-047 | p3-android-chrome | [Xem ảnh](../cross-platform/browser-evidence/images/p3-android-chrome/GUI-047.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/cbdb71d9c2df2ad92ddcf6d28448fc488ccb1cf7) |
+| GUI-048 | p1-chrome-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p1-chrome-win11/GUI-048.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/a91f8e60af879b801ceb396cc3b10063131a1da9) |
+| GUI-048 | p2-firefox-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p2-firefox-win11/GUI-048.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/69dd2f9dfebe1425adff0c5dde31ac509f340415) |
+| GUI-048 | p3-android-chrome | [Xem ảnh](../cross-platform/browser-evidence/images/p3-android-chrome/GUI-048.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/b24ffae2dfb3485c82c6a0dddadf5692449b78b0) |
+| GUI-050 | p1-chrome-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p1-chrome-win11/GUI-050.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/057cac35935177c1f2ad4c9e78a2d95658c644a0) |
+| GUI-050 | p2-firefox-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p2-firefox-win11/GUI-050.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/8077a2fb48a925ca36c7f1f6e9f8214adc1b9dc2) |
+| GUI-050 | p3-android-chrome | [Xem ảnh](../cross-platform/browser-evidence/images/p3-android-chrome/GUI-050.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/7e2d3fad37d45d1245823e6a3fa5c6bcbafdb032) |
+| GUI-051 | p1-chrome-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p1-chrome-win11/GUI-051.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/5227c7a360dfb8d623ad1ddcb8d4b5742ae09768) |
+| GUI-051 | p2-firefox-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p2-firefox-win11/GUI-051.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/478f87edd74900c6f6c792ed0e4530dcb79664ce) |
+| GUI-051 | p3-android-chrome | [Xem ảnh](../cross-platform/browser-evidence/images/p3-android-chrome/GUI-051.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/8131a7a343425072b26d31a7faf487ed6133ad9e) |
+| GUI-052 | p1-chrome-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p1-chrome-win11/GUI-052.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/2a62cec3af291fa4b10ec3972981edf41ce35311) |
+| GUI-052 | p2-firefox-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p2-firefox-win11/GUI-052.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/aa4e16e0e8fd35051be5ff80b36c1a1a86dac0c4) |
+| GUI-052 | p3-android-chrome | [Xem ảnh](../cross-platform/browser-evidence/images/p3-android-chrome/GUI-052.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/641545c1d386ce14eff86b6fdf9f27e63c9618d0) |
+| GUI-055 | p1-chrome-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p1-chrome-win11/GUI-055.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/27c57bf3bfcbf3e1644eb3272baa028f343df6b9) |
+| GUI-055 | p2-firefox-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p2-firefox-win11/GUI-055.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/1621a75af9e31add4f26a3cbc5ba6b49d0b84c98) |
+| GUI-055 | p3-android-chrome | [Xem ảnh](../cross-platform/browser-evidence/images/p3-android-chrome/GUI-055.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/668807de8cb623bed3c64278ad6181cd38393ae1) |
+| GUI-057 | p1-chrome-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p1-chrome-win11/GUI-057.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/5504f4eb002a4c049838106e5af86f68a61ef8bd) |
+| GUI-057 | p2-firefox-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p2-firefox-win11/GUI-057.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/14d57ad35a873931bf01541e98021b30f9314056) |
+| GUI-057 | p3-android-chrome | [Xem ảnh](../cross-platform/browser-evidence/images/p3-android-chrome/GUI-057.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/ed2471195a193d09d62317160058dbff6da71bdd) |
+| GUI-059 | p1-chrome-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p1-chrome-win11/GUI-059.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/e017de0a97a1ec9d2b1ceaf08b558081023c29fd) |
+| GUI-059 | p2-firefox-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p2-firefox-win11/GUI-059.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/249dcb5e7fc37b257ae919171298204721b18945) |
+| GUI-059 | p3-android-chrome | [Xem ảnh](../cross-platform/browser-evidence/images/p3-android-chrome/GUI-059.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/60650d2da2d2eea0785c93553cf116d49a0605f3) |
+| GUI-060 | p1-chrome-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p1-chrome-win11/GUI-060.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/f42c21f807fa66a1b9b9f95f1f4619aef357e746) |
+| GUI-060 | p2-firefox-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p2-firefox-win11/GUI-060.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/d35e62df80c1b6e118c0b82df8c448510d996fa0) |
+| GUI-060 | p3-android-chrome | [Xem ảnh](../cross-platform/browser-evidence/images/p3-android-chrome/GUI-060.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/aa07fe6ec4633d6b2c01daf0f1b64ad755b5d318) |
+| GUI-061 | p1-chrome-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p1-chrome-win11/GUI-061.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/52924137dd5a60640185f9a940c3990bf1dc243f) |
+| GUI-061 | p2-firefox-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p2-firefox-win11/GUI-061.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/c66774b950ebba34a79aae75f4503a08f5317d56) |
+| GUI-061 | p3-android-chrome | [Xem ảnh](../cross-platform/browser-evidence/images/p3-android-chrome/GUI-061.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/09adfc8ee2c79ab3d128b748dfcd2073efd8282b) |
+| GUI-066 | p1-chrome-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p1-chrome-win11/GUI-066.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/1c88c681a8ff706ba8fd4404b19b976496a8d9de) |
+| GUI-066 | p2-firefox-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p2-firefox-win11/GUI-066.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/54d9faa6b177c8461ce283474a00428e515573c5) |
+| GUI-066 | p3-android-chrome | [Xem ảnh](../cross-platform/browser-evidence/images/p3-android-chrome/GUI-066.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/b76a2c23f2c624cd04485a68a20d3f89734d77ec) |
+| GUI-067 | p1-chrome-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p1-chrome-win11/GUI-067.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/10da3c8bc6fdb81630b0c8b2c862e38e9b8dffbe) |
+| GUI-067 | p2-firefox-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p2-firefox-win11/GUI-067.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/008dc72b0784ab7df8e2b34cc7d90444372aafd4) |
+| GUI-067 | p3-android-chrome | [Xem ảnh](../cross-platform/browser-evidence/images/p3-android-chrome/GUI-067.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/eca20f6d9e5817d5c705b845bc0f7f0a5d5f552d) |
+| GUI-068 | p1-chrome-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p1-chrome-win11/GUI-068.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/02d611929d30724af0ef0f5ab92938dcc0b527ff) |
+| GUI-068 | p2-firefox-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p2-firefox-win11/GUI-068.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/ec58d3dd88d22d89d5cb4bb95af45190b41130ed) |
+| GUI-068 | p3-android-chrome | [Xem ảnh](../cross-platform/browser-evidence/images/p3-android-chrome/GUI-068.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/f774a3e0656a3ba3f4fcfd60b96832862889ceb9) |
+| GUI-070 | p1-chrome-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p1-chrome-win11/GUI-070.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/f470c7ad48e6fcb438372db1102426115c5d54c8) |
+| GUI-070 | p2-firefox-win11 | [Xem ảnh](../cross-platform/browser-evidence/images/p2-firefox-win11/GUI-070.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/6e6bb37271a4de2a0149de4307090dc54642c031) |
+| GUI-070 | p3-android-chrome | [Xem ảnh](../cross-platform/browser-evidence/images/p3-android-chrome/GUI-070.png) | assertion-failed | [BrowserStack](https://automate.browserstack.com/dashboard/v2/sessions/00eb702bec73ebf65ba23332a132ccd51d3d6192) |
