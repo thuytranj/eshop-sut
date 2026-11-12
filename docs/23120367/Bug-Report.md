@@ -4,7 +4,7 @@
 ---
 
 ### Thông tin Sinh viên & Đồ án
-- **Họ và tên sinh viên**: Trần Thủy (Thuy Tran)
+- **Họ và tên sinh viên**: Trần Ngọc Diễm Thúy
 - **Mã số sinh viên (StudentID)**: `23120367`
 - **Email sinh viên**: `23120367@student.hcmus.edu.vn`
 - **Mã bài tập**: `HW03-AI` (GUI Usability & Cross-Platform Testing)
@@ -15,7 +15,7 @@
     - **P1**: Google Chrome v156 trên Microsoft Windows 11 Desktop (1920x1080)
     - **P2**: Mozilla Firefox v148 trên Microsoft Windows 11 Desktop (1920x1080)
     - **P3**: Google Chrome Mobile trên Samsung Galaxy S23 Real Device (Android 13 / 412x915)
-- **Kho lưu trữ bằng chứng**: `docs/gui-checklist/cross-platform/browser-evidence/images/`
+- **Kho lưu trữ bằng chứng**: [images/](images/) (lưu trữ tập trung ngay trong thư mục nộp bài `docs/23120367/`)
 
 ---
 
@@ -188,9 +188,9 @@ Bảng ma trận dưới đây liệt kê đầy đủ 67 khiếm khuyết đư�
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-03] Lỗi timeout/hiển thị văn bản tiếng Việt trên Chrome Win11.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
-- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p1-chrome-win11/GUI-001.png)
-- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p2-firefox-win11/GUI-001.png)
-- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p3-android-chrome/GUI-001.png)
+- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-001.png)
+- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-001.png)
+- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-001.png)
 
 #### 5. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
 Trên Chrome Windows 11 qua BrowserStack tunnel, việc tải font Roboto và giải mã Unicode tiếng Việt bị trễ dẫn tới TimeoutError trong khi chờ body selector. Ngoài ra typography nhãn form thiếu font fallback hệ thống.
@@ -226,9 +226,9 @@ Bổ sung `font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, H
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-03] Màu sắc nút hành động chính/phụ chưa đồng bộ chuẩn positive/danger.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
-- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p1-chrome-win11/GUI-002.png)
-- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p2-firefox-win11/GUI-002.png)
-- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p3-android-chrome/GUI-002.png)
+- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-002.png)
+- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-002.png)
+- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-002.png)
 
 #### 5. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
 Các nút hành động chính như 'Gửi mã OTP' sử dụng class màu trung tính không theo đúng quy chuẩn biến `--color-positive` (màu xanh dương thương hiệu), khiến người dùng khó phân biệt phân cấp thị giác.
@@ -264,9 +264,9 @@ Cập nhật CSS class của nút submit chính sang `btn btn-primary` với mà
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-03] Trang Quên mật khẩu thiếu thẻ tiêu đề h1 duy nhất.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
-- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p1-chrome-win11/GUI-003.png)
-- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p2-firefox-win11/GUI-003.png)
-- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p3-android-chrome/GUI-003.png)
+- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-003.png)
+- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-003.png)
+- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-003.png)
 
 #### 5. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
 Trang Quên mật khẩu hiện sử dụng thẻ `<h3>` hoặc `<div>` cho tiêu đề chính 'Quên mật khẩu / Đặt lại mật khẩu', hoàn toàn vắng mặt thẻ `<h1>` duy nhất trên trang, vi phạm chuẩn ngữ nghĩa HTML5 và WCAG 2.1.
@@ -302,9 +302,9 @@ Trang Quên mật khẩu hiện sử dụng thẻ `<h3>` hoặc `<div>` cho tiê
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-03] Ô nhập Email thiếu thuộc tính type="email".
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
-- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p1-chrome-win11/GUI-004.png)
-- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p2-firefox-win11/GUI-004.png)
-- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p3-android-chrome/GUI-004.png)
+- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-004.png)
+- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-004.png)
+- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-004.png)
 
 #### 5. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
 Thẻ `<input>` của trường Email tại Bước 1 được cấu hình `type="text"` thay vì `type="email"` và thiếu thuộc tính `required` cùng nhãn chứa dấu sao `*` bắt buộc theo đặc tả.
@@ -340,9 +340,9 @@ Cập nhật `<input type="email" id="email" name="email" required pattern="[a-z
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-03] Thiếu chỉ báo tiến trình bước (Bước 1/2) tại Bước 1.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
-- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p1-chrome-win11/GUI-005.png)
-- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p2-firefox-win11/GUI-005.png)
-- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p3-android-chrome/GUI-005.png)
+- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-005.png)
+- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-005.png)
+- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-005.png)
 
 #### 5. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
 Giao diện không hiển thị chỉ báo bước (Step indicator e.g. 'Bước 1/2: Nhập email xác thực') khiến người dùng không nắm bắt được tiến trình khôi phục tài khoản.
@@ -378,9 +378,9 @@ Thêm thanh chỉ báo bước trực quan `<div class="step-indicator" aria-lab
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-03] Thiếu trường nhập xác nhận mật khẩu tại Bước 2.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
-- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p1-chrome-win11/GUI-006.png)
-- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p2-firefox-win11/GUI-006.png)
-- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p3-android-chrome/GUI-006.png)
+- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-006.png)
+- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-006.png)
+- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-006.png)
 
 #### 5. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
 Tại Bước 2 (Đặt lại mật khẩu), biểu mẫu chỉ có 1 trường nhập Mật khẩu mới và 1 trường OTP, thiếu hoàn toàn trường 'Xác nhận mật khẩu mới' để phòng ngừa gõ nhầm.
@@ -416,9 +416,9 @@ Thêm trường `<input type="password" id="confirmPassword" name="confirmPasswo
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-03] Thiếu khối hiển thị lỗi validation phía trên nút gửi.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
-- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p1-chrome-win11/GUI-007.png)
-- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p2-firefox-win11/GUI-007.png)
-- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p3-android-chrome/GUI-007.png)
+- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-007.png)
+- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-007.png)
+- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-007.png)
 
 #### 5. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
 Thông báo lỗi validation mật khẩu (độ dài >= 8 ký tự, có chữ và số) hiển thị dạng alert popup hoặc ở vị trí khuất, không nằm cố định ngay phía trên nút gửi hành động theo chuẩn quy định.
@@ -454,9 +454,9 @@ Bố trí khối thông báo lỗi chuyên biệt `<div id="validation-error-box
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-03] Ô nhập OTP không thông báo lỗi khi không đúng định dạng 6 chữ số.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
-- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p1-chrome-win11/GUI-008.png)
-- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p2-firefox-win11/GUI-008.png)
-- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p3-android-chrome/GUI-008.png)
+- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-008.png)
+- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-008.png)
+- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-008.png)
 
 #### 5. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
 Ô nhập mã OTP không có cơ chế chặn hoặc thông báo lỗi trực tiếp khi người dùng nhập sai định dạng (chứa chữ cái hoặc không đủ 6 chữ số).
@@ -492,9 +492,9 @@ Thêm thuộc tính `inputmode="numeric" pattern="[0-9]{6}" maxlength="6"` và h
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-03] Thiếu liên kết "Quay lại đăng nhập" tại Bước 1.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
-- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p1-chrome-win11/GUI-009.png)
-- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p2-firefox-win11/GUI-009.png)
-- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p3-android-chrome/GUI-009.png)
+- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-009.png)
+- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-009.png)
+- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-009.png)
 
 #### 5. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
 Biểu mẫu Quên mật khẩu tại Bước 1 thiếu liên kết quay lại trang Đăng nhập (`/login`), làm đứt gãy luồng điều hướng của người dùng khi nhớ ra mật khẩu.
@@ -530,9 +530,9 @@ Bổ sung liên kết `<a href="/login" class="back-link">← Quay lại Đăng 
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-03] Phím Enter không kích hoạt gửi form chuyển bước.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
-- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p1-chrome-win11/GUI-012.png)
-- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p2-firefox-win11/GUI-012.png)
-- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p3-android-chrome/GUI-012.png)
+- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-012.png)
+- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-012.png)
+- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-012.png)
 
 #### 5. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
 Form không lắng nghe sự kiện `submit` chuẩn từ thẻ `<form>`, mà chỉ gán handler `onClick` cho nút bấm, khiến việc nhấn phím `Enter` trong ô nhập liệu không kích hoạt chuyển bước.
@@ -568,9 +568,9 @@ Bao bọc các input trong thẻ `<form id="forgot-password-form" onsubmit="hand
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-03] Lỗi kết nối Backend API khi kiểm tra sinh mã OTP.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
-- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p1-chrome-win11/GUI-013.png)
-- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p2-firefox-win11/GUI-013.png)
-- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p3-android-chrome/GUI-013.png)
+- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-013.png)
+- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-013.png)
+- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-013.png)
 
 #### 5. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
 Khi gửi yêu cầu tạo mã OTP, backend API mock trả về mã lỗi hoặc timeout khiến giao diện rơi vào trạng thái treo không phản hồi.
@@ -606,9 +606,9 @@ Bổ sung xử lý `try...catch` trong frontend API client, hiển thị spinner
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-03] Lỗi kết nối Backend API khi kiểm tra ràng buộc OTP với email.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
-- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p1-chrome-win11/GUI-014.png)
-- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p2-firefox-win11/GUI-014.png)
-- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p3-android-chrome/GUI-014.png)
+- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-014.png)
+- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-014.png)
+- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-014.png)
 
 #### 5. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
 Trong môi trường kiểm thử cục bộ Task 1, backend mock chưa được khởi tạo lắng nghe trên port 3000 dẫn tới lỗi kết nối mạng ECONNREFUSED khi kiểm tra ràng buộc OTP.
@@ -644,9 +644,9 @@ Cấu hình tự động khởi động mock server trước khi chạy Playwrig
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-03] Lỗi kết nối Backend API khi kiểm tra hoàn tất đặt lại mật khẩu.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
-- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p1-chrome-win11/GUI-015.png)
-- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p2-firefox-win11/GUI-015.png)
-- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p3-android-chrome/GUI-015.png)
+- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-015.png)
+- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-015.png)
+- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-015.png)
 
 #### 5. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
 Lỗi ECONNREFUSED cục bộ Task 1 tương tự GUI-014 trong luồng hoàn tất đổi mật khẩu. Đã được khắc phục hoàn toàn trên môi trường Task 3 BrowserStack.
@@ -684,9 +684,9 @@ Lỗi ECONNREFUSED cục bộ Task 1 tương tự GUI-014 trong luồng hoàn t�
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-05] Bố cục hiển thị lưới sản phẩm bị tràn/vỡ trên màn hình di động Galaxy S23.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
-- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p1-chrome-win11/GUI-016.png)
-- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p2-firefox-win11/GUI-016.png)
-- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p3-android-chrome/GUI-016.png)
+- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-016.png)
+- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-016.png)
+- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-016.png)
 
 #### 5. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
 Lưới sản phẩm trên viewport di động (Galaxy S23, width 412px) sử dụng fixed column width khiến các thẻ sản phẩm bị tràn ngang khỏi khung nhìn (horizontal overflow), không wrap thành 1 hoặc 2 cột responsive.
@@ -722,9 +722,9 @@ Cập nhật CSS Grid: `display: grid; grid-template-columns: repeat(auto-fill, 
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-05] Typography và thông tin sản phẩm bị cắt/chèn ép trên mobile viewport.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
-- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p1-chrome-win11/GUI-017.png)
-- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p2-firefox-win11/GUI-017.png)
-- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p3-android-chrome/GUI-017.png)
+- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-017.png)
+- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-017.png)
+- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-017.png)
 
 #### 5. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
 Tiêu đề sản phẩm trên mobile viewport không có thuộc tính `text-overflow: ellipsis` và line-clamp, dẫn đến chữ bị tràn hoặc đè lên giá tiền.
@@ -760,9 +760,9 @@ Thêm thuộc tính CSS: `display: -webkit-box; -webkit-line-clamp: 2; -webkit-b
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-05] Thẻ sản phẩm dùng đơn vị tiền tệ "VND" thay vì ký hiệu "₫".
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
-- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p1-chrome-win11/GUI-018.png)
-- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p2-firefox-win11/GUI-018.png)
-- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p3-android-chrome/GUI-018.png)
+- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-018.png)
+- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-018.png)
+- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-018.png)
 
 #### 5. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
 Thẻ sản phẩm hiển thị giá tiền bằng chuỗi văn bản '100000 VND' thay vì định dạng ký hiệu tiền tệ chuẩn tiếng Việt có dấu phân cách hàng nghìn và ký hiệu '100.000 ₫'.
@@ -798,9 +798,9 @@ Sử dụng API chuẩn `Intl.NumberFormat('vi-VN', { style: 'currency', currenc
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-05] Trang danh sách sản phẩm tồn tại 2 thẻ h1 thay vì duy nhất 1.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
-- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p1-chrome-win11/GUI-019.png)
-- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p2-firefox-win11/GUI-019.png)
-- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p3-android-chrome/GUI-019.png)
+- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-019.png)
+- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-019.png)
+- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-019.png)
 
 #### 5. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
 Trang danh sách sản phẩm trên Firefox hiển thị cả thẻ `<h1>` ở Navbar logo và một thẻ `<h1>` khác ở tiêu đề trang, tạo ra 2 thẻ h1 trong DOM vi phạm quy tắc duy nhất.
@@ -836,9 +836,9 @@ Trang danh sách sản phẩm trên Firefox hiển thị cả thẻ `<h1>` ở N
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-05] Độ tương phản màu sắc chữ trên thẻ sản phẩm không đạt chuẩn WCAG AA.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
-- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p1-chrome-win11/GUI-020.png)
-- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p2-firefox-win11/GUI-020.png)
-- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p3-android-chrome/GUI-020.png)
+- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-020.png)
+- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-020.png)
+- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-020.png)
 
 #### 5. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
 Màu chữ mô tả và giá cũ trên thẻ sản phẩm sử dụng mã màu xám nhạt `#9ca3af` trên nền trắng `#ffffff`, cho tỷ số tương phản chỉ đạt 2.8:1, vi phạm ngưỡng tối thiểu 4.5:1 của WCAG 2.1 AA.
@@ -874,9 +874,9 @@ Tăng độ tương phản màu chữ sang mã màu `#4b5563` hoặc `#374151` �
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-05] Từ khóa tìm kiếm render trực tiếp thẻ HTML `<b>` chưa được escape.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
-- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p1-chrome-win11/GUI-021.png)
-- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p2-firefox-win11/GUI-021.png)
-- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p3-android-chrome/GUI-021.png)
+- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-021.png)
+- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-021.png)
+- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-021.png)
 
 #### 5. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
 Khi người dùng tìm kiếm từ khóa có chứa thẻ HTML (ví dụ `<b>áo</b>`), hệ thống đưa trực tiếp chuỗi vào `innerHTML` mà không escape ký tự đặc biệt, tạo ra lỗ hổng bảo mật nghiêm trọng (HTML/XSS Injection).
@@ -912,9 +912,9 @@ Chỉ gán chuỗi tìm kiếm thông qua thuộc tính `textContent` hoặc s�
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-05] Lọc tìm kiếm theo tên sản phẩm phản hồi không ổn định trên mobile.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
-- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p1-chrome-win11/GUI-022.png)
-- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p2-firefox-win11/GUI-022.png)
-- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p3-android-chrome/GUI-022.png)
+- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-022.png)
+- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-022.png)
+- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-022.png)
 
 #### 5. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
 Trên Galaxy S23, sự kiện `input` của thanh tìm kiếm không kích hoạt debounce hợp lý, kết hợp bàn phím ảo Samsung Keyboard làm trễ việc lọc danh sách sản phẩm.
@@ -950,9 +950,9 @@ Bổ sung `debounce` 300ms cho hàm xử lý tìm kiếm và lắng nghe sự ki
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-05] Xóa trắng ô tìm kiếm không hoàn nguyên danh sách sản phẩm ban đầu.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
-- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p1-chrome-win11/GUI-023.png)
-- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p2-firefox-win11/GUI-023.png)
-- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p3-android-chrome/GUI-023.png)
+- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-023.png)
+- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-023.png)
+- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-023.png)
 
 #### 5. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
 Nút xóa nhanh (clear button) hoặc khi người dùng xóa trắng ô tìm kiếm không tự động kích hoạt tải lại danh sách sản phẩm đầy đủ trên Chrome và Galaxy S23.
@@ -988,9 +988,9 @@ Thêm event listener `input` kiểm tra `if (e.target.value === '') resetProduct
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-05] Mục "Trang chủ" trên Navbar không có trạng thái active khi đang xem.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
-- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p1-chrome-win11/GUI-024.png)
-- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p2-firefox-win11/GUI-024.png)
-- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p3-android-chrome/GUI-024.png)
+- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-024.png)
+- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-024.png)
+- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-024.png)
 
 #### 5. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
 Mục 'Trang chủ' trên thanh điều hướng Navbar không được gán class `.active` hoặc thuộc tính `aria-current="page"` khi người dùng đang ở trang chủ.
@@ -1026,9 +1026,9 @@ Kiểm tra `window.location.pathname === '/'` và gán class `nav-item active` c
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-05] Badge số lượng giỏ hàng trên Navbar không cập nhật sau khi thêm hàng.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
-- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p1-chrome-win11/GUI-025.png)
-- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p2-firefox-win11/GUI-025.png)
-- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p3-android-chrome/GUI-025.png)
+- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-025.png)
+- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-025.png)
+- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-025.png)
 
 #### 5. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
 Badge số lượng sản phẩm trên icon Giỏ hàng ở Navbar không tự động re-render và tăng số đếm sau khi người dùng bấm 'Thêm vào giỏ hàng'.
@@ -1064,9 +1064,9 @@ Sử dụng React state / Context hoặc CustomEvent để cập nhật badge ng
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-05] Nhấp vào thẻ sản phẩm không điều hướng sang trang Chi tiết.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
-- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p1-chrome-win11/GUI-026.png)
-- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p2-firefox-win11/GUI-026.png)
-- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p3-android-chrome/GUI-026.png)
+- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-026.png)
+- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-026.png)
+- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-026.png)
 
 #### 5. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
 Nhấp vào hình ảnh hoặc tiêu đề của thẻ sản phẩm không kích hoạt điều hướng đến trang chi tiết sản phẩm (`/product/:id`).
@@ -1102,9 +1102,9 @@ Bao bọc thẻ sản phẩm trong thẻ `<a href="/product/${id}">` hoặc gán
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-05] Thiếu hiệu ứng skeleton/loading khi đang tải danh sách sản phẩm.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
-- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p1-chrome-win11/GUI-028.png)
-- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p2-firefox-win11/GUI-028.png)
-- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p3-android-chrome/GUI-028.png)
+- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-028.png)
+- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-028.png)
+- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-028.png)
 
 #### 5. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
 Trong lúc chờ dữ liệu API sản phẩm tải về, trang để trống trơn màu trắng thay vì hiển thị hiệu ứng khung xương (Skeleton loading) tạo cảm giác chờ đợi mượt mà.
@@ -1140,9 +1140,9 @@ Xây dựng component `<ProductSkeletonCard />` với hiệu ứng shimmer lặp
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-05] Thiếu giao diện empty state thân thiện khi tìm kiếm không có kết quả.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
-- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p1-chrome-win11/GUI-029.png)
-- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p2-firefox-win11/GUI-029.png)
-- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p3-android-chrome/GUI-029.png)
+- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-029.png)
+- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-029.png)
+- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-029.png)
 
 #### 5. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
 Khi người dùng tìm kiếm một từ khóa không tồn tại sản phẩm, trang web hiển thị bảng trắng trơn mà không có hình minh họa hay gợi ý thử từ khóa khác.
@@ -1178,9 +1178,9 @@ Thêm Empty State component: 'Không tìm thấy sản phẩm phù hợp. Vui l�
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-05] Hình ảnh sản phẩm thiếu thuộc tính alt mô tả nội dung.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
-- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p1-chrome-win11/GUI-030.png)
-- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p2-firefox-win11/GUI-030.png)
-- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p3-android-chrome/GUI-030.png)
+- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-030.png)
+- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-030.png)
+- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-030.png)
 
 #### 5. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
 Các thẻ `<img>` của sản phẩm bị thiếu thuộc tính `alt` mô tả tên sản phẩm, khiến các công nghệ hỗ trợ đọc màn hình (Screen Readers) không thể truyền tải nội dung hình ảnh.
@@ -1216,9 +1216,9 @@ Bổ sung `alt={product.name}` cho tất cả các thẻ hình ảnh sản phẩ
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-05] Thiếu thông báo toast phản hồi trực quan khi bấm Thêm vào giỏ hàng.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
-- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p1-chrome-win11/GUI-031.png)
-- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p2-firefox-win11/GUI-031.png)
-- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p3-android-chrome/GUI-031.png)
+- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-031.png)
+- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-031.png)
+- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-031.png)
 
 #### 5. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
 Bấm nút 'Thêm vào giỏ' không có bất kỳ thông báo Toast popup nào xuất hiện xác nhận hành động thành công, người dùng không biết hệ thống đã ghi nhận hay chưa.
@@ -1254,7 +1254,7 @@ Tích hợp thư viện Toast (hoặc Custom Toast) hiển thị thông báo: '�
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-05] Ô tìm kiếm bị mất ký tự khi gõ tiếng Việt Telex/VNI có sự kiện composition.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
-- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p1-chrome-win11/GUI-065.png)
+- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-065.png)
 - **Firefox Win11 (P2)**: *(Mục không chạy chụp ảnh - Not Run)*
 - **Android Galaxy S23 (P3)**: *(Mục không chạy chụp ảnh - Not Run)*
 
@@ -1292,9 +1292,9 @@ Lắng nghe sự kiện `compositionstart` và `compositionend` để trì hoãn
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-05] Thiếu giao diện thông báo lỗi mạng và nút "Thử lại" khi mất kết nối API.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
-- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p1-chrome-win11/GUI-067.png)
-- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p2-firefox-win11/GUI-067.png)
-- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p3-android-chrome/GUI-067.png)
+- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-067.png)
+- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-067.png)
+- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-067.png)
 
 #### 5. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
 Khi xảy ra sự cố ngắt kết nối mạng hoặc server API trả về lỗi 500, trang danh sách sản phẩm rơi vào trạng thái đơ không hiển thị màn hình thông báo lỗi mạng và nút 'Thử lại'.
@@ -1330,9 +1330,9 @@ Xây dựng màn hình NetError Component: 'Không thể kết nối đến máy
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-05] Nút Thêm vào giỏ hàng thiếu cơ chế chống click spam liên tục.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
-- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p1-chrome-win11/GUI-070.png)
-- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p2-firefox-win11/GUI-070.png)
-- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p3-android-chrome/GUI-070.png)
+- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-070.png)
+- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-070.png)
+- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-070.png)
 
 #### 5. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
 Nút 'Thêm vào giỏ hàng' không có cơ chế debounce hoặc disable tạm thời sau khi bấm, cho phép người dùng click liên tục nhiều lần tạo ra các request trùng lặp dồn dập.
@@ -1370,9 +1370,9 @@ Thêm trạng thái `isSubmitting`, vô hiệu hóa nút bấm trong 500ms sau m
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-07] Bảng giỏ hàng không hiển thị đầy đủ 5 cột theo quy định đặc tả.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
-- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p1-chrome-win11/GUI-032.png)
-- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p2-firefox-win11/GUI-032.png)
-- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p3-android-chrome/GUI-032.png)
+- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-032.png)
+- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-032.png)
+- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-032.png)
 
 #### 5. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
 Bảng giỏ hàng chỉ có 4 cột, thiếu mất cột hiển thị 'Hình ảnh sản phẩm' hoặc cột 'Thao tác' theo chuẩn đặc tả 5 cột (Hình ảnh, Tên, Đơn giá, Số lượng, Thành tiền).
@@ -1408,9 +1408,9 @@ Thiết kế lại cấu trúc bảng `<table>` giỏ hàng gồm đầy đủ 5
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-07] Nhãn tổng tiền hiển thị sai thành "Tổng tạm tính" thay vì "Tổng cộng".
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
-- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p1-chrome-win11/GUI-033.png)
-- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p2-firefox-win11/GUI-033.png)
-- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p3-android-chrome/GUI-033.png)
+- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-033.png)
+- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-033.png)
+- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-033.png)
 
 #### 5. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
 Nhãn hiển thị dòng tổng số tiền thanh toán hiển thị chuỗi 'Tổng tạm tính' thay vì 'Tổng cộng' theo yêu cầu đặc tả FR07-TOTAL-LABEL.
@@ -1446,9 +1446,9 @@ Nhãn hiển thị dòng tổng số tiền thanh toán hiển thị chuỗi 'T�
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-07] Các cột số tiền trong bảng giỏ hàng không được căn lề phải.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
-- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p1-chrome-win11/GUI-034.png)
-- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p2-firefox-win11/GUI-034.png)
-- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p3-android-chrome/GUI-034.png)
+- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-034.png)
+- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-034.png)
+- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-034.png)
 
 #### 5. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
 Các cột chứa giá trị số tiền (Đơn giá, Thành tiền, Tổng cộng) bị căn lề trái (text-align: left) thay vì căn lề phải theo chuẩn biểu diễn bảng biểu tài chính.
@@ -1484,9 +1484,9 @@ Thêm thuộc tính CSS `text-align: right; font-variant-numeric: tabular-nums;`
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-07] Bảng giỏ hàng bị tràn ngang, không hiển thị thanh cuộn responsive trên mobile.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
-- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p1-chrome-win11/GUI-035.png)
-- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p2-firefox-win11/GUI-035.png)
-- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p3-android-chrome/GUI-035.png)
+- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-035.png)
+- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-035.png)
+- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-035.png)
 
 #### 5. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
 Bảng giỏ hàng trên điện thoại Galaxy S23 (màn hình hẹp 412px) không được bọc trong container cuộn ngang `overflow-x: auto` hoặc chuyển đổi sang dạng thẻ Card, dẫn tới tràn màn hình.
@@ -1522,9 +1522,9 @@ Bao bọc bảng trong `<div class="table-responsive overflow-x-auto">` hoặc c
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-07] Dòng giỏ hàng thiếu cụm nút tăng giảm số lượng (+/-) và ô nhập.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
-- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p1-chrome-win11/GUI-036.png)
-- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p2-firefox-win11/GUI-036.png)
-- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p3-android-chrome/GUI-036.png)
+- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-036.png)
+- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-036.png)
+- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-036.png)
 
 #### 5. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
 Dòng sản phẩm trong giỏ hàng chỉ hiển thị số lượng tĩnh, thiếu cụm nút tăng giảm số lượng (`-` / `+`) và ô nhập trực tiếp.
@@ -1560,9 +1560,9 @@ Triển khai cụm điều khiển `<div class="quantity-control"><button>-</but
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-07] Giỏ hàng thiếu trường nhập trực tiếp số lượng bằng bàn phím.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
-- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p1-chrome-win11/GUI-037.png)
-- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p2-firefox-win11/GUI-037.png)
-- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p3-android-chrome/GUI-037.png)
+- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-037.png)
+- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-037.png)
+- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-037.png)
 
 #### 5. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
 Không thể nhập trực tiếp số lượng bằng bàn phím do thiếu trường input chỉnh sửa số lượng khả dụng.
@@ -1598,9 +1598,9 @@ Cho phép người dùng focus vào ô nhập số lượng và gõ trực tiế
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-07] Không thể kiểm thử giá trị số lượng biên do thiếu ô nhập liệu.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
-- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p1-chrome-win11/GUI-038.png)
-- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p2-firefox-win11/GUI-038.png)
-- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p3-android-chrome/GUI-038.png)
+- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-038.png)
+- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-038.png)
+- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-038.png)
 
 #### 5. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
 Hệ thống không kiểm tra giá trị biên khi nhập số lượng, cho phép nhập số 0, số âm hoặc số vượt quá tồn kho thực tế.
@@ -1636,9 +1636,9 @@ Thêm ràng buộc `min="1" max="{stock}"` và tự động hoàn nguyên về 1
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-07] Mục "Giỏ hàng" trên Navbar không được highlight active khi đang xem.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
-- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p1-chrome-win11/GUI-039.png)
-- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p2-firefox-win11/GUI-039.png)
-- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p3-android-chrome/GUI-039.png)
+- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-039.png)
+- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-039.png)
+- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-039.png)
 
 #### 5. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
 Mục 'Giỏ hàng' trên thanh Navbar không hiển thị trạng thái highlight active khi người dùng đang ở trang `/cart`.
@@ -1674,9 +1674,9 @@ Gán class `active` và `aria-current="page"` cho liên kết Giỏ hàng khi ro
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-07] Trang Giỏ hàng thiếu thanh điều hướng phân cấp Breadcrumb.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
-- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p1-chrome-win11/GUI-040.png)
-- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p2-firefox-win11/GUI-040.png)
-- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p3-android-chrome/GUI-040.png)
+- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-040.png)
+- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-040.png)
+- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-040.png)
 
 #### 5. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
 Trang Giỏ hàng thiếu thanh điều hướng phân cấp Breadcrumb (`Trang chủ > Giỏ hàng`) giúp người dùng định vị vị trí trong trang web.
@@ -1712,9 +1712,9 @@ Bổ sung component `<nav aria-label="breadcrumb"><ol class="breadcrumb"><li><a 
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-07] Nút tiếp tục mua sắm hiển thị nhãn "← Mua tiếp" thay vì "Tiếp tục mua sắm".
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
-- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p1-chrome-win11/GUI-041.png)
-- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p2-firefox-win11/GUI-041.png)
-- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p3-android-chrome/GUI-041.png)
+- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-041.png)
+- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-041.png)
+- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-041.png)
 
 #### 5. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
 Nút quay lại mua hàng hiển thị nhãn không chính xác '← Mua tiếp' thay vì 'Tiếp tục mua sắm' theo đặc tả.
@@ -1750,9 +1750,9 @@ Cập nhật nhãn nút bấm thành: '← Tiếp tục mua sắm'.
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-07] Luồng điều hướng phím Tab bị nhảy không tự nhiên trên trang Giỏ hàng.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
-- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p1-chrome-win11/GUI-042.png)
-- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p2-firefox-win11/GUI-042.png)
-- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p3-android-chrome/GUI-042.png)
+- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-042.png)
+- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-042.png)
+- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-042.png)
 
 #### 5. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
 Thứ tự phím Tab trên trang Giỏ hàng bị nhảy lộn xộn giữa nút Xóa, ô số lượng và nút Tiếp tục mua sắm do thuộc tính `tabindex` không được thiết lập theo luồng tự nhiên.
@@ -1788,9 +1788,9 @@ Xóa bỏ các thuộc tính `tabindex` dương tùy tiện, sắp xếp DOM the
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-07] Thêm cùng một sản phẩm nhiều lần không tự động cộng dồn số lượng.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
-- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p1-chrome-win11/GUI-043.png)
-- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p2-firefox-win11/GUI-043.png)
-- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p3-android-chrome/GUI-043.png)
+- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-043.png)
+- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-043.png)
+- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-043.png)
 
 #### 5. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
 Khi bấm 'Thêm vào giỏ' cùng một sản phẩm nhiều lần từ trang chủ, giỏ hàng tạo ra nhiều dòng trùng lặp thay vì cộng dồn số lượng vào dòng sản phẩm hiện có.
@@ -1826,9 +1826,9 @@ Trong logic giỏ hàng, kiểm tra `const existing = cart.find(i => i.id === pr
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-07] Thiếu hộp thoại xác nhận trước khi xóa sản phẩm khỏi giỏ hàng.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
-- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p1-chrome-win11/GUI-044.png)
-- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p2-firefox-win11/GUI-044.png)
-- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p3-android-chrome/GUI-044.png)
+- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-044.png)
+- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-044.png)
+- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-044.png)
 
 #### 5. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
 Bấm nút Xóa trên dòng sản phẩm trong giỏ hàng thực hiện xóa tức thì mà không hiển thị hộp thoại xác nhận (Confirm dialog), tiềm ẩn rủi ro thao tác nhầm.
@@ -1864,9 +1864,9 @@ Bổ sung modal xác nhận: 'Bạn có chắc chắn muốn xóa sản phẩm n
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-07] Thao tác Hủy hoặc phím Escape không giữ lại sản phẩm trong giỏ hàng.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
-- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p1-chrome-win11/GUI-045.png)
-- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p2-firefox-win11/GUI-045.png)
-- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p3-android-chrome/GUI-045.png)
+- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-045.png)
+- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-045.png)
+- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-045.png)
 
 #### 5. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
 Khi hộp thoại xác nhận xóa xuất hiện, nhấn phím `Escape` hoặc bấm nút 'Hủy' không giữ nguyên sản phẩm mà vẫn bị lỗi giao diện hoặc mất dữ liệu.
@@ -1902,9 +1902,9 @@ Bổ sung event listener phím Escape và hủy thao tác xóa một cách an to
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-07] Trạng thái giỏ hàng rỗng (Empty Cart) hiển thị thiếu nhất quán giữa các trình duyệt.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
-- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p1-chrome-win11/GUI-046.png)
-- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p2-firefox-win11/GUI-046.png)
-- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p3-android-chrome/GUI-046.png)
+- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-046.png)
+- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-046.png)
+- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-046.png)
 
 #### 5. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
 Khi giỏ hàng trống, giao diện trên Firefox và Galaxy S23 hiển thị bảng trống không có hàng, thiếu thông báo 'Giỏ hàng của bạn đang trống' và nút 'Mua ngay'.
@@ -1940,9 +1940,9 @@ Kiểm tra `if (cart.length === 0)` và hiển thị giao diện Giỏ hàng r�
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-07] Nút Xóa sản phẩm thiếu thuộc tính aria-label cho công nghệ hỗ trợ.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
-- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p1-chrome-win11/GUI-066.png)
-- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p2-firefox-win11/GUI-066.png)
-- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p3-android-chrome/GUI-066.png)
+- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-066.png)
+- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-066.png)
+- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-066.png)
 
 #### 5. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
 Nút Xóa sản phẩm trong giỏ hàng chỉ có biểu tượng icon thùng rác, thiếu thuộc tính `aria-label="Xóa sản phẩm [Tên]"`, khiến công nghệ đọc màn hình chỉ đọc là 'button' không tên.
@@ -1978,9 +1978,9 @@ Thêm thuộc tính `aria-label={`Xóa sản phẩm ${item.name} khỏi giỏ h�
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-07] Ô nhập số lượng giỏ hàng xử lý chưa an toàn khi xóa trắng giá trị.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
-- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p1-chrome-win11/GUI-068.png)
-- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p2-firefox-win11/GUI-068.png)
-- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p3-android-chrome/GUI-068.png)
+- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-068.png)
+- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-068.png)
+- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-068.png)
 
 #### 5. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
 Khi người dùng xóa trắng giá trị trong ô nhập số lượng giỏ hàng rồi click ra ngoài, ô nhập nhận giá trị `NaN` hoặc chuỗi rỗng gây lỗi tính toán tổng tiền.
@@ -2016,9 +2016,9 @@ Bổ sung sự kiện `onBlur` tự động khôi phục giá trị về `1` n�
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-07] Kích thước vùng cảm ứng nút bấm giỏ hàng nhỏ hơn 44x44px trên thiết bị cảm ứng.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
-- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p1-chrome-win11/GUI-069.png)
-- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p2-firefox-win11/GUI-069.png)
-- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p3-android-chrome/GUI-069.png)
+- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-069.png)
+- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-069.png)
+- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-069.png)
 
 #### 5. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
 Nút tăng giảm số lượng (+/-) và nút Xóa trong giỏ hàng có kích thước thực tế chỉ 28x28px, nhỏ hơn ngưỡng tối thiểu 44x44px của WCAG 2.5.5 và Google Material Guidelines trên thiết bị cảm ứng.
@@ -2056,9 +2056,9 @@ Tăng diện tích bấm tối thiểu lên 44x44px bằng cách thêm `min-widt
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-15] Tiêu đề các cột trong bảng quản trị sản phẩm Admin chưa được Việt hóa.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
-- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p1-chrome-win11/GUI-047.png)
-- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p2-firefox-win11/GUI-047.png)
-- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p3-android-chrome/GUI-047.png)
+- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-047.png)
+- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-047.png)
+- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-047.png)
 
 #### 5. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
 Tiêu đề các cột trong bảng quản trị sản phẩm Admin vẫn để tiếng Anh ('ID', 'Name', 'Price', 'Stock', 'Category', 'Actions') thay vì được Việt hóa chuẩn mực.
@@ -2094,9 +2094,9 @@ Việt hóa toàn bộ tiêu đề cột: 'Mã SP', 'Tên sản phẩm', 'Đơn 
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-15] Trang Quản lý sản phẩm thiếu thẻ tiêu đề h1 duy nhất.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
-- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p1-chrome-win11/GUI-048.png)
-- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p2-firefox-win11/GUI-048.png)
-- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p3-android-chrome/GUI-048.png)
+- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-048.png)
+- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-048.png)
+- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-048.png)
 
 #### 5. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
 Trang Quản lý sản phẩm Admin thiếu thẻ tiêu đề `<h1>` duy nhất, gây khó khăn cho việc định hướng trang và công nghệ đọc màn hình.
@@ -2132,9 +2132,9 @@ Thêm thẻ `<h1 class="text-2xl font-bold mb-4">Quản Lý Sản Phẩm</h1>` t
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-15] Nút Lưu/Hủy quản trị Admin chưa áp dụng đúng bảng màu ngữ nghĩa positive/danger.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
-- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p1-chrome-win11/GUI-049.png)
-- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p2-firefox-win11/GUI-049.png)
-- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p3-android-chrome/GUI-049.png)
+- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-049.png)
+- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-049.png)
+- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-049.png)
 
 #### 5. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
 Nút 'Lưu sản phẩm' và 'Xóa sản phẩm' trong trang Admin dùng cùng một tông màu xám hoặc màu sai quy ước ngữ nghĩa positive (xanh lá/xanh dương) và danger (đỏ).
@@ -2170,9 +2170,9 @@ Nút 'Lưu sản phẩm' và 'Xóa sản phẩm' trong trang Admin dùng cùng m
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-15] Các trường bắt buộc trong form sản phẩm thiếu ký hiệu dấu sao (*).
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
-- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p1-chrome-win11/GUI-050.png)
-- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p2-firefox-win11/GUI-050.png)
-- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p3-android-chrome/GUI-050.png)
+- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-050.png)
+- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-050.png)
+- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-050.png)
 
 #### 5. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
 Các trường thông tin bắt buộc trong biểu mẫu Thêm/Sửa sản phẩm Admin (Tên, Giá, Danh mục) không có ký hiệu dấu sao đỏ `*` để thông báo cho người dùng.
@@ -2208,9 +2208,9 @@ Bổ sung `<span class="text-danger">*</span>` bên cạnh nhãn các trường 
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-15] Trường tên sản phẩm không giới hạn độ dài tối đa 255 ký tự.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
-- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p1-chrome-win11/GUI-051.png)
-- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p2-firefox-win11/GUI-051.png)
-- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p3-android-chrome/GUI-051.png)
+- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-051.png)
+- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-051.png)
+- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-051.png)
 
 #### 5. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
 Trường Tên sản phẩm không giới hạn độ dài tối đa 255 ký tự, cho phép nhập văn bản tùy ý gây lỗi tràn cơ sở dữ liệu và vỡ layout bảng hiển thị.
@@ -2246,9 +2246,9 @@ Thêm thuộc tính `maxlength="255"` và thông báo validation cảnh báo khi
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-15] Không hiển thị thông báo lỗi khi nhập giá sản phẩm nhỏ hơn hoặc bằng 0.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
-- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p1-chrome-win11/GUI-052.png)
-- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p2-firefox-win11/GUI-052.png)
-- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p3-android-chrome/GUI-052.png)
+- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-052.png)
+- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-052.png)
+- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-052.png)
 
 #### 5. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
 Form cho phép lưu sản phẩm với Đơn giá bằng 0 hoặc số âm mà không hiển thị thông báo lỗi chặn hợp lệ.
@@ -2284,9 +2284,9 @@ Thêm validation quy tắc `price > 0`, hiển thị lỗi: 'Đơn giá sản ph
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-15] Danh mục dropdown form Admin không thể chọn chính xác trên trình duyệt desktop/mobile.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
-- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p1-chrome-win11/GUI-053.png)
-- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p2-firefox-win11/GUI-053.png)
-- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p3-android-chrome/GUI-053.png)
+- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-053.png)
+- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-053.png)
+- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-053.png)
 
 #### 5. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
 Dropdown chọn danh mục sản phẩm (Category) không hiển thị đúng danh sách hoặc bị lỗi không chọn được trên một số trình duyệt do sử dụng custom dropdown không chuẩn.
@@ -2322,9 +2322,9 @@ Sử dụng thẻ `<select>` chuẩn với các `<option value="...">` hoặc co
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-15] Ô nhập số lượng tồn kho Admin không ràng buộc biên âm hợp lệ.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
-- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p1-chrome-win11/GUI-054.png)
-- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p2-firefox-win11/GUI-054.png)
-- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p3-android-chrome/GUI-054.png)
+- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-054.png)
+- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-054.png)
+- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-054.png)
 
 #### 5. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
 Ô nhập tồn kho (Stock) cho phép nhập số thập phân hoặc số âm, không giới hạn số nguyên không âm hợp lệ.
@@ -2360,9 +2360,9 @@ Thêm thuộc tính `type="number" min="0" step="1"` và kiểm tra `Number.isIn
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-15] Khối thông báo lỗi form sản phẩm không nằm phía trên nút submit.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
-- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p1-chrome-win11/GUI-055.png)
-- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p2-firefox-win11/GUI-055.png)
-- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p3-android-chrome/GUI-055.png)
+- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-055.png)
+- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-055.png)
+- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-055.png)
 
 #### 5. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
 Khối thông báo lỗi validation của biểu mẫu Admin hiển thị ở góc dưới hoặc dạng toast rời rạc, không nằm tập trung cố định phía trên nút submit theo quy chuẩn.
@@ -2398,9 +2398,9 @@ Khối thông báo lỗi validation của biểu mẫu Admin hiển thị ở g�
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-15] Thẻ tab Admin Quản lý sản phẩm thiếu trạng thái highlight active rõ ràng.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
-- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p1-chrome-win11/GUI-056.png)
-- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p2-firefox-win11/GUI-056.png)
-- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p3-android-chrome/GUI-056.png)
+- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-056.png)
+- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-056.png)
+- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-056.png)
 
 #### 5. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
 Tab 'Sản phẩm' trong thanh điều hướng trang Quản trị Admin không hiển thị trạng thái active, khiến người quản trị không rõ đang ở phân hệ nào.
@@ -2436,9 +2436,9 @@ Thêm class `active` và thuộc tính `aria-current="page"` cho tab Sản phẩ
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-15] Nút đăng xuất dùng nhãn "Thoát"/"Log out" thay vì "Đăng xuất".
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
-- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p1-chrome-win11/GUI-057.png)
-- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p2-firefox-win11/GUI-057.png)
-- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p3-android-chrome/GUI-057.png)
+- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-057.png)
+- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-057.png)
+- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-057.png)
 
 #### 5. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
 Nút thoát phiên đăng nhập của Admin sử dụng nhãn 'Thoát' hoặc 'Log out' thay vì chuỗi tiếng Việt chuẩn mực 'Đăng xuất'.
@@ -2474,9 +2474,9 @@ Nút thoát phiên đăng nhập của Admin sử dụng nhãn 'Thoát' hoặc '
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-15] Nút Hủy form Admin bị che khuất hoặc không kích hoạt được trên mobile.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
-- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p1-chrome-win11/GUI-058.png)
-- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p2-firefox-win11/GUI-058.png)
-- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p3-android-chrome/GUI-058.png)
+- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-058.png)
+- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-058.png)
+- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-058.png)
 
 #### 5. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
 Nút 'Hủy' trong form sản phẩm Admin trên màn hình Galaxy S23 bị thanh bàn phím ảo hoặc footer che khuất, người dùng không thể hủy thao tác.
@@ -2512,9 +2512,9 @@ Cải thiện CSS form container với `padding-bottom: 80px` và đảm bảo c
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-15] Form Sửa sản phẩm không mở dưới dạng modal có bẫy focus bàn phím.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
-- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p1-chrome-win11/GUI-059.png)
-- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p2-firefox-win11/GUI-059.png)
-- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p3-android-chrome/GUI-059.png)
+- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-059.png)
+- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-059.png)
+- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-059.png)
 
 #### 5. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
 Form Sửa sản phẩm mở ra dưới dạng inline hoặc popup thiếu bẫy tiêu điểm (focus trap), khiến người dùng nhấn Tab có thể rơi ra ngoài trang nền.
@@ -2550,9 +2550,9 @@ Sử dụng modal dialog chuẩn với thư viện `focus-trap` hoặc thẻ HTM
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-15] Cập nhật thông tin sản phẩm không đảm bảo tính cô lập dữ liệu.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
-- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p1-chrome-win11/GUI-060.png)
-- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p2-firefox-win11/GUI-060.png)
-- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p3-android-chrome/GUI-060.png)
+- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-060.png)
+- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-060.png)
+- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-060.png)
 
 #### 5. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
 Khi mở form sửa sản phẩm A và thay đổi thông tin nhưng bấm Hủy hoặc chưa bấm Lưu, dữ liệu của sản phẩm B trong bảng hoặc state bị thay đổi chéo (vi phạm tính cô lập dữ liệu).
@@ -2588,9 +2588,9 @@ Tạo bản sao sâu (deep clone) của object sản phẩm khi mở form: `cons
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-15] Thiếu modal xác nhận cảnh báo trước khi xóa sản phẩm quản trị.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
-- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p1-chrome-win11/GUI-061.png)
-- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p2-firefox-win11/GUI-061.png)
-- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p3-android-chrome/GUI-061.png)
+- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-061.png)
+- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-061.png)
+- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-061.png)
 
 #### 5. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
 Thao tác xóa sản phẩm trong danh sách Admin xóa trực tiếp khỏi database mà không có modal xác nhận cảnh báo mức độ nguy hiểm.
@@ -2626,9 +2626,9 @@ Hiển thị modal cảnh báo nguy hiểm: 'Hành động này sẽ xóa vĩnh 
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-15] Modal xác nhận xóa Admin không đóng được khi chạm ngoài vùng overlay trên mobile.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
-- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p1-chrome-win11/GUI-062.png)
-- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p2-firefox-win11/GUI-062.png)
-- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p3-android-chrome/GUI-062.png)
+- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-062.png)
+- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-062.png)
+- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-062.png)
 
 #### 5. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
 Trên màn hình cảm ứng di động, việc chạm vào vùng mờ bên ngoài (backdrop/overlay) của modal xác nhận xóa không đóng được modal.
@@ -2664,9 +2664,9 @@ Bổ sung sự kiện `onClick` trên phần tử overlay để đóng modal khi
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-15] Thiếu toast thông báo phản hồi khi hoàn tất thêm/sửa/xóa sản phẩm Admin.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
-- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p1-chrome-win11/GUI-063.png)
-- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p2-firefox-win11/GUI-063.png)
-- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p3-android-chrome/GUI-063.png)
+- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-063.png)
+- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-063.png)
+- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-063.png)
 
 #### 5. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
 Các thao tác Thêm, Sửa, Xóa sản phẩm Admin hoàn tất mà không hiển thị thông báo phản hồi (Toast) xác nhận kết quả thành công.
@@ -2702,9 +2702,9 @@ Kích hoạt Toast thông báo xanh: 'Thêm/Cập nhật/Xóa sản phẩm thàn
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-15] Hình ảnh sản phẩm trong bảng quản trị Admin thiếu thuộc tính alt ngữ nghĩa.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
-- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p1-chrome-win11/GUI-064.png)
-- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p2-firefox-win11/GUI-064.png)
-- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](../gui-checklist/cross-platform/browser-evidence/images/p3-android-chrome/GUI-064.png)
+- **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-064.png)
+- **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-064.png)
+- **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-064.png)
 
 #### 5. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
 Ảnh thumbnail sản phẩm trong bảng Admin bị thiếu thuộc tính `alt`, công nghệ hỗ trợ đọc thành 'image' không có ngữ nghĩa.

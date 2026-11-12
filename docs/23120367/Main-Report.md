@@ -42,11 +42,8 @@
    - 5.2. Phân tích Chi tiết 48 Lỗi Dùng Chung (Shared Defects)
    - 5.3. Phân tích Chuyên sâu 17 Sai lệch Nền tảng (Platform Discrepancies)
    - 5.4. Đánh giá 3 Mục Đạt Chuẩn Hoàn Toàn (Always Passed)
-6. [Chương 6: Quản lý Thư viện Bằng chứng & Tính Toàn vẹn (Evidence & Provenance)](#chương-6-quản-lý-thư-viện-bằng-chứng--tính-toàn-vẹn-evidence--provenance)
-   - 6.1. Quy chuẩn Thư viện 208 Ảnh chụp Trình duyệt Thật
-   - 6.2. Tính Toàn vẹn & Khóa Đóng băng Dữ liệu (Integrity & Provenance)
-7. [Chương 7: Bảng Tự Đánh Giá Kết Quả (Self-Assessment)](#chương-7-bảng-tự-đánh-giá-kết-quả-self-assessment)
-8. [Chương 8: Kết Luận & Hướng Dẫn Tra Cứu](#chương-8-kết-luận--hướng-dẫn-tra-cứu)
+6. [Chương 6: Bảng Tự Đánh Giá Kết Quả (Self-Assessment)](#chương-6-bảng-tự-đánh-giá-kết-quả-self-assessment)
+7. [Chương 7: Kết Luận & Hướng Dẫn Tra Cứu](#chương-7-kết-luận--hướng-dẫn-tra-cứu)
 
 ---
 
@@ -287,7 +284,9 @@ Mỗi người tham gia được yêu cầu hoàn thành trọn vẹn kịch b�
 Ngay sau khi kết thúc kịch bản, người tham gia hoàn thành biểu mẫu khảo sát độc lập gồm **10 câu hỏi tiêu chuẩn SUS (System Usability Scale)** trên thang đo Likert 5 mức độ (1 = Hoàn toàn không đồng ý đến 5 = Hoàn toàn đồng ý) cùng **4 nhóm câu hỏi phỏng vấn định tính chuyên sâu (Qualitative Probes)**.
 
 #### 3. Danh sách Đối tượng Tham gia & Minh chứng Kiểm thử (Participants & Video Evidence)
-Đợt kiểm thử thu hút sự tham gia của **8 người dùng thực tế ($N = 8$)**. Nhằm tuân thủ tuyệt đối quy định bảo vệ dữ liệu cá nhân (PII Masking), 4 chữ số ở giữa trong số điện thoại của người tham gia đã được mã hóa theo chuẩn `036****234`, bảo toàn nguyên vẹn họ tên, nghề nghiệp và liên kết video Google Drive quay lại phiên kiểm thử thực tế:
+Đợt kiểm thử thu hút sự tham gia của **8 người dùng thực tế ($N = 8$)**. Nhằm tuân thủ tuyệt đối quy định bảo vệ dữ liệu cá nhân (PII Masking), 4 chữ số ở giữa trong số điện thoại của người tham gia đã được mã hóa theo chuẩn `036****234`, bảo toàn nguyên vẹn họ tên, nghề nghiệp và liên kết video Google Drive quay lại phiên kiểm thử thực tế.
+
+- **Bảng dữ liệu phản hồi khảo sát gốc trực tuyến**: [Google Sheets — Kết Quả Khảo Sát Usability Testing EShop (N=8)](https://docs.google.com/spreadsheets/d/1nSYYvo6tOrltxSdoChTR1D403YjWw_7VKamyNYWDrOE/edit?resourcekey=&gid=1393865147#gid=1393865147)
 
 | Mã NTG | Họ và tên Người tham gia | Số Điện thoại (PII Masked) | Nghề nghiệp / Lĩnh vực | Thiết bị & Trình duyệt Thử nghiệm | Video Minh chứng Thực tế (Google Drive) |
 |:---:|---|:---:|---|:---:|:---:|
@@ -788,42 +787,7 @@ ightarrow$ Nút 'Đặt lại mật khẩu'.
 
 ---
 
-## Chương 6: Quản lý Thư viện Bằng chứng & Tính Toàn vẹn (Evidence & Provenance)
-
-### 6.1. Quy chuẩn Thư viện 208 Ảnh chụp Trình duyệt Thật
-
-Toàn bộ **208 ảnh chụp bằng chứng kiểm thử** được lưu trữ, kiểm duyệt nghiêm ngặt và quản lý tập trung theo cấu trúc thư mục chuẩn hóa:
-
-```
-docs/gui-checklist/cross-platform/browser-evidence/images/
-├── p1-chrome-win11/       # 70 ảnh chụp cửa sổ Chrome Windows 11 Desktop thật
-├── p2-firefox-win11/      # 69 ảnh chụp cửa sổ Firefox Windows 11 Desktop thật
-└── p3-android-chrome/     # 69 ảnh chụp màn hình thiết bị thật Samsung Galaxy S23
-```
-
-**4 Tiêu chí Kiểm duyệt Bằng chứng Nghiêm ngặt (100% đạt chuẩn đề bài)**:
-1. **Hiển thị Thanh công cụ Trình duyệt Thật (Native Browser Toolbar)**: Ảnh chụp bao trọn cửa sổ ứng dụng thực tế trên Windows 11 và Android, không dùng ảnh chụp cắt cúp khung nhìn (viewport-only screenshot).
-2. **Hiển thị Thanh Địa chỉ Web (Address URL Bar)**: URL trang web tương ứng (`http://localhost:3001/...` hoặc `http://localhost:3002/...`) hiển thị rõ ràng trên thanh địa chỉ của trình duyệt, chứng minh trang web đang chạy thực tế tại thời điểm kiểm thử.
-3. **Hiển thị Đầy đủ Nội dung Giao diện**: Nội dung trang web hiển thị chân thực trạng thái đạt (Passed) hoặc lỗi (Failed) của từng ca kiểm thử.
-4. **Watermark Định danh Sinh viên Chính chủ**: Mã số sinh viên và email `23120367@student.hcmus.edu.vn` được render trực tiếp trong DOM giao diện khi chụp bằng chứng, cam kết tính độc bản và trung thực tuyệt đối (không chỉnh sửa đồ họa hậu kỳ).
-
----
-
-### 6.2. Tính Toàn Vẹn & Khóa Đóng băng Dữ liệu (Integrity & Provenance)
-
-Để đảm bảo kết quả kiểm thử có thể tái lập (reproducible) và không bị can thiệp sau khi hoàn thành:
-1. **Bảng Đối soát Mã băm SHA-256 (`manifest.json`)**:
-   - Mỗi file ảnh trong số 208 ảnh đều được tính toán và lưu trữ mã băm SHA-256 duy nhất.
-   - Bất kỳ sự thay đổi dù chỉ 1 pixel trong ảnh đều sẽ làm sai lệch mã băm đối soát.
-2. **Khóa Đóng băng Mã nguồn SUT (`qualification-freeze.json` & `provenance.json`)**:
-   - Ghi lại chính xác commit hash Git của kho mã nguồn tại thời điểm thực thi.
-   - Lưu trữ mã băm nội dung (content digests) của toàn bộ 3 phân hệ: Backend API, Frontend Client Web, và Admin Portal. Cam kết mã nguồn không bị chỉnh sửa trong suốt quá trình chạy test và lập báo cáo.
-3. **Thông số Phiên Kiểm thử BrowserStack (Session Metadata)**:
-   - Toàn bộ 208 ca kiểm thử đều gắn liền với Session ID định danh thực tế trên BrowserStack Automate Dashboard, cho phép hội đồng chấm thi tra cứu trực tiếp video quay lại phiên test và log mạng khi cần thiết.
-
----
-
-## Chương 7: Bảng Tự Đánh Giá Kết Quả (Self-Assessment)
+## Chương 6: Bảng Tự Đánh Giá Kết Quả (Self-Assessment)
 
 Căn cứ theo biểu điểm đánh giá chính thức của bài tập HW03 (Assessment Rubric Template):
 
@@ -837,19 +801,20 @@ Căn cứ theo biểu điểm đánh giá chính thức của bài tập HW03 (A
 
 ---
 
-## Chương 8: Kết Luận & Hướng Dẫn Tra Cứu
+## Chương 7: Kết Luận & Hướng Dẫn Tra Cứu
 
-### 8.1. Kết Luận
+### 7.1. Kết Luận
 Đồ án kiểm thử giao diện người dùng EShop (HW03) đã hoàn thành xuất sắc các mục tiêu học thuật và kỹ thuật trên cả 3 trụ cột:
 1. **Thiết kế Checklist chuẩn mực (Task 1)**: Xây dựng 70 mục kiểm tra bao phủ trọn vẹn 4 khía cạnh giao diện (IA-01 đến IA-04) trên 4 màn hình chức năng cốt lõi, thể hiện rõ nét giá trị phản biện chuyên môn của con người trước các điểm mù của trí tuệ nhân tạo. Tự động hóa Playwright phát hiện 48 khiếm khuyết giao diện và nghiệp vụ trên môi trường cục bộ.
 2. **Nghiên cứu Người dùng Thực tế Đột phá (Task 2)**: Khảo sát thực nghiệm với 8 người dùng thật kết hợp phương pháp Think-Aloud và thang đo SUS chuẩn hóa. Điểm SUS đạt **44.38 (Grade F, Poor)** đã phản ánh sự sụp đổ niềm tin giao dịch của khách hàng khi đối mặt với các lỗi toàn vẹn dữ liệu (tiền âm, xóa giỏ sinh `NaN`, sửa tiền thanh toán thành 0đ, F5 mất giỏ). Kết quả Usability Testing cung cấp góc nhìn sinh động mà kiểm thử tự động bằng code không thể chạm tới, đồng thời chỉ ra 7 lỗi Usability trọng yếu (`BUG-U01` – `BUG-U07`) và 4 nhóm giải pháp khắc phục triệt để.
 3. **Kiểm thử Đa Nền tảng Đạt chuẩn Cloud Grid (Task 3)**: Vận hành thành công hạ tầng BrowserStack Local tunnel trên cả máy tính để bàn (Chrome, Firefox) và thiết bị di động thực tế (Samsung Galaxy S23), giảm tỷ lệ Not Run xuống mức kỷ lục 0.95% (208/210 ô thành công) và bóc tách chính xác 48 Shared Defects cùng 17 sai lệch nền tảng đặc thù.
 4. **Bằng chứng & Liêm chính Học thuật Tuyệt đối**: Quản lý 208 ảnh chụp trình duyệt thật kèm watermark chính chủ, mã băm SHA-256 và khóa đóng băng dữ liệu bất biến.
 
-### 8.2. Hướng Dẫn Tra Cứu Tài Liệu Nộp Bài
+### 7.2. Hướng Dẫn Tra Cứu Tài Liệu Nộp Bài
 Để phục vụ việc đánh giá và chấm điểm thuận tiện nhất, toàn bộ hồ sơ nộp bài của sinh viên `23120367` được đóng gói tập trung trong thư mục `docs/23120367/`:
 - **Báo cáo Tổng hợp Chính (Main Report)**: Chính là tài liệu [Main-Report.md](Main-Report.md) này, cung cấp bức tranh toàn cảnh về phương pháp luận, ma trận bao phủ, kết quả thực thi và phân tích đối sánh đa nền tảng.
 - **Báo cáo Khiếm khuyết Chi tiết (Bug Report)**: Tài liệu [Bug-Report.md](Bug-Report.md) (nằm cùng thư mục), cung cấp hồ sơ chi tiết của toàn bộ **67 lỗi** (Bug ID, mô tả hiện tượng, các bước tái hiện, mã lỗi thực tế trên từng nền tảng, link ảnh bằng chứng, phân tích nguyên nhân kỹ thuật và đề xuất giải pháp sửa mã nguồn).
 - **Script Tính toán & Kiểm chứng SUS**: File mã nguồn [calculate_sus.py](calculate_sus.py) dùng để tải dữ liệu, tính toán tự động điểm SUS từng cá nhân, độ lệch chuẩn, trung vị và xếp loại học thuật.
+- **Thư viện Ảnh Bằng chứng Trình duyệt**: Thư mục [images/](images/) (lưu trữ tập trung ngay trong thư mục nộp bài), chứa toàn bộ 208 ảnh chụp cửa sổ trình duyệt và thiết bị thật trên cả 3 nền tảng (Chrome Win11, Firefox Win11, Android Galaxy S23) có watermark chính chủ và mã băm SHA-256.
 
 ---
