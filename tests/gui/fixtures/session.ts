@@ -77,15 +77,21 @@ export async function loginViaUi(
   baseURL: string,
   account: { email: string; password: string }
 ): Promise<void> {
-  await page.goto(baseURL);
+  await page.goto(baseURL, { waitUntil: 'domcontentloaded' });
   // If login form is shown
   const loginBtn = page.getByRole('button', { name: /Login|Đăng nhập/i });
 
+  // Wait for React hydration before deciding whether authentication is needed.
+  await loginBtn.or(page.locator('li').filter({ hasText: /^Sản phẩm$/ })).first().waitFor({ state: 'visible' });
   if (await loginBtn.isVisible()) {
     const emailInput = page.getByPlaceholder('Email').or(page.locator('input').first());
     const pwdInput = page.getByPlaceholder('Password').or(page.locator('input[type="password"]'));
     await emailInput.fill(account.email);
     await pwdInput.fill(account.password);
-    await loginBtn.click();
+    // Submit through the focused password field; Android's open keyboard can
+    // shift hit-test coordinates for a subsequent button click.
+    await pwdInput.press('Enter');
+    // A following navigation must not race the async login response/token write.
+    await page.waitForFunction(() => Boolean(localStorage.getItem('adminToken')));
   }
 }

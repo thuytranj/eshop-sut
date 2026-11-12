@@ -48,3 +48,12 @@ test('inline_form_does_not_satisfy_modal_focus_trap', () => {
   const isModalDialog = false;
   assert.equal(isModalDialog, false);
 });
+
+test('opening products after login keeps the authenticated document instead of reloading it', async () => {
+  const { AdminProductsPage } = await import('../pages/admin-products.page.ts');
+  const events:string[]=[];
+  const tab:any={filter:()=>tab,click:async()=>events.push('products')};
+  const page:any={url:()=> 'http://bs-local.com:5174/',goto:async()=>events.push('reload'),locator:()=>tab};
+  await new AdminProductsPage(page,'http://bs-local.com:5174').openProductsTab();
+  assert.deepEqual(events,['products']);
+});

@@ -64,6 +64,7 @@ export type VerifiedSession = {
 export type RemoteSession = {
   context: BrowserContext;
   identity: VerifiedSession;
+  nativeScreenshot?: (path: string) => Promise<void>;
   close(): Promise<void>;
 };
 
@@ -114,6 +115,8 @@ export type CloudRunOptions = {
   runId: string;
   phase: 'preflight' | 'pilot' | 'qualification';
   resume: boolean;
+  targetPlatform?: PlatformId;
+  grepPattern?: string;
 };
 
 export type {

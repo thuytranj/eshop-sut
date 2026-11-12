@@ -147,3 +147,7 @@ test('infra_timeout_is_not_product_failure', () => {
   assert.ok(itemResult);
   assert.equal(itemResult.status, 'Not Run');
 });
+
+test('provider DNS failures are infrastructure failures before UI execution', () => {
+  assert.equal(classifyFailure('browserType.connect: WebSocket error: getaddrinfo ENOTFOUND cdp.browserstack.com','assertion'),'infra');
+});

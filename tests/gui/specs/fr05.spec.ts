@@ -1,3 +1,4 @@
+import { captureEndOfTest } from '../cross-platform/evidence.ts';
 import { test, expect } from '../fixtures/test.js';
 import { CatalogPage } from '../pages/catalog.page.ts';
 import { installNetwork, type NetworkController } from '../fixtures/network.ts';
@@ -21,7 +22,8 @@ test.describe('FR-05: Product Catalog and Search (19 items)', () => {
     await catalogPage.open();
   });
 
-  test.afterEach(async () => {
+  test.afterEach(async ({ page }, info) => {
+    try { await captureEndOfTest(page, info); } catch (error) { console.error("Evidence capture failed:", error); }
     if (network) {
       await network.dispose();
     }
@@ -201,8 +203,8 @@ test.describe('FR-05: Product Catalog and Search (19 items)', () => {
     );
 
     network.setProductsState('pending');
-    await page.goto(getWebUrl());
-    const loader = page.locator('.loading, .skeleton, text=/Đang tải|Loading/i');
+    await page.goto(getWebUrl(), { waitUntil: 'domcontentloaded' });
+    const loader = page.locator('.loading, .skeleton').or(page.getByText(/Đang tải|Loading/i)).first();
     await expect(loader).toBeVisible({ timeout: 2000 });
     network.releaseProducts();
   });
@@ -244,7 +246,7 @@ test.describe('FR-05: Product Catalog and Search (19 items)', () => {
     );
 
     await catalogPage.add('iPhone 15 Pro Max');
-    const toast = page.locator('.toast, [role="status"], [role="alert"], text=/Đã thêm vào giỏ|thành công/i');
+    const toast = page.locator('.toast, [role="status"], [role="alert"]').or(page.getByText(/Đã thêm vào giỏ|thành công/i)).first();
     await expect(toast).toBeVisible({ timeout: 3000 });
   });
 
@@ -282,7 +284,7 @@ test.describe('FR-05: Product Catalog and Search (19 items)', () => {
     );
 
     network.setProductsState('abort');
-    await page.goto(getWebUrl());
+    await page.goto(getWebUrl(), { waitUntil: 'domcontentloaded' });
 
     // Should display Vietnamese error message and Retry button
     const retryBtn = page.getByRole('button', { name: /Thử lại/i });

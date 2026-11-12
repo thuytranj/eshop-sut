@@ -29,7 +29,7 @@ export async function injectWatermark(
   const lines = formatWatermarkLines(currentUrl, context);
 
   await page.evaluate(
-    ({ lines, action }) => {
+    ({ lines, action, compactMobile, avoidHeader }) => {
       const existing = document.getElementById('hw03-evidence-watermark');
       if (existing) {
         existing.remove();
@@ -57,15 +57,37 @@ export async function injectWatermark(
       overlay.style.wordBreak = 'break-all';
       overlay.style.boxShadow = '0 2px 8px rgba(0,0,0,0.5)';
 
-      for (const lineText of lines) {
+      let displayLines = lines;
+      if (compactMobile) {
+        const viewport = window.visualViewport;
+        overlay.style.left = `${(viewport?.offsetLeft || 0) + 8}px`;
+        overlay.style.top = `${(viewport?.offsetTop || 0) + 8}px`;
+        overlay.style.right = 'auto';
+        overlay.style.bottom = 'auto';
+        overlay.style.width = `${Math.max(240, (viewport?.width || window.innerWidth) - 16)}px`;
+        overlay.style.maxWidth = 'none';
+        overlay.style.boxSizing = 'border-box';
+        overlay.style.padding = '6px 8px';
+        const email = lines[0].match(/\S+@\S+/)?.[0] || lines[0];
+        const item = lines[3].match(/Item: ([^|]+)/)?.[1]?.trim() || '';
+        displayLines = [email, lines[1], lines[2], `Item: ${item}`];
+      }
+      for (const lineText of displayLines) {
         const line = document.createElement('div');
         line.textContent = lineText;
+        if (lineText === lines[0]) line.style.wordBreak = 'normal';
         overlay.appendChild(line);
       }
 
       document.body.appendChild(overlay);
+      if(compactMobile && avoidHeader) {
+        const viewport=window.visualViewport;
+        const offset=viewport?.offsetTop || 0;
+        overlay.style.top=`${Math.max(offset+112,offset+(viewport?.height || window.innerHeight)-overlay.getBoundingClientRect().height-120)}px`;
+      }
     },
-    { lines, action: 'inject' }
+    { lines, action: 'inject', compactMobile: context.identity.realMobile,
+      avoidHeader:currentUrl.includes(':5174') || ['GUI-024','GUI-039','GUI-040','GUI-056','GUI-057'].includes(context.itemId) }
   );
 
   return async () => {

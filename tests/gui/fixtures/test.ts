@@ -1,6 +1,7 @@
+import { captureEndOfTest, registerNativeCapture } from '../cross-platform/evidence.ts';
 import { test as baseTest, expect, type BrowserContext, type Page } from '@playwright/test';
 import { PLATFORMS, loadCloudEnv } from '../cross-platform/config.js';
-import { openRemoteSession, setRemoteStatus } from '../cross-platform/session.js';
+import { openRemoteSession, setRemoteStatus, selectTestPage } from '../cross-platform/session.js';
 import type {
   SutURLs,
   CaptureContext,
@@ -34,7 +35,7 @@ export const test = baseTest.extend<TestFixtures>({
   },
 
   // Override context to connect to remote session when cloud project is active
-  context: async ({ playwright }, use, testInfo) => {
+  context: [async ({ playwright }, use, testInfo) => {
     const platformId = testInfo.project.metadata?.platformId as PlatformId | undefined;
 
     if (!platformId) {
@@ -105,17 +106,20 @@ export const test = baseTest.extend<TestFixtures>({
         remoteSession.context.setDefaultTimeout(30000);
       }
 
+      if(remoteSession.nativeScreenshot) registerNativeCapture(remoteSession.context,remoteSession.nativeScreenshot);
       await use(remoteSession.context);
     } finally {
       if (remoteSession) {
         await remoteSession.close();
       }
     }
-  },
+  }, { scope: 'test', timeout: 120000 }],
 
   page: async ({ context }, use, testInfo) => {
-    const pages = typeof context.pages === 'function' ? context.pages() : [];
-    const page = pages.length > 0 ? pages[0] : await context.newPage();
+    const page = await selectTestPage(context, testInfo.project.metadata?.platformId as string | undefined);
+    if (testInfo.project.metadata?.platformId) {
+      await page.bringToFront();
+    }
     if (typeof page.setDefaultNavigationTimeout === 'function') {
       page.setDefaultNavigationTimeout(60000);
     }
@@ -125,6 +129,7 @@ export const test = baseTest.extend<TestFixtures>({
     try {
       await use(page);
     } finally {
+      try { await captureEndOfTest(page, testInfo); } catch {}
       const platformId = testInfo.project.metadata?.platformId as PlatformId | undefined;
       if (platformId) {
         try {

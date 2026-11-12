@@ -95,7 +95,7 @@ export async function captureTabOrder(
       return `${role}:${name.slice(0, 30)}`;
     });
     order.push(descriptor);
-    await page.keyboard.press('Tab');
+    if (i < count - 1) await page.keyboard.press('Tab');
   }
 
   return order;

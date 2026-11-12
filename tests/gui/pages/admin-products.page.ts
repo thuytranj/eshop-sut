@@ -10,7 +10,11 @@ export class AdminProductsPage {
   }
 
   async openProductsTab(): Promise<void> {
-    await this.page.goto(this.baseURL);
+    const current = this.page.url();
+    const target = new URL(this.baseURL);
+    if (!current.startsWith(target.origin + '/')) {
+      await this.page.goto(this.baseURL, { waitUntil: 'domcontentloaded' });
+    }
     const productsTab = this.page.locator('li').filter({ hasText: /^Sản phẩm$/ });
     await productsTab.click();
   }

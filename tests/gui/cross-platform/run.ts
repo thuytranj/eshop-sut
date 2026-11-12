@@ -13,6 +13,7 @@ import type {
 import { PLATFORMS, loadCloudEnv } from './config.js';
 import { startLocalEnvironment } from './local-environment.js';
 import { startLocalTunnel } from './local-tunnel.js';
+import { freezeQualificationInput } from './qualification-freeze.js';
 
 export function acquireRunnerLock(
   lockFilePath: string,
@@ -154,11 +155,14 @@ export async function runPlatforms(
   }
 
   let infrastructureErrors = 0;
-  const platformIds: PlatformId[] = [
+  const allPlatforms: PlatformId[] = [
     'p1-chrome-win11',
     'p2-firefox-win11',
     'p3-android-chrome',
   ];
+  const platformIds: PlatformId[] = options.targetPlatform
+    ? allPlatforms.filter(p => p === options.targetPlatform)
+    : allPlatforms;
 
   try {
     for (const pid of platformIds) {
@@ -203,6 +207,8 @@ async function cli(): Promise<void> {
   let phase: 'preflight' | 'pilot' | 'qualification' = 'qualification';
   let runId = `run-${Date.now()}`;
   let resume = false;
+  let targetPlatform: PlatformId | undefined;
+  let grepPattern: string | undefined;
 
   for (let i = 0; i < args.length; i++) {
     if (args[i] === '--phase' && args[i + 1]) {
@@ -210,6 +216,12 @@ async function cli(): Promise<void> {
       i++;
     } else if (args[i] === '--run-id' && args[i + 1]) {
       runId = args[i + 1];
+      i++;
+    } else if (args[i] === '--platform' && args[i + 1]) {
+      targetPlatform = args[i + 1] as PlatformId;
+      i++;
+    } else if (args[i] === '--grep' && args[i + 1]) {
+      grepPattern = args[i + 1];
       i++;
     } else if (args[i] === '--resume') {
       resume = true;
@@ -227,6 +239,17 @@ async function cli(): Promise<void> {
 
   const runDir = path.join(repoRoot, 'artifacts/gui/cross-platform', runId);
   fs.mkdirSync(runDir, { recursive: true });
+
+  // Freeze input qualification and calculate budget estimate (Tasks 6.3 & 6.4)
+  const freeze = freezeQualificationInput({
+    repoRoot,
+    runId,
+    outDir: runDir,
+    pilotAttemptsPath: path.join(repoRoot, 'artifacts/gui/cross-platform/pilot-05/attempts.json'),
+  });
+  console.log(`[Provenance] Git SHA: ${freeze.harness.gitSha} (dirty: ${freeze.harness.isDirty}), Timezone: ${freeze.timezone}`);
+  console.log(`[Provenance] SUT digests: backend=${freeze.sut.backendContentDigest.slice(0, 8)}..., web=${freeze.sut.frontendWebContentDigest.slice(0, 8)}..., admin=${freeze.sut.frontendAdminContentDigest.slice(0, 8)}...`);
+  console.log(`[Budget Estimate] Estimated total: ${freeze.budgetEstimate.totalEstimatedMinutes} mins (~${Math.round(freeze.budgetEstimate.totalEstimatedMinutes/60*10)/10}h) across 3 platforms (P1: ${Math.round(freeze.budgetEstimate.perPlatformSeconds['p1-chrome-win11']/60)}m, P2: ${Math.round(freeze.budgetEstimate.perPlatformSeconds['p2-firefox-win11']/60)}m, P3: ${Math.round(freeze.budgetEstimate.perPlatformSeconds['p3-android-chrome']/60)}m). Max concurrent thread: ${freeze.budgetEstimate.parallelSessionsMaxAllowed}`);
 
   let localEnv: any = null;
   let tunnel: any = null;
@@ -254,7 +277,7 @@ async function cli(): Promise<void> {
     console.log('BrowserStack Local tunnel is active and ready.');
 
     const summary = await runPlatforms(
-      { runId, phase, resume },
+      { runId, phase, resume, targetPlatform, grepPattern },
       {
         executeProject: async (platformId: PlatformId) => {
           console.log(`\n========================================`);
@@ -267,10 +290,14 @@ async function cli(): Promise<void> {
             `--project=${platformId}`,
           ];
 
-          if (phase === 'preflight') {
+          if (grepPattern) {
+            playwrightArgs.push('-g', grepPattern);
+          } else if (phase === 'preflight') {
             playwrightArgs.push('-g', '@smoke');
           } else if (phase === 'pilot') {
             playwrightArgs.push('-g', 'GUI-004|GUI-017|GUI-041|GUI-044');
+          } else if (phase === 'qualification') {
+            playwrightArgs.push('-g', 'GUI-');
           }
 
           await new Promise<void>((resolve, reject) => {

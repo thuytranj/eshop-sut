@@ -10,7 +10,7 @@ export class CatalogPage {
   }
 
   async open(): Promise<void> {
-    await this.page.goto(this.baseURL);
+    await this.page.goto(this.baseURL, { waitUntil: 'domcontentloaded' });
   }
 
   async search(keyword: string): Promise<void> {

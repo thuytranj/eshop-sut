@@ -209,3 +209,13 @@ test('partial_setup_closes_allocated_resource', async () => {
 
   assert.ok(browserClosed, 'browser closed upon partial setup failure');
 });
+
+test('android test page replaces bootstrap tabs so native recording follows the only tab', async () => {
+  const { selectTestPage } = await import('../cross-platform/session.js');
+  const calls: string[] = [];
+  const bootstrap = {close:async()=>calls.push('close-bootstrap')};
+  const page = {bringToFront:async()=>calls.push('foreground')};
+  const context:any={pages:()=>[bootstrap],newPage:async()=>{calls.push('new-page');return page;}};
+  assert.equal(await selectTestPage(context,'p3-android-chrome'),page);
+  assert.deepEqual(calls,['new-page','foreground','close-bootstrap']);
+});

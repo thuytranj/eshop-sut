@@ -186,6 +186,7 @@ export async function openRemoteSession(
     return {
       context,
       identity,
+      nativeScreenshot: allocatedDevice ? async (filePath: string) => { await allocatedDevice.screenshot({path:filePath}); } : undefined,
       close: async () => {
         try {
           if (context) await Promise.race([context.close(), new Promise(r => setTimeout(r, 5000))]);
@@ -211,4 +212,16 @@ export async function openRemoteSession(
     } catch {}
     throw error;
   }
+}
+
+export async function selectTestPage(
+  context: import('@playwright/test').BrowserContext,
+  platformId?: string
+): Promise<import('@playwright/test').Page> {
+  const existing = context.pages();
+  if (platformId !== 'p3-android-chrome') return existing[0] || await context.newPage();
+  const page = await context.newPage();
+  await page.bringToFront();
+  for (const bootstrap of existing) await bootstrap.close();
+  return page;
 }

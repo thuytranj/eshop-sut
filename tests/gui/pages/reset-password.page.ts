@@ -10,7 +10,7 @@ export class ResetPasswordPage {
   }
 
   async open(): Promise<void> {
-    await this.page.goto(`${this.baseURL}/forgot-password`);
+    await this.page.goto(`${this.baseURL}/forgot-password`, { waitUntil: 'domcontentloaded' });
   }
 
   async requestOtp(email: string): Promise<void> {

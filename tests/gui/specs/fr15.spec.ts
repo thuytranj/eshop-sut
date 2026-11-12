@@ -1,3 +1,4 @@
+import { captureEndOfTest } from '../cross-platform/evidence.ts';
 import { test, expect } from '../fixtures/test.js';
 import { AdminProductsPage } from '../pages/admin-products.page.ts';
 import { installNetwork, type NetworkController } from '../fixtures/network.ts';
@@ -21,7 +22,8 @@ test.describe('FR-15: Admin Product Management CRUD (18 items)', () => {
     await adminPage.openProductsTab();
   });
 
-  test.afterEach(async () => {
+  test.afterEach(async ({ page }, info) => {
+    try { await captureEndOfTest(page, info); } catch (error) { console.error("Evidence capture failed:", error); }
     if (network) {
       await network.dispose();
     }
@@ -284,7 +286,7 @@ test.describe('FR-15: Admin Product Management CRUD (18 items)', () => {
     await adminPage.edit('iPhone 15 Pro Max');
     await adminPage.save();
 
-    const toast = page.locator('.toast, [role="status"], [role="alert"], text=/thành công/i');
+    const toast = page.locator('.toast, [role="status"], [role="alert"]').or(page.getByText(/thành công/i)).first();
     await expect(toast).toBeVisible();
   });
 

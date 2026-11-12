@@ -30,22 +30,26 @@ export async function startIsolatedBackend(options: {
     }
   }
 
-  // Launch child process in sandbox directory with PORT set
+  let stderrLogs = '';
   let proc: ChildProcess | null = spawn('node', ['server.js'], {
     cwd: sandboxDir,
     env: {
       ...process.env,
       PORT: String(port),
     },
-    stdio: 'ignore',
+    stdio: ['ignore', 'pipe', 'pipe'],
   });
 
-  const apiURL = `http://localhost:${port}/api`;
+  proc.stderr?.on('data', (chunk) => {
+    stderrLogs += chunk.toString();
+  });
 
-  // Poll until server is ready (max 10 seconds)
+  const apiURL = `http://127.0.0.1:${port}/api`;
+
+  // Poll until server is ready (max 30 seconds)
   const startTime = Date.now();
   let isReady = false;
-  while (Date.now() - startTime < 10000) {
+  while (Date.now() - startTime < 30000) {
     try {
       const res = await fetch(`${apiURL}/products`);
       if (res.ok) {
@@ -53,7 +57,14 @@ export async function startIsolatedBackend(options: {
         break;
       }
     } catch {
-      await new Promise((r) => setTimeout(r, 200));
+      try {
+        const resLocal = await fetch(`http://localhost:${port}/api/products`);
+        if (resLocal.ok) {
+          isReady = true;
+          break;
+        }
+      } catch {}
+      await new Promise((r) => setTimeout(r, 300));
     }
   }
 
@@ -61,7 +72,7 @@ export async function startIsolatedBackend(options: {
     if (proc) {
       proc.kill();
     }
-    throw new Error(`Isolated backend failed to start on port ${port} within timeout`);
+    throw new Error(`Isolated backend failed to start on port ${port} within timeout. Stderr: ${stderrLogs}`);
   }
 
   return {

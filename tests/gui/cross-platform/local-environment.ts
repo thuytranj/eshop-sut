@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import net from 'node:net';
 import crypto from 'node:crypto';
-import { spawn, type ChildProcess } from 'node:child_process';
+import { spawn, execFileSync, type ChildProcess } from 'node:child_process';
 import type { Page } from '@playwright/test';
 import type { LocalEnvironment, SutURLs } from './types.js';
 import { startIsolatedBackend } from '../runner/isolated-backend.js';
@@ -136,6 +136,19 @@ export async function startLocalEnvironment(options: {
 
   const spawnedProcesses: ChildProcess[] = [];
 
+  // Bundle modules before crossing the remote tunnel: dev-mode module waterfalls
+  // can leave React unhydrated for most of a cloud test's time budget.
+  const frontendMode = process.env.CP_STATIC_FRONTEND === '0' ? 'dev' : 'preview';
+  if (frontendMode === 'preview') {
+    for (const frontend of ['frontend-web', 'frontend-admin']) {
+      execFileSync('npm', ['run', 'build'], {
+        cwd: path.join(options.repoRoot, frontend),
+        env: { ...process.env, VITE_API_URL: remoteURLs.api },
+        stdio: 'inherit',
+      });
+    }
+  }
+
   // Start isolated backend
   const backend = await startIsolatedBackend({
     repoRoot: options.repoRoot,
@@ -147,7 +160,7 @@ export async function startLocalEnvironment(options: {
   const webDir = path.join(options.repoRoot, 'frontend-web');
   const webProc = spawn(
     'npm',
-    ['run', 'dev', '--', '--host', '127.0.0.1', '--port', String(webPort), '--strictPort'],
+    ['run', frontendMode, '--', '--host', '127.0.0.1', '--port', String(webPort), '--strictPort'],
     {
       cwd: webDir,
       env: {
@@ -164,7 +177,7 @@ export async function startLocalEnvironment(options: {
   const adminDir = path.join(options.repoRoot, 'frontend-admin');
   const adminProc = spawn(
     'npm',
-    ['run', 'dev', '--', '--host', '127.0.0.1', '--port', String(adminPort), '--strictPort'],
+    ['run', frontendMode, '--', '--host', '127.0.0.1', '--port', String(adminPort), '--strictPort'],
     {
       cwd: adminDir,
       env: {

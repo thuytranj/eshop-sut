@@ -1,3 +1,4 @@
+import { captureEndOfTest } from '../cross-platform/evidence.ts';
 import { test, expect } from '../fixtures/test.js';
 import { ResetPasswordPage } from '../pages/reset-password.page.ts';
 import { installNetwork, type NetworkController } from '../fixtures/network.ts';
@@ -23,7 +24,8 @@ test.describe('FR-03: Forgot and Reset Password (15 items)', () => {
     await resetPage.open();
   });
 
-  test.afterEach(async () => {
+  test.afterEach(async ({ page }, info) => {
+    try { await captureEndOfTest(page, info); } catch (error) { console.error("Evidence capture failed:", error); }
     if (network) {
       await network.dispose();
     }
@@ -39,7 +41,7 @@ test.describe('FR-03: Forgot and Reset Password (15 items)', () => {
     const bodyText = await page.locator('body').innerText();
     expect(bodyText).toContain('Quên Mật Khẩu');
     expect(bodyText).toMatch(/Nhập Email|Email/);
-    expect(page.getByRole('button', { name: /Lấy mã OTP/i })).toBeVisible();
+    await expect(page.getByRole('button', { name: /Lấy mã OTP/i })).toBeVisible();
   });
 
   test('[GUI-002] Submit button color belongs to blue palette', async ({ page }) => {
@@ -86,7 +88,7 @@ test.describe('FR-03: Forgot and Reset Password (15 items)', () => {
       { type: 'mode', description: 'mock-ui' }
     );
 
-    const stepIndicator = page.locator('.step-indicator, text=/Bước 1/i');
+    const stepIndicator = page.locator('.step-indicator').or(page.getByText(/Bước 1/i)).first();
     await expect(stepIndicator, 'Step indicator (Bước 1/2) must be visible on step 1').toBeVisible();
   });
 
@@ -165,6 +167,9 @@ test.describe('FR-03: Forgot and Reset Password (15 items)', () => {
       { type: 'mode', description: 'mock-ui' }
     );
 
+    const backToLogin = page.getByRole('link', {name:'Quay lại đăng nhập',exact:true})
+      .or(page.getByRole('button', {name:'Quay lại đăng nhập',exact:true})).first();
+    await expect(backToLogin, 'The Step 1 Tab sequence requires the back-to-login control specified in FR-03 and GUI-010').toBeVisible();
     const emailInput = page.locator('form input').first();
     const order = await captureTabOrder(page, emailInput, 3);
     expect(order.length).toBe(3);

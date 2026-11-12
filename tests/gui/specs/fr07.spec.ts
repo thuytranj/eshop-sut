@@ -1,3 +1,4 @@
+import { captureEndOfTest } from '../cross-platform/evidence.ts';
 import { test, expect } from '../fixtures/test.js';
 import { CartPage } from '../pages/cart.page.ts';
 import { CatalogPage } from '../pages/catalog.page.ts';
@@ -23,7 +24,8 @@ test.describe('FR-07: Shopping Cart Details (18 items)', () => {
     catalogPage = new CatalogPage(page);
   });
 
-  test.afterEach(async () => {
+  test.afterEach(async ({ page }, info) => {
+    try { await captureEndOfTest(page, info); } catch (error) { console.error("Evidence capture failed:", error); }
     if (network) {
       await network.dispose();
     }
@@ -298,7 +300,7 @@ test.describe('FR-07: Shopping Cart Details (18 items)', () => {
       { type: 'mode', description: 'mock-ui' }
     );
 
-    await page.goto(getWebUrl());
+    await page.goto(getWebUrl(), { waitUntil: 'domcontentloaded' });
     await cartPage.openFromNavbar();
 
     const emptyMsg = page.locator('text=/Giỏ hàng của bạn đang trống/i');

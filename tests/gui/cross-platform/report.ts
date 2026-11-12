@@ -426,6 +426,20 @@ async function cli(): Promise<void> {
   ];
   fs.writeFileSync(path.join(outDir, 'matrix.csv'), csvRows.join('\n'), 'utf-8');
 
+  // qualification-freeze.json
+  const artifactFreezePath = path.join(repoRoot, 'artifacts/gui/cross-platform', runId, 'qualification-freeze.json');
+  if (fs.existsSync(artifactFreezePath)) {
+    fs.copyFileSync(artifactFreezePath, path.join(outDir, 'qualification-freeze.json'));
+  } else {
+    const { freezeQualificationInput } = await import('./qualification-freeze.js');
+    freezeQualificationInput({
+      repoRoot,
+      runId,
+      outDir,
+      pilotAttemptsPath: attemptsPath,
+    });
+  }
+
   // issue-drafts
   const issueDir = path.join(outDir, 'issue-drafts');
   fs.mkdirSync(issueDir, { recursive: true });

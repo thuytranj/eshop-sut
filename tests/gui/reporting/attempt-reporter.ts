@@ -48,7 +48,7 @@ export class AttemptReporter implements Reporter {
     if (result.status === 'timedOut') {
       outcome = 'timed-out';
       failureKind = classifyFailure('timed out', 'assertion');
-      errorMsg = 'Test execution timed out';
+      errorMsg = result.errors.map((e) => e.message || '').filter(Boolean).join('\n') || 'Test execution timed out';
     } else if (result.status === 'failed' || result.status === 'interrupted') {
       outcome = 'assertion-failed';
       errorMsg = result.errors.map((e) => e.message || '').join('\n');
@@ -101,6 +101,26 @@ export class AttemptReporter implements Reporter {
     };
 
     this.attempts.push(attempt);
+
+    // Atomic checkpoint per attempt (Task 6.6)
+    try {
+      fs.mkdirSync(this.outputDir, { recursive: true });
+      const attemptsPath = path.join(this.outputDir, 'attempts.json');
+      let existingAttempts: Attempt[] = [];
+      if (fs.existsSync(attemptsPath)) {
+        try {
+          existingAttempts = JSON.parse(fs.readFileSync(attemptsPath, 'utf-8'));
+        } catch {}
+      }
+      // Deduplicate by startedAt, targetId, caseId
+      const exists = existingAttempts.some(
+        a => a.targetId === attempt.targetId && a.caseId === attempt.caseId && a.startedAt === attempt.startedAt
+      );
+      if (!exists) {
+        existingAttempts.push(attempt);
+        fs.writeFileSync(attemptsPath, JSON.stringify(existingAttempts, null, 2), 'utf-8');
+      }
+    } catch {}
   }
 
   async onEnd(result: FullResult): Promise<void> {
@@ -112,8 +132,15 @@ export class AttemptReporter implements Reporter {
         existingAttempts = JSON.parse(fs.readFileSync(attemptsPath, 'utf-8'));
       } catch {}
     }
-    const combined = [...existingAttempts, ...this.attempts];
-    fs.writeFileSync(attemptsPath, JSON.stringify(combined, null, 2), 'utf-8');
+    for (const a of this.attempts) {
+      const exists = existingAttempts.some(
+        e => e.targetId === a.targetId && e.caseId === a.caseId && e.startedAt === a.startedAt
+      );
+      if (!exists) {
+        existingAttempts.push(a);
+      }
+    }
+    fs.writeFileSync(attemptsPath, JSON.stringify(existingAttempts, null, 2), 'utf-8');
   }
 
   getAttempts(): Attempt[] {

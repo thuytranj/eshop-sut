@@ -20,6 +20,9 @@ export function classifyFailure(
 
   const lower = error.toLowerCase();
   if (
+    lower.includes('getaddrinfo') ||
+    lower.includes('enotfound') ||
+    lower.includes('eai_again') ||
     lower.includes('econnrefused') ||
     lower.includes('etimedout') ||
     lower.includes('net::err_connection_refused') ||
