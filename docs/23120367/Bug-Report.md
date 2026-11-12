@@ -88,75 +88,75 @@ Bảng ma trận dưới đây liệt kê đầy đủ 67 khiếm khuyết đư�
 - **P2**: Mozilla Firefox v148 (Windows 11 Desktop)
 - **P3**: Android Chrome (Samsung Galaxy S23 Real Device)
 
-| Bug Key | Checklist ID | Màn hình | IA | Mức độ | Ưu tiên | T1 Local | P1 Win11 | P2 Win11 | P3 Galaxy S23 | Phân loại Khiếm khuyết | Tóm tắt Khiếm khuyết |
-| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :--- | :--- |
-| **BUG-GUI-001** | `GUI-001` | FR-03 | IA-01 | S3 | P2 | Passed | Failed | Passed | Passed | Platform Discrepancy | [FR-03] Lỗi timeout/hiển thị văn bản tiếng Việt trên Chrome Win11 |
-| **BUG-GUI-002** | `GUI-002` | FR-03 | IA-01 | S3 | P2 | Passed | Failed | Passed | Passed | Platform Discrepancy | [FR-03] Màu sắc nút hành động chính/phụ chưa đồng bộ chuẩn positive/danger |
-| **BUG-GUI-003** | `GUI-003` | FR-03 | IA-01 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-03] Trang Quên mật khẩu thiếu thẻ tiêu đề h1 duy nhất |
-| **BUG-GUI-004** | `GUI-004` | FR-03 | IA-02 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-03] Ô nhập Email thiếu thuộc tính type="email" |
-| **BUG-GUI-005** | `GUI-005` | FR-03 | IA-02 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-03] Thiếu chỉ báo tiến trình bước (Bước 1/2) tại Bước 1 |
-| **BUG-GUI-006** | `GUI-006` | FR-03 | IA-02 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-03] Thiếu trường nhập xác nhận mật khẩu tại Bước 2 |
-| **BUG-GUI-007** | `GUI-007` | FR-03 | IA-02 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-03] Thiếu khối hiển thị lỗi validation phía trên nút gửi |
-| **BUG-GUI-008** | `GUI-008` | FR-03 | IA-02 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-03] Ô nhập OTP không thông báo lỗi khi không đúng định dạng 6 chữ số |
-| **BUG-GUI-009** | `GUI-009` | FR-03 | IA-03 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-03] Thiếu liên kết "Quay lại đăng nhập" tại Bước 1 |
-| **BUG-GUI-012** | `GUI-012` | FR-03 | IA-03 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-03] Phím Enter không kích hoạt gửi form chuyển bước |
-| **BUG-GUI-013** | `GUI-013` | FR-03 | IA-04 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-03] Lỗi kết nối Backend API khi kiểm tra sinh mã OTP |
-| **BUG-GUI-014** | `GUI-014` | FR-03 | IA-04 | S2 | P1 | Failed | Passed | Passed | Passed | Local Integration Defect | [FR-03] Lỗi kết nối Backend API khi kiểm tra ràng buộc OTP với email |
-| **BUG-GUI-015** | `GUI-015` | FR-03 | IA-04 | S2 | P1 | Failed | Passed | Passed | Passed | Local Integration Defect | [FR-03] Lỗi kết nối Backend API khi kiểm tra hoàn tất đặt lại mật khẩu |
-| **BUG-GUI-016** | `GUI-016` | FR-05 | IA-01 | S3 | P2 | Passed | Passed | Passed | Failed | Platform Discrepancy | [FR-05] Bố cục hiển thị lưới sản phẩm bị tràn/vỡ trên màn hình di động Galaxy S23 |
-| **BUG-GUI-017** | `GUI-017` | FR-05 | IA-01 | S3 | P2 | Passed | Passed | Passed | Failed | Platform Discrepancy | [FR-05] Typography và thông tin sản phẩm bị cắt/chèn ép trên mobile viewport |
-| **BUG-GUI-018** | `GUI-018` | FR-05 | IA-01 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-05] Thẻ sản phẩm dùng đơn vị tiền tệ "VND" thay vì ký hiệu "₫" |
-| **BUG-GUI-019** | `GUI-019` | FR-05 | IA-01 | S3 | P2 | Failed | Passed | Failed | Passed | Platform Discrepancy | [FR-05] Trang danh sách sản phẩm tồn tại 2 thẻ h1 thay vì duy nhất 1 |
-| **BUG-GUI-020** | `GUI-020` | FR-05 | IA-01 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-05] Độ tương phản màu sắc chữ trên thẻ sản phẩm không đạt chuẩn WCAG AA |
-| **BUG-GUI-021** | `GUI-021` | FR-05 | IA-01 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-05] Từ khóa tìm kiếm render trực tiếp thẻ HTML `<b>` chưa được escape |
-| **BUG-GUI-022** | `GUI-022` | FR-05 | IA-02 | S3 | P2 | Passed | Passed | Passed | Failed | Platform Discrepancy | [FR-05] Lọc tìm kiếm theo tên sản phẩm phản hồi không ổn định trên mobile |
-| **BUG-GUI-023** | `GUI-023` | FR-05 | IA-02 | S3 | P2 | Passed | Failed | Passed | Failed | Platform Discrepancy | [FR-05] Xóa trắng ô tìm kiếm không hoàn nguyên danh sách sản phẩm ban đầu |
-| **BUG-GUI-024** | `GUI-024` | FR-05 | IA-03 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-05] Mục "Trang chủ" trên Navbar không có trạng thái active khi đang xem |
-| **BUG-GUI-025** | `GUI-025` | FR-05 | IA-03 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-05] Badge số lượng giỏ hàng trên Navbar không cập nhật sau khi thêm hàng |
-| **BUG-GUI-026** | `GUI-026` | FR-05 | IA-03 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-05] Nhấp vào thẻ sản phẩm không điều hướng sang trang Chi tiết |
-| **BUG-GUI-028** | `GUI-028` | FR-05 | IA-04 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-05] Thiếu hiệu ứng skeleton/loading khi đang tải danh sách sản phẩm |
-| **BUG-GUI-029** | `GUI-029` | FR-05 | IA-04 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-05] Thiếu giao diện empty state thân thiện khi tìm kiếm không có kết quả |
-| **BUG-GUI-030** | `GUI-030` | FR-05 | IA-04 | S4 | P3 | Failed | Passed | Failed | Failed | Platform Discrepancy | [FR-05] Hình ảnh sản phẩm thiếu thuộc tính alt mô tả nội dung |
-| **BUG-GUI-031** | `GUI-031` | FR-05 | IA-04 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-05] Thiếu thông báo toast phản hồi trực quan khi bấm Thêm vào giỏ hàng |
-| **BUG-GUI-032** | `GUI-032` | FR-07 | IA-01 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-07] Bảng giỏ hàng không hiển thị đầy đủ 5 cột theo quy định đặc tả |
-| **BUG-GUI-033** | `GUI-033` | FR-07 | IA-01 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-07] Nhãn tổng tiền hiển thị sai thành "Tổng tạm tính" thay vì "Tổng cộng" |
-| **BUG-GUI-034** | `GUI-034` | FR-07 | IA-01 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-07] Các cột số tiền trong bảng giỏ hàng không được căn lề phải |
-| **BUG-GUI-035** | `GUI-035` | FR-07 | IA-01 | S3 | P2 | Passed | Passed | Passed | Failed | Platform Discrepancy | [FR-07] Bảng giỏ hàng bị tràn ngang, không hiển thị thanh cuộn responsive trên mobile |
-| **BUG-GUI-036** | `GUI-036` | FR-07 | IA-02 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-07] Dòng giỏ hàng thiếu cụm nút tăng giảm số lượng (+/-) và ô nhập |
-| **BUG-GUI-037** | `GUI-037` | FR-07 | IA-02 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-07] Giỏ hàng thiếu trường nhập trực tiếp số lượng bằng bàn phím |
-| **BUG-GUI-038** | `GUI-038` | FR-07 | IA-02 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-07] Không thể kiểm thử giá trị số lượng biên do thiếu ô nhập liệu |
-| **BUG-GUI-039** | `GUI-039` | FR-07 | IA-03 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-07] Mục "Giỏ hàng" trên Navbar không được highlight active khi đang xem |
-| **BUG-GUI-040** | `GUI-040` | FR-07 | IA-03 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-07] Trang Giỏ hàng thiếu thanh điều hướng phân cấp Breadcrumb |
-| **BUG-GUI-041** | `GUI-041` | FR-07 | IA-03 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-07] Nút tiếp tục mua sắm hiển thị nhãn "← Mua tiếp" thay vì "Tiếp tục mua sắm" |
-| **BUG-GUI-042** | `GUI-042` | FR-07 | IA-03 | S3 | P2 | Passed | Passed | Passed | Failed | Platform Discrepancy | [FR-07] Luồng điều hướng phím Tab bị nhảy không tự nhiên trên trang Giỏ hàng |
-| **BUG-GUI-043** | `GUI-043` | FR-07 | IA-04 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-07] Thêm cùng một sản phẩm nhiều lần không tự động cộng dồn số lượng |
-| **BUG-GUI-044** | `GUI-044` | FR-07 | IA-04 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-07] Thiếu hộp thoại xác nhận trước khi xóa sản phẩm khỏi giỏ hàng |
-| **BUG-GUI-045** | `GUI-045` | FR-07 | IA-04 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-07] Thao tác Hủy hoặc phím Escape không giữ lại sản phẩm trong giỏ hàng |
-| **BUG-GUI-046** | `GUI-046` | FR-07 | IA-04 | S3 | P2 | Passed | Failed | Passed | Failed | Platform Discrepancy | [FR-07] Trạng thái giỏ hàng rỗng (Empty Cart) hiển thị thiếu nhất quán giữa các trình duyệt |
-| **BUG-GUI-047** | `GUI-047` | FR-15 | IA-01 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-15] Tiêu đề các cột trong bảng quản trị sản phẩm Admin chưa được Việt hóa |
-| **BUG-GUI-048** | `GUI-048` | FR-15 | IA-01 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-15] Trang Quản lý sản phẩm thiếu thẻ tiêu đề h1 duy nhất |
-| **BUG-GUI-049** | `GUI-049` | FR-15 | IA-01 | S3 | P2 | Passed | Failed | Passed | Failed | Platform Discrepancy | [FR-15] Nút Lưu/Hủy quản trị Admin chưa áp dụng đúng bảng màu ngữ nghĩa positive/danger |
-| **BUG-GUI-050** | `GUI-050` | FR-15 | IA-02 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-15] Các trường bắt buộc trong form sản phẩm thiếu ký hiệu dấu sao (*) |
-| **BUG-GUI-051** | `GUI-051` | FR-15 | IA-02 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-15] Trường tên sản phẩm không giới hạn độ dài tối đa 255 ký tự |
-| **BUG-GUI-052** | `GUI-052` | FR-15 | IA-02 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-15] Không hiển thị thông báo lỗi khi nhập giá sản phẩm nhỏ hơn hoặc bằng 0 |
-| **BUG-GUI-053** | `GUI-053` | FR-15 | IA-02 | S3 | P2 | Passed | Failed | Failed | Failed | Shared Defect | [FR-15] Danh mục dropdown form Admin không thể chọn chính xác trên trình duyệt desktop/mobile |
-| **BUG-GUI-054** | `GUI-054` | FR-15 | IA-02 | S3 | P2 | Passed | Failed | Failed | Failed | Shared Defect | [FR-15] Ô nhập số lượng tồn kho Admin không ràng buộc biên âm hợp lệ |
-| **BUG-GUI-055** | `GUI-055` | FR-15 | IA-02 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-15] Khối thông báo lỗi form sản phẩm không nằm phía trên nút submit |
-| **BUG-GUI-056** | `GUI-056` | FR-15 | IA-03 | S3 | P2 | Passed | Failed | Failed | Failed | Shared Defect | [FR-15] Thẻ tab Admin Quản lý sản phẩm thiếu trạng thái highlight active rõ ràng |
-| **BUG-GUI-057** | `GUI-057` | FR-15 | IA-03 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-15] Nút đăng xuất dùng nhãn "Thoát"/"Log out" thay vì "Đăng xuất" |
-| **BUG-GUI-058** | `GUI-058` | FR-15 | IA-03 | S3 | P2 | Passed | Passed | Passed | Failed | Platform Discrepancy | [FR-15] Nút Hủy form Admin bị che khuất hoặc không kích hoạt được trên mobile |
-| **BUG-GUI-059** | `GUI-059` | FR-15 | IA-03 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-15] Form Sửa sản phẩm không mở dưới dạng modal có bẫy focus bàn phím |
-| **BUG-GUI-060** | `GUI-060` | FR-15 | IA-04 | S2 | P1 | Failed | Failed | Failed | Failed | Shared Defect | [FR-15] Cập nhật thông tin sản phẩm không đảm bảo tính cô lập dữ liệu |
-| **BUG-GUI-061** | `GUI-061` | FR-15 | IA-04 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-15] Thiếu modal xác nhận cảnh báo trước khi xóa sản phẩm quản trị |
-| **BUG-GUI-062** | `GUI-062` | FR-15 | IA-04 | S3 | P2 | Passed | Passed | Passed | Failed | Platform Discrepancy | [FR-15] Modal xác nhận xóa Admin không đóng được khi chạm ngoài vùng overlay trên mobile |
-| **BUG-GUI-063** | `GUI-063` | FR-15 | IA-04 | S3 | P2 | Passed | Failed | Failed | Failed | Shared Defect | [FR-15] Thiếu toast thông báo phản hồi khi hoàn tất thêm/sửa/xóa sản phẩm Admin |
-| **BUG-GUI-064** | `GUI-064` | FR-15 | IA-04 | S4 | P3 | Passed | Failed | Passed | Failed | Platform Discrepancy | [FR-15] Hình ảnh sản phẩm trong bảng quản trị Admin thiếu thuộc tính alt ngữ nghĩa |
-| **BUG-GUI-065** | `GUI-065` | FR-05 | IA-02 | S3 | P2 | Not Run | Failed | Not Run | Not Run | Platform Discrepancy | [FR-05] Ô tìm kiếm bị mất ký tự khi gõ tiếng Việt Telex/VNI có sự kiện composition |
-| **BUG-GUI-066** | `GUI-066` | FR-07 | IA-01 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-07] Nút Xóa sản phẩm thiếu thuộc tính aria-label cho công nghệ hỗ trợ |
-| **BUG-GUI-067** | `GUI-067` | FR-05 | IA-04 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-05] Thiếu giao diện thông báo lỗi mạng và nút "Thử lại" khi mất kết nối API |
-| **BUG-GUI-068** | `GUI-068` | FR-07 | IA-02 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-07] Ô nhập số lượng giỏ hàng xử lý chưa an toàn khi xóa trắng giá trị |
-| **BUG-GUI-069** | `GUI-069` | FR-07 | IA-01 | S3 | P2 | Passed | Failed | Passed | Passed | Platform Discrepancy | [FR-07] Kích thước vùng cảm ứng nút bấm giỏ hàng nhỏ hơn 44x44px trên thiết bị cảm ứng |
-| **BUG-GUI-070** | `GUI-070` | FR-05 | IA-04 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-05] Nút Thêm vào giỏ hàng thiếu cơ chế chống click spam liên tục |
+| Bug Key | Checklist ID | Màn hình | IA | Mức độ | Ưu tiên | T1 Local | P1 Win11 | P2 Win11 | P3 Galaxy S23 | Phân loại Khiếm khuyết | Tóm tắt Khiếm khuyết | GitHub Issue |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :--- | :--- | :---: |
+| **BUG-GUI-001** | `GUI-001` | FR-03 | IA-01 | S3 | P2 | Passed | Failed | Passed | Passed | Platform Discrepancy | [FR-03] Lỗi timeout/hiển thị văn bản tiếng Việt trên Chrome Win11 | [#84](https://github.com/nguyenanhtuan2702/eshop-sut/issues/84) ([Ảnh](issue-screenshots/BUG-GUI-001.png)) |
+| **BUG-GUI-002** | `GUI-002` | FR-03 | IA-01 | S3 | P2 | Passed | Failed | Passed | Passed | Platform Discrepancy | [FR-03] Màu sắc nút hành động chính/phụ chưa đồng bộ chuẩn positive/danger | [#85](https://github.com/nguyenanhtuan2702/eshop-sut/issues/85) ([Ảnh](issue-screenshots/BUG-GUI-002.png)) |
+| **BUG-GUI-003** | `GUI-003` | FR-03 | IA-01 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-03] Trang Quên mật khẩu thiếu thẻ tiêu đề h1 duy nhất | [#86](https://github.com/nguyenanhtuan2702/eshop-sut/issues/86) ([Ảnh](issue-screenshots/BUG-GUI-003.png)) |
+| **BUG-GUI-004** | `GUI-004` | FR-03 | IA-02 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-03] Ô nhập Email thiếu thuộc tính type="email" | [#87](https://github.com/nguyenanhtuan2702/eshop-sut/issues/87) ([Ảnh](issue-screenshots/BUG-GUI-004.png)) |
+| **BUG-GUI-005** | `GUI-005` | FR-03 | IA-02 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-03] Thiếu chỉ báo tiến trình bước (Bước 1/2) tại Bước 1 | [#88](https://github.com/nguyenanhtuan2702/eshop-sut/issues/88) ([Ảnh](issue-screenshots/BUG-GUI-005.png)) |
+| **BUG-GUI-006** | `GUI-006` | FR-03 | IA-02 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-03] Thiếu trường nhập xác nhận mật khẩu tại Bước 2 | [#89](https://github.com/nguyenanhtuan2702/eshop-sut/issues/89) ([Ảnh](issue-screenshots/BUG-GUI-006.png)) |
+| **BUG-GUI-007** | `GUI-007` | FR-03 | IA-02 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-03] Thiếu khối hiển thị lỗi validation phía trên nút gửi | [#90](https://github.com/nguyenanhtuan2702/eshop-sut/issues/90) ([Ảnh](issue-screenshots/BUG-GUI-007.png)) |
+| **BUG-GUI-008** | `GUI-008` | FR-03 | IA-02 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-03] Ô nhập OTP không thông báo lỗi khi không đúng định dạng 6 chữ số | [#91](https://github.com/nguyenanhtuan2702/eshop-sut/issues/91) ([Ảnh](issue-screenshots/BUG-GUI-008.png)) |
+| **BUG-GUI-009** | `GUI-009` | FR-03 | IA-03 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-03] Thiếu liên kết "Quay lại đăng nhập" tại Bước 1 | [#92](https://github.com/nguyenanhtuan2702/eshop-sut/issues/92) ([Ảnh](issue-screenshots/BUG-GUI-009.png)) |
+| **BUG-GUI-012** | `GUI-012` | FR-03 | IA-03 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-03] Phím Enter không kích hoạt gửi form chuyển bước | [#93](https://github.com/nguyenanhtuan2702/eshop-sut/issues/93) ([Ảnh](issue-screenshots/BUG-GUI-012.png)) |
+| **BUG-GUI-013** | `GUI-013` | FR-03 | IA-04 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-03] Lỗi kết nối Backend API khi kiểm tra sinh mã OTP | [#94](https://github.com/nguyenanhtuan2702/eshop-sut/issues/94) ([Ảnh](issue-screenshots/BUG-GUI-013.png)) |
+| **BUG-GUI-014** | `GUI-014` | FR-03 | IA-04 | S2 | P1 | Failed | Passed | Passed | Passed | Local Integration Defect | [FR-03] Lỗi kết nối Backend API khi kiểm tra ràng buộc OTP với email | [#95](https://github.com/nguyenanhtuan2702/eshop-sut/issues/95) ([Ảnh](issue-screenshots/BUG-GUI-014.png)) |
+| **BUG-GUI-015** | `GUI-015` | FR-03 | IA-04 | S2 | P1 | Failed | Passed | Passed | Passed | Local Integration Defect | [FR-03] Lỗi kết nối Backend API khi kiểm tra hoàn tất đặt lại mật khẩu | [#96](https://github.com/nguyenanhtuan2702/eshop-sut/issues/96) ([Ảnh](issue-screenshots/BUG-GUI-015.png)) |
+| **BUG-GUI-016** | `GUI-016` | FR-05 | IA-01 | S3 | P2 | Passed | Passed | Passed | Failed | Platform Discrepancy | [FR-05] Bố cục hiển thị lưới sản phẩm bị tràn/vỡ trên màn hình di động Galaxy S23 | [#97](https://github.com/nguyenanhtuan2702/eshop-sut/issues/97) ([Ảnh](issue-screenshots/BUG-GUI-016.png)) |
+| **BUG-GUI-017** | `GUI-017` | FR-05 | IA-01 | S3 | P2 | Passed | Passed | Passed | Failed | Platform Discrepancy | [FR-05] Typography và thông tin sản phẩm bị cắt/chèn ép trên mobile viewport | [#98](https://github.com/nguyenanhtuan2702/eshop-sut/issues/98) ([Ảnh](issue-screenshots/BUG-GUI-017.png)) |
+| **BUG-GUI-018** | `GUI-018` | FR-05 | IA-01 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-05] Thẻ sản phẩm dùng đơn vị tiền tệ "VND" thay vì ký hiệu "₫" | [#99](https://github.com/nguyenanhtuan2702/eshop-sut/issues/99) ([Ảnh](issue-screenshots/BUG-GUI-018.png)) |
+| **BUG-GUI-019** | `GUI-019` | FR-05 | IA-01 | S3 | P2 | Failed | Passed | Failed | Passed | Platform Discrepancy | [FR-05] Trang danh sách sản phẩm tồn tại 2 thẻ h1 thay vì duy nhất 1 | [#100](https://github.com/nguyenanhtuan2702/eshop-sut/issues/100) ([Ảnh](issue-screenshots/BUG-GUI-019.png)) |
+| **BUG-GUI-020** | `GUI-020` | FR-05 | IA-01 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-05] Độ tương phản màu sắc chữ trên thẻ sản phẩm không đạt chuẩn WCAG AA | [#101](https://github.com/nguyenanhtuan2702/eshop-sut/issues/101) ([Ảnh](issue-screenshots/BUG-GUI-020.png)) |
+| **BUG-GUI-021** | `GUI-021` | FR-05 | IA-01 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-05] Từ khóa tìm kiếm render trực tiếp thẻ HTML `<b>` chưa được escape | [#102](https://github.com/nguyenanhtuan2702/eshop-sut/issues/102) ([Ảnh](issue-screenshots/BUG-GUI-021.png)) |
+| **BUG-GUI-022** | `GUI-022` | FR-05 | IA-02 | S3 | P2 | Passed | Passed | Passed | Failed | Platform Discrepancy | [FR-05] Lọc tìm kiếm theo tên sản phẩm phản hồi không ổn định trên mobile | [#103](https://github.com/nguyenanhtuan2702/eshop-sut/issues/103) ([Ảnh](issue-screenshots/BUG-GUI-022.png)) |
+| **BUG-GUI-023** | `GUI-023` | FR-05 | IA-02 | S3 | P2 | Passed | Failed | Passed | Failed | Platform Discrepancy | [FR-05] Xóa trắng ô tìm kiếm không hoàn nguyên danh sách sản phẩm ban đầu | [#104](https://github.com/nguyenanhtuan2702/eshop-sut/issues/104) ([Ảnh](issue-screenshots/BUG-GUI-023.png)) |
+| **BUG-GUI-024** | `GUI-024` | FR-05 | IA-03 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-05] Mục "Trang chủ" trên Navbar không có trạng thái active khi đang xem | [#105](https://github.com/nguyenanhtuan2702/eshop-sut/issues/105) ([Ảnh](issue-screenshots/BUG-GUI-024.png)) |
+| **BUG-GUI-025** | `GUI-025` | FR-05 | IA-03 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-05] Badge số lượng giỏ hàng trên Navbar không cập nhật sau khi thêm hàng | [#106](https://github.com/nguyenanhtuan2702/eshop-sut/issues/106) ([Ảnh](issue-screenshots/BUG-GUI-025.png)) |
+| **BUG-GUI-026** | `GUI-026` | FR-05 | IA-03 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-05] Nhấp vào thẻ sản phẩm không điều hướng sang trang Chi tiết | [#107](https://github.com/nguyenanhtuan2702/eshop-sut/issues/107) ([Ảnh](issue-screenshots/BUG-GUI-026.png)) |
+| **BUG-GUI-028** | `GUI-028` | FR-05 | IA-04 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-05] Thiếu hiệu ứng skeleton/loading khi đang tải danh sách sản phẩm | [#108](https://github.com/nguyenanhtuan2702/eshop-sut/issues/108) ([Ảnh](issue-screenshots/BUG-GUI-028.png)) |
+| **BUG-GUI-029** | `GUI-029` | FR-05 | IA-04 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-05] Thiếu giao diện empty state thân thiện khi tìm kiếm không có kết quả | [#109](https://github.com/nguyenanhtuan2702/eshop-sut/issues/109) ([Ảnh](issue-screenshots/BUG-GUI-029.png)) |
+| **BUG-GUI-030** | `GUI-030` | FR-05 | IA-04 | S4 | P3 | Failed | Passed | Failed | Failed | Platform Discrepancy | [FR-05] Hình ảnh sản phẩm thiếu thuộc tính alt mô tả nội dung | [#110](https://github.com/nguyenanhtuan2702/eshop-sut/issues/110) ([Ảnh](issue-screenshots/BUG-GUI-030.png)) |
+| **BUG-GUI-031** | `GUI-031` | FR-05 | IA-04 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-05] Thiếu thông báo toast phản hồi trực quan khi bấm Thêm vào giỏ hàng | [#111](https://github.com/nguyenanhtuan2702/eshop-sut/issues/111) ([Ảnh](issue-screenshots/BUG-GUI-031.png)) |
+| **BUG-GUI-032** | `GUI-032` | FR-07 | IA-01 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-07] Bảng giỏ hàng không hiển thị đầy đủ 5 cột theo quy định đặc tả | [#115](https://github.com/nguyenanhtuan2702/eshop-sut/issues/115) ([Ảnh](issue-screenshots/BUG-GUI-032.png)) |
+| **BUG-GUI-033** | `GUI-033` | FR-07 | IA-01 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-07] Nhãn tổng tiền hiển thị sai thành "Tổng tạm tính" thay vì "Tổng cộng" | [#116](https://github.com/nguyenanhtuan2702/eshop-sut/issues/116) ([Ảnh](issue-screenshots/BUG-GUI-033.png)) |
+| **BUG-GUI-034** | `GUI-034` | FR-07 | IA-01 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-07] Các cột số tiền trong bảng giỏ hàng không được căn lề phải | [#117](https://github.com/nguyenanhtuan2702/eshop-sut/issues/117) ([Ảnh](issue-screenshots/BUG-GUI-034.png)) |
+| **BUG-GUI-035** | `GUI-035` | FR-07 | IA-01 | S3 | P2 | Passed | Passed | Passed | Failed | Platform Discrepancy | [FR-07] Bảng giỏ hàng bị tràn ngang, không hiển thị thanh cuộn responsive trên mobile | [#118](https://github.com/nguyenanhtuan2702/eshop-sut/issues/118) ([Ảnh](issue-screenshots/BUG-GUI-035.png)) |
+| **BUG-GUI-036** | `GUI-036` | FR-07 | IA-02 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-07] Dòng giỏ hàng thiếu cụm nút tăng giảm số lượng (+/-) và ô nhập | [#119](https://github.com/nguyenanhtuan2702/eshop-sut/issues/119) ([Ảnh](issue-screenshots/BUG-GUI-036.png)) |
+| **BUG-GUI-037** | `GUI-037` | FR-07 | IA-02 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-07] Giỏ hàng thiếu trường nhập trực tiếp số lượng bằng bàn phím | [#120](https://github.com/nguyenanhtuan2702/eshop-sut/issues/120) ([Ảnh](issue-screenshots/BUG-GUI-037.png)) |
+| **BUG-GUI-038** | `GUI-038` | FR-07 | IA-02 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-07] Không thể kiểm thử giá trị số lượng biên do thiếu ô nhập liệu | [#121](https://github.com/nguyenanhtuan2702/eshop-sut/issues/121) ([Ảnh](issue-screenshots/BUG-GUI-038.png)) |
+| **BUG-GUI-039** | `GUI-039` | FR-07 | IA-03 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-07] Mục "Giỏ hàng" trên Navbar không được highlight active khi đang xem | [#122](https://github.com/nguyenanhtuan2702/eshop-sut/issues/122) ([Ảnh](issue-screenshots/BUG-GUI-039.png)) |
+| **BUG-GUI-040** | `GUI-040` | FR-07 | IA-03 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-07] Trang Giỏ hàng thiếu thanh điều hướng phân cấp Breadcrumb | [#123](https://github.com/nguyenanhtuan2702/eshop-sut/issues/123) ([Ảnh](issue-screenshots/BUG-GUI-040.png)) |
+| **BUG-GUI-041** | `GUI-041` | FR-07 | IA-03 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-07] Nút tiếp tục mua sắm hiển thị nhãn "← Mua tiếp" thay vì "Tiếp tục mua sắm" | [#124](https://github.com/nguyenanhtuan2702/eshop-sut/issues/124) ([Ảnh](issue-screenshots/BUG-GUI-041.png)) |
+| **BUG-GUI-042** | `GUI-042` | FR-07 | IA-03 | S3 | P2 | Passed | Passed | Passed | Failed | Platform Discrepancy | [FR-07] Luồng điều hướng phím Tab bị nhảy không tự nhiên trên trang Giỏ hàng | [#125](https://github.com/nguyenanhtuan2702/eshop-sut/issues/125) ([Ảnh](issue-screenshots/BUG-GUI-042.png)) |
+| **BUG-GUI-043** | `GUI-043` | FR-07 | IA-04 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-07] Thêm cùng một sản phẩm nhiều lần không tự động cộng dồn số lượng | [#126](https://github.com/nguyenanhtuan2702/eshop-sut/issues/126) ([Ảnh](issue-screenshots/BUG-GUI-043.png)) |
+| **BUG-GUI-044** | `GUI-044` | FR-07 | IA-04 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-07] Thiếu hộp thoại xác nhận trước khi xóa sản phẩm khỏi giỏ hàng | [#127](https://github.com/nguyenanhtuan2702/eshop-sut/issues/127) ([Ảnh](issue-screenshots/BUG-GUI-044.png)) |
+| **BUG-GUI-045** | `GUI-045` | FR-07 | IA-04 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-07] Thao tác Hủy hoặc phím Escape không giữ lại sản phẩm trong giỏ hàng | [#128](https://github.com/nguyenanhtuan2702/eshop-sut/issues/128) ([Ảnh](issue-screenshots/BUG-GUI-045.png)) |
+| **BUG-GUI-046** | `GUI-046` | FR-07 | IA-04 | S3 | P2 | Passed | Failed | Passed | Failed | Platform Discrepancy | [FR-07] Trạng thái giỏ hàng rỗng (Empty Cart) hiển thị thiếu nhất quán giữa các trình duyệt | [#129](https://github.com/nguyenanhtuan2702/eshop-sut/issues/129) ([Ảnh](issue-screenshots/BUG-GUI-046.png)) |
+| **BUG-GUI-047** | `GUI-047` | FR-15 | IA-01 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-15] Tiêu đề các cột trong bảng quản trị sản phẩm Admin chưa được Việt hóa | [#133](https://github.com/nguyenanhtuan2702/eshop-sut/issues/133) ([Ảnh](issue-screenshots/BUG-GUI-047.png)) |
+| **BUG-GUI-048** | `GUI-048` | FR-15 | IA-01 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-15] Trang Quản lý sản phẩm thiếu thẻ tiêu đề h1 duy nhất | [#134](https://github.com/nguyenanhtuan2702/eshop-sut/issues/134) ([Ảnh](issue-screenshots/BUG-GUI-048.png)) |
+| **BUG-GUI-049** | `GUI-049` | FR-15 | IA-01 | S3 | P2 | Passed | Failed | Passed | Failed | Platform Discrepancy | [FR-15] Nút Lưu/Hủy quản trị Admin chưa áp dụng đúng bảng màu ngữ nghĩa positive/danger | [#135](https://github.com/nguyenanhtuan2702/eshop-sut/issues/135) ([Ảnh](issue-screenshots/BUG-GUI-049.png)) |
+| **BUG-GUI-050** | `GUI-050` | FR-15 | IA-02 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-15] Các trường bắt buộc trong form sản phẩm thiếu ký hiệu dấu sao (*) | [#136](https://github.com/nguyenanhtuan2702/eshop-sut/issues/136) ([Ảnh](issue-screenshots/BUG-GUI-050.png)) |
+| **BUG-GUI-051** | `GUI-051` | FR-15 | IA-02 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-15] Trường tên sản phẩm không giới hạn độ dài tối đa 255 ký tự | [#137](https://github.com/nguyenanhtuan2702/eshop-sut/issues/137) ([Ảnh](issue-screenshots/BUG-GUI-051.png)) |
+| **BUG-GUI-052** | `GUI-052` | FR-15 | IA-02 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-15] Không hiển thị thông báo lỗi khi nhập giá sản phẩm nhỏ hơn hoặc bằng 0 | [#138](https://github.com/nguyenanhtuan2702/eshop-sut/issues/138) ([Ảnh](issue-screenshots/BUG-GUI-052.png)) |
+| **BUG-GUI-053** | `GUI-053` | FR-15 | IA-02 | S3 | P2 | Passed | Failed | Failed | Failed | Shared Defect | [FR-15] Danh mục dropdown form Admin không thể chọn chính xác trên trình duyệt desktop/mobile | [#139](https://github.com/nguyenanhtuan2702/eshop-sut/issues/139) ([Ảnh](issue-screenshots/BUG-GUI-053.png)) |
+| **BUG-GUI-054** | `GUI-054` | FR-15 | IA-02 | S3 | P2 | Passed | Failed | Failed | Failed | Shared Defect | [FR-15] Ô nhập số lượng tồn kho Admin không ràng buộc biên âm hợp lệ | [#140](https://github.com/nguyenanhtuan2702/eshop-sut/issues/140) ([Ảnh](issue-screenshots/BUG-GUI-054.png)) |
+| **BUG-GUI-055** | `GUI-055` | FR-15 | IA-02 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-15] Khối thông báo lỗi form sản phẩm không nằm phía trên nút submit | [#141](https://github.com/nguyenanhtuan2702/eshop-sut/issues/141) ([Ảnh](issue-screenshots/BUG-GUI-055.png)) |
+| **BUG-GUI-056** | `GUI-056` | FR-15 | IA-03 | S3 | P2 | Passed | Failed | Failed | Failed | Shared Defect | [FR-15] Thẻ tab Admin Quản lý sản phẩm thiếu trạng thái highlight active rõ ràng | [#142](https://github.com/nguyenanhtuan2702/eshop-sut/issues/142) ([Ảnh](issue-screenshots/BUG-GUI-056.png)) |
+| **BUG-GUI-057** | `GUI-057` | FR-15 | IA-03 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-15] Nút đăng xuất dùng nhãn "Thoát"/"Log out" thay vì "Đăng xuất" | [#143](https://github.com/nguyenanhtuan2702/eshop-sut/issues/143) ([Ảnh](issue-screenshots/BUG-GUI-057.png)) |
+| **BUG-GUI-058** | `GUI-058` | FR-15 | IA-03 | S3 | P2 | Passed | Passed | Passed | Failed | Platform Discrepancy | [FR-15] Nút Hủy form Admin bị che khuất hoặc không kích hoạt được trên mobile | [#144](https://github.com/nguyenanhtuan2702/eshop-sut/issues/144) ([Ảnh](issue-screenshots/BUG-GUI-058.png)) |
+| **BUG-GUI-059** | `GUI-059` | FR-15 | IA-03 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-15] Form Sửa sản phẩm không mở dưới dạng modal có bẫy focus bàn phím | [#145](https://github.com/nguyenanhtuan2702/eshop-sut/issues/145) ([Ảnh](issue-screenshots/BUG-GUI-059.png)) |
+| **BUG-GUI-060** | `GUI-060` | FR-15 | IA-04 | S2 | P1 | Failed | Failed | Failed | Failed | Shared Defect | [FR-15] Cập nhật thông tin sản phẩm không đảm bảo tính cô lập dữ liệu | [#146](https://github.com/nguyenanhtuan2702/eshop-sut/issues/146) ([Ảnh](issue-screenshots/BUG-GUI-060.png)) |
+| **BUG-GUI-061** | `GUI-061` | FR-15 | IA-04 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-15] Thiếu modal xác nhận cảnh báo trước khi xóa sản phẩm quản trị | [#147](https://github.com/nguyenanhtuan2702/eshop-sut/issues/147) ([Ảnh](issue-screenshots/BUG-GUI-061.png)) |
+| **BUG-GUI-062** | `GUI-062` | FR-15 | IA-04 | S3 | P2 | Passed | Passed | Passed | Failed | Platform Discrepancy | [FR-15] Modal xác nhận xóa Admin không đóng được khi chạm ngoài vùng overlay trên mobile | [#148](https://github.com/nguyenanhtuan2702/eshop-sut/issues/148) ([Ảnh](issue-screenshots/BUG-GUI-062.png)) |
+| **BUG-GUI-063** | `GUI-063` | FR-15 | IA-04 | S3 | P2 | Passed | Failed | Failed | Failed | Shared Defect | [FR-15] Thiếu toast thông báo phản hồi khi hoàn tất thêm/sửa/xóa sản phẩm Admin | [#149](https://github.com/nguyenanhtuan2702/eshop-sut/issues/149) ([Ảnh](issue-screenshots/BUG-GUI-063.png)) |
+| **BUG-GUI-064** | `GUI-064` | FR-15 | IA-04 | S4 | P3 | Passed | Failed | Passed | Failed | Platform Discrepancy | [FR-15] Hình ảnh sản phẩm trong bảng quản trị Admin thiếu thuộc tính alt ngữ nghĩa | [#150](https://github.com/nguyenanhtuan2702/eshop-sut/issues/150) ([Ảnh](issue-screenshots/BUG-GUI-064.png)) |
+| **BUG-GUI-065** | `GUI-065` | FR-05 | IA-02 | S3 | P2 | Not Run | Failed | Not Run | Not Run | Platform Discrepancy | [FR-05] Ô tìm kiếm bị mất ký tự khi gõ tiếng Việt Telex/VNI có sự kiện composition | [#112](https://github.com/nguyenanhtuan2702/eshop-sut/issues/112) ([Ảnh](issue-screenshots/BUG-GUI-065.png)) |
+| **BUG-GUI-066** | `GUI-066` | FR-07 | IA-01 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-07] Nút Xóa sản phẩm thiếu thuộc tính aria-label cho công nghệ hỗ trợ | [#130](https://github.com/nguyenanhtuan2702/eshop-sut/issues/130) ([Ảnh](issue-screenshots/BUG-GUI-066.png)) |
+| **BUG-GUI-067** | `GUI-067` | FR-05 | IA-04 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-05] Thiếu giao diện thông báo lỗi mạng và nút "Thử lại" khi mất kết nối API | [#113](https://github.com/nguyenanhtuan2702/eshop-sut/issues/113) ([Ảnh](issue-screenshots/BUG-GUI-067.png)) |
+| **BUG-GUI-068** | `GUI-068` | FR-07 | IA-02 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-07] Ô nhập số lượng giỏ hàng xử lý chưa an toàn khi xóa trắng giá trị | [#131](https://github.com/nguyenanhtuan2702/eshop-sut/issues/131) ([Ảnh](issue-screenshots/BUG-GUI-068.png)) |
+| **BUG-GUI-069** | `GUI-069` | FR-07 | IA-01 | S3 | P2 | Passed | Failed | Passed | Passed | Platform Discrepancy | [FR-07] Kích thước vùng cảm ứng nút bấm giỏ hàng nhỏ hơn 44x44px trên thiết bị cảm ứng | [#132](https://github.com/nguyenanhtuan2702/eshop-sut/issues/132) ([Ảnh](issue-screenshots/BUG-GUI-069.png)) |
+| **BUG-GUI-070** | `GUI-070` | FR-05 | IA-04 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-05] Nút Thêm vào giỏ hàng thiếu cơ chế chống click spam liên tục | [#114](https://github.com/nguyenanhtuan2702/eshop-sut/issues/114) ([Ảnh](issue-screenshots/BUG-GUI-070.png)) |
 
 ---
 
@@ -169,6 +169,8 @@ Bảng ma trận dưới đây liệt kê đầy đủ 67 khiếm khuyết đư�
 - **Đặc tả Yêu cầu liên quan**: `FR21-LANG;USR-UI-TYPO`
 - **Mức độ Nghiêm trọng (Severity)**: **S3** | **Mức độ Ưu tiên (Priority)**: **P2**
 - **Phân loại Khiếm khuyết**: `Platform Discrepancy (Sai lệch nền tảng/thiết bị)`
+- **GitHub Issue**: [#84](https://github.com/nguyenanhtuan2702/eshop-sut/issues/84)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-GUI-001.png)
 
 #### 1. Môi trường Ghi nhận & Hành vi Lỗi
 | Môi trường Thực thi | Trạng thái | Chi tiết Hành vi / Mã lỗi |
@@ -188,6 +190,7 @@ Bảng ma trận dưới đây liệt kê đầy đủ 67 khiếm khuyết đư�
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-03] Lỗi timeout/hiển thị văn bản tiếng Việt trên Chrome Win11.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
+- **Ảnh chụp Issue trên GitHub (#84)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-GUI-001.png)
 - **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-001.png)
 - **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-001.png)
 - **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-001.png)
@@ -207,6 +210,8 @@ Bổ sung `font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, H
 - **Đặc tả Yêu cầu liên quan**: `FR21-COLOR-POS;FR21-COLOR-DANGER`
 - **Mức độ Nghiêm trọng (Severity)**: **S3** | **Mức độ Ưu tiên (Priority)**: **P2**
 - **Phân loại Khiếm khuyết**: `Platform Discrepancy (Sai lệch nền tảng/thiết bị)`
+- **GitHub Issue**: [#85](https://github.com/nguyenanhtuan2702/eshop-sut/issues/85)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-GUI-002.png)
 
 #### 1. Môi trường Ghi nhận & Hành vi Lỗi
 | Môi trường Thực thi | Trạng thái | Chi tiết Hành vi / Mã lỗi |
@@ -226,6 +231,7 @@ Bổ sung `font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, H
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-03] Màu sắc nút hành động chính/phụ chưa đồng bộ chuẩn positive/danger.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
+- **Ảnh chụp Issue trên GitHub (#85)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-GUI-002.png)
 - **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-002.png)
 - **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-002.png)
 - **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-002.png)
@@ -245,6 +251,8 @@ Cập nhật CSS class của nút submit chính sang `btn btn-primary` với mà
 - **Đặc tả Yêu cầu liên quan**: `FR21-H1`
 - **Mức độ Nghiêm trọng (Severity)**: **S3** | **Mức độ Ưu tiên (Priority)**: **P2**
 - **Phân loại Khiếm khuyết**: `Shared Defect (Lỗi chung 3 nền tảng)`
+- **GitHub Issue**: [#86](https://github.com/nguyenanhtuan2702/eshop-sut/issues/86)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-GUI-003.png)
 
 #### 1. Môi trường Ghi nhận & Hành vi Lỗi
 | Môi trường Thực thi | Trạng thái | Chi tiết Hành vi / Mã lỗi |
@@ -264,6 +272,7 @@ Cập nhật CSS class của nút submit chính sang `btn btn-primary` với mà
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-03] Trang Quên mật khẩu thiếu thẻ tiêu đề h1 duy nhất.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
+- **Ảnh chụp Issue trên GitHub (#86)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-GUI-003.png)
 - **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-003.png)
 - **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-003.png)
 - **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-003.png)
@@ -283,6 +292,8 @@ Trang Quên mật khẩu hiện sử dụng thẻ `<h3>` hoặc `<div>` cho tiê
 - **Đặc tả Yêu cầu liên quan**: `FR22-REQ;FR22-EMAIL;FR03-EMAIL-INPUT`
 - **Mức độ Nghiêm trọng (Severity)**: **S3** | **Mức độ Ưu tiên (Priority)**: **P2**
 - **Phân loại Khiếm khuyết**: `Shared Defect (Lỗi chung 3 nền tảng)`
+- **GitHub Issue**: [#87](https://github.com/nguyenanhtuan2702/eshop-sut/issues/87)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-GUI-004.png)
 
 #### 1. Môi trường Ghi nhận & Hành vi Lỗi
 | Môi trường Thực thi | Trạng thái | Chi tiết Hành vi / Mã lỗi |
@@ -302,6 +313,7 @@ Trang Quên mật khẩu hiện sử dụng thẻ `<h3>` hoặc `<div>` cho tiê
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-03] Ô nhập Email thiếu thuộc tính type="email".
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
+- **Ảnh chụp Issue trên GitHub (#87)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-GUI-004.png)
 - **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-004.png)
 - **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-004.png)
 - **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-004.png)
@@ -321,6 +333,8 @@ Cập nhật `<input type="email" id="email" name="email" required pattern="[a-z
 - **Đặc tả Yêu cầu liên quan**: `FR22-STEP;FR03-STEP-IND`
 - **Mức độ Nghiêm trọng (Severity)**: **S3** | **Mức độ Ưu tiên (Priority)**: **P2**
 - **Phân loại Khiếm khuyết**: `Shared Defect (Lỗi chung 3 nền tảng)`
+- **GitHub Issue**: [#88](https://github.com/nguyenanhtuan2702/eshop-sut/issues/88)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-GUI-005.png)
 
 #### 1. Môi trường Ghi nhận & Hành vi Lỗi
 | Môi trường Thực thi | Trạng thái | Chi tiết Hành vi / Mã lỗi |
@@ -340,6 +354,7 @@ Cập nhật `<input type="email" id="email" name="email" required pattern="[a-z
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-03] Thiếu chỉ báo tiến trình bước (Bước 1/2) tại Bước 1.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
+- **Ảnh chụp Issue trên GitHub (#88)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-GUI-005.png)
 - **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-005.png)
 - **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-005.png)
 - **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-005.png)
@@ -359,6 +374,8 @@ Thêm thanh chỉ báo bước trực quan `<div class="step-indicator" aria-lab
 - **Đặc tả Yêu cầu liên quan**: `FR22-PWD;FR03-RESET-INPUTS`
 - **Mức độ Nghiêm trọng (Severity)**: **S3** | **Mức độ Ưu tiên (Priority)**: **P2**
 - **Phân loại Khiếm khuyết**: `Shared Defect (Lỗi chung 3 nền tảng)`
+- **GitHub Issue**: [#89](https://github.com/nguyenanhtuan2702/eshop-sut/issues/89)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-GUI-006.png)
 
 #### 1. Môi trường Ghi nhận & Hành vi Lỗi
 | Môi trường Thực thi | Trạng thái | Chi tiết Hành vi / Mã lỗi |
@@ -378,6 +395,7 @@ Thêm thanh chỉ báo bước trực quan `<div class="step-indicator" aria-lab
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-03] Thiếu trường nhập xác nhận mật khẩu tại Bước 2.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
+- **Ảnh chụp Issue trên GitHub (#89)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-GUI-006.png)
 - **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-006.png)
 - **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-006.png)
 - **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-006.png)
@@ -397,6 +415,8 @@ Thêm trường `<input type="password" id="confirmPassword" name="confirmPasswo
 - **Đặc tả Yêu cầu liên quan**: `FR03-PWD-RULES;FR03-PWD-CONFIRM;FR22-ERR-POS`
 - **Mức độ Nghiêm trọng (Severity)**: **S3** | **Mức độ Ưu tiên (Priority)**: **P2**
 - **Phân loại Khiếm khuyết**: `Shared Defect (Lỗi chung 3 nền tảng)`
+- **GitHub Issue**: [#90](https://github.com/nguyenanhtuan2702/eshop-sut/issues/90)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-GUI-007.png)
 
 #### 1. Môi trường Ghi nhận & Hành vi Lỗi
 | Môi trường Thực thi | Trạng thái | Chi tiết Hành vi / Mã lỗi |
@@ -416,6 +436,7 @@ Thêm trường `<input type="password" id="confirmPassword" name="confirmPasswo
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-03] Thiếu khối hiển thị lỗi validation phía trên nút gửi.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
+- **Ảnh chụp Issue trên GitHub (#90)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-GUI-007.png)
 - **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-007.png)
 - **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-007.png)
 - **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-007.png)
@@ -435,6 +456,8 @@ Bố trí khối thông báo lỗi chuyên biệt `<div id="validation-error-box
 - **Đặc tả Yêu cầu liên quan**: `FR03-RESET-INPUTS`
 - **Mức độ Nghiêm trọng (Severity)**: **S3** | **Mức độ Ưu tiên (Priority)**: **P2**
 - **Phân loại Khiếm khuyết**: `Shared Defect (Lỗi chung 3 nền tảng)`
+- **GitHub Issue**: [#91](https://github.com/nguyenanhtuan2702/eshop-sut/issues/91)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-GUI-008.png)
 
 #### 1. Môi trường Ghi nhận & Hành vi Lỗi
 | Môi trường Thực thi | Trạng thái | Chi tiết Hành vi / Mã lỗi |
@@ -454,6 +477,7 @@ Bố trí khối thông báo lỗi chuyên biệt `<div id="validation-error-box
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-03] Ô nhập OTP không thông báo lỗi khi không đúng định dạng 6 chữ số.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
+- **Ảnh chụp Issue trên GitHub (#91)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-GUI-008.png)
 - **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-008.png)
 - **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-008.png)
 - **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-008.png)
@@ -473,6 +497,8 @@ Thêm thuộc tính `inputmode="numeric" pattern="[0-9]{6}" maxlength="6"` và h
 - **Đặc tả Yêu cầu liên quan**: `FR03-BACK-LOGIN`
 - **Mức độ Nghiêm trọng (Severity)**: **S3** | **Mức độ Ưu tiên (Priority)**: **P2**
 - **Phân loại Khiếm khuyết**: `Shared Defect (Lỗi chung 3 nền tảng)`
+- **GitHub Issue**: [#92](https://github.com/nguyenanhtuan2702/eshop-sut/issues/92)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-GUI-009.png)
 
 #### 1. Môi trường Ghi nhận & Hành vi Lỗi
 | Môi trường Thực thi | Trạng thái | Chi tiết Hành vi / Mã lỗi |
@@ -492,6 +518,7 @@ Thêm thuộc tính `inputmode="numeric" pattern="[0-9]{6}" maxlength="6"` và h
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-03] Thiếu liên kết "Quay lại đăng nhập" tại Bước 1.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
+- **Ảnh chụp Issue trên GitHub (#92)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-GUI-009.png)
 - **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-009.png)
 - **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-009.png)
 - **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-009.png)
@@ -511,6 +538,8 @@ Bổ sung liên kết `<a href="/login" class="back-link">← Quay lại Đăng 
 - **Đặc tả Yêu cầu liên quan**: `USR-KBD-NAV`
 - **Mức độ Nghiêm trọng (Severity)**: **S3** | **Mức độ Ưu tiên (Priority)**: **P2**
 - **Phân loại Khiếm khuyết**: `Shared Defect (Lỗi chung 3 nền tảng)`
+- **GitHub Issue**: [#93](https://github.com/nguyenanhtuan2702/eshop-sut/issues/93)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-GUI-012.png)
 
 #### 1. Môi trường Ghi nhận & Hành vi Lỗi
 | Môi trường Thực thi | Trạng thái | Chi tiết Hành vi / Mã lỗi |
@@ -530,6 +559,7 @@ Bổ sung liên kết `<a href="/login" class="back-link">← Quay lại Đăng 
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-03] Phím Enter không kích hoạt gửi form chuyển bước.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
+- **Ảnh chụp Issue trên GitHub (#93)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-GUI-012.png)
 - **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-012.png)
 - **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-012.png)
 - **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-012.png)
@@ -549,6 +579,8 @@ Bao bọc các input trong thẻ `<form id="forgot-password-form" onsubmit="hand
 - **Đặc tả Yêu cầu liên quan**: `FR03-OTP-GEN`
 - **Mức độ Nghiêm trọng (Severity)**: **S3** | **Mức độ Ưu tiên (Priority)**: **P2**
 - **Phân loại Khiếm khuyết**: `Shared Defect (Lỗi chung 3 nền tảng)`
+- **GitHub Issue**: [#94](https://github.com/nguyenanhtuan2702/eshop-sut/issues/94)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-GUI-013.png)
 
 #### 1. Môi trường Ghi nhận & Hành vi Lỗi
 | Môi trường Thực thi | Trạng thái | Chi tiết Hành vi / Mã lỗi |
@@ -568,6 +600,7 @@ Bao bọc các input trong thẻ `<form id="forgot-password-form" onsubmit="hand
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-03] Lỗi kết nối Backend API khi kiểm tra sinh mã OTP.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
+- **Ảnh chụp Issue trên GitHub (#94)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-GUI-013.png)
 - **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-013.png)
 - **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-013.png)
 - **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-013.png)
@@ -587,6 +620,8 @@ Bổ sung xử lý `try...catch` trong frontend API client, hiển thị spinner
 - **Đặc tả Yêu cầu liên quan**: `FR03-OTP-BIND`
 - **Mức độ Nghiêm trọng (Severity)**: **S2** | **Mức độ Ưu tiên (Priority)**: **P1**
 - **Phân loại Khiếm khuyết**: `Local Integration Defect (Lỗi tích hợp Backend Task 1)`
+- **GitHub Issue**: [#95](https://github.com/nguyenanhtuan2702/eshop-sut/issues/95)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-GUI-014.png)
 
 #### 1. Môi trường Ghi nhận & Hành vi Lỗi
 | Môi trường Thực thi | Trạng thái | Chi tiết Hành vi / Mã lỗi |
@@ -606,6 +641,7 @@ Bổ sung xử lý `try...catch` trong frontend API client, hiển thị spinner
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-03] Lỗi kết nối Backend API khi kiểm tra ràng buộc OTP với email.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
+- **Ảnh chụp Issue trên GitHub (#95)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-GUI-014.png)
 - **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-014.png)
 - **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-014.png)
 - **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-014.png)
@@ -625,6 +661,8 @@ Cấu hình tự động khởi động mock server trước khi chạy Playwrig
 - **Đặc tả Yêu cầu liên quan**: `USR-FEEDBACK-RESET`
 - **Mức độ Nghiêm trọng (Severity)**: **S2** | **Mức độ Ưu tiên (Priority)**: **P1**
 - **Phân loại Khiếm khuyết**: `Local Integration Defect (Lỗi tích hợp Backend Task 1)`
+- **GitHub Issue**: [#96](https://github.com/nguyenanhtuan2702/eshop-sut/issues/96)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-GUI-015.png)
 
 #### 1. Môi trường Ghi nhận & Hành vi Lỗi
 | Môi trường Thực thi | Trạng thái | Chi tiết Hành vi / Mã lỗi |
@@ -644,6 +682,7 @@ Cấu hình tự động khởi động mock server trước khi chạy Playwrig
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-03] Lỗi kết nối Backend API khi kiểm tra hoàn tất đặt lại mật khẩu.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
+- **Ảnh chụp Issue trên GitHub (#96)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-GUI-015.png)
 - **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-015.png)
 - **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-015.png)
 - **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-015.png)
@@ -665,6 +704,8 @@ Lỗi ECONNREFUSED cục bộ Task 1 tương tự GUI-014 trong luồng hoàn t�
 - **Đặc tả Yêu cầu liên quan**: `FR05-GRID;USR-RESP-VIEWPORT`
 - **Mức độ Nghiêm trọng (Severity)**: **S3** | **Mức độ Ưu tiên (Priority)**: **P2**
 - **Phân loại Khiếm khuyết**: `Platform Discrepancy (Sai lệch nền tảng/thiết bị)`
+- **GitHub Issue**: [#97](https://github.com/nguyenanhtuan2702/eshop-sut/issues/97)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-GUI-016.png)
 
 #### 1. Môi trường Ghi nhận & Hành vi Lỗi
 | Môi trường Thực thi | Trạng thái | Chi tiết Hành vi / Mã lỗi |
@@ -684,6 +725,7 @@ Lỗi ECONNREFUSED cục bộ Task 1 tương tự GUI-014 trong luồng hoàn t�
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-05] Bố cục hiển thị lưới sản phẩm bị tràn/vỡ trên màn hình di động Galaxy S23.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
+- **Ảnh chụp Issue trên GitHub (#97)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-GUI-016.png)
 - **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-016.png)
 - **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-016.png)
 - **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-016.png)
@@ -703,6 +745,8 @@ Cập nhật CSS Grid: `display: grid; grid-template-columns: repeat(auto-fill, 
 - **Đặc tả Yêu cầu liên quan**: `FR05-ITEM-INFO;USR-UI-TYPO`
 - **Mức độ Nghiêm trọng (Severity)**: **S3** | **Mức độ Ưu tiên (Priority)**: **P2**
 - **Phân loại Khiếm khuyết**: `Platform Discrepancy (Sai lệch nền tảng/thiết bị)`
+- **GitHub Issue**: [#98](https://github.com/nguyenanhtuan2702/eshop-sut/issues/98)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-GUI-017.png)
 
 #### 1. Môi trường Ghi nhận & Hành vi Lỗi
 | Môi trường Thực thi | Trạng thái | Chi tiết Hành vi / Mã lỗi |
@@ -722,6 +766,7 @@ Cập nhật CSS Grid: `display: grid; grid-template-columns: repeat(auto-fill, 
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-05] Typography và thông tin sản phẩm bị cắt/chèn ép trên mobile viewport.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
+- **Ảnh chụp Issue trên GitHub (#98)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-GUI-017.png)
 - **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-017.png)
 - **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-017.png)
 - **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-017.png)
@@ -741,6 +786,8 @@ Thêm thuộc tính CSS: `display: -webkit-box; -webkit-line-clamp: 2; -webkit-b
 - **Đặc tả Yêu cầu liên quan**: `FR21-CURRENCY;USR-UI-ALIGN`
 - **Mức độ Nghiêm trọng (Severity)**: **S3** | **Mức độ Ưu tiên (Priority)**: **P2**
 - **Phân loại Khiếm khuyết**: `Shared Defect (Lỗi chung 3 nền tảng)`
+- **GitHub Issue**: [#99](https://github.com/nguyenanhtuan2702/eshop-sut/issues/99)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-GUI-018.png)
 
 #### 1. Môi trường Ghi nhận & Hành vi Lỗi
 | Môi trường Thực thi | Trạng thái | Chi tiết Hành vi / Mã lỗi |
@@ -760,6 +807,7 @@ Thêm thuộc tính CSS: `display: -webkit-box; -webkit-line-clamp: 2; -webkit-b
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-05] Thẻ sản phẩm dùng đơn vị tiền tệ "VND" thay vì ký hiệu "₫".
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
+- **Ảnh chụp Issue trên GitHub (#99)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-GUI-018.png)
 - **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-018.png)
 - **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-018.png)
 - **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-018.png)
@@ -779,6 +827,8 @@ Sử dụng API chuẩn `Intl.NumberFormat('vi-VN', { style: 'currency', currenc
 - **Đặc tả Yêu cầu liên quan**: `FR21-H1`
 - **Mức độ Nghiêm trọng (Severity)**: **S3** | **Mức độ Ưu tiên (Priority)**: **P2**
 - **Phân loại Khiếm khuyết**: `Platform Discrepancy (Sai lệch nền tảng/thiết bị)`
+- **GitHub Issue**: [#100](https://github.com/nguyenanhtuan2702/eshop-sut/issues/100)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-GUI-019.png)
 
 #### 1. Môi trường Ghi nhận & Hành vi Lỗi
 | Môi trường Thực thi | Trạng thái | Chi tiết Hành vi / Mã lỗi |
@@ -798,6 +848,7 @@ Sử dụng API chuẩn `Intl.NumberFormat('vi-VN', { style: 'currency', currenc
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-05] Trang danh sách sản phẩm tồn tại 2 thẻ h1 thay vì duy nhất 1.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
+- **Ảnh chụp Issue trên GitHub (#100)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-GUI-019.png)
 - **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-019.png)
 - **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-019.png)
 - **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-019.png)
@@ -817,6 +868,8 @@ Trang danh sách sản phẩm trên Firefox hiển thị cả thẻ `<h1>` ở N
 - **Đặc tả Yêu cầu liên quan**: `USR-CONTRAST`
 - **Mức độ Nghiêm trọng (Severity)**: **S3** | **Mức độ Ưu tiên (Priority)**: **P2**
 - **Phân loại Khiếm khuyết**: `Shared Defect (Lỗi chung 3 nền tảng)`
+- **GitHub Issue**: [#101](https://github.com/nguyenanhtuan2702/eshop-sut/issues/101)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-GUI-020.png)
 
 #### 1. Môi trường Ghi nhận & Hành vi Lỗi
 | Môi trường Thực thi | Trạng thái | Chi tiết Hành vi / Mã lỗi |
@@ -836,6 +889,7 @@ Trang danh sách sản phẩm trên Firefox hiển thị cả thẻ `<h1>` ở N
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-05] Độ tương phản màu sắc chữ trên thẻ sản phẩm không đạt chuẩn WCAG AA.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
+- **Ảnh chụp Issue trên GitHub (#101)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-GUI-020.png)
 - **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-020.png)
 - **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-020.png)
 - **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-020.png)
@@ -855,6 +909,8 @@ Tăng độ tương phản màu chữ sang mã màu `#4b5563` hoặc `#374151` �
 - **Đặc tả Yêu cầu liên quan**: `FR05-SEARCH-SEC`
 - **Mức độ Nghiêm trọng (Severity)**: **S3** | **Mức độ Ưu tiên (Priority)**: **P2**
 - **Phân loại Khiếm khuyết**: `Shared Defect (Lỗi chung 3 nền tảng)`
+- **GitHub Issue**: [#102](https://github.com/nguyenanhtuan2702/eshop-sut/issues/102)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-GUI-021.png)
 
 #### 1. Môi trường Ghi nhận & Hành vi Lỗi
 | Môi trường Thực thi | Trạng thái | Chi tiết Hành vi / Mã lỗi |
@@ -874,6 +930,7 @@ Tăng độ tương phản màu chữ sang mã màu `#4b5563` hoặc `#374151` �
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-05] Từ khóa tìm kiếm render trực tiếp thẻ HTML `<b>` chưa được escape.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
+- **Ảnh chụp Issue trên GitHub (#102)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-GUI-021.png)
 - **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-021.png)
 - **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-021.png)
 - **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-021.png)
@@ -893,6 +950,8 @@ Chỉ gán chuỗi tìm kiếm thông qua thuộc tính `textContent` hoặc s�
 - **Đặc tả Yêu cầu liên quan**: `FR05-SEARCH-NAME`
 - **Mức độ Nghiêm trọng (Severity)**: **S3** | **Mức độ Ưu tiên (Priority)**: **P2**
 - **Phân loại Khiếm khuyết**: `Platform Discrepancy (Sai lệch nền tảng/thiết bị)`
+- **GitHub Issue**: [#103](https://github.com/nguyenanhtuan2702/eshop-sut/issues/103)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-GUI-022.png)
 
 #### 1. Môi trường Ghi nhận & Hành vi Lỗi
 | Môi trường Thực thi | Trạng thái | Chi tiết Hành vi / Mã lỗi |
@@ -912,6 +971,7 @@ Chỉ gán chuỗi tìm kiếm thông qua thuộc tính `textContent` hoặc s�
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-05] Lọc tìm kiếm theo tên sản phẩm phản hồi không ổn định trên mobile.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
+- **Ảnh chụp Issue trên GitHub (#103)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-GUI-022.png)
 - **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-022.png)
 - **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-022.png)
 - **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-022.png)
@@ -931,6 +991,8 @@ Bổ sung `debounce` 300ms cho hàm xử lý tìm kiếm và lắng nghe sự ki
 - **Đặc tả Yêu cầu liên quan**: `USR-SEARCH-RESET`
 - **Mức độ Nghiêm trọng (Severity)**: **S3** | **Mức độ Ưu tiên (Priority)**: **P2**
 - **Phân loại Khiếm khuyết**: `Platform Discrepancy (Sai lệch nền tảng/thiết bị)`
+- **GitHub Issue**: [#104](https://github.com/nguyenanhtuan2702/eshop-sut/issues/104)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-GUI-023.png)
 
 #### 1. Môi trường Ghi nhận & Hành vi Lỗi
 | Môi trường Thực thi | Trạng thái | Chi tiết Hành vi / Mã lỗi |
@@ -950,6 +1012,7 @@ Bổ sung `debounce` 300ms cho hàm xử lý tìm kiếm và lắng nghe sự ki
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-05] Xóa trắng ô tìm kiếm không hoàn nguyên danh sách sản phẩm ban đầu.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
+- **Ảnh chụp Issue trên GitHub (#104)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-GUI-023.png)
 - **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-023.png)
 - **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-023.png)
 - **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-023.png)
@@ -969,6 +1032,8 @@ Thêm event listener `input` kiểm tra `if (e.target.value === '') resetProduct
 - **Đặc tả Yêu cầu liên quan**: `FR23-NAV-ACT`
 - **Mức độ Nghiêm trọng (Severity)**: **S3** | **Mức độ Ưu tiên (Priority)**: **P2**
 - **Phân loại Khiếm khuyết**: `Shared Defect (Lỗi chung 3 nền tảng)`
+- **GitHub Issue**: [#105](https://github.com/nguyenanhtuan2702/eshop-sut/issues/105)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-GUI-024.png)
 
 #### 1. Môi trường Ghi nhận & Hành vi Lỗi
 | Môi trường Thực thi | Trạng thái | Chi tiết Hành vi / Mã lỗi |
@@ -988,6 +1053,7 @@ Thêm event listener `input` kiểm tra `if (e.target.value === '') resetProduct
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-05] Mục "Trang chủ" trên Navbar không có trạng thái active khi đang xem.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
+- **Ảnh chụp Issue trên GitHub (#105)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-GUI-024.png)
 - **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-024.png)
 - **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-024.png)
 - **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-024.png)
@@ -1007,6 +1073,8 @@ Kiểm tra `window.location.pathname === '/'` và gán class `nav-item active` c
 - **Đặc tả Yêu cầu liên quan**: `FR23-CART-BADGE`
 - **Mức độ Nghiêm trọng (Severity)**: **S3** | **Mức độ Ưu tiên (Priority)**: **P2**
 - **Phân loại Khiếm khuyết**: `Shared Defect (Lỗi chung 3 nền tảng)`
+- **GitHub Issue**: [#106](https://github.com/nguyenanhtuan2702/eshop-sut/issues/106)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-GUI-025.png)
 
 #### 1. Môi trường Ghi nhận & Hành vi Lỗi
 | Môi trường Thực thi | Trạng thái | Chi tiết Hành vi / Mã lỗi |
@@ -1026,6 +1094,7 @@ Kiểm tra `window.location.pathname === '/'` và gán class `nav-item active` c
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-05] Badge số lượng giỏ hàng trên Navbar không cập nhật sau khi thêm hàng.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
+- **Ảnh chụp Issue trên GitHub (#106)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-GUI-025.png)
 - **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-025.png)
 - **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-025.png)
 - **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-025.png)
@@ -1045,6 +1114,8 @@ Sử dụng React state / Context hoặc CustomEvent để cập nhật badge ng
 - **Đặc tả Yêu cầu liên quan**: `USR-NAV-PROD-DETAIL`
 - **Mức độ Nghiêm trọng (Severity)**: **S3** | **Mức độ Ưu tiên (Priority)**: **P2**
 - **Phân loại Khiếm khuyết**: `Shared Defect (Lỗi chung 3 nền tảng)`
+- **GitHub Issue**: [#107](https://github.com/nguyenanhtuan2702/eshop-sut/issues/107)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-GUI-026.png)
 
 #### 1. Môi trường Ghi nhận & Hành vi Lỗi
 | Môi trường Thực thi | Trạng thái | Chi tiết Hành vi / Mã lỗi |
@@ -1064,6 +1135,7 @@ Sử dụng React state / Context hoặc CustomEvent để cập nhật badge ng
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-05] Nhấp vào thẻ sản phẩm không điều hướng sang trang Chi tiết.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
+- **Ảnh chụp Issue trên GitHub (#107)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-GUI-026.png)
 - **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-026.png)
 - **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-026.png)
 - **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-026.png)
@@ -1083,6 +1155,8 @@ Bao bọc thẻ sản phẩm trong thẻ `<a href="/product/${id}">` hoặc gán
 - **Đặc tả Yêu cầu liên quan**: `FR05-LOADING;USR-STATE-SKELETON`
 - **Mức độ Nghiêm trọng (Severity)**: **S3** | **Mức độ Ưu tiên (Priority)**: **P2**
 - **Phân loại Khiếm khuyết**: `Shared Defect (Lỗi chung 3 nền tảng)`
+- **GitHub Issue**: [#108](https://github.com/nguyenanhtuan2702/eshop-sut/issues/108)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-GUI-028.png)
 
 #### 1. Môi trường Ghi nhận & Hành vi Lỗi
 | Môi trường Thực thi | Trạng thái | Chi tiết Hành vi / Mã lỗi |
@@ -1102,6 +1176,7 @@ Bao bọc thẻ sản phẩm trong thẻ `<a href="/product/${id}">` hoặc gán
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-05] Thiếu hiệu ứng skeleton/loading khi đang tải danh sách sản phẩm.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
+- **Ảnh chụp Issue trên GitHub (#108)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-GUI-028.png)
 - **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-028.png)
 - **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-028.png)
 - **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-028.png)
@@ -1121,6 +1196,8 @@ Xây dựng component `<ProductSkeletonCard />` với hiệu ứng shimmer lặp
 - **Đặc tả Yêu cầu liên quan**: `FR05-EMPTY;FR24-EMPTY`
 - **Mức độ Nghiêm trọng (Severity)**: **S3** | **Mức độ Ưu tiên (Priority)**: **P2**
 - **Phân loại Khiếm khuyết**: `Shared Defect (Lỗi chung 3 nền tảng)`
+- **GitHub Issue**: [#109](https://github.com/nguyenanhtuan2702/eshop-sut/issues/109)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-GUI-029.png)
 
 #### 1. Môi trường Ghi nhận & Hành vi Lỗi
 | Môi trường Thực thi | Trạng thái | Chi tiết Hành vi / Mã lỗi |
@@ -1140,6 +1217,7 @@ Xây dựng component `<ProductSkeletonCard />` với hiệu ứng shimmer lặp
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-05] Thiếu giao diện empty state thân thiện khi tìm kiếm không có kết quả.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
+- **Ảnh chụp Issue trên GitHub (#109)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-GUI-029.png)
 - **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-029.png)
 - **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-029.png)
 - **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-029.png)
@@ -1159,6 +1237,8 @@ Thêm Empty State component: 'Không tìm thấy sản phẩm phù hợp. Vui l�
 - **Đặc tả Yêu cầu liên quan**: `FR24-ALT`
 - **Mức độ Nghiêm trọng (Severity)**: **S4** | **Mức độ Ưu tiên (Priority)**: **P3**
 - **Phân loại Khiếm khuyết**: `Platform Discrepancy (Sai lệch nền tảng/thiết bị)`
+- **GitHub Issue**: [#110](https://github.com/nguyenanhtuan2702/eshop-sut/issues/110)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-GUI-030.png)
 
 #### 1. Môi trường Ghi nhận & Hành vi Lỗi
 | Môi trường Thực thi | Trạng thái | Chi tiết Hành vi / Mã lỗi |
@@ -1178,6 +1258,7 @@ Thêm Empty State component: 'Không tìm thấy sản phẩm phù hợp. Vui l�
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-05] Hình ảnh sản phẩm thiếu thuộc tính alt mô tả nội dung.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
+- **Ảnh chụp Issue trên GitHub (#110)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-GUI-030.png)
 - **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-030.png)
 - **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-030.png)
 - **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-030.png)
@@ -1197,6 +1278,8 @@ Bổ sung `alt={product.name}` cho tất cả các thẻ hình ảnh sản phẩ
 - **Đặc tả Yêu cầu liên quan**: `FR24-ADD-FEEDBACK;USR-STATE-TOAST`
 - **Mức độ Nghiêm trọng (Severity)**: **S3** | **Mức độ Ưu tiên (Priority)**: **P2**
 - **Phân loại Khiếm khuyết**: `Shared Defect (Lỗi chung 3 nền tảng)`
+- **GitHub Issue**: [#111](https://github.com/nguyenanhtuan2702/eshop-sut/issues/111)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-GUI-031.png)
 
 #### 1. Môi trường Ghi nhận & Hành vi Lỗi
 | Môi trường Thực thi | Trạng thái | Chi tiết Hành vi / Mã lỗi |
@@ -1216,6 +1299,7 @@ Bổ sung `alt={product.name}` cho tất cả các thẻ hình ảnh sản phẩ
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-05] Thiếu thông báo toast phản hồi trực quan khi bấm Thêm vào giỏ hàng.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
+- **Ảnh chụp Issue trên GitHub (#111)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-GUI-031.png)
 - **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-031.png)
 - **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-031.png)
 - **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-031.png)
@@ -1235,6 +1319,8 @@ Tích hợp thư viện Toast (hoặc Custom Toast) hiển thị thông báo: '�
 - **Đặc tả Yêu cầu liên quan**: `USR-IME-VIET`
 - **Mức độ Nghiêm trọng (Severity)**: **S3** | **Mức độ Ưu tiên (Priority)**: **P2**
 - **Phân loại Khiếm khuyết**: `Platform Discrepancy (Sai lệch nền tảng/thiết bị)`
+- **GitHub Issue**: [#112](https://github.com/nguyenanhtuan2702/eshop-sut/issues/112)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-GUI-065.png)
 
 #### 1. Môi trường Ghi nhận & Hành vi Lỗi
 | Môi trường Thực thi | Trạng thái | Chi tiết Hành vi / Mã lỗi |
@@ -1254,6 +1340,7 @@ Tích hợp thư viện Toast (hoặc Custom Toast) hiển thị thông báo: '�
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-05] Ô tìm kiếm bị mất ký tự khi gõ tiếng Việt Telex/VNI có sự kiện composition.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
+- **Ảnh chụp Issue trên GitHub (#112)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-GUI-065.png)
 - **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-065.png)
 - **Firefox Win11 (P2)**: *(Mục không chạy chụp ảnh - Not Run)*
 - **Android Galaxy S23 (P3)**: *(Mục không chạy chụp ảnh - Not Run)*
@@ -1273,6 +1360,8 @@ Lắng nghe sự kiện `compositionstart` và `compositionend` để trì hoãn
 - **Đặc tả Yêu cầu liên quan**: `USR-STATE-NET-ERR`
 - **Mức độ Nghiêm trọng (Severity)**: **S3** | **Mức độ Ưu tiên (Priority)**: **P2**
 - **Phân loại Khiếm khuyết**: `Shared Defect (Lỗi chung 3 nền tảng)`
+- **GitHub Issue**: [#113](https://github.com/nguyenanhtuan2702/eshop-sut/issues/113)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-GUI-067.png)
 
 #### 1. Môi trường Ghi nhận & Hành vi Lỗi
 | Môi trường Thực thi | Trạng thái | Chi tiết Hành vi / Mã lỗi |
@@ -1292,6 +1381,7 @@ Lắng nghe sự kiện `compositionstart` và `compositionend` để trì hoãn
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-05] Thiếu giao diện thông báo lỗi mạng và nút "Thử lại" khi mất kết nối API.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
+- **Ảnh chụp Issue trên GitHub (#113)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-GUI-067.png)
 - **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-067.png)
 - **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-067.png)
 - **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-067.png)
@@ -1311,6 +1401,8 @@ Xây dựng màn hình NetError Component: 'Không thể kết nối đến máy
 - **Đặc tả Yêu cầu liên quan**: `USR-STATE-DEBOUNCE`
 - **Mức độ Nghiêm trọng (Severity)**: **S3** | **Mức độ Ưu tiên (Priority)**: **P2**
 - **Phân loại Khiếm khuyết**: `Shared Defect (Lỗi chung 3 nền tảng)`
+- **GitHub Issue**: [#114](https://github.com/nguyenanhtuan2702/eshop-sut/issues/114)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-GUI-070.png)
 
 #### 1. Môi trường Ghi nhận & Hành vi Lỗi
 | Môi trường Thực thi | Trạng thái | Chi tiết Hành vi / Mã lỗi |
@@ -1330,6 +1422,7 @@ Xây dựng màn hình NetError Component: 'Không thể kết nối đến máy
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-05] Nút Thêm vào giỏ hàng thiếu cơ chế chống click spam liên tục.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
+- **Ảnh chụp Issue trên GitHub (#114)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-GUI-070.png)
 - **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-070.png)
 - **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-070.png)
 - **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-070.png)
@@ -1351,6 +1444,8 @@ Thêm trạng thái `isSubmitting`, vô hiệu hóa nút bấm trong 500ms sau m
 - **Đặc tả Yêu cầu liên quan**: `FR07-COLS`
 - **Mức độ Nghiêm trọng (Severity)**: **S3** | **Mức độ Ưu tiên (Priority)**: **P2**
 - **Phân loại Khiếm khuyết**: `Shared Defect (Lỗi chung 3 nền tảng)`
+- **GitHub Issue**: [#115](https://github.com/nguyenanhtuan2702/eshop-sut/issues/115)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-GUI-032.png)
 
 #### 1. Môi trường Ghi nhận & Hành vi Lỗi
 | Môi trường Thực thi | Trạng thái | Chi tiết Hành vi / Mã lỗi |
@@ -1370,6 +1465,7 @@ Thêm trạng thái `isSubmitting`, vô hiệu hóa nút bấm trong 500ms sau m
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-07] Bảng giỏ hàng không hiển thị đầy đủ 5 cột theo quy định đặc tả.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
+- **Ảnh chụp Issue trên GitHub (#115)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-GUI-032.png)
 - **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-032.png)
 - **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-032.png)
 - **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-032.png)
@@ -1389,6 +1485,8 @@ Thiết kế lại cấu trúc bảng `<table>` giỏ hàng gồm đầy đủ 5
 - **Đặc tả Yêu cầu liên quan**: `FR07-TOTAL-LABEL`
 - **Mức độ Nghiêm trọng (Severity)**: **S3** | **Mức độ Ưu tiên (Priority)**: **P2**
 - **Phân loại Khiếm khuyết**: `Shared Defect (Lỗi chung 3 nền tảng)`
+- **GitHub Issue**: [#116](https://github.com/nguyenanhtuan2702/eshop-sut/issues/116)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-GUI-033.png)
 
 #### 1. Môi trường Ghi nhận & Hành vi Lỗi
 | Môi trường Thực thi | Trạng thái | Chi tiết Hành vi / Mã lỗi |
@@ -1408,6 +1506,7 @@ Thiết kế lại cấu trúc bảng `<table>` giỏ hàng gồm đầy đủ 5
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-07] Nhãn tổng tiền hiển thị sai thành "Tổng tạm tính" thay vì "Tổng cộng".
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
+- **Ảnh chụp Issue trên GitHub (#116)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-GUI-033.png)
 - **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-033.png)
 - **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-033.png)
 - **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-033.png)
@@ -1427,6 +1526,8 @@ Nhãn hiển thị dòng tổng số tiền thanh toán hiển thị chuỗi 'T�
 - **Đặc tả Yêu cầu liên quan**: `FR21-CURRENCY;USR-UI-ALIGN`
 - **Mức độ Nghiêm trọng (Severity)**: **S3** | **Mức độ Ưu tiên (Priority)**: **P2**
 - **Phân loại Khiếm khuyết**: `Shared Defect (Lỗi chung 3 nền tảng)`
+- **GitHub Issue**: [#117](https://github.com/nguyenanhtuan2702/eshop-sut/issues/117)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-GUI-034.png)
 
 #### 1. Môi trường Ghi nhận & Hành vi Lỗi
 | Môi trường Thực thi | Trạng thái | Chi tiết Hành vi / Mã lỗi |
@@ -1446,6 +1547,7 @@ Nhãn hiển thị dòng tổng số tiền thanh toán hiển thị chuỗi 'T�
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-07] Các cột số tiền trong bảng giỏ hàng không được căn lề phải.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
+- **Ảnh chụp Issue trên GitHub (#117)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-GUI-034.png)
 - **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-034.png)
 - **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-034.png)
 - **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-034.png)
@@ -1465,6 +1567,8 @@ Thêm thuộc tính CSS `text-align: right; font-variant-numeric: tabular-nums;`
 - **Đặc tả Yêu cầu liên quan**: `USR-RESP-VIEWPORT`
 - **Mức độ Nghiêm trọng (Severity)**: **S3** | **Mức độ Ưu tiên (Priority)**: **P2**
 - **Phân loại Khiếm khuyết**: `Platform Discrepancy (Sai lệch nền tảng/thiết bị)`
+- **GitHub Issue**: [#118](https://github.com/nguyenanhtuan2702/eshop-sut/issues/118)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-GUI-035.png)
 
 #### 1. Môi trường Ghi nhận & Hành vi Lỗi
 | Môi trường Thực thi | Trạng thái | Chi tiết Hành vi / Mã lỗi |
@@ -1484,6 +1588,7 @@ Thêm thuộc tính CSS `text-align: right; font-variant-numeric: tabular-nums;`
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-07] Bảng giỏ hàng bị tràn ngang, không hiển thị thanh cuộn responsive trên mobile.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
+- **Ảnh chụp Issue trên GitHub (#118)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-GUI-035.png)
 - **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-035.png)
 - **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-035.png)
 - **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-035.png)
@@ -1503,6 +1608,8 @@ Bao bọc bảng trong `<div class="table-responsive overflow-x-auto">` hoặc c
 - **Đặc tả Yêu cầu liên quan**: `FR07-QTY-CTRL`
 - **Mức độ Nghiêm trọng (Severity)**: **S3** | **Mức độ Ưu tiên (Priority)**: **P2**
 - **Phân loại Khiếm khuyết**: `Shared Defect (Lỗi chung 3 nền tảng)`
+- **GitHub Issue**: [#119](https://github.com/nguyenanhtuan2702/eshop-sut/issues/119)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-GUI-036.png)
 
 #### 1. Môi trường Ghi nhận & Hành vi Lỗi
 | Môi trường Thực thi | Trạng thái | Chi tiết Hành vi / Mã lỗi |
@@ -1522,6 +1629,7 @@ Bao bọc bảng trong `<div class="table-responsive overflow-x-auto">` hoặc c
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-07] Dòng giỏ hàng thiếu cụm nút tăng giảm số lượng (+/-) và ô nhập.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
+- **Ảnh chụp Issue trên GitHub (#119)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-GUI-036.png)
 - **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-036.png)
 - **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-036.png)
 - **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-036.png)
@@ -1541,6 +1649,8 @@ Triển khai cụm điều khiển `<div class="quantity-control"><button>-</but
 - **Đặc tả Yêu cầu liên quan**: `USR-QTY-VALID`
 - **Mức độ Nghiêm trọng (Severity)**: **S3** | **Mức độ Ưu tiên (Priority)**: **P2**
 - **Phân loại Khiếm khuyết**: `Shared Defect (Lỗi chung 3 nền tảng)`
+- **GitHub Issue**: [#120](https://github.com/nguyenanhtuan2702/eshop-sut/issues/120)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-GUI-037.png)
 
 #### 1. Môi trường Ghi nhận & Hành vi Lỗi
 | Môi trường Thực thi | Trạng thái | Chi tiết Hành vi / Mã lỗi |
@@ -1560,6 +1670,7 @@ Triển khai cụm điều khiển `<div class="quantity-control"><button>-</but
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-07] Giỏ hàng thiếu trường nhập trực tiếp số lượng bằng bàn phím.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
+- **Ảnh chụp Issue trên GitHub (#120)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-GUI-037.png)
 - **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-037.png)
 - **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-037.png)
 - **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-037.png)
@@ -1579,6 +1690,8 @@ Cho phép người dùng focus vào ô nhập số lượng và gõ trực tiế
 - **Đặc tả Yêu cầu liên quan**: `USR-QTY-VALID`
 - **Mức độ Nghiêm trọng (Severity)**: **S3** | **Mức độ Ưu tiên (Priority)**: **P2**
 - **Phân loại Khiếm khuyết**: `Shared Defect (Lỗi chung 3 nền tảng)`
+- **GitHub Issue**: [#121](https://github.com/nguyenanhtuan2702/eshop-sut/issues/121)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-GUI-038.png)
 
 #### 1. Môi trường Ghi nhận & Hành vi Lỗi
 | Môi trường Thực thi | Trạng thái | Chi tiết Hành vi / Mã lỗi |
@@ -1598,6 +1711,7 @@ Cho phép người dùng focus vào ô nhập số lượng và gõ trực tiế
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-07] Không thể kiểm thử giá trị số lượng biên do thiếu ô nhập liệu.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
+- **Ảnh chụp Issue trên GitHub (#121)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-GUI-038.png)
 - **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-038.png)
 - **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-038.png)
 - **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-038.png)
@@ -1617,6 +1731,8 @@ Thêm ràng buộc `min="1" max="{stock}"` và tự động hoàn nguyên về 1
 - **Đặc tả Yêu cầu liên quan**: `FR23-NAV-ACT`
 - **Mức độ Nghiêm trọng (Severity)**: **S3** | **Mức độ Ưu tiên (Priority)**: **P2**
 - **Phân loại Khiếm khuyết**: `Shared Defect (Lỗi chung 3 nền tảng)`
+- **GitHub Issue**: [#122](https://github.com/nguyenanhtuan2702/eshop-sut/issues/122)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-GUI-039.png)
 
 #### 1. Môi trường Ghi nhận & Hành vi Lỗi
 | Môi trường Thực thi | Trạng thái | Chi tiết Hành vi / Mã lỗi |
@@ -1636,6 +1752,7 @@ Thêm ràng buộc `min="1" max="{stock}"` và tự động hoàn nguyên về 1
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-07] Mục "Giỏ hàng" trên Navbar không được highlight active khi đang xem.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
+- **Ảnh chụp Issue trên GitHub (#122)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-GUI-039.png)
 - **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-039.png)
 - **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-039.png)
 - **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-039.png)
@@ -1655,6 +1772,8 @@ Gán class `active` và `aria-current="page"` cho liên kết Giỏ hàng khi ro
 - **Đặc tả Yêu cầu liên quan**: `FR23-BREADCRUMB`
 - **Mức độ Nghiêm trọng (Severity)**: **S3** | **Mức độ Ưu tiên (Priority)**: **P2**
 - **Phân loại Khiếm khuyết**: `Shared Defect (Lỗi chung 3 nền tảng)`
+- **GitHub Issue**: [#123](https://github.com/nguyenanhtuan2702/eshop-sut/issues/123)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-GUI-040.png)
 
 #### 1. Môi trường Ghi nhận & Hành vi Lỗi
 | Môi trường Thực thi | Trạng thái | Chi tiết Hành vi / Mã lỗi |
@@ -1674,6 +1793,7 @@ Gán class `active` và `aria-current="page"` cho liên kết Giỏ hàng khi ro
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-07] Trang Giỏ hàng thiếu thanh điều hướng phân cấp Breadcrumb.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
+- **Ảnh chụp Issue trên GitHub (#123)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-GUI-040.png)
 - **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-040.png)
 - **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-040.png)
 - **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-040.png)
@@ -1693,6 +1813,8 @@ Bổ sung component `<nav aria-label="breadcrumb"><ol class="breadcrumb"><li><a 
 - **Đặc tả Yêu cầu liên quan**: `FR07-CONTINUE`
 - **Mức độ Nghiêm trọng (Severity)**: **S3** | **Mức độ Ưu tiên (Priority)**: **P2**
 - **Phân loại Khiếm khuyết**: `Shared Defect (Lỗi chung 3 nền tảng)`
+- **GitHub Issue**: [#124](https://github.com/nguyenanhtuan2702/eshop-sut/issues/124)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-GUI-041.png)
 
 #### 1. Môi trường Ghi nhận & Hành vi Lỗi
 | Môi trường Thực thi | Trạng thái | Chi tiết Hành vi / Mã lỗi |
@@ -1712,6 +1834,7 @@ Bổ sung component `<nav aria-label="breadcrumb"><ol class="breadcrumb"><li><a 
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-07] Nút tiếp tục mua sắm hiển thị nhãn "← Mua tiếp" thay vì "Tiếp tục mua sắm".
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
+- **Ảnh chụp Issue trên GitHub (#124)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-GUI-041.png)
 - **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-041.png)
 - **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-041.png)
 - **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-041.png)
@@ -1731,6 +1854,8 @@ Cập nhật nhãn nút bấm thành: '← Tiếp tục mua sắm'.
 - **Đặc tả Yêu cầu liên quan**: `FR21-TABORDER;USR-KBD-NAV`
 - **Mức độ Nghiêm trọng (Severity)**: **S3** | **Mức độ Ưu tiên (Priority)**: **P2**
 - **Phân loại Khiếm khuyết**: `Platform Discrepancy (Sai lệch nền tảng/thiết bị)`
+- **GitHub Issue**: [#125](https://github.com/nguyenanhtuan2702/eshop-sut/issues/125)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-GUI-042.png)
 
 #### 1. Môi trường Ghi nhận & Hành vi Lỗi
 | Môi trường Thực thi | Trạng thái | Chi tiết Hành vi / Mã lỗi |
@@ -1750,6 +1875,7 @@ Cập nhật nhãn nút bấm thành: '← Tiếp tục mua sắm'.
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-07] Luồng điều hướng phím Tab bị nhảy không tự nhiên trên trang Giỏ hàng.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
+- **Ảnh chụp Issue trên GitHub (#125)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-GUI-042.png)
 - **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-042.png)
 - **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-042.png)
 - **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-042.png)
@@ -1769,6 +1895,8 @@ Xóa bỏ các thuộc tính `tabindex` dương tùy tiện, sắp xếp DOM the
 - **Đặc tả Yêu cầu liên quan**: `FR07-ACCUMULATE`
 - **Mức độ Nghiêm trọng (Severity)**: **S3** | **Mức độ Ưu tiên (Priority)**: **P2**
 - **Phân loại Khiếm khuyết**: `Shared Defect (Lỗi chung 3 nền tảng)`
+- **GitHub Issue**: [#126](https://github.com/nguyenanhtuan2702/eshop-sut/issues/126)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-GUI-043.png)
 
 #### 1. Môi trường Ghi nhận & Hành vi Lỗi
 | Môi trường Thực thi | Trạng thái | Chi tiết Hành vi / Mã lỗi |
@@ -1788,6 +1916,7 @@ Xóa bỏ các thuộc tính `tabindex` dương tùy tiện, sắp xếp DOM the
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-07] Thêm cùng một sản phẩm nhiều lần không tự động cộng dồn số lượng.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
+- **Ảnh chụp Issue trên GitHub (#126)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-GUI-043.png)
 - **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-043.png)
 - **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-043.png)
 - **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-043.png)
@@ -1807,6 +1936,8 @@ Trong logic giỏ hàng, kiểm tra `const existing = cart.find(i => i.id === pr
 - **Đặc tả Yêu cầu liên quan**: `FR07-DEL-CONFIRM;FR24-DEL-CONFIRM`
 - **Mức độ Nghiêm trọng (Severity)**: **S3** | **Mức độ Ưu tiên (Priority)**: **P2**
 - **Phân loại Khiếm khuyết**: `Shared Defect (Lỗi chung 3 nền tảng)`
+- **GitHub Issue**: [#127](https://github.com/nguyenanhtuan2702/eshop-sut/issues/127)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-GUI-044.png)
 
 #### 1. Môi trường Ghi nhận & Hành vi Lỗi
 | Môi trường Thực thi | Trạng thái | Chi tiết Hành vi / Mã lỗi |
@@ -1826,6 +1957,7 @@ Trong logic giỏ hàng, kiểm tra `const existing = cart.find(i => i.id === pr
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-07] Thiếu hộp thoại xác nhận trước khi xóa sản phẩm khỏi giỏ hàng.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
+- **Ảnh chụp Issue trên GitHub (#127)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-GUI-044.png)
 - **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-044.png)
 - **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-044.png)
 - **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-044.png)
@@ -1845,6 +1977,8 @@ Bổ sung modal xác nhận: 'Bạn có chắc chắn muốn xóa sản phẩm n
 - **Đặc tả Yêu cầu liên quan**: `FR07-DEL-CONFIRM;FR24-DEL-CONFIRM`
 - **Mức độ Nghiêm trọng (Severity)**: **S3** | **Mức độ Ưu tiên (Priority)**: **P2**
 - **Phân loại Khiếm khuyết**: `Shared Defect (Lỗi chung 3 nền tảng)`
+- **GitHub Issue**: [#128](https://github.com/nguyenanhtuan2702/eshop-sut/issues/128)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-GUI-045.png)
 
 #### 1. Môi trường Ghi nhận & Hành vi Lỗi
 | Môi trường Thực thi | Trạng thái | Chi tiết Hành vi / Mã lỗi |
@@ -1864,6 +1998,7 @@ Bổ sung modal xác nhận: 'Bạn có chắc chắn muốn xóa sản phẩm n
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-07] Thao tác Hủy hoặc phím Escape không giữ lại sản phẩm trong giỏ hàng.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
+- **Ảnh chụp Issue trên GitHub (#128)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-GUI-045.png)
 - **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-045.png)
 - **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-045.png)
 - **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-045.png)
@@ -1883,6 +2018,8 @@ Bổ sung event listener phím Escape và hủy thao tác xóa một cách an to
 - **Đặc tả Yêu cầu liên quan**: `FR07-EMPTY;FR24-EMPTY`
 - **Mức độ Nghiêm trọng (Severity)**: **S3** | **Mức độ Ưu tiên (Priority)**: **P2**
 - **Phân loại Khiếm khuyết**: `Platform Discrepancy (Sai lệch nền tảng/thiết bị)`
+- **GitHub Issue**: [#129](https://github.com/nguyenanhtuan2702/eshop-sut/issues/129)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-GUI-046.png)
 
 #### 1. Môi trường Ghi nhận & Hành vi Lỗi
 | Môi trường Thực thi | Trạng thái | Chi tiết Hành vi / Mã lỗi |
@@ -1902,6 +2039,7 @@ Bổ sung event listener phím Escape và hủy thao tác xóa một cách an to
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-07] Trạng thái giỏ hàng rỗng (Empty Cart) hiển thị thiếu nhất quán giữa các trình duyệt.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
+- **Ảnh chụp Issue trên GitHub (#129)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-GUI-046.png)
 - **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-046.png)
 - **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-046.png)
 - **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-046.png)
@@ -1921,6 +2059,8 @@ Kiểm tra `if (cart.length === 0)` và hiển thị giao diện Giỏ hàng r�
 - **Đặc tả Yêu cầu liên quan**: `USR-A11Y-SR`
 - **Mức độ Nghiêm trọng (Severity)**: **S3** | **Mức độ Ưu tiên (Priority)**: **P2**
 - **Phân loại Khiếm khuyết**: `Shared Defect (Lỗi chung 3 nền tảng)`
+- **GitHub Issue**: [#130](https://github.com/nguyenanhtuan2702/eshop-sut/issues/130)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-GUI-066.png)
 
 #### 1. Môi trường Ghi nhận & Hành vi Lỗi
 | Môi trường Thực thi | Trạng thái | Chi tiết Hành vi / Mã lỗi |
@@ -1940,6 +2080,7 @@ Kiểm tra `if (cart.length === 0)` và hiển thị giao diện Giỏ hàng r�
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-07] Nút Xóa sản phẩm thiếu thuộc tính aria-label cho công nghệ hỗ trợ.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
+- **Ảnh chụp Issue trên GitHub (#130)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-GUI-066.png)
 - **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-066.png)
 - **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-066.png)
 - **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-066.png)
@@ -1959,6 +2100,8 @@ Thêm thuộc tính `aria-label={`Xóa sản phẩm ${item.name} khỏi giỏ h�
 - **Đặc tả Yêu cầu liên quan**: `USR-QTY-VALID`
 - **Mức độ Nghiêm trọng (Severity)**: **S3** | **Mức độ Ưu tiên (Priority)**: **P2**
 - **Phân loại Khiếm khuyết**: `Shared Defect (Lỗi chung 3 nền tảng)`
+- **GitHub Issue**: [#131](https://github.com/nguyenanhtuan2702/eshop-sut/issues/131)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-GUI-068.png)
 
 #### 1. Môi trường Ghi nhận & Hành vi Lỗi
 | Môi trường Thực thi | Trạng thái | Chi tiết Hành vi / Mã lỗi |
@@ -1978,6 +2121,7 @@ Thêm thuộc tính `aria-label={`Xóa sản phẩm ${item.name} khỏi giỏ h�
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-07] Ô nhập số lượng giỏ hàng xử lý chưa an toàn khi xóa trắng giá trị.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
+- **Ảnh chụp Issue trên GitHub (#131)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-GUI-068.png)
 - **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-068.png)
 - **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-068.png)
 - **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-068.png)
@@ -1997,6 +2141,8 @@ Bổ sung sự kiện `onBlur` tự động khôi phục giá trị về `1` n�
 - **Đặc tả Yêu cầu liên quan**: `USR-TOUCH-TARGET`
 - **Mức độ Nghiêm trọng (Severity)**: **S3** | **Mức độ Ưu tiên (Priority)**: **P2**
 - **Phân loại Khiếm khuyết**: `Platform Discrepancy (Sai lệch nền tảng/thiết bị)`
+- **GitHub Issue**: [#132](https://github.com/nguyenanhtuan2702/eshop-sut/issues/132)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-GUI-069.png)
 
 #### 1. Môi trường Ghi nhận & Hành vi Lỗi
 | Môi trường Thực thi | Trạng thái | Chi tiết Hành vi / Mã lỗi |
@@ -2016,6 +2162,7 @@ Bổ sung sự kiện `onBlur` tự động khôi phục giá trị về `1` n�
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-07] Kích thước vùng cảm ứng nút bấm giỏ hàng nhỏ hơn 44x44px trên thiết bị cảm ứng.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
+- **Ảnh chụp Issue trên GitHub (#132)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-GUI-069.png)
 - **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-069.png)
 - **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-069.png)
 - **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-069.png)
@@ -2037,6 +2184,8 @@ Tăng diện tích bấm tối thiểu lên 44x44px bằng cách thêm `min-widt
 - **Đặc tả Yêu cầu liên quan**: `FR15-CRUD-VIEW;FR21-LANG`
 - **Mức độ Nghiêm trọng (Severity)**: **S3** | **Mức độ Ưu tiên (Priority)**: **P2**
 - **Phân loại Khiếm khuyết**: `Shared Defect (Lỗi chung 3 nền tảng)`
+- **GitHub Issue**: [#133](https://github.com/nguyenanhtuan2702/eshop-sut/issues/133)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-GUI-047.png)
 
 #### 1. Môi trường Ghi nhận & Hành vi Lỗi
 | Môi trường Thực thi | Trạng thái | Chi tiết Hành vi / Mã lỗi |
@@ -2056,6 +2205,7 @@ Tăng diện tích bấm tối thiểu lên 44x44px bằng cách thêm `min-widt
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-15] Tiêu đề các cột trong bảng quản trị sản phẩm Admin chưa được Việt hóa.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
+- **Ảnh chụp Issue trên GitHub (#133)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-GUI-047.png)
 - **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-047.png)
 - **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-047.png)
 - **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-047.png)
@@ -2075,6 +2225,8 @@ Việt hóa toàn bộ tiêu đề cột: 'Mã SP', 'Tên sản phẩm', 'Đơn 
 - **Đặc tả Yêu cầu liên quan**: `FR21-H1`
 - **Mức độ Nghiêm trọng (Severity)**: **S3** | **Mức độ Ưu tiên (Priority)**: **P2**
 - **Phân loại Khiếm khuyết**: `Shared Defect (Lỗi chung 3 nền tảng)`
+- **GitHub Issue**: [#134](https://github.com/nguyenanhtuan2702/eshop-sut/issues/134)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-GUI-048.png)
 
 #### 1. Môi trường Ghi nhận & Hành vi Lỗi
 | Môi trường Thực thi | Trạng thái | Chi tiết Hành vi / Mã lỗi |
@@ -2094,6 +2246,7 @@ Việt hóa toàn bộ tiêu đề cột: 'Mã SP', 'Tên sản phẩm', 'Đơn 
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-15] Trang Quản lý sản phẩm thiếu thẻ tiêu đề h1 duy nhất.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
+- **Ảnh chụp Issue trên GitHub (#134)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-GUI-048.png)
 - **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-048.png)
 - **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-048.png)
 - **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-048.png)
@@ -2113,6 +2266,8 @@ Thêm thẻ `<h1 class="text-2xl font-bold mb-4">Quản Lý Sản Phẩm</h1>` t
 - **Đặc tả Yêu cầu liên quan**: `FR21-COLOR-POS;FR21-COLOR-DANGER`
 - **Mức độ Nghiêm trọng (Severity)**: **S3** | **Mức độ Ưu tiên (Priority)**: **P2**
 - **Phân loại Khiếm khuyết**: `Platform Discrepancy (Sai lệch nền tảng/thiết bị)`
+- **GitHub Issue**: [#135](https://github.com/nguyenanhtuan2702/eshop-sut/issues/135)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-GUI-049.png)
 
 #### 1. Môi trường Ghi nhận & Hành vi Lỗi
 | Môi trường Thực thi | Trạng thái | Chi tiết Hành vi / Mã lỗi |
@@ -2132,6 +2287,7 @@ Thêm thẻ `<h1 class="text-2xl font-bold mb-4">Quản Lý Sản Phẩm</h1>` t
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-15] Nút Lưu/Hủy quản trị Admin chưa áp dụng đúng bảng màu ngữ nghĩa positive/danger.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
+- **Ảnh chụp Issue trên GitHub (#135)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-GUI-049.png)
 - **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-049.png)
 - **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-049.png)
 - **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-049.png)
@@ -2151,6 +2307,8 @@ Nút 'Lưu sản phẩm' và 'Xóa sản phẩm' trong trang Admin dùng cùng m
 - **Đặc tả Yêu cầu liên quan**: `FR22-REQ`
 - **Mức độ Nghiêm trọng (Severity)**: **S3** | **Mức độ Ưu tiên (Priority)**: **P2**
 - **Phân loại Khiếm khuyết**: `Shared Defect (Lỗi chung 3 nền tảng)`
+- **GitHub Issue**: [#136](https://github.com/nguyenanhtuan2702/eshop-sut/issues/136)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-GUI-050.png)
 
 #### 1. Môi trường Ghi nhận & Hành vi Lỗi
 | Môi trường Thực thi | Trạng thái | Chi tiết Hành vi / Mã lỗi |
@@ -2170,6 +2328,7 @@ Nút 'Lưu sản phẩm' và 'Xóa sản phẩm' trong trang Admin dùng cùng m
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-15] Các trường bắt buộc trong form sản phẩm thiếu ký hiệu dấu sao (*).
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
+- **Ảnh chụp Issue trên GitHub (#136)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-GUI-050.png)
 - **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-050.png)
 - **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-050.png)
 - **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-050.png)
@@ -2189,6 +2348,8 @@ Bổ sung `<span class="text-danger">*</span>` bên cạnh nhãn các trường 
 - **Đặc tả Yêu cầu liên quan**: `FR15-NAME-REQ`
 - **Mức độ Nghiêm trọng (Severity)**: **S3** | **Mức độ Ưu tiên (Priority)**: **P2**
 - **Phân loại Khiếm khuyết**: `Shared Defect (Lỗi chung 3 nền tảng)`
+- **GitHub Issue**: [#137](https://github.com/nguyenanhtuan2702/eshop-sut/issues/137)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-GUI-051.png)
 
 #### 1. Môi trường Ghi nhận & Hành vi Lỗi
 | Môi trường Thực thi | Trạng thái | Chi tiết Hành vi / Mã lỗi |
@@ -2208,6 +2369,7 @@ Bổ sung `<span class="text-danger">*</span>` bên cạnh nhãn các trường 
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-15] Trường tên sản phẩm không giới hạn độ dài tối đa 255 ký tự.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
+- **Ảnh chụp Issue trên GitHub (#137)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-GUI-051.png)
 - **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-051.png)
 - **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-051.png)
 - **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-051.png)
@@ -2227,6 +2389,8 @@ Thêm thuộc tính `maxlength="255"` và thông báo validation cảnh báo khi
 - **Đặc tả Yêu cầu liên quan**: `FR15-PRICE-REQ`
 - **Mức độ Nghiêm trọng (Severity)**: **S3** | **Mức độ Ưu tiên (Priority)**: **P2**
 - **Phân loại Khiếm khuyết**: `Shared Defect (Lỗi chung 3 nền tảng)`
+- **GitHub Issue**: [#138](https://github.com/nguyenanhtuan2702/eshop-sut/issues/138)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-GUI-052.png)
 
 #### 1. Môi trường Ghi nhận & Hành vi Lỗi
 | Môi trường Thực thi | Trạng thái | Chi tiết Hành vi / Mã lỗi |
@@ -2246,6 +2410,7 @@ Thêm thuộc tính `maxlength="255"` và thông báo validation cảnh báo khi
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-15] Không hiển thị thông báo lỗi khi nhập giá sản phẩm nhỏ hơn hoặc bằng 0.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
+- **Ảnh chụp Issue trên GitHub (#138)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-GUI-052.png)
 - **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-052.png)
 - **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-052.png)
 - **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-052.png)
@@ -2265,6 +2430,8 @@ Thêm validation quy tắc `price > 0`, hiển thị lỗi: 'Đơn giá sản ph
 - **Đặc tả Yêu cầu liên quan**: `FR15-CAT-REQ`
 - **Mức độ Nghiêm trọng (Severity)**: **S3** | **Mức độ Ưu tiên (Priority)**: **P2**
 - **Phân loại Khiếm khuyết**: `Shared Defect (Lỗi chung 3 nền tảng)`
+- **GitHub Issue**: [#139](https://github.com/nguyenanhtuan2702/eshop-sut/issues/139)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-GUI-053.png)
 
 #### 1. Môi trường Ghi nhận & Hành vi Lỗi
 | Môi trường Thực thi | Trạng thái | Chi tiết Hành vi / Mã lỗi |
@@ -2284,6 +2451,7 @@ Thêm validation quy tắc `price > 0`, hiển thị lỗi: 'Đơn giá sản ph
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-15] Danh mục dropdown form Admin không thể chọn chính xác trên trình duyệt desktop/mobile.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
+- **Ảnh chụp Issue trên GitHub (#139)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-GUI-053.png)
 - **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-053.png)
 - **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-053.png)
 - **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-053.png)
@@ -2303,6 +2471,8 @@ Sử dụng thẻ `<select>` chuẩn với các `<option value="...">` hoặc co
 - **Đặc tả Yêu cầu liên quan**: `USR-ADMIN-FORM-LOAD;FR15-CRUD-OPS`
 - **Mức độ Nghiêm trọng (Severity)**: **S3** | **Mức độ Ưu tiên (Priority)**: **P2**
 - **Phân loại Khiếm khuyết**: `Shared Defect (Lỗi chung 3 nền tảng)`
+- **GitHub Issue**: [#140](https://github.com/nguyenanhtuan2702/eshop-sut/issues/140)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-GUI-054.png)
 
 #### 1. Môi trường Ghi nhận & Hành vi Lỗi
 | Môi trường Thực thi | Trạng thái | Chi tiết Hành vi / Mã lỗi |
@@ -2322,6 +2492,7 @@ Sử dụng thẻ `<select>` chuẩn với các `<option value="...">` hoặc co
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-15] Ô nhập số lượng tồn kho Admin không ràng buộc biên âm hợp lệ.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
+- **Ảnh chụp Issue trên GitHub (#140)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-GUI-054.png)
 - **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-054.png)
 - **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-054.png)
 - **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-054.png)
@@ -2341,6 +2512,8 @@ Thêm thuộc tính `type="number" min="0" step="1"` và kiểm tra `Number.isIn
 - **Đặc tả Yêu cầu liên quan**: `FR22-ERR-POS`
 - **Mức độ Nghiêm trọng (Severity)**: **S3** | **Mức độ Ưu tiên (Priority)**: **P2**
 - **Phân loại Khiếm khuyết**: `Shared Defect (Lỗi chung 3 nền tảng)`
+- **GitHub Issue**: [#141](https://github.com/nguyenanhtuan2702/eshop-sut/issues/141)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-GUI-055.png)
 
 #### 1. Môi trường Ghi nhận & Hành vi Lỗi
 | Môi trường Thực thi | Trạng thái | Chi tiết Hành vi / Mã lỗi |
@@ -2360,6 +2533,7 @@ Thêm thuộc tính `type="number" min="0" step="1"` và kiểm tra `Number.isIn
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-15] Khối thông báo lỗi form sản phẩm không nằm phía trên nút submit.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
+- **Ảnh chụp Issue trên GitHub (#141)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-GUI-055.png)
 - **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-055.png)
 - **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-055.png)
 - **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-055.png)
@@ -2379,6 +2553,8 @@ Khối thông báo lỗi validation của biểu mẫu Admin hiển thị ở g�
 - **Đặc tả Yêu cầu liên quan**: `USR-ADMIN-ACTIVE-TAB`
 - **Mức độ Nghiêm trọng (Severity)**: **S3** | **Mức độ Ưu tiên (Priority)**: **P2**
 - **Phân loại Khiếm khuyết**: `Shared Defect (Lỗi chung 3 nền tảng)`
+- **GitHub Issue**: [#142](https://github.com/nguyenanhtuan2702/eshop-sut/issues/142)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-GUI-056.png)
 
 #### 1. Môi trường Ghi nhận & Hành vi Lỗi
 | Môi trường Thực thi | Trạng thái | Chi tiết Hành vi / Mã lỗi |
@@ -2398,6 +2574,7 @@ Khối thông báo lỗi validation của biểu mẫu Admin hiển thị ở g�
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-15] Thẻ tab Admin Quản lý sản phẩm thiếu trạng thái highlight active rõ ràng.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
+- **Ảnh chụp Issue trên GitHub (#142)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-GUI-056.png)
 - **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-056.png)
 - **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-056.png)
 - **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-056.png)
@@ -2417,6 +2594,8 @@ Thêm class `active` và thuộc tính `aria-current="page"` cho tab Sản phẩ
 - **Đặc tả Yêu cầu liên quan**: `FR23-LOGOUT`
 - **Mức độ Nghiêm trọng (Severity)**: **S3** | **Mức độ Ưu tiên (Priority)**: **P2**
 - **Phân loại Khiếm khuyết**: `Shared Defect (Lỗi chung 3 nền tảng)`
+- **GitHub Issue**: [#143](https://github.com/nguyenanhtuan2702/eshop-sut/issues/143)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-GUI-057.png)
 
 #### 1. Môi trường Ghi nhận & Hành vi Lỗi
 | Môi trường Thực thi | Trạng thái | Chi tiết Hành vi / Mã lỗi |
@@ -2436,6 +2615,7 @@ Thêm class `active` và thuộc tính `aria-current="page"` cho tab Sản phẩ
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-15] Nút đăng xuất dùng nhãn "Thoát"/"Log out" thay vì "Đăng xuất".
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
+- **Ảnh chụp Issue trên GitHub (#143)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-GUI-057.png)
 - **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-057.png)
 - **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-057.png)
 - **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-057.png)
@@ -2455,6 +2635,8 @@ Nút thoát phiên đăng nhập của Admin sử dụng nhãn 'Thoát' hoặc '
 - **Đặc tả Yêu cầu liên quan**: `USR-ADMIN-CANCEL`
 - **Mức độ Nghiêm trọng (Severity)**: **S3** | **Mức độ Ưu tiên (Priority)**: **P2**
 - **Phân loại Khiếm khuyết**: `Platform Discrepancy (Sai lệch nền tảng/thiết bị)`
+- **GitHub Issue**: [#144](https://github.com/nguyenanhtuan2702/eshop-sut/issues/144)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-GUI-058.png)
 
 #### 1. Môi trường Ghi nhận & Hành vi Lỗi
 | Môi trường Thực thi | Trạng thái | Chi tiết Hành vi / Mã lỗi |
@@ -2474,6 +2656,7 @@ Nút thoát phiên đăng nhập của Admin sử dụng nhãn 'Thoát' hoặc '
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-15] Nút Hủy form Admin bị che khuất hoặc không kích hoạt được trên mobile.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
+- **Ảnh chụp Issue trên GitHub (#144)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-GUI-058.png)
 - **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-058.png)
 - **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-058.png)
 - **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-058.png)
@@ -2493,6 +2676,8 @@ Cải thiện CSS form container với `padding-bottom: 80px` và đảm bảo c
 - **Đặc tả Yêu cầu liên quan**: `FR21-TABORDER;USR-KBD-NAV`
 - **Mức độ Nghiêm trọng (Severity)**: **S3** | **Mức độ Ưu tiên (Priority)**: **P2**
 - **Phân loại Khiếm khuyết**: `Shared Defect (Lỗi chung 3 nền tảng)`
+- **GitHub Issue**: [#145](https://github.com/nguyenanhtuan2702/eshop-sut/issues/145)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-GUI-059.png)
 
 #### 1. Môi trường Ghi nhận & Hành vi Lỗi
 | Môi trường Thực thi | Trạng thái | Chi tiết Hành vi / Mã lỗi |
@@ -2512,6 +2697,7 @@ Cải thiện CSS form container với `padding-bottom: 80px` và đảm bảo c
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-15] Form Sửa sản phẩm không mở dưới dạng modal có bẫy focus bàn phím.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
+- **Ảnh chụp Issue trên GitHub (#145)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-GUI-059.png)
 - **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-059.png)
 - **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-059.png)
 - **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-059.png)
@@ -2531,6 +2717,8 @@ Sử dụng modal dialog chuẩn với thư viện `focus-trap` hoặc thẻ HTM
 - **Đặc tả Yêu cầu liên quan**: `FR15-ISOLATE`
 - **Mức độ Nghiêm trọng (Severity)**: **S2** | **Mức độ Ưu tiên (Priority)**: **P1**
 - **Phân loại Khiếm khuyết**: `Shared Defect (Lỗi chung 3 nền tảng)`
+- **GitHub Issue**: [#146](https://github.com/nguyenanhtuan2702/eshop-sut/issues/146)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-GUI-060.png)
 
 #### 1. Môi trường Ghi nhận & Hành vi Lỗi
 | Môi trường Thực thi | Trạng thái | Chi tiết Hành vi / Mã lỗi |
@@ -2550,6 +2738,7 @@ Sử dụng modal dialog chuẩn với thư viện `focus-trap` hoặc thẻ HTM
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-15] Cập nhật thông tin sản phẩm không đảm bảo tính cô lập dữ liệu.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
+- **Ảnh chụp Issue trên GitHub (#146)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-GUI-060.png)
 - **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-060.png)
 - **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-060.png)
 - **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-060.png)
@@ -2569,6 +2758,8 @@ Tạo bản sao sâu (deep clone) của object sản phẩm khi mở form: `cons
 - **Đặc tả Yêu cầu liên quan**: `USR-DELETE-ADMIN`
 - **Mức độ Nghiêm trọng (Severity)**: **S3** | **Mức độ Ưu tiên (Priority)**: **P2**
 - **Phân loại Khiếm khuyết**: `Shared Defect (Lỗi chung 3 nền tảng)`
+- **GitHub Issue**: [#147](https://github.com/nguyenanhtuan2702/eshop-sut/issues/147)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-GUI-061.png)
 
 #### 1. Môi trường Ghi nhận & Hành vi Lỗi
 | Môi trường Thực thi | Trạng thái | Chi tiết Hành vi / Mã lỗi |
@@ -2588,6 +2779,7 @@ Tạo bản sao sâu (deep clone) của object sản phẩm khi mở form: `cons
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-15] Thiếu modal xác nhận cảnh báo trước khi xóa sản phẩm quản trị.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
+- **Ảnh chụp Issue trên GitHub (#147)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-GUI-061.png)
 - **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-061.png)
 - **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-061.png)
 - **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-061.png)
@@ -2607,6 +2799,8 @@ Hiển thị modal cảnh báo nguy hiểm: 'Hành động này sẽ xóa vĩnh 
 - **Đặc tả Yêu cầu liên quan**: `USR-DELETE-ADMIN`
 - **Mức độ Nghiêm trọng (Severity)**: **S3** | **Mức độ Ưu tiên (Priority)**: **P2**
 - **Phân loại Khiếm khuyết**: `Platform Discrepancy (Sai lệch nền tảng/thiết bị)`
+- **GitHub Issue**: [#148](https://github.com/nguyenanhtuan2702/eshop-sut/issues/148)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-GUI-062.png)
 
 #### 1. Môi trường Ghi nhận & Hành vi Lỗi
 | Môi trường Thực thi | Trạng thái | Chi tiết Hành vi / Mã lỗi |
@@ -2626,6 +2820,7 @@ Hiển thị modal cảnh báo nguy hiểm: 'Hành động này sẽ xóa vĩnh 
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-15] Modal xác nhận xóa Admin không đóng được khi chạm ngoài vùng overlay trên mobile.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
+- **Ảnh chụp Issue trên GitHub (#148)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-GUI-062.png)
 - **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-062.png)
 - **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-062.png)
 - **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-062.png)
@@ -2645,6 +2840,8 @@ Bổ sung sự kiện `onClick` trên phần tử overlay để đóng modal khi
 - **Đặc tả Yêu cầu liên quan**: `USR-FEEDBACK-CRUD`
 - **Mức độ Nghiêm trọng (Severity)**: **S3** | **Mức độ Ưu tiên (Priority)**: **P2**
 - **Phân loại Khiếm khuyết**: `Shared Defect (Lỗi chung 3 nền tảng)`
+- **GitHub Issue**: [#149](https://github.com/nguyenanhtuan2702/eshop-sut/issues/149)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-GUI-063.png)
 
 #### 1. Môi trường Ghi nhận & Hành vi Lỗi
 | Môi trường Thực thi | Trạng thái | Chi tiết Hành vi / Mã lỗi |
@@ -2664,6 +2861,7 @@ Bổ sung sự kiện `onClick` trên phần tử overlay để đóng modal khi
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-15] Thiếu toast thông báo phản hồi khi hoàn tất thêm/sửa/xóa sản phẩm Admin.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
+- **Ảnh chụp Issue trên GitHub (#149)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-GUI-063.png)
 - **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-063.png)
 - **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-063.png)
 - **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-063.png)
@@ -2683,6 +2881,8 @@ Kích hoạt Toast thông báo xanh: 'Thêm/Cập nhật/Xóa sản phẩm thàn
 - **Đặc tả Yêu cầu liên quan**: `FR24-ALT`
 - **Mức độ Nghiêm trọng (Severity)**: **S4** | **Mức độ Ưu tiên (Priority)**: **P3**
 - **Phân loại Khiếm khuyết**: `Platform Discrepancy (Sai lệch nền tảng/thiết bị)`
+- **GitHub Issue**: [#150](https://github.com/nguyenanhtuan2702/eshop-sut/issues/150)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-GUI-064.png)
 
 #### 1. Môi trường Ghi nhận & Hành vi Lỗi
 | Môi trường Thực thi | Trạng thái | Chi tiết Hành vi / Mã lỗi |
@@ -2702,6 +2902,7 @@ Kích hoạt Toast thông báo xanh: 'Thêm/Cập nhật/Xóa sản phẩm thàn
 - **Kết quả Thực tế (Actual)**: Hệ thống không đáp ứng đúng yêu cầu. [FR-15] Hình ảnh sản phẩm trong bảng quản trị Admin thiếu thuộc tính alt ngữ nghĩa.
 
 #### 4. Bằng chứng Hình ảnh Thực tế (Evidence Screenshots)
+- **Ảnh chụp Issue trên GitHub (#150)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-GUI-064.png)
 - **Chrome Win11 (P1)**: [Xem ảnh chứng thực](images/p1-chrome-win11/GUI-064.png)
 - **Firefox Win11 (P2)**: [Xem ảnh chứng thực](images/p2-firefox-win11/GUI-064.png)
 - **Android Galaxy S23 (P3)**: [Xem ảnh chứng thực](images/p3-android-chrome/GUI-064.png)
