@@ -1,0 +1,37 @@
+{
+  "baseline": "qual-02",
+  "generatedAt": "2026-11-11T14:50:50.103Z",
+  "strategy": "Replace only rerun item/platform cells; preserve baseline elsewhere. Same SUT source, production bundle serving replaces Vite dev.",
+  "runs": [
+    {
+      "run": "recovery-final-p1-chrome-win11",
+      "attempts": 34,
+      "sutDigestsMatchBaseline": true
+    },
+    {
+      "run": "recovery-final-p2-firefox-win11",
+      "attempts": 20,
+      "sutDigestsMatchBaseline": true
+    },
+    {
+      "run": "recovery-final-p3-android-chrome",
+      "attempts": 1,
+      "sutDigestsMatchBaseline": true
+    },
+    {
+      "run": "recovery-corrected-p1-chrome-win11",
+      "attempts": 1,
+      "sutDigestsMatchBaseline": true
+    },
+    {
+      "run": "recovery-corrected-p2-firefox-win11",
+      "attempts": 3,
+      "sutDigestsMatchBaseline": true
+    },
+    {
+      "run": "recovery-foreground-p3-android-chrome",
+      "attempts": 1,
+      "sutDigestsMatchBaseline": true
+    }
+  ]
+}

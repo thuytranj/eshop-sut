@@ -1,0 +1,44 @@
+{
+  "runId": "recovery-final-p1-chrome-win11",
+  "frozenAt": "2026-11-11T14:00:27.722Z",
+  "timezone": "Asia/Saigon",
+  "harness": {
+    "gitSha": "e1e216a22eab23c6549cb5341207ec5799ec5d18",
+    "isDirty": true
+  },
+  "sut": {
+    "gitSha": "e1e216a22eab23c6549cb5341207ec5799ec5d18",
+    "isDirty": true,
+    "backendContentDigest": "47b585f441406b99515844b558d231475bee34362c370718ff621ac6732fc067",
+    "frontendWebContentDigest": "3420ea64f8ace837f3ea2da361e73ad147ce9f327d8adc1d0c651926c0c45a2a",
+    "frontendAdminContentDigest": "7859f70cddc35fa38b64c483d661480ce472187a990e86e963bfc52851954a7e"
+  },
+  "checklist": {
+    "path": "docs/gui-checklist/checklist.csv",
+    "itemCount": 70,
+    "sha256": "9a28c556f325b535d9de429b463628af80dbf97f459fed8cc9e1850535888a7d"
+  },
+  "dataSnapshot": {
+    "baselineProductsSha256": "d129a99e4d604b13112ce2cc341380cdeffd661b9d57caa0e29710df199295af"
+  },
+  "resolvedVersions": {
+    "node": "v22.17.1",
+    "playwright": "1.57.0",
+    "chromeWin11": "156.0",
+    "firefoxWin11": "157.0",
+    "androidChrome": "Samsung Galaxy S23 (Android 13.0)"
+  },
+  "budgetEstimate": {
+    "formula": "T ≈ Σplatform (Nautomated × (Tconnect_p95 + Tcase_p95 + Tclose_p95)) + Tmanual + Tartifacts",
+    "measuredSessions": 12,
+    "perPlatformSeconds": {
+      "p1-chrome-win11": 5699,
+      "p2-firefox-win11": 3946,
+      "p3-android-chrome": 2867
+    },
+    "totalEstimatedSeconds": 12512,
+    "totalEstimatedMinutes": 208.5,
+    "parallelSessionsMaxAllowed": 1,
+    "notes": "Based on actual pilot-05 measurements. With 1 concurrent thread, 210 sessions will take approx 3.5 hours."
+  }
+}
