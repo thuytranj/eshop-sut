@@ -1,6 +1,6 @@
 # BÁO CÁO TỔNG HỢP KIỂM THỬ GIAO DIỆN & TƯƠNG THÍCH ĐA NỀN TẢNG
 ## (GUI USABILITY & CROSS-PLATFORM COMPREHENSIVE REPORT)
-### Môn học: Kiểm thử Phần mềm Nâng cao — Đề tài: EShop SUT (HW03)
+### Môn học: Kiểm thử Phần mềm — Đề tài: EShop SUT (HW03)
 
 ---
 
@@ -286,6 +286,7 @@ Ngay sau khi kết thúc kịch bản, người tham gia hoàn thành biểu m�
 #### 3. Danh sách Đối tượng Tham gia & Minh chứng Kiểm thử (Participants & Video Evidence)
 Đợt kiểm thử thu hút sự tham gia của **8 người dùng thực tế ($N = 8$)**. Nhằm tuân thủ tuyệt đối quy định bảo vệ dữ liệu cá nhân (PII Masking), 4 chữ số ở giữa trong số điện thoại của người tham gia đã được mã hóa theo chuẩn `036****234`, bảo toàn nguyên vẹn họ tên, nghề nghiệp và liên kết video Google Drive quay lại phiên kiểm thử thực tế.
 
+- **Biểu mẫu khảo sát người dùng thực tế**: [Google Form — Đánh giá Usability Testing EShop](https://docs.google.com/forms/d/e/1FAIpQLSeHrBkrcxdLWjAc6JHq-24me8-5NaljkZyCNHYJYdq_MRxN6A/viewform)
 - **Bảng dữ liệu phản hồi khảo sát gốc trực tuyến**: [Google Sheets — Kết Quả Khảo Sát Usability Testing EShop (N=8)](https://docs.google.com/spreadsheets/d/1nSYYvo6tOrltxSdoChTR1D403YjWw_7VKamyNYWDrOE/edit?resourcekey=&gid=1393865147#gid=1393865147)
 
 | Mã NTG | Họ và tên Người tham gia | Số Điện thoại (PII Masked) | Nghề nghiệp / Lĩnh vực | Thiết bị & Trình duyệt Thử nghiệm | Video Minh chứng Thực tế (Google Drive) |
@@ -813,7 +814,10 @@ Căn cứ theo biểu điểm đánh giá chính thức của bài tập HW03 (A
 ### 7.2. Hướng Dẫn Tra Cứu Tài Liệu Nộp Bài
 Để phục vụ việc đánh giá và chấm điểm thuận tiện nhất, toàn bộ hồ sơ nộp bài của sinh viên `23120367` được đóng gói tập trung trong thư mục `docs/23120367/`:
 - **Báo cáo Tổng hợp Chính (Main Report)**: Chính là tài liệu [Main-Report.md](Main-Report.md) này, cung cấp bức tranh toàn cảnh về phương pháp luận, ma trận bao phủ, kết quả thực thi và phân tích đối sánh đa nền tảng.
-- **Báo cáo Khiếm khuyết Chi tiết (Bug Report)**: Tài liệu [Bug-Report.md](Bug-Report.md) (nằm cùng thư mục), cung cấp hồ sơ chi tiết của toàn bộ **67 lỗi** (Bug ID, mô tả hiện tượng, các bước tái hiện, mã lỗi thực tế trên từng nền tảng, link ảnh bằng chứng, phân tích nguyên nhân kỹ thuật và đề xuất giải pháp sửa mã nguồn).
+- **Báo cáo Khiếm khuyết Chi tiết (Bug Report)**: Tài liệu [Bug-Report.md](Bug-Report.md) (nằm cùng thư mục), cung cấp hồ sơ chi tiết của toàn bộ **67 lỗi** (Bug ID, mô tả hiện tượng, các bước tái hiện, mã lỗi thực tế trên từng nền tảng, link ảnh bằng chứng, phân tích nguyên nhân kỹ thuật, link GitHub Issue và ảnh chụp Issue trên GitHub).
+- **Báo cáo Phản biện Trí tuệ Nhân tạo (AI Critique)**: Tài liệu [AI-Critique.md](AI-Critique.md), cung cấp đoạn văn phản biện chuẩn 200–300 từ (cả tiếng Việt và tiếng Anh) trả lời 3 câu hỏi bắt buộc theo đặc tả đồ án, phân tích sâu các điểm mù của AI và bài học nguyên tắc cộng tác con người - AI.
+- **Hồ sơ Bằng chứng Usability Testing (Usability Evidence)**: Tài liệu [Usability-Evidence.md](Usability-Evidence.md), tổng hợp độc lập toàn bộ kịch bản E2E, link form khảo sát trực tuyến, link response sheet, thông tin 8 người tham gia kèm link video Google Drive, phân tích SUS, quan sát định tính và 7 lỗi usability.
+- **Ảnh chụp GitHub Issues**: Thư mục [issue-screenshots/](issue-screenshots/), chứa 67 ảnh chụp màn hình chứng thực của 67 GitHub issues đã tạo trên kho mã nguồn `nguyenanhtuan2702/eshop-sut`.
 - **Script Tính toán & Kiểm chứng SUS**: File mã nguồn [calculate_sus.py](calculate_sus.py) dùng để tải dữ liệu, tính toán tự động điểm SUS từng cá nhân, độ lệch chuẩn, trung vị và xếp loại học thuật.
 - **Thư viện Ảnh Bằng chứng Trình duyệt**: Thư mục [images/](images/) (lưu trữ tập trung ngay trong thư mục nộp bài), chứa toàn bộ 208 ảnh chụp cửa sổ trình duyệt và thiết bị thật trên cả 3 nền tảng (Chrome Win11, Firefox Win11, Android Galaxy S23) có watermark chính chủ và mã băm SHA-256.
 

@@ -1,5 +1,5 @@
 # Báo Cáo Tổng Hợp Khiếm Khuyết Giao Diện & Đa Nền Tảng (Consolidated Bug Report)
-## Môn học: Kiểm thử Phần mềm Nâng cao — Đề tài: EShop SUT (HW03)
+## Môn học: Kiểm thử Phần mềm — Đề tài: EShop SUT (HW03)
 
 ---
 
@@ -39,7 +39,9 @@ Báo cáo này tổng hợp toàn bộ các khiếm khuyết phần mềm (bugs/
 ### 1.1. Thống kê Hợp nhất Khiếm khuyết (Unified Defect Summary)
 
 - **Tổng số checklist items được kiểm thử**: **70 mục**.
-- **Tổng số mục phát hiện khiếm khuyết (Defect Items)**: **67 mục** (chiếm **95.71%** tổng số kiểm tra).
+- **Tổng số mục phát hiện khiếm khuyết GUI Checklist (Task 1 & 3)**: **67 mục** (chiếm **95.71%** tổng số kiểm tra).
+- **Tổng số khiếm khuyết Khả dụng phát hiện qua Usability Testing (Task 2)**: **7 lỗi trọng yếu (`BUG-U01` đến `BUG-U07`)**.
+- **Tổng số lỗi hệ thống được ghi nhận & lập GitHub Issues**: **74 lỗi** (67 GUI defects + 7 Usability defects).
 - **Tổng số mục đạt hoàn toàn trên mọi môi trường (Always Passed)**: **3 mục** (`GUI-010`, `GUI-011`, `GUI-027` - chiếm 4.29%).
 
 ```mermaid
@@ -81,6 +83,8 @@ pie title Phân bổ Kết quả Kiểm thử Tổng thể (70 Items)
 ---
 
 ## 2. Bảng Ma trận Danh mục Lỗi Tổng hợp (Master Defect Inventory Matrix)
+
+### 2.1. Ma trận 67 Khiếm khuyết GUI Checklist (Task 1 & Task 3)
 
 Bảng ma trận dưới đây liệt kê đầy đủ 67 khiếm khuyết được phát hiện xuyên suốt 2 đợt kiểm thử Task 1 và Task 3, kèm trạng thái ghi nhận trên từng môi trường:
 - **T1**: Playwright Chromium (Local Headless)
@@ -157,6 +161,22 @@ Bảng ma trận dưới đây liệt kê đầy đủ 67 khiếm khuyết đư�
 | **BUG-GUI-068** | `GUI-068` | FR-07 | IA-02 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-07] Ô nhập số lượng giỏ hàng xử lý chưa an toàn khi xóa trắng giá trị | [#131](https://github.com/nguyenanhtuan2702/eshop-sut/issues/131) ([Ảnh](issue-screenshots/BUG-GUI-068.png)) |
 | **BUG-GUI-069** | `GUI-069` | FR-07 | IA-01 | S3 | P2 | Passed | Failed | Passed | Passed | Platform Discrepancy | [FR-07] Kích thước vùng cảm ứng nút bấm giỏ hàng nhỏ hơn 44x44px trên thiết bị cảm ứng | [#132](https://github.com/nguyenanhtuan2702/eshop-sut/issues/132) ([Ảnh](issue-screenshots/BUG-GUI-069.png)) |
 | **BUG-GUI-070** | `GUI-070` | FR-05 | IA-04 | S3 | P2 | Failed | Failed | Failed | Failed | Shared Defect | [FR-05] Nút Thêm vào giỏ hàng thiếu cơ chế chống click spam liên tục | [#114](https://github.com/nguyenanhtuan2702/eshop-sut/issues/114) ([Ảnh](issue-screenshots/BUG-GUI-070.png)) |
+
+---
+
+### 2.2. Danh mục Khiếm khuyết Trải nghiệm Người dùng Thực tế (Task 2 Usability Defects)
+
+Dưới đây là 7 khiếm khuyết khả dụng nghiêm trọng phát hiện qua phiên Usability Testing với 8 người dùng thực tế ($N=8$), đã được đối chiếu sang đặc tả và lập GitHub Issues:
+
+| Bug Key | Màn hình | Khía cạnh IA | Mức độ | Ưu tiên | Tần suất Ghi nhận ($N=8$) | Tóm tắt Khiếm khuyết Khả dụng | GitHub Issue |
+| :--- | :---: | :---: | :---: | :---: | :---: | :--- | :---: |
+| **BUG-U01** | FR-05 | IA-04 | S2 | P1 | 8 / 8 (100%) | Nút "Thêm vào giỏ" trang chi tiết bấm lần đầu đơ, click 2 lần mới nhận | [#151](https://github.com/nguyenanhtuan2702/eshop-sut/issues/151) ([Ảnh](issue-screenshots/BUG-U01.png)) |
+| **BUG-U02** | FR-05 / 07 | IA-04 | S2 | P1 | 8 / 8 (100%) | Thiếu hoàn toàn Toast thông báo & Badge giỏ hàng không cập nhật | [#152](https://github.com/nguyenanhtuan2702/eshop-sut/issues/152) ([Ảnh](issue-screenshots/BUG-U02.png)) |
+| **BUG-U03** | FR-07 | IA-02 | S2 | P1 | 8 / 8 (100%) | Không thể sửa số lượng trong giỏ hàng & Không tự động gộp sản phẩm trùng mã | [#153](https://github.com/nguyenanhtuan2702/eshop-sut/issues/153) ([Ảnh](issue-screenshots/BUG-U03.png)) |
+| **BUG-U04** | FR-07 | IA-02 | S1 | P0 | 6 / 8 (75%) | Cho phép nhập số lượng âm, số 0 hoặc xóa trắng sinh giá trị `NaN` | [#154](https://github.com/nguyenanhtuan2702/eshop-sut/issues/154) ([Ảnh](issue-screenshots/BUG-U04.png)) |
+| **BUG-U05** | FR-08 | IA-02 | S1 | P0 | 4 / 8 (50%) | Lỗ hổng bảo mật cho phép tự do chỉnh sửa số tiền thanh toán thành 0đ | [#155](https://github.com/nguyenanhtuan2702/eshop-sut/issues/155) ([Ảnh](issue-screenshots/BUG-U05.png)) |
+| **BUG-U06** | FR-07 / 08 | IA-04 | S2 | P1 | 5 / 8 (62.5%) | Thanh toán thành công nhưng sản phẩm vẫn nằm nguyên trong giỏ hàng | [#156](https://github.com/nguyenanhtuan2702/eshop-sut/issues/156) ([Ảnh](issue-screenshots/BUG-U06.png)) |
+| **BUG-U07** | FR-07 | IA-04 | S2 | P1 | 3 / 8 (37.5%) | Tải lại trang (F5/Reload) làm mất sạch toàn bộ giỏ hàng | [#157](https://github.com/nguyenanhtuan2702/eshop-sut/issues/157) ([Ảnh](issue-screenshots/BUG-U07.png)) |
 
 ---
 
@@ -2915,7 +2935,316 @@ Bổ sung `alt={`Ảnh thumbnail sản phẩm ${product.name}`}`.
 
 ---
 
-## 7. Đánh giá Tổng hợp, Rủi ro Chất lượng & Lộ trình Khắc phục (Synthesis & Roadmap)
+## 7. Chi tiết Khiếm khuyết Khả dụng Nghiêm trọng (Task 2 Usability Testing)
+
+Chương này trình bày chi tiết **7 Khiếm khuyết Khả dụng Trọng yếu (`BUG-U01` đến `BUG-U07`)** được phát hiện thông qua đợt kiểm thử với **8 người dùng thực tế ($N=8$)** trên luồng mua sắm đầu-cuối (E2E User Journey). Tất cả các lỗi đã được lập GitHub Issue chính thức và chụp ảnh chứng thực:
+
+### BUG-U01: [Task 2 Usability] Nút "Thêm vào giỏ" trang chi tiết bấm lần đầu đơ, click 2 lần mới nhận
+
+- **Mã Khiếm khuyết**: `BUG-U01` | **Khía cạnh Giao diện**: `IA-04 (State Management / Debounce)`
+- **Màn hình**: `FR-05 (Product Detail)` | **Đặc tả liên quan**: `FR24-ADD-FEEDBACK;USR-STATE-DEBOUNCE`
+- **Mức độ Nghiêm trọng (Severity)**: **S2 (Major)** | **Mức độ Ưu tiên (Priority)**: **P1 (High)**
+- **Tần suất ghi nhận thực tế**: **8 / 8 người tham gia (100% — P01 đến P08)**
+- **Phân loại Khiếm khuyết**: `Usability Defect (Lỗi tương tác người dùng)`
+- **GitHub Issue**: [#151](https://github.com/nguyenanhtuan2702/eshop-sut/issues/151)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-U01.png)
+
+#### 1. Môi trường Ghi nhận & Hành vi Lỗi
+| Môi trường Thực thi | Trạng thái | Chi tiết Hành vi Ghi nhận |
+| :--- | :---: | :--- |
+| **Task 2 — Moderated Usability ($N=8$)** | **Failed** | 8/8 người dùng bấm nút lần đầu không có phản ứng, phải nhấp lần thứ 2 mới thêm vào giỏ |
+| **Task 1 — Local Automation** | Failed | Liên kết khiếm khuyết `GUI-070` (Thiếu cơ chế debounce chống click spam) |
+
+#### 2. Các Bước Tái hiện (Steps to Reproduce)
+1. Truy cập trang chủ EShop và nhấp vào một sản phẩm bất kỳ để mở trang chi tiết sản phẩm.
+2. Nhấp chuột vào nút "Thêm vào giỏ hàng" lần đầu tiên.
+3. Quan sát phản hồi giao diện: Nút không đổi trạng thái, không có toast thông báo, badge giỏ hàng không nhảy số.
+4. Nhấp nút "Thêm vào giỏ hàng" lần thứ hai: Nút mới đổi trạng thái hoặc nhận lệnh.
+
+#### 3. Kết quả Mong muốn vs Thực tế
+- **Kết quả Mong muốn (Expected)**: Nhấp nút lần đầu tiên phải lập tức kích hoạt thêm sản phẩm, hiển thị loading spinner và thông báo toast thành công.
+- **Kết quả Thực tế (Actual)**: Click lần đầu hoàn toàn không phản hồi (đơ), buộc 100% người dùng phải bấm lần thứ 2 mới được.
+
+#### 4. Bằng chứng Hình ảnh & Video Thực tế
+- **Ảnh chụp Issue trên GitHub (#151)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-U01.png)
+- **Video Minh chứng Thực tế**:
+  - [Video P01 (00:45)](https://drive.google.com/open?id=1gMQcudQoSuvUuPcXTISXju_biqacMbrA) | [Video P04 (01:10)](https://drive.google.com/open?id=1G37HEs-McgTB3HvFp6Ug7yU1YoWXF1Z7) | [Video P05 (00:55)](https://drive.google.com/open?id=14QWjas1y9Hy-FbFkoWLOgEpW5S2szJUi)
+
+#### 5. Trích dẫn Trực tiếp từ Người Dùng (Direct Quotes)
+> - *"Nút 'Thêm vào giỏ hàng' bấm lần đầu không phản hồi, đến lần thứ 2 mới được."* *(P01)*
+> - *"Không có animation nào cho việc thêm items vào giỏ hàng khiến người dùng bấm nhiều lần."* *(P04)*
+> - *"Click lần đầu không phản hồi, click lần hai mới thêm vào giỏ thành công."* *(P05)*
+> - *"Nút thêm vào giỏ hàng click lần thứ 2 mới được."* *(P07)*
+
+#### 6. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
+Lỗi bất đồng bộ trong hàm xử lý sự kiện `onClick` của nút Thêm vào giỏ, khởi tạo state component bị trễ và thiếu cờ debounce khiến lần click đầu tiên bị miss handler.
+
+#### 7. Đề xuất Giải pháp Khắc phục (Remediation)
+Sửa hook xử lý `onClick`, thêm state `isSubmitting`, hiển thị loading spinner và debounce nút bấm trong 300ms.
+
+---
+
+### BUG-U02: [Task 2 Usability] Thiếu hoàn toàn Toast thông báo & Badge giỏ hàng không cập nhật khi thêm hàng
+
+- **Mã Khiếm khuyết**: `BUG-U02` | **Khía cạnh Giao diện**: `IA-04 (Visibility of System Status)`
+- **Màn hình**: `FR-05 & FR-07 (Navbar & Product Catalog)` | **Đặc tả liên quan**: `FR24-ADD-FEEDBACK;FR23-CART-BADGE`
+- **Mức độ Nghiêm trọng (Severity)**: **S2 (Major)** | **Mức độ Ưu tiên (Priority)**: **P1 (High)**
+- **Tần suất ghi nhận thực tế**: **8 / 8 người tham gia (100% — P01 đến P08)**
+- **Phân loại Khiếm khuyết**: `Usability Defect (Vi phạm Heuristic #1)`
+- **GitHub Issue**: [#152](https://github.com/nguyenanhtuan2702/eshop-sut/issues/152)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-U02.png)
+
+#### 1. Môi trường Ghi nhận & Hành vi Lỗi
+| Môi trường Thực thi | Trạng thái | Chi tiết Hành vi Ghi nhận |
+| :--- | :---: | :--- |
+| **Task 2 — Moderated Usability ($N=8$)** | **Failed** | 8/8 người dùng phản ánh không có thông báo gì, không biết đã thêm thành công chưa |
+| **Task 1 — Local Automation** | Failed | Khớp chính xác `GUI-031` (Thiếu Toast) và `GUI-025` (Badge giỏ hàng không nhảy số) |
+
+#### 2. Các Bước Tái hiện (Steps to Reproduce)
+1. Tại trang chủ hoặc chi tiết sản phẩm, nhấp nút "Thêm vào giỏ hàng".
+2. Quan sát khu vực góc màn hình và biểu tượng Giỏ hàng trên thanh điều hướng (Navbar).
+
+#### 3. Kết quả Mong muốn vs Thực tế
+- **Kết quả Mong muốn (Expected)**: Hiển thị thông báo Toast nổi "Đã thêm [Tên sản phẩm] vào giỏ hàng!" và badge số lượng trên Navbar tự động tăng lên.
+- **Kết quả Thực tế (Actual)**: Không có thông báo Toast nào, icon giỏ hàng không hiện số lượng, người dùng hoang mang không biết đã thêm thành công chưa.
+
+#### 4. Bằng chứng Hình ảnh & Video Thực tế
+- **Ảnh chụp Issue trên GitHub (#152)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-U02.png)
+- **Video Minh chứng Thực tế**:
+  - [Video P02 (00:35)](https://drive.google.com/open?id=13tgJ9UN6rFzniSGhWpRIosvCgZhFZh58) | [Video P03 (00:40)](https://drive.google.com/open?id=14yzwdgDrjPa7TuTvJFCltnsDE6ApTvox) | [Video P08 (00:50)](https://drive.google.com/open?id=1KlY-Nr0S4wTff3lNvNkDJg4qxq-cqAk6)
+
+#### 5. Trích dẫn Trực tiếp từ Người Dùng (Direct Quotes)
+> - *"Web không có thông báo thêm vào giỏ hàng. Icon giỏ hàng cũng không có hiện số lượng hiện có."* *(P01)*
+> - *"Khi bấm Thêm giỏ hàng, trang web không có thông báo gì đến người dùng làm tôi không biết là đã thêm thành công chưa."* *(P02)*
+> - *"Khi nhấn nút thêm vào giỏ không hiện thông báo làm cho tôi phân vân là đã thêm được thành công chưa."* *(P03)*
+> - *"Không có thông báo rõ ràng, khiến tôi cảm thấy phân vân không biết đã thêm thành công chưa."* *(P08)*
+
+#### 6. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
+Frontend hoàn toàn vắng bóng component Toast notification, và Navbar Cart Badge không subscribe vào global cart state.
+
+#### 7. Đề xuất Giải pháp Khắc phục (Remediation)
+Tích hợp thư viện thông báo (Sonner hoặc React-Hot-Toast) và bind số lượng vào Cart Badge qua global state (Redux/Zustand).
+
+---
+
+### BUG-U03: [Task 2 Usability] Không thể sửa số lượng trong giỏ hàng & Không tự động gộp sản phẩm trùng mã
+
+- **Mã Khiếm khuyết**: `BUG-U03` | **Khía cạnh Giao diện**: `IA-02 (Forms & User Control)`
+- **Màn hình**: `FR-07 (Shopping Cart)` | **Đặc tả liên quan**: `FR07-QTY-CTRL;FR07-ITEM-MERGE`
+- **Mức độ Nghiêm trọng (Severity)**: **S2 (Major)** | **Mức độ Ưu tiên (Priority)**: **P1 (High)**
+- **Tần suất ghi nhận thực tế**: **8 / 8 người tham gia (100% — P01 đến P08)**
+- **Phân loại Khiếm khuyết**: `Usability Defect (Thiếu quyền kiểm soát cơ bản)`
+- **GitHub Issue**: [#153](https://github.com/nguyenanhtuan2702/eshop-sut/issues/153)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-U03.png)
+
+#### 1. Môi trường Ghi nhận & Hành vi Lỗi
+| Môi trường Thực thi | Trạng thái | Chi tiết Hành vi Ghi nhận |
+| :--- | :---: | :--- |
+| **Task 2 — Moderated Usability ($N=8$)** | **Failed** | Không thể chỉnh số lượng trong giỏ, thêm cùng sản phẩm sinh nhiều dòng lặp |
+| **Task 1 — Local Automation** | Failed | Khớp `GUI-036` (Thiếu nút tăng giảm), `GUI-037` (Thiếu ô nhập), `GUI-043` (Không gộp mã) |
+
+#### 2. Các Bước Tái hiện (Steps to Reproduce)
+1. Thêm một sản phẩm vào giỏ hàng, sau đó vào trang Giỏ hàng.
+2. Tìm cách thay đổi số lượng món hàng trong bảng.
+3. Quay lại trang chủ và bấm thêm sản phẩm đó một lần nữa.
+
+#### 3. Kết quả Mong muốn vs Thực tế
+- **Kết quả Mong muốn (Expected)**: Trong giỏ hàng có cụm nút `[-] [Qty] [+]` để thay đổi số lượng trực tiếp; thêm cùng sản phẩm sẽ tự động gộp số lượng.
+- **Kết quả Thực tế (Actual)**: Không có nút tăng giảm số lượng; thêm cùng 1 sản phẩm nhiều lần tạo ra các dòng riêng lẻ lặp lại làm rối bảng giỏ hàng.
+
+#### 4. Bằng chứng Hình ảnh & Video Thực tế
+- **Ảnh chụp Issue trên GitHub (#153)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-U03.png)
+- **Video Minh chứng Thực tế**:
+  - [Video P01 (01:15)](https://drive.google.com/open?id=1gMQcudQoSuvUuPcXTISXju_biqacMbrA) | [Video P04 (01:45)](https://drive.google.com/open?id=1G37HEs-McgTB3HvFp6Ug7yU1YoWXF1Z7) | [Video P07 (01:20)](https://drive.google.com/open?id=1Y89xqSX0VOR1UOLXmAPaxbzEWsdkrGI5)
+
+#### 5. Trích dẫn Trực tiếp từ Người Dùng (Direct Quotes)
+> - *"Trong màn hình giỏ hàng, không có button để tăng/giảm số lượng sản phẩm. Đối với cùng 1 loại sản phẩm, khi thêm nhiều lần hệ thống không gộp lại."* *(P01)*
+> - *"Hệ thống hiện tại không cho đổi số lượng của sản phẩm trong giỏ hàng."* *(P02)*
+> - *"Không có nút thay đổi số lượng items trong giỏ hàng, mỗi items bị lặp lại trong giỏ hàng."* *(P04)*
+> - *"Giỏ hàng không cho phép gộp số lượng các sản phẩm cùng mã, không có nút điều chỉnh số lượng ở giỏ hàng."* *(P07)*
+
+#### 6. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
+Bảng giỏ hàng chỉ render text số lượng tĩnh mà thiếu cụm nút tăng giảm; logic `addToCart` dùng push mảng thay vì cộng dồn số lượng.
+
+#### 7. Đề xuất Giải pháp Khắc phục (Remediation)
+Thêm cụm nút `[-] [Qty] [+]` trên từng dòng sản phẩm và cài đặt thuật toán kiểm tra `item.id === newId ? item.qty += n : push`.
+
+---
+
+### BUG-U04: [Task 2 Usability] Cho phép nhập số lượng âm, số 0 hoặc xóa trắng sinh giá trị NaN
+
+- **Mã Khiếm khuyết**: `BUG-U04` | **Khía cạnh Giao diện**: `IA-02 (Input Sanitization & Data Integrity)`
+- **Màn hình**: `FR-07 (Shopping Cart)` | **Đặc tả liên quan**: `USR-QTY-VALID;FR07-BOUNDARIES`
+- **Mức độ Nghiêm trọng (Severity)**: **S1 (Blocker)** | **Mức độ Ưu tiên (Priority)**: **P0 (Critical)**
+- **Tần suất ghi nhận thực tế**: **6 / 8 người tham gia (75% — P01, P03, P05, P06, P07, P08)**
+- **Phân loại Khiếm khuyết**: `Data Integrity Defect (Hỏng dữ liệu tính toán)`
+- **GitHub Issue**: [#154](https://github.com/nguyenanhtuan2702/eshop-sut/issues/154)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-U04.png)
+
+#### 1. Môi trường Ghi nhận & Hành vi Lỗi
+| Môi trường Thực thi | Trạng thái | Chi tiết Hành vi Ghi nhận |
+| :--- | :---: | :--- |
+| **Task 2 — Moderated Usability ($N=8$)** | **Failed** | Xóa trắng bằng Backspace ép thành NaN, cho phép nhập số âm trừ tiền giỏ hàng |
+| **Task 1 — Local Automation** | Failed | Khớp `GUI-068` (Mục con người phản biện) và `GUI-038` (Biên số lượng giỏ hàng) |
+
+#### 2. Các Bước Tái hiện (Steps to Reproduce)
+1. Tại ô nhập số lượng, dùng phím Backspace xóa sạch giá trị cũ.
+2. Quan sát giá trị ô số lượng và cột Tổng tiền.
+3. Thử nhập số âm (ví dụ: -5) hoặc số 0.
+
+#### 3. Kết quả Mong muốn vs Thực tế
+- **Kết quả Mong muốn (Expected)**: Chặn không cho nhập số âm hoặc số 0; khi xóa trắng, ô nhập tự động phục hồi về 1 khi onBlur, không bao giờ xuất hiện NaN.
+- **Kết quả Thực tế (Actual)**: Khi xóa trắng sinh giá trị 'NaN' lan truyền sang tổng tiền thành 'NaN' nhưng vẫn bấm thanh toán được; nhập số âm làm tổng tiền bị âm.
+
+#### 4. Bằng chứng Hình ảnh & Video Thực tế
+- **Ảnh chụp Issue trên GitHub (#154)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-U04.png)
+- **Video Minh chứng Thực tế**:
+  - [Video P01 (01:40)](https://drive.google.com/open?id=1gMQcudQoSuvUuPcXTISXju_biqacMbrA) | [Video P05 (01:30)](https://drive.google.com/open?id=14QWjas1y9Hy-FbFkoWLOgEpW5S2szJUi) | [Video P08 (01:25)](https://drive.google.com/open?id=1KlY-Nr0S4wTff3lNvNkDJg4qxq-cqAk6)
+
+#### 5. Trích dẫn Trực tiếp từ Người Dùng (Direct Quotes)
+> - *"Khi giá trị của ô input không hợp lệ, hệ thống không báo lỗi gì hết, vẫn thêm sản phẩm vào giỏ với cột số lượng gán là 'NaN'."* *(P01)*
+> - *"Bên cạnh đó, hệ thống cũng chấp nhận khi người dùng nhập giá trị âm và thanh toán số tiền âm."* *(P05)*
+> - *"Khi xóa số lượng món hàng, hệ thống không báo lỗi gì hết... Tổng tiền trở thành 'NaN' và vẫn tiến hành thanh toán được thành công."* *(P08)*
+
+#### 6. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
+Thiếu kiểm soát ép kiểu khi nhập liệu; chuỗi rỗng khi xóa Backspace bị ép thành NaN và lan truyền làm hỏng toàn bộ phép tính tiền.
+
+#### 7. Đề xuất Giải pháp Khắc phục (Remediation)
+Thêm hàm validate `val > 0 && !isNaN(val)` và tự động fallback về giá trị 1 khi onBlur.
+
+---
+
+### BUG-U05: [Task 2 Usability] Lỗ hổng bảo mật cho phép tự do chỉnh sửa số tiền thanh toán thành 0đ
+
+- **Mã Khiếm khuyết**: `BUG-U05` | **Khía cạnh Giao diện**: `IA-02 (Security & Checkout Integrity)`
+- **Màn hình**: `FR-08 (Checkout & Payment)` | **Đặc tả liên quan**: `FR08-PAY-SEC;USR-DATA-TAMPER`
+- **Mức độ Nghiêm trọng (Severity)**: **S1 (Blocker)** | **Mức độ Ưu tiên (Priority)**: **P0 (Critical)**
+- **Tần suất ghi nhận thực tế**: **4 / 8 người tham gia (50% — P02, P04, P06, P08)**
+- **Phân loại Khiếm khuyết**: `Critical Security & Business Logic Flaw (Lỗ hổng trục lợi tài chính)`
+- **GitHub Issue**: [#155](https://github.com/nguyenanhtuan2702/eshop-sut/issues/155)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-U05.png)
+
+#### 1. Môi trường Ghi nhận & Hành vi Lỗi
+| Môi trường Thực thi | Trạng thái | Chi tiết Hành vi Ghi nhận |
+| :--- | :---: | :--- |
+| **Task 2 — Moderated Usability ($N=8$)** | **Failed** | Người dùng gõ sửa số tiền thanh toán thành 0đ, hệ thống xác nhận mua hàng 0đ thành công |
+| **Task 1 — Local Automation** | Not Covered | **Lỗi mới phát hiện tại luồng E2E Checkout** (Task 1 chỉ test từng màn hình riêng lẻ) |
+
+#### 2. Các Bước Tái hiện (Steps to Reproduce)
+1. Thêm sản phẩm vào giỏ và nhấp nút Thanh toán.
+2. Tại form thanh toán, nhấp chuột vào ô hiển thị Số tiền cần trả.
+3. Xóa số tiền gốc và gõ sửa thành '0' (hoặc số tiền tùy ý).
+4. Bấm nút Xác nhận Đặt hàng / Thanh toán.
+
+#### 3. Kết quả Mong muốn vs Thực tế
+- **Kết quả Mong muốn (Expected)**: Ô số tiền phải được khóa cứng (readOnly hoặc render text tĩnh); backend bắt buộc tự tính toán lại tổng tiền từ database.
+- **Kết quả Thực tế (Actual)**: Người dùng tùy ý sửa được số tiền thành 0đ và hệ thống vẫn chấp nhận thanh toán đơn hàng 0đ thành công.
+
+#### 4. Bằng chứng Hình ảnh & Video Thực tế
+- **Ảnh chụp Issue trên GitHub (#155)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-U05.png)
+- **Video Minh chứng Thực tế**:
+  - [Video P02 (02:10)](https://drive.google.com/open?id=13tgJ9UN6rFzniSGhWpRIosvCgZhFZh58) | [Video P04 (02:25)](https://drive.google.com/open?id=1G37HEs-McgTB3HvFp6Ug7yU1YoWXF1Z7) | [Video P06 (02:05)](https://drive.google.com/open?id=1P2yP0EUMl39dK4fYtURg9BvRhO-Vu5iM)
+
+#### 5. Trích dẫn Trực tiếp từ Người Dùng (Direct Quotes)
+> - *"Phần thanh toán có thể chỉnh tùy ý số tiền (không thể chỉnh thành âm), nhưng có thể chỉnh thành 0đ và vẫn thanh toán thành công."* *(P02)*
+> - *"Số tiền thanh toán có thể sửa được."* *(P04)*
+> - *"Có thể sửa được số tiền thanh toán."* *(P06)*
+
+#### 6. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
+Form thanh toán dùng thẻ `<input>` mở không có thuộc tính readOnly; backend nhận trực tiếp số tiền từ client mà không xác thực lại từ database.
+
+#### 7. Đề xuất Giải pháp Khắc phục (Remediation)
+Khóa trường số tiền bằng `readOnly={true}`, và bắt buộc backend server-side tự tính toán lại tổng tiền từ database.
+
+---
+
+### BUG-U06: [Task 2 Usability] Thanh toán thành công nhưng sản phẩm vẫn nằm nguyên trong giỏ hàng
+
+- **Mã Khiếm khuyết**: `BUG-U06` | **Khía cạnh Giao diện**: `IA-04 (State Lifecycle Post-Checkout)`
+- **Màn hình**: `FR-07 & FR-08 (Cart & Order Lifecycle)` | **Đặc tả liên quan**: `FR08-POST-CLEAR;USR-ORDER-STATE`
+- **Mức độ Nghiêm trọng (Severity)**: **S2 (Major)** | **Mức độ Ưu tiên (Priority)**: **P1 (High)**
+- **Tần suất ghi nhận thực tế**: **5 / 8 người tham gia (62.5% — P02, P05, P06, P08)**
+- **Phân loại Khiếm khuyết**: `Usability & Business Logic Defect (Sai lệch trạng thái sau giao dịch)`
+- **GitHub Issue**: [#156](https://github.com/nguyenanhtuan2702/eshop-sut/issues/156)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-U06.png)
+
+#### 1. Môi trường Ghi nhận & Hành vi Lỗi
+| Môi trường Thực thi | Trạng thái | Chi tiết Hành vi Ghi nhận |
+| :--- | :---: | :--- |
+| **Task 2 — Moderated Usability ($N=8$)** | **Failed** | Thanh toán thành công nhưng quay lại giỏ hàng vẫn còn nguyên các món hàng cũ |
+| **Task 1 — Local Automation** | Not Covered | **Lỗi mới phát hiện tại luồng E2E Checkout** (Vòng đời đơn hàng sau giao dịch) |
+
+#### 2. Các Bước Tái hiện (Steps to Reproduce)
+1. Cho sản phẩm vào giỏ và hoàn tất thanh toán thành công.
+2. Sau khi có thông báo đặt hàng, quay lại trang Giỏ hàng bằng Navbar.
+
+#### 3. Kết quả Mong muốn vs Thực tế
+- **Kết quả Mong muốn (Expected)**: Giỏ hàng phải được làm sạch hoàn toàn, hiển thị trạng thái Empty Cart sau khi giao dịch thành công.
+- **Kết quả Thực tế (Actual)**: Sản phẩm vừa mua vẫn còn nguyên vẹn trong giỏ hàng, khiến khách hàng tưởng giao dịch chưa ghi nhận và có nguy cơ trả tiền trùng.
+
+#### 4. Bằng chứng Hình ảnh & Video Thực tế
+- **Ảnh chụp Issue trên GitHub (#156)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-U06.png)
+- **Video Minh chứng Thực tế**:
+  - [Video P02 (02:40)](https://drive.google.com/open?id=13tgJ9UN6rFzniSGhWpRIosvCgZhFZh58) | [Video P05 (02:15)](https://drive.google.com/open?id=14QWjas1y9Hy-FbFkoWLOgEpW5S2szJUi) | [Video P08 (02:30)](https://drive.google.com/open?id=1KlY-Nr0S4wTff3lNvNkDJg4qxq-cqAk6)
+
+#### 5. Trích dẫn Trực tiếp từ Người Dùng (Direct Quotes)
+> - *"Thanh toán thành công nhưng sản phẩm vẫn tồn tại trong giỏ hàng."* *(P02)*
+> - *"Đã thanh toán nhưng trong giỏ hàng vẫn còn hiện sản phẩm vừa thanh toán."* *(P05)*
+> - *"Thanh toán thành công nhưng sản phẩm vẫn còn trong giỏ hàng."* *(P06)*
+> - *"Đã thanh toán thành công nhưng giỏ hàng vẫn không xóa món hàng đã mua đó."* *(P08)*
+
+#### 6. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
+Luồng hoàn tất đơn hàng thiếu action dispatch `CLEAR_CART` để dọn dẹp state giỏ hàng và xóa storage sau khi API phản hồi 200/201.
+
+#### 7. Đề xuất Giải pháp Khắc phục (Remediation)
+Dispatch action `clearCart()` dọn dẹp toàn bộ state giỏ hàng và localStorage ngay khi API đặt hàng thành công.
+
+---
+
+### BUG-U07: [Task 2 Usability] Tải lại trang (F5/Reload) làm mất sạch toàn bộ giỏ hàng
+
+- **Mã Khiếm khuyết**: `BUG-U07` | **Khía cạnh Giao diện**: `IA-04 (Session Persistence)`
+- **Màn hình**: `FR-07 (Shopping Cart)` | **Đặc tả liên quan**: `FR07-PERSIST;USR-CART-STORAGE`
+- **Mức độ Nghiêm trọng (Severity)**: **S2 (Major)** | **Mức độ Ưu tiên (Priority)**: **P1 (High)**
+- **Tần suất ghi nhận thực tế**: **3 / 8 người tham gia (37.5% — P04, P05, P06)**
+- **Phân loại Khiếm khuyết**: `State Management Defect (Mất dữ liệu phiên)`
+- **GitHub Issue**: [#157](https://github.com/nguyenanhtuan2702/eshop-sut/issues/157)
+- **Ảnh chụp Issue trên GitHub**: [Xem ảnh](issue-screenshots/BUG-U07.png)
+
+#### 1. Môi trường Ghi nhận & Hành vi Lỗi
+| Môi trường Thực thi | Trạng thái | Chi tiết Hành vi Ghi nhận |
+| :--- | :---: | :--- |
+| **Task 2 — Moderated Usability ($N=8$)** | **Failed** | Nhấn F5 tại trang giỏ hàng làm mất sạch toàn bộ sản phẩm đã chọn |
+| **Task 1 — Local Automation** | Failed | Liên kết `GUI-046` (Trạng thái Empty Cart) & Khía cạnh IA-04 |
+
+#### 2. Các Bước Tái hiện (Steps to Reproduce)
+1. Thêm nhiều sản phẩm vào giỏ hàng.
+2. Mở trang Giỏ hàng và xem danh sách.
+3. Bấm phím F5 hoặc nút Reload trên trình duyệt.
+
+#### 3. Kết quả Mong muốn vs Thực tế
+- **Kết quả Mong muốn (Expected)**: Giỏ hàng phải được đồng bộ vào LocalStorage, sau khi tải lại trang toàn bộ sản phẩm vẫn còn nguyên vẹn.
+- **Kết quả Thực tế (Actual)**: Toàn bộ sản phẩm trong giỏ bị xóa sạch, giỏ hàng trở về rỗng (0 sản phẩm) khiến người dùng mất hết công sức lựa chọn.
+
+#### 4. Bằng chứng Hình ảnh & Video Thực tế
+- **Ảnh chụp Issue trên GitHub (#157)**: [Xem ảnh chứng thực GitHub](issue-screenshots/BUG-U07.png)
+- **Video Minh chứng Thực tế**:
+  - [Video P04 (02:50)](https://drive.google.com/open?id=1G37HEs-McgTB3HvFp6Ug7yU1YoWXF1Z7) | [Video P05 (02:40)](https://drive.google.com/open?id=14QWjas1y9Hy-FbFkoWLOgEpW5S2szJUi) | [Video P06 (02:35)](https://drive.google.com/open?id=1P2yP0EUMl39dK4fYtURg9BvRhO-Vu5iM)
+
+#### 5. Trích dẫn Trực tiếp từ Người Dùng (Direct Quotes)
+> - *"F5 giỏ hàng bị trống không còn items."* *(P04)*
+> - *"Sau khi reload trang thì giỏ hàng trống trơn, các sản phẩm đã thêm vào giỏ trước đó mất tiêu hết."* *(P05)*
+> - *"Khi reload trang giỏ hàng thì các sản phẩm trong giỏ hàng bị mất."* *(P06)*
+
+#### 6. Phân tích Nguyên nhân Kỹ thuật (Root Cause Analysis)
+State giỏ hàng chỉ lưu tạm trong RAM của React component, hoàn toàn thiếu cơ chế lưu trữ bền vững Web Storage (LocalStorage).
+
+#### 7. Đề xuất Giải pháp Khắc phục (Remediation)
+Đồng bộ giỏ hàng vào `localStorage` cho khách vãng lai và đồng bộ REST API database cho người dùng đăng nhập.
+
+---
+
+## 8. Đánh giá Tổng hợp, Rủi ro Chất lượng
 
 ### 7.1. Đánh giá Theo Tiêu chuẩn Usability & Nielsen Heuristics
 
@@ -2930,41 +3259,3 @@ Kiểm thử trên thiết bị di động thực tế **Samsung Galaxy S23 (P3)
 - **Tràn bố cục ngang (Horizontal Viewport Overflow)**: Lưới sản phẩm (`GUI-016`) và bảng giỏ hàng (`GUI-035`) bị tràn khỏi màn hình 412px, buộc người dùng phải cuộn ngang gây ức chế.
 - **Kích thước vùng cảm ứng quá nhỏ (Touch Target Size < 44x44px)**: Nút tăng giảm số lượng và nút xóa (`GUI-069`) có kích thước chỉ 28x28px, vi phạm nghiêm trọng khuyến nghị WCAG 2.5.5 dẫn đến tỷ lệ bấm nhầm cao trên màn hình cảm ứng.
 - **Che khuất giao diện do bàn phím ảo (Virtual Keyboard Occlusion)**: Bàn phím ảo Samsung che mất nút Hủy trong form Admin (`GUI-058`) và modal xác nhận xóa không thể chạm ngoài để đóng (`GUI-062`).
-
-### 7.3. Kế hoạch Khắc phục Khiếm khuyết Phân kỳ (Remediation Roadmap)
-
-Để đảm bảo đưa hệ thống EShop vào vận hành thực tế đạt độ tin cậy cao, nhóm kiểm thử kiến nghị lộ trình khắc phục 3 giai đoạn (Sprint Roadmap):
-
-```mermaid
-gantt
-    title Lộ trình Khắc phục Khiếm khuyết GUI EShop (3 Sprints)
-    dateFormat  YYYY-MM-DD
-    section Sprint 1: Hotfix Critical
-    Khắc phục tính cô lập dữ liệu Admin (GUI-060) :crit, s1_1, 2026-11-13, 2d
-    Vá lỗ hổng XSS trong từ khóa tìm kiếm (GUI-021) :crit, s1_2, 2026-11-13, 2d
-    Bổ sung modal xác nhận trước khi xóa (GUI-044, GUI-061) :crit, s1_3, 2026-11-14, 2d
-    section Sprint 2: Core UX & Forms
-    Bổ sung type="email", type="password", confirm password (GUI-004, GUI-006) :s2_1, 2026-11-15, 3d
-    Hiển thị Toast feedback và Step indicators (GUI-005, GUI-031, GUI-063) :s2_2, 2026-11-16, 3d
-    Chuẩn hóa tiền tệ '₫' và căn lề phải bảng (GUI-018, GUI-033, GUI-034) :s2_3, 2026-11-17, 2d
-    section Sprint 3: Responsive & A11y
-    Fix Responsive Grid và Table trên mobile (GUI-016, GUI-035) :s3_1, 2026-11-18, 3d
-    Tăng kích thước Touch Target >= 44x44px (GUI-069) :s3_2, 2026-11-19, 2d
-    Bổ sung aria-label, alt text, và chỉnh tỷ số tương phản WCAG AA (GUI-020, GUI-030, GUI-066) :s3_3, 2026-11-20, 2d
-```
-
-- **Sprint 1 — Khắc phục Khẩn cấp (Hotfix Blocker & Security — 1-2 ngày)**:
-  - Khắc phục lỗi cô lập dữ liệu Admin (`GUI-060`).
-  - Vá lỗ hổng HTML/XSS Injection trong từ khóa tìm kiếm (`GUI-021`).
-  - Bổ sung modal xác nhận cảnh báo khi xóa sản phẩm (`GUI-044`, `GUI-061`).
-- **Sprint 2 — Chuẩn hóa Biểu mẫu & Trải nghiệm Người dùng (Core UX & Forms — 3-4 ngày)**:
-  - Bổ sung thuộc tính form, trường xác nhận mật khẩu, ràng buộc OTP (`GUI-004`, `GUI-006`, `GUI-008`).
-  - Thêm Toast thông báo khi Thêm vào giỏ hàng và Thao tác Admin (`GUI-031`, `GUI-063`).
-  - Đồng bộ ký hiệu tiền tệ `₫`, định dạng số có dấu chấm phân cách, căn phải cột tiền (`GUI-018`, `GUI-033`, `GUI-034`).
-- **Sprint 3 — Thích ứng Di động & Khả năng Tiếp cận (Mobile Responsive & Accessibility — 3 ngày)**:
-  - Tối ưu CSS Grid / Flexbox chống tràn màn hình trên mobile Galaxy S23 (`GUI-016`, `GUI-035`).
-  - Mở rộng kích thước nút bấm cảm ứng đạt chuẩn 44x44px (`GUI-069`).
-  - Khắc phục vi phạm độ tương phản màu chữ và bổ sung thuộc tính `aria-label`, `alt` hỗ trợ người khuyết tật (`GUI-020`, `GUI-030`, `GUI-066`).
-
----
-*Báo cáo được tổng hợp và xuất bản phục vụ nộp bài tập HW03-AI môn Kiểm thử Phần mềm Nâng cao.*
