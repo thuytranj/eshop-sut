@@ -778,12 +778,8 @@ Kiểm thử trên thiết bị di động thật đã phát hiện các lỗi n
 
 ### 5.4. Đánh giá 3 Mục Đạt Chuẩn Hoàn Toàn (Always Passed)
 Trong toàn bộ 70 mục kiểm tra, chỉ có duy nhất **3 mục đạt chuẩn tuyệt đối trên tất cả các môi trường** (cả Task 1 cục bộ, P1 Chrome Win11, P2 Firefox Win11, và P3 Android Galaxy S23):
-1. **`GUI-010`**: Kiểm tra thứ tự phím Tab tại Bước 1 biểu mẫu Quên mật khẩu. Di chuyển tiêu điểm mượt mà và tự nhiên từ ô Email $
-ightarrow$ Nút 'Gửi mã OTP' $
-ightarrow$ Liên kết hỗ trợ.
-2. **`GUI-011`**: Kiểm tra thứ tự phím Tab tại Bước 2 biểu mẫu Quên mật khẩu. Di chuyển tiêu điểm tuần tự từ ô Mật khẩu mới $
-ightarrow$ Ô nhập OTP $
-ightarrow$ Nút 'Đặt lại mật khẩu'.
+1. **`GUI-010`**: Kiểm tra thứ tự phím Tab tại Bước 1 biểu mẫu Quên mật khẩu. Di chuyển tiêu điểm mượt mà và tự nhiên từ ô Email $\rightarrow$ Nút 'Gửi mã OTP' $\rightarrow$ Liên kết hỗ trợ.
+2. **`GUI-011`**: Kiểm tra thứ tự phím Tab tại Bước 2 biểu mẫu Quên mật khẩu. Di chuyển tiêu điểm tuần tự từ ô Mật khẩu mới $\rightarrow$ Ô nhập OTP $\rightarrow$ Nút 'Đặt lại mật khẩu'.
 3. **`GUI-027`**: Kiểm tra luồng phím Tab trên Danh sách sản phẩm. Cho phép người dùng duyệt bàn phím qua từng thẻ sản phẩm và nút thêm vào giỏ hàng một cách nhất quán.
 
 ---

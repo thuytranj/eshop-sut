@@ -1,0 +1,4 @@
+interface:
+  display_name: "HW03 AI Audit"
+  short_description: "Preserve raw AI prompts, outputs, and metadata"
+  default_prompt: "Use $hw03-ai-audit to sync available AI interactions into docs/AI-Audit-Report.md with source timestamps and model identity."

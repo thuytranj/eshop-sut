@@ -1,0 +1,4 @@
+interface:
+  display_name: "HW03 GUI Checklist"
+  short_description: "Create GUI checklists with four-aspect coverage"
+  default_prompt: "Use $hw03-gui-checklist to design and validate a checklist covering IA-01 through IA-04 for the selected EShop screens."
