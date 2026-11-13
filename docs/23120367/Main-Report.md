@@ -51,6 +51,7 @@
 
 ### 1.1. Quy trình Thiết kế Tiếp cận AI-First
 Đồ án áp dụng quy trình kiểm thử hiện đại **AI-First**, kết hợp sức mạnh phân tích tự động của các mô hình ngôn ngữ lớn (LLM) với tư duy phản biện chuyên sâu của kỹ sư kiểm thử con người (Human QA Reviewer):
+
 1. **Giai đoạn 1 — AI Trích xuất & Soạn thảo Sơ bộ (AI Drafting)**:
    - Cung cấp toàn bộ tài liệu đặc tả yêu cầu SUT (`README.md`), bộ quy tắc thiết kế giao diện Web Design Guidelines, và tiêu chuẩn WCAG 2.1 AA vào ngữ cảnh của AI.
    - AI tiến hành phân rã yêu cầu thành các ca kiểm thử nguyên tử, tự động sinh **64 mục kiểm tra ban đầu** (`GUI-001` đến `GUI-064`) bao phủ đều khắp 4 màn hình và 4 IA.
@@ -182,6 +183,7 @@ Dưới đây là đặc tả chi tiết của toàn bộ 70 mục kiểm tra đ
 
 ### 2.1. Thiết lập Môi trường Tự động hóa Playwright Cục bộ
 Để thực thi tự động hóa 70 mục kiểm tra trên môi trường cục bộ, sinh viên đã xây dựng bộ kịch bản kiểm thử hướng đối tượng bằng **Playwright Test** kết hợp **TypeScript**:
+
 - **Trình duyệt thực thi**: Headless Google Chromium v124+ trên hệ điều hành macOS / Darwin.
 - **Hạ tầng phục vụ test**:
   - Backend API: `http://localhost:3000` (Node.js/Express) kèm các fixture dữ liệu mẫu chuẩn hóa.
@@ -236,6 +238,7 @@ pie title Kết quả Thực thi Tự động hóa Task 1 (70 Items)
 
 ### 2.4. Phân tích Các Nhóm Khiếm khuyết Giao diện Phổ biến tại Task 1
 Qua 48 ca kiểm thử thất bại tại Task 1, các khiếm khuyết được cấu trúc thành các nhóm vấn đề điển hình:
+
 1. **Vi phạm cấu trúc HTML Semantics & Trợ năng**:
    - `GUI-003` và `GUI-048`: Trang Quên mật khẩu và Quản lý sản phẩm Admin thiếu hoàn toàn thẻ `<h1>` duy nhất, vi phạm nghiêm trọng cấu trúc ngữ nghĩa HTML5.
    - `GUI-019`: Trang Danh sách sản phẩm tồn tại đồng thời 2 thẻ `<h1>` (logo trên Navbar và tiêu đề danh mục trang chủ).
@@ -276,10 +279,11 @@ flowchart LR
 
 #### 2. Tóm tắt Kịch bản Kiểm thử Đầu-Cuối (End-to-End User Journey Protocol)
 Mỗi người tham gia được yêu cầu hoàn thành trọn vẹn kịch bản mua sắm thực tế gồm 4 chặng nhiệm vụ cốt lõi:
+
 - **Chặng 1 — Tìm kiếm & Lọc sản phẩm (`FR-05`)**: Người dùng truy cập trang chủ, gõ tìm kiếm sản phẩm bằng tiếng Việt có dấu, thử tìm một từ khóa không tồn tại để kiểm tra phản hồi rỗng (Empty State), và quay trở lại danh mục chính.
-- **Chặng 2 — Xem chi tiết & Thêm vào giỏ (`FR-05` $\rightarrow$ Detail)**: Chọn một sản phẩm mong muốn, kiểm tra tính rõ ràng của thông tin (hình ảnh, tên, mô tả, định dạng giá tiền), điều chỉnh số lượng ban đầu và nhấp nút "Thêm vào giỏ hàng" (quan sát phản hồi thị giác và thời gian đáp ứng).
+- **Chặng 2 — Xem chi tiết & Thêm vào giỏ (`FR-05` → Detail)**: Chọn một sản phẩm mong muốn, kiểm tra tính rõ ràng của thông tin (hình ảnh, tên, mô tả, định dạng giá tiền), điều chỉnh số lượng ban đầu và nhấp nút "Thêm vào giỏ hàng" (quan sát phản hồi thị giác và thời gian đáp ứng).
 - **Chặng 3 — Quản lý & Chỉnh sửa giỏ hàng (`FR-07`)**: Nhấp vào giỏ hàng từ thanh điều hướng (Navbar); kiểm tra tính chính xác của các cột dữ liệu; thử thay đổi số lượng sản phẩm (bấm nút tăng/giảm hoặc gõ bàn phím); thử các giá trị biên (nhập số 0, số âm, xóa trắng ô số lượng bằng Backspace); thử thêm cùng 1 sản phẩm lần 2 để kiểm tra cơ chế gộp dòng.
-- **Chặng 4 — Quy trình Thanh toán & Hoàn tất đơn hàng (`FR-07` $\rightarrow$ Checkout)**: Bấm nút tiến hành thanh toán, điền thông tin người nhận, kiểm tra ô số tiền cần trả; bấm nút xác nhận thanh toán; sau đó kiểm tra lại trạng thái giỏ hàng sau khi giao dịch thành công và thử tải lại trang (F5/Reload).
+- **Chặng 4 — Quy trình Thanh toán & Hoàn tất đơn hàng (`FR-07` → Checkout)**: Bấm nút tiến hành thanh toán, điền thông tin người nhận, kiểm tra ô số tiền cần trả; bấm nút xác nhận thanh toán; sau đó kiểm tra lại trạng thái giỏ hàng sau khi giao dịch thành công và thử tải lại trang (F5/Reload).
 
 Ngay sau khi kết thúc kịch bản, người tham gia hoàn thành biểu mẫu khảo sát độc lập gồm **10 câu hỏi tiêu chuẩn SUS (System Usability Scale)** trên thang đo Likert 5 mức độ (1 = Hoàn toàn không đồng ý đến 5 = Hoàn toàn đồng ý) cùng **4 nhóm câu hỏi phỏng vấn định tính chuyên sâu (Qualitative Probes)**.
 
@@ -308,11 +312,17 @@ Ngay sau khi kết thúc kịch bản, người tham gia hoàn thành biểu m�
 Thang đo **System Usability Scale (SUS)** (Brooke, 1996) là tiêu chuẩn công nghiệp được kiểm định khoa học rộng rãi nhất để đo lường độ khả dụng tổng thể của một hệ thống phần mềm. SUS gồm 10 câu hỏi đan xen giữa các nhận định tích cực (câu lẻ) và tiêu cực (câu chẵn) để triệt tiêu thiên kiến đồng thuận (acquiescence bias).
 
 Điểm gốc của từng câu hỏi ($R_i \in [1, 5]$) được chuyển đổi sang điểm quy đổi ($X_i \in [0, 4]$) theo công thức toán học chuẩn:
+
 - **Đối với các câu hỏi lẻ (Q1, Q3, Q5, Q7, Q9 — Positive)**:
+
   $$X_i = R_i - 1$$
+
 - **Đối với các câu hỏi chẵn (Q2, Q4, Q6, Q8, Q10 — Negative)**:
+
   $$X_i = 5 - R_i$$
+
 - **Điểm SUS cá nhân (thang điểm 0–100)**:
+
   $$SUS = \left(\sum_{i=1}^{10} X_i\right) \times 2.5$$
 
 Toàn bộ phép tính bên dưới được thực thi và kiểm chứng tự động bằng script Python độc lập [[calculate_sus.py](calculate_sus.py)].
@@ -321,7 +331,7 @@ Toàn bộ phép tính bên dưới được thực thi và kiểm chứng tự 
 
 Dưới đây là ma trận điểm gốc (Raw Score: 1–5), tổng điểm quy đổi (Converted Score: 0–40) và điểm chuẩn hóa SUS (0–100) của từng người tham gia:
 
-| Mã NTG | Họ và tên Người tham gia | Q1 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 | Điểm Quy Đổi | Điểm SUS | Xếp loại Grade | Xếp loại Tính từ (Adjective) | Mức độ Chấp nhận (Acceptability) |
+| Mã | Họ và tên | Q1 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 | Q8 | Q9 | Q10 | Quy đổi | SUS | Grade | Đánh giá | Mức chấp nhận |
 |:---:|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | **P01** | Ngô Thị Ngọc Lan | 2 | 2 | 2 | 2 | 2 | 4 | 2 | 4 | 2 | 2 | 16 / 40 | **40.0** | **Grade F** | Poor | Not Acceptable |
 | **P02** | Huỳnh Lê Minh Triết | 2 | 2 | 2 | 4 | 2 | 4 | 2 | 5 | 2 | 4 | 11 / 40 | **27.5** | **Grade F** | Awful / Worst | Not Acceptable |
@@ -374,8 +384,11 @@ Dưới góc độ Senior UX Researcher, điểm SUS trung bình **44.38 (Grade 
      - P07 chấm Q5 = 5 (Chức năng liên kết nhịp nhàng).
      - P07 chấm Q10 = 1 (Không cần học nhiều điều để thành thạo).
    - **Tuy nhiên, sự thật được bộc lộ trong phần khảo sát định tính (Qualitative Probe)**: Khi được hỏi các câu hỏi mở, chính P07 lại chỉ ra hàng loạt khiếm khuyết kỹ thuật nhức nhối:
+
      > *"Nút thêm vào giỏ hàng click lần thứ 2 mới được."*  
      > *"Giỏ hàng không cho phép gộp số lượng các sản phẩm cùng mã, không có nút điều chỉnh số lượng ở giỏ hàng. Khi giá trị của ô input không hợp lệ, hệ thống không báo lỗi gì hết, vẫn thêm sản phẩm vào giỏ với cột số lượng gán là 'NaN'."*
+
+
    - **Kết luận UX rút ra**: P07 chấm 80 điểm hoàn toàn không phải vì website không có lỗi, mà vì "ngưỡng chấp nhận lỗi kỹ thuật" của một sinh viên IT cao hơn người dùng bình thường rất nhiều. P07 coi các lỗi đó là "bug phần mềm có thể vượt qua được", trong khi khách hàng phổ thông coi đó là "rào cản không thể chấp nhận". Điều này khẳng định nguyên lý cốt lõi của UX: **Không bao giờ dùng cảm quan của kỹ sư công nghệ để đại diện cho trải nghiệm của khách hàng đại chúng**.
 
 ---
@@ -413,19 +426,28 @@ mindmap
 - **Điểm tích cực**: Phần lớn người dùng (P01, P02, P03, P05, P06, P07) ghi nhận font chữ tiếng Việt hiển thị rõ ràng, không bị nhảy dòng giá tiền hay lỗi mã hóa UTF-8 cơ bản.
 - **Điểm nghẽn giao diện phát hiện**:
   - **Dịch chuyển bố cục (Cumulative Layout Shift — CLS)**: P04 phản ánh hiện tượng co giật giao diện khi cuộn trang:  
+
     > *"Có, giao diện bị đẩy lên xuống các items gây khó chịu cho người dùng."* *(P04)*
+
+
   - **Lỗi hiển thị hình ảnh sản phẩm (Broken Images)**: P08 phát hiện sản phẩm bị vỡ ảnh đại diện:  
+
     > *"Bị mất hình."* *(P08)*
+
+
   - **Thiếu giao diện trạng thái rỗng khi tìm kiếm (Empty State Defect)**: Khi người dùng tìm một từ khóa không có trên hệ thống hoặc gõ sai chỉ 1 ký tự, giao diện không có thông báo hay hướng dẫn gợi ý mà chỉ để một khoảng trắng vô hồn:  
+
     > *"Khi tìm kiếm một họ sản phẩm, không có nút nào để quay lại trang toàn bộ sản phẩm. Khi tìm kiếm sai tên chỉ 1 ký tự thì không tìm thấy được sản phẩm."* *(P02)*  
     > *"Khi tìm sản phẩm không có trong trang, kết quả trả về không có dòng thông báo/icon cho biết sản phẩm không tồn tại, chỉ có giao diện trống trơn."* *(P05)*  
     > *"Giao diện không thân thiện. Khi tìm kiếm sản phẩm không có trên web thì chỉ hiện text bình thường, không có những thông báo thân thiện cho người dùng."* *(P06)*
+
 
 #### Trục 2 — State Feedback (Phản hồi trạng thái khi Thêm vào giỏ hàng)
 **Tần suất ghi nhận: 8 / 8 người dùng (100%) đều gặp trở ngại nghiêm trọng.**  
 Hệ thống vi phạm nghiêm trọng Nguyên lý Heuristic #1 của Jakob Nielsen: *Visibility of System Status (Hiển thị rõ ràng trạng thái hệ thống)*. Khi người dùng nhấp "Thêm vào giỏ hàng", giao diện hoàn toàn "bất động", không có Toast nổi, không có Modal xác nhận, và biểu tượng giỏ hàng trên Navbar cũng không nhảy số đếm (Badge counter).
 
 *Trích dẫn nguyên văn phản hồi từ người tham gia:*
+
 > - *"Web không có thông báo thêm vào giỏ hàng. Icon giỏ hàng cũng không có hiện số lượng hiện có, phải vào giỏ hàng xem mới biết được."* *(P01)*  
 > - *"Khi bấm Thêm giỏ hàng, trang web không có thông báo gì đến người dùng làm tôi không biết là đã thêm thành công chưa."* *(P02)*  
 > - *"Khi nhấn nút thêm vào giỏ không hiện thông báo làm cho tôi phân vân là đã thêm được thành công chưa."* *(P03)*  
@@ -435,14 +457,17 @@ Hệ thống vi phạm nghiêm trọng Nguyên lý Heuristic #1 của Jakob Niel
 > - *"Nút thêm vào giỏ hàng click lần thứ 2 mới được."* *(P07)*  
 > - *"Không có thông báo rõ ràng, khiến tôi cảm thấy phân vân không biết đã thêm thành công chưa."* *(P08)*
 
+
 #### Trục 3 — Error Recovery & Data Integrity (Khả năng phục hồi lỗi & Toàn vẹn dữ liệu giỏ hàng)
 Hệ thống thiếu hụt toàn diện các cơ chế kiểm soát dữ liệu nhập (Input Validation) và phòng ngừa lỗi (Error Prevention — Heuristic #5), tạo điều kiện cho các giá trị bất thường phá hỏng dữ liệu giỏ hàng:
+
 1. **Thiếu cụm nút tăng giảm số lượng (+/-) trực tiếp**: Người dùng bị tước đoạt quyền kiểm soát cơ bản trong giỏ hàng.
 2. **Không gộp sản phẩm trùng mã**: Bấm thêm cùng 1 sản phẩm nhiều lần tạo ra nhiều dòng trùng lặp thay vì cộng dồn số lượng.
 3. **Lan truyền giá trị `NaN` (Not a Number)**: Khi người dùng dùng phím Backspace để xóa số lượng cũ trước khi gõ số mới, hệ thống không xử lý chuỗi rỗng mà ép kiểu trực tiếp thành `NaN`. Giá trị này lan truyền sang cột Thành tiền và Tổng tiền giỏ hàng, nhưng hệ thống vẫn cho phép bấm Thanh toán!
 4. **Chấp nhận số lượng âm và số tiền âm**: Nhập số lượng âm khiến thành tiền bị âm, làm giảm trừ tổng thanh toán của toàn bộ đơn hàng.
 
 *Trích dẫn nguyên văn phản hồi từ người tham gia:*
+
 > - *"Trong màn hình giỏ hàng, không có button để tăng/giảm số lượng sản phẩm. Đối với cùng 1 loại sản phẩm, khi thêm vào giỏ hàng nhiều lần, hệ thống cũng không gộp số lượng của sản phẩm này lại. Khi giá trị của ô input không hợp lệ, hệ thống không báo lỗi gì hết, vẫn thêm sản phẩm vào giỏ với cột số lượng gán là 'NaN'."* *(P01)*  
 > - *"Hệ thống hiện tại không cho đổi số lượng của sản phẩm trong giỏ hàng."* *(P02)*  
 > - *"Số lượng không đổi được, nếu để số lượng 0 vẫn vào giỏ hàng, lúc gõ phím số không báo lỗi hay bị đơ."* *(P03)*  
@@ -450,10 +475,12 @@ Hệ thống thiếu hụt toàn diện các cơ chế kiểm soát dữ liệu 
 > - *"Không thể thay đổi trực tiếp trong giao diện giỏ hàng. Muốn thay đổi phải lặp lại thao tác thêm vào giỏ hàng, điều chỉnh số lượng ở thao tác này. Bên cạnh đó, hệ thống cũng chấp nhận khi người dùng nhập giá trị âm và thanh toán số tiền âm."* *(P05)*  
 > - *"Không thể thay đổi số lượng trực tiếp trong giỏ hàng. Không báo lỗi, cho phép nhập số lượng không hợp lý và vẫn xuất ra số tiền."* *(P06)*  
 > - *"Giỏ hàng không cho phép gộp số lượng các sản phẩm cùng mã, không có nút điều chỉnh số lượng ở giỏ hàng. Khi giá trị của ô input không hợp lệ, hệ thống không báo lỗi gì hết, vẫn thêm sản phẩm vào giỏ với cột số lượng gán là 'NaN'."* *(P07)*  
-> - *"Tôi thay đổi số lượng thì tổng tiền tự động tính lại. Nhưng lỡ tay xóa trắng ô số lượng hoặc gõ phím số, hệ thống không báo lỗi gì... Khi xóa số lượng món hàng, hệ thống không báo lỗi gì hết, vẫn thêm sản phẩm vào giỏ với cột số lượng gán là 'NaN' $\rightarrow$ Tổng tiền trở thành 'NaN' và vẫn tiến hành thanh toán được thành công."* *(P08)*
+> - *"Tôi thay đổi số lượng thì tổng tiền tự động tính lại. Nhưng lỡ tay xóa trắng ô số lượng hoặc gõ phím số, hệ thống không báo lỗi gì... Khi xóa số lượng món hàng, hệ thống không báo lỗi gì hết, vẫn thêm sản phẩm vào giỏ với cột số lượng gán là 'NaN' → Tổng tiền trở thành 'NaN' và vẫn tiến hành thanh toán được thành công."* *(P08)*
+
 
 #### Trục 4 — Speed, Responsiveness & Trust (Tốc độ phản hồi, An toàn & Lòng tin giao dịch)
 Trục trải nghiệm này ghi nhận những phát hiện chấn động về mặt an toàn giao dịch thương mại điện tử:
+
 1. **Lỗi bấm nút "Thêm vào giỏ hàng" 2 lần mới ăn (Double-Click Bug)**: Tại trang chi tiết sản phẩm, nút bấm hoàn toàn không phản hồi ở lần nhấp đầu tiên, buộc 100% người dùng phải bấm lần thứ hai.
 2. **Lỗ hổng bảo mật ô số tiền thanh toán (Arbitrary Editable Payment Amount)**: Tại màn hình thanh toán, ô hiển thị số tiền là một thẻ `<input>` mở cho phép người dùng tùy ý gõ sửa thành **0đ** hoặc số tiền bất kỳ và hệ thống vẫn chấp nhận thanh toán thành công!
 3. **Thanh toán thành công nhưng không xóa giỏ hàng**: Sau khi hoàn tất đơn hàng, quay lại giỏ hàng thì toàn bộ món hàng vừa mua vẫn còn nguyên vẹn, khiến khách hàng lo sợ bị trừ tiền trùng lặp.
@@ -461,6 +488,7 @@ Trục trải nghiệm này ghi nhận những phát hiện chấn động về 
 5. **Thiếu thông tin địa chỉ và thiếu chứng chỉ bảo mật**: Đặt hàng thành công mà không bắt buộc nhập địa chỉ giao hàng; trang web chưa cấu hình giao thức an toàn HTTPS.
 
 *Trích dẫn nguyên văn phản hồi từ người tham gia:*
+
 > - *"Nút 'Thêm vào giỏ hàng' bấm lần đầu không phản hồi, đến lần thứ 2 mới được."* *(P01)*  
 > - *"Thêm vào giỏ hàng ở trang xem chi tiết sản phẩm phải click 2 lần. Số lượng đơn hàng có thể chỉnh tùy ý, kể cả âm và số lẻ đều ghi nhận thành công và thành tiền cũng âm, số lượng là số lẻ thì được làm tròn xuống. Phần thanh toán có thể chỉnh tùy ý số tiền (không thể chỉnh thành âm), nhưng có thể chỉnh thành 0đ và vẫn thanh toán thành công. Thanh toán thành công nhưng sản phẩm vẫn tồn tại trong giỏ hàng. Thanh toán thành công với đơn hàng âm tiền. Không cho gộp sản phẩm cùng mã trong đơn hàng."* *(P02)*  
 > - *"Trong thông tin của tôi chưa có địa chỉ nhưng vẫn đặt hàng thành công. Nút thêm vào giỏ hàng phải nhấn 2 lần mới được thêm vào, lúc thêm số lượng 0 vẫn thêm vào được giỏ hàng."* *(P03)*  
@@ -468,7 +496,8 @@ Trục trải nghiệm này ghi nhận những phát hiện chấn động về 
 > - *"Nút thêm vào giỏ hàng click vào lần đầu không phản hồi, click lần hai mới phản hồi. Khi thanh toán, nếu số lượng món hàng nhập số âm thì tổng tiền cũng âm. Đã thanh toán nhưng trong giỏ hàng vẫn còn hiện sản phẩm vừa thanh toán. Hai sản phẩm thêm vào giỏ hàng giống nhau nhưng không gộp số lượng. Sau khi reload trang thì giỏ hàng trống trơn, các sản phẩm đã thêm vào giỏ trước đó mất tiêu hết."* *(P05)*  
 > - *"Nút thêm giỏ hàng bấm 1 lần không phản hồi, tới lần thứ 2 mới chuyển trạng thái sang 'đã thêm'. Khi tìm kiếm sản phẩm không có trên web rồi bấm nút home 'EShop' thì không quay về trang chủ. Có thể sửa được số tiền thanh toán. Thanh toán thành công nhưng sản phẩm vẫn còn trong giỏ hàng. Khi reload trang giỏ hàng thì các sản phẩm trong giỏ hàng bị mất."* *(P06)*  
 > - *"Nút thêm vào giỏ hàng click lần thứ 2 mới được."* *(P07)*  
-> - *"Nút thêm vào giỏ hàng bấm không phản hồi, phải bấm 2 lần mới phản hồi. Chỗ 'đăng nhập' nhưng lại hiển thị là 'Đăng ký'. Giỏ hàng không gộp số lượng các sản phẩm cùng mã khi bấm thêm giỏ 2 lần khác nhau. Không có nút điều chỉnh số lượng sản phẩm ở giỏ hàng. Khi chọn số lượng món hàng âm thì số tiền cũng tính âm $\rightarrow$ dẫn đến sai số tiền thanh toán. Khi xóa số lượng món hàng, hệ thống không báo lỗi gì hết, vẫn thêm sản phẩm vào giỏ với cột số lượng gán là 'NaN' $\rightarrow$ Tổng tiền trở thành 'NaN' và vẫn tiến hành thanh toán được thành công. Đã thanh toán thành công nhưng giỏ hàng vẫn không xóa món hàng đã mua đó."* *(P08)*
+> - *"Nút thêm vào giỏ hàng bấm không phản hồi, phải bấm 2 lần mới phản hồi. Chỗ 'đăng nhập' nhưng lại hiển thị là 'Đăng ký'. Giỏ hàng không gộp số lượng các sản phẩm cùng mã khi bấm thêm giỏ 2 lần khác nhau. Không có nút điều chỉnh số lượng sản phẩm ở giỏ hàng. Khi chọn số lượng món hàng âm thì số tiền cũng tính âm → dẫn đến sai số tiền thanh toán. Khi xóa số lượng món hàng, hệ thống không báo lỗi gì hết, vẫn thêm sản phẩm vào giỏ với cột số lượng gán là 'NaN' → Tổng tiền trở thành 'NaN' và vẫn tiến hành thanh toán được thành công. Đã thanh toán thành công nhưng giỏ hàng vẫn không xóa món hàng đã mua đó."* *(P08)*
+
 
 ---
 
@@ -579,6 +608,7 @@ graph TD
 ```
 
 **Đặc tả chi tiết 3 môi trường thực nghiệm**:
+
 1. **`p1-chrome-win11` (Nền tảng P1)**:
    - Trình duyệt: Google Chrome phiên bản mới nhất (v156.0).
    - Hệ điều hành: Microsoft Windows 11 (64-bit Desktop).
@@ -601,12 +631,14 @@ graph TD
 
 #### 1. Thực trạng & Thách thức Ban đầu:
 Trong các đợt chạy thử nghiệm ban đầu (`pilot-05` và giai đoạn đầu `qual-02`), kết quả ghi nhận tỷ lệ **Not Run lên tới 27.14% (57/210 lượt kiểm thử)**. Nguyên nhân kỹ thuật chính gồm:
+
 - Độ trễ mạng (Network latency) qua BrowserStack Local tunnel khiến một số trang không tải kịp trong thời gian timeout mặc định 30 giây.
 - Xung đột trạng thái phiên (Session contention) khi chạy song song quá nhiều tác vụ trên thiết bị di động thật.
 - Bàn phím ảo trên Galaxy S23 tự động bật lên che khuất các phần tử locator khiến kịch bản bị timeout.
 
 #### 2. Kỹ thuật Phục hồi Đột phá (Recovery Strategy):
 Để xử lý dứt điểm tình trạng Not Run mà không làm sai lệch tính khách quan, sinh viên đã triển khai đợt phục hồi có kiểm soát (`recovery-final`):
+
 - **Phân chia nhóm thực thi (Cohort Execution)**: Chia 70 mục thành các nhóm nhỏ theo từng màn hình riêng biệt (`FR-03`, `FR-05`, `FR-07`, `FR-15`), khởi động lại tunnel trước mỗi nhóm để giải phóng bộ nhớ đệm.
 - **Tối ưu hóa thời gian chờ (Adaptive Wait Optimization)**: Bổ sung cơ chế chờ DOM ổn định (`waitForLoadState('networkidle')`) và tăng timeout cục bộ cho các thao tác gọi API xác thực lên 45 giây.
 - **Cô lập kiểm tra trên thiết bị thật**: Trên Galaxy S23, cấu hình đóng bàn phím ảo tự động sau mỗi thao tác nhập liệu để tránh che khuất viewport.
@@ -721,6 +753,7 @@ Bảng ma trận dưới đây tổng hợp kết quả đối sánh chi tiết 
 ### 5.2. Phân tích Chi tiết 48 Lỗi Dùng Chung (Shared Defects)
 
 Trong số 65 mục phát hiện khiếm khuyết, có **48 mục (chiếm 73.85%) thất bại đồng loạt trên cả 3 nền tảng**.
+
 - **Bản chất kỹ thuật**: Đây là các lỗi phát sinh trực tiếp từ tầng logic frontend, cấu trúc component React hoặc thiếu sót trong file CSS dùng chung, không phụ thuộc vào engine trình duyệt hay kích thước màn hình.
 - **Các nhóm lỗi dùng chung tiêu biểu**:
   1. *Lỗi cấu trúc HTML*: Thiếu thẻ `<h1>` trên trang Quên mật khẩu (`GUI-003`) và Admin (`GUI-048`).
@@ -744,6 +777,7 @@ graph TD
 
 #### Nhóm 1: 10 Lỗi Đặc thù Di động trên Thiết bị Thật Samsung Galaxy S23 (P3)
 Kiểm thử trên thiết bị di động thật đã phát hiện các lỗi nghiêm trọng mà việc giả lập (simulation) trên desktop hoàn toàn không phát hiện được:
+
 1. **`GUI-016` (Vỡ bố cục lưới sản phẩm)**: Trên Desktop P1/P2 (1920px), lưới sản phẩm hiển thị dạng grid 4 cột rất đẹp mắt (Passed). Tuy nhiên, trên màn hình hẹp 412px của Galaxy S23, CSS grid không cấu hình media query responsive khiến các thẻ sản phẩm bị tràn ngang khỏi màn hình (Failed).
 2. **`GUI-017` (Cắt chữ và đè layout tiêu đề sản phẩm)**: Do chiều rộng thẻ co lại trên mobile, tiêu đề sản phẩm dài không có thuộc tính `text-overflow: ellipsis` dẫn tới hiện tượng chữ tràn đè lên giá tiền (P1/P2 Passed, P3 Failed).
 3. **`GUI-022` (Độ trễ lọc tìm kiếm theo tên)**: Trên Galaxy S23, việc bật bàn phím ảo Samsung Keyboard và cơ chế gõ ký tự mobile làm trễ kích hoạt sự kiện `input`, khiến danh sách không lọc kịp (P1/P2 Passed, P3 Failed).
@@ -778,8 +812,9 @@ Kiểm thử trên thiết bị di động thật đã phát hiện các lỗi n
 
 ### 5.4. Đánh giá 3 Mục Đạt Chuẩn Hoàn Toàn (Always Passed)
 Trong toàn bộ 70 mục kiểm tra, chỉ có duy nhất **3 mục đạt chuẩn tuyệt đối trên tất cả các môi trường** (cả Task 1 cục bộ, P1 Chrome Win11, P2 Firefox Win11, và P3 Android Galaxy S23):
-1. **`GUI-010`**: Kiểm tra thứ tự phím Tab tại Bước 1 biểu mẫu Quên mật khẩu. Di chuyển tiêu điểm mượt mà và tự nhiên từ ô Email $\rightarrow$ Nút 'Gửi mã OTP' $\rightarrow$ Liên kết hỗ trợ.
-2. **`GUI-011`**: Kiểm tra thứ tự phím Tab tại Bước 2 biểu mẫu Quên mật khẩu. Di chuyển tiêu điểm tuần tự từ ô Mật khẩu mới $\rightarrow$ Ô nhập OTP $\rightarrow$ Nút 'Đặt lại mật khẩu'.
+
+1. **`GUI-010`**: Kiểm tra thứ tự phím Tab tại Bước 1 biểu mẫu Quên mật khẩu. Di chuyển tiêu điểm mượt mà và tự nhiên từ ô Email → Nút 'Gửi mã OTP' → Liên kết hỗ trợ.
+2. **`GUI-011`**: Kiểm tra thứ tự phím Tab tại Bước 2 biểu mẫu Quên mật khẩu. Di chuyển tiêu điểm tuần tự từ ô Mật khẩu mới → Ô nhập OTP → Nút 'Đặt lại mật khẩu'.
 3. **`GUI-027`**: Kiểm tra luồng phím Tab trên Danh sách sản phẩm. Cho phép người dùng duyệt bàn phím qua từng thẻ sản phẩm và nút thêm vào giỏ hàng một cách nhất quán.
 
 ---
@@ -802,6 +837,7 @@ Căn cứ theo biểu điểm đánh giá chính thức của bài tập HW03 (A
 
 ### 7.1. Kết Luận
 Đồ án kiểm thử giao diện người dùng EShop (HW03) đã hoàn thành xuất sắc các mục tiêu học thuật và kỹ thuật trên cả 3 trụ cột:
+
 1. **Thiết kế Checklist chuẩn mực (Task 1)**: Xây dựng 70 mục kiểm tra bao phủ trọn vẹn 4 khía cạnh giao diện (IA-01 đến IA-04) trên 4 màn hình chức năng cốt lõi, thể hiện rõ nét giá trị phản biện chuyên môn của con người trước các điểm mù của trí tuệ nhân tạo. Tự động hóa Playwright phát hiện 48 khiếm khuyết giao diện và nghiệp vụ trên môi trường cục bộ.
 2. **Nghiên cứu Người dùng Thực tế Đột phá (Task 2)**: Khảo sát thực nghiệm với 8 người dùng thật kết hợp phương pháp Think-Aloud và thang đo SUS chuẩn hóa. Điểm SUS đạt **44.38 (Grade F, Poor)** đã phản ánh sự sụp đổ niềm tin giao dịch của khách hàng khi đối mặt với các lỗi toàn vẹn dữ liệu (tiền âm, xóa giỏ sinh `NaN`, sửa tiền thanh toán thành 0đ, F5 mất giỏ). Kết quả Usability Testing cung cấp góc nhìn sinh động mà kiểm thử tự động bằng code không thể chạm tới, đồng thời chỉ ra 7 lỗi Usability trọng yếu (`BUG-U01` – `BUG-U07`) và 4 nhóm giải pháp khắc phục triệt để.
 3. **Kiểm thử Đa Nền tảng Đạt chuẩn Cloud Grid (Task 3)**: Vận hành thành công hạ tầng BrowserStack Local tunnel trên cả máy tính để bàn (Chrome, Firefox) và thiết bị di động thực tế (Samsung Galaxy S23), giảm tỷ lệ Not Run xuống mức kỷ lục 0.95% (208/210 ô thành công) và bóc tách chính xác 48 Shared Defects cùng 17 sai lệch nền tảng đặc thù.
@@ -809,6 +845,7 @@ Căn cứ theo biểu điểm đánh giá chính thức của bài tập HW03 (A
 
 ### 7.2. Hướng Dẫn Tra Cứu Tài Liệu Nộp Bài
 Để phục vụ việc đánh giá và chấm điểm thuận tiện nhất, toàn bộ hồ sơ nộp bài của sinh viên `23120367` được đóng gói tập trung trong thư mục `docs/23120367/`:
+
 - **Báo cáo Tổng hợp Chính (Main Report)**: Chính là tài liệu [Main-Report.md](Main-Report.md) này, cung cấp bức tranh toàn cảnh về phương pháp luận, ma trận bao phủ, kết quả thực thi và phân tích đối sánh đa nền tảng.
 - **Báo cáo Khiếm khuyết Chi tiết (Bug Report)**: Tài liệu [Bug-Report.md](Bug-Report.md) (nằm cùng thư mục), cung cấp hồ sơ chi tiết của toàn bộ **67 lỗi** (Bug ID, mô tả hiện tượng, các bước tái hiện, mã lỗi thực tế trên từng nền tảng, link ảnh bằng chứng, phân tích nguyên nhân kỹ thuật, link GitHub Issue và ảnh chụp Issue trên GitHub).
 - **Báo cáo Phản biện Trí tuệ Nhân tạo (AI Critique)**: Tài liệu [AI-Critique.md](AI-Critique.md), cung cấp đoạn văn phản biện chuẩn 200–300 từ (cả tiếng Việt và tiếng Anh) trả lời 3 câu hỏi bắt buộc theo đặc tả đồ án, phân tích sâu các điểm mù của AI và bài học nguyên tắc cộng tác con người - AI.
